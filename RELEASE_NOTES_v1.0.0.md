@@ -1,8 +1,10 @@
-# Helldivers 2 Chaos Roulette — Official v1.0.0 (Chaos Tango)
+# Helldivers 2 Chaos Slot Machine — Official v1.0.0 (Chaos Tango)
 
 Release date: 2026-04-01
 
-This is the first official **Chaos Tango Roulette 1.0.0** release.
+Historical baseline notes. Product wording has been updated for the current project name; these notes do not describe validation of the current Windows installer.
+
+This is the first official **Chaos Slot Machine 1.0.0** release.
 
 ## Highlights
 
@@ -20,4 +22,4 @@ This is the first official **Chaos Tango Roulette 1.0.0** release.
 ## Notes
 
 - Tag to publish on GitHub Releases: `v1.0.0`
-- Suggested release title: `Helldivers 2 Chaos Tango Roulette v1.0.0`
+- Suggested release title: `Helldivers 2 Chaos Slot Machine v1.0.0`

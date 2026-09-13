@@ -1,18 +1,26 @@
 # Release process
 
-Use this checklist before publishing a Windows ZIP release.
+Use this checklist before publishing a Windows installer and portable ZIP release.
+
+## Initial unsigned HD2CSM release
+
+The owner requested distribution of the locally tested Windows build under tag `hd2csm-v1.1.0`, with an explicit unsigned/unknown-publisher warning. Upload the verified installer, portable ZIP, and both checksum sidecars together; the release notes are `RELEASE_NOTES_v1.1.0.md`. This branded tag does not match the automated `v*.*.*` signed-release trigger. It is not a change to the signing requirements below. The uploaded binaries are the owner's tested build; subsequent source-documentation changes only add public download links and patch notes.
 
 ## Release checklist
 
 - [ ] Update the application version in `package.json` and `package-lock.json`.
 - [ ] Update `CHANGELOG.md` with the release date and user-facing changes.
 - [ ] Run checks locally: `npm ci`, `npm run validate:catalog`, `npm run validate:assets`, and `npm test`.
-- [ ] Test saves by creating, exporting, importing, clearing, and recovering roulette data.
+- [ ] Run `npm run test:electron` with isolated data to test Spin, locks/rerolls, Results, scoring, Compare, Armory, Rank, export/import, and persistence across process restarts.
+- [ ] Test saves by creating, exporting, importing, clearing, and recovering slot-machine data.
+- [ ] Test rename migration from the previous desktop save folder and browser keys, including invalid old data and an existing new save.
 - [ ] Test offline behavior by launching the desktop app without network access and confirming bundled catalog/assets still load.
 - [ ] Test upgrades by opening a save created by the previous released build.
 - [ ] Create the matching version tag, such as `v1.1.0`.
-- [ ] Inspect the published ZIP from the GitHub Release before announcing it.
-- [ ] Complete the Windows owner-verification steps in `docs/FINAL_TEST_REPORT.md`, including launch from Downloads, Desktop, Documents, paths with spaces, offline mode, corruption recovery, upgrade survival, external links, logs, screenshots, and checksum comparison.
+- [ ] Install and launch the published offline Setup `.exe` from the GitHub Release before announcing it.
+- [ ] Extract and launch the published portable ZIP from the GitHub Release before announcing it.
+- [ ] Verify both downloads against their matching `.sha256` files.
+- [ ] Record actual results in `docs/FINAL_TEST_REPORT.md`, distinguishing automated checks, packaged-app checks, and any unverified Windows visual or audio behavior.
 
 ## Starting a release
 
@@ -25,8 +33,8 @@ Use this checklist before publishing a Windows ZIP release.
    git push origin v1.1.0
    ```
 
-4. The **Windows Release ZIP** workflow validates the catalog and assets, runs the storage/application tests, builds the Windows ZIP on GitHub's Windows runner, verifies required package contents, writes a SHA-256 checksum, and attaches both files to the GitHub Release for the same tag.
-5. For a non-release test build, open **Actions → Windows Release ZIP → Run workflow**, choose the Node.js version, and start the workflow. The ZIP and checksum are uploaded as workflow artifacts for maintainer inspection only.
+4. The **Windows Release** workflow validates the catalog and assets, runs the storage/application tests, builds the offline NSIS installer and portable ZIP on GitHub's Windows runner, verifies required package contents, writes a SHA-256 checksum for each artifact, verifies both Windows signatures, and attaches all four files to the GitHub Release for the same tag.
+5. For a non-release test build, open **Actions → Windows Release → Run workflow**, choose the Node.js version, and start the workflow. The installer, ZIP, and both checksums are uploaded as workflow artifacts for maintainer inspection only. Manual builds are unsigned unless **sign-build** is enabled.
 
 ## Signing material
 
@@ -36,9 +44,9 @@ Do not commit signing passwords, certificates, `.pfx` files, private keys, signi
 
 This repository is prepared for **Microsoft Azure Trusted Signing / Artifact Signing**. The application does not store certificate files, private keys, certificate passwords, signing tokens, or Azure client secrets in Git. Electron-builder signs only when `WINDOWS_SIGNING_REQUIRED=true` or `WINDOWS_SIGNING_ENABLED=true` is present in the environment.
 
-### Provider requirements reviewed
+### Configured provider
 
-As of August 5, 2026, electron-builder's current Windows signing documentation lists Azure Trusted Signing as the cloud-signing option that keeps the private key out of the local build environment. It requires Azure Entra authentication environment variables and an electron-builder Windows Azure signing configuration with:
+This project's electron-builder configuration uses Azure authentication environment variables and Windows Azure signing settings for:
 
 - `publisherName` exactly matching the certificate profile's subject
 - the Trusted Signing account endpoint
@@ -70,11 +78,11 @@ The repository owner must complete these non-coding steps before creating a sign
     - `AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME` — certificate profile name.
     - `WINDOWS_SIGNING_PUBLISHER_NAME` — exact certificate subject, for example `CN=Example Publisher, O=Example Publisher, C=US`.
 12. Optionally add the repository variable `WINDOWS_SIGNING_TIMESTAMP_RFC3161` if Microsoft changes the recommended timestamp server. If omitted, CI uses `http://timestamp.acs.microsoft.com`.
-13. Run **Actions → Windows Release ZIP → Run workflow** with **sign-build** enabled to confirm signing and signature verification before pushing a release tag.
+13. Run **Actions → Windows Release → Run workflow** with **sign-build** enabled to confirm signing and signature verification before pushing a release tag.
 
 ### Signed versus unsigned builds
 
-- Development and manual test builds remain unsigned by default. Use `npm run build:win` locally or run the workflow manually with **sign-build** disabled.
+- Development and manual test builds remain unsigned by default. Use `npm run build:win` locally or run the workflow manually with **sign-build** disabled. Windows SmartScreen may warn about these test artifacts.
 - Signed release builds require `WINDOWS_SIGNING_REQUIRED=true`. Tagged releases set this automatically in GitHub Actions.
 - When signing is required, the build fails before packaging if any required Azure signing value is missing.
-- Before a tagged release is uploaded, CI extracts the ZIP and runs `scripts/verify_windows_signature.ps1`. The release fails if the executable is unsigned, the Authenticode status is not `Valid`, the signer subject does not match `WINDOWS_SIGNING_PUBLISHER_NAME`, or the timestamp counter-signature is missing.
+- Before a tagged release is uploaded, CI extracts the ZIP and runs `scripts/verify_windows_signature.ps1` against both the packaged application executable and the offline installer. The release fails if either is unsigned, its Authenticode status is not `Valid`, the signer subject does not match `WINDOWS_SIGNING_PUBLISHER_NAME`, or the timestamp counter-signature is missing.

@@ -1,10 +1,22 @@
 const { app, BrowserWindow, dialog, ipcMain, shell } = require('electron');
 const path = require('node:path');
+const fs = require('node:fs');
 const { backupCurrentState, exportStateFile, importStateFile, loadStateFile, saveStateFile, validateData } = require('./storage');
 const { readPackagedJson } = require('./resource-loader');
+const { APP_ID, PRODUCT_NAME, resolveProfile, migrateLegacyProfile } = require('./identity');
 
-const APP_ID = 'com.bootsoftango.helldivers2chaosroulette';
 const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@BootsOfTango';
+const IS_TEST_HARNESS = process.env.HD2_ELECTRON_TEST_HARNESS === '1';
+const IS_AUTOMATION = IS_TEST_HARNESS || process.env.HD2CSM_AUTOMATION === '1';
+
+app.setName(PRODUCT_NAME);
+const profile = resolveProfile(app.getPath('appData'));
+fs.mkdirSync(profile.directory, { recursive: true });
+app.setPath('userData', profile.directory);
+if (!profile.isolated) {
+  try { migrateLegacyProfile({ destination: profile.directory, appDataPath: app.getPath('appData') }); }
+  catch (err) { console.warn('Existing-save migration could not finish; legacy files are unchanged:', err.message); }
+}
 
 function isAllowedExternalUrl(url) {
   try {
@@ -22,7 +34,7 @@ async function openAllowedExternal(url) {
 }
 
 function exportFilename(date = new Date()) {
-  return `helldivers-2-chaos-roulette-export-${date.toISOString().slice(0, 10)}.json`;
+  return `helldivers-2-chaos-slot-machine-export-${date.toISOString().slice(0, 10)}.json`;
 }
 
 function friendlyDialogError(err, fallback) {
@@ -35,18 +47,19 @@ function getWindowIconPath() {
     : path.join(__dirname, '..', 'build', 'icon.png');
 }
 
-function createMainWindow() {
+function createMainWindow({ show = true, automation = IS_AUTOMATION } = {}) {
   const mainWindow = new BrowserWindow({
     width: 1280,
     height: 900,
     minWidth: 1100,
     minHeight: 720,
-    title: 'Helldivers 2 Chaos Roulette',
+    title: PRODUCT_NAME,
     icon: getWindowIconPath(),
     backgroundColor: '#060805',
     show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      additionalArguments: automation ? ['--hd2csm-test-harness'] : [],
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
@@ -58,7 +71,7 @@ function createMainWindow() {
 
   if (app.isPackaged) mainWindow.setMenu(null);
 
-  mainWindow.once('ready-to-show', () => mainWindow.show());
+  if (show) mainWindow.once('ready-to-show', () => mainWindow.show());
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     if (isAllowedExternalUrl(url)) {
@@ -85,7 +98,7 @@ function createMainWindow() {
 app.setAppUserModelId(APP_ID);
 
 ipcMain.handle('app:getInfo', () => ({
-  name: 'Helldivers 2 Chaos Roulette',
+  name: PRODUCT_NAME,
   appId: APP_ID,
   version: app.getVersion()
 }));
@@ -104,7 +117,7 @@ ipcMain.handle('storage:exportJson', async (event, data) => {
   validateData(data);
   const owner = BrowserWindow.fromWebContents(event.sender);
   const result = await dialog.showSaveDialog(owner, {
-    title: 'Export Helldivers 2 Chaos Roulette JSON',
+    title: `Export ${PRODUCT_NAME} JSON`,
     defaultPath: exportFilename(),
     filters: [{ name: 'JSON Files', extensions: ['json'] }]
   });
@@ -115,7 +128,7 @@ ipcMain.handle('storage:exportJson', async (event, data) => {
 ipcMain.handle('storage:importJson', async (event) => {
   const owner = BrowserWindow.fromWebContents(event.sender);
   const result = await dialog.showOpenDialog(owner, {
-    title: 'Import Helldivers 2 Chaos Roulette JSON',
+    title: `Import ${PRODUCT_NAME} JSON`,
     properties: ['openFile'],
     filters: [{ name: 'JSON Files', extensions: ['json'] }]
   });
@@ -123,7 +136,7 @@ ipcMain.handle('storage:importJson', async (event) => {
   try {
     return importStateFile(app.getPath('userData'), result.filePaths[0], app.getVersion());
   } catch (err) {
-    return { ok: false, error: friendlyDialogError(err, 'Import failed. That file is not a supported Helldivers 2 Chaos Roulette JSON export.') };
+    return { ok: false, error: friendlyDialogError(err, `Import failed. That file is not a supported ${PRODUCT_NAME} JSON export.`) };
   }
 });
 
@@ -135,14 +148,18 @@ ipcMain.handle('storage:clearAll', (_event, data) => {
 });
 
 
-app.whenReady().then(() => {
-  createMainWindow();
+if (!IS_TEST_HARNESS) {
+  app.whenReady().then(() => {
+    createMainWindow();
 
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createMainWindow();
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) createMainWindow();
+    });
   });
-});
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit();
-});
+  app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') app.quit();
+  });
+}
+
+module.exports = { APP_ID, PRODUCT_NAME, createMainWindow, exportFilename, isAllowedExternalUrl };

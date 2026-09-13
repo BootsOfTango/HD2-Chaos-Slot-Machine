@@ -14,26 +14,40 @@
     return owner || 'Unknown';
   }
 
+  function hasMeaningfulPlanetName(planet) {
+    return Boolean(
+      planet &&
+      typeof planet === 'object' &&
+      !Array.isArray(planet) &&
+      typeof planet.name === 'string' &&
+      planet.name.trim()
+    );
+  }
+
   function validateCachedPlanets(cache) {
-    if (!cache || typeof cache !== 'object' || !Array.isArray(cache.planets) || !cache.planets.length || !cache.updatedAt) return null;
-    const planets = cache.planets.map(p => ({
-      name: String((p && p.name) || '').trim() || 'Unknown',
-      sector: String((p && p.sector) || '').trim() || '—',
-      faction: normalizeFactionFromOwner(p && p.faction),
-      biome: String((p && p.biome) || '').trim() || '—'
+    if (!cache || typeof cache !== 'object' || !Array.isArray(cache.planets) || !cache.planets.length) return null;
+    if (typeof cache.updatedAt !== 'string') return null;
+    const updatedAt = cache.updatedAt.trim();
+    if (!updatedAt || !Number.isFinite(Date.parse(updatedAt))) return null;
+    const planets = cache.planets.filter(hasMeaningfulPlanetName).map(p => ({
+      name: p.name.trim(),
+      sector: String(p.sector || '').trim() || '—',
+      faction: normalizeFactionFromOwner(p.faction),
+      biome: String(p.biome || '').trim() || '—'
     })).sort((a, b) => a.name.localeCompare(b.name));
-    return { planets, updatedAt: String(cache.updatedAt) };
+    if (!planets.length) return null;
+    return { planets, updatedAt };
   }
 
   function parseActivePlanets(data) {
     if (!Array.isArray(data)) throw new Error('Live planet response was not a list.');
-    const active = data.map(c => c && c.planet).filter(Boolean).filter(p => !p.disabled).map(p => ({
-      name: String(p.name || '').trim() || 'Unknown',
+    const active = data.map(c => c && c.planet).filter(p => hasMeaningfulPlanetName(p) && !p.disabled).map(p => ({
+      name: p.name.trim(),
       sector: String(p.sector || '').trim() || '—',
       faction: normalizeFactionFromOwner(p.currentOwner || p.owner),
       biome: String((p.biome && p.biome.name) || '').trim() || '—'
     })).sort((a, b) => a.name.localeCompare(b.name));
-    if (!active.length && data.length) throw new Error('Live planet response did not include active planets.');
+    if (!active.length) throw new Error('Live planet response did not include active planets.');
     return active;
   }
 
@@ -46,7 +60,7 @@
       const res = await fetcher(LIVE_PLANETS_URL, {
         signal: controller && controller.signal,
         headers: {
-          'X-Super-Client': 'helldivers-2-roulette',
+          'X-Super-Client': 'helldivers-2-chaos-slot-machine',
           'X-Super-Contact': 'https://github.com/'
         }
       });

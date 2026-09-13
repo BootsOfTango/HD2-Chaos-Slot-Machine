@@ -2,7 +2,7 @@
 <!--
 ===============================================================================
 AI MASTER DIRECTIVE
-HELldivers 2 CHAOS ROULETTE — PERFORMANCE STAT LAB
+HELLDIVERS 2 CHAOS SLOT MACHINE — PERFORMANCE STAT LAB
 READ THIS FIRST BEFORE TOUCHING ANY CODE
 ===============================================================================
 
@@ -38,7 +38,7 @@ INTENDED USER WORKFLOW (OPTIMAL USE CASE)
 User edits weapon/stratagem lists once to match real in-game ownership.
 This rarely changes afterward.
 
-Only ENABLED items participate in roulette.
+Only ENABLED items participate in slot-machine rolls.
 
 
 2. LIVE PLANET SOURCE
@@ -299,7 +299,9 @@ END MASTER DIRECTIVE
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Helldivers 2 Chaos Roulette</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src https://api.helldivers2.dev; font-src 'self' data:; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <title>Helldivers 2 Chaos Slot Machine</title>
+    <link rel="icon" type="image/png" href="assets/branding/hd2csm-emblem.png">
     <style>
 
 
@@ -359,6 +361,28 @@ END MASTER DIRECTIVE
                 margin: 0;
                 font-size: 16px;
                 letter-spacing: .2px;
+            }
+
+            header .appBrand {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 0;
+            }
+
+            .appBrandEmblem {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+            }
+
+            .appBrandText {
+                color: #ffe400;
+                font: 900 32px/1 "Arial Black", "Segoe UI", sans-serif;
+                letter-spacing: -1px;
+                -webkit-text-stroke: 2px #000;
+                paint-order: stroke fill;
+                text-shadow: 0 3px 0 #000;
             }
 
             .versionTag {
@@ -1020,6 +1044,34 @@ END MASTER DIRECTIVE
         .resultCard {
             gap: 8px;
             padding: 10px;
+        }
+
+        .resultSummary {
+            position: relative;
+        }
+
+        .resultCard.is-pending {
+            border-style: dashed;
+            border-color: rgba(255, 212, 0, .55);
+        }
+
+        .resultCard.is-pending .resultSummary > * {
+            filter: blur(3px);
+            opacity: .28;
+            pointer-events: none;
+        }
+
+        .resultCard.is-pending .resultSummary::after {
+            content: "EDIT!";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            color: var(--yellow);
+            font-size: 34px;
+            font-weight: 1000;
+            letter-spacing: .16em;
+            text-shadow: 0 2px 12px #000, 0 0 20px rgba(255, 212, 0, .45);
         }
 
         .resultCard.resultCard-newly-created {
@@ -4172,10 +4224,13 @@ END MASTER DIRECTIVE
 
     <header>
         <div class="title">
-            <div class="versionTag">HD2 TANGO Roulette v1.1.0</div>
+            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.0</div>
             <div style="display:flex; align-items:center; gap:14px; position:relative;">
 
-                <h1 style="margin:0;">Helldivers 2 Chaos Roulette</h1>
+                <h1 class="appBrand" aria-label="Helldivers 2 Chaos Slot Machine">
+                    <img src="assets/branding/hd2csm-emblem.png" alt="" class="appBrandEmblem">
+                    <span class="appBrandText" aria-hidden="true">HD2CSM</span>
+                </h1>
 
                 <div style="display:flex; align-items:center; gap:10px; position:relative;">
 
@@ -4209,17 +4264,17 @@ END MASTER DIRECTIVE
 
     <main>
         <div class="tabs">
-            <div class="tabBtn active" data-tab="spin" onclick="switchTab('spin')">1. SPIN</div>
-            <div class="tabBtn" data-tab="results" onclick="switchTab('results')">2. RESULTS</div>
-            <div class="tabBtn" data-tab="compare" onclick="switchTab('compare')">3. COMPARE</div>
-            <div class="tabBtn" data-tab="items" onclick="switchTab('items')">4. ARMORY</div>
-            <div class="tabBtn" data-tab="rank" onclick="switchTab('rank')">5. RANK</div>
+            <div class="tabBtn active" data-tab="spin">1. SPIN</div>
+            <div class="tabBtn" data-tab="results">2. RESULTS</div>
+            <div class="tabBtn" data-tab="compare">3. COMPARE</div>
+            <div class="tabBtn" data-tab="items">4. ARMORY</div>
+            <div class="tabBtn" data-tab="rank">5. RANK</div>
         </div>
 
         <!-- SPIN TAB -->
         <section id="tab-spin" class="panel">
             <div class="btnRow">
-                <button class="btnPrimary" id="btnSpin" onclick="openDifficultyModal()">SPIN LOADOUT</button>
+                <button class="btnPrimary" id="btnSpin">SPIN LOADOUT</button>
                 <button id="btnLock" class="btnGhost" disabled>LOCK LOADOUT</button>
                 <button id="btnReroll" class="btnDanger" style="display:none;">SPECIAL EVENT: REROLL (3)</button>
 
@@ -4269,6 +4324,7 @@ END MASTER DIRECTIVE
                         <div id="planetInfoCards" class="planetCardWrap" style="margin-top:10px; display:none;"></div>
                         <div class="miniRow" id="planetManualSearchWrap" style="margin-top:10px; display:none;">
                             <button id="btnSearchPlanetInline" class="btnGhost">MANUALLY SEARCH FOR PLANET?</button>
+                            <button id="btnRerollPlanetInline" class="btnGhost">REROLL PLANET</button>
                             <button id="btnConfirmPlanetInline" class="btnPrimary" disabled>CONFIRM PLANET</button>
                         </div>
 
@@ -4811,6 +4867,7 @@ END MASTER DIRECTIVE
     </main>
 
     <script src="assets/live-planets.js"></script>
+    <script src="assets/browser-storage-migration.js"></script>
     <script>
         let WIRED_ONCE = false;
         function bindCriticalControls() {
@@ -4851,10 +4908,10 @@ END MASTER DIRECTIVE
 
         function wireDesktopExternalLinks() {
             const youtubeLink = document.getElementById("youtubeChannelLink");
-            if (!youtubeLink || !window.chaosRoulette?.openYouTubeChannel) return;
+            if (!youtubeLink || !window.chaosSlotMachine?.openYouTubeChannel) return;
             youtubeLink.addEventListener("click", (event) => {
                 event.preventDefault();
-                window.chaosRoulette.openYouTubeChannel();
+                window.chaosSlotMachine.openYouTubeChannel();
             });
         }
 
@@ -6316,19 +6373,24 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         /***********************
          * App State
          ***********************/
-        const STORAGE_KEY = "hd2_chaos_roulette_v1";
-        const STORAGE_BACKUP_KEY = "hd2_chaos_roulette_backup_v1";
-        const STORAGE_CORRUPT_KEY = "hd2_chaos_roulette_corrupt_v1";
-        const STORAGE_LOCKED_STATS_AUDIT_KEY = "hd2_chaos_roulette_locked_stats_audit_v1";
+        // The bundled planet catalog lives beside items in DEFAULTS. Include it
+        // in the editable/persisted item pools before any asynchronous boot work.
+        DEFAULTS.items.planets = deepClone(DEFAULTS.planets).map(planet => ({ ...planet, enabled: planet.enabled !== false }));
+        const STORAGE_KEY = "hd2_chaos_slot_machine_v1";
+        const STORAGE_BACKUP_KEY = "hd2_chaos_slot_machine_backup_v1";
+        const STORAGE_CORRUPT_KEY = "hd2_chaos_slot_machine_corrupt_v1";
+        const STORAGE_LOCKED_STATS_AUDIT_KEY = "hd2_chaos_slot_machine_locked_stats_audit_v1";
         const FIRST_BACKUP_WARNING_KEY = "hd2_backup_warning_seen_v1";
         const LIVE_PLANETS_CACHE_KEY = "hd2_live_planets_cache_v1";
         let shouldPersistOnBoot = true;
         let storageLoadComplete = false;
         let pendingSaveAfterLoad = false;
-        const desktopStorage = window.chaosRoulette && typeof window.chaosRoulette.loadState === "function" && typeof window.chaosRoulette.saveState === "function" ? window.chaosRoulette : null;
-        const desktopResourceReader = window.chaosRoulette && typeof window.chaosRoulette.readJsonResource === "function" ? window.chaosRoulette : null;
+        const desktopStorage = window.chaosSlotMachine && typeof window.chaosSlotMachine.loadState === "function" && typeof window.chaosSlotMachine.saveState === "function" ? window.chaosSlotMachine : null;
+        const desktopResourceReader = window.chaosSlotMachine && typeof window.chaosSlotMachine.readJsonResource === "function" ? window.chaosSlotMachine : null;
         const state = {
-            items: null,
+            // Seed core slot-machine data synchronously so an immediate first-launch
+            // spin never depends on disk, IPC, or network initialization.
+            items: deepClone(DEFAULTS.items),
             cards: [],
             ui: {
                 activeResultCardId: null,
@@ -6691,6 +6753,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         }
 
         async function loadState() {
+            // Copy legacy browser keys once without removing the original data.
+            window.HD2CSMStorageMigration.migrateBrowserStorage(localStorage);
             // Always start from defaults
             state.items = deepClone(DEFAULTS.items);
             state.cards = [];
@@ -6704,7 +6768,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 if (result?.data) {
                     loadedData = result.data;
                     if (result.recovered) {
-                        alert("Your save file was damaged, so Helldivers 2 Chaos Roulette recovered your latest valid backup. The damaged file was preserved in the recovery folder.");
+                        alert("Your save file was damaged, so Helldivers 2 Chaos Slot Machine recovered your latest valid backup. The damaged file was preserved in the recovery folder.");
                     }
                 }
             } else {
@@ -7309,7 +7373,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const spinF = String(faction || "").toLowerCase().trim();
             const source = getPlanetPoolSource();
 
-            const pool = source.filter(p => {
+            const matchesFaction = p => {
                 const enabled = (typeof p.enabled === "boolean") ? p.enabled : true;
                 if (!enabled) return false;
 
@@ -7324,21 +7388,19 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 if ((f + "s") === spinF) return true;
 
                 return false;
-            });
-
-            const fallbackPool = source.filter(p => {
-                const enabled = (typeof p.enabled === "boolean") ? p.enabled : true;
-                if (!enabled) return false;
-                const f = String(p.faction || "").toLowerCase().trim();
-                return f !== "super earth" && f !== "not in play";
-            });
-
+            };
+            const pool = source.filter(matchesFaction);
+            // A live front may have no campaign for the rolled faction. Keep
+            // the faction lock by falling back to enabled bundled planets.
+            const fallbackPool = (state.items.planets || []).filter(matchesFaction);
             const finalPool = pool.length ? pool : fallbackPool;
             if (!finalPool.length) return null;
 
             const p = finalPool[randInt(finalPool.length)];
             return {
                 name: p.name,
+                faction: normalizeFactionName(p.faction),
+                source: pool.length && source !== state.items.planets ? "live-or-cached" : "bundled",
                 sector: p.sector || "—",
                 biome: p.biome || "—",
                 weather: p.weather || "—"
@@ -7830,7 +7892,9 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
             const assetPath = String(entry?.assetPath || "").trim();
             const imageUrl = String(entry?.imageUrl || "").trim();
-            const preferRemote = true;
+            // Bundled artwork is the dependable desktop/browser baseline. Remote
+            // URLs remain metadata-only fallbacks and must never delay offline use.
+            const preferRemote = false;
             const primarySrc = preferRemote ? (imageUrl || assetPath || "") : (assetPath || imageUrl || "");
             const fallbackSrc = assetPath && imageUrl
                 ? (preferRemote ? assetPath : imageUrl)
@@ -8081,6 +8145,14 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             return count * 3;
         }
 
+        function isCardComplete(card) {
+            return !!card?.statsLocked;
+        }
+
+        function getMajorOrderScoreMultiplier(card) {
+            return isCardComplete(card) && card?.majorOrderDone === false ? 0.75 : 1;
+        }
+
         function getScoreBonusBreakdown(card, difficulty = getCardDifficulty(card)) {
             const s = normalizeMissionStats(card?.stats, card);
             const legacyRawBonus = Number(card?.scoreRawBonusPercent);
@@ -8098,6 +8170,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 difficultyBonus,
                 extractionBonus,
                 blueSideObjBonus,
+                majorOrderMultiplier: getMajorOrderScoreMultiplier(card),
                 rawBonus: Number.isFinite(legacyRawBonus) ? legacyRawBonus : computedRawBonus
             };
         }
@@ -8109,7 +8182,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
         function formatScoreBonusBreakdown(card) {
             const breakdown = getScoreBonusBreakdown(card);
-            return `D bonus ${formatSignedPercent(breakdown.difficultyBonus)} • Extraction ${formatSignedPercent(breakdown.extractionBonus)} • Blue Obj ${formatSignedPercent(breakdown.blueSideObjBonus)}`;
+            const moEffect = breakdown.majorOrderMultiplier < 1 ? " • MO ×0.75" : "";
+            return `D bonus ${formatSignedPercent(breakdown.difficultyBonus)} • Extraction ${formatSignedPercent(breakdown.extractionBonus)} • Blue Obj ${formatSignedPercent(breakdown.blueSideObjBonus)}${moEffect}`;
         }
 
         function getRawScoreBonusMultiplier(card, difficulty) {
@@ -8118,7 +8192,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 getDifficultyBonusPercent(difficulty) +
                 getExtractionBonusPercent(s.extractedSafely) +
                 getBlueSideObjectivesBonusPercent(s.blueSideObjCount);
-            return 1 + (pct / 100);
+            return (1 + (pct / 100)) * getMajorOrderScoreMultiplier(card);
         }
 
         function getDifficultyBufferedRaw(rawBase, difficulty) {
@@ -8278,7 +8352,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 out[axis.maxKey] = baseline;
             });
 
-            for (const c of (cards || [])) {
+            for (const c of (cards || []).filter(isCardComplete)) {
                 const s = normalizeMissionStats(c?.stats, c);
                 RADAR_AXES.forEach((axis) => {
                     const raw = getRadarAxisRawValue(s, axis);
@@ -8313,7 +8387,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
         function buildRadarSVG(card, maxes, opts = {}) {
             const s = normalizeMissionStats(card?.stats, card);
-            const vals = RADAR_AXES.map((axis) => getRadarAxisNormalizedValue(s, axis, maxes));
+            const moMultiplier = getMajorOrderScoreMultiplier(card);
+            const vals = RADAR_AXES.map((axis) => getRadarAxisNormalizedValue(s, axis, maxes) * moMultiplier);
 
             const renderSize = 250;
             const viewSize = 340;
@@ -8475,9 +8550,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const tA = tierMap ? (tierMap.get(cardA.id) || "") : ((cardA && cardA.tier) || "");
             const tB = tierMap ? (tierMap.get(cardB.id) || "") : ((cardB && cardB.tier) || "");
 
-            if (cardA) cardA.tier = tA || cardA.tier || "";
-            if (cardB) cardB.tier = tB || cardB.tier || "";
-
             const titleStyleA = (tA && typeof tierColor === "function") ? ` style="color:${tierColor(tA)}"` : "";
             const titleStyleB = (tB && typeof tierColor === "function") ? ` style="color:${tierColor(tB)}"` : "";
             const moBadgeA = cardA.majorOrderDone ? '<span class="badge good">MO DONE</span>' : '<span class="badge red">MO FAIL</span>';
@@ -8546,23 +8618,21 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             }
 
             if (overlay) {
-                overlay.innerHTML = `<div class="tiny muted">Click <strong>STACK RADARS</strong> to overlap both cards on a 6-axis radar, then hover each stat wedge to see who wins.<br>Stacked radar uses raw stat values per axis (no Grade/MO size scaling) so winners and % are accurate for any pair.</div>`;
+                overlay.innerHTML = `<div class="tiny muted">Click <strong>STACK RADARS</strong> to overlap both cards on a 6-axis radar, then hover each stat wedge to compare recorded stats.<br>Radar size includes the Major Order adjustment; stat values and percentages show the recorded mission results.</div>`;
             }
             if (insight) insight.textContent = "";
 
-            requestAnimationFrame(() => {
-                cmpRadarReadyA = true;
-                cmpRadarReadyB = true;
-                tryEnableOverlay();
-            });
+            cmpRadarReadyA = !!wrapA.querySelector("svg");
+            cmpRadarReadyB = !!wrapB.querySelector("svg");
+            tryEnableOverlay();
         }
 
         function getCompareVals(card, maxes) {
             const s = normalizeMissionStats(card?.stats, card);
-            // Overlay comparisons must use raw stat-normalized values (no grade/MO scaling),
-            // otherwise a stronger overall grade can incorrectly flip per-axis winners.
+            // Use the same MO adjustment as the individual radars. Numeric
+            // stat comparisons remain the recorded mission values.
             return COMPARE_AXIS_META
-                .map((axisMeta) => getRadarAxisNormalizedValue(s, RADAR_AXES[axisMeta.index], maxes))
+                .map((axisMeta) => getRadarAxisNormalizedValue(s, RADAR_AXES[axisMeta.index], maxes) * getMajorOrderScoreMultiplier(card))
                 .map(v => clamp(v, 0, 1));
         }
 
@@ -8907,6 +8977,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const leagues = ["cadet", "veteran", "helldive"];
             leagues.forEach((leagueTier) => {
                 const ordered = (Array.isArray(state.cards) ? state.cards : [])
+                    .filter(isCardComplete)
                     .filter((card) => cardMatchesTierRange(card, leagueTier))
                     .slice()
                     .sort((a, b) => Number(b?.scoreRaw || 0) - Number(a?.scoreRaw || 0)
@@ -8929,8 +9000,17 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 c.difficulty = getCardDifficulty(c);
             }
 
-            const killTarget = getDynamicKillTarget(state.cards);
-            const cardsWithRaw = state.cards.map((card) => ({
+            const completeCards = state.cards.filter(isCardComplete);
+            state.cards.filter((card) => !isCardComplete(card)).forEach((card) => {
+                card.scoreRaw = 0;
+                card.scoreRawBase = 0;
+                card.scoreRawBonusPercent = 0;
+                card.scoreMajorOrderMultiplier = 1;
+                card.grade = 0;
+            });
+
+            const killTarget = getDynamicKillTarget(completeCards);
+            const cardsWithRaw = completeCards.map((card) => ({
                 card,
                 components: computeRawBaseScore(card, { killTarget }),
                 raw: computeRawScore(card, { killTarget })
@@ -8947,6 +9027,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 card.scoreExtractionBonusPercent = extractionBonus;
                 card.scoreBlueSideObjBonusPercent = blueSideObjBonus;
                 card.scoreRawBonusPercent = difficultyBonus + extractionBonus + blueSideObjBonus;
+                card.scoreMajorOrderMultiplier = getMajorOrderScoreMultiplier(card);
                 card.scoreKillTarget = Math.round(Number(components?.killTarget || killTarget));
                 card.grade = 0;
             });
@@ -9211,10 +9292,15 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                         </div>
                       `;
 
-                // hide redundant summary line
+                // Identify when a planet is from the bundled catalog rather
+                // than implying it is part of the current live front.
                 if (tinyLine) {
-                    tinyLine.style.display = "none";
-                    tinyLine.textContent = "";
+                    tinyLine.style.display = "";
+                    tinyLine.textContent = c.planet.source === "bundled"
+                        ? "Bundled planet catalog • not live campaign data"
+                        : c.planet.source === "live-or-cached"
+                            ? `Live/cached planet list • updated ${formatLivePlanetsUpdatedAt(getCachedLivePlanets()?.updatedAt)}`
+                            : "Manually selected planet";
                 }
             } else {
                 // hide cards
@@ -9230,6 +9316,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             if (planetManualWrap) planetManualWrap.style.display = c.planet ? "" : "none";
             const btnSearchPlanetInline = $("#btnSearchPlanetInline");
             if (btnSearchPlanetInline) btnSearchPlanetInline.disabled = !hasDifficultySelection || c.spinning || c.planetConfirmed;
+            const btnRerollPlanetInline = $("#btnRerollPlanetInline");
+            if (btnRerollPlanetInline) btnRerollPlanetInline.disabled = !hasDifficultySelection || !c.planet || c.spinning || c.planetConfirmed;
             const btnConfirmPlanetInline = $("#btnConfirmPlanetInline");
             if (btnConfirmPlanetInline) {
                 btnConfirmPlanetInline.disabled = !isReadyForPlanetConfirm;
@@ -9366,13 +9454,16 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             let highlightedCardEl = null;
 
             for (const card of list) {
-                const moBadge = card.majorOrderDone ? `<span class="badge good">MO DONE</span>` : `<span class="badge red">MO NO</span>`;
+                const complete = isCardComplete(card);
+                const moBadge = !complete
+                    ? `<span class="badge yellow">EDIT STATS</span>`
+                    : (card.majorOrderDone ? `<span class="badge good">MO DONE</span>` : `<span class="badge red">MO FAIL</span>`);
                 const placementTier = tierMap.get(card.id) || "";
                 const difficultyTier = resolveCardDifficultyTier(card);
                 const factionClass = getFactionClass(card.faction);
                 const factionStickerData = getFactionStickerData(card.faction);
                 const el = document.createElement("div");
-                el.className = "card resultCard" + (placementTier ? ` tier-${placementTier}` : "");
+                el.className = "card resultCard" + (placementTier ? ` tier-${placementTier}` : "") + (complete ? "" : " is-pending");
                 if (pendingNewCardHighlightId && card.id === pendingNewCardHighlightId) {
                     el.classList.add("resultCard-newly-created");
                     highlightedCardEl = el;
@@ -9407,7 +9498,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                           </div>
                         </div>
                         <div class="radarWrap resultSummaryRadar">
-                          ${buildRadarSVG(card, radarMaxes)}
+                          ${complete ? buildRadarSVG(card, radarMaxes) : `<div class="tiny">Radar available after stats are finalized.</div>`}
                         </div>
                       </button>`;
 
@@ -9435,13 +9526,14 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function getAllTierResultsTotals() {
             const savedCards = (Array.isArray(state.cards) ? state.cards : [])
                 .filter(card => card && typeof card === "object")
+                .filter(isCardComplete)
                 .map(card => getNormalizedCardView(card))
                 .filter(Boolean);
 
             return savedCards.reduce((acc, card) => {
                 acc.cardCount += 1;
                 acc.gradeSum += clamp(Math.round(Number(card.grade || 0)), 0, 100);
-                acc.rawSum += clamp(Number(card.scoreRaw || 0), 0, 500);
+                acc.rawSum += Math.max(0, Number(card.scoreRaw || 0));
                 return acc;
             }, { cardCount: 0, gradeSum: 0, rawSum: 0 });
         }
@@ -10097,7 +10189,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function getDiscordRadarValues(card) {
             const maxes = getRadarMaxes(state.cards || []);
             const s = normalizeMissionStats(card?.stats, card);
-            return RADAR_AXES.map((axis) => getRadarAxisNormalizedValue(s, axis, maxes));
+            return RADAR_AXES.map((axis) => getRadarAxisNormalizedValue(s, axis, maxes) * getMajorOrderScoreMultiplier(card));
         }
 
         function getDiscordTierVisual(tier) {
@@ -10561,6 +10653,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         }
 
         function showFirstTimeBackupWarning() {
+            if (window.chaosSlotMachine?.isTestHarness) return;
             try {
                 const alreadySeen = localStorage.getItem(FIRST_BACKUP_WARNING_KEY) === "1";
                 if (alreadySeen) return;
@@ -10573,70 +10666,9 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         /***********************
          * Compare
          ***********************/
-        function refreshCompareOptions() {
-            const a = $("#cmpA"), b = $("#cmpB");
-            if (!a || !b) return;
-
-            const prevA = a.value, prevB = b.value;
-
-            const opts = state.cards
-                .slice()
-                .sort((x, y) => String(y?.createdAt || "").localeCompare(String(x?.createdAt || "")))
-                .map(c => ({ id: c.id, text: `${getPlayerName(c)} • ${c.seed} • ${c.mode} • ${c.faction} • ${formatDifficultyLabel(c)} • Grade ${c.grade || 0}` }));
-
-            const build = (sel) => {
-                sel.innerHTML = "";
-                const o0 = document.createElement("option");
-                o0.value = "";
-                o0.textContent = "Select a card...";
-                sel.appendChild(o0);
-                for (const o of opts) {
-                    const opt = document.createElement("option");
-                    opt.value = o.id;
-                    opt.textContent = o.text;
-                    sel.appendChild(opt);
-                }
-            };
-            build(a); build(b);
-
-            a.value = prevA || "";
-            b.value = prevB || "";
-
-            // Auto-pick sensible defaults so COMPARE isn't blank on entry
-            if (!a.value && opts.length) a.value = opts[0].id;
-            if (!b.value && opts.length) b.value = opts[Math.min(1, opts.length - 1)].id;
-
-            // Avoid same-card vs same-card unless user explicitly chose it
-            if (a.value && b.value && a.value === b.value && opts.length > 1) {
-                b.value = opts.find(o => o.id !== a.value)?.id || b.value;
-            }
-            // Metric dropdowns for graph (optional; some builds remove the graph UI)
-            const gx = $("#gX"), gy = $("#gY");
-            if (gx && gy) {
-                const prevX = normalizeCompareMetricKey(gx.value, "kills");
-                const prevY = normalizeCompareMetricKey(gy.value, "deaths");
-                gx.innerHTML = ""; gy.innerHTML = "";
-                for (const m of COMPARE_METRICS) {
-                    const ox = document.createElement("option");
-                    ox.value = m.k;
-                    ox.textContent = m.label;
-                    gx.appendChild(ox);
-
-                    const oy = document.createElement("option");
-                    oy.value = m.k;
-                    oy.textContent = m.label;
-                    gy.appendChild(oy);
-                }
-                gx.value = normalizeCompareMetricKey(prevX, "kills");
-                gy.value = normalizeCompareMetricKey(prevY, "deaths");
-            }
-
-            renderCompare();
-            if (typeof updateCompareRadar === "function") updateCompareRadar();
-        }
-
         function metricValue(card, k) {
             if (k === "majorOrderDone") return card?.majorOrderDone ? 1 : 0;
+            if (k === "deaths" || k === "stims") return Number(normalizeMissionStats(card?.stats, card)[k]);
             const metricKey = normalizeCompareMetricKey(k, "");
             if (!metricKey) return 0;
             if (metricKey === "grade") return Number(card.grade || 0);
@@ -10654,7 +10686,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
         function getCardsForCompareScope(scope = "all") {
             const normalizedScope = String(scope || "all").toLowerCase();
-            let scoped = (Array.isArray(state.cards) ? state.cards.slice() : []);
+            let scoped = (Array.isArray(state.cards) ? state.cards.filter(isCardComplete) : []);
             if (["cadet", "veteran", "helldive"].includes(normalizedScope)) {
                 scoped = scoped.filter(card => cardMatchesTierRange(card, normalizedScope));
             }
@@ -10889,7 +10921,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const fMode = $("#gFilterMode").value;
             const contains = normalizeText($("#gFilterHas").value);
 
-            let list = state.cards.slice();
+            let list = state.cards.filter(isCardComplete);
             if (fFaction) list = list.filter(c => c.faction === fFaction);
             if (fMode) list = list.filter(c => c.mode === fMode);
 
@@ -11540,7 +11572,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 list.forEach(item => ensure(type, item?.name));
             });
 
-            const ranked = sortCardsByRankOrder(state.cards || []).filter(c => c.isComplete !== false);
+            const ranked = sortCardsByRankOrder((state.cards || []).filter(isCardComplete));
             const rainbowCardIds = new Set(
                 ranked
                     .map((card, idx) => ({ card, tier: tierForPlace(idx + 1) }))
@@ -11556,13 +11588,14 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 if (isRainbowTop) row.rainbowTopCount += 1;
             };
 
-            (state.cards || []).forEach(card => {
+            (state.cards || []).filter(isCardComplete).forEach(card => {
                 const moDone = !!card?.majorOrderDone;
                 const isRainbowTop = rainbowCardIds.has(card?.id);
                 bump("primary", card?.primary, moDone, isRainbowTop);
                 bump("sidearm", card?.sidearm, moDone, isRainbowTop);
                 bump("throwable", card?.throwable, moDone, isRainbowTop);
                 (card?.stratagems || []).forEach(name => bump("stratagem", name, moDone, isRainbowTop));
+                bump("booster", card?.booster, moDone, isRainbowTop);
             });
 
             const rows = Array.from(map.values());
@@ -11850,29 +11883,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             return !!state?.ui?.apiPlanetSyncInProgress;
         }
 
-        function syncEditablePlanetsToLiveActive(active) {
-            if (!Array.isArray(active) || !active.length) return;
-
-            const existingByName = new Map(
-                (state.items.planets || []).map(p => [normalizeText(p.name), p])
-            );
-
-            state.items.planets = active.map(p => {
-                const prev = existingByName.get(normalizeText(p.name));
-                return {
-                    name: p.name,
-                    faction: p.faction || prev?.faction || "Unknown",
-                    sector: p.sector || prev?.sector || "—",
-                    biome: p.biome || prev?.biome || "—",
-                    weather: prev?.weather || getFallbackPlanetConditionsByName(p.name) || "—",
-                    enabled: (typeof prev?.enabled === "boolean") ? prev.enabled : true
-                };
-            });
-
-            saveState();
-            renderPlanets();
-        }
-
         function renderApiActivePlanetsRows(active) {
             const box = $("#apiActivePlanetsList");
             if (!box) return;
@@ -11942,11 +11952,11 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const cached = getCachedLivePlanets();
             if (cached) {
                 window.__apiActivePlanetsCache = cached.planets;
-                status.textContent = `${message} Showing cached live planets from ${formatLivePlanetsUpdatedAt(cached.updatedAt)}. Built-in planets remain available for roulette.`;
+                status.textContent = `${message} Showing cached live planets from ${formatLivePlanetsUpdatedAt(cached.updatedAt)}. Built-in planets remain available for spins.`;
                 renderApiActivePlanetsRows(cached.planets);
             } else {
                 window.__apiActivePlanetsCache = [];
-                status.textContent = `${message} Core roulette features are ready offline using the built-in planet list.`;
+                status.textContent = `${message} Core slot-machine features are ready offline using the built-in planet list.`;
                 box.innerHTML = `<div class="tiny">Live planets require internet. Spin, difficulty selection, built-in planet selection, card creation, results, compare, armory, rank, save, import, and export still work offline.</div>`;
             }
         }
@@ -11958,7 +11968,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             if (isApiPlanetSyncInProgress()) return;
 
             state.ui.apiPlanetSyncInProgress = true;
-            status.textContent = manual ? "Refreshing live planets (internet optional)..." : "Checking for live planets briefly. Offline roulette is ready.";
+            status.textContent = manual ? "Refreshing live planets (internet optional)..." : "Checking for live planets briefly. Offline spins are ready.";
             if (!manual && !box.innerHTML.trim()) renderCachedOrOfflineApiPlanets("Live planet data has not been refreshed yet.");
             renderSpin();
 
@@ -11967,7 +11977,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 const cached = setCachedLivePlanets(active);
                 status.textContent = `Live API returned ${active.length} active planets. Last updated ${formatLivePlanetsUpdatedAt(cached.updatedAt)}.`;
                 window.__apiActivePlanetsCache = active;
-                syncEditablePlanetsToLiveActive(active);
                 renderApiActivePlanetsRows(active);
             } catch (err) {
                 console.warn("[API planets] failed", err);
@@ -12276,9 +12285,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             });
             const rankScopeState = $("#rankScopeState");
             if (rankScopeState) {
+                const completedCards = (Array.isArray(state.cards) ? state.cards : []).filter(isCardComplete);
                 const filteredCount = hasActiveTier
-                    ? state.cards.filter(card => cardMatchesTierRange(card, activeTier)).length
-                    : (Array.isArray(state.cards) ? state.cards.length : 0);
+                    ? completedCards.filter(card => cardMatchesTierRange(card, activeTier)).length
+                    : completedCards.length;
                 const baseText = hasActiveTier
                     ? `${getDifficultyTierLabel(activeTier)} filter active • ${getTierRangeLabel(activeTier)} • ${filteredCount} card${filteredCount === 1 ? "" : "s"} from Results.`
                     : `Showing all Results cards grouped by difficulty tier • ${filteredCount} card${filteredCount === 1 ? "" : "s"}.`;
@@ -12317,13 +12327,14 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function getAllTierRankTotals() {
             const savedCards = (Array.isArray(state.cards) ? state.cards : [])
                 .filter(card => card && typeof card === "object")
+                .filter(isCardComplete)
                 .map(card => getNormalizedCardView(card))
                 .filter(Boolean);
 
             return savedCards.reduce((acc, card) => {
                 acc.cardCount += 1;
                 acc.gradeSum += clamp(Math.round(Number(card.grade || 0)), 0, 100);
-                acc.rawSum += clamp(Number(card.scoreRaw || 0), 0, 500);
+                acc.rawSum += Math.max(0, Number(card.scoreRaw || 0));
                 return acc;
             }, { cardCount: 0, gradeSum: 0, rawSum: 0 });
         }
@@ -12430,6 +12441,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
             const list = (Array.isArray(state.cards) ? state.cards : [])
                 .filter(card => card && typeof card === "object")
+                .filter(isCardComplete)
                 .map(card => getNormalizedCardView(card))
                 .filter(Boolean)
                 .sort((a, b) => Number(b?.scoreRaw || 0) - Number(a?.scoreRaw || 0)
@@ -12545,7 +12557,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 if (box && !box.children.length) {
                     box.innerHTML = `<div class="tiny" style="padding:8px 10px; border:1px solid var(--line2); border-radius:10px; background:rgba(0,0,0,.22);">Unable to render rank right now. Try changing tiers or refreshing the page.</div>`;
                 }
-                const tierFiltered = Array.isArray(state?.cards) ? state.cards.filter((card) => !activeTier || cardMatchesTierRange(card, activeTier)) : [];
+                const tierFiltered = Array.isArray(state?.cards) ? state.cards.filter(isCardComplete).filter((card) => !activeTier || cardMatchesTierRange(card, activeTier)) : [];
                 try { renderItemInsights(tierFiltered); } catch (insightErr) { console.error("[rank] fallback insights failed", insightErr); }
             }
         }
@@ -12625,7 +12637,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             if (!state.current) {
                 state.current = {};
             }
-            if (!state.current.difficultySelected) return;
+            if (state.current.spinning || !state.current.difficultySelected) return;
 
             const loadout = rollLoadout(null);
 
@@ -12675,17 +12687,18 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         }
 
         function doReroll() {
-            if (!state.current.specialActive || state.current.rerollsLeft <= 0) return;
-            state.current.rerollsLeft -= 1;
-
+            if (state.current.spinning || state.current.locked || !state.current.specialActive || state.current.rerollsLeft <= 0) return;
             const loadout = rollLoadout(null);
+            if (!loadout) { alert("LOADOUT FAILED: No enabled items found."); return; }
+            state.current.rerollsLeft -= 1;
             state.current.seed = null;
             state.current.seedBase = null;
             state.current.mode = null;
             state.current.manualModeDraft = null;
             state.current.modeApplied = false;
             state.current.modeConfirmed = false;
-            state.current.faction = normalizeFactionName(loadout.faction);
+            state.current.faction = null;
+            state.current._pendingFaction = normalizeFactionName(loadout.faction);
             state.current.loadout = loadout;
             state.current.locked = false;
             state.current.planet = null;
@@ -12701,15 +12714,17 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 state.current.rerollsLeft = 0;
             }
 
+            state.current.spinning = true;
             togglePlanetSearchPanel(false);
             renderSpin();
-            spinReelsForLoadout(loadout);
+            spinReelsForLoadout(loadout).then(() => {
+                state.current.spinning = false;
+                renderSpin();
+            });
         }
 
         function doLock() {
-            if (!state.current.loadout || !state.current.difficultySelected) return;
-            // safety reset in case spinning got stuck
-            state.current.spinning = false;
+            if (state.current.spinning || state.current.locked || !state.current.loadout || !state.current.difficultySelected) return;
 
             state.current.mode = null;
             state.current.manualModeDraft = null;
@@ -12760,7 +12775,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             if (state.current.planetConfirmed) return;
             const p = rollPlanetForFaction(state.current.faction);
             if (!p) {
-                alert("No planets available from active API list right now. Check ITEMS tab and refresh active planets.");
+                alert("No enabled planets are available for this faction. Enable planets in Armory or restore defaults.");
                 return;
             }
             const pc = deepClone(p);
@@ -12797,11 +12812,11 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function doClearPlanet() {
             // Renamed behavior: "REROLL PLANET" (roll again instead of clearing)
             if (!state.current.loadout || !state.current.locked) return;
-            if (state.current.planetConfirmed) return;
+            if (state.current.planetConfirmed || state.current.spinning) return;
 
             const p = rollPlanetForFaction(state.current.faction);
             if (!p) {
-                alert("No planets available from active API list right now. Check ITEMS tab and refresh active planets.");
+                alert("No enabled planets are available for this faction. Enable planets in Armory or restore defaults.");
                 return;
             }
             const pc = deepClone(p);
@@ -13029,7 +13044,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             renderItems();
             renderSpin();
             renderResults();
-            updateSavedCount();
+            updateHeaderPills();
             refreshCompareOptions();
             safeRenderRank(context);
             drawGraph();
@@ -13045,7 +13060,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 return;
             }
             const payload = JSON.stringify({ items: data.items, cards: data.cards, settings: data.settings }, null, 2);
-            const filename = `hd2_roulette_browser_export_${new Date().toISOString().slice(0, 10)}.json`;
+            const filename = `hd2_chaos_slot_machine_browser_export_${new Date().toISOString().slice(0, 10)}.json`;
             download(filename, payload);
         }
 
@@ -13059,7 +13074,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             if (desktopStorage?.importJson && !file) {
                 const result = await desktopStorage.importJson();
                 if (!result || result.canceled) return;
-                if (!result.ok) { alert(result.error || "Import failed. That file is not a supported roulette JSON export."); return; }
+                if (!result.ok) { alert(result.error || "Import failed. That file is not a supported slot-machine JSON export."); return; }
                 applyImportedData(result.data);
                 storageLoadComplete = true;
                 refreshAllDataViews("importJSONFile");
@@ -13075,14 +13090,14 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     refreshAllDataViews("importJSONFile");
                     alert("Import complete.");
                 } catch (err) {
-                    alert(`Import failed. ${err?.message || "That file is not valid roulette JSON."}`);
+                    alert(`Import failed. ${err?.message || "That file is not valid slot-machine JSON."}`);
                 }
             };
             reader.readAsText(file);
         }
 
         async function clearAllData() {
-            const message = "CLEAR ALL DATA will erase saved loadout cards, mission stats, item ownership changes, remembered player name, current spin details, rank comparisons, and roulette settings from the working desktop save. A final recovery backup will be created first. Type CLEAR ALL DATA to continue.";
+            const message = "CLEAR ALL DATA will erase saved loadout cards, mission stats, item ownership changes, remembered player name, current spin details, rank comparisons, and slot-machine settings from the working save. A final recovery backup will be created first. Type CLEAR ALL DATA to continue.";
             const typed = prompt(message, "");
             if (typed !== "CLEAR ALL DATA") return;
             const blankData = { items: deepClone(DEFAULTS.items), cards: [], settings: { rememberedPlayerName: "" } };
@@ -13399,6 +13414,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 togglePlanetSearchPanel();
             });
             $("#btnConfirmPlanetInline")?.addEventListener("click", () => doUseThisRun());
+            $("#btnRerollPlanetInline")?.addEventListener("click", () => doClearPlanet());
             $("#planetSearchInput").addEventListener("input", () => {
                 renderPlanetSearchResults();
             });
@@ -13430,8 +13446,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const a = $("#cmpA"), b = $("#cmpB");
             if (!a || !b) return;
 
-            recalcGrades();
-
             // Apply search + sort to the dropdown list shown in compare selectors
             const sortMetric = $("#cmpSortMetric")?.value || "grade";
             const sortDir = $("#cmpSortDir")?.value || "desc";
@@ -13439,7 +13453,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const searchCategory = ($("#cmpSearchCategory")?.value || "all").toLowerCase();
             const q = normalizeText($("#cmpSearch")?.value || "");
 
-            let list = state.cards.slice();
+            let list = state.cards.filter(isCardComplete);
             if (["cadet", "veteran", "helldive"].includes(scope)) {
                 list = list.filter(c => cardMatchesTierRange(c, scope));
             }
@@ -13569,6 +13583,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             }
 
             renderCompare();
+            if (typeof updateCompareRadar === "function") updateCompareRadar();
         }
 
         /***********************
@@ -13586,6 +13601,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         // Wire UI controls first so tabs/buttons remain clickable.
         wireOnce();
         const bootStateReady = loadState().catch((err) => {
+            shouldPersistOnBoot = false;
             console.error("[boot] loadState failed; resetting runtime state", err);
             state.items = deepClone(DEFAULTS.items);
             state.cards = [];

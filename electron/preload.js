@@ -1,6 +1,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('chaosRoulette', Object.freeze({
+const desktopApi = Object.freeze({
+  isTestHarness: process.argv.includes('--hd2csm-test-harness'),
   getAppInfo: () => ipcRenderer.invoke('app:getInfo'),
   openYouTubeChannel: () => ipcRenderer.invoke('links:openYouTubeChannel'),
   readJsonResource: (resourcePath) => ipcRenderer.invoke('resources:readJson', resourcePath),
@@ -10,4 +11,8 @@ contextBridge.exposeInMainWorld('chaosRoulette', Object.freeze({
   importJson: () => ipcRenderer.invoke('storage:importJson'),
   clearAll: (data) => ipcRenderer.invoke('storage:clearAll', data),
   openSaveFolder: () => ipcRenderer.invoke('storage:openSaveFolder')
-}));
+});
+
+contextBridge.exposeInMainWorld('chaosSlotMachine', desktopApi);
+// Temporary compatibility bridge for the previous renderer and existing exports.
+contextBridge.exposeInMainWorld('chaosRoulette', desktopApi);

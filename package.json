@@ -1,22 +1,25 @@
 {
-  "name": "helldivers-2-chaos-roulette",
+  "name": "helldivers-2-chaos-slot-machine",
   "version": "1.1.0",
-  "description": "Desktop wrapper for Helldivers 2 Chaos Roulette.",
+  "description": "Desktop wrapper for Helldivers 2 Chaos Slot Machine.",
   "main": "electron/main.js",
   "private": true,
   "author": "Boots Of Tango",
   "license": "SEE LICENSE IN LICENSE.txt",
   "scripts": {
+    "prestart": "npm run prepare:icons",
     "start": "electron .",
+    "predev": "npm run prepare:icons",
     "dev": "electron . --dev",
     "prepare:icons": "node scripts/create_icon.js",
     "prebuild:win": "npm run validate:catalog && npm run validate:assets && npm run prepare:icons",
-    "build:win": "electron-builder --config electron-builder.config.js --win zip --x64",
+    "build:win": "electron-builder --config electron-builder.config.js --win zip nsis --x64",
     "test": "node --test && npm run validate:catalog && npm run validate:assets",
+    "test:electron": "node scripts/run-electron-smoke.js",
     "validate:assets": "python scripts/validate_assets.py",
     "validate:catalog": "python scripts/validate_item_catalog.py",
     "release:win": "npm run build:win && python scripts/verify_win_zip.py",
-    "release:win:signed": "node scripts/with_windows_signing_required.js npm run build:win && pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/verify_windows_signature.ps1 && python scripts/verify_win_zip.py"
+    "release:win:signed": "node scripts/with_windows_signing_required.js npm run build:win && python scripts/verify_win_zip.py && pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/verify_windows_signature.ps1"
   },
   "devDependencies": {
     "electron": "^43.3.0",

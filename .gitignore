@@ -13,6 +13,9 @@ assets/stratagems/exosuits/*
 !assets/weapons/primaries/.gitkeep
 !assets/weapons/sidearms/.gitkeep
 !assets/weapons/throwables/.gitkeep
+!assets/weapons/primaries/*-wiki.*
+!assets/weapons/sidearms/*-wiki.*
+!assets/weapons/throwables/*-wiki.*
 !assets/stratagems/support/.gitkeep
 !assets/stratagems/orbital/.gitkeep
 !assets/stratagems/eagle/.gitkeep
@@ -47,3 +50,9 @@ out/
 
 # Local test screenshots
 /test-artifacts/
+/.test-data/
+
+# Generated Python cache and local installer shortcut
+__pycache__/
+*.pyc
+/Helldivers 2 Chaos Slot Machine.lnk

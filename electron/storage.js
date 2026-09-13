@@ -56,7 +56,7 @@ function validatePayload(payload) {
 
 function validateImportData(data) {
   validateData(data);
-  if (!data.items && !data.cards && !data.settings) throw friendlyError('That JSON does not contain supported roulette data.');
+  if (!data.items && !data.cards && !data.settings) throw friendlyError('That JSON does not contain supported Chaos Slot Machine data.');
   return true;
 }
 
@@ -133,7 +133,7 @@ function loadStateFile(userDataPath) {
 function importStateFile(userDataPath, importFilePath, appVersion = safePackageVersion()) {
   const stat = fs.statSync(importFilePath);
   if (!stat.isFile()) throw friendlyError('Please choose a JSON file.');
-  if (stat.size > MAX_IMPORT_BYTES) throw friendlyError('That import file is too large. Please choose a roulette JSON export under 5 MB.');
+  if (stat.size > MAX_IMPORT_BYTES) throw friendlyError('That import file is too large. Please choose a Chaos Slot Machine JSON export under 5 MB.');
   const data = parseImport(fs.readFileSync(importFilePath, 'utf8'));
   const backup = backupCurrentState(userDataPath, 'state-before-import');
   const saved = saveStateFile(userDataPath, data, appVersion);

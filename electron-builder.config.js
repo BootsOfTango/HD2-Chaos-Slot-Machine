@@ -24,6 +24,12 @@ const win = {
       target: 'zip',
       arch: ['x64'],
     },
+    {
+      // `nsis` embeds the application payload. Unlike `nsis-web`, the finished
+      // installer does not need an internet connection to install the app.
+      target: 'nsis',
+      arch: ['x64'],
+    },
   ],
   icon: 'build/icon.ico',
 };
@@ -45,8 +51,10 @@ if (enableSigning) {
 }
 
 module.exports = {
-  productName: 'Helldivers 2 Chaos Roulette',
-  appId: 'com.bootsoftango.helldivers2chaosroulette',
+  productName: 'Helldivers 2 Chaos Slot Machine',
+  executableName: 'Helldivers 2 Chaos Slot Machine',
+  appId: 'com.bootsoftango.helldivers2chaosslotmachine',
+  forceCodeSigning: requireSigning,
   files: [
     'index.html',
     'electron/**/*',
@@ -76,7 +84,22 @@ module.exports = {
     buildResources: 'build',
   },
   win,
-  artifactName: 'Helldivers-2-Roulette-Windows.${ext}',
+  // Keep this in sync with scripts/verify_win_zip.py and the release workflow.
+  artifactName: 'Helldivers-2-Chaos-Slot-Machine-v${version}-win-${arch}.${ext}',
+  nsis: {
+    // Keep the installer distinguishable from the portable ZIP while retaining
+    // the same version/architecture fields used by release automation.
+    artifactName: 'Helldivers-2-Chaos-Slot-Machine-Setup-v${version}-win-${arch}.${ext}',
+    oneClick: false,
+    perMachine: false,
+    allowElevation: true,
+    allowToChangeInstallationDirectory: true,
+    createDesktopShortcut: true,
+    createStartMenuShortcut: true,
+    shortcutName: 'Helldivers 2 Chaos Slot Machine',
+    uninstallDisplayName: 'Helldivers 2 Chaos Slot Machine',
+    deleteAppDataOnUninstall: false,
+  },
   extraFiles: [
     {
       from: 'README-FIRST.txt',
