@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-13 — v1.1.2 local gear/ownership preview (unpublished)
+
+- Added the four Castellan's Creed equipment items and separate Eagle Gas Airstrike campaign reward, all excluded until the player chooses ownership and inclusion.
+- Added a compact new-gear review panel, local Warbond cover/item artwork, and explicit four-item bulk enable.
+- Introduced stable gear IDs, aliases, independent Owned/Include state, and backward-compatible imports preserving legacy eligibility and historical Results.
+- Removed the all-disabled fallback that could roll excluded equipment; empty gear categories now explain what needs enabling.
+- Preserved corrected weapon/booster art during catalog regeneration and retained artwork provenance/hashes.
+- Documented the Eagle icon as a credited community tracing, not an extracted official icon. Broader artwork rights review remains a public-release gate.
+- This is M2A only. Existing Warbond/source assignments still need a complete audit; live-war, visual Armory, missions and map are queued. See `docs/M2_TEST_REPORT.md`.
+
 ## 2026-09-13 — v1.1.1 local fullscreen preview (unpublished)
 
 - Restored a separate source checkout; preserved the existing runtime installation and personal saves.

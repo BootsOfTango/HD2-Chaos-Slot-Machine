@@ -1,13 +1,148 @@
 {
-  "version": 1,
+  "version": 2,
+  "warbonds": [
+    {
+      "id": "warbond:castellans-creed",
+      "name": "Castellan's Creed",
+      "edition": "Legendary Warbond",
+      "releasedAt": "2026-08-12",
+      "coverAssetPath": "assets/new-gear/castellans-creed-cover.png",
+      "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/",
+      "equipmentIds": [
+        "primary:r-40-k-hot-shot",
+        "sidearm:p-40-k-bolt-pistol",
+        "throwable:g-40-k-melta-mine",
+        "stratagem:40-k-meltagun"
+      ],
+      "notes": "Four rollable equipment additions; no booster announced. Armor and cosmetics are not part of equipment roulette. Warbond ownership does not mean every item has been redeemed."
+    }
+  ],
   "items": [
+    {
+      "id": "primary:r-40-k-hot-shot",
+      "name": "R/40-K Hot-Shot Marksman Rifle",
+      "aliases": [
+        "R-40-K Hot-Shot",
+        "Hot-Shot Marksman Rifle"
+      ],
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Castellan's Creed",
+      "source": "Castellan's Creed",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:castellans-creed",
+        "label": "Castellan's Creed Legendary Warbond",
+        "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/",
+        "verifiedAt": "2026-09-13"
+      },
+      "assetPath": "assets/new-gear/r-40-k-hot-shot.png",
+      "introducedIn": "1.1.2",
+      "defaultEnabled": false
+    },
+    {
+      "id": "sidearm:p-40-k-bolt-pistol",
+      "name": "P/40-K Bolt Pistol",
+      "aliases": [
+        "P-40-K Bolt Pistol",
+        "Bolt Pistol"
+      ],
+      "type": "sidearm",
+      "subgroup": "pistol",
+      "warbond": "Castellan's Creed",
+      "source": "Castellan's Creed",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:castellans-creed",
+        "label": "Castellan's Creed Legendary Warbond",
+        "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/",
+        "verifiedAt": "2026-09-13"
+      },
+      "assetPath": "assets/new-gear/p-40-k-bolt-pistol.png",
+      "introducedIn": "1.1.2",
+      "defaultEnabled": false
+    },
+    {
+      "id": "throwable:g-40-k-melta-mine",
+      "name": "G/40-K Melta Mine",
+      "aliases": [
+        "G/40-K Meltamine",
+        "Meltamine",
+        "Melta Mine"
+      ],
+      "type": "throwable",
+      "subgroup": "mine",
+      "warbond": "Castellan's Creed",
+      "source": "Castellan's Creed",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:castellans-creed",
+        "label": "Castellan's Creed Legendary Warbond",
+        "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/",
+        "verifiedAt": "2026-09-13"
+      },
+      "assetPath": "assets/new-gear/g-40-k-melta-mine.png",
+      "introducedIn": "1.1.2",
+      "defaultEnabled": false
+    },
+    {
+      "id": "stratagem:40-k-meltagun",
+      "name": "40-K Meltagun",
+      "aliases": [
+        "40-K Meltagun Stratagem",
+        "Meltagun"
+      ],
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Castellan's Creed",
+      "source": "Castellan's Creed",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:castellans-creed",
+        "label": "Castellan's Creed Legendary Warbond",
+        "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/",
+        "verifiedAt": "2026-09-13"
+      },
+      "assetPath": "assets/new-gear/40-k-meltagun.png",
+      "introducedIn": "1.1.2",
+      "defaultEnabled": false
+    },
+    {
+      "id": "stratagem:eagle-gas-airstrike",
+      "name": "Eagle Gas Airstrike",
+      "aliases": [],
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Campaign rewards",
+      "source": "Campaign rewards",
+      "acquisition": {
+        "kind": "campaign-reward",
+        "id": "campaign:counterdissident-hammer",
+        "label": "Counterdissident Hammer campaign reward",
+        "sourceUrl": "https://arrowhead.zendesk.com/hc/en-us/articles/29563053705500-I-didn-t-get-a-campaign-reward",
+        "verifiedAt": "2026-09-13",
+        "startsAt": "2026-08-25T12:00:00Z",
+        "endsAt": "2026-09-07T08:00:00Z",
+        "notes": "Not universally owned. Players who missed the campaign must wait for a future availability announcement."
+      },
+      "assetPath": "assets/new-gear/eagle-gas-airstrike.svg",
+      "introducedIn": "1.1.2",
+      "defaultEnabled": false
+    },
     {
       "name": "AR-2 Coyote",
       "type": "primary",
       "subgroup": "assault-rifle",
       "warbond": "Dust Devils",
       "source": "Dust Devils",
-      "assetPath": "assets/weapons/primaries/ar-2-coyote.png"
+      "assetPath": "assets/weapons/primaries/ar-2-coyote-wiki.png",
+      "id": "primary:ar-2-coyote",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Dust Devils",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-23 Liberator",
@@ -15,7 +150,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/ar-23-liberator.png"
+      "assetPath": "assets/weapons/primaries/ar-23-liberator-wiki.png",
+      "id": "primary:ar-23-liberator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-23A Liberator Carbine",
@@ -23,7 +165,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Viper Commandos",
       "source": "Viper Commandos",
-      "assetPath": "assets/weapons/primaries/ar-23a-liberator-carbine.png"
+      "assetPath": "assets/weapons/primaries/ar-23a-liberator-carbine-wiki.png",
+      "id": "primary:ar-23a-liberator-carbine",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Viper Commandos",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-23C Liberator Concussive",
@@ -31,7 +180,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Steeled Veterans",
       "source": "Steeled Veterans",
-      "assetPath": "assets/weapons/primaries/ar-23c-liberator-concussive.png"
+      "assetPath": "assets/weapons/primaries/ar-23c-liberator-concussive-wiki.png",
+      "id": "primary:ar-23c-liberator-concussive",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Steeled Veterans",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-23P Liberator Penetrator",
@@ -39,7 +195,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/ar-23p-liberator-penetrator.png"
+      "assetPath": "assets/weapons/primaries/ar-23p-liberator-penetrator-wiki.png",
+      "id": "primary:ar-23p-liberator-penetrator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-32 Pacifier",
@@ -47,7 +210,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Force of Law",
       "source": "Force of Law",
-      "assetPath": "assets/weapons/primaries/ar-32-pacifier.png"
+      "assetPath": "assets/weapons/primaries/ar-32-pacifier-wiki.png",
+      "id": "primary:ar-32-pacifier",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Force of Law",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-59 Suppressor",
@@ -55,7 +225,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Redacted Regiment",
       "source": "Redacted Regiment",
-      "assetPath": "assets/weapons/primaries/ar-59-suppressor.png"
+      "assetPath": "assets/weapons/primaries/ar-59-suppressor-wiki.png",
+      "id": "primary:ar-59-suppressor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR-61 Tenderizer",
@@ -63,7 +240,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Polar Patriots",
       "source": "Polar Patriots",
-      "assetPath": "assets/weapons/primaries/ar-61-tenderizer.png"
+      "assetPath": "assets/weapons/primaries/ar-61-tenderizer-wiki.png",
+      "id": "primary:ar-61-tenderizer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Polar Patriots",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AR/GL-21 One-Two",
@@ -71,7 +255,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Python Commandos",
       "source": "Python Commandos",
-      "assetPath": "assets/weapons/primaries/ar-gl-21-one-two.png"
+      "assetPath": "assets/weapons/primaries/ar-gl-21-one-two-wiki.png",
+      "id": "primary:ar-gl-21-one-two",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Python Commandos",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "ARC-12 Blitzer",
@@ -79,7 +270,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
-      "assetPath": "assets/weapons/primaries/arc-12-blitzer.png"
+      "assetPath": "assets/weapons/primaries/arc-12-blitzer-wiki.png",
+      "id": "primary:arc-12-blitzer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Cutting Edge",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "BR-14 Adjudicator",
@@ -87,7 +285,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Democratic Detonation",
       "source": "Democratic Detonation",
-      "assetPath": "assets/weapons/primaries/br-14-adjudicator.png"
+      "assetPath": "assets/weapons/primaries/br-14-adjudicator-wiki.png",
+      "id": "primary:br-14-adjudicator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Democratic Detonation",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "FLAM-66 Torcher",
@@ -95,7 +300,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/flam-66-torcher.png"
+      "assetPath": "assets/weapons/primaries/flam-66-torcher-wiki.png",
+      "id": "primary:flam-66-torcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "JAR-5 Dominator",
@@ -103,7 +315,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/jar-5-dominator.png"
+      "assetPath": "assets/weapons/primaries/jar-5-dominator-wiki.png",
+      "id": "primary:jar-5-dominator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "MA5C Assault Rifle",
@@ -111,7 +330,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Obedient Democracy Support Troopers",
       "source": "Obedient Democracy Support Troopers",
-      "assetPath": "assets/weapons/primaries/ma5c-assault-rifle.png"
+      "assetPath": "assets/weapons/primaries/ma5c-assault-rifle-wiki.png",
+      "id": "primary:ma5c-assault-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "StA-11 SMG",
@@ -119,7 +345,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Righteous Revenants",
       "source": "Righteous Revenants",
-      "assetPath": "assets/weapons/primaries/sta-11-smg.png"
+      "assetPath": "assets/weapons/primaries/sta-11-smg-wiki.png",
+      "id": "primary:sta-11-smg",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Righteous Revenants",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "StA-52 Assault Rifle",
@@ -127,7 +360,14 @@
       "subgroup": "assault-rifle",
       "warbond": "Righteous Revenants",
       "source": "Righteous Revenants",
-      "assetPath": "assets/weapons/primaries/sta-52-assault-rifle.png"
+      "assetPath": "assets/weapons/primaries/sta-52-assault-rifle-wiki.png",
+      "id": "primary:sta-52-assault-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Righteous Revenants",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "VG-70 Variable",
@@ -135,7 +375,16 @@
       "subgroup": "marksman-rifle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/r-0-variable.png"
+      "assetPath": "assets/weapons/primaries/vg-70-variable-wiki.png",
+      "id": "primary:vg-70-variable",
+      "aliases": [
+        "r 0 variable"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-2 Amendment",
@@ -143,7 +392,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Masters of Ceremony",
       "source": "Masters of Ceremony",
-      "assetPath": "assets/weapons/primaries/r-2-amendment.png"
+      "assetPath": "assets/weapons/primaries/r-2-amendment-wiki.png",
+      "id": "primary:r-2-amendment",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Masters of Ceremony",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-2124 Constitution",
@@ -151,7 +407,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/r-2124-constitution.png"
+      "assetPath": "assets/weapons/primaries/r-2124-constitution-wiki.png",
+      "id": "primary:r-2124-constitution",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-36 Eruptor",
@@ -159,7 +422,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Democratic Detonation",
       "source": "Democratic Detonation",
-      "assetPath": "assets/weapons/primaries/r-36-eruptor.png"
+      "assetPath": "assets/weapons/primaries/r-36-eruptor-wiki.png",
+      "id": "primary:r-36-eruptor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Democratic Detonation",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-6 Deadeye",
@@ -167,7 +437,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Borderline Justice",
       "source": "Borderline Justice",
-      "assetPath": "assets/weapons/primaries/r-6-deadeye.png"
+      "assetPath": "assets/weapons/primaries/r-6-deadeye-wiki.png",
+      "id": "primary:r-6-deadeye",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-63 Diligence",
@@ -175,7 +452,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/r-63-diligence.png"
+      "assetPath": "assets/weapons/primaries/r-63-diligence-wiki.png",
+      "id": "primary:r-63-diligence",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-63CS Diligence Counter Sniper",
@@ -183,7 +467,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/r-63cs-diligence-counter-sniper.png"
+      "assetPath": "assets/weapons/primaries/r-63cs-diligence-counter-sniper-wiki.png",
+      "id": "primary:r-63cs-diligence-counter-sniper",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "R-72 Censor",
@@ -191,7 +482,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Redacted Regiment",
       "source": "Redacted Regiment",
-      "assetPath": "assets/weapons/primaries/r-72-censor.png"
+      "assetPath": "assets/weapons/primaries/r-72-censor-wiki.png",
+      "id": "primary:r-72-censor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "M7S SMG",
@@ -199,7 +497,14 @@
       "subgroup": "smg",
       "warbond": "Obedient Democracy Support Troopers",
       "source": "Obedient Democracy Support Troopers",
-      "assetPath": "assets/weapons/primaries/m7s-smg.png"
+      "assetPath": "assets/weapons/primaries/m7s-smg-wiki.png",
+      "id": "primary:m7s-smg",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "MP-98 Knight",
@@ -207,7 +512,14 @@
       "subgroup": "smg",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/mp-98-knight.png"
+      "assetPath": "assets/weapons/primaries/mp-98-knight-wiki.png",
+      "id": "primary:mp-98-knight",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SMG-32 Reprimand",
@@ -215,7 +527,14 @@
       "subgroup": "smg",
       "warbond": "Truth Enforcers",
       "source": "Truth Enforcers",
-      "assetPath": "assets/weapons/primaries/smg-32-reprimand.png"
+      "assetPath": "assets/weapons/primaries/smg-32-reprimand-wiki.png",
+      "id": "primary:smg-32-reprimand",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Truth Enforcers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SMG-37 Defender",
@@ -223,7 +542,14 @@
       "subgroup": "smg",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/smg-37-defender.png"
+      "assetPath": "assets/weapons/primaries/smg-37-defender-wiki.png",
+      "id": "primary:smg-37-defender",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SMG-72 Pummeler",
@@ -231,7 +557,14 @@
       "subgroup": "smg",
       "warbond": "Polar Patriots",
       "source": "Polar Patriots",
-      "assetPath": "assets/weapons/primaries/smg-72-pummeler.png"
+      "assetPath": "assets/weapons/primaries/smg-72-pummeler-wiki.png",
+      "id": "primary:smg-72-pummeler",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Polar Patriots",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "DBS-2 Double Freedom",
@@ -239,7 +572,14 @@
       "subgroup": "shotgun",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/primaries/dbs-2-double-freedom.png"
+      "assetPath": "assets/weapons/primaries/dbs-2-double-freedom-wiki.png",
+      "id": "primary:dbs-2-double-freedom",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "M90A Shotgun",
@@ -247,7 +587,14 @@
       "subgroup": "shotgun",
       "warbond": "Obedient Democracy Support Troopers",
       "source": "Obedient Democracy Support Troopers",
-      "assetPath": "assets/weapons/primaries/m90a-shotgun.png"
+      "assetPath": "assets/weapons/primaries/m90a-shotgun-wiki.png",
+      "id": "primary:m90a-shotgun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-20 Halt",
@@ -255,7 +602,14 @@
       "subgroup": "shotgun",
       "warbond": "Truth Enforcers",
       "source": "Truth Enforcers",
-      "assetPath": "assets/weapons/primaries/sg-20-halt.png"
+      "assetPath": "assets/weapons/primaries/sg-20-halt-wiki.png",
+      "id": "primary:sg-20-halt",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Truth Enforcers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-225 Breaker",
@@ -263,7 +617,14 @@
       "subgroup": "shotgun",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/sg-225-breaker.png"
+      "assetPath": "assets/weapons/primaries/sg-225-breaker-wiki.png",
+      "id": "primary:sg-225-breaker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-225IE Breaker Incendiary",
@@ -271,7 +632,14 @@
       "subgroup": "shotgun",
       "warbond": "Steeled Veterans",
       "source": "Steeled Veterans",
-      "assetPath": "assets/weapons/primaries/sg-225ie-breaker-incendiary.png"
+      "assetPath": "assets/weapons/primaries/sg-225ie-breaker-incendiary-wiki.png",
+      "id": "primary:sg-225ie-breaker-incendiary",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Steeled Veterans",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-225SP Breaker Spray&Pray",
@@ -279,7 +647,17 @@
       "subgroup": "shotgun",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/sg-225sp-breaker-spray-and-pray.png"
+      "assetPath": "assets/weapons/primaries/sg-225sp-breaker-spray-and-pray-wiki.png",
+      "id": "primary:sg-225sp-breaker-spray-and-pray",
+      "aliases": [
+        "sg 225sp breaker sprayandpray",
+        "sg 225sp breaker spraypray"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-451 Cookout",
@@ -287,7 +665,14 @@
       "subgroup": "shotgun",
       "warbond": "Freedom's Flame",
       "source": "Freedom's Flame",
-      "assetPath": "assets/weapons/primaries/sg-451-cookout.png"
+      "assetPath": "assets/weapons/primaries/sg-451-cookout-wiki.png",
+      "id": "primary:sg-451-cookout",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Freedom's Flame",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-8 Punisher",
@@ -295,7 +680,14 @@
       "subgroup": "shotgun",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/sg-8-punisher.png"
+      "assetPath": "assets/weapons/primaries/sg-8-punisher-wiki.png",
+      "id": "primary:sg-8-punisher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-8P Punisher Plasma",
@@ -303,7 +695,14 @@
       "subgroup": "shotgun",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
-      "assetPath": "assets/weapons/primaries/sg-8p-punisher-plasma.png"
+      "assetPath": "assets/weapons/primaries/sg-8p-punisher-plasma-wiki.png",
+      "id": "primary:sg-8p-punisher-plasma",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Cutting Edge",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-8S Slugger",
@@ -311,7 +710,14 @@
       "subgroup": "shotgun",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/sg-8s-slugger.png"
+      "assetPath": "assets/weapons/primaries/sg-8s-slugger-wiki.png",
+      "id": "primary:sg-8s-slugger",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "CB-9 Exploding Crossbow",
@@ -319,7 +725,14 @@
       "subgroup": "explosive",
       "warbond": "Democratic Detonation",
       "source": "Democratic Detonation",
-      "assetPath": "assets/weapons/primaries/cb-9-exploding-crossbow.png"
+      "assetPath": "assets/weapons/primaries/cb-9-exploding-crossbow-wiki.png",
+      "id": "primary:cb-9-exploding-crossbow",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Democratic Detonation",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-13 Trident",
@@ -327,7 +740,14 @@
       "subgroup": "energy",
       "warbond": "Siege Breakers",
       "source": "Siege Breakers",
-      "assetPath": "assets/weapons/primaries/las-13-trident.png"
+      "assetPath": "assets/weapons/primaries/las-13-trident-wiki.png",
+      "id": "primary:las-13-trident",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Siege Breakers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-16 Sickle",
@@ -335,7 +755,14 @@
       "subgroup": "energy",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
-      "assetPath": "assets/weapons/primaries/las-16-sickle.png"
+      "assetPath": "assets/weapons/primaries/las-16-sickle-wiki.png",
+      "id": "primary:las-16-sickle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Cutting Edge",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-17 Double-Edge Sickle",
@@ -343,7 +770,14 @@
       "subgroup": "energy",
       "warbond": "Servants of Freedom",
       "source": "Servants of Freedom",
-      "assetPath": "assets/weapons/primaries/las-17-double-edge-sickle.png"
+      "assetPath": "assets/weapons/primaries/las-17-double-edge-sickle-wiki.png",
+      "id": "primary:las-17-double-edge-sickle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Servants of Freedom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-5 Scythe",
@@ -351,7 +785,14 @@
       "subgroup": "energy",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/las-5-scythe.png"
+      "assetPath": "assets/weapons/primaries/las-5-scythe-wiki.png",
+      "id": "primary:las-5-scythe",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "PLAS-1 Scorcher",
@@ -359,7 +800,14 @@
       "subgroup": "energy",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/primaries/plas-1-scorcher.png"
+      "assetPath": "assets/weapons/primaries/plas-1-scorcher-wiki.png",
+      "id": "primary:plas-1-scorcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "PLAS-101 Purifier",
@@ -367,7 +815,14 @@
       "subgroup": "energy",
       "warbond": "Polar Patriots",
       "source": "Polar Patriots",
-      "assetPath": "assets/weapons/primaries/plas-101-purifier.png"
+      "assetPath": "assets/weapons/primaries/plas-101-purifier-wiki.png",
+      "id": "primary:plas-101-purifier",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Polar Patriots",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "PLAS-39 Accelerator Rifle",
@@ -375,7 +830,14 @@
       "subgroup": "energy",
       "warbond": "Righteous Revenants",
       "source": "Righteous Revenants",
-      "assetPath": "assets/weapons/primaries/plas-39-accelerator-rifle.png"
+      "assetPath": "assets/weapons/primaries/plas-39-accelerator-rifle-wiki.png",
+      "id": "primary:plas-39-accelerator-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Righteous Revenants",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "GP-31 Grenade Pistol",
@@ -383,7 +845,14 @@
       "subgroup": "pistol",
       "warbond": "Democratic Detonation",
       "source": "Democratic Detonation",
-      "assetPath": "assets/weapons/sidearms/gp-31-grenade-pistol.png"
+      "assetPath": "assets/weapons/sidearms/gp-31-grenade-pistol-wiki.png",
+      "id": "sidearm:gp-31-grenade-pistol",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Democratic Detonation",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "M6C/SOCOM Pistol",
@@ -391,7 +860,14 @@
       "subgroup": "pistol",
       "warbond": "Obedient Democracy Support Troopers",
       "source": "Obedient Democracy Support Troopers",
-      "assetPath": "assets/weapons/sidearms/m6c-socom-pistol.png"
+      "assetPath": "assets/weapons/sidearms/m6c-socom-pistol-wiki.png",
+      "id": "sidearm:m6c-socom-pistol",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-11 Stim Pistol",
@@ -399,7 +875,14 @@
       "subgroup": "pistol",
       "warbond": "Chemical Agents",
       "source": "Chemical Agents",
-      "assetPath": "assets/weapons/sidearms/p-11-stim-pistol.png"
+      "assetPath": "assets/weapons/sidearms/p-11-stim-pistol-wiki.png",
+      "id": "sidearm:p-11-stim-pistol",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Chemical Agents",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-113 Verdict",
@@ -407,7 +890,14 @@
       "subgroup": "pistol",
       "warbond": "Polar Patriots",
       "source": "Polar Patriots",
-      "assetPath": "assets/weapons/sidearms/p-113-verdict.png"
+      "assetPath": "assets/weapons/sidearms/p-113-verdict-wiki.png",
+      "id": "sidearm:p-113-verdict",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Polar Patriots",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-19 Redeemer",
@@ -415,7 +905,14 @@
       "subgroup": "pistol",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/sidearms/p-19-redeemer.png"
+      "assetPath": "assets/weapons/sidearms/p-19-redeemer-wiki.png",
+      "id": "sidearm:p-19-redeemer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-2 Peacemaker",
@@ -423,7 +920,14 @@
       "subgroup": "pistol",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/p-2-peacemaker.png"
+      "assetPath": "assets/weapons/sidearms/p-2-peacemaker-wiki.png",
+      "id": "sidearm:p-2-peacemaker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-35 Re-Educator",
@@ -431,7 +935,14 @@
       "subgroup": "pistol",
       "warbond": "Redacted Regiment",
       "source": "Redacted Regiment",
-      "assetPath": "assets/weapons/sidearms/p-35-re-educator.png"
+      "assetPath": "assets/weapons/sidearms/p-35-re-educator-wiki.png",
+      "id": "sidearm:p-35-re-educator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-4 Senator",
@@ -439,7 +950,14 @@
       "subgroup": "pistol",
       "warbond": "Steeled Veterans",
       "source": "Steeled Veterans",
-      "assetPath": "assets/weapons/sidearms/p-4-senator.png"
+      "assetPath": "assets/weapons/sidearms/p-4-senator-wiki.png",
+      "id": "sidearm:p-4-senator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Steeled Veterans",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-72 Crisper",
@@ -447,7 +965,14 @@
       "subgroup": "pistol",
       "warbond": "Freedom's Flame",
       "source": "Freedom's Flame",
-      "assetPath": "assets/weapons/sidearms/p-72-crisper.png"
+      "assetPath": "assets/weapons/sidearms/p-72-crisper-wiki.png",
+      "id": "sidearm:p-72-crisper",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Freedom's Flame",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-92 Warrant",
@@ -455,7 +980,14 @@
       "subgroup": "pistol",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/p-92-warrant.png"
+      "assetPath": "assets/weapons/sidearms/p-92-warrant-wiki.png",
+      "id": "sidearm:p-92-warrant",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "CQC-1 Saber",
@@ -463,7 +995,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/cqc-1-saber.png"
+      "assetPath": "assets/weapons/sidearms/cqc-1-saber-wiki.png",
+      "id": "sidearm:cqc-1-saber",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "CQC-19 Machete",
@@ -471,7 +1010,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/cqc-19-machete.png"
+      "assetPath": "assets/weapons/sidearms/cqc-19-machete-wiki.png",
+      "id": "sidearm:cqc-19-machete",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "CQC-2 Stun Lance",
@@ -479,7 +1025,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/cqc-2-stun-lance.png"
+      "assetPath": "assets/weapons/sidearms/cqc-2-stun-lance-wiki.png",
+      "id": "sidearm:cqc-2-stun-lance",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "CQC-30 Stun Baton",
@@ -487,7 +1040,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/cqc-30-stun-baton.png"
+      "assetPath": "assets/weapons/sidearms/cqc-30-stun-baton-wiki.png",
+      "id": "sidearm:cqc-30-stun-baton",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "CQC-5 Combat Hatchet",
@@ -495,7 +1055,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/sidearms/cqc-5-combat-hatchet.png"
+      "assetPath": "assets/weapons/sidearms/cqc-5-combat-hatchet-wiki.png",
+      "id": "sidearm:cqc-5-combat-hatchet",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "GP-20 Ultimatum",
@@ -503,7 +1070,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Servants of Freedom",
       "source": "Servants of Freedom",
-      "assetPath": "assets/weapons/sidearms/gp-20-ultimatum.png"
+      "assetPath": "assets/weapons/sidearms/gp-20-ultimatum-wiki.png",
+      "id": "sidearm:gp-20-ultimatum",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Servants of Freedom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-58 Talon",
@@ -511,7 +1085,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Borderline Justice",
       "source": "Borderline Justice",
-      "assetPath": "assets/weapons/sidearms/las-58-talon.png"
+      "assetPath": "assets/weapons/sidearms/las-58-talon-wiki.png",
+      "id": "sidearm:las-58-talon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-7 Dagger",
@@ -519,7 +1100,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
-      "assetPath": "assets/weapons/sidearms/las-7-dagger.png"
+      "assetPath": "assets/weapons/sidearms/las-7-dagger-wiki.png",
+      "id": "sidearm:las-7-dagger",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Cutting Edge",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "PLAS-15 Loyalist",
@@ -527,7 +1115,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Truth Enforcers",
       "source": "Truth Enforcers",
-      "assetPath": "assets/weapons/sidearms/plas-15-loyalist.png"
+      "assetPath": "assets/weapons/sidearms/plas-15-loyalist-wiki.png",
+      "id": "sidearm:plas-15-loyalist",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Truth Enforcers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SG-22 Bushwhacker",
@@ -535,7 +1130,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Viper Commandos",
       "source": "Viper Commandos",
-      "assetPath": "assets/weapons/sidearms/sg-22-bushwhacker.png"
+      "assetPath": "assets/weapons/sidearms/sg-22-bushwhacker-wiki.png",
+      "id": "sidearm:sg-22-bushwhacker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Viper Commandos",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-10 Incendiary",
@@ -543,7 +1145,14 @@
       "subgroup": "grenade",
       "warbond": "Steeled Veterans",
       "source": "Steeled Veterans",
-      "assetPath": "assets/weapons/throwables/g-10-incendiary.png"
+      "assetPath": "assets/weapons/throwables/g-10-incendiary-wiki.png",
+      "id": "throwable:g-10-incendiary",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Steeled Veterans",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-109 Urchin",
@@ -551,7 +1160,14 @@
       "subgroup": "grenade",
       "warbond": "Force of Law",
       "source": "Force of Law",
-      "assetPath": "assets/weapons/throwables/g-109-urchin.png"
+      "assetPath": "assets/weapons/throwables/g-109-urchin-wiki.png",
+      "id": "throwable:g-109-urchin",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Force of Law",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-12 High Explosive",
@@ -559,7 +1175,14 @@
       "subgroup": "grenade",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/throwables/g-12-high-explosive.png"
+      "assetPath": "assets/weapons/throwables/g-12-high-explosive-wiki.png",
+      "id": "throwable:g-12-high-explosive",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-123 Thermite",
@@ -567,7 +1190,14 @@
       "subgroup": "grenade",
       "warbond": "Democratic Detonation",
       "source": "Democratic Detonation",
-      "assetPath": "assets/weapons/throwables/g-123-thermite.png"
+      "assetPath": "assets/weapons/throwables/g-123-thermite-wiki.png",
+      "id": "throwable:g-123-thermite",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Democratic Detonation",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-13 Incendiary Impact",
@@ -575,7 +1205,14 @@
       "subgroup": "grenade",
       "warbond": "Polar Patriots",
       "source": "Polar Patriots",
-      "assetPath": "assets/weapons/throwables/g-13-incendiary-impact.png"
+      "assetPath": "assets/weapons/throwables/g-13-incendiary-impact-wiki.png",
+      "id": "throwable:g-13-incendiary-impact",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Polar Patriots",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-142 Pyrotech",
@@ -583,7 +1220,14 @@
       "subgroup": "grenade",
       "warbond": "Masters of Ceremony",
       "source": "Masters of Ceremony",
-      "assetPath": "assets/weapons/throwables/g-142-pyrotech.png"
+      "assetPath": "assets/weapons/throwables/g-142-pyrotech-wiki.png",
+      "id": "throwable:g-142-pyrotech",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Masters of Ceremony",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-16 Impact",
@@ -591,7 +1235,14 @@
       "subgroup": "grenade",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/throwables/g-16-impact.png"
+      "assetPath": "assets/weapons/throwables/g-16-impact-wiki.png",
+      "id": "throwable:g-16-impact",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-23 Stun",
@@ -599,7 +1250,14 @@
       "subgroup": "grenade",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
-      "assetPath": "assets/weapons/throwables/g-23-stun.png"
+      "assetPath": "assets/weapons/throwables/g-23-stun-wiki.png",
+      "id": "throwable:g-23-stun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Cutting Edge",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-3 Smoke",
@@ -607,7 +1265,14 @@
       "subgroup": "grenade",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/throwables/g-3-smoke.png"
+      "assetPath": "assets/weapons/throwables/g-3-smoke-wiki.png",
+      "id": "throwable:g-3-smoke",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-31 Arc",
@@ -615,7 +1280,14 @@
       "subgroup": "grenade",
       "warbond": "Control Group",
       "source": "Control Group",
-      "assetPath": "assets/weapons/throwables/g-31-arc.png"
+      "assetPath": "assets/weapons/throwables/g-31-arc-wiki.png",
+      "id": "throwable:g-31-arc",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Control Group",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-4 Gas",
@@ -623,7 +1295,14 @@
       "subgroup": "grenade",
       "warbond": "Chemical Agents",
       "source": "Chemical Agents",
-      "assetPath": "assets/weapons/throwables/g-4-gas.png"
+      "assetPath": "assets/weapons/throwables/g-4-gas-wiki.png",
+      "id": "throwable:g-4-gas",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Chemical Agents",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-50 Seeker",
@@ -631,7 +1310,14 @@
       "subgroup": "grenade",
       "warbond": "Servants of Freedom",
       "source": "Servants of Freedom",
-      "assetPath": "assets/weapons/throwables/g-50-seeker.png"
+      "assetPath": "assets/weapons/throwables/g-50-seeker-wiki.png",
+      "id": "throwable:g-50-seeker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Servants of Freedom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-6 Frag",
@@ -639,7 +1325,14 @@
       "subgroup": "grenade",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/weapons/throwables/g-6-frag.png"
+      "assetPath": "assets/weapons/throwables/g-6-frag-wiki.png",
+      "id": "throwable:g-6-frag",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-7 Pineapple",
@@ -647,7 +1340,14 @@
       "subgroup": "grenade",
       "warbond": "Dust Devils",
       "source": "Dust Devils",
-      "assetPath": "assets/weapons/throwables/g-7-pineapple.png"
+      "assetPath": "assets/weapons/throwables/g-7-pineapple-wiki.png",
+      "id": "throwable:g-7-pineapple",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Dust Devils",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G-89 Smokescreen",
@@ -655,7 +1355,14 @@
       "subgroup": "grenade",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/weapons/throwables/g-89-smokescreen.png"
+      "assetPath": "assets/weapons/throwables/g-89-smokescreen-wiki.png",
+      "id": "throwable:g-89-smokescreen",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "K-2 Throwing Knife",
@@ -663,7 +1370,14 @@
       "subgroup": "throwing-weapon",
       "warbond": "Viper Commandos",
       "source": "Viper Commandos",
-      "assetPath": "assets/weapons/throwables/k-2-throwing-knife.png"
+      "assetPath": "assets/weapons/throwables/k-2-throwing-knife-wiki.png",
+      "id": "throwable:k-2-throwing-knife",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Viper Commandos",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "TED-63 Dynamite",
@@ -671,7 +1385,14 @@
       "subgroup": "throwing-weapon",
       "warbond": "Borderline Justice",
       "source": "Borderline Justice",
-      "assetPath": "assets/weapons/throwables/ted-63-dynamite.png"
+      "assetPath": "assets/weapons/throwables/ted-63-dynamite-wiki.png",
+      "id": "throwable:ted-63-dynamite",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "G/SH-39 Shield",
@@ -679,7 +1400,14 @@
       "subgroup": "utility-throwable",
       "warbond": "Siege Breakers",
       "source": "Siege Breakers",
-      "assetPath": "assets/weapons/throwables/g-sh-39-shield.png"
+      "assetPath": "assets/weapons/throwables/g-sh-39-shield-wiki.png",
+      "id": "throwable:g-sh-39-shield",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Siege Breakers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "TM-1 Lure Mine",
@@ -687,7 +1415,14 @@
       "subgroup": "utility-throwable",
       "warbond": "Redacted Regiment",
       "source": "Redacted Regiment",
-      "assetPath": "assets/weapons/throwables/tm-1-lure-mine.png"
+      "assetPath": "assets/weapons/throwables/tm-1-lure-mine-wiki.png",
+      "id": "throwable:tm-1-lure-mine",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital 120MM HE Barrage",
@@ -695,7 +1430,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-120mm-he-barrage.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-120mm-he-barrage.svg",
+      "id": "stratagem:orbital-120mm-he-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital 380MM HE Barrage",
@@ -703,7 +1445,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-380mm-he-barrage.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-380mm-he-barrage.svg",
+      "id": "stratagem:orbital-380mm-he-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Airburst Strike",
@@ -711,7 +1460,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-airburst-strike.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-airburst-strike.svg",
+      "id": "stratagem:orbital-airburst-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital EMS Strike",
@@ -719,7 +1475,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-ems-strike.png"
+      "assetPath": "assets/stratagems/orbital/orbital-ems-strike.svg",
+      "id": "stratagem:orbital-ems-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Gas Strike",
@@ -727,7 +1490,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-gas-strike.png"
+      "assetPath": "assets/stratagems/orbital/orbital-gas-strike.svg",
+      "id": "stratagem:orbital-gas-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Gatling Barrage",
@@ -735,7 +1505,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-gatling-barrage.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-gatling-barrage.svg",
+      "id": "stratagem:orbital-gatling-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Laser",
@@ -743,7 +1520,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-laser.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-laser.svg",
+      "id": "stratagem:orbital-laser",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Napalm Barrage",
@@ -751,7 +1535,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-napalm-barrage.png"
+      "assetPath": "assets/stratagems/orbital/orbital-napalm-barrage.svg",
+      "id": "stratagem:orbital-napalm-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Precision Strike",
@@ -759,7 +1550,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-precision-strike.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-precision-strike.svg",
+      "id": "stratagem:orbital-precision-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Railcannon Strike",
@@ -767,7 +1565,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-railcannon-strike.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-railcannon-strike.svg",
+      "id": "stratagem:orbital-railcannon-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Smoke Strike",
@@ -775,7 +1580,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-smoke-strike.svg"
+      "assetPath": "assets/stratagems/orbital/orbital-smoke-strike.svg",
+      "id": "stratagem:orbital-smoke-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Orbital Walking Barrage",
@@ -783,7 +1595,14 @@
       "subgroup": "orbital",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/orbital/orbital-walking-barrage.png"
+      "assetPath": "assets/stratagems/orbital/orbital-walking-barrage.svg",
+      "id": "stratagem:orbital-walking-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle 110MM Rocket Pods",
@@ -791,7 +1610,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-110mm-rocket-pods.svg"
+      "assetPath": "assets/stratagems/eagle/eagle-110mm-rocket-pods.svg",
+      "id": "stratagem:eagle-110mm-rocket-pods",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle 500KG Bomb",
@@ -799,7 +1625,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-500kg-bomb.png"
+      "assetPath": "assets/stratagems/eagle/eagle-500kg-bomb.svg",
+      "id": "stratagem:eagle-500kg-bomb",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle Airstrike",
@@ -807,7 +1640,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-airstrike.svg"
+      "assetPath": "assets/stratagems/eagle/eagle-airstrike.svg",
+      "id": "stratagem:eagle-airstrike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle Cluster Bomb",
@@ -815,7 +1655,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-cluster-bomb.svg"
+      "assetPath": "assets/stratagems/eagle/eagle-cluster-bomb.svg",
+      "id": "stratagem:eagle-cluster-bomb",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle Napalm Airstrike",
@@ -823,7 +1670,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-napalm-airstrike.svg"
+      "assetPath": "assets/stratagems/eagle/eagle-napalm-airstrike.svg",
+      "id": "stratagem:eagle-napalm-airstrike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle Smoke Strike",
@@ -831,7 +1685,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-smoke-strike.svg"
+      "assetPath": "assets/stratagems/eagle/eagle-smoke-strike.svg",
+      "id": "stratagem:eagle-smoke-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Eagle Strafing Run",
@@ -839,7 +1700,14 @@
       "subgroup": "eagle",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/eagle/eagle-strafing-run.png"
+      "assetPath": "assets/stratagems/eagle/eagle-strafing-run.svg",
+      "id": "stratagem:eagle-strafing-run",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Anti-Personnel Minefield",
@@ -847,7 +1715,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/anti-personnel-minefield.svg"
+      "assetPath": "assets/stratagems/defensive/anti-personnel-minefield.svg",
+      "id": "stratagem:anti-personnel-minefield",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Anti-Tank Emplacement",
@@ -855,7 +1730,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/anti-tank-emplacement.png"
+      "assetPath": "assets/stratagems/defensive/anti-tank-emplacement.svg",
+      "id": "stratagem:anti-tank-emplacement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Anti-Tank Mines",
@@ -863,7 +1745,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/anti-tank-mines.png"
+      "assetPath": "assets/stratagems/defensive/anti-tank-mines.svg",
+      "id": "stratagem:anti-tank-mines",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Autocannon Sentry",
@@ -871,7 +1760,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/autocannon-sentry.svg"
+      "assetPath": "assets/stratagems/defensive/autocannon-sentry.svg",
+      "id": "stratagem:autocannon-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "EMS Mortar Sentry",
@@ -879,7 +1775,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/ems-mortar-sentry.svg"
+      "assetPath": "assets/stratagems/defensive/ems-mortar-sentry.svg",
+      "id": "stratagem:ems-mortar-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Flame Sentry",
@@ -887,7 +1790,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/flame-sentry.png"
+      "assetPath": "assets/stratagems/defensive/flame-sentry.svg",
+      "id": "stratagem:flame-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Gas Mines",
@@ -895,7 +1805,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/gas-mines.png"
+      "assetPath": "assets/stratagems/defensive/gas-mines.svg",
+      "id": "stratagem:gas-mines",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Gatling Sentry",
@@ -903,7 +1820,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/gatling-sentry.svg"
+      "assetPath": "assets/stratagems/defensive/gatling-sentry.svg",
+      "id": "stratagem:gatling-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Grenadier Battlement",
@@ -911,7 +1835,16 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/grenadier-battalion.svg"
+      "assetPath": "assets/stratagems/defensive/grenadier-battalion.svg",
+      "id": "stratagem:grenadier-battlement",
+      "aliases": [
+        "grenadier battalion"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "HMG Emplacement",
@@ -919,7 +1852,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/hmg-emplacement.svg"
+      "assetPath": "assets/stratagems/defensive/hmg-emplacement.svg",
+      "id": "stratagem:hmg-emplacement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Incendiary Mines",
@@ -927,7 +1867,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/incendiary-mines.svg"
+      "assetPath": "assets/stratagems/defensive/incendiary-mines.svg",
+      "id": "stratagem:incendiary-mines",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Laser Sentry",
@@ -935,7 +1882,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/laser-sentry.png"
+      "assetPath": "assets/stratagems/defensive/laser-sentry.svg",
+      "id": "stratagem:laser-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Machine Gun Sentry",
@@ -943,7 +1897,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/machine-gun-sentry.png"
+      "assetPath": "assets/stratagems/defensive/machine-gun-sentry.svg",
+      "id": "stratagem:machine-gun-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Mortar Sentry",
@@ -951,7 +1912,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/mortar-sentry.svg"
+      "assetPath": "assets/stratagems/defensive/mortar-sentry.svg",
+      "id": "stratagem:mortar-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Rocket Sentry",
@@ -959,7 +1927,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/rocket-sentry.svg"
+      "assetPath": "assets/stratagems/defensive/rocket-sentry.svg",
+      "id": "stratagem:rocket-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Shield Generator Relay",
@@ -967,7 +1942,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/backpack/shield-generator-relay.svg"
+      "assetPath": "assets/stratagems/defensive/shield-generator-relay.svg",
+      "id": "stratagem:shield-generator-relay",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Tesla Tower",
@@ -975,7 +1957,14 @@
       "subgroup": "defensive",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/defensive/tesla-tower.png"
+      "assetPath": "assets/stratagems/defensive/tesla-tower.svg",
+      "id": "stratagem:tesla-tower",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AC-8 Autocannon",
@@ -983,7 +1972,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/ac-8-autocannon.svg"
+      "assetPath": "assets/stratagems/support/ac-8-autocannon.svg",
+      "id": "stratagem:ac-8-autocannon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "APW-1 Anti-Materiel Rifle",
@@ -991,7 +1987,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/apw-1-anti-materiel-rifle.svg"
+      "assetPath": "assets/stratagems/support/apw-1-anti-materiel-rifle.svg",
+      "id": "stratagem:apw-1-anti-materiel-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "ARC-3 Arc Thrower",
@@ -999,7 +2002,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/arc-3-arc-thrower.svg"
+      "assetPath": "assets/stratagems/support/arc-3-arc-thrower.svg",
+      "id": "stratagem:arc-3-arc-thrower",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Ballistic Shield Backpack",
@@ -1007,7 +2017,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/backpack/ballistic-shield-backpack.svg"
+      "assetPath": "assets/stratagems/support/ballistic-shield-backpack.svg",
+      "id": "stratagem:ballistic-shield-backpack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Bastion",
@@ -1015,7 +2032,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/bastion.png"
+      "assetPath": "assets/stratagems/support/bastion.svg",
+      "id": "stratagem:bastion",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Belt-fed GL",
@@ -1023,7 +2047,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/belt-fed-gl.png"
+      "assetPath": "assets/stratagems/support/belt-fed-gl.svg",
+      "id": "stratagem:belt-fed-gl",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Breaching Hammer",
@@ -1031,7 +2062,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/breaching-hammer.png"
+      "assetPath": "assets/stratagems/support/breaching-hammer.svg",
+      "id": "stratagem:breaching-hammer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "C4 Pack",
@@ -1039,7 +2077,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/c4-pack.png"
+      "assetPath": "assets/stratagems/support/c4-pack.svg",
+      "id": "stratagem:c4-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "De-Escalator",
@@ -1047,7 +2092,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/de-escalator.png"
+      "assetPath": "assets/stratagems/support/de-escalator.svg",
+      "id": "stratagem:de-escalator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Defoliation Tool",
@@ -1055,7 +2107,16 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/detonation-tool.svg"
+      "assetPath": "assets/stratagems/support/detonation-tool.svg",
+      "id": "stratagem:defoliation-tool",
+      "aliases": [
+        "detonation tool"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Directional Shield",
@@ -1063,7 +2124,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/directional-shield.png"
+      "assetPath": "assets/stratagems/support/directional-shield.svg",
+      "id": "stratagem:directional-shield",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "EAT-17 Expendable Anti-Tank",
@@ -1071,7 +2139,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/eat-17-expendable-anti-tank.svg"
+      "assetPath": "assets/stratagems/support/eat-17-expendable-anti-tank.svg",
+      "id": "stratagem:eat-17-expendable-anti-tank",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "EMS Strike",
@@ -1079,7 +2154,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/ems-strike.svg"
+      "assetPath": "assets/stratagems/support/ems-strike.svg",
+      "id": "stratagem:ems-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Emancipator Exosuit",
@@ -1087,7 +2169,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/emancipator-exosuit.png"
+      "assetPath": "assets/stratagems/support/emancipator-exosuit.svg",
+      "id": "stratagem:emancipator-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Epoch",
@@ -1095,7 +2184,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/epoch.png"
+      "assetPath": "assets/stratagems/support/epoch.svg",
+      "id": "stratagem:epoch",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Expendable Napalm",
@@ -1103,7 +2199,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/expendable-napalm.png"
+      "assetPath": "assets/stratagems/support/expendable-napalm.svg",
+      "id": "stratagem:expendable-napalm",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "FAF-14 Spear",
@@ -1111,7 +2214,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/faf-14-spear.svg"
+      "assetPath": "assets/stratagems/support/faf-14-spear.svg",
+      "id": "stratagem:faf-14-spear",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "FLAM-40 Flamethrower",
@@ -1119,7 +2229,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/flam-40-flamethrower.svg"
+      "assetPath": "assets/stratagems/support/flam-40-flamethrower.svg",
+      "id": "stratagem:flam-40-flamethrower",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "M-102 Fast Recon Vehicle",
@@ -1127,7 +2244,16 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/fast-recon-vehicle.svg"
+      "assetPath": "assets/stratagems/support/fast-recon-vehicle.svg",
+      "id": "stratagem:m-102-fast-recon-vehicle",
+      "aliases": [
+        "fast recon vehicle"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "M-103 Supply FRV",
@@ -1135,7 +2261,16 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/supply-frv.svg"
+      "assetPath": "assets/stratagems/support/supply-frv.svg",
+      "id": "stratagem:m-103-supply-frv",
+      "aliases": [
+        "supply frv"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "GL-21 Grenade Launcher",
@@ -1143,7 +2278,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/gl-21-grenade-launcher.svg"
+      "assetPath": "assets/stratagems/support/gl-21-grenade-launcher.svg",
+      "id": "stratagem:gl-21-grenade-launcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "GR-8 Recoilless Rifle",
@@ -1151,7 +2293,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/gr-8-recoilless-rifle.svg"
+      "assetPath": "assets/stratagems/support/gr-8-recoilless-rifle.svg",
+      "id": "stratagem:gr-8-recoilless-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Guard Dog",
@@ -1159,7 +2308,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/guard-dog.png"
+      "assetPath": "assets/stratagems/support/guard-dog.svg",
+      "id": "stratagem:guard-dog",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AX/ARC-3 K-9",
@@ -1167,7 +2323,16 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/guard-dog-arc.svg"
+      "assetPath": "assets/stratagems/support/guard-dog-arc.svg",
+      "id": "stratagem:ax-arc-3-k-9",
+      "aliases": [
+        "guard dog arc"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "AX/TX-13 Dog Breath",
@@ -1175,7 +2340,16 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/guard-dog-breath.svg"
+      "assetPath": "assets/stratagems/support/guard-dog-breath.svg",
+      "id": "stratagem:ax-tx-13-dog-breath",
+      "aliases": [
+        "guard dog breath"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Guard Dog Rover",
@@ -1183,7 +2357,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/backpack/guard-dog-rover.svg"
+      "assetPath": "assets/stratagems/support/guard-dog-rover.svg",
+      "id": "stratagem:guard-dog-rover",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Hot Dog",
@@ -1191,7 +2372,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/hot-dog.png"
+      "assetPath": "assets/stratagems/support/hot-dog.svg",
+      "id": "stratagem:hot-dog",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Hover Pack",
@@ -1199,7 +2387,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/hover-pack.png"
+      "assetPath": "assets/stratagems/support/hover-pack.svg",
+      "id": "stratagem:hover-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Jump Pack",
@@ -1207,7 +2402,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/backpack/jump-pack.svg"
+      "assetPath": "assets/stratagems/support/jump-pack.svg",
+      "id": "stratagem:jump-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-98 Laser Cannon",
@@ -1215,7 +2417,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/las-98-laser-cannon.svg"
+      "assetPath": "assets/stratagems/support/las-98-laser-cannon.svg",
+      "id": "stratagem:las-98-laser-cannon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "LAS-99 Quasar Cannon",
@@ -1223,7 +2432,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/las-99-quasar-cannon.svg"
+      "assetPath": "assets/stratagems/support/las-99-quasar-cannon.svg",
+      "id": "stratagem:las-99-quasar-cannon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Leveller",
@@ -1231,7 +2447,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/leveller.png"
+      "assetPath": "assets/stratagems/support/leveller.svg",
+      "id": "stratagem:leveller",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "M-105 Stalwart",
@@ -1239,7 +2462,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/m-105-stalwart.svg"
+      "assetPath": "assets/stratagems/support/m-105-stalwart.svg",
+      "id": "stratagem:m-105-stalwart",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "MG-206 Heavy Machine Gun",
@@ -1247,7 +2477,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/mg-206-heavy-machine-gun.svg"
+      "assetPath": "assets/stratagems/support/mg-206-heavy-machine-gun.svg",
+      "id": "stratagem:mg-206-heavy-machine-gun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "MG-43 Machine Gun",
@@ -1255,7 +2492,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/mg-43-machine-gun.svg"
+      "assetPath": "assets/stratagems/support/mg-43-machine-gun.svg",
+      "id": "stratagem:mg-43-machine-gun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "MLS-4X Commando",
@@ -1263,7 +2507,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/mls-4x-commando.svg"
+      "assetPath": "assets/stratagems/support/mls-4x-commando.svg",
+      "id": "stratagem:mls-4x-commando",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Maxigun",
@@ -1271,7 +2522,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/maxigun.png"
+      "assetPath": "assets/stratagems/support/maxigun.svg",
+      "id": "stratagem:maxigun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "One True Flag",
@@ -1279,7 +2537,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/one-true-flag.png"
+      "assetPath": "assets/stratagems/support/one-true-flag.svg",
+      "id": "stratagem:one-true-flag",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Patriot Exosuit",
@@ -1287,7 +2552,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/patriot-exosuit.png"
+      "assetPath": "assets/stratagems/support/patriot-exosuit.svg",
+      "id": "stratagem:patriot-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Portable Hellbomb",
@@ -1295,7 +2567,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/portable-hellbomb.png"
+      "assetPath": "assets/stratagems/support/portable-hellbomb.svg",
+      "id": "stratagem:portable-hellbomb",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "RL-77 Airburst Rocket Launcher",
@@ -1303,7 +2582,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/rl-77-airburst-rocket-launcher.svg"
+      "assetPath": "assets/stratagems/support/rl-77-airburst-rocket-launcher.svg",
+      "id": "stratagem:rl-77-airburst-rocket-launcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "RS-422 Railgun",
@@ -1311,7 +2597,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/rs-422-railgun.svg"
+      "assetPath": "assets/stratagems/support/rs-422-railgun.svg",
+      "id": "stratagem:rs-422-railgun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Shield Generator Pack",
@@ -1319,7 +2612,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/shield-generator-pack.png"
+      "assetPath": "assets/stratagems/support/shield-generator-pack.svg",
+      "id": "stratagem:shield-generator-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Solo Silo",
@@ -1327,7 +2627,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/solo-silo.png"
+      "assetPath": "assets/stratagems/support/solo-silo.svg",
+      "id": "stratagem:solo-silo",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Speargun",
@@ -1335,7 +2642,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/speargun.png"
+      "assetPath": "assets/stratagems/support/speargun.svg",
+      "id": "stratagem:speargun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "StA-X3 W.A.S.P. Launcher",
@@ -1343,7 +2657,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/sta-x3-w-a-s-p-launcher.svg"
+      "assetPath": "assets/stratagems/support/sta-x3-w-a-s-p-launcher.svg",
+      "id": "stratagem:sta-x3-w-a-s-p-launcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Sterilizer",
@@ -1351,7 +2672,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/sterilizer.png"
+      "assetPath": "assets/stratagems/support/sterilizer.svg",
+      "id": "stratagem:sterilizer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Supply Pack",
@@ -1359,7 +2687,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/backpack/supply-pack.svg"
+      "assetPath": "assets/stratagems/support/supply-pack.svg",
+      "id": "stratagem:supply-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Warp Pack",
@@ -1367,7 +2702,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/warp-pack.png"
+      "assetPath": "assets/stratagems/support/warp-pack.svg",
+      "id": "stratagem:warp-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Wasp",
@@ -1375,7 +2717,14 @@
       "subgroup": "support",
       "warbond": "Unassigned / Custom",
       "source": "Unassigned / Custom",
-      "assetPath": "assets/stratagems/support/wasp.png"
+      "assetPath": "assets/stratagems/support/wasp.svg",
+      "id": "stratagem:wasp",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Hellpod Space Optimization",
@@ -1383,7 +2732,14 @@
       "subgroup": "booster",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/boosters/hellpod-space-optimization.svg"
+      "assetPath": "assets/boosters/hellpod-space-optimization-wiki.svg",
+      "id": "booster:hellpod-space-optimization",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Vitality Enhancement",
@@ -1391,7 +2747,14 @@
       "subgroup": "booster",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/boosters/vitality-enhancement.svg"
+      "assetPath": "assets/boosters/vitality-enhancement-wiki.svg",
+      "id": "booster:vitality-enhancement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "UAV Recon Booster",
@@ -1399,7 +2762,14 @@
       "subgroup": "booster",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/boosters/uav-recon-booster.svg"
+      "assetPath": "assets/boosters/uav-recon-booster-wiki.svg",
+      "id": "booster:uav-recon-booster",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Stamina Enhancement",
@@ -1407,7 +2777,14 @@
       "subgroup": "booster",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/boosters/stamina-enhancement.svg"
+      "assetPath": "assets/boosters/stamina-enhancement-wiki.svg",
+      "id": "booster:stamina-enhancement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Muscle Enhancement",
@@ -1415,7 +2792,14 @@
       "subgroup": "booster",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/boosters/muscle-enhancement.svg"
+      "assetPath": "assets/boosters/muscle-enhancement-wiki.svg",
+      "id": "booster:muscle-enhancement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Increased Reinforcement Budget",
@@ -1423,7 +2807,14 @@
       "subgroup": "booster",
       "warbond": "Helldiver Basics (Mobilize)",
       "source": "Helldiver Basics (Mobilize)",
-      "assetPath": "assets/boosters/increased-reinforcement-budget.svg"
+      "assetPath": "assets/boosters/increased-reinforcement-budget-wiki.svg",
+      "id": "booster:increased-reinforcement-budget",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Flexible Reinforcement Budget",
@@ -1431,7 +2822,14 @@
       "subgroup": "booster",
       "warbond": "Steeled Veterans",
       "source": "Steeled Veterans",
-      "assetPath": "assets/boosters/flexible-reinforcement-budget.svg"
+      "assetPath": "assets/boosters/flexible-reinforcement-budget-wiki.svg",
+      "id": "booster:flexible-reinforcement-budget",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Steeled Veterans",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Localization Confusion",
@@ -1439,7 +2837,14 @@
       "subgroup": "booster",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
-      "assetPath": "assets/boosters/localization-confusion.svg"
+      "assetPath": "assets/boosters/localization-confusion-wiki.svg",
+      "id": "booster:localization-confusion",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Cutting Edge",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Expert Extraction Pilot",
@@ -1447,7 +2852,14 @@
       "subgroup": "booster",
       "warbond": "Democratic Detonation",
       "source": "Democratic Detonation",
-      "assetPath": "assets/boosters/expert-extraction-pilot.svg"
+      "assetPath": "assets/boosters/expert-extraction-pilot-wiki.svg",
+      "id": "booster:expert-extraction-pilot",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Democratic Detonation",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Motivational Shocks",
@@ -1455,7 +2867,14 @@
       "subgroup": "booster",
       "warbond": "Polar Patriots",
       "source": "Polar Patriots",
-      "assetPath": "assets/boosters/motivational-shocks.svg"
+      "assetPath": "assets/boosters/motivational-shocks-wiki.svg",
+      "id": "booster:motivational-shocks",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Polar Patriots",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Experimental Infusion",
@@ -1463,7 +2882,14 @@
       "subgroup": "booster",
       "warbond": "Viper Commandos",
       "source": "Viper Commandos",
-      "assetPath": "assets/boosters/experimental-infusion.svg"
+      "assetPath": "assets/boosters/experimental-infusion-wiki.svg",
+      "id": "booster:experimental-infusion",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Viper Commandos",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Firebomb Hellpods",
@@ -1471,7 +2897,14 @@
       "subgroup": "booster",
       "warbond": "Freedom's Flame",
       "source": "Freedom's Flame",
-      "assetPath": "assets/boosters/firebomb-hellpods.svg"
+      "assetPath": "assets/boosters/firebomb-hellpods-wiki.svg",
+      "id": "booster:firebomb-hellpods",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Freedom's Flame",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Dead Sprint",
@@ -1479,7 +2912,14 @@
       "subgroup": "booster",
       "warbond": "Truth Enforcers",
       "source": "Truth Enforcers",
-      "assetPath": "assets/boosters/dead-sprint.svg"
+      "assetPath": "assets/boosters/dead-sprint-wiki.svg",
+      "id": "booster:dead-sprint",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Truth Enforcers",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Armed Resupply Pods",
@@ -1487,7 +2927,14 @@
       "subgroup": "booster",
       "warbond": "Urban Legends",
       "source": "Urban Legends",
-      "assetPath": "assets/boosters/armed-resupply-pods.svg"
+      "assetPath": "assets/boosters/armed-resupply-pods-wiki.svg",
+      "id": "booster:armed-resupply-pods",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Urban Legends",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Sample Extractor",
@@ -1495,7 +2942,14 @@
       "subgroup": "booster",
       "warbond": "Borderline Justice",
       "source": "Borderline Justice",
-      "assetPath": "assets/boosters/sample-extractor.svg"
+      "assetPath": "assets/boosters/sample-extractor-wiki.svg",
+      "id": "booster:sample-extractor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Sample Scanner",
@@ -1503,7 +2957,14 @@
       "subgroup": "booster",
       "warbond": "Masters of Ceremony",
       "source": "Masters of Ceremony",
-      "assetPath": "assets/boosters/sample-scanner.svg"
+      "assetPath": "assets/boosters/sample-scanner-wiki.svg",
+      "id": "booster:sample-scanner",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Masters of Ceremony",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Stun Pods",
@@ -1511,7 +2972,14 @@
       "subgroup": "booster",
       "warbond": "Force of Law",
       "source": "Force of Law",
-      "assetPath": "assets/boosters/stun-pods.svg"
+      "assetPath": "assets/boosters/stun-pods-wiki.svg",
+      "id": "booster:stun-pods",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Force of Law",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Concealed Insertion",
@@ -1519,7 +2987,14 @@
       "subgroup": "booster",
       "warbond": "Redacted Regiment",
       "source": "Redacted Regiment",
-      "assetPath": "assets/boosters/concealed-insertion.svg"
+      "assetPath": "assets/boosters/concealed-insertion-wiki.svg",
+      "id": "booster:concealed-insertion",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Stoker",
@@ -1527,7 +3002,14 @@
       "subgroup": "shotgun",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/weapons/primaries/stoker.svg"
+      "assetPath": "assets/weapons/primaries/stoker-wiki.png",
+      "id": "primary:stoker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Sweeper",
@@ -1535,7 +3017,14 @@
       "subgroup": "marksman-rifle",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/weapons/primaries/sweeper.svg"
+      "assetPath": "assets/weapons/primaries/sweeper-wiki.png",
+      "id": "primary:sweeper",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "SMG-203 Gallant",
@@ -1543,7 +3032,14 @@
       "subgroup": "smg",
       "warbond": "Exo Experts",
       "source": "Exo Experts",
-      "assetPath": "assets/weapons/primaries/smg-203-gallant.png"
+      "assetPath": "assets/weapons/primaries/smg-203-gallant-wiki.png",
+      "id": "primary:smg-203-gallant",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Entrenchment Tool",
@@ -1551,7 +3047,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/weapons/sidearms/entrenchment-tool.svg"
+      "assetPath": "assets/weapons/sidearms/entrenchment-tool-wiki.png",
+      "id": "sidearm:entrenchment-tool",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Veto",
@@ -1559,7 +3062,14 @@
       "subgroup": "pistol",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/weapons/sidearms/veto.svg"
+      "assetPath": "assets/weapons/sidearms/veto-wiki.png",
+      "id": "sidearm:veto",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "P-33 Missile Pistol",
@@ -1567,7 +3077,14 @@
       "subgroup": "special-sidearm",
       "warbond": "Exo Experts",
       "source": "Exo Experts",
-      "assetPath": "assets/weapons/sidearms/p-33-missile-pistol.png"
+      "assetPath": "assets/weapons/sidearms/p-33-missile-pistol-wiki.png",
+      "id": "sidearm:p-33-missile-pistol",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Giga Grenade",
@@ -1575,7 +3092,14 @@
       "subgroup": "grenade",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/weapons/throwables/giga-grenade.svg"
+      "assetPath": "assets/weapons/throwables/giga-grenade-wiki.png",
+      "id": "throwable:giga-grenade",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Gas Mortar",
@@ -1583,7 +3107,14 @@
       "subgroup": "defensive",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/stratagems/defensive/gas-mortar.svg"
+      "assetPath": "assets/stratagems/defensive/gas-mortar.svg",
+      "id": "stratagem:gas-mortar",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "Cremator",
@@ -1591,7 +3122,14 @@
       "subgroup": "support",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
-      "assetPath": "assets/stratagems/support/cremator.svg"
+      "assetPath": "assets/stratagems/support/cremator.svg",
+      "id": "stratagem:cremator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "MGX-42 Bullet Storm",
@@ -1599,7 +3137,14 @@
       "subgroup": "support",
       "warbond": "Exo Experts",
       "source": "Exo Experts",
-      "assetPath": "assets/stratagems/support/mgx-42-bullet-storm.svg"
+      "assetPath": "assets/stratagems/support/mgx-42-bullet-storm.svg",
+      "id": "stratagem:mgx-42-bullet-storm",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "EXO-51 Lumberer Exosuit",
@@ -1607,7 +3152,14 @@
       "subgroup": "support",
       "warbond": "Exo Experts",
       "source": "Exo Experts",
-      "assetPath": "assets/stratagems/exosuits/exo-51-lumberer-exosuit.svg"
+      "assetPath": "assets/stratagems/exosuits/exo-51-lumberer-exosuit.svg",
+      "id": "stratagem:exo-51-lumberer-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
     },
     {
       "name": "EXO-55 Breakthrough Exosuit",
@@ -1615,7 +3167,14 @@
       "subgroup": "support",
       "warbond": "Exo Experts",
       "source": "Exo Experts",
-      "assetPath": "assets/stratagems/exosuits/exo-55-breakthrough-exosuit.svg"
+      "assetPath": "assets/stratagems/exosuits/exo-55-breakthrough-exosuit.svg",
+      "id": "stratagem:exo-55-breakthrough-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
     }
   ]
 }

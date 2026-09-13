@@ -5,12 +5,15 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 const mapping = require('../assets/item-images.json');
+const newArt = require('../assets/new-gear/provenance.json').assets;
 
 for (const category of ['primary', 'sidearm', 'throwable', 'booster']) {
   test(`${category}: every catalog image is bundled source artwork, not a placeholder`, () => {
     assert.ok(mapping[category].length > 0);
     for (const entry of mapping[category]) {
-      assert.match(entry.assetPath, /-wiki\.(png|jpg|webp|gif|svg)$/, entry.name);
+      const verified = newArt.find(asset => asset.assetPath === entry.assetPath && asset.name === entry.name);
+      if (verified) assert.equal(entry.artworkSha256, verified.sha256, entry.name);
+      else assert.match(entry.assetPath, /-wiki\.(png|jpg|webp|gif|svg)$/, entry.name);
       assert.ok(!entry.assetPath.includes('placeholders'), entry.name);
       assert.equal(new URL(entry.imageUrl).hostname, 'helldivers.wiki.gg');
       assert.ok(entry.sourceUrl && entry.artworkSource, entry.name);

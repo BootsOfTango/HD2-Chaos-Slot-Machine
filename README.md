@@ -14,6 +14,8 @@ See [the v1.1.0 patch notes](RELEASE_NOTES_v1.1.0.md) for the rename, save migra
 
 ## Desktop development
 
+Current local development preview: **v1.1.2**, unpublished. It includes the v1.1.1 fullscreen/window changes and the first gear/ownership increment. The public download above remains v1.1.0. See [project status](docs/PROJECT_STATUS.md) and [local preview notes](RELEASE_NOTES_v1.1.2.md); publication requires owner approval.
+
 This repository now includes an Electron shell for the existing `index.html` application. The desktop app keeps the current Spin, Results, Compare, Armory, and Rank interfaces intact while adding a secure desktop window, an isolated preload bridge, external browser handling for the YouTube channel link, and Windows packaging metadata.
 
 ### Commands
@@ -23,7 +25,7 @@ This repository now includes an Electron shell for the existing `index.html` app
 - `npm start` launches the Electron desktop application normally.
 - `npm run prepare:icons` regenerates the local desktop icon files from the HD2CSM slot-machine artwork.
 - `npm test` runs the automated logic, storage, catalog, and asset checks. `npm run test:electron` runs the Electron workflow and restart checks with isolated test data.
-- `npm run build:win` regenerates those icon files, then creates two self-contained Windows x64 artifacts with the product name `Helldivers 2 Chaos Slot Machine` and stable app ID `com.bootsoftango.helldivers2chaosslotmachine`: the recommended offline installer `Helldivers-2-Chaos-Slot-Machine-Setup-v1.1.0-win-x64.exe` and the portable `Helldivers-2-Chaos-Slot-Machine-v1.1.0-win-x64.zip`. The installer embeds the full application and Electron runtime; it does not download components during installation and users do not need Node.js, npm, or Python. The ZIP includes `README-FIRST.txt` and must be extracted as a complete folder before its app executable is run.
+- `npm run build:win` regenerates those icon files, then creates two self-contained Windows x64 artifacts with the product name `Helldivers 2 Chaos Slot Machine` and stable app ID `com.bootsoftango.helldivers2chaosslotmachine`: the recommended offline installer `Helldivers-2-Chaos-Slot-Machine-Setup-v<VERSION>-win-x64.exe` and the portable `Helldivers-2-Chaos-Slot-Machine-v<VERSION>-win-x64.zip`, using `package.json`'s version. The installer embeds the full application and Electron runtime; it does not download components during installation and users do not need Node.js, npm, or Python. The ZIP includes `README-FIRST.txt` and must be extracted as a complete folder before its app executable is run.
 - `npm run release:win` builds both Windows artifacts, inspects the packaged runtime/assets and embedded installer payload, and creates one `.sha256` checksum file beside each artifact.
 
 

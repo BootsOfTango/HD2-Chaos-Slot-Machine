@@ -4205,6 +4205,7 @@ END MASTER DIRECTIVE
     </style>
 
     <link rel="stylesheet" href="assets/desktop-window.css">
+    <link rel="stylesheet" href="assets/catalog-ui.css">
 </head>
 <body>
 
@@ -4226,7 +4227,7 @@ END MASTER DIRECTIVE
     <div id="appViewport"><div id="appCanvas">
     <header>
         <div class="title">
-            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.1</div>
+            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.2 preview</div>
             <div style="display:flex; align-items:center; gap:14px; position:relative;">
 
                 <h1 class="appBrand" aria-label="Helldivers 2 Chaos Slot Machine">
@@ -4275,6 +4276,12 @@ END MASTER DIRECTIVE
 
         <!-- SPIN TAB -->
         <section id="tab-spin" class="panel">
+            <aside id="newGearNotice" class="newGearNotice" hidden aria-label="Catalog update">
+                <span>5 new gear additions — off until you choose what you own.</span>
+                <button id="btnReviewNewGear" class="btnPrimary">REVIEW GEAR</button>
+                <button id="btnDismissNewGear" class="btnGhost">Later</button>
+            </aside>
+            <p id="gearPoolWarning" class="tiny" role="status" hidden></p>
             <div class="btnRow">
                 <button class="btnPrimary" id="btnSpin">SPIN LOADOUT</button>
                 <button id="btnLock" class="btnGhost" disabled>LOCK LOADOUT</button>
@@ -4628,6 +4635,16 @@ END MASTER DIRECTIVE
 
         <!-- ITEMS TAB -->
         <section id="tab-items" class="panel" style="display:none;">
+            <details id="newGearPanel" class="newGearPanel">
+                <summary>NEW GEAR &amp; OWNERSHIP — Castellan's Creed / Campaign reward</summary>
+                <p class="tiny">Check Owned for equipment you have unlocked, then Include in rolls. Owning a Warbond alone does not unlock every item.</p>
+                <div id="newGearContent"></div>
+                <details class="newGearCredits">
+                    <summary>Artwork credits and verification status</summary>
+                    <p class="tiny">Game artwork belongs to Arrowhead, Sony and the relevant Warhammer rights holders. Renders: Squ'ith / Tech_Support_Squid; mine cutout: Undeadender; cover: Snuffle; via Helldivers Wiki.gg. Eagle Gas Airstrike uses Dogo314's faithful community tracing of the game icon, not an original extracted icon. It requires credit and free, publicly accessible use. Attribution and source URLs are bundled in assets/new-gear/ATTRIBUTION.md and provenance.json.</p>
+                    <p class="tiny">These five additions are source-verified. Older catalog assignments still need a full source audit; this preview does not claim every existing Warbond association is corrected.</p>
+                </details>
+            </details>
             <div class="row armoryAnalyticsControls">
                 <div class="col right">
                     <div class="miniRow" style="justify-content:flex-end; flex-wrap:nowrap;">
@@ -4871,6 +4888,8 @@ END MASTER DIRECTIVE
 
     <script src="assets/live-planets.js"></script>
     <script src="assets/browser-storage-migration.js"></script>
+    <script src="assets/catalog-state.js"></script>
+    <script src="assets/catalog-ui.js"></script>
     <script src="assets/desktop-window.js"></script>
     <script>
         let WIRED_ONCE = false;
@@ -5687,222 +5706,227 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 "Reform", "Compliance", "Salute", "Ration", "Tax", "Boot", "Directive", "Glory", "Witness"
             ],
 
-                                                                                                            items: {
+            items: {
                 primaries: [
-                    { name: "AR-2 Coyote", enabled: true, warbond: "Dust Devils", subgroup: "assault-rifle", source: "Dust Devils" },
-                    { name: "AR-23 Liberator", enabled: true, warbond: "Unassigned / Custom", subgroup: "assault-rifle", source: "Unassigned / Custom" },
-                    { name: "AR-23A Liberator Carbine", enabled: true, warbond: "Viper Commandos", subgroup: "assault-rifle", source: "Viper Commandos" },
-                    { name: "AR-23C Liberator Concussive", enabled: true, warbond: "Steeled Veterans", subgroup: "assault-rifle", source: "Steeled Veterans" },
-                    { name: "AR-23P Liberator Penetrator", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "assault-rifle", source: "Helldiver Basics (Mobilize)" },
-                    { name: "AR-32 Pacifier", enabled: true, warbond: "Force of Law", subgroup: "assault-rifle", source: "Force of Law" },
-                    { name: "AR-59 Suppressor", enabled: true, warbond: "Redacted Regiment", subgroup: "assault-rifle", source: "Redacted Regiment" },
-                    { name: "AR-61 Tenderizer", enabled: true, warbond: "Polar Patriots", subgroup: "assault-rifle", source: "Polar Patriots" },
-                    { name: "AR/GL-21 One-Two", enabled: true, warbond: "Python Commandos", subgroup: "assault-rifle", source: "Python Commandos" },
-                    { name: "ARC-12 Blitzer", enabled: true, warbond: "Cutting Edge", subgroup: "assault-rifle", source: "Cutting Edge" },
-                    { name: "BR-14 Adjudicator", enabled: true, warbond: "Democratic Detonation", subgroup: "assault-rifle", source: "Democratic Detonation" },
-                    { name: "FLAM-66 Torcher", enabled: true, warbond: "Unassigned / Custom", subgroup: "assault-rifle", source: "Unassigned / Custom" },
-                    { name: "JAR-5 Dominator", enabled: true, warbond: "Unassigned / Custom", subgroup: "assault-rifle", source: "Unassigned / Custom" },
-                    { name: "MA5C Assault Rifle", enabled: true, warbond: "Obedient Democracy Support Troopers", subgroup: "assault-rifle", source: "Obedient Democracy Support Troopers" },
-                    { name: "StA-11 SMG", enabled: true, warbond: "Righteous Revenants", subgroup: "assault-rifle", source: "Righteous Revenants" },
-                    { name: "StA-52 Assault Rifle", enabled: true, warbond: "Righteous Revenants", subgroup: "assault-rifle", source: "Righteous Revenants" },
-                    { name: "VG-70 Variable", enabled: true, warbond: "Unassigned / Custom", subgroup: "marksman-rifle", source: "Unassigned / Custom" },
-                    { name: "R-2 Amendment", enabled: true, warbond: "Masters of Ceremony", subgroup: "marksman-rifle", source: "Masters of Ceremony" },
-                    { name: "R-2124 Constitution", enabled: true, warbond: "Unassigned / Custom", subgroup: "marksman-rifle", source: "Unassigned / Custom" },
-                    { name: "R-36 Eruptor", enabled: true, warbond: "Democratic Detonation", subgroup: "marksman-rifle", source: "Democratic Detonation" },
-                    { name: "R-6 Deadeye", enabled: true, warbond: "Borderline Justice", subgroup: "marksman-rifle", source: "Borderline Justice" },
-                    { name: "R-63 Diligence", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "marksman-rifle", source: "Helldiver Basics (Mobilize)" },
-                    { name: "R-63CS Diligence Counter Sniper", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "marksman-rifle", source: "Helldiver Basics (Mobilize)" },
-                    { name: "R-72 Censor", enabled: true, warbond: "Redacted Regiment", subgroup: "marksman-rifle", source: "Redacted Regiment" },
-                    { name: "M7S SMG", enabled: true, warbond: "Obedient Democracy Support Troopers", subgroup: "smg", source: "Obedient Democracy Support Troopers" },
-                    { name: "MP-98 Knight", enabled: true, warbond: "Unassigned / Custom", subgroup: "smg", source: "Unassigned / Custom" },
-                    { name: "SMG-32 Reprimand", enabled: true, warbond: "Truth Enforcers", subgroup: "smg", source: "Truth Enforcers" },
-                    { name: "SMG-37 Defender", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "smg", source: "Helldiver Basics (Mobilize)" },
-                    { name: "SMG-72 Pummeler", enabled: true, warbond: "Polar Patriots", subgroup: "smg", source: "Polar Patriots" },
-                    { name: "DBS-2 Double Freedom", enabled: true, warbond: "Unassigned / Custom", subgroup: "shotgun", source: "Unassigned / Custom" },
-                    { name: "M90A Shotgun", enabled: true, warbond: "Obedient Democracy Support Troopers", subgroup: "shotgun", source: "Obedient Democracy Support Troopers" },
-                    { name: "SG-20 Halt", enabled: true, warbond: "Truth Enforcers", subgroup: "shotgun", source: "Truth Enforcers" },
-                    { name: "SG-225 Breaker", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)" },
-                    { name: "SG-225IE Breaker Incendiary", enabled: true, warbond: "Steeled Veterans", subgroup: "shotgun", source: "Steeled Veterans" },
-                    { name: "SG-225SP Breaker Spray&Pray", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)" },
-                    { name: "SG-451 Cookout", enabled: true, warbond: "Freedom's Flame", subgroup: "shotgun", source: "Freedom's Flame" },
-                    { name: "SG-8 Punisher", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)" },
-                    { name: "SG-8P Punisher Plasma", enabled: true, warbond: "Cutting Edge", subgroup: "shotgun", source: "Cutting Edge" },
-                    { name: "SG-8S Slugger", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)" },
-                    { name: "CB-9 Exploding Crossbow", enabled: true, warbond: "Democratic Detonation", subgroup: "explosive", source: "Democratic Detonation" },
-                    { name: "LAS-13 Trident", enabled: true, warbond: "Siege Breakers", subgroup: "energy", source: "Siege Breakers" },
-                    { name: "LAS-16 Sickle", enabled: true, warbond: "Cutting Edge", subgroup: "energy", source: "Cutting Edge" },
-                    { name: "LAS-17 Double-Edge Sickle", enabled: true, warbond: "Servants of Freedom", subgroup: "energy", source: "Servants of Freedom" },
-                    { name: "LAS-5 Scythe", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "energy", source: "Helldiver Basics (Mobilize)" },
-                    { name: "PLAS-1 Scorcher", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "energy", source: "Helldiver Basics (Mobilize)" },
-                    { name: "PLAS-101 Purifier", enabled: true, warbond: "Polar Patriots", subgroup: "energy", source: "Polar Patriots" },
-                    { name: "PLAS-39 Accelerator Rifle", enabled: true, warbond: "Righteous Revenants", subgroup: "energy", source: "Righteous Revenants" },
-                    { name: "Stoker", enabled: true, warbond: "Entrenched Division", subgroup: "shotgun", source: "Entrenched Division" },
-                    { name: "Sweeper", enabled: true, warbond: "Entrenched Division", subgroup: "marksman-rifle", source: "Entrenched Division" },
-                    { name: "SMG-203 Gallant", enabled: true, warbond: "Exo Experts", subgroup: "smg", source: "Exo Experts" },
+                    { name: "R/40-K Hot-Shot Marksman Rifle", enabled: false, owned: false, warbond: "Castellan's Creed", subgroup: "marksman-rifle", source: "Castellan's Creed", id: "primary:r-40-k-hot-shot", aliases: ["R-40-K Hot-Shot", "Hot-Shot Marksman Rifle"], acquisition: {"kind": "warbond", "id": "warbond:castellans-creed", "label": "Castellan's Creed Legendary Warbond", "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/", "verifiedAt": "2026-09-13"}, introducedIn: "1.1.2" },
+                    { name: "AR-2 Coyote", enabled: true, owned: true, warbond: "Dust Devils", subgroup: "assault-rifle", source: "Dust Devils", id: "primary:ar-2-coyote", aliases: [], acquisition: {"kind": "unverified", "label": "Dust Devils", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-23 Liberator", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "assault-rifle", source: "Unassigned / Custom", id: "primary:ar-23-liberator", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-23A Liberator Carbine", enabled: true, owned: true, warbond: "Viper Commandos", subgroup: "assault-rifle", source: "Viper Commandos", id: "primary:ar-23a-liberator-carbine", aliases: [], acquisition: {"kind": "unverified", "label": "Viper Commandos", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-23C Liberator Concussive", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "assault-rifle", source: "Steeled Veterans", id: "primary:ar-23c-liberator-concussive", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-23P Liberator Penetrator", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "assault-rifle", source: "Helldiver Basics (Mobilize)", id: "primary:ar-23p-liberator-penetrator", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-32 Pacifier", enabled: true, owned: true, warbond: "Force of Law", subgroup: "assault-rifle", source: "Force of Law", id: "primary:ar-32-pacifier", aliases: [], acquisition: {"kind": "unverified", "label": "Force of Law", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-59 Suppressor", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "assault-rifle", source: "Redacted Regiment", id: "primary:ar-59-suppressor", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-61 Tenderizer", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "assault-rifle", source: "Polar Patriots", id: "primary:ar-61-tenderizer", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR/GL-21 One-Two", enabled: true, owned: true, warbond: "Python Commandos", subgroup: "assault-rifle", source: "Python Commandos", id: "primary:ar-gl-21-one-two", aliases: [], acquisition: {"kind": "unverified", "label": "Python Commandos", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "ARC-12 Blitzer", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "assault-rifle", source: "Cutting Edge", id: "primary:arc-12-blitzer", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "BR-14 Adjudicator", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "assault-rifle", source: "Democratic Detonation", id: "primary:br-14-adjudicator", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "FLAM-66 Torcher", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "assault-rifle", source: "Unassigned / Custom", id: "primary:flam-66-torcher", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "JAR-5 Dominator", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "assault-rifle", source: "Unassigned / Custom", id: "primary:jar-5-dominator", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "MA5C Assault Rifle", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "assault-rifle", source: "Obedient Democracy Support Troopers", id: "primary:ma5c-assault-rifle", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "StA-11 SMG", enabled: true, owned: true, warbond: "Righteous Revenants", subgroup: "assault-rifle", source: "Righteous Revenants", id: "primary:sta-11-smg", aliases: [], acquisition: {"kind": "unverified", "label": "Righteous Revenants", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "StA-52 Assault Rifle", enabled: true, owned: true, warbond: "Righteous Revenants", subgroup: "assault-rifle", source: "Righteous Revenants", id: "primary:sta-52-assault-rifle", aliases: [], acquisition: {"kind": "unverified", "label": "Righteous Revenants", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "VG-70 Variable", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "marksman-rifle", source: "Unassigned / Custom", id: "primary:vg-70-variable", aliases: ["r 0 variable"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-2 Amendment", enabled: true, owned: true, warbond: "Masters of Ceremony", subgroup: "marksman-rifle", source: "Masters of Ceremony", id: "primary:r-2-amendment", aliases: [], acquisition: {"kind": "unverified", "label": "Masters of Ceremony", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-2124 Constitution", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "marksman-rifle", source: "Unassigned / Custom", id: "primary:r-2124-constitution", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-36 Eruptor", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "marksman-rifle", source: "Democratic Detonation", id: "primary:r-36-eruptor", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-6 Deadeye", enabled: true, owned: true, warbond: "Borderline Justice", subgroup: "marksman-rifle", source: "Borderline Justice", id: "primary:r-6-deadeye", aliases: [], acquisition: {"kind": "unverified", "label": "Borderline Justice", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-63 Diligence", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "marksman-rifle", source: "Helldiver Basics (Mobilize)", id: "primary:r-63-diligence", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-63CS Diligence Counter Sniper", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "marksman-rifle", source: "Helldiver Basics (Mobilize)", id: "primary:r-63cs-diligence-counter-sniper", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-72 Censor", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "marksman-rifle", source: "Redacted Regiment", id: "primary:r-72-censor", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "M7S SMG", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "smg", source: "Obedient Democracy Support Troopers", id: "primary:m7s-smg", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "MP-98 Knight", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "smg", source: "Unassigned / Custom", id: "primary:mp-98-knight", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SMG-32 Reprimand", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "smg", source: "Truth Enforcers", id: "primary:smg-32-reprimand", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SMG-37 Defender", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "smg", source: "Helldiver Basics (Mobilize)", id: "primary:smg-37-defender", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SMG-72 Pummeler", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "smg", source: "Polar Patriots", id: "primary:smg-72-pummeler", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "DBS-2 Double Freedom", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "shotgun", source: "Unassigned / Custom", id: "primary:dbs-2-double-freedom", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "M90A Shotgun", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "shotgun", source: "Obedient Democracy Support Troopers", id: "primary:m90a-shotgun", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-20 Halt", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "shotgun", source: "Truth Enforcers", id: "primary:sg-20-halt", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-225 Breaker", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-225-breaker", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-225IE Breaker Incendiary", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "shotgun", source: "Steeled Veterans", id: "primary:sg-225ie-breaker-incendiary", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-225SP Breaker Spray&Pray", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-225sp-breaker-spray-and-pray", aliases: ["sg 225sp breaker sprayandpray", "sg 225sp breaker spraypray"], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-451 Cookout", enabled: true, owned: true, warbond: "Freedom's Flame", subgroup: "shotgun", source: "Freedom's Flame", id: "primary:sg-451-cookout", aliases: [], acquisition: {"kind": "unverified", "label": "Freedom's Flame", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-8 Punisher", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-8-punisher", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-8P Punisher Plasma", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "shotgun", source: "Cutting Edge", id: "primary:sg-8p-punisher-plasma", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-8S Slugger", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-8s-slugger", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CB-9 Exploding Crossbow", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "explosive", source: "Democratic Detonation", id: "primary:cb-9-exploding-crossbow", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-13 Trident", enabled: true, owned: true, warbond: "Siege Breakers", subgroup: "energy", source: "Siege Breakers", id: "primary:las-13-trident", aliases: [], acquisition: {"kind": "unverified", "label": "Siege Breakers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-16 Sickle", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "energy", source: "Cutting Edge", id: "primary:las-16-sickle", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-17 Double-Edge Sickle", enabled: true, owned: true, warbond: "Servants of Freedom", subgroup: "energy", source: "Servants of Freedom", id: "primary:las-17-double-edge-sickle", aliases: [], acquisition: {"kind": "unverified", "label": "Servants of Freedom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-5 Scythe", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "energy", source: "Helldiver Basics (Mobilize)", id: "primary:las-5-scythe", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "PLAS-1 Scorcher", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "energy", source: "Helldiver Basics (Mobilize)", id: "primary:plas-1-scorcher", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "PLAS-101 Purifier", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "energy", source: "Polar Patriots", id: "primary:plas-101-purifier", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "PLAS-39 Accelerator Rifle", enabled: true, owned: true, warbond: "Righteous Revenants", subgroup: "energy", source: "Righteous Revenants", id: "primary:plas-39-accelerator-rifle", aliases: [], acquisition: {"kind": "unverified", "label": "Righteous Revenants", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Stoker", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "shotgun", source: "Entrenched Division", id: "primary:stoker", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Sweeper", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "marksman-rifle", source: "Entrenched Division", id: "primary:sweeper", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SMG-203 Gallant", enabled: true, owned: true, warbond: "Exo Experts", subgroup: "smg", source: "Exo Experts", id: "primary:smg-203-gallant", aliases: [], acquisition: {"kind": "unverified", "label": "Exo Experts", "verification": "legacy-assignment-pending-audit"} },
                 ],
 
                 sidearms: [
-                    { name: "GP-31 Grenade Pistol", enabled: true, warbond: "Democratic Detonation", subgroup: "pistol", source: "Democratic Detonation" },
-                    { name: "M6C/SOCOM Pistol", enabled: true, warbond: "Obedient Democracy Support Troopers", subgroup: "pistol", source: "Obedient Democracy Support Troopers" },
-                    { name: "P-11 Stim Pistol", enabled: true, warbond: "Chemical Agents", subgroup: "pistol", source: "Chemical Agents" },
-                    { name: "P-113 Verdict", enabled: true, warbond: "Polar Patriots", subgroup: "pistol", source: "Polar Patriots" },
-                    { name: "P-19 Redeemer", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "pistol", source: "Helldiver Basics (Mobilize)" },
-                    { name: "P-2 Peacemaker", enabled: true, warbond: "Unassigned / Custom", subgroup: "pistol", source: "Unassigned / Custom" },
-                    { name: "P-35 Re-Educator", enabled: true, warbond: "Redacted Regiment", subgroup: "pistol", source: "Redacted Regiment" },
-                    { name: "P-4 Senator", enabled: true, warbond: "Steeled Veterans", subgroup: "pistol", source: "Steeled Veterans" },
-                    { name: "P-72 Crisper", enabled: true, warbond: "Freedom's Flame", subgroup: "pistol", source: "Freedom's Flame" },
-                    { name: "P-92 Warrant", enabled: true, warbond: "Unassigned / Custom", subgroup: "pistol", source: "Unassigned / Custom" },
-                    { name: "CQC-1 Saber", enabled: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom" },
-                    { name: "CQC-19 Machete", enabled: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom" },
-                    { name: "CQC-2 Stun Lance", enabled: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom" },
-                    { name: "CQC-30 Stun Baton", enabled: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom" },
-                    { name: "CQC-5 Combat Hatchet", enabled: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom" },
-                    { name: "GP-20 Ultimatum", enabled: true, warbond: "Servants of Freedom", subgroup: "special-sidearm", source: "Servants of Freedom" },
-                    { name: "LAS-58 Talon", enabled: true, warbond: "Borderline Justice", subgroup: "special-sidearm", source: "Borderline Justice" },
-                    { name: "LAS-7 Dagger", enabled: true, warbond: "Cutting Edge", subgroup: "special-sidearm", source: "Cutting Edge" },
-                    { name: "PLAS-15 Loyalist", enabled: true, warbond: "Truth Enforcers", subgroup: "special-sidearm", source: "Truth Enforcers" },
-                    { name: "SG-22 Bushwhacker", enabled: true, warbond: "Viper Commandos", subgroup: "special-sidearm", source: "Viper Commandos" },
-                    { name: "Entrenchment Tool", enabled: true, warbond: "Entrenched Division", subgroup: "special-sidearm", source: "Entrenched Division" },
-                    { name: "Veto", enabled: true, warbond: "Entrenched Division", subgroup: "pistol", source: "Entrenched Division" },
-                    { name: "P-33 Missile Pistol", enabled: true, warbond: "Exo Experts", subgroup: "special-sidearm", source: "Exo Experts" },
+                    { name: "P/40-K Bolt Pistol", enabled: false, owned: false, warbond: "Castellan's Creed", subgroup: "pistol", source: "Castellan's Creed", id: "sidearm:p-40-k-bolt-pistol", aliases: ["P-40-K Bolt Pistol", "Bolt Pistol"], acquisition: {"kind": "warbond", "id": "warbond:castellans-creed", "label": "Castellan's Creed Legendary Warbond", "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/", "verifiedAt": "2026-09-13"}, introducedIn: "1.1.2" },
+                    { name: "GP-31 Grenade Pistol", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "pistol", source: "Democratic Detonation", id: "sidearm:gp-31-grenade-pistol", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "M6C/SOCOM Pistol", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "pistol", source: "Obedient Democracy Support Troopers", id: "sidearm:m6c-socom-pistol", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-11 Stim Pistol", enabled: true, owned: true, warbond: "Chemical Agents", subgroup: "pistol", source: "Chemical Agents", id: "sidearm:p-11-stim-pistol", aliases: [], acquisition: {"kind": "unverified", "label": "Chemical Agents", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-113 Verdict", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "pistol", source: "Polar Patriots", id: "sidearm:p-113-verdict", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-19 Redeemer", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "pistol", source: "Helldiver Basics (Mobilize)", id: "sidearm:p-19-redeemer", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-2 Peacemaker", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "pistol", source: "Unassigned / Custom", id: "sidearm:p-2-peacemaker", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-35 Re-Educator", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "pistol", source: "Redacted Regiment", id: "sidearm:p-35-re-educator", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-4 Senator", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "pistol", source: "Steeled Veterans", id: "sidearm:p-4-senator", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-72 Crisper", enabled: true, owned: true, warbond: "Freedom's Flame", subgroup: "pistol", source: "Freedom's Flame", id: "sidearm:p-72-crisper", aliases: [], acquisition: {"kind": "unverified", "label": "Freedom's Flame", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-92 Warrant", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "pistol", source: "Unassigned / Custom", id: "sidearm:p-92-warrant", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CQC-1 Saber", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom", id: "sidearm:cqc-1-saber", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CQC-19 Machete", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom", id: "sidearm:cqc-19-machete", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CQC-2 Stun Lance", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom", id: "sidearm:cqc-2-stun-lance", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CQC-30 Stun Baton", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom", id: "sidearm:cqc-30-stun-baton", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CQC-5 Combat Hatchet", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "special-sidearm", source: "Unassigned / Custom", id: "sidearm:cqc-5-combat-hatchet", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "GP-20 Ultimatum", enabled: true, owned: true, warbond: "Servants of Freedom", subgroup: "special-sidearm", source: "Servants of Freedom", id: "sidearm:gp-20-ultimatum", aliases: [], acquisition: {"kind": "unverified", "label": "Servants of Freedom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-58 Talon", enabled: true, owned: true, warbond: "Borderline Justice", subgroup: "special-sidearm", source: "Borderline Justice", id: "sidearm:las-58-talon", aliases: [], acquisition: {"kind": "unverified", "label": "Borderline Justice", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-7 Dagger", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "special-sidearm", source: "Cutting Edge", id: "sidearm:las-7-dagger", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "PLAS-15 Loyalist", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "special-sidearm", source: "Truth Enforcers", id: "sidearm:plas-15-loyalist", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-22 Bushwhacker", enabled: true, owned: true, warbond: "Viper Commandos", subgroup: "special-sidearm", source: "Viper Commandos", id: "sidearm:sg-22-bushwhacker", aliases: [], acquisition: {"kind": "unverified", "label": "Viper Commandos", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Entrenchment Tool", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "special-sidearm", source: "Entrenched Division", id: "sidearm:entrenchment-tool", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Veto", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "pistol", source: "Entrenched Division", id: "sidearm:veto", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-33 Missile Pistol", enabled: true, owned: true, warbond: "Exo Experts", subgroup: "special-sidearm", source: "Exo Experts", id: "sidearm:p-33-missile-pistol", aliases: [], acquisition: {"kind": "unverified", "label": "Exo Experts", "verification": "legacy-assignment-pending-audit"} },
                 ],
 
                 throwables: [
-                    { name: "G-10 Incendiary", enabled: true, warbond: "Steeled Veterans", subgroup: "grenade", source: "Steeled Veterans" },
-                    { name: "G-109 Urchin", enabled: true, warbond: "Force of Law", subgroup: "grenade", source: "Force of Law" },
-                    { name: "G-12 High Explosive", enabled: true, warbond: "Unassigned / Custom", subgroup: "grenade", source: "Unassigned / Custom" },
-                    { name: "G-123 Thermite", enabled: true, warbond: "Democratic Detonation", subgroup: "grenade", source: "Democratic Detonation" },
-                    { name: "G-13 Incendiary Impact", enabled: true, warbond: "Polar Patriots", subgroup: "grenade", source: "Polar Patriots" },
-                    { name: "G-142 Pyrotech", enabled: true, warbond: "Masters of Ceremony", subgroup: "grenade", source: "Masters of Ceremony" },
-                    { name: "G-16 Impact", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)" },
-                    { name: "G-23 Stun", enabled: true, warbond: "Cutting Edge", subgroup: "grenade", source: "Cutting Edge" },
-                    { name: "G-3 Smoke", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)" },
-                    { name: "G-31 Arc", enabled: true, warbond: "Control Group", subgroup: "grenade", source: "Control Group" },
-                    { name: "G-4 Gas", enabled: true, warbond: "Chemical Agents", subgroup: "grenade", source: "Chemical Agents" },
-                    { name: "G-50 Seeker", enabled: true, warbond: "Servants of Freedom", subgroup: "grenade", source: "Servants of Freedom" },
-                    { name: "G-6 Frag", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)" },
-                    { name: "G-7 Pineapple", enabled: true, warbond: "Dust Devils", subgroup: "grenade", source: "Dust Devils" },
-                    { name: "G-89 Smokescreen", enabled: true, warbond: "Unassigned / Custom", subgroup: "grenade", source: "Unassigned / Custom" },
-                    { name: "K-2 Throwing Knife", enabled: true, warbond: "Viper Commandos", subgroup: "throwing-weapon", source: "Viper Commandos" },
-                    { name: "TED-63 Dynamite", enabled: true, warbond: "Borderline Justice", subgroup: "throwing-weapon", source: "Borderline Justice" },
-                    { name: "G/SH-39 Shield", enabled: true, warbond: "Siege Breakers", subgroup: "utility-throwable", source: "Siege Breakers" },
-                    { name: "TM-1 Lure Mine", enabled: true, warbond: "Redacted Regiment", subgroup: "utility-throwable", source: "Redacted Regiment" },
-                    { name: "Giga Grenade", enabled: true, warbond: "Entrenched Division", subgroup: "grenade", source: "Entrenched Division" },
+                    { name: "G/40-K Melta Mine", enabled: false, owned: false, warbond: "Castellan's Creed", subgroup: "mine", source: "Castellan's Creed", id: "throwable:g-40-k-melta-mine", aliases: ["G/40-K Meltamine", "Meltamine", "Melta Mine"], acquisition: {"kind": "warbond", "id": "warbond:castellans-creed", "label": "Castellan's Creed Legendary Warbond", "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/", "verifiedAt": "2026-09-13"}, introducedIn: "1.1.2" },
+                    { name: "G-10 Incendiary", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "grenade", source: "Steeled Veterans", id: "throwable:g-10-incendiary", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-109 Urchin", enabled: true, owned: true, warbond: "Force of Law", subgroup: "grenade", source: "Force of Law", id: "throwable:g-109-urchin", aliases: [], acquisition: {"kind": "unverified", "label": "Force of Law", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-12 High Explosive", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "grenade", source: "Unassigned / Custom", id: "throwable:g-12-high-explosive", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-123 Thermite", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "grenade", source: "Democratic Detonation", id: "throwable:g-123-thermite", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-13 Incendiary Impact", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "grenade", source: "Polar Patriots", id: "throwable:g-13-incendiary-impact", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-142 Pyrotech", enabled: true, owned: true, warbond: "Masters of Ceremony", subgroup: "grenade", source: "Masters of Ceremony", id: "throwable:g-142-pyrotech", aliases: [], acquisition: {"kind": "unverified", "label": "Masters of Ceremony", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-16 Impact", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)", id: "throwable:g-16-impact", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-23 Stun", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "grenade", source: "Cutting Edge", id: "throwable:g-23-stun", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-3 Smoke", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)", id: "throwable:g-3-smoke", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-31 Arc", enabled: true, owned: true, warbond: "Control Group", subgroup: "grenade", source: "Control Group", id: "throwable:g-31-arc", aliases: [], acquisition: {"kind": "unverified", "label": "Control Group", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-4 Gas", enabled: true, owned: true, warbond: "Chemical Agents", subgroup: "grenade", source: "Chemical Agents", id: "throwable:g-4-gas", aliases: [], acquisition: {"kind": "unverified", "label": "Chemical Agents", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-50 Seeker", enabled: true, owned: true, warbond: "Servants of Freedom", subgroup: "grenade", source: "Servants of Freedom", id: "throwable:g-50-seeker", aliases: [], acquisition: {"kind": "unverified", "label": "Servants of Freedom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-6 Frag", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)", id: "throwable:g-6-frag", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-7 Pineapple", enabled: true, owned: true, warbond: "Dust Devils", subgroup: "grenade", source: "Dust Devils", id: "throwable:g-7-pineapple", aliases: [], acquisition: {"kind": "unverified", "label": "Dust Devils", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-89 Smokescreen", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "grenade", source: "Unassigned / Custom", id: "throwable:g-89-smokescreen", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "K-2 Throwing Knife", enabled: true, owned: true, warbond: "Viper Commandos", subgroup: "throwing-weapon", source: "Viper Commandos", id: "throwable:k-2-throwing-knife", aliases: [], acquisition: {"kind": "unverified", "label": "Viper Commandos", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "TED-63 Dynamite", enabled: true, owned: true, warbond: "Borderline Justice", subgroup: "throwing-weapon", source: "Borderline Justice", id: "throwable:ted-63-dynamite", aliases: [], acquisition: {"kind": "unverified", "label": "Borderline Justice", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G/SH-39 Shield", enabled: true, owned: true, warbond: "Siege Breakers", subgroup: "utility-throwable", source: "Siege Breakers", id: "throwable:g-sh-39-shield", aliases: [], acquisition: {"kind": "unverified", "label": "Siege Breakers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "TM-1 Lure Mine", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "utility-throwable", source: "Redacted Regiment", id: "throwable:tm-1-lure-mine", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Giga Grenade", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "grenade", source: "Entrenched Division", id: "throwable:giga-grenade", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
                 ],
 
                 stratagems: [
-                    { name: "Orbital 120MM HE Barrage", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital 380MM HE Barrage", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Airburst Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital EMS Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Gas Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Gatling Barrage", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Laser", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Napalm Barrage", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Precision Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Railcannon Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Smoke Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Orbital Walking Barrage", enabled: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom" },
-                    { name: "Eagle 110MM Rocket Pods", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Eagle 500KG Bomb", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Eagle Airstrike", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Eagle Cluster Bomb", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Eagle Napalm Airstrike", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Eagle Smoke Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Eagle Strafing Run", enabled: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom" },
-                    { name: "Anti-Personnel Minefield", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Anti-Tank Emplacement", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Anti-Tank Mines", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Autocannon Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "EMS Mortar Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Flame Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Gas Mines", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Gatling Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Grenadier Battlement", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "HMG Emplacement", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Incendiary Mines", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Laser Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Machine Gun Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Mortar Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Rocket Sentry", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Shield Generator Relay", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "Tesla Tower", enabled: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom" },
-                    { name: "AC-8 Autocannon", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "APW-1 Anti-Materiel Rifle", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "ARC-3 Arc Thrower", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Ballistic Shield Backpack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Bastion", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Belt-fed GL", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Breaching Hammer", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "C4 Pack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "De-Escalator", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Defoliation Tool", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Directional Shield", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "EAT-17 Expendable Anti-Tank", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "EMS Strike", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Emancipator Exosuit", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Epoch", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Expendable Napalm", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "FAF-14 Spear", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "FLAM-40 Flamethrower", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "M-102 Fast Recon Vehicle", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "M-103 Supply FRV", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "GL-21 Grenade Launcher", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "GR-8 Recoilless Rifle", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Guard Dog", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "AX/ARC-3 K-9", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "AX/TX-13 Dog Breath", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Guard Dog Rover", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Hot Dog", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Hover Pack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Jump Pack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "LAS-98 Laser Cannon", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "LAS-99 Quasar Cannon", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Leveller", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "M-105 Stalwart", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "MG-206 Heavy Machine Gun", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "MG-43 Machine Gun", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "MLS-4X Commando", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Maxigun", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "One True Flag", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Patriot Exosuit", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Portable Hellbomb", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "RL-77 Airburst Rocket Launcher", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "RS-422 Railgun", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Shield Generator Pack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Solo Silo", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Speargun", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "StA-X3 W.A.S.P. Launcher", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Sterilizer", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Supply Pack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Warp Pack", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Wasp", enabled: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom" },
-                    { name: "Gas Mortar", enabled: true, warbond: "Entrenched Division", subgroup: "defensive", source: "Entrenched Division" },
-                    { name: "Cremator", enabled: true, warbond: "Entrenched Division", subgroup: "support", source: "Entrenched Division" },
-                    { name: "MGX-42 Bullet Storm", enabled: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts" },
-                    { name: "EXO-51 Lumberer Exosuit", enabled: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts" },
-                    { name: "EXO-55 Breakthrough Exosuit", enabled: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts" },
+                    { name: "40-K Meltagun", enabled: false, owned: false, warbond: "Castellan's Creed", subgroup: "support", source: "Castellan's Creed", id: "stratagem:40-k-meltagun", aliases: ["40-K Meltagun Stratagem", "Meltagun"], acquisition: {"kind": "warbond", "id": "warbond:castellans-creed", "label": "Castellan's Creed Legendary Warbond", "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/", "verifiedAt": "2026-09-13"}, introducedIn: "1.1.2" },
+                    { name: "Eagle Gas Airstrike", enabled: false, owned: false, warbond: "Campaign rewards", subgroup: "eagle", source: "Campaign rewards", id: "stratagem:eagle-gas-airstrike", aliases: [], acquisition: {"kind": "campaign-reward", "id": "campaign:counterdissident-hammer", "label": "Counterdissident Hammer campaign reward", "sourceUrl": "https://arrowhead.zendesk.com/hc/en-us/articles/29563053705500-I-didn-t-get-a-campaign-reward", "verifiedAt": "2026-09-13", "startsAt": "2026-08-25T12:00:00Z", "endsAt": "2026-09-07T08:00:00Z", "notes": "Not universally owned. Players who missed the campaign must wait for a future availability announcement."}, introducedIn: "1.1.2" },
+                    { name: "Orbital 120MM HE Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-120mm-he-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital 380MM HE Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-380mm-he-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Airburst Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-airburst-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital EMS Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-ems-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Gas Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-gas-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Gatling Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-gatling-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Laser", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-laser", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Napalm Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-napalm-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Precision Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-precision-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Railcannon Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-railcannon-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Smoke Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-smoke-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Orbital Walking Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-walking-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle 110MM Rocket Pods", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-110mm-rocket-pods", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle 500KG Bomb", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-500kg-bomb", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle Airstrike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-airstrike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle Cluster Bomb", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-cluster-bomb", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle Napalm Airstrike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-napalm-airstrike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle Smoke Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-smoke-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Eagle Strafing Run", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "eagle", source: "Unassigned / Custom", id: "stratagem:eagle-strafing-run", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Anti-Personnel Minefield", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:anti-personnel-minefield", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Anti-Tank Emplacement", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:anti-tank-emplacement", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Anti-Tank Mines", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:anti-tank-mines", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Autocannon Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:autocannon-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "EMS Mortar Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:ems-mortar-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Flame Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:flame-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Gas Mines", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:gas-mines", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Gatling Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:gatling-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Grenadier Battlement", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:grenadier-battlement", aliases: ["grenadier battalion"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "HMG Emplacement", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:hmg-emplacement", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Incendiary Mines", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:incendiary-mines", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Laser Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:laser-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Machine Gun Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:machine-gun-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Mortar Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:mortar-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Rocket Sentry", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:rocket-sentry", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Shield Generator Relay", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:shield-generator-relay", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Tesla Tower", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "defensive", source: "Unassigned / Custom", id: "stratagem:tesla-tower", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AC-8 Autocannon", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:ac-8-autocannon", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "APW-1 Anti-Materiel Rifle", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:apw-1-anti-materiel-rifle", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "ARC-3 Arc Thrower", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:arc-3-arc-thrower", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Ballistic Shield Backpack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:ballistic-shield-backpack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Bastion", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:bastion", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Belt-fed GL", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:belt-fed-gl", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Breaching Hammer", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:breaching-hammer", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "C4 Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:c4-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "De-Escalator", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:de-escalator", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Defoliation Tool", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:defoliation-tool", aliases: ["detonation tool"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Directional Shield", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:directional-shield", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "EAT-17 Expendable Anti-Tank", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:eat-17-expendable-anti-tank", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "EMS Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:ems-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Emancipator Exosuit", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:emancipator-exosuit", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Epoch", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:epoch", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Expendable Napalm", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:expendable-napalm", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "FAF-14 Spear", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:faf-14-spear", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "FLAM-40 Flamethrower", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:flam-40-flamethrower", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "M-102 Fast Recon Vehicle", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:m-102-fast-recon-vehicle", aliases: ["fast recon vehicle"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "M-103 Supply FRV", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:m-103-supply-frv", aliases: ["supply frv"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "GL-21 Grenade Launcher", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:gl-21-grenade-launcher", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "GR-8 Recoilless Rifle", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:gr-8-recoilless-rifle", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Guard Dog", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:guard-dog", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AX/ARC-3 K-9", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:ax-arc-3-k-9", aliases: ["guard dog arc"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AX/TX-13 Dog Breath", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:ax-tx-13-dog-breath", aliases: ["guard dog breath"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Guard Dog Rover", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:guard-dog-rover", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Hot Dog", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:hot-dog", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Hover Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:hover-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Jump Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:jump-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-98 Laser Cannon", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:las-98-laser-cannon", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-99 Quasar Cannon", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:las-99-quasar-cannon", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Leveller", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:leveller", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "M-105 Stalwart", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:m-105-stalwart", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "MG-206 Heavy Machine Gun", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:mg-206-heavy-machine-gun", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "MG-43 Machine Gun", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:mg-43-machine-gun", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "MLS-4X Commando", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:mls-4x-commando", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Maxigun", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:maxigun", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "One True Flag", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:one-true-flag", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Patriot Exosuit", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:patriot-exosuit", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Portable Hellbomb", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:portable-hellbomb", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "RL-77 Airburst Rocket Launcher", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:rl-77-airburst-rocket-launcher", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "RS-422 Railgun", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:rs-422-railgun", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Shield Generator Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:shield-generator-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Solo Silo", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:solo-silo", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Speargun", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:speargun", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "StA-X3 W.A.S.P. Launcher", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:sta-x3-w-a-s-p-launcher", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Sterilizer", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:sterilizer", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Supply Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:supply-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Warp Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:warp-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Wasp", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:wasp", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Gas Mortar", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "defensive", source: "Entrenched Division", id: "stratagem:gas-mortar", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Cremator", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "support", source: "Entrenched Division", id: "stratagem:cremator", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "MGX-42 Bullet Storm", enabled: true, owned: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts", id: "stratagem:mgx-42-bullet-storm", aliases: [], acquisition: {"kind": "unverified", "label": "Exo Experts", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "EXO-51 Lumberer Exosuit", enabled: true, owned: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts", id: "stratagem:exo-51-lumberer-exosuit", aliases: [], acquisition: {"kind": "unverified", "label": "Exo Experts", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "EXO-55 Breakthrough Exosuit", enabled: true, owned: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts", id: "stratagem:exo-55-breakthrough-exosuit", aliases: [], acquisition: {"kind": "unverified", "label": "Exo Experts", "verification": "legacy-assignment-pending-audit"} },
                 ],
 
                 boosters: [
-                    { name: "Hellpod Space Optimization", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)" },
-                    { name: "Vitality Enhancement", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)" },
-                    { name: "UAV Recon Booster", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)" },
-                    { name: "Stamina Enhancement", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)" },
-                    { name: "Muscle Enhancement", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)" },
-                    { name: "Increased Reinforcement Budget", enabled: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)" },
-                    { name: "Flexible Reinforcement Budget", enabled: true, warbond: "Steeled Veterans", subgroup: "booster", source: "Steeled Veterans" },
-                    { name: "Localization Confusion", enabled: true, warbond: "Cutting Edge", subgroup: "booster", source: "Cutting Edge" },
-                    { name: "Expert Extraction Pilot", enabled: true, warbond: "Democratic Detonation", subgroup: "booster", source: "Democratic Detonation" },
-                    { name: "Motivational Shocks", enabled: true, warbond: "Polar Patriots", subgroup: "booster", source: "Polar Patriots" },
-                    { name: "Experimental Infusion", enabled: true, warbond: "Viper Commandos", subgroup: "booster", source: "Viper Commandos" },
-                    { name: "Firebomb Hellpods", enabled: true, warbond: "Freedom's Flame", subgroup: "booster", source: "Freedom's Flame" },
-                    { name: "Dead Sprint", enabled: true, warbond: "Truth Enforcers", subgroup: "booster", source: "Truth Enforcers" },
-                    { name: "Armed Resupply Pods", enabled: true, warbond: "Urban Legends", subgroup: "booster", source: "Urban Legends" },
-                    { name: "Sample Extractor", enabled: true, warbond: "Borderline Justice", subgroup: "booster", source: "Borderline Justice" },
-                    { name: "Sample Scanner", enabled: true, warbond: "Masters of Ceremony", subgroup: "booster", source: "Masters of Ceremony" },
-                    { name: "Stun Pods", enabled: true, warbond: "Force of Law", subgroup: "booster", source: "Force of Law" },
-                    { name: "Concealed Insertion", enabled: true, warbond: "Redacted Regiment", subgroup: "booster", source: "Redacted Regiment" },
+                    { name: "Hellpod Space Optimization", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:hellpod-space-optimization", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Vitality Enhancement", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:vitality-enhancement", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "UAV Recon Booster", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:uav-recon-booster", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Stamina Enhancement", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:stamina-enhancement", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Muscle Enhancement", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:muscle-enhancement", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Increased Reinforcement Budget", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:increased-reinforcement-budget", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Flexible Reinforcement Budget", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "booster", source: "Steeled Veterans", id: "booster:flexible-reinforcement-budget", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Localization Confusion", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "booster", source: "Cutting Edge", id: "booster:localization-confusion", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Expert Extraction Pilot", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "booster", source: "Democratic Detonation", id: "booster:expert-extraction-pilot", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Motivational Shocks", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "booster", source: "Polar Patriots", id: "booster:motivational-shocks", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Experimental Infusion", enabled: true, owned: true, warbond: "Viper Commandos", subgroup: "booster", source: "Viper Commandos", id: "booster:experimental-infusion", aliases: [], acquisition: {"kind": "unverified", "label": "Viper Commandos", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Firebomb Hellpods", enabled: true, owned: true, warbond: "Freedom's Flame", subgroup: "booster", source: "Freedom's Flame", id: "booster:firebomb-hellpods", aliases: [], acquisition: {"kind": "unverified", "label": "Freedom's Flame", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Dead Sprint", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "booster", source: "Truth Enforcers", id: "booster:dead-sprint", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Armed Resupply Pods", enabled: true, owned: true, warbond: "Urban Legends", subgroup: "booster", source: "Urban Legends", id: "booster:armed-resupply-pods", aliases: [], acquisition: {"kind": "unverified", "label": "Urban Legends", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Sample Extractor", enabled: true, owned: true, warbond: "Borderline Justice", subgroup: "booster", source: "Borderline Justice", id: "booster:sample-extractor", aliases: [], acquisition: {"kind": "unverified", "label": "Borderline Justice", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Sample Scanner", enabled: true, owned: true, warbond: "Masters of Ceremony", subgroup: "booster", source: "Masters of Ceremony", id: "booster:sample-scanner", aliases: [], acquisition: {"kind": "unverified", "label": "Masters of Ceremony", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Stun Pods", enabled: true, owned: true, warbond: "Force of Law", subgroup: "booster", source: "Force of Law", id: "booster:stun-pods", aliases: [], acquisition: {"kind": "unverified", "label": "Force of Law", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Concealed Insertion", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "booster", source: "Redacted Regiment", id: "booster:concealed-insertion", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
                 ],
             },
 
@@ -6434,6 +6458,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             settings: {
                 discordWebhookUrl: "",
                 rememberedPlayerName: "",
+                catalogReviewVersion: "",
             }
         };
 
@@ -6688,8 +6713,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const parsed = JSON.parse(raw);
 
             if (parsed.items) {
-                // Merge saved edits INTO defaults instead of replacing them
+                // Resolve gear by stable IDs/aliases against a clean catalog baseline.
+                Object.assign(state.items, window.HD2CSMCatalogState.mergeItems(DEFAULTS.items, parsed.items));
                 Object.keys(parsed.items).forEach(key => {
+                    if (["primaries", "sidearms", "throwables", "stratagems", "boosters"].includes(key)) return;
                     if (Array.isArray(parsed.items[key])) {
                         // Merge arrays by name (for planets, stratagems, etc)
                         const saved = parsed.items[key];
@@ -6720,6 +6747,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             if (parsed.settings && typeof parsed.settings === "object") {
                 state.settings.rememberedPlayerName = String(parsed.settings.rememberedPlayerName || "").trim();
             }
+            state.settings.catalogReviewVersion = parsed.settings?.catalogReviewVersion === "1.1.2" ? "1.1.2" : "";
             normalizeItemWarbondAssignments();
             if (incomingCardsResult.migrated) {
                 saveState();
@@ -6731,7 +6759,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 items: state.items,
                 cards: state.cards,
                 settings: {
-                    rememberedPlayerName: String(state.settings?.rememberedPlayerName || "").trim()
+                    rememberedPlayerName: String(state.settings?.rememberedPlayerName || "").trim(),
+                    catalogReviewVersion: state.settings?.catalogReviewVersion === "1.1.2" ? "1.1.2" : ""
                 }
             };
         }
@@ -6765,6 +6794,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             sanitizeFactionData();
             state.settings.discordWebhookUrl = "";
             state.settings.rememberedPlayerName = "";
+            state.settings.catalogReviewVersion = "";
 
             let loadedData = null;
             if (desktopStorage) {
@@ -7181,12 +7211,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     .filter(Boolean);
             }
 
-            // If nothing enabled, automatically fallback to ALL items
-            const enabled = list.filter(x => x.enabled);
-
-            if (enabled.length === 0) {
-                return list.map(x => x.name);
-            }
+            // An empty pool must never silently roll excluded or unowned gear.
+            const enabled = list.filter(window.HD2CSMCatalogState.isEligible);
 
             return enabled.map(x => x.name);
         }
@@ -7321,6 +7347,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         }
 
         function rollLoadout(seed) {
+            if (getEmptyGearSlots().length) return null;
             const faction = rollFaction();
             const mode = rollMode(faction);
             const primary = pickOne(state.items.primaries);
@@ -8040,7 +8067,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         let reelToken = 0;
 
         function sampleEnabledText(list) {
-            const enabled = list.filter(x => x.enabled);
+            const enabled = list.filter(window.HD2CSMCatalogState.isEligible);
             if (!enabled.length) return "—";
             return enabled[randInt(enabled.length)].name;
         }
@@ -9180,6 +9207,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             return { image: "", label: normalizedFaction ? normalizedFaction.toUpperCase() : "UNKNOWN" };
         }
         function renderSpin() {
+            renderNewGearNotice();
             const c = state.current;
             const hasDifficultySelection = !!c.difficultySelected;
             c.difficulty = getCardDifficulty(c);
@@ -11081,6 +11109,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         const ARMORY_DEFAULT_VISIBLE_ROWS = 7;
 
         const WARBOND_ORDER = [
+            "Castellan's Creed",
+            "Campaign rewards",
             "Helldiver Basics (Mobilize)",
             "Steeled Veterans",
             "Cutting Edge",
@@ -11108,6 +11138,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         ];
 
         const WARBOND_ART = {
+            "Castellan's Creed": "assets/new-gear/castellans-creed-cover.png",
             "Exo Experts": "assets/warbonds/exo-experts-cover.svg",
             "__placeholder": "assets/placeholders/warbond/warbond-placeholder.svg"
         };
@@ -11121,7 +11152,14 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
 
 
+
+
         const ITEM_WARBOND_BY_NAME = {
+            "R/40-K Hot-Shot Marksman Rifle": "Castellan's Creed",
+            "P/40-K Bolt Pistol": "Castellan's Creed",
+            "G/40-K Melta Mine": "Castellan's Creed",
+            "40-K Meltagun": "Castellan's Creed",
+            "Eagle Gas Airstrike": "Campaign rewards",
             "AR-2 Coyote": "Dust Devils",
             "AR-23 Liberator": "Unassigned / Custom",
             "AR-23A Liberator Carbine": "Viper Commandos",
@@ -11496,7 +11534,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
             const meta = document.createElement("div");
             meta.className = "tiny";
-            meta.textContent = item.enabled ? "Enabled" : "Disabled";
+            meta.textContent = item.owned === false ? "Not owned / not selected" : (item.enabled ? "Owned · included in rolls" : "Owned · excluded from rolls");
 
             left.appendChild(name);
             if (typeLabel) {
@@ -11512,10 +11550,26 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const right = document.createElement("div");
             right.className = "miniRow";
 
+            const ownedLabel = document.createElement("label");
+            ownedLabel.className = "gearOwnershipControl";
+            const ownedCheckbox = document.createElement("input");
+            ownedCheckbox.type = "checkbox";
+            ownedCheckbox.checked = item.owned !== false;
+            ownedCheckbox.setAttribute("aria-label", `Owned: ${item.name}`);
+            ownedCheckbox.addEventListener("change", () => {
+                window.HD2CSMCatalogState.setOwned(item, ownedCheckbox.checked);
+                saveState(); renderItems(); renderSpin();
+            });
+            ownedLabel.append(ownedCheckbox, document.createTextNode("Owned"));
+            right.appendChild(ownedLabel);
+
             const tgl = document.createElement("button");
             tgl.className = item.enabled ? "btnPrimary" : "btnGhost";
             tgl.classList.add("itemToggleBtn");
             tgl.textContent = item.enabled ? "ENABLED" : "DISABLED";
+            tgl.disabled = item.owned === false;
+            tgl.setAttribute("aria-label", `Include in rolls: ${item.name}`);
+            tgl.setAttribute("aria-pressed", String(window.HD2CSMCatalogState.isEligible(item)));
             tgl.addEventListener("click", onToggle);
 
             right.appendChild(tgl);
@@ -11544,7 +11598,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function matchesItemSearch(item, metaLabel, query) {
             if (!query) return true;
             const warbond = getItemWarbond(item);
-            const searchable = `${item.name} ${warbond} ${metaLabel}`;
+            const searchable = `${item.name} ${(item.aliases || []).join(" ")} ${warbond} ${metaLabel} ${item.subgroup || ""} ${item.acquisition?.label || ""}`;
             return normalizeText(searchable).includes(query);
         }
 
@@ -11798,9 +11852,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                         containerId: meta.containerId,
                         typeLabel: meta.label,
                         onToggle: () => {
-                            state.items[meta.key][index].enabled = !state.items[meta.key][index].enabled;
-                            saveState();
-                            renderItems();
+                            toggleGearEligibility(state.items[meta.key][index]);
                         }
                     });
                     groupBox.appendChild(row);
@@ -11992,6 +12044,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         }
 
         function renderItems() {
+            renderNewGearCatalog();
             const viewMode = getItemsViewMode();
             const warbondView = $("#itemsWarbondView");
             const categoryView = $("#itemsCategoryView");
@@ -12021,19 +12074,19 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 renderItemsByWarbond();
             } else {
                 if (shouldShowItemCategory("primary")) renderItemList("listPrimaries", state.items.primaries,
-                    (i) => { state.items.primaries[i].enabled = !state.items.primaries[i].enabled; saveState(); renderItems(); }
+                    (i) => toggleGearEligibility(state.items.primaries[i])
                 );
                 if (shouldShowItemCategory("sidearm")) renderItemList("listSidearms", state.items.sidearms,
-                    (i) => { state.items.sidearms[i].enabled = !state.items.sidearms[i].enabled; saveState(); renderItems(); }
+                    (i) => toggleGearEligibility(state.items.sidearms[i])
                 );
                 if (shouldShowItemCategory("throwable")) renderItemList("listThrowables", state.items.throwables,
-                    (i) => { state.items.throwables[i].enabled = !state.items.throwables[i].enabled; saveState(); renderItems(); }
+                    (i) => toggleGearEligibility(state.items.throwables[i])
                 );
                 if (shouldShowItemCategory("stratagem")) renderItemList("listStrats", state.items.stratagems,
-                    (i) => { state.items.stratagems[i].enabled = !state.items.stratagems[i].enabled; saveState(); renderItems(); }
+                    (i) => toggleGearEligibility(state.items.stratagems[i])
                 );
                 if (shouldShowItemCategory("booster")) renderItemList("listBoosters", state.items.boosters,
-                    (i) => { state.items.boosters[i].enabled = !state.items.boosters[i].enabled; saveState(); renderItems(); }
+                    (i) => toggleGearEligibility(state.items.boosters[i])
                 );
             }
 
@@ -12643,6 +12696,12 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             }
             if (state.current.spinning || !state.current.difficultySelected) return;
 
+            const emptySlots = getEmptyGearSlots();
+            if (emptySlots.length) {
+                alert(`No owned and enabled gear for: ${emptySlots.join(", ")}. Open Armory and choose what you own. Excluded items will not be rolled.`);
+                return;
+            }
+
             const loadout = rollLoadout(null);
 
             if (!loadout) {
@@ -13081,6 +13140,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 if (!result.ok) { alert(result.error || "Import failed. That file is not a supported slot-machine JSON export."); return; }
                 applyImportedData(result.data);
                 storageLoadComplete = true;
+                saveState();
                 refreshAllDataViews("importJSONFile");
                 alert("Import complete. A recovery backup was created before the import, and the imported data has been saved for the next restart.");
                 return;
@@ -13104,7 +13164,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             const message = "CLEAR ALL DATA will erase saved loadout cards, mission stats, item ownership changes, remembered player name, current spin details, rank comparisons, and slot-machine settings from the working save. A final recovery backup will be created first. Type CLEAR ALL DATA to continue.";
             const typed = prompt(message, "");
             if (typed !== "CLEAR ALL DATA") return;
-            const blankData = { items: deepClone(DEFAULTS.items), cards: [], settings: { rememberedPlayerName: "" } };
+            const blankData = { items: deepClone(DEFAULTS.items), cards: [], settings: { rememberedPlayerName: "", catalogReviewVersion: "" } };
             if (desktopStorage?.clearAll) {
                 const result = await desktopStorage.clearAll(blankData);
                 if (!result?.ok) { alert("Clear All Data was stopped because the recovery backup could not be created."); return; }
@@ -13116,6 +13176,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             state.items = deepClone(DEFAULTS.items);
             state.cards = [];
             state.settings.rememberedPlayerName = "";
+            state.settings.catalogReviewVersion = "";
             state.current = { seed: null, seedBase: null, mode: null, manualModeDraft: null, modeApplied: false, difficulty: 10, difficultySelected: false, faction: null, loadout: null, locked: false, planet: null, planetLocked: false, planetConfirmed: false, modeConfirmed: false, planetBiome: null, manualPlanetCandidate: null, playerNameDraft: "", specialActive: false, rerollsLeft: 0, spinning: false };
             normalizeItemWarbondAssignments();
             storageLoadComplete = true;
@@ -13386,43 +13447,35 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             });
 
             // Add item buttons
-            $("#btnAddPrimary").addEventListener("click", () => {
-                const v = $("#addPrimary").value.trim();
-                if (!v) return;
-                state.items.primaries.push({ name: v, enabled: true, warbond: "Unassigned / Custom" });
-                $("#addPrimary").value = "";
-                saveState(); renderItems();
-            });
-            $("#btnAddSidearm").addEventListener("click", () => {
-                const v = $("#addSidearm").value.trim();
-                if (!v) return;
-                state.items.sidearms.push({ name: v, enabled: true, warbond: "Unassigned / Custom" });
-                $("#addSidearm").value = "";
-                saveState(); renderItems();
-            });
-            $("#btnAddThrowable").addEventListener("click", () => {
-                const v = $("#addThrowable").value.trim();
-                if (!v) return;
-                state.items.throwables.push({ name: v, enabled: true, warbond: "Unassigned / Custom" });
-                $("#addThrowable").value = "";
-                saveState(); renderItems();
-            });
-
-            $("#btnAddStrat").addEventListener("click", () => {
-                const v = $("#addStrat").value.trim();
-                if (!v) return;
-                state.items.stratagems.push({ name: v, enabled: true, warbond: "Unassigned / Custom" });
-                $("#addStrat").value = "";
-                saveState(); renderItems();
-            });
-
-            $("#btnAddBooster").addEventListener("click", () => {
-                const v = $("#addBooster").value.trim();
-                if (!v) return;
-                state.items.boosters.push({ name: v, enabled: true, warbond: "Unassigned / Custom", subgroup: "booster", source: "Unassigned / Custom" });
-                $("#addBooster").value = "";
-                saveState(); renderItems();
-            });
+            function addCustomGear(group, inputId, extra = {}) {
+                const input = $(inputId);
+                const name = input.value.trim();
+                if (!name) return;
+                const catalogState = window.HD2CSMCatalogState;
+                const candidate = { name, enabled: true, owned: true, aliases: [], warbond: "Unassigned / Custom", ...extra };
+                // Resolve identity without changing any existing ownership choices.
+                // The same migration engine assigns stable custom IDs for saves/imports.
+                const resolved = catalogState.mergeItems(DEFAULTS.items, { [group]: [candidate] })[group]
+                    .find(catalogState.isEligible);
+                const nameKey = catalogState.normalizeName(name);
+                const duplicate = state.items[group].find(item => item.id === resolved.id
+                    || (nameKey && (catalogState.normalizeName(item.name) === nameKey
+                        || (Array.isArray(item.aliases) && item.aliases.some(alias => catalogState.normalizeName(alias) === nameKey))))
+                    || String(item.name).normalize("NFKC").trim() === name.normalize("NFKC"));
+                const known = DEFAULTS.items[group].find(item => item.id === resolved.id);
+                if (duplicate || known) {
+                    alert(`"${name}" is already in Armory as "${(duplicate || known).name}". Use its Owned and Include in rolls controls. Your existing choices were not changed.`);
+                    return;
+                }
+                state.items[group].push(resolved);
+                input.value = "";
+                saveState(); renderItems(); renderSpin();
+            }
+            $("#btnAddPrimary").addEventListener("click", () => addCustomGear("primaries", "#addPrimary"));
+            $("#btnAddSidearm").addEventListener("click", () => addCustomGear("sidearms", "#addSidearm"));
+            $("#btnAddThrowable").addEventListener("click", () => addCustomGear("throwables", "#addThrowable"));
+            $("#btnAddStrat").addEventListener("click", () => addCustomGear("stratagems", "#addStrat"));
+            $("#btnAddBooster").addEventListener("click", () => addCustomGear("boosters", "#addBooster", { subgroup: "booster", source: "Unassigned / Custom" }));
 
             $("#btnSearchPlanetInline").addEventListener("click", () => {
                 if (state.current.planetConfirmed) return;

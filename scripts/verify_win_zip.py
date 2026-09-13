@@ -24,6 +24,8 @@ for artifact in (zip_path, installer_path):
 
 extract_dir = DIST / 'verify-win-zip'
 if extract_dir.exists():
+    if extract_dir.is_symlink() or extract_dir.resolve().parent != DIST.resolve():
+        raise SystemExit(f'Refusing to replace an unexpected verification directory: {extract_dir.resolve()}')
     shutil.rmtree(extract_dir)
 
 with zipfile.ZipFile(zip_path) as zf:
@@ -60,6 +62,12 @@ checks = {
     'desktop window layout': 'assets/desktop-window.css',
     'desktop window behavior': 'assets/desktop-window.js',
     'fullscreen window IPC': 'electron/window-controls.js',
+    'catalog migration and ownership': 'assets/catalog-state.js',
+    'new gear ownership UI': 'assets/catalog-ui.js',
+    'new gear layout': 'assets/catalog-ui.css',
+    'new gear provenance': 'assets/new-gear/provenance.json',
+    'new gear attribution': 'assets/new-gear/ATTRIBUTION.md',
+    'Castellans Creed cover': 'assets/new-gear/castellans-creed-cover.png',
     'icon': 'build/icon.ico',
     'window icon': 'build/icon.png',
     'readme first': 'README-FIRST.txt',
@@ -67,7 +75,7 @@ checks = {
 
 missing = []
 image_mapping = json.loads((ROOT / 'assets' / 'item-images.json').read_text(encoding='utf-8'))
-for category in ('primary', 'sidearm', 'throwable', 'booster'):
+for category in ('primary', 'sidearm', 'throwable', 'booster', 'stratagem'):
     for entry in image_mapping.get(category, []):
         asset_path = entry.get('assetPath', '')
         if not asset_path or asset_path not in asar_listing:

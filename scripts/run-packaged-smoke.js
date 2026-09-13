@@ -4,9 +4,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
 const { rendererWritePhase, rendererVerifyPhase, rendererNetworkPhase } = require('./electron-smoke-phase');
+const { rendererGearPhase, rendererGearVerify } = require('./gear-smoke-phase');
 const root = path.resolve(__dirname, '..');
-const executable = path.resolve(process.argv[2] || path.join(root, 'dist', 'win-unpacked', 'Helldivers 2 Chaos Slot Machine.exe'));
-const runRoot = path.join(root, '.test-data', `packaged-smoke-${Date.now()}`);
+const gearOnly = process.argv.includes('--gear');
+const executable = path.resolve(process.argv.slice(2).find(value => !value.startsWith('--')) || path.join(root, 'dist', 'win-unpacked', 'Helldivers 2 Chaos Slot Machine.exe'));
+const runRoot = path.join(root, '.test-data', `${gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
 const userData = path.join(runRoot, 'user-data');
 fs.mkdirSync(runRoot, { recursive: true });
 if (!fs.existsSync(executable)) throw new Error(`Packaged executable not found: ${executable}`);
@@ -33,7 +35,7 @@ async function connect(url) {
     if (message.method === 'Runtime.exceptionThrown') errors.push(message.params.exceptionDetails.exception?.description || message.params.exceptionDetails.text);
     if (message.method === 'Runtime.consoleAPICalled') {
       const text = message.params.args.map(arg => arg.value || arg.description || '').join(' ');
-      if (text.startsWith('SMOKE PASS:')) console.log(text);
+      if (/^(SMOKE|GEAR SMOKE|GEAR RESTART) PASS:/.test(text)) console.log(text);
     }
   });
   socket.addEventListener('close', () => {
@@ -87,7 +89,11 @@ async function phase(name, expected) {
     await client.send('Runtime.enable');
     await client.send('Page.enable');
     await client.evaluate(`(async () => { while (typeof bootStateReady === 'undefined') await new Promise(r => setTimeout(r, 50)); await bootStateReady; })()`);
-    const result = name === 'normal-startup'
+    const result = name === 'gear-write'
+      ? await client.evaluate(`(${rendererGearPhase.toString()})()`)
+      : name === 'gear-verify'
+        ? await client.evaluate(`(${rendererGearVerify.toString()})(${JSON.stringify(expected)})`)
+      : name === 'normal-startup'
       ? await client.evaluate(`(async () => {
           const checks = [];
           const assert = (ok, label) => { if (!ok) throw new Error(label); checks.push(label); };
@@ -142,6 +148,15 @@ async function phase(name, expected) {
       const screenshot = await client.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       fs.writeFileSync(path.join(runRoot, 'normal-startup-fullscreen.png'), Buffer.from(screenshot.data, 'base64'));
     }
+    if (name === 'gear-write') {
+      await client.evaluate(`switchTab('items'); document.querySelector('#newGearPanel').open = true; document.querySelector('#newGearPanel').scrollIntoView({block:'start'});`);
+      await delay(200);
+      const screenshot = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
+      fs.writeFileSync(path.join(runRoot, 'new-gear.png'), Buffer.from(screenshot.data, 'base64'));
+      await client.evaluate(`document.querySelector('#appViewport').scrollBy(0,400)`);
+      const lower = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
+      fs.writeFileSync(path.join(runRoot, 'new-gear-controls.png'), Buffer.from(lower.data, 'base64'));
+    }
     if (client.errors.length) throw new Error(client.errors.join('\n'));
     fs.writeFileSync(path.join(runRoot, `${name}.json`), JSON.stringify({ passed: true, executable, processId: child.pid, userData, result }, null, 2));
     console.log(`PASS packaged ${name}: ${result.checks.length} checks`);
@@ -159,6 +174,26 @@ async function phase(name, expected) {
 }
 
 (async () => {
+  if (gearOnly) {
+    const written = await phase('gear-write');
+    const verified = await phase('gear-verify', written);
+    // Additional file-level backend coverage, without a native dialog or any
+    // personal profile. Use the exact payload emitted by the packaged renderer.
+    const assert = require('node:assert/strict');
+    const storage = require('../electron/storage');
+    const exportPath = path.join(runRoot, 'gear-export.json');
+    storage.exportStateFile(exportPath, written.exportData);
+    const envelope = JSON.parse(fs.readFileSync(exportPath, 'utf8'));
+    assert.equal(envelope.applicationVersion, require('../package.json').version);
+    assert.deepEqual(envelope.data, written.exportData);
+    const importedProfile = path.join(runRoot, 'file-import-profile');
+    storage.importStateFile(importedProfile, exportPath);
+    assert.deepEqual(storage.loadStateFile(importedProfile).data, written.exportData);
+    const fileRoundtrip = {passed:true, checks:3, exportPath, importedProfile, coverage:'Real storage backend export/import/load with packaged-renderer payload; native file picker not exercised.'};
+    fs.writeFileSync(path.join(runRoot, 'report.json'), JSON.stringify({passed:true,executable,userData,written,verified,fileRoundtrip},null,2));
+    console.log(`PASS packaged gear upgrade and restart. Evidence: ${runRoot}`);
+    return;
+  }
   const written = await phase('write');
   const verified = await phase('verify', written);
   const normalStartup = await phase('normal-startup');

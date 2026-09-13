@@ -1,0 +1,22 @@
+.newGearNotice { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 10px; margin-bottom: 12px; border: 1px solid #a38b00; border-radius: 10px; background: #28230c; font-size: 13px; }
+.newGearNotice[hidden] { display: none; }
+.newGearNotice span { flex: 1; min-width: 200px; }
+.newGearNotice button { padding: 6px 10px; }
+.newGearPanel { border: 1px solid #a38b00; border-radius: 12px; padding: 14px; margin-bottom: 18px; background: #11130f; }
+#newGearPanel { scroll-margin-top: 140px; }
+#newGearPanel .tiny { font-size: 14px; line-height: 1.45; }
+#newGearPanel button { font-size: 14px; padding: 8px 10px; }
+.newGearPanel summary { cursor: pointer; color: #ffe400; font-weight: 800; }
+.newGearGroups { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin: 12px 0; }
+.newGearGroup { min-width: 0; border: 1px solid #454641; border-radius: 10px; padding: 12px; }
+.newGearGroup h3 { margin: 0 0 8px; font-size: 17px; color: #ffe400; }
+.newGearCover { display: block; width: 100%; max-height: 180px; object-fit: contain; margin-bottom: 10px; }
+.newGearRow { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px 0; border-top: 1px solid #30362f; }
+.newGearRow img { width: 76px; height: 66px; object-fit: contain; border-radius: 8px; background: radial-gradient(#42463d, #242821); }
+.newGearRow strong { display: block; font-size: 14px; }
+.newGearChoices { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 5px; }
+.gearOwnershipControl { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+.gearOwnershipControl input { width: 18px; height: 18px; margin: 0; accent-color: #ffe400; }
+.newGearCredits { margin-top: 12px; }
+#gearPoolWarning { color: #ffe400; border: 1px solid #a38b00; padding: 10px; }
+@container app-layout (max-width: 760px) { .newGearGroups { grid-template-columns: 1fr; } }

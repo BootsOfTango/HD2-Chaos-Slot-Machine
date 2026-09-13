@@ -1,2 +1,2 @@
-# Preserve source artwork bytes so recorded SHA-256 values survive checkout.
-assets/boosters/*-wiki.svg -text
+# Preserve downloaded artwork bytes: provenance records their exact SHA-256.
+assets/new-gear/*.svg -text

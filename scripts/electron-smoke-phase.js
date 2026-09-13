@@ -31,7 +31,7 @@ async function rendererWritePhase(options = {}) {
   await preloadItemVisuals();
   for (const category of ['primary', 'sidearm', 'throwable', 'booster']) {
     const entries = [...itemVisuals.byCategory[category].values()];
-    assert(entries.length > 0 && entries.every(entry => /-wiki\.(png|jpg|webp|gif|svg)$/.test(entry.assetPath)), `${category} artwork uses bundled source images, not placeholders`);
+    assert(entries.length > 0 && entries.every(entry => entry.artworkSha256 && entry.artworkSource && !entry.assetPath.includes('placeholders')), `${category} artwork uses bundled source images, not placeholders`);
     await Promise.all(entries.map(entry => new Promise((resolve, reject) => {
       const image = new Image();
       const timer = setTimeout(() => reject(new Error(`Artwork load timed out: ${entry.name}`)), 10000);
@@ -144,7 +144,7 @@ async function rendererWritePhase(options = {}) {
   input('#itemsViewMode', 'category', 'change');
   input('#itemsTypeFilter', 'primary', 'change');
   const itemBefore = deepClone(state.items.primaries);
-  click('#listPrimaries .itemToggleBtn');
+  click('#listPrimaries .itemToggleBtn:not(:disabled)');
   const toggledItem = state.items.primaries.find((item, index) => item.enabled !== itemBefore[index].enabled);
   assert(!!toggledItem, 'Armory ownership toggle updates the item pool');
   const toggled = { group: 'primaries', name: toggledItem.name, enabled: toggledItem.enabled };

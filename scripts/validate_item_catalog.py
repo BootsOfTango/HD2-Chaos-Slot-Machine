@@ -29,7 +29,7 @@ def normalize_key(value: str) -> str:
 def parse_defaults(index_text: str):
     results = {}
     for key in ["primaries", "sidearms", "throwables", "stratagems", "boosters"]:
-        match = re.search(rf"{key}: \[(.*?)\],", index_text, flags=re.S)
+        match = re.search(rf"{key}: \[(.*?)\n\s{{16}}\],", index_text, flags=re.S)
         if not match:
             raise RuntimeError(f"Could not find DEFAULTS.items.{key} in index.html")
         block = match.group(1)
@@ -47,6 +47,21 @@ def main() -> int:
     errors = []
 
     catalog_items = catalog.get("items", [])
+    if catalog.get('version') != 2:
+        errors.append('Catalog schema version must be 2')
+    ids = [item.get('id') for item in catalog_items]
+    if any(not isinstance(value, str) or not value for value in ids) or len(set(ids)) != len(ids):
+        errors.append('Every catalog item needs a unique stable ID')
+    for item in catalog_items:
+        if not isinstance(item.get('aliases'), list) or not isinstance(item.get('acquisition'), dict):
+            errors.append(f"Missing aliases/acquisition metadata: {item['name']}")
+        if item.get('introducedIn') == '1.1.2' and item.get('defaultEnabled') is not False:
+            errors.append(f"New paid/reward gear must default to disabled: {item['name']}")
+    for warbond in catalog.get('warbonds', []):
+        if not set(warbond.get('equipmentIds', [])).issubset(set(ids)):
+            errors.append(f"Unknown equipment association: {warbond['name']}")
+        if not (ROOT / warbond['coverAssetPath']).is_file():
+            errors.append(f"Missing Warbond cover: {warbond['name']}")
     canonical_names = [f"{item['type']}::{item['name']}" for item in catalog_items]
     duplicates = sorted({name for name in canonical_names if canonical_names.count(name) > 1})
     if duplicates:

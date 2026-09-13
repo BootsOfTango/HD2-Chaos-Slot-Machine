@@ -212,9 +212,31 @@
     "vg 70 variable": "VG-70 Variable",
     "vitality enhancement": "Vitality Enhancement",
     "warp pack": "Warp Pack",
-    "wasp": "Wasp"
+    "wasp": "Wasp",
+    "40 k meltagun": "40-K Meltagun",
+    "40 k meltagun stratagem": "40-K Meltagun",
+    "bolt pistol": "P/40-K Bolt Pistol",
+    "eagle gas airstrike": "Eagle Gas Airstrike",
+    "g 40 k melta mine": "G/40-K Melta Mine",
+    "g 40 k meltamine": "G/40-K Melta Mine",
+    "hot shot marksman rifle": "R/40-K Hot-Shot Marksman Rifle",
+    "melta mine": "G/40-K Melta Mine",
+    "meltagun": "40-K Meltagun",
+    "meltamine": "G/40-K Melta Mine",
+    "p 40 k bolt pistol": "P/40-K Bolt Pistol",
+    "r 40 k hot shot": "R/40-K Hot-Shot Marksman Rifle",
+    "r 40 k hot shot marksman rifle": "R/40-K Hot-Shot Marksman Rifle"
   },
   "primary": [
+    {
+      "name": "R/40-K Hot-Shot Marksman Rifle",
+      "assetPath": "assets/new-gear/r-40-k-hot-shot.png",
+      "kind": "image",
+      "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-40-K_Hot-Shot_Primary_Render.png/1200px-R-40-K_Hot-Shot_Primary_Render.png?b312a5",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:R-40-K_Hot-Shot_Primary_Render.png",
+      "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
+      "artworkSha256": "f44d36462c61d14d4a7b6b31bc4e87c3f508c9f435541da80b86620ea5a4c526"
+    },
     {
       "name": "AR-2 Coyote",
       "assetPath": "assets/weapons/primaries/ar-2-coyote-wiki.png",
@@ -814,6 +836,15 @@
   ],
   "sidearm": [
     {
+      "name": "P/40-K Bolt Pistol",
+      "assetPath": "assets/new-gear/p-40-k-bolt-pistol.png",
+      "kind": "image",
+      "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-40-K_Bolt_Pistol_Secondary_Render.png/1200px-P-40-K_Bolt_Pistol_Secondary_Render.png?b09f63",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:P-40-K_Bolt_Pistol_Secondary_Render.png",
+      "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
+      "artworkSha256": "3bd71f01b253253f28fee3531dac68f81b2e91a06ab46c5c0c0576a9e0779fec"
+    },
+    {
       "name": "GP-31 Grenade Pistol",
       "assetPath": "assets/weapons/sidearms/gp-31-grenade-pistol-wiki.png",
       "kind": "image",
@@ -1088,6 +1119,15 @@
   ],
   "throwable": [
     {
+      "name": "G/40-K Melta Mine",
+      "assetPath": "assets/new-gear/g-40-k-melta-mine.png",
+      "kind": "image",
+      "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-40-K_Melta_Mine_Throwable_Render.png/1200px-G-40-K_Melta_Mine_Throwable_Render.png?6bdf5e",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:G-40-K_Melta_Mine_Throwable_Render.png",
+      "artworkSource": "official-steam-art-cutout-via-wiki; Undeadender, Helldivers Wiki.gg",
+      "artworkSha256": "e3926e992e1e88b71bde0a9f1f9909244a04ca2cd54eb6297230912ca05b0ab7"
+    },
+    {
       "name": "G-10 Incendiary",
       "assetPath": "assets/weapons/throwables/g-10-incendiary-wiki.png",
       "kind": "image",
@@ -1327,6 +1367,26 @@
     }
   ],
   "stratagem": [
+    {
+      "name": "40-K Meltagun",
+      "assetPath": "assets/new-gear/40-k-meltagun.png",
+      "kind": "image",
+      "imageUrl": "https://helldivers.wiki.gg/images/thumb/40-K_Meltagun_Support_Render.png/1200px-40-K_Meltagun_Support_Render.png?54b248",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:40-K_Meltagun_Support_Render.png",
+      "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
+      "artworkSha256": "9c099d307615e41adf38f29677114ec21889e3c0087878c2315773c567b26178",
+      "rimCategory": "support"
+    },
+    {
+      "name": "Eagle Gas Airstrike",
+      "assetPath": "assets/new-gear/eagle-gas-airstrike.svg",
+      "kind": "icon",
+      "imageUrl": "https://helldivers.wiki.gg/images/Eagle_Gas_Airstrike_Stratagem_Icon.svg?744f48",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:Eagle_Gas_Airstrike_Stratagem_Icon.svg",
+      "artworkSource": "community-hand-trace-of-game-icon; Dogo314, Helldivers Wiki.gg",
+      "artworkSha256": "1fc8df52b5ff156b8c51626a9d717004190b4f714e169af44cf26ba1621ea084",
+      "rimCategory": "eagle"
+    },
     {
       "name": "Orbital 120MM HE Barrage",
       "assetPath": "assets/stratagems/orbital/orbital-120mm-he-barrage.svg",

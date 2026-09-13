@@ -23,12 +23,32 @@ const errors = [];
 const screenshots = [];
 let mainWindow;
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+function bounded(promise, label, timeout = 12000) {
+  let timer;
+  return Promise.race([
+    promise,
+    new Promise((_resolve, reject) => { timer = setTimeout(() => reject(new Error(`Window smoke API timeout after ${timeout}ms: ${label}`)), timeout); })
+  ]).finally(() => clearTimeout(timer));
+}
+async function stage(label, action, timeout = 15000) {
+  const entry = { label, startedAt: new Date().toISOString() };
+  observations.stages ||= [];
+  observations.stages.push(entry);
+  const persist = () => fs.writeFileSync(path.join(runRoot, 'stage-progress.json'), JSON.stringify({ checks: checks.length, stages: observations.stages, browserEvents: observations.browserEvents }, null, 2));
+  persist(); console.log(`WINDOW STAGE START: ${label}`);
+  try {
+    const result = await bounded(Promise.resolve().then(action), label, timeout);
+    entry.finishedAt = new Date().toISOString(); persist();
+    console.log(`WINDOW STAGE DONE: ${label}`);
+    return result;
+  } catch (error) { entry.error = error.message; persist(); throw error; }
+}
 const assert = (condition, label, detail) => {
   if (!condition) throw new Error(`${label}${detail ? `: ${JSON.stringify(detail)}` : ''}`);
   checks.push(label);
   console.log(`WINDOW PASS: ${label}`);
 };
-const evaluate = expression => mainWindow.webContents.executeJavaScript(expression, true);
+const evaluate = expression => bounded(mainWindow.webContents.executeJavaScript(expression, true), `desktop evaluate: ${expression.replace(/\s+/g, ' ').slice(0, 140)}`);
 async function waitFor(predicate, label, timeout = 12000) {
   const started = Date.now();
   while (!(await predicate())) {
@@ -38,7 +58,7 @@ async function waitFor(predicate, label, timeout = 12000) {
 }
 async function capture(name) {
   await delay(120);
-  fs.writeFileSync(path.join(runRoot, `${name}.png`), (await mainWindow.webContents.capturePage()).toPNG());
+  fs.writeFileSync(path.join(runRoot, `${name}.png`), (await bounded(mainWindow.webContents.capturePage(), `capture ${name}`, 8000)).toPNG());
   screenshots.push(`${name}.png`);
 }
 async function key(keyCode, modifiers = []) {
@@ -123,10 +143,10 @@ async function run() {
     if (/Uncaught|\[boot\].*failed|\[storage\].*failed/i.test(String(message))) errors.push(String(message));
   });
   mainWindow.webContents.on('render-process-gone', (_event, details) => errors.push(`Renderer exited: ${details.reason}`));
-  await new Promise((resolve, reject) => {
+  await bounded(new Promise((resolve, reject) => {
     mainWindow.webContents.once('did-finish-load', resolve);
     mainWindow.webContents.once('did-fail-load', (_event, code, message) => reject(new Error(`Page load ${code}: ${message}`)));
-  });
+  }), 'initial desktop page load', 25000);
   await evaluate(`(async () => { window.alert = () => {}; window.confirm = () => true; await bootStateReady; })()`);
   await waitFor(() => evaluate(`document.body.classList.contains('desktop-app') && !!document.querySelector('#btnToggleFullscreen')`), 'desktop shell ready');
   assert(mainWindow.isFullScreen(), 'real Electron window starts in true fullscreen');
@@ -290,25 +310,44 @@ async function run() {
     await capture(`emulated-page-zoom-${zoom * 100}`);
     await key('Escape');
   }
-  mainWindow.webContents.setZoomFactor(1);
-  await evaluate(`window.__stopWindowEvents();`);
+  await stage('reset desktop page zoom', () => mainWindow.webContents.setZoomFactor(1));
+  await stage('unsubscribe desktop window-state listener', () => evaluate(`window.__stopWindowEvents(); true;`));
   // Same Chromium page, but no desktop preload or personal browser profile.
   const { BrowserWindow } = require('electron');
-  const browserWindow = new BrowserWindow({ show: false, width: 1280, height: 800, useContentSize: true,
-    webPreferences: { partition: 'window-smoke-browser', contextIsolation: true, nodeIntegration: false, sandbox: true, backgroundThrottling: false } });
+  const browserWindow = await stage('create isolated browser-mode window', () => new BrowserWindow({ show: false, width: 1280, height: 800, useContentSize: true,
+    webPreferences: { partition: 'window-smoke-browser', contextIsolation: true, nodeIntegration: false, sandbox: true, backgroundThrottling: false } }));
   try {
+    observations.browserEvents = [];
+    for (const event of ['did-start-loading', 'dom-ready', 'did-finish-load', 'did-stop-loading', 'did-fail-load', 'render-process-gone']) {
+      browserWindow.webContents.on(event, (_event, ...details) => {
+        observations.browserEvents.push({ event, at: new Date().toISOString(), details });
+        console.log(`WINDOW BROWSER EVENT: ${event}`);
+      });
+    }
     browserWindow.webContents.session.webRequest.onBeforeRequest({ urls: ['http://*/*', 'https://*/*'] }, (_details, callback) => callback({ cancel: true }));
-    await browserWindow.loadFile(path.join(root, 'index.html'));
-    const browserEval = expression => browserWindow.webContents.executeJavaScript(expression);
-    const wide = await browserEval(`({width: appCanvas.getBoundingClientRect().width, columns: getComputedStyle(document.querySelector('.spinTopLayout')).gridTemplateColumns})`);
+    // A newly created hidden BrowserWindow has no initialized document target.
+    // Page.enable can remain pending until navigation creates that renderer.
+    // Initialize a harmless blank page before installing the app's pre-load hook.
+    await stage('initialize browser protocol target with about:blank', () => browserWindow.loadURL('about:blank'));
+    // This case tests browser layout, not a hidden native reminder dialog. Use
+    // a pre-document hook so the synchronous first-run alert cannot block load.
+    // Keep the page free of any desktop preload/bridge.
+    await stage('attach browser diagnostic protocol', () => browserWindow.webContents.debugger.attach('1.3'));
+    await stage('enable browser Page protocol', () => browserWindow.webContents.debugger.sendCommand('Page.enable'));
+    await stage('stub browser first-run reminder before load', () => browserWindow.webContents.debugger.sendCommand('Page.addScriptToEvaluateOnNewDocument', {
+      source: 'window.__layoutTestAlerts = []; window.alert = message => window.__layoutTestAlerts.push(String(message));'
+    }));
+    await stage('load isolated browser page', () => browserWindow.loadFile(path.join(root, 'index.html')), 25000);
+    const browserEval = expression => bounded(browserWindow.webContents.executeJavaScript(expression), `browser evaluate: ${expression.slice(0, 140)}`);
+    const wide = await stage('measure wide browser layout', () => browserEval(`({width: appCanvas.getBoundingClientRect().width, columns: getComputedStyle(document.querySelector('.spinTopLayout')).gridTemplateColumns})`));
     browserWindow.setContentSize(640, 480);
     await delay(250);
-    const narrow = await browserEval(`({width: appCanvas.getBoundingClientRect().width, columns: getComputedStyle(document.querySelector('.spinTopLayout')).gridTemplateColumns, desktop: document.body.classList.contains('desktop-app'), bridge: typeof window.chaosSlotMachine})`);
-    observations.browserMode = { wide, narrow, method: 'Chromium BrowserWindow without preload, isolated in-memory partition; not installed Chrome' };
+    const narrow = await stage('measure narrow browser layout', () => browserEval(`({width: appCanvas.getBoundingClientRect().width, columns: getComputedStyle(document.querySelector('.spinTopLayout')).gridTemplateColumns, desktop: document.body.classList.contains('desktop-app'), bridge: typeof window.chaosSlotMachine})`));
+    observations.browserMode = { wide, narrow, reminders: await stage('read browser reminder diagnostics', () => browserEval('window.__layoutTestAlerts')), method: 'Chromium BrowserWindow without preload, isolated in-memory partition; first-run alert stubbed before document load; not installed Chrome' };
     assert(!narrow.desktop && narrow.bridge === 'undefined', 'browser mode has no desktop layout or window bridge');
     assert(narrow.width <= 640 && wide.width > narrow.width && wide.columns !== narrow.columns,
       'standalone browser layout remains responsive at640px', observations.browserMode);
-  } finally { browserWindow.destroy(); }
+  } finally { await stage('destroy isolated browser-mode window', () => browserWindow.destroy()); }
   assert(errors.length === 0, 'no uncaught renderer/startup/storage errors during window checks', errors);
   observations.unverified = [
     'Physical Windows display DPI at125%,150%,200% and multi-monitor transitions (page zoom was emulated).',
