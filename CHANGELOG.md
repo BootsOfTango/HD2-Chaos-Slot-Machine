@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-13 — v1.1.1 local fullscreen preview (unpublished)
+
+- Restored a separate source checkout; preserved the existing runtime installation and personal saves.
+- Added true fullscreen startup, F11/toolbar controls and dialog-first Escape handling.
+- Kept a 1280 CSS-pixel desktop layout in smaller resizable windows, with scrollbars and background Space-drag panning.
+- Added viewport-sized dialog accessibility/focus handling while preserving browser responsiveness.
+- Patched three vulnerable build-only transitive dependencies without an Electron/builder upgrade.
+- Added focused window tests, normal packaged-startup verification, a safe isolated-profile preview launcher and the persistent phased roadmap.
+- New gear, live-war redesign, missions, visual Armory and galaxy map remain queued. See `docs/M1_TEST_REPORT.md` for executed checks and limitations.
+
 ## 2026-09-13 — HD2CSM v1.1.0 Windows desktop
 
 - Renamed the application to **Helldivers 2 Chaos Slot Machine**, with **HD2CSM** yellow-and-black slot-machine branding.

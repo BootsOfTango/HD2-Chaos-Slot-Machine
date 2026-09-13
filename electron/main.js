@@ -4,10 +4,12 @@ const fs = require('node:fs');
 const { backupCurrentState, exportStateFile, importStateFile, loadStateFile, saveStateFile, validateData } = require('./storage');
 const { readPackagedJson } = require('./resource-loader');
 const { APP_ID, PRODUCT_NAME, resolveProfile, migrateLegacyProfile } = require('./identity');
+const { installWindowControls } = require('./window-controls');
 
 const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@BootsOfTango';
 const IS_TEST_HARNESS = process.env.HD2_ELECTRON_TEST_HARNESS === '1';
 const IS_AUTOMATION = IS_TEST_HARNESS || process.env.HD2CSM_AUTOMATION === '1';
+const attachWindowControls = installWindowControls({ ipcMain, BrowserWindow });
 
 app.setName(PRODUCT_NAME);
 const profile = resolveProfile(app.getPath('appData'));
@@ -47,12 +49,13 @@ function getWindowIconPath() {
     : path.join(__dirname, '..', 'build', 'icon.png');
 }
 
-function createMainWindow({ show = true, automation = IS_AUTOMATION } = {}) {
+function createMainWindow({ show = true, automation = IS_AUTOMATION, fullscreen = !automation } = {}) {
   const mainWindow = new BrowserWindow({
     width: 1280,
     height: 900,
-    minWidth: 1100,
-    minHeight: 720,
+    minWidth: 640,
+    minHeight: 480,
+    fullscreen,
     title: PRODUCT_NAME,
     icon: getWindowIconPath(),
     backgroundColor: '#060805',
@@ -60,6 +63,7 @@ function createMainWindow({ show = true, automation = IS_AUTOMATION } = {}) {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       additionalArguments: automation ? ['--hd2csm-test-harness'] : [],
+      backgroundThrottling: !automation,
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
@@ -68,6 +72,8 @@ function createMainWindow({ show = true, automation = IS_AUTOMATION } = {}) {
       devTools: !app.isPackaged
     }
   });
+
+  attachWindowControls(mainWindow);
 
   if (app.isPackaged) mainWindow.setMenu(null);
 

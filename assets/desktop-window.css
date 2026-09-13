@@ -1,0 +1,44 @@
+/* Queries use canvas width: the browser stays responsive; desktop never compacts. */
+#appCanvas { container: app-layout / inline-size; }
+.desktopWindowToolbar { display: none; }
+body.desktop-app { overflow: hidden; }
+.desktop-app #appViewport {
+    position: fixed;
+    inset: 38px 0 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+.desktop-app #appCanvas { min-width: 1280px; position: relative; min-height: 100%; }
+.desktop-app .engagementDock { position: absolute; width: 360px; }
+.desktop-app #rankDetailPanel { position: static; max-height: none; }
+.desktop-app .desktopWindowToolbar {
+    display: flex;
+    position: fixed;
+    inset: 0 0 auto;
+    height: 38px;
+    z-index: 11000;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 3px 10px;
+    background: #101318;
+    border-bottom: 1px solid #55502c;
+    color: #ffe400;
+    font-size: 12px;
+}
+.desktopWindowToolbar button { padding: 4px 10px; min-height: 30px; font-size: 12px; flex-shrink: 0; }
+.desktopWindowHint { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.desktop-app .cardModal { z-index: 12000; padding: 10px; }
+.desktop-app .cardModalDialog {
+    max-width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+.desktop-app .cardModalDialog:focus-visible { outline: 2px solid #ffe400; }
+.desktop-app #appViewport.pan-ready { cursor: grab; }
+.desktop-app #appViewport.panning, .desktop-app #appViewport.panning * {
+    cursor: grabbing !important;
+    user-select: none !important;
+}

@@ -55,6 +55,7 @@ async function connect(url) {
 
 async function phase(name, expected) {
   const env = { ...process.env, HD2CSM_USER_DATA_DIR: userData, HD2CSM_AUTOMATION: '1' };
+  if (name === 'normal-startup') delete env.HD2CSM_AUTOMATION;
   delete env.ELECTRON_RUN_AS_NODE;
   delete env.HD2_ELECTRON_TEST_HARNESS;
   const args = ['--remote-debugging-port=0', '--remote-debugging-address=127.0.0.1', '--autoplay-policy=no-user-gesture-required'];
@@ -86,14 +87,34 @@ async function phase(name, expected) {
     await client.send('Runtime.enable');
     await client.send('Page.enable');
     await client.evaluate(`(async () => { while (typeof bootStateReady === 'undefined') await new Promise(r => setTimeout(r, 50)); await bootStateReady; })()`);
-    const result = name === 'write'
+    const result = name === 'normal-startup'
+      ? await client.evaluate(`(async () => {
+          const checks = [];
+          const assert = (ok, label) => { if (!ok) throw new Error(label); checks.push(label); };
+          assert(!chaosSlotMachine.isTestHarness, 'packaged normal launch has automation mode disabled');
+          assert((await chaosSlotMachine.getWindowState()).isFullscreen, 'packaged normal launch starts in true fullscreen');
+          assert(document.querySelector('#appCanvas').getBoundingClientRect().width >= 1280, 'packaged desktop canvas is at least1280 CSS pixels');
+          await chaosSlotMachine.setFullscreen(false);
+          await new Promise(r => setTimeout(r, 300));
+          assert(!(await chaosSlotMachine.getWindowState()).isFullscreen, 'packaged window can exit fullscreen');
+          assert(document.querySelector('#btnToggleFullscreen').getAttribute('aria-pressed') === 'false', 'packaged toolbar reflects windowed state');
+          document.querySelector('#btnToggleFullscreen').click();
+          await new Promise(r => setTimeout(r, 300));
+          assert((await chaosSlotMachine.getWindowState()).isFullscreen, 'packaged toolbar reenters fullscreen');
+          assert(state.cards.length > 0, 'normal packaged launch retains isolated saved Results');
+          return { checks };
+        })()`)
+      : name === 'write'
       ? await client.evaluate(`(${rendererWritePhase.toString()})({skipNativeDialogs:true})`)
       : name === 'verify'
         ? await client.evaluate(`(${rendererVerifyPhase.toString()})(${JSON.stringify(expected)})`)
         : await client.evaluate(`(${rendererNetworkPhase.toString()})()`);
     if (name === 'write') {
+      // Only this isolated profile: the normal-startup check skips the one-time
+      // informational alert, not the application's normal startup/window path.
+      await client.evaluate(`localStorage.setItem(FIRST_BACKUP_WARNING_KEY, '1')`);
       for (const tab of ['spin', 'results', 'compare', 'items', 'rank']) {
-        await client.evaluate(`switchTab('${tab}'); window.scrollTo({top:0,behavior:'instant'});`);
+        await client.evaluate(`switchTab('${tab}'); document.querySelector('#appViewport').scrollTo(0,0);`);
         await delay(350);
         const screenshot = await client.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
         fs.writeFileSync(path.join(runRoot, `${tab}.png`), Buffer.from(screenshot.data, 'base64'));
@@ -117,6 +138,10 @@ async function phase(name, expected) {
       result.checks.push('all four user-reported slot images render from bundled source artwork offline');
       await client.evaluate('renderSpin()');
     }
+    if (name === 'normal-startup') {
+      const screenshot = await client.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+      fs.writeFileSync(path.join(runRoot, 'normal-startup-fullscreen.png'), Buffer.from(screenshot.data, 'base64'));
+    }
     if (client.errors.length) throw new Error(client.errors.join('\n'));
     fs.writeFileSync(path.join(runRoot, `${name}.json`), JSON.stringify({ passed: true, executable, processId: child.pid, userData, result }, null, 2));
     console.log(`PASS packaged ${name}: ${result.checks.length} checks`);
@@ -136,8 +161,9 @@ async function phase(name, expected) {
 (async () => {
   const written = await phase('write');
   const verified = await phase('verify', written);
+  const normalStartup = await phase('normal-startup');
   const network = await phase('network');
-  fs.writeFileSync(path.join(runRoot, 'report.json'), JSON.stringify({ passed: true, executable, userData, written, verified, network, nativeDialogs: 'Tested through real preload/IPC in development harness; packaged file-picker interaction excluded.' }, null, 2));
+  fs.writeFileSync(path.join(runRoot, 'report.json'), JSON.stringify({ passed: true, executable, userData, written, verified, normalStartup, network, nativeDialogs: 'Storage IPC used real development handlers with stubbed file-picker responses. Packaged native file-picker interaction excluded; informational first-save alert pre-acknowledged only in isolated normal-startup profile.' }, null, 2));
   console.log(`PASS packaged application. Evidence: ${runRoot}`);
 })().catch(error => {
   fs.writeFileSync(path.join(runRoot, 'failure.json'), JSON.stringify({ passed: false, executable, error: error.stack }, null, 2));

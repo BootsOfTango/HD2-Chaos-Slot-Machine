@@ -1,5 +1,16 @@
 Helldivers 2 Chaos Slot Machine - Windows x64
 
+v1.1.1 LOCAL FULLSCREEN PREVIEW - not yet approved for public release.
+The app starts fullscreen. Press F11 or use the top-right button to toggle.
+Escape closes a dialog first, or exits fullscreen when no dialog is open.
+In a smaller window, scroll horizontally/vertically or hold Space and drag
+an empty background area. The desktop layout does not shrink into mobile mode.
+These gestures do not drag buttons, input fields, selectable text, or charts.
+This build does not yet add the roadmap's new gear, map, or live-war features.
+
+Do not install or extract into the source checkout or over the old runtime
+folder during review. Keep the complete portable folder together.
+
 The recommended download is the versioned Setup .exe. It is a complete offline
 installer: after downloading it, installation does not require internet access,
 Node.js, npm, or Python. You can compare it against its matching .sha256 file
