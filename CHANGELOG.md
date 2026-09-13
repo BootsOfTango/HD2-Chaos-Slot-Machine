@@ -1,11 +1,22 @@
 # Changelog
 
+## 2026-09-13 — HD2CSM v1.1.0 Windows desktop
+
+- Renamed the application to **Helldivers 2 Chaos Slot Machine**, with **HD2CSM** yellow-and-black slot-machine branding.
+- Added a self-contained Windows Setup installer alongside the portable ZIP, with matching release filenames and checksums.
+- Added non-destructive migration from the previous desktop save location and browser storage keys, with continued support for older JSON exports.
+- Improved first-launch offline randomization, dated live-planet fallback data, Results finalization, scoring, rerolls, and analytics consistency.
+- Replaced weapon placeholders and simplified booster substitutes with 111 bundled source images, verified offline in the installed application.
+- Fixed pending-result ranking, Major Order penalties, Compare deaths/stims, raw totals, booster analytics, and import refresh.
+- Passed 38 unit tests and 73 installed-app assertions. See `docs/FINAL_TEST_REPORT.md` for evidence and limitations.
+- Published-download preparation uses the explicit unsigned `hd2csm-v1.1.0` release tag; the future signed-release workflow remains intact.
+
 ## 2026-04-01
 
 ### First official Chaos Tango 1.0 release ✅
 
-- **Release:** Declared **Helldivers 2 Chaos Roulette (Chaos Tango)** as the first official **v1.0.0** release baseline.
-- **Version label:** Updated in-app version tag to `HD2 TANGO Roulette v1.0.0` for semantic-version consistency.
+- **Release:** Declared **Helldivers 2 Chaos Slot Machine (Chaos Tango)** as the first official **v1.0.0** release baseline.
+- **Version label:** Updated in-app version tag to `HD2CSM v1.0.0` for semantic-version consistency.
 - **Release docs:** Added `RELEASE_NOTES_v1.0.0.md` with copy-ready notes for GitHub Releases.
 
 ## 2026-03-26
@@ -15,18 +26,18 @@
 - **Change:** Added the Entrenched Division warbond gear to the catalog, defaults, and image mappings.
 - **Weapons/Equipment:** Entrenchment Tool, Veto, Stoker, Sweeper, Giga Grenade.
 - **Stratagems:** Gas Mortar, Cremator.
-- **Why:** Keeps roulette pools aligned with newly released warbond content so new items can be rolled immediately.
+- **Why:** Keeps slot-machine pools aligned with newly released warbond content so new items can be rolled immediately.
 
 ## 2026-03-22
 
 ### Official stable release tag
 
-- **v1.0.0:** First official 1.0 release of **HD2 TANGO Roulette**.
+- **v1.0.0:** First official 1.0 release of **HD2CSM**.
 - **Status:** UI version tag, release notes, and release prep now align on the official 1.0 designation.
 
 ### Release focus ✅
 
-- **Change:** Promoted the current Roulette build to the official **1.0** release milestone.
+- **Change:** Promoted the current Slot Machine build to the official **1.0** release milestone.
 - **Why:** Establishes a clear stable launch point for GitHub tagging and future release notes.
 
 ## 2026-03-14

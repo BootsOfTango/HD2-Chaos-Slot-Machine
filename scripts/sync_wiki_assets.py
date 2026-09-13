@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import json, re, unicodedata
+import argparse, hashlib, json, re, unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from html import unescape
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -13,7 +14,7 @@ CATALOG_JSON = ROOT / 'assets' / 'item-catalog.json'
 OUTPUT_JSON = ROOT / 'assets' / 'item-images.json'
 WIKI_BASE = 'https://helldivers.wiki.gg'
 API_ENDPOINT = f'{WIKI_BASE}/api.php'
-UA = 'Helldivers2RouletteAssetSync/1.0'
+UA = 'HD2CSMAssetSync/1.0'
 
 CATEGORY_TO_ASSET_DIR = {
     'primary': 'assets/weapons/primaries',
@@ -57,11 +58,11 @@ STRATAGEM_GROUP_RULES: List[Tuple[str, str]] = [
 ]
 
 def fetch_text(url: str) -> str:
-    with urlopen(Request(url, headers={'User-Agent': UA})) as r:
+    with urlopen(Request(url, headers={'User-Agent': UA}), timeout=25) as r:
         return r.read().decode('utf-8', errors='replace')
 
 def fetch_bytes(url: str) -> bytes:
-    with urlopen(Request(url, headers={'User-Agent': UA})) as r:
+    with urlopen(Request(url, headers={'User-Agent': UA}), timeout=25) as r:
         return r.read()
 
 def normalize_name(v: str) -> str:
@@ -135,7 +136,53 @@ def stable_write(path:Path, content:bytes):
     path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(content)
 
 def should_store_local_asset(category: str, ext: str) -> bool:
-    return category == 'stratagem' and ext == '.svg'
+    return category in {*CATEGORY_TO_ASSET_DIR, 'stratagem'} and ext in {'.png', '.jpg', '.webp', '.gif', '.svg'}
+
+def validate_image(content: bytes, ext: str):
+    if ext == '.svg':
+        text = content.decode('utf-8')
+        if '<svg' not in text or re.search(r'<script|<foreignObject|\bon\w+\s*=|(?:href|url)\s*[=(]\s*[\"\']?https?:', text, re.I):
+            raise ValueError('Invalid or externally active SVG')
+    elif not (content.startswith(b'\x89PNG\r\n\x1a\n') or content.startswith(b'\xff\xd8\xff')
+              or content.startswith((b'GIF87a', b'GIF89a'))
+              or (content.startswith(b'RIFF') and content[8:12] == b'WEBP')):
+        raise ValueError('Response is not a supported image')
+
+def download_existing():
+    """Bundle known source URLs without replacing catalog names or losing entries.
+
+    Source-derived artwork gets a distinct filename, preserving earlier local art.
+    All downloads must succeed before the mapping is changed.
+    """
+    mapping = json.loads(OUTPUT_JSON.read_text(encoding='utf-8'))
+    def download(category, entry):
+        url = entry.get('imageUrl', '')
+        if urlparse(url).hostname != 'helldivers.wiki.gg':
+            raise ValueError(f'Missing approved source URL for {entry["name"]}')
+        ext = pick_ext(url)
+        rel = Path(CATEGORY_TO_ASSET_DIR[category]) / f'{slugify(entry["name"])}-wiki{ext}'
+        content = fetch_bytes(url)
+        validate_image(content, ext)
+        stable_write(ROOT / rel, content)
+        return entry, rel.as_posix(), hashlib.sha256(content).hexdigest()
+    results, failures = [], []
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        jobs = {pool.submit(download, cat, entry): (cat, entry['name'])
+                for cat in CATEGORY_TO_ASSET_DIR for entry in mapping.get(cat, [])}
+        for job in as_completed(jobs):
+            cat, name = jobs[job]
+            try:
+                results.append(job.result())
+                print(f'Downloaded {cat}: {name}', flush=True)
+            except Exception as exc:
+                failures.append(f'{cat}: {name}: {exc}')
+    if failures:
+        raise SystemExit('Mapping unchanged; downloads failed:\n' + '\n'.join(failures))
+    for entry, asset_path, digest in results:
+        entry.update(assetPath=asset_path, artworkSha256=digest,
+                     artworkSource='Helldivers Wiki game artwork / community-traced game icon')
+    stable_write(OUTPUT_JSON, (json.dumps(mapping, indent=2, ensure_ascii=False) + '\n').encode())
+    print(f'Bundled {len(results)} source images and updated mapping.')
 
 def sync_item(name:str, category:str, subgroup:str='')->Dict[str,str]:
     last=None; wiki_title=''; page_url=''; html=''
@@ -157,7 +204,9 @@ def sync_item(name:str, category:str, subgroup:str='')->Dict[str,str]:
         rel=Path(CATEGORY_TO_ASSET_DIR[category]) / f'{slug}{ext}'; kind='icon' if category=='booster' else 'image'
     asset_path = rel.as_posix() if should_store_local_asset(category, ext) else ''
     if asset_path:
-        stable_write(ROOT/rel, fetch_bytes(img))
+        content = fetch_bytes(img)
+        validate_image(content, ext)
+        stable_write(ROOT/rel, content)
     payload = {'name':name,'assetPath':asset_path,'kind':kind,'wikiTitle':wiki_title,'sourceUrl':page_url,'imageUrl':img}
     if category == 'stratagem':
         payload['rimCategory'] = rim_category_for_group(group)
@@ -186,4 +235,7 @@ def main():
     if failures: raise SystemExit('\n'.join(failures))
 
 if __name__=='__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--download-existing', action='store_true', help='Bundle existing weapon/booster source URLs; preserve catalog and old artwork')
+    args = parser.parse_args()
+    download_existing() if args.download_existing else main()

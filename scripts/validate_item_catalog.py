@@ -39,9 +39,9 @@ def parse_defaults(index_text: str):
 
 
 def main() -> int:
-    index_text = INDEX.read_text()
-    catalog = json.loads(CATALOG.read_text())
-    images = json.loads(IMAGES.read_text())
+    index_text = INDEX.read_text(encoding="utf-8")
+    catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+    images = json.loads(IMAGES.read_text(encoding="utf-8"))
     defaults = parse_defaults(index_text)
 
     errors = []
@@ -97,12 +97,12 @@ def main() -> int:
             errors.append(f"DEFAULTS.items.{defaults_key} differs from catalog ordering/content")
 
     if errors:
-        print("❌ Catalog validation failed:")
+        print("Catalog validation failed:")
         for err in errors:
             print(f" - {err}")
         return 1
 
-    print("✅ Catalog validation passed")
+    print("Catalog validation passed")
     return 0
 
 

@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 IMAGE_RE = re.compile(r'''(?:src|href)=['"]([^'"]+)['"]|url\(['"]?([^)'"]+)['"]?\)''')
 REMOTE_RE = re.compile(r'^https?://', re.I)
 DATA_RE = re.compile(r'^(data:|#|mailto:|javascript:)', re.I)
-BUILD_FILES = json.loads((ROOT/'package.json').read_text()).get('build',{}).get('files',[])
+BUILD_FILES = json.loads((ROOT/'package.json').read_text(encoding='utf-8')).get('build',{}).get('files',[])
 PLACEHOLDER_OK = ('assets/placeholders/',)
 
 errors=[]; warnings=[]; local=[]; remote=[]; missing=[]; placeholders=[]
@@ -42,7 +42,7 @@ def note(ref, source, required=True):
     elif not in_zip(ref): errors.append(f'Local image is not included in Windows ZIP: {source} -> {ref}')
 
 # item-images: assetPath is required; imageUrl may exist only as non-required metadata/fallback.
-data=json.loads((ROOT/'assets/item-images.json').read_text())
+data=json.loads((ROOT/'assets/item-images.json').read_text(encoding='utf-8'))
 for cat in ['primary','sidearm','throwable','stratagem','booster']:
     for i,e in enumerate(data.get(cat,[]),1):
         name=e.get('name') or f'#{i}'
@@ -52,7 +52,7 @@ for cat in ['primary','sidearm','throwable','stratagem','booster']:
         if iu: remote.append((f'assets/item-images.json:{cat}:{name}:imageUrl',iu))
 
 # index static refs and WARBOND_ART values.
-text=(ROOT/'index.html').read_text()
+text=(ROOT/'index.html').read_text(encoding='utf-8')
 for m in IMAGE_RE.finditer(text):
     ref=(m.group(1) or m.group(2) or '').strip()
     if not ref or ref.startswith('http') and 'youtube.com' in ref: continue
@@ -76,9 +76,9 @@ report.write_text('# Artwork audit\n\n'
  + section('Local pictures', local)
  + section('Remote pictures/source URLs', remote)
  + section('Missing pictures', missing)
- + section('Existing placeholders', placeholders))
+ + section('Existing placeholders', placeholders), encoding='utf-8')
 
 if errors:
-    print('❌ Asset validation failed:'); [print(' - '+e) for e in errors]; sys.exit(1)
-print('✅ Asset validation passed')
+    print('Asset validation failed:'); [print(' - '+e) for e in errors]; sys.exit(1)
+print('Asset validation passed')
 print(f'Local pictures: {len(local)}; remote metadata/fallback URLs: {len(remote)}; missing: {len(missing)}; placeholders: {len(placeholders)}')
