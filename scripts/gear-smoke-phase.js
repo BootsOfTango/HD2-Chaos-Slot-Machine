@@ -2,7 +2,7 @@
  * Both exports are self-contained so a runner can serialize them through CDP.
  * This module does not launch a process, choose a profile or open native dialogs.
  */
-async function rendererGearPhase() {
+async function rendererGearPhase(identityReview) {
   const checks = [];
   const assert = (condition, label) => {
     if (!condition) throw new Error(`GEAR SMOKE: ${label}`);
@@ -40,6 +40,7 @@ async function rendererGearPhase() {
 
   await bootStateReady;
   await preloadItemVisuals();
+  assert(identityReview?.schemaVersion === 1 && identityReview.merges?.length === 2, 'runner supplied two complete retired catalog snapshots for a genuine 202-row legacy fixture');
   await waitFor(() => !isApiPlanetSyncInProgress(), 'initial planet refresh');
   const originalAlert = window.alert;
   const alerts = [];
@@ -48,7 +49,8 @@ async function rendererGearPhase() {
   assert(state.cards.length === 0, 'fresh isolated profile starts without historical Results');
   assert(additions().length === 5, 'catalog exposes exactly five 1.1.2 gear additions');
   assert(additions().every(({ item }) => item.owned === false && item.enabled === false), 'all five additions start unowned and excluded');
-  assert(rows().filter(({ item }) => item.introducedIn !== '1.1.2').length === 202, 'existing 202 gear entries remain in the fresh catalog');
+  assert(rows().filter(({ item }) => item.introducedIn !== '1.1.2').length === 200 && rows().length === 205, 'fresh catalog has 200 unique legacy items plus five opt-in additions');
+  assert(identityReview.merges.every(merge => find(merge.canonicalId)?.legacyIds?.includes(merge.retiredItem.id) && !find(merge.retiredItem.id)), 'both retired duplicate IDs remain compatibility identities, never extra rollable rows');
   assert(!document.querySelector('#newGearNotice').hidden, 'fresh launch displays the catalog review notice');
   document.querySelector('#btnReviewNewGear').click();
   assert(document.querySelector('#newGearPanel').open && document.querySelector('#tab-items').style.display !== 'none', 'Review new gear opens the Armory panel');
@@ -107,16 +109,30 @@ async function rendererGearPhase() {
   assert(!document.querySelector('#gearPoolWarning').hidden && getEmptyGearSlots().length === 5, 'empty gear slots receive a visible actionable warning');
   state.items = beforeEmpty;
 
-  // Derive the pre-M2 fixture from this catalog, not an obsolete array index.
+  // Reconstruct all 202 historical records, including both now-retired duplicates.
+  // Name-only, pre-ownership records deliberately conflict across each pair.
   const legacyItems = clone(freshItems);
   keys.forEach(key => {
     legacyItems[key] = legacyItems[key].filter(item => item.introducedIn !== '1.1.2').map((item, index) => {
       const legacy = { ...item, enabled: index % 3 !== 0 };
-      for (const field of ['id', 'owned', 'aliases', 'acquisition', 'introducedIn']) delete legacy[field];
+      for (const field of ['id', 'owned', 'aliases', 'legacyIds', 'acquisition', 'introducedIn']) delete legacy[field];
       return legacy;
     });
   });
-  const aliasSource = keys.flatMap(key => DEFAULTS.items[key].map(item => ({ key, item }))).find(({ item }) => item.introducedIn !== '1.1.2' && item.aliases?.some(alias => ownership.normalizeName(alias) !== ownership.normalizeName(item.name)));
+  const retiredFixtures = identityReview.merges.map(merge => {
+    const canonical = find(merge.canonicalId);
+    const key = keys.find(group => categories[group] === merge.retiredItem.type);
+    assert(canonical && key && merge.retiredItem.id !== canonical.id, `${merge.retiredItem.id} has a distinct category-matching canonical target`);
+    const canonicalLegacy = legacyItems[key].find(item => item.name === canonical.name);
+    assert(!!canonicalLegacy, `${canonical.name} exists independently in the reconstructed old fixture`);
+    const retired = { ...clone(merge.retiredItem), enabled: !canonicalLegacy.enabled, legacyFixtureNote: `Recover original ${merge.retiredItem.name}` };
+    for (const field of ['id', 'owned', 'aliases', 'legacyIds', 'acquisition', 'introducedIn']) delete retired[field];
+    legacyItems[key].push(retired);
+    return { canonicalId: canonical.id, key, original: clone(retired) };
+  });
+  assert(keys.reduce((count, key) => count + legacyItems[key].length, 0) === 202, 'legacy import fixture genuinely contains all 202 old rows, including two retired duplicates');
+  assert(retiredFixtures.every(spec => legacyItems[spec.key].some(item => item.name === spec.original.name)), 'both retired short names exist as independent historical fixture records');
+  const aliasSource = keys.flatMap(key => DEFAULTS.items[key].map(item => ({ key, item }))).find(({ item }) => item.introducedIn !== '1.1.2' && !item.legacyIds?.length && item.aliases?.some(alias => ownership.normalizeName(alias) !== ownership.normalizeName(item.name)));
   assert(!!aliasSource, 'legacy catalog provides a real noncanonical alias fixture');
   const legacyAlias = aliasSource.item.aliases.find(alias => ownership.normalizeName(alias) !== ownership.normalizeName(aliasSource.item.name));
   const historical = normalizeCardRecord({
@@ -132,10 +148,16 @@ async function rendererGearPhase() {
   const legacyFixture = { items: legacyItems, cards: [historical], settings: { rememberedPlayerName: 'M2 Legacy Diver' } };
   applyImportedData(clone(legacyFixture));
   const historicalBaseline = JSON.stringify(state.cards);
+  assert(rows().length === 205 && rows().filter(({ item }) => item.introducedIn !== '1.1.2').length === 200, '202 historical rows migrate to 200 unique legacy identities plus five excluded additions');
   assert(rows().filter(({ item }) => item.introducedIn !== '1.1.2').every(({ key, item }) => {
     const original = legacyItems[key].find(legacy => legacy.name === item.name);
     return original && item.enabled === original.enabled && item.owned === original.enabled;
-  }), 'legacy import preserves every enabled/disabled choice and derives ownership consistently');
+  }), 'legacy import preserves every canonical enabled/disabled choice and derives ownership without OR-enabling duplicates');
+  for (const spec of retiredFixtures) {
+    const canonical = find(spec.canonicalId);
+    assert(canonical.legacyAliasRecords?.some(record => JSON.stringify(record) === JSON.stringify(spec.original)), `${spec.original.name} conflicting original record remains fully recoverable`);
+    assert(!rows().some(({ item }) => item.name === spec.original.name), `${spec.original.name} no longer independently weights the roll pool`);
+  }
   assert(additions().every(({ item }) => !item.owned && !item.enabled), 'upgrading the 202-item legacy fixture does not opt into new gear');
   assert(state.settings.rememberedPlayerName === 'M2 Legacy Diver' && state.settings.catalogReviewVersion === '', 'legacy remembered player imports while new review status remains unset');
 

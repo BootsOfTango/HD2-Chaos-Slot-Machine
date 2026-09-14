@@ -3,6 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { spawnSync } = require('node:child_process');
+const { normalizeName } = require('../assets/catalog-state');
 const root = path.resolve(__dirname, '..');
 const catalog = require('../assets/item-catalog.json');
 const mapping = require('../assets/item-images.json');
@@ -25,15 +27,55 @@ test('reviewed release adds exactly four Castellans Creed items and a separate E
 
 test('all catalog identities are stable and type scoped; facts do not contain player ownership', () => {
   const ids = catalog.items.map(item => item.id);
+  assert.equal(ids.length, 205);
   assert.equal(new Set(ids).size, ids.length);
+  const claimedLegacy = new Set();
+  const names = new Map();
   for (const item of catalog.items) {
     assert.ok(item.id.startsWith(item.type + ':'), item.name);
     assert.equal(Object.hasOwn(item, 'owned'), false, item.name);
     assert.equal(Object.hasOwn(item, 'enabled'), false, item.name);
     assert.ok(Array.isArray(item.aliases), item.name);
     assert.ok(item.acquisition.kind, item.name);
-    assert.equal(item.assetPath, mapping[item.type].find(row => row.name === item.name).assetPath, item.name);
+    assert.equal(item.assetPath, mapping[item.type].find(row => row.id === item.id).assetPath, item.name);
+    for (const id of item.legacyIds || []) {
+      assert.ok(id.startsWith(item.type + ':'), id);
+      assert.equal(ids.includes(id), false, `${id} cannot be both canonical and retired`);
+      assert.equal(claimedLegacy.has(id), false, `${id} must have exactly one canonical owner`);
+      claimedLegacy.add(id);
+    }
+    for (const label of [item.name, ...item.aliases]) {
+      const key = `${item.type}:${normalizeName(label)}`;
+      assert.ok(!names.has(key) || names.get(key) === item.id, `Ambiguous category-scoped alias: ${label}`);
+      names.set(key, item.id);
+    }
   }
+  assert.deepEqual([...claimedLegacy].sort(), ['stratagem:ems-strike', 'stratagem:wasp']);
+  assert.equal(ids.length + claimedLegacy.size, 207, 'Every prior stable ID remains canonical or explicitly recoverable');
+});
+
+test('catalog validator rejects retired-ID/category/alias collisions and noncanonical image records', () => {
+  const first = { id: 'primary:first', type: 'primary', name: 'First', aliases: ['Old First'], legacyIds: ['primary:retired'], assetPath: 'assets/first.png' };
+  const second = { id: 'primary:second', type: 'primary', name: 'Second', aliases: [], assetPath: 'assets/second.png' };
+  const fixture = { items: [first, second], images: { primary: [first, second].map(item => ({ id: item.id, name: item.name, assetPath: item.assetPath })), sidearm: [], throwable: [], stratagem: [], booster: [] } };
+  const variants = [];
+  const add = mutate => { const value = structuredClone(fixture); mutate(value); variants.push(value); };
+  add(value => { value.items[0].id = 'sidearm:first'; });
+  add(value => { value.items[0].legacyIds = ['sidearm:retired']; });
+  add(value => { value.items[0].legacyIds = ['primary:second']; });
+  add(value => { value.items[1].legacyIds = ['primary:retired']; });
+  add(value => { value.items[1].aliases = ['OLD-FIRST']; });
+  add(value => { value.images.primary[0].id = 'primary:retired'; });
+  add(value => { value.images.primary.push(structuredClone(value.images.primary[0])); });
+  add(value => { value.images.primary[0].assetPath = 'assets/retired.png'; });
+  const run = spawnSync('python', ['-B', '-c',
+    'import importlib.util,json,sys; spec=importlib.util.spec_from_file_location("catalog_validator","scripts/validate_item_catalog.py"); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); fixtures=json.load(sys.stdin); print(json.dumps([module.validate_identity_contracts(f["items"],f["images"]) for f in fixtures]))'
+  ], { cwd: root, input: JSON.stringify([fixture, ...variants]), encoding: 'utf8' });
+  assert.equal(run.status, 0, run.stderr || run.error?.message);
+  const errors = JSON.parse(run.stdout);
+  assert.deepEqual(errors[0], []);
+  assert.equal(errors.length, 9);
+  for (let index = 1; index < errors.length; index++) assert.ok(errors[index].length > 0, `Invalid identity/image fixture ${index} must fail validation`);
 });
 
 test('all six new bundled assets match recorded hashes and the traced Eagle limitation is explicit', () => {

@@ -2,7 +2,7 @@
  * Both exports are self-contained so a runner can serialize them through CDP with .toString().
  * This module does not launch Electron, choose a profile, touch native dialogs, or modify source data.
  */
-async function rendererSourceAuditPhase(review) {
+async function rendererSourceAuditPhase(review, identityReview) {
   const checks = [];
   const assert = (condition, label) => {
     if (!condition) throw new Error(`SOURCE AUDIT SMOKE: ${label}`);
@@ -14,7 +14,7 @@ async function rendererSourceAuditPhase(review) {
   const typeLabels = { primaries: 'Primary', sidearms: 'Sidearm', throwables: 'Throwable', stratagems: 'Stratagem', boosters: 'Booster' };
   const rowsFrom = items => keys.flatMap(key => (items[key] || []).map(item => ({ key, item })));
   const rows = () => rowsFrom(state.items);
-  const findRecord = id => rows().find(({ item }) => item.id === id);
+  const findRecord = id => rows().find(({ item }) => item.id === id || item.legacyIds?.includes(id));
   const find = id => findRecord(id)?.item;
   const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const renameSpecs = [
@@ -33,16 +33,26 @@ async function rendererSourceAuditPhase(review) {
   ];
   assert(review && review.schemaVersion === 1 && Array.isArray(review.items) && Array.isArray(review.warbonds), 'runner supplied the versioned source-review manifest');
   assert(review.items.length === 35 && new Set(review.items.map(item => item.id)).size === 35, 'review manifest contains 35 unique bounded corrections');
-  const sourceSpecs = review.items.map(correction => ({
-    id: correction.id,
-    canonical: correction.name || correction.previousName,
-    kind: correction.acquisition?.kind,
-    group: correction.warbond,
-    verification: correction.acquisition?.verification,
-    sourceUrl: correction.acquisition?.sourceUrl,
-    verifiedAt: correction.acquisition?.verifiedAt
-  }));
+  assert(identityReview?.schemaVersion === 1 && identityReview.merges?.length === 2, 'runner supplied the two explicit identity merges alongside the unchanged historical source review');
+  const retiredIds = new Map(identityReview.merges.map(merge => [merge.retiredItem.id, merge]));
+  const sourceSpecs = review.items.map(correction => {
+    const merge = retiredIds.get(correction.id);
+    const canonical = merge ? review.items.find(row => row.id === merge.canonicalId) : correction;
+    assert(!!canonical, `${correction.id} resolves to a reviewed canonical identity`);
+    return {
+      id: correction.id,
+      canonicalId: canonical.id,
+      canonical: canonical.name || canonical.previousName,
+      legacyName: merge ? correction.previousName : '',
+      kind: correction.acquisition?.kind,
+      group: correction.warbond,
+      verification: correction.acquisition?.verification,
+      sourceUrl: correction.acquisition?.sourceUrl,
+      verifiedAt: correction.acquisition?.verifiedAt
+    };
+  });
   assert(sourceSpecs.filter(spec => spec.verification === 'primary-source').length === 23 && sourceSpecs.filter(spec => spec.verification === 'community-source').length === 12, 'review manifest explicitly distinguishes 23 primary-source and 12 community-source facts');
+  assert(new Set(sourceSpecs.map(spec => spec.canonicalId)).size === 33, '35 historical facts resolve to 33 current unique reviewed identities');
   const coverSpecs = [
     { group: "Freedom's Flame", path: 'assets/warbonds/official/freedoms-flame.jpg' },
     { group: 'Chemical Agents', path: 'assets/warbonds/official/chemical-agents.jpg' },
@@ -73,7 +83,8 @@ async function rendererSourceAuditPhase(review) {
   const assertReviewedSource = spec => {
     const record = findRecord(spec.id);
     const item = record?.item;
-    assert(item?.name === spec.canonical, `${spec.id} has the reviewed canonical display name`);
+    assert(item?.id === spec.canonicalId && item?.name === spec.canonical, `${spec.id} resolves to its reviewed canonical identity and display name`);
+    if (spec.legacyName) assert(item.legacyIds.includes(spec.id) && item.aliases.includes(spec.legacyName), `${spec.id} remains recoverable as a retired ID and name alias`);
     const info = sourceInfo(item);
     assert(info.kind === spec.kind, `${item.name} uses source kind ${spec.kind}`);
     assert(info.group === spec.group, `${item.name} remains in the distinct ${spec.group} source group`);
@@ -87,7 +98,7 @@ async function rendererSourceAuditPhase(review) {
     const row = buildItemEditorRow({ item, containerId: containers[record.key], typeLabel: typeLabels[record.key], onToggle: () => {} });
     const rowText = normalize(row.textContent);
     assert(rowText.includes(normalize(info.label)) && rowText.includes(normalize(info.group)), `${item.name} renders source-kind and source-group tags in Armory`);
-    return { id: spec.id, kind: info.kind, label: info.label, group: info.group, reviewed: info.reviewed, verification: info.verification, sourceUrl: info.sourceUrl, verifiedAt: info.verifiedAt };
+    return { id: spec.id, canonicalId: spec.canonicalId, legacyName: spec.legacyName, kind: info.kind, label: info.label, group: info.group, reviewed: info.reviewed, verification: info.verification, sourceUrl: info.sourceUrl, verifiedAt: info.verifiedAt };
   };
 
   await bootStateReady;
@@ -97,8 +108,9 @@ async function rendererSourceAuditPhase(review) {
 
   assert(state.cards.length === 0, 'fresh isolated profile starts without historical Results');
   assert(typeof getCatalogSourceInfo === 'function', 'catalog source helper is available to the renderer');
-  assert(rows().length === 207, 'fresh renderer contains exactly 207 gear records');
-  assert(new Set(rows().map(({ item }) => item.id)).size === 207, 'all 207 fresh gear IDs are unique');
+  assert(rows().length === 205, 'fresh renderer contains exactly 205 canonical gear records');
+  assert(new Set(rows().map(({ item }) => item.id)).size === 205, 'all 205 fresh gear IDs are unique');
+  assert([...retiredIds.keys()].every(id => !rows().some(({ item }) => item.id === id)), 'retired duplicate IDs are not independent rollable entries');
   assert(keys.every(key => state.items[key].every(item => item && typeof item.id === 'string' && typeof item.owned === 'boolean' && typeof item.enabled === 'boolean')), 'all canonical categories expose stable IDs and explicit ownership/include flags');
 
   const freshItems = clone(state.items);
@@ -119,7 +131,7 @@ async function rendererSourceAuditPhase(review) {
   renderCatalogAuditStatus();
   const auditStatus = document.querySelector('#catalogAuditStatus');
   assert(auditStatus && !auditStatus.hidden && /audit|review|verified/i.test(auditStatus.textContent) && auditStatus.textContent.trim().length > 20, 'Armory displays a substantive catalog audit status');
-  assert(auditStatus.textContent.includes('28 official-source') && auditStatus.textContent.includes('12 community-source') && auditStatus.textContent.includes('167 pending / 207'), 'catalog audit status reports all reviewed and pending entries, including the five prior additions');
+  assert(auditStatus.textContent.includes('27 official-source') && auditStatus.textContent.includes('11 community-source') && auditStatus.textContent.includes('167 pending / 205'), 'catalog audit status reports 38 unique reviewed identities plus 167 pending, including the five prior additions');
 
   for (const spec of renameSpecs) {
     const canonicalVisual = getItemVisual(spec.canonical, 'sidearm');
@@ -135,7 +147,7 @@ async function rendererSourceAuditPhase(review) {
     assert(WARBOND_ART[spec.group] === spec.path, `${spec.group} uses the confirmed official-cover path`);
     await decodeImage(spec.path);
   }
-  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(freshFlags), 'source rendering, status and artwork checks do not change any of the 207 ownership/include choices');
+  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(freshFlags), 'source rendering, status and artwork checks do not change any of the 205 ownership/include choices');
 
   const baseLoadout = rollLoadout('M2B-SOURCE-HISTORY');
   assert(!!baseLoadout, 'fresh canonical pools can create the source-audit history fixture');
@@ -200,9 +212,9 @@ async function rendererSourceAuditPhase(review) {
   applyImportedData(clone(legacyFixture));
   const historicalBaseline = JSON.stringify(state.cards);
 
-  assert(rows().length === 207 && new Set(rows().map(({ item }) => item.id)).size === 207, 'legacy wrong-name import neither merges nor deletes any of the 207 stable identities');
+  assert(rows().length === 205 && new Set(rows().map(({ item }) => item.id)).size === 205, 'legacy CQC wrong-name import neither merges nor deletes any of the 205 canonical identities');
   assert(JSON.stringify(idList(state.items)) === JSON.stringify(freshIds), 'legacy wrong-name import preserves the complete stable-ID set');
-  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(expectedFixtureFlags), 'legacy wrong-name import preserves all 207 explicit ownership/include choices');
+  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(expectedFixtureFlags), 'legacy CQC wrong-name import preserves all 205 explicit ownership/include choices');
   renameSpecs.forEach((spec, index) => {
     const item = find(spec.id);
     assert(item.name === spec.canonical && item.aliases.includes(spec.legacy), `${spec.legacy} plus stable ID migrates to canonical ${spec.canonical}`);
@@ -258,7 +270,7 @@ async function rendererSourceAuditVerify(expected) {
   const containers = { primaries: 'listPrimaries', sidearms: 'listSidearms', throwables: 'listThrowables', stratagems: 'listStrats', boosters: 'listBoosters' };
   const typeLabels = { primaries: 'Primary', sidearms: 'Sidearm', throwables: 'Throwable', stratagems: 'Stratagem', boosters: 'Booster' };
   const rows = () => keys.flatMap(key => (state.items[key] || []).map(item => ({ key, item })));
-  const findRecord = id => rows().find(({ item }) => item.id === id);
+  const findRecord = id => rows().find(({ item }) => item.id === id || item.legacyIds?.includes(id));
   const find = id => findRecord(id)?.item;
   const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const flagPairs = () => rows().map(({ item }) => [item.id, item.owned, item.enabled]).sort((a, b) => String(a[0]).localeCompare(String(b[0])));
@@ -276,7 +288,7 @@ async function rendererSourceAuditVerify(expected) {
 
   await bootStateReady;
   await Promise.all([preloadItemVisuals(), loadItemImageDb()]);
-  assert(rows().length === 207 && new Set(rows().map(({ item }) => item.id)).size === 207, 'separate process restores exactly 207 unique gear identities');
+  assert(rows().length === 205 && new Set(rows().map(({ item }) => item.id)).size === 205, 'separate process restores exactly 205 unique gear identities');
   assert(JSON.stringify(idList()) === JSON.stringify(expected.expectedIds), 'separate process restores the exact stable-ID set');
   assert(JSON.stringify(flagPairs()) === JSON.stringify(expected.expectedFlags), 'separate process restores every ownership/include choice');
   assert(keys.every(key => JSON.stringify(state.items[key]) === JSON.stringify(expected.expectedItems[key])), 'separate process restores every canonical catalog row and preserved custom field');
@@ -296,6 +308,8 @@ async function rendererSourceAuditVerify(expected) {
   for (const expectedInfo of expected.sourceSpecs) {
     const record = findRecord(expectedInfo.id);
     const item = record?.item;
+    assert(item?.id === expectedInfo.canonicalId, `${expectedInfo.id} restores its exact canonical identity`);
+    if (expectedInfo.legacyName) assert(item.legacyIds.includes(expectedInfo.id) && item.aliases.includes(expectedInfo.legacyName), `${expectedInfo.id} retains retired ID/name compatibility after restart`);
     const info = getCatalogSourceInfo(item);
     assert(info?.kind === expectedInfo.kind && info?.group === expectedInfo.group && info?.reviewed === true, `${item.name} restores its reviewed source kind and group`);
     assert(info.label === expectedInfo.label && info.verification === expectedInfo.verification && info.sourceUrl === expectedInfo.sourceUrl && info.verifiedAt === expectedInfo.verifiedAt, `${item.name} restores exact source verification metadata`);

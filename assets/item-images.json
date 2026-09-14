@@ -52,7 +52,7 @@
     "eat 17 expendable anti tank": "EAT-17 Expendable Anti-Tank",
     "emancipator exosuit": "Emancipator Exosuit",
     "ems mortar sentry": "EMS Mortar Sentry",
-    "ems strike": "EMS Strike",
+    "ems strike": "Orbital EMS Strike",
     "entrenchment tool": "Entrenchment Tool",
     "epoch": "Epoch",
     "exo 51 lumberer exosuit": "EXO-51 Lumberer Exosuit",
@@ -212,7 +212,7 @@
     "vg 70 variable": "VG-70 Variable",
     "vitality enhancement": "Vitality Enhancement",
     "warp pack": "Warp Pack",
-    "wasp": "Wasp",
+    "wasp": "StA-X3 W.A.S.P. Launcher",
     "40 k meltagun": "40-K Meltagun",
     "40 k meltagun stratagem": "40-K Meltagun",
     "bolt pistol": "P/40-K Bolt Pistol",
@@ -1800,16 +1800,6 @@
       "id": "stratagem:eat-17-expendable-anti-tank"
     },
     {
-      "name": "EMS Strike",
-      "assetPath": "assets/stratagems/support/ems-strike.svg",
-      "kind": "icon",
-      "wikiTitle": "Orbital EMS Strike",
-      "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
-      "imageUrl": "https://helldivers.wiki.gg/images/Orbital_EMS_Strike_Stratagem_Icon.svg?964fec",
-      "rimCategory": "orbital",
-      "id": "stratagem:ems-strike"
-    },
-    {
       "name": "Emancipator Exosuit",
       "assetPath": "assets/stratagems/support/emancipator-exosuit.svg",
       "kind": "icon",
@@ -2168,16 +2158,6 @@
       "imageUrl": "https://helldivers.wiki.gg/images/Warp_Pack_Stratagem_Icon.svg?c33eea",
       "rimCategory": "support",
       "id": "stratagem:warp-pack"
-    },
-    {
-      "name": "Wasp",
-      "assetPath": "assets/stratagems/support/wasp.svg",
-      "kind": "icon",
-      "wikiTitle": "WASP",
-      "sourceUrl": "https://helldivers.wiki.gg/wiki/WASP",
-      "imageUrl": "https://helldivers.wiki.gg/images/W.A.S.P._Launcher_Stratagem_Icon.svg?db7fac",
-      "rimCategory": "support",
-      "id": "stratagem:wasp"
     },
     {
       "name": "Gas Mortar",

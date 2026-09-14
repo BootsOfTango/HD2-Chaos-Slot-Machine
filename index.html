@@ -4227,7 +4227,7 @@ END MASTER DIRECTIVE
     <div id="appViewport"><div id="appCanvas">
     <header>
         <div class="title">
-            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.3 preview</div>
+            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.4 preview</div>
             <div style="display:flex; align-items:center; gap:14px; position:relative;">
 
                 <h1 class="appBrand" aria-label="Helldivers 2 Chaos Slot Machine">
@@ -4644,6 +4644,12 @@ END MASTER DIRECTIVE
                     <p class="tiny">Game artwork belongs to Arrowhead, Sony and the relevant Warhammer rights holders. Renders: Squ'ith / Tech_Support_Squid; mine cutout: Undeadender; cover: Snuffle; via Helldivers Wiki.gg. Eagle Gas Airstrike uses Dogo314's faithful community tracing of the game icon, not an original extracted icon. It requires credit and free, publicly accessible use. Attribution and source URLs are bundled in assets/new-gear/ATTRIBUTION.md and provenance.json.</p>
                     <p class="tiny">These five additions are source-verified. The legacy source audit is progressing in reviewed batches; see Source audit below. This preview does not claim every existing Warbond association is corrected.</p>
                 </details>
+            </details>
+            <details id="catalogMergeNotice" class="catalogMergeNotice">
+                <summary>Duplicate cleanup — WASP and Orbital EMS Strike</summary>
+                <p class="catalogSourceMeta">Each now has one entry in rolls. EMS Mortar Sentry is separate. If old choices conflict, the existing canonical ID wins, then the retired ID, canonical name, and alias (first record on ties). Ownership is never combined to enable gear. A lone retired entry keeps its choices.</p>
+                <p class="catalogSourceMeta">Replaced original records remain recoverable in saves and JSON exports under legacyAliasRecords. Historical Results keep their original labels and scores; usage analytics count each equipment identity once per run.</p>
+                <div id="catalogMergeRecords"></div>
             </details>
             <details id="catalogAuditPanel" class="newGearCredits">
                 <summary id="catalogAuditStatus">Source audit</summary>
@@ -5824,7 +5830,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "Orbital 120MM HE Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-120mm-he-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Orbital 380MM HE Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-380mm-he-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Orbital Airburst Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-airburst-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "Orbital EMS Strike", enabled: true, owned: true, warbond: "Requisition unlocks", subgroup: "orbital", source: "Requisition unlocks", id: "stratagem:orbital-ems-strike", aliases: [], acquisition: {"kind": "requisition", "id": "requisition:requisition-unlocks", "label": "Requisition unlocks", "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Community procurement: orbital strike. EMS Strike is an existing duplicate entry awaiting ID-safe consolidation; EMS Mortar Sentry is distinct."} },
+                    { name: "Orbital EMS Strike", enabled: true, owned: true, warbond: "Requisition unlocks", subgroup: "orbital", source: "Requisition unlocks", id: "stratagem:orbital-ems-strike", legacyIds: ["stratagem:ems-strike"], aliases: ["EMS Strike"], acquisition: {"kind": "requisition", "id": "requisition:requisition-unlocks", "label": "Requisition unlocks", "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Community procurement: orbital strike. EMS Strike is a legacy name/ID consolidated in 1.1.4. EMS Mortar Sentry is distinct."} },
                     { name: "Orbital Gas Strike", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-gas-strike", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Orbital Gatling Barrage", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-gatling-barrage", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Orbital Laser", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "orbital", source: "Unassigned / Custom", id: "stratagem:orbital-laser", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
@@ -5869,7 +5875,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "Defoliation Tool", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:defoliation-tool", aliases: ["detonation tool"], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Directional Shield", enabled: true, owned: true, warbond: "Urban Legends", subgroup: "backpack", source: "Urban Legends", id: "stratagem:directional-shield", aliases: ["SH-51 Directional Shield"], acquisition: {"kind": "warbond", "id": "warbond:urban-legends", "label": "Urban Legends", "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "EAT-17 Expendable Anti-Tank", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:eat-17-expendable-anti-tank", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "EMS Strike", enabled: true, owned: true, warbond: "Requisition unlocks", subgroup: "orbital", source: "Requisition unlocks", id: "stratagem:ems-strike", aliases: [], acquisition: {"kind": "requisition", "id": "requisition:requisition-unlocks", "label": "Requisition unlocks", "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Community procurement: orbital strike. EMS Strike is an existing duplicate entry awaiting ID-safe consolidation; EMS Mortar Sentry is distinct."} },
                     { name: "Emancipator Exosuit", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:emancipator-exosuit", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Epoch", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:epoch", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Expendable Napalm", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:expendable-napalm", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
@@ -5902,11 +5907,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "Shield Generator Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:shield-generator-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Solo Silo", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:solo-silo", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Speargun", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:speargun", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "StA-X3 W.A.S.P. Launcher", enabled: true, owned: true, warbond: "Requisition unlocks", subgroup: "support", source: "Requisition unlocks", id: "stratagem:sta-x3-w-a-s-p-launcher", aliases: [], acquisition: {"kind": "requisition", "id": "requisition:requisition-unlocks", "label": "Requisition unlocks", "sourceUrl": "https://www.playstation.com/en-us/games/helldivers-2/helldivers-2-update-summary/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Current requisition support weapon, not Righteous Revenants. Wasp and StA-X3 W.A.S.P. Launcher duplicate consolidation remains pending ID-safe migration."} },
+                    { name: "StA-X3 W.A.S.P. Launcher", enabled: true, owned: true, warbond: "Requisition unlocks", subgroup: "support", source: "Requisition unlocks", id: "stratagem:sta-x3-w-a-s-p-launcher", legacyIds: ["stratagem:wasp"], aliases: ["Wasp"], acquisition: {"kind": "requisition", "id": "requisition:requisition-unlocks", "label": "Requisition unlocks", "sourceUrl": "https://www.playstation.com/en-us/games/helldivers-2/helldivers-2-update-summary/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Current requisition support weapon, not Righteous Revenants. Wasp is a legacy name/ID for the same equipment, consolidated in 1.1.4."} },
                     { name: "Sterilizer", enabled: true, owned: true, warbond: "Chemical Agents", subgroup: "support", source: "Chemical Agents", id: "stratagem:sterilizer", aliases: ["TX-41 Sterilizer"], acquisition: {"kind": "warbond", "id": "warbond:chemical-agents", "label": "Chemical Agents", "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "Supply Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:supply-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Warp Pack", enabled: true, owned: true, warbond: "Unassigned / Custom", subgroup: "support", source: "Unassigned / Custom", id: "stratagem:warp-pack", aliases: [], acquisition: {"kind": "unverified", "label": "Unassigned / Custom", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "Wasp", enabled: true, owned: true, warbond: "Requisition unlocks", subgroup: "support", source: "Requisition unlocks", id: "stratagem:wasp", aliases: [], acquisition: {"kind": "requisition", "id": "requisition:requisition-unlocks", "label": "Requisition unlocks", "sourceUrl": "https://www.playstation.com/en-us/games/helldivers-2/helldivers-2-update-summary/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Current requisition support weapon, not Righteous Revenants. Wasp and StA-X3 W.A.S.P. Launcher duplicate consolidation remains pending ID-safe migration."} },
                     { name: "Gas Mortar", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "defensive", source: "Entrenched Division", id: "stratagem:gas-mortar", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Cremator", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "support", source: "Entrenched Division", id: "stratagem:cremator", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
                     { name: "MGX-42 Bullet Storm", enabled: true, owned: true, warbond: "Exo Experts", subgroup: "support", source: "Exo Experts", id: "stratagem:mgx-42-bullet-storm", aliases: [], acquisition: {"kind": "unverified", "label": "Exo Experts", "verification": "legacy-assignment-pending-audit"} },
@@ -11308,7 +11312,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             "Defoliation Tool": "Unassigned / Custom",
             "Directional Shield": "Urban Legends",
             "EAT-17 Expendable Anti-Tank": "Unassigned / Custom",
-            "EMS Strike": "Requisition unlocks",
             "Emancipator Exosuit": "Unassigned / Custom",
             "Epoch": "Unassigned / Custom",
             "Expendable Napalm": "Unassigned / Custom",
@@ -11345,7 +11348,6 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             "Sterilizer": "Chemical Agents",
             "Supply Pack": "Unassigned / Custom",
             "Warp Pack": "Unassigned / Custom",
-            "Wasp": "Requisition unlocks",
             "Hellpod Space Optimization": "Helldiver Basics (Mobilize)",
             "Vitality Enhancement": "Helldiver Basics (Mobilize)",
             "UAV Recon Booster": "Helldiver Basics (Mobilize)",
@@ -11387,6 +11389,29 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function renderCatalogAuditStatus() {
             const info = getCatalogSourceIndex().summary();
             $("#catalogAuditStatus").textContent = `SOURCE AUDIT — ${info.primary} official-source reviewed · ${info.community} community-source reviewed · ${info.pending} pending / ${info.total} entries`;
+        }
+        function renderCatalogMergeNotice() {
+            const container = document.getElementById("catalogMergeRecords");
+            if (!container) return;
+            container.replaceChildren();
+            const choices = item => `${item.owned === false ? "not owned" : "owned"} / ${item.enabled === true ? "included" : "excluded"}`;
+            (state.items.stratagems || []).filter(item => item.legacyIds?.length).forEach(item => {
+                const section = document.createElement("div");
+                section.className = "catalogSourceMeta";
+                const heading = document.createElement("strong");
+                heading.textContent = `${item.name}: ${choices(item)}`;
+                section.append(heading);
+                const records = item.legacyAliasRecords || [];
+                const info = document.createElement("p");
+                info.textContent = records.length ? `${records.length} original record(s) retained for recovery. Change the current choice in Manual pool management if needed.` : "No replaced records in this profile. Older names and IDs remain import-compatible.";
+                section.append(info);
+                records.forEach(record => {
+                    const line = document.createElement("div");
+                    line.textContent = `Retained: ${record.name || record.id || "unnamed"} — ${typeof record.owned === "boolean" ? choices(record) : `legacy include: ${record.enabled === true ? "on" : "off"}`}`;
+                    section.append(line);
+                });
+                container.append(section);
+            });
         }
         function getItemWarbond(item) {
             const canonical = ITEM_WARBOND_BY_NAME[item?.name] || "Unassigned / Custom";
@@ -11443,10 +11468,13 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
         function buildArmoryStats(cards) {
             const ordered = sortCardsByRankOrder(cards);
             const stats = new Map();
+            const resolve = createCatalogAnalyticsResolver();
 
-            const touchItem = (card, itemName, isRainbowTop) => {
-                const canonical = canonicalItemName(itemName);
-                if (!canonical) return;
+            const touchItem = (card, type, itemName, isRainbowTop, seen) => {
+                const identity = resolve(type, itemName);
+                if (!identity || seen.has(identity.key)) return;
+                seen.add(identity.key);
+                const canonical = identity.name;
 
                 if (!stats.has(canonical)) {
                     stats.set(canonical, {
@@ -11466,12 +11494,13 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             ordered.forEach((card, idx) => {
                 const tier = tierForPlace(idx + 1);
                 const isRainbowTop = tier === "rainbow";
+                const seen = new Set();
 
-                touchItem(card, card?.primary, isRainbowTop);
-                touchItem(card, card?.sidearm, isRainbowTop);
-                touchItem(card, card?.throwable, isRainbowTop);
+                touchItem(card, "primary", card?.primary, isRainbowTop, seen);
+                touchItem(card, "sidearm", card?.sidearm, isRainbowTop, seen);
+                touchItem(card, "throwable", card?.throwable, isRainbowTop, seen);
                 (Array.isArray(card?.stratagems) ? card.stratagems : []).forEach(name => {
-                    touchItem(card, name, isRainbowTop);
+                    touchItem(card, "stratagem", name, isRainbowTop, seen);
                 });
             });
 
@@ -11651,9 +11680,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 return matches?.size === 1 ? matches.values().next().value : null;
             };
             ITEM_LIST_METADATA.forEach(meta => {
-                const index = { ids: new Map(), names: new Map(), aliases: new Map() };
+                const index = { ids: new Map(), legacyIds: new Map(), names: new Map(), aliases: new Map() };
                 (DEFAULTS.items[meta.key] || []).forEach(item => {
                     add(index.ids, item.id, item);
+                    (item.legacyIds || []).forEach(id => add(index.legacyIds, id, item));
                     add(index.names, normalize(item.name), item);
                     (item.aliases || []).forEach(alias => add(index.aliases, normalize(alias), item));
                 });
@@ -11664,8 +11694,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 const rawName = String(item.name || "").trim();
                 const nameKey = normalize(rawName);
                 const index = indexes.get(type);
-                // Category-scoped ID, canonical name, then unambiguous explicit alias.
-                const canonical = unique(index?.ids, item.id) || unique(index?.names, nameKey)
+                // Category-scoped canonical ID, retired ID, name, then unique alias.
+                const canonical = unique(index?.ids, item.id) || unique(index?.legacyIds, item.id) || unique(index?.names, nameKey)
                     || (!index?.names.has(nameKey) ? unique(index?.aliases, nameKey) : null);
                 if (canonical) return { key: `${type}|${canonical.id}`, name: canonical.name };
                 if (!rawName || rawName === "—") return null;
@@ -11711,9 +11741,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     .map(({ card }) => card.id)
             );
 
-            const bump = (type, name, moDone, isRainbowTop) => {
+            const bump = (type, name, moDone, isRainbowTop, seen) => {
                 const row = ensure(type, name);
-                if (!row) return;
+                if (!row || seen.has(row.key)) return;
+                seen.add(row.key);
                 row.rolledCount += 1;
                 if (moDone) row.moSuccessCount += 1;
                 if (isRainbowTop) row.rainbowTopCount += 1;
@@ -11722,11 +11753,12 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             (state.cards || []).filter(isCardComplete).forEach(card => {
                 const moDone = !!card?.majorOrderDone;
                 const isRainbowTop = rainbowCardIds.has(card?.id);
-                bump("primary", card?.primary, moDone, isRainbowTop);
-                bump("sidearm", card?.sidearm, moDone, isRainbowTop);
-                bump("throwable", card?.throwable, moDone, isRainbowTop);
-                (card?.stratagems || []).forEach(name => bump("stratagem", name, moDone, isRainbowTop));
-                bump("booster", card?.booster, moDone, isRainbowTop);
+                const seen = new Set();
+                bump("primary", card?.primary, moDone, isRainbowTop, seen);
+                bump("sidearm", card?.sidearm, moDone, isRainbowTop, seen);
+                bump("throwable", card?.throwable, moDone, isRainbowTop, seen);
+                (card?.stratagems || []).forEach(name => bump("stratagem", name, moDone, isRainbowTop, seen));
+                bump("booster", card?.booster, moDone, isRainbowTop, seen);
             });
 
             const rows = Array.from(map.values());
@@ -12119,6 +12151,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
         function renderItems() {
             renderNewGearCatalog();
+            renderCatalogMergeNotice();
             renderCatalogAuditStatus();
             const viewMode = getItemsViewMode();
             const warbondView = $("#itemsWarbondView");
@@ -12221,9 +12254,11 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 const includeWeek = Number.isFinite(t) && (now - t) <= weekMs;
                 const includeMonth = Number.isFinite(t) && (now - t) <= monthMs;
 
+                const seen = new Set();
                 getCardItems(card).forEach(it => {
                     const identity = resolve(it.slot, it);
-                    if (!identity) return;
+                    if (!identity || seen.has(identity.key)) return;
+                    seen.add(identity.key);
                     const { key, name } = identity;
 
                     let entry = byKey.get(key);

@@ -33,6 +33,7 @@ function runtime(items = catalog.items, cards = []) {
   });
   vm.runInContext([
     section('createCatalogAnalyticsResolver()', 'getArmoryExpandedGroups()'),
+    section('buildArmoryStats(cards)', 'renderItemList('),
     section('getCardItems(card)', 'getStratGroup('),
     section('buildItemAnalytics(cards = [])', 'renderItemInsights(')
   ].join('\n'), context);
@@ -139,4 +140,31 @@ test('empty labels produce no analytics rows and known ID-only catalog rows rema
   delete row.name;
   assert.equal(context.buildArmoryAnalyticsData().find(item => item.key === 'sidearm|sidearm:cqc-1-saber').name, 'CQC-2 Saber');
   assert.equal(context.buildItemAnalytics(context.state.cards).itemStats.length, 0);
+});
+
+test('old duplicate names count one equipment use per historical run in every analytics consumer', () => {
+  const cards = [
+    card('', 0, { stratagems: ['Wasp', 'StA-X3 W.A.S.P. Launcher', 'EMS Strike', 'Orbital EMS Strike'] }),
+    card('', 1, { stratagems: ['Wasp', 'EMS Mortar Sentry'] })
+  ];
+  const context = runtime(catalog.items, cards);
+  const before = JSON.stringify(context.state);
+  const armory = context.buildArmoryAnalyticsData().filter(item => item.rolledCount);
+  const insights = context.buildItemAnalytics(context.state.cards).itemStats;
+  const legacy = context.buildArmoryStats(context.state.cards);
+  for (const [name, count] of [['StA-X3 W.A.S.P. Launcher', 2], ['Orbital EMS Strike', 1], ['EMS Mortar Sentry', 1]]) {
+    assert.equal(armory.find(item => item.name === name).rolledCount, count);
+    assert.equal(insights.find(item => item.name === name).total, count);
+    assert.equal(legacy.get(name).rolledCount, count);
+  }
+  assert.equal(armory.length, 3); assert.equal(insights.length, 3); assert.equal(legacy.size, 3);
+  assert.equal(JSON.stringify(context.state), before);
+});
+
+test('retired IDs resolve before stale names in derived analytics without changing the sentry', () => {
+  const resolve = runtime().createCatalogAnalyticsResolver();
+  assert.equal(resolve('stratagem', { id: 'stratagem:wasp', name: 'EMS Mortar Sentry' }).name, 'StA-X3 W.A.S.P. Launcher');
+  assert.equal(resolve('stratagem', { id: 'stratagem:ems-strike' }).name, 'Orbital EMS Strike');
+  assert.equal(resolve('stratagem', 'EMS Mortar Sentry').key, 'stratagem|stratagem:ems-mortar-sentry');
+  assert.equal(resolve('primary', { id: 'stratagem:wasp', name: 'My custom rifle' }).name, 'My custom rifle');
 });

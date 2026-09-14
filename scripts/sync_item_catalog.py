@@ -61,7 +61,7 @@ def render_defaults_block(catalog_items):
             subgroup = json.dumps(item['subgroup'])
             source = json.dumps(item['source'])
             enabled = 'true' if item.get('defaultEnabled', True) else 'false'
-            extra = ', '.join(f'{key}: {json.dumps(item[key], ensure_ascii=False)}' for key in ['id', 'aliases', 'acquisition', 'introducedIn'] if key in item)
+            extra = ', '.join(f'{key}: {json.dumps(item[key], ensure_ascii=False)}' for key in ['id', 'legacyIds', 'aliases', 'acquisition', 'introducedIn'] if key in item)
             lines.append(f'                    {{ name: {name}, enabled: {enabled}, owned: {enabled}, warbond: {warbond}, subgroup: {subgroup}, source: {source}, {extra} }},')
         lines.append('                ],')
         if idx < len(order) - 1:

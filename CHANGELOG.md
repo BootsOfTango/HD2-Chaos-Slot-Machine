@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-14 — v1.1.4 local duplicate-cleanup preview (unpublished)
+
+- Consolidated Wasp into StA-X3 W.A.S.P. Launcher and EMS Strike into Orbital EMS Strike. EMS Mortar Sentry is unchanged. Rolls now contain 205 canonical equipment entries, not 207 rows containing two duplicates.
+- Retained shortened names as aliases and old stable IDs as explicit legacy IDs. Canonical ID choices take priority over retired IDs, then canonical names, then aliases; ties retain the first supplied record. Flags are never combined to enable equipment.
+- Preserved replaced originals, custom metadata and conflicting choices under recoverable `legacyAliasRecords`, including sole old-ID/name records; repeated imports do not grow recovery data.
+- Kept historical labels, fingerprints, locked statistics and scores unchanged. Derived analytics count each equipment identity once per recorded run, including old cards containing both duplicate names.
+- Added Armory's compact Duplicate cleanup explanation/current choices/recovery summary and stronger catalog ID/alias/image validation.
+- No new acquisition reviews: 38 unique reviewed identities (27 primary-source, 11 community-source), with 167 pending. The count dropped by two because duplicate rows were combined, not because evidence was lost.
+- See `docs/M2B_DEDUP_TEST_REPORT.md`. Still local and unsigned; other roadmap milestones remain queued.
+
 ## 2026-09-14 — v1.1.3 local source-audit preview (unpublished)
 
 - Reviewed 35 legacy acquisition assignments: 23 against primary sources and 12 against community sources. With the prior five additions, 40 of 207 catalog records have reviewed acquisition metadata; 167 remain pending.

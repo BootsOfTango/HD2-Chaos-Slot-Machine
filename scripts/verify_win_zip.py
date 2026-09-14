@@ -65,6 +65,7 @@ checks = {
     'catalog migration and ownership': 'assets/catalog-state.js',
     'catalog source facts': 'assets/catalog-sources.js',
     'reviewed source batch': 'assets/catalog-reviews/2026-09-14.json',
+    'retired identity review and archived records': 'assets/catalog-reviews/2026-09-14-identity-merges.json',
     'official cover attribution': 'assets/warbonds/official/ATTRIBUTION.md',
     'Freedom flame promotional cover': 'assets/warbonds/official/freedoms-flame.jpg',
     'Chemical agents promotional cover': 'assets/warbonds/official/chemical-agents.jpg',

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "version": "1.1.4",
+  "reviewedAt": "2026-09-14",
+  "references": [
+    "docs/M2B_STRATAGEM_SOURCE_RESEARCH.md",
+    "docs/CATALOG_IDENTITY_MIGRATION.md"
+  ],
+  "policy": "Canonical ID > retired ID > canonical name > unambiguous alias; first record on ties. Never OR ownership/inclusion. Preserve replaced original records recoverably; no historical card mutation.",
+  "merges": [
+    {
+      "canonicalId": "stratagem:sta-x3-w-a-s-p-launcher",
+      "retiredItem": {
+        "name": "Wasp",
+        "type": "stratagem",
+        "subgroup": "support",
+        "warbond": "Requisition unlocks",
+        "source": "Requisition unlocks",
+        "assetPath": "assets/stratagems/support/wasp.svg",
+        "id": "stratagem:wasp",
+        "aliases": [],
+        "acquisition": {
+          "kind": "requisition",
+          "id": "requisition:requisition-unlocks",
+          "label": "Requisition unlocks",
+          "sourceUrl": "https://www.playstation.com/en-us/games/helldivers-2/helldivers-2-update-summary/",
+          "verifiedAt": "2026-09-14",
+          "verification": "primary-source",
+          "reviewScope": "acquisition",
+          "notes": "Current requisition support weapon, not Righteous Revenants. Wasp and StA-X3 W.A.S.P. Launcher duplicate consolidation remains pending ID-safe migration."
+        }
+      },
+      "aliases": [
+        "Wasp"
+      ],
+      "notes": "Current requisition support weapon, not Righteous Revenants. Wasp is a legacy name/ID for the same equipment, consolidated in 1.1.4."
+    },
+    {
+      "canonicalId": "stratagem:orbital-ems-strike",
+      "retiredItem": {
+        "name": "EMS Strike",
+        "type": "stratagem",
+        "subgroup": "orbital",
+        "warbond": "Requisition unlocks",
+        "source": "Requisition unlocks",
+        "assetPath": "assets/stratagems/support/ems-strike.svg",
+        "id": "stratagem:ems-strike",
+        "aliases": [],
+        "acquisition": {
+          "kind": "requisition",
+          "id": "requisition:requisition-unlocks",
+          "label": "Requisition unlocks",
+          "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
+          "verifiedAt": "2026-09-14",
+          "verification": "community-source",
+          "reviewScope": "acquisition",
+          "notes": "Community procurement: orbital strike. EMS Strike is an existing duplicate entry awaiting ID-safe consolidation; EMS Mortar Sentry is distinct."
+        }
+      },
+      "aliases": [
+        "EMS Strike"
+      ],
+      "notes": "Community procurement: orbital strike. EMS Strike is a legacy name/ID consolidated in 1.1.4. EMS Mortar Sentry is distinct."
+    }
+  ]
+}

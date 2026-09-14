@@ -6,11 +6,14 @@ const { spawn } = require('node:child_process');
 const { rendererWritePhase, rendererVerifyPhase, rendererNetworkPhase } = require('./electron-smoke-phase');
 const { rendererGearPhase, rendererGearVerify } = require('./gear-smoke-phase');
 const { rendererSourceAuditPhase, rendererSourceAuditVerify } = require('./source-audit-smoke-phase');
+const { rendererDedupPhase, rendererDedupVerify, rendererDedupSeed, rendererDedupUpgradeVerify } = require('./dedup-smoke-phase');
+const identityReview = require('../assets/catalog-reviews/2026-09-14-identity-merges.json');
 const root = path.resolve(__dirname, '..');
 const gearOnly = process.argv.includes('--gear');
 const sourceOnly = process.argv.includes('--sources');
+const dedupOnly = process.argv.includes('--dedup');
 const executable = path.resolve(process.argv.slice(2).find(value => !value.startsWith('--')) || path.join(root, 'dist', 'win-unpacked', 'Helldivers 2 Chaos Slot Machine.exe'));
-const runRoot = path.join(root, '.test-data', `${sourceOnly ? 'packaged-sources' : gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
+const runRoot = path.join(root, '.test-data', `${dedupOnly ? 'packaged-dedup' : sourceOnly ? 'packaged-sources' : gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
 const userData = path.join(runRoot, 'user-data');
 fs.mkdirSync(runRoot, { recursive: true });
 if (!fs.existsSync(executable)) throw new Error(`Packaged executable not found: ${executable}`);
@@ -57,15 +60,17 @@ async function connect(url) {
   } };
 }
 
-async function phase(name, expected) {
-  const env = { ...process.env, HD2CSM_USER_DATA_DIR: userData, HD2CSM_AUTOMATION: '1' };
+async function phase(name, expected, launch = {}) {
+  const phaseUserData = launch.userData || userData;
+  const phaseExecutable = launch.executable || executable;
+  const env = { ...process.env, HD2CSM_USER_DATA_DIR: phaseUserData, HD2CSM_AUTOMATION: '1' };
   if (name === 'normal-startup') delete env.HD2CSM_AUTOMATION;
   delete env.ELECTRON_RUN_AS_NODE;
   delete env.HD2_ELECTRON_TEST_HARNESS;
   const args = ['--remote-debugging-port=0', '--remote-debugging-address=127.0.0.1', '--autoplay-policy=no-user-gesture-required'];
   // An app-local unreachable proxy blocks network from the very first request.
   if (name !== 'network') args.push('--proxy-server=http://127.0.0.1:9');
-  const child = spawn(executable, args, { cwd: path.dirname(executable), env, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });
+  const child = spawn(phaseExecutable, args, { cwd: path.dirname(phaseExecutable), env, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });
   let output = '';
   child.stdout.on('data', chunk => { output += chunk.toString(); });
   child.stderr.on('data', chunk => { output += chunk.toString(); });
@@ -91,12 +96,20 @@ async function phase(name, expected) {
     await client.send('Runtime.enable');
     await client.send('Page.enable');
     await client.evaluate(`(async () => { while (typeof bootStateReady === 'undefined') await new Promise(r => setTimeout(r, 50)); await bootStateReady; })()`);
-    const result = name === 'source-write'
-      ? await client.evaluate(`(${rendererSourceAuditPhase.toString()})(${JSON.stringify(require('../assets/catalog-reviews/2026-09-14.json'))})`)
+    const result = name === 'dedup-seed'
+      ? await client.evaluate(`(${rendererDedupSeed.toString()})(${JSON.stringify(expected)})`)
+      : name === 'dedup-upgrade'
+        ? await client.evaluate(`(${rendererDedupUpgradeVerify.toString()})(${JSON.stringify(expected)})`)
+      : name === 'dedup-write'
+      ? await client.evaluate(`(${rendererDedupPhase.toString()})()`)
+      : name === 'dedup-verify'
+        ? await client.evaluate(`(${rendererDedupVerify.toString()})(${JSON.stringify(expected)})`)
+      : name === 'source-write'
+      ? await client.evaluate(`(${rendererSourceAuditPhase.toString()})(${JSON.stringify(require('../assets/catalog-reviews/2026-09-14.json'))}, ${JSON.stringify(identityReview)})`)
       : name === 'source-verify'
         ? await client.evaluate(`(${rendererSourceAuditVerify.toString()})(${JSON.stringify(expected)})`)
       : name === 'gear-write'
-      ? await client.evaluate(`(${rendererGearPhase.toString()})()`)
+      ? await client.evaluate(`(${rendererGearPhase.toString()})(${JSON.stringify(identityReview)})`)
       : name === 'gear-verify'
         ? await client.evaluate(`(${rendererGearVerify.toString()})(${JSON.stringify(expected)})`)
       : name === 'normal-startup'
@@ -163,6 +176,12 @@ async function phase(name, expected) {
       const lower = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
       fs.writeFileSync(path.join(runRoot, 'new-gear-controls.png'), Buffer.from(lower.data, 'base64'));
     }
+    if (name === 'dedup-write') {
+      await client.evaluate(`switchTab('items'); document.querySelector('#catalogMergeNotice').open=true; document.querySelector('#catalogMergeNotice').scrollIntoView({block:'center'});`);
+      await delay(150);
+      const screenshot = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
+      fs.writeFileSync(path.join(runRoot, 'duplicate-recovery.png'), Buffer.from(screenshot.data, 'base64'));
+    }
     if (name === 'source-write') {
       await client.evaluate(`switchTab('items'); document.querySelector('#catalogAuditPanel').open = true; document.querySelector('#catalogAuditPanel').scrollIntoView({block:'center'});`);
       await delay(150);
@@ -186,7 +205,7 @@ async function phase(name, expected) {
       }
     }
     if (client.errors.length) throw new Error(client.errors.join('\n'));
-    fs.writeFileSync(path.join(runRoot, `${name}.json`), JSON.stringify({ passed: true, executable, processId: child.pid, userData, result }, null, 2));
+    fs.writeFileSync(path.join(runRoot, `${name}.json`), JSON.stringify({ passed: true, executable: phaseExecutable, processId: child.pid, userData: phaseUserData, result }, null, 2));
     console.log(`PASS packaged ${name}: ${result.checks.length} checks`);
     return result;
   } finally {
@@ -202,14 +221,15 @@ async function phase(name, expected) {
 }
 
 (async () => {
-  if (gearOnly || sourceOnly) {
-    const written = await phase(sourceOnly ? 'source-write' : 'gear-write');
-    const verified = await phase(sourceOnly ? 'source-verify' : 'gear-verify', written);
+  if (gearOnly || sourceOnly || dedupOnly) {
+    const prefix = dedupOnly ? 'dedup' : sourceOnly ? 'source' : 'gear';
+    const written = await phase(`${prefix}-write`);
+    const verified = await phase(`${prefix}-verify`, written);
     // Additional file-level backend coverage, without a native dialog or any
     // personal profile. Use the exact payload emitted by the packaged renderer.
     const assert = require('node:assert/strict');
     const storage = require('../electron/storage');
-    const exportPath = path.join(runRoot, sourceOnly ? 'source-export.json' : 'gear-export.json');
+    const exportPath = path.join(runRoot, `${prefix}-export.json`);
     storage.exportStateFile(exportPath, written.exportData);
     const envelope = JSON.parse(fs.readFileSync(exportPath, 'utf8'));
     assert.equal(envelope.applicationVersion, require('../package.json').version);
@@ -218,8 +238,23 @@ async function phase(name, expected) {
     storage.importStateFile(importedProfile, exportPath);
     assert.deepEqual(storage.loadStateFile(importedProfile).data, written.exportData);
     const fileRoundtrip = {passed:true, checks:3, exportPath, importedProfile, coverage:'Real storage backend export/import/load with packaged-renderer payload; native file picker not exercised.'};
-    fs.writeFileSync(path.join(runRoot, 'report.json'), JSON.stringify({passed:true,executable,userData,written,verified,fileRoundtrip},null,2));
-    console.log(`PASS packaged ${sourceOnly ? 'source-audit' : 'gear'} upgrade and restart. Evidence: ${runRoot}`);
+    let upgrade;
+    if (dedupOnly) {
+      const oldExecutable = path.join(root, 'dist', 'preview-v1.1.3', 'Helldivers 2 Chaos Slot Machine.exe');
+      if (!fs.existsSync(oldExecutable)) throw new Error('Real 1.1.3 upgrade coverage needs the preserved preview-v1.1.3 runtime.');
+      const upgradeProfile = path.join(runRoot, 'upgrade-user-data');
+      const seeded = await phase('dedup-seed', written, {executable:oldExecutable, userData:upgradeProfile});
+      const originalBytes = fs.readFileSync(seeded.savePath);
+      assert.equal(JSON.parse(originalBytes).applicationVersion, '1.1.3');
+      fs.writeFileSync(path.join(runRoot, 'original-v1.1.3-state.json'), originalBytes);
+      const upgraded = await phase('dedup-upgrade', seeded, {userData:upgradeProfile});
+      assert.equal(JSON.parse(fs.readFileSync(upgraded.savePath)).applicationVersion, '1.1.4');
+      const backupDir = path.join(upgradeProfile, 'backups');
+      assert(fs.readdirSync(backupDir).some(name => fs.readFileSync(path.join(backupDir,name)).equals(originalBytes)), 'Original v1.1.3 save must remain byte-for-byte in an automatic backup');
+      upgrade = {seeded, upgraded, checks:3, oldExecutable, upgradeProfile, originalBackupPreserved:true, coverage:'Actual old packaged EXE save -> new EXE first boot. No installer or personal profile involved.'};
+    }
+    fs.writeFileSync(path.join(runRoot, 'report.json'), JSON.stringify({passed:true,executable,userData,written,verified,fileRoundtrip,upgrade},null,2));
+    console.log(`PASS packaged ${prefix} upgrade and restart. Evidence: ${runRoot}`);
     return;
   }
   const written = await phase('write');

@@ -5,30 +5,74 @@ const path = require('node:path');
 const { createHash } = require('node:crypto');
 const catalog = require('../assets/item-catalog.json');
 const review = require('../assets/catalog-reviews/2026-09-14.json');
+const identityReview = require('../assets/catalog-reviews/2026-09-14-identity-merges.json');
 const images = require('../assets/item-images.json');
 const provenance = require('../assets/warbonds/official/provenance.json');
 const { applyReview } = require('../scripts/apply_catalog_review');
+const { applyIdentityMerges } = require('../scripts/apply_identity_merges');
 const { createIndex } = require('../assets/catalog-sources');
 const { mergeItems } = require('../assets/catalog-state');
 const byId = new Map(catalog.items.map(item => [item.id, item]));
+const byLegacyId = new Map(catalog.items.flatMap(item => (item.legacyIds || []).map(id => [id, item])));
+const resolveId = id => byId.get(id) || byLegacyId.get(id);
 const groups = { primary: 'primaries', sidearm: 'sidearms', throwable: 'throwables', stratagem: 'stratagems', booster: 'boosters' };
 const defaults = Object.fromEntries(Object.entries(groups).map(([type, key]) => [key, catalog.items.filter(item => item.type === type).map(item => ({ ...item, enabled: item.defaultEnabled !== false, owned: item.defaultEnabled !== false }))]));
 
-test('bounded review matches 35 shipped facts without claiming the full catalog is audited', () => {
-  assert.equal(catalog.items.length, 207);
+test('35 historical review facts resolve through 33 current identities without losing evidence', () => {
+  assert.equal(catalog.items.length, 205);
   assert.equal(review.items.length, 35);
   assert.equal(new Set(review.items.map(item => item.id)).size, 35);
   for (const correction of review.items) {
-    const item = byId.get(correction.id);
-    for (const key of ['name', 'subgroup', 'warbond', 'source', 'acquisition']) {
+    const item = resolveId(correction.id);
+    assert.ok(item, correction.id);
+    const merge = identityReview.merges.find(row => row.canonicalId === item.id);
+    if (item.id !== correction.id) {
+      assert.equal(merge.retiredItem.id, correction.id);
+      assert.equal(merge.retiredItem.name, correction.previousName);
+      assert.ok(item.legacyIds.includes(correction.id));
+      assert.ok(item.aliases.includes(correction.previousName));
+      assert.deepEqual(merge.retiredItem.acquisition, correction.acquisition);
+    }
+    for (const key of ['name', 'subgroup', 'warbond', 'source']) {
       if (Object.hasOwn(correction, key)) assert.deepEqual(item[key], correction[key], correction.id + ':' + key);
     }
+    if (merge) {
+      const { notes: oldNotes, ...oldFacts } = correction.acquisition;
+      const { notes: newNotes, ...currentFacts } = item.acquisition;
+      assert.deepEqual(currentFacts, oldFacts, correction.id + ':acquisition provenance retained');
+      assert.equal(newNotes, merge.notes, correction.id + ':reviewed consolidation note');
+      assert.match(oldNotes, /pending|awaiting/);
+    } else assert.deepEqual(item.acquisition, correction.acquisition, correction.id + ':acquisition');
   }
-  assert.deepEqual(createIndex(catalog.items).summary(), { total: 207, primary: 28, community: 12, pending: 167 });
-  assert.deepEqual(applyReview(catalog, review), catalog);
+  assert.equal(new Set(review.items.map(item => resolveId(item.id).id)).size, 33);
+  assert.deepEqual(createIndex(catalog.items).summary(), { total: 205, primary: 27, community: 11, pending: 167 });
+});
+
+test('historical facts then explicit identity merges reproduce the catalog; stale review cannot resurrect retired rows', () => {
+  assert.equal(identityReview.merges.length, 2);
+  const historical = structuredClone(catalog);
+  for (const merge of identityReview.merges) {
+    const item = historical.items.find(row => row.id === merge.canonicalId);
+    item.legacyIds = (item.legacyIds || []).filter(id => id !== merge.retiredItem.id);
+    if (!item.legacyIds.length) delete item.legacyIds;
+    item.aliases = item.aliases.filter(alias => ![merge.retiredItem.name, ...merge.aliases].includes(alias));
+    historical.items.push(structuredClone(merge.retiredItem));
+  }
+  assert.equal(historical.items.length, 207);
+  const original = JSON.stringify(historical);
+  const factsReviewed = applyReview(historical, review);
+  assert.deepEqual(applyIdentityMerges(factsReviewed, identityReview), catalog);
+  assert.equal(JSON.stringify(historical), original);
+  assert.deepEqual(applyIdentityMerges(catalog, identityReview), catalog);
+  const shipped = JSON.stringify(catalog);
+  assert.throws(() => applyReview(catalog, review), /cannot invent a catalog ID/);
+  assert.equal(JSON.stringify(catalog), shipped);
 });
 
 test('all item image records retain stable catalog identity and local asset paths', () => {
+  const imageIds = Object.keys(groups).flatMap(type => images[type].map(image => image.id));
+  assert.equal(imageIds.length, 205);
+  assert.deepEqual(imageIds.slice().sort(), catalog.items.map(item => item.id).sort());
   for (const item of catalog.items) {
     const image = images[item.type].find(row => row.id === item.id);
     assert.ok(image, item.id);
@@ -85,8 +129,11 @@ test('reviewed Warbond equipment sets exclude separate purchases and gas/EMS mix
   assert.equal(byId.get('sidearm:cqc-30-stun-baton').acquisition.kind, 'superstore');
   assert.equal(byId.get('sidearm:cqc-2-stun-lance').warbond, 'Urban Legends');
   for (const id of ['stratagem:wasp', 'stratagem:sta-x3-w-a-s-p-launcher', 'stratagem:ems-strike', 'stratagem:orbital-ems-strike']) {
-    assert.equal(byId.get(id).acquisition.kind, 'requisition');
+    assert.equal(resolveId(id).acquisition.kind, 'requisition');
   }
+  assert.equal(resolveId('stratagem:wasp'), byId.get('stratagem:sta-x3-w-a-s-p-launcher'));
+  assert.equal(resolveId('stratagem:ems-strike'), byId.get('stratagem:orbital-ems-strike'));
+  assert.notEqual(byId.get('stratagem:ems-mortar-sentry'), resolveId('stratagem:ems-strike'));
   assert.equal(catalog.items.filter(item => item.warbond === 'Righteous Revenants').length, 3);
 });
 

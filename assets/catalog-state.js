@@ -38,11 +38,13 @@
 
   function withRecovery(result, chosen, discarded) {
     const records = [];
-    if (Array.isArray(chosen.legacyAliasRecords)) records.push(...chosen.legacyAliasRecords.filter(isRecord));
-    for (const record of discarded) {
+    function collect(record) {
+      if (!isRecord(record)) return;
       records.push(withoutRecovery(record));
-      if (Array.isArray(record.legacyAliasRecords)) records.push(...record.legacyAliasRecords.filter(isRecord));
+      if (Array.isArray(record.legacyAliasRecords)) record.legacyAliasRecords.forEach(collect);
     }
+    if (Array.isArray(chosen.legacyAliasRecords)) chosen.legacyAliasRecords.forEach(collect);
+    discarded.forEach(collect);
     const seen = new Set();
     const retained = records.map(clone).filter(record => {
       const key = stableJson(record);
@@ -61,13 +63,17 @@
     }
   }
 
-  function mergeGroup(defaultRows, savedRows, category) {
+  function indexGroup(defaultRows, category) {
     const byId = new Map();
+    const byLegacyId = new Map();
     const byName = new Map();
     const byAlias = new Map();
     for (const row of defaultRows) {
       validateRow(row, `${category} catalog item`);
       if (typeof row.id !== 'string' || !row.id.trim()) throw new TypeError(`${category} catalog item ${row.name} needs a stable ID.`);
+      if (row.id !== row.id.trim() || !row.id.startsWith(`${category}:`) || !row.id.slice(category.length + 1).trim()) {
+        throw new TypeError(`${category} catalog item ${row.name} needs a category-scoped stable ID.`);
+      }
       if (byId.has(row.id)) throw new TypeError(`Duplicate ${category} catalog ID: ${row.id}`);
       byId.set(row.id, row);
       const nameKey = normalizeName(row.name);
@@ -82,17 +88,38 @@
         byAlias.set(key, targets);
       }
     }
+    // Build canonical identities first so forward collisions cannot depend on row order.
+    for (const row of defaultRows) {
+      if (hasOwn(row, 'legacyIds') && !Array.isArray(row.legacyIds)) {
+        throw new TypeError(`${category} catalog item ${row.name} legacyIds must be an array.`);
+      }
+      for (const legacyId of row.legacyIds || []) {
+        if (typeof legacyId !== 'string' || legacyId !== legacyId.trim()
+          || !legacyId.startsWith(`${category}:`) || !legacyId.slice(category.length + 1).trim()) {
+          throw new TypeError(`${category} catalog item ${row.name} needs nonempty category-scoped legacy IDs.`);
+        }
+        if (byId.has(legacyId)) throw new TypeError(`Legacy ${category} ID collides with a canonical ID: ${legacyId}`);
+        if (byLegacyId.has(legacyId)) throw new TypeError(`Duplicate ${category} legacy ID: ${legacyId}`);
+        byLegacyId.set(legacyId, row);
+      }
+    }
+    return { byId, byLegacyId, byName, byAlias };
+  }
+
+  function mergeGroup(defaultRows, savedRows, category, catalogIndex) {
+    const { byId, byLegacyId, byName, byAlias } = catalogIndex;
 
     const matches = new Map();
     const custom = new Map();
     savedRows.forEach((original, index) => {
       if (!isRecord(original)) throw new TypeError(`${category} saved item ${index} must be an object with a nonempty name.`);
       const stableMatch = typeof original.id === 'string' ? byId.get(original.id) : null;
-      if (!stableMatch) validateRow(original, `${category} saved item ${index}`);
+      const legacyMatch = typeof original.id === 'string' ? byLegacyId.get(original.id) : null;
+      if (!stableMatch && !legacyMatch) validateRow(original, `${category} saved item ${index}`);
       const row = clone(original);
       const nameKey = normalizeName(row.name);
-      let catalog = stableMatch;
-      let priority = catalog ? 3 : 0;
+      let catalog = stableMatch || legacyMatch;
+      let priority = stableMatch ? 4 : legacyMatch ? 3 : 0;
       if (!catalog && byName.has(nameKey)) { catalog = byName.get(nameKey); priority = 2; }
       if (!catalog && byAlias.get(nameKey)?.size === 1) { catalog = byAlias.get(nameKey).values().next().value; priority = 1; }
       const key = catalog ? catalog.id : (typeof row.id === 'string' && row.id.trim() ? row.id : customId(category, row.name));
@@ -110,6 +137,10 @@
       result.enabled = typeof winner.row.enabled === 'boolean' ? winner.row.enabled : catalog?.enabled === true;
       result.owned = typeof winner.row.owned === 'boolean' ? winner.row.owned : result.enabled;
       const discarded = sorted.slice(1).map(candidate => candidate.row);
+      // Retired IDs and pre-ID names for merged equipment are replaced too, even
+      // without a competing canonical row. Other name-only migrations stay unchanged.
+      // Keep its full original identity/metadata available for recovery, never for rolling.
+      if (winner.priority === 3 || (winner.priority === 1 && catalog?.legacyIds?.length)) discarded.unshift(winner.row);
       if (result.owned === false && result.enabled === true) {
         discarded.push(winner.row);
         result.enabled = false;
@@ -127,12 +158,18 @@
   function mergeItems(defaultItems, savedItems = {}) {
     if (!isRecord(defaultItems) || !isRecord(savedItems)) throw new TypeError('Catalog and saved item groups must be objects.');
     const result = {};
+    const indexes = {};
+    // Validate the entire catalog before resolving anything, including fresh/missing groups.
+    for (const [group, category] of Object.entries(GROUPS)) {
+      const defaults = hasOwn(defaultItems, group) ? defaultItems[group] : [];
+      if (!Array.isArray(defaults)) throw new TypeError(`Catalog group ${group} must be an array.`);
+      indexes[group] = indexGroup(defaults, category);
+    }
     for (const [group, category] of Object.entries(GROUPS)) {
       const defaults = defaultItems[group] || [];
-      if (!Array.isArray(defaults)) throw new TypeError(`Catalog group ${group} must be an array.`);
       if (!hasOwn(savedItems, group)) { result[group] = clone(defaults); continue; }
       if (!Array.isArray(savedItems[group])) throw new TypeError(`Saved group ${group} must be an array.`);
-      result[group] = mergeGroup(defaults, savedItems[group], category);
+      result[group] = mergeGroup(defaults, savedItems[group], category, indexes[group]);
     }
     return result;
   }

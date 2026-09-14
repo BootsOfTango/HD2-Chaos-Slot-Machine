@@ -1,6 +1,6 @@
 Helldivers 2 Chaos Slot Machine - Windows x64
 
-v1.1.3 LOCAL SOURCE-AUDIT PREVIEW - not approved for public release.
+v1.1.4 LOCAL DUPLICATE-CLEANUP PREVIEW - not approved for public release.
 The app starts fullscreen. Press F11 or use the top-right button to toggle.
 Escape closes a dialog first, or exits fullscreen when no dialog is open.
 In a smaller window, scroll horizontally/vertically or hold Space and drag
@@ -15,8 +15,14 @@ This source-audit batch corrects 35 existing entries without granting equipment.
 Three CQC display names are corrected; old imports/images stay compatible.
 Source labels separate shop purchases from Warbond unlocks, with explicit
 official/community evidence levels. Three official Warbond promo images are local.
-The full legacy catalog audit, duplicate consolidation, map and live-war changes
-remain queued. WASP and EMS duplicate entries have not yet been consolidated.
+Wasp/W.A.S.P. and EMS Strike/Orbital EMS Strike now have one roll entry each.
+EMS Mortar Sentry remains separate. Old names and IDs import correctly. Where
+duplicate choices conflict, the existing canonical ID wins; replaced records
+remain recoverable in saves/exports under legacyAliasRecords. Ownership is
+never combined to enable gear. Armory -> Duplicate cleanup explains the result.
+Historical Results keep their labels/scores; analytics count equipment once per
+run. There are 205 unique entries: 38 source-reviewed and 167 still pending.
+The remaining source audit, visual Armory, map and live-war changes are queued.
 Artwork provenance/credits are available in the new gear panel and bundled
 assets/new-gear/provenance.json. The Eagle icon is a credited community tracing.
 
