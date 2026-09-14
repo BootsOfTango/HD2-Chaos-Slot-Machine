@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import hashlib
 import json
 import re
 import sys
@@ -115,25 +116,41 @@ def sync_item_images(catalog_items):
         t: {entry['name']: entry for entry in existing.get(t, [])}
         for t in TYPE_TO_DEFAULTS_KEY
     }
+    # Renames retain the previous source artwork through a stable ID, or an
+    # explicit legacy name alias for mappings created before IDs were present.
+    existing_by_id = {entry['id']: entry for t in TYPE_TO_DEFAULTS_KEY for entry in existing.get(t, []) if entry.get('id')}
+    renamed = {}
+    for item in catalog_items:
+        for alias in item.get('aliases', []):
+            if alias in existing_by_type[item['type']]:
+                renamed[alias] = item['name']
 
     result = {
         'generatedAt': existing.get('generatedAt', ''),
         'source': 'Derived from assets/item-catalog.json via scripts/sync_item_catalog.py',
-        'nameAliases': {**existing.get('nameAliases', {}), **build_aliases(catalog_items)},
+        'nameAliases': {**{key: renamed.get(value, value) for key, value in existing.get('nameAliases', {}).items()}, **build_aliases(catalog_items)},
     }
 
     for t in ['primary', 'sidearm', 'throwable', 'stratagem', 'booster']:
         out = []
         for item in [i for i in catalog_items if i['type'] == t]:
-            prev = existing_by_type.get(t, {}).get(item['name'], {})
+            prev = existing_by_id.get(item['id']) or existing_by_type.get(t, {}).get(item['name'])
+            if not prev:
+                candidates = [existing_by_type[t][alias] for alias in item.get('aliases', []) if alias in existing_by_type[t]]
+                if len(candidates) > 1:
+                    raise RuntimeError(f"Ambiguous legacy artwork for {item['id']}")
+                prev = candidates[0] if candidates else {}
             catalog_asset_path = item.get('assetPath') or ''
             asset_path = catalog_asset_path if local_asset_exists(catalog_asset_path) else prev.get('assetPath', '')
             entry = {**prev,
+                'id': item['id'],
                 'name': item['name'],
                 'assetPath': asset_path,
                 'kind': prev.get('kind', 'icon' if t in {'stratagem', 'booster'} else 'image'),
             }
-            for key in ['wikiTitle', 'sourceUrl', 'imageUrl', 'rimCategory']:
+            if t == 'stratagem':
+                entry['rimCategory'] = item['subgroup']
+            for key in ['wikiTitle', 'sourceUrl', 'imageUrl']:
                 if prev.get(key):
                     entry[key] = prev[key]
             if item['name'] in verified_art:
@@ -143,6 +160,14 @@ def sync_item_images(catalog_items):
                 if t == 'stratagem':
                     entry['rimCategory'] = item['subgroup']
                     entry['kind'] = 'icon' if art['assetPath'].endswith('.svg') else 'image'
+            # Earlier artwork repair retained stale placeholder flags. Clear
+            # them only when the current non-placeholder file matches its
+            # recorded source-art bytes; this does not assert reuse rights.
+            if entry.get('artworkSha256') and 'placeholders/' not in entry['assetPath'] and local_asset_exists(entry['assetPath']):
+                actual_hash = hashlib.sha256((ROOT / entry['assetPath']).read_bytes()).hexdigest()
+                if actual_hash == entry['artworkSha256']:
+                    entry.pop('placeholder', None)
+                    entry.pop('placeholderReason', None)
             out.append(entry)
         result[t] = out
 

@@ -15,6 +15,55 @@
         "stratagem:40-k-meltagun"
       ],
       "notes": "Four rollable equipment additions; no booster announced. Armor and cosmetics are not part of equipment roulette. Warbond ownership does not mean every item has been redeemed."
+    },
+    {
+      "id": "warbond:freedoms-flame",
+      "name": "Freedom's Flame",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-08-08",
+      "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/",
+      "coverAssetPath": "assets/warbonds/official/freedoms-flame.jpg",
+      "coverKind": "official-promotional-scene",
+      "equipmentIds": [
+        "primary:flam-66-torcher",
+        "primary:sg-451-cookout",
+        "sidearm:p-72-crisper",
+        "booster:firebomb-hellpods"
+      ],
+      "notes": "Complete rollable equipment set from official announcement. Cosmetic patterns do not grant the corresponding vehicle; promotional image is not an exact in-game cover."
+    },
+    {
+      "id": "warbond:chemical-agents",
+      "name": "Chemical Agents",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-09-19",
+      "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
+      "coverAssetPath": "assets/warbonds/official/chemical-agents.jpg",
+      "coverKind": "official-promotional-scene",
+      "equipmentIds": [
+        "stratagem:sterilizer",
+        "stratagem:ax-tx-13-dog-breath",
+        "throwable:g-4-gas",
+        "sidearm:p-11-stim-pistol"
+      ],
+      "notes": "Complete rollable equipment set from official announcement. Cosmetic patterns do not grant the corresponding vehicle; promotional image is not an exact in-game cover."
+    },
+    {
+      "id": "warbond:urban-legends",
+      "name": "Urban Legends",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-12-13",
+      "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+      "coverAssetPath": "assets/warbonds/official/urban-legends.jpg",
+      "coverKind": "official-promotional-scene",
+      "equipmentIds": [
+        "stratagem:directional-shield",
+        "stratagem:anti-tank-emplacement",
+        "stratagem:flame-sentry",
+        "sidearm:cqc-2-stun-lance",
+        "booster:armed-resupply-pods"
+      ],
+      "notes": "Complete rollable equipment set from official announcement. Cosmetic patterns do not grant the corresponding vehicle; promotional image is not an exact in-game cover."
     }
   ],
   "items": [
@@ -148,15 +197,20 @@
       "name": "AR-23 Liberator",
       "type": "primary",
       "subgroup": "assault-rifle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Base game",
+      "source": "Base game",
       "assetPath": "assets/weapons/primaries/ar-23-liberator-wiki.png",
       "id": "primary:ar-23-liberator",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "base-game",
+        "id": "base-game:base-game",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23_Liberator",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Starter procurement is community-corroborated; item-specific primary procurement evidence remains pending."
       }
     },
     {
@@ -267,16 +321,21 @@
     {
       "name": "ARC-12 Blitzer",
       "type": "primary",
-      "subgroup": "assault-rifle",
+      "subgroup": "energy",
       "warbond": "Cutting Edge",
       "source": "Cutting Edge",
       "assetPath": "assets/weapons/primaries/arc-12-blitzer-wiki.png",
       "id": "primary:arc-12-blitzer",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:cutting-edge",
         "label": "Cutting Edge",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Energy category confirmed by official patch 01.000.300."
       }
     },
     {
@@ -297,31 +356,41 @@
     {
       "name": "FLAM-66 Torcher",
       "type": "primary",
-      "subgroup": "assault-rifle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "special-primary",
+      "warbond": "Freedom's Flame",
+      "source": "Freedom's Flame",
       "assetPath": "assets/weapons/primaries/flam-66-torcher-wiki.png",
       "id": "primary:flam-66-torcher",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:freedoms-flame",
+        "label": "Freedom's Flame",
+        "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Primary flamethrower confirmed officially. The exact current Special menu subgroup is community-corroborated."
       }
     },
     {
       "name": "JAR-5 Dominator",
       "type": "primary",
-      "subgroup": "assault-rifle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "special-primary",
+      "warbond": "Steeled Veterans",
+      "source": "Steeled Veterans",
       "assetPath": "assets/weapons/primaries/jar-5-dominator-wiki.png",
       "id": "primary:jar-5-dominator",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
+        "label": "Steeled Veterans",
+        "sourceUrl": "https://www.playstation.com/en-us/editorial/a-beginner-s-guide-to-helldivers-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Special primary category confirmed by official patch 01.001.104; historical Explosive category is obsolete."
       }
     },
     {
@@ -342,16 +411,21 @@
     {
       "name": "StA-11 SMG",
       "type": "primary",
-      "subgroup": "assault-rifle",
+      "subgroup": "smg",
       "warbond": "Righteous Revenants",
       "source": "Righteous Revenants",
       "assetPath": "assets/weapons/primaries/sta-11-smg-wiki.png",
       "id": "primary:sta-11-smg",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:righteous-revenants",
         "label": "Righteous Revenants",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Current Killzone Legendary Warbond association; the Righteous Revenants in-game label is wiki-corroborated. Earlier shop/gift ownership is retained independently."
       }
     },
     {
@@ -364,26 +438,36 @@
       "id": "primary:sta-52-assault-rifle",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:righteous-revenants",
         "label": "Righteous Revenants",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Current Killzone Legendary Warbond association; the Righteous Revenants in-game label is wiki-corroborated. Earlier shop/gift ownership is retained independently."
       }
     },
     {
       "name": "VG-70 Variable",
       "type": "primary",
-      "subgroup": "marksman-rifle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "special-primary",
+      "warbond": "Control Group",
+      "source": "Control Group",
       "assetPath": "assets/weapons/primaries/vg-70-variable-wiki.png",
       "id": "primary:vg-70-variable",
       "aliases": [
         "r 0 variable"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/?p=407597",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Primary/Warbond confirmed officially. The exact current Special menu subgroup is community-corroborated."
       }
     },
     {
@@ -405,15 +489,20 @@
       "name": "R-2124 Constitution",
       "type": "primary",
       "subgroup": "marksman-rifle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Commemorative gifts",
+      "source": "Commemorative gifts",
       "assetPath": "assets/weapons/primaries/r-2124-constitution-wiki.png",
       "id": "primary:r-2124-constitution",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "commemorative-gift",
+        "id": "commemorative-gift:commemorative-gifts",
+        "label": "Liberty Day gift",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/R-2124_Constitution",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement describes distribution to present and future players. No limited login window is inferred."
       }
     },
     {
@@ -510,15 +599,20 @@
       "name": "MP-98 Knight",
       "type": "primary",
       "subgroup": "smg",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Super Citizen Edition",
+      "source": "Super Citizen Edition",
       "assetPath": "assets/weapons/primaries/mp-98-knight-wiki.png",
       "id": "primary:mp-98-knight",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "edition-bonus",
+        "id": "edition-bonus:super-citizen-edition",
+        "label": "Super Citizen Edition",
+        "sourceUrl": "https://blog.playstation.com/2023/09/14/helldivers-2-launches-february-8-2024/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Edition entitlement, not a Steeled Veterans Warbond item."
       }
     },
     {
@@ -570,15 +664,20 @@
       "name": "DBS-2 Double Freedom",
       "type": "primary",
       "subgroup": "shotgun",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/primaries/dbs-2-double-freedom-wiki.png",
       "id": "primary:dbs-2-double-freedom",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore:superstore",
+        "label": "Superstore · Python Commandos-themed stock",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/DBS-2_Double_Freedom",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."
       }
     },
     {
@@ -669,9 +768,13 @@
       "id": "primary:sg-451-cookout",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:freedoms-flame",
         "label": "Freedom's Flame",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -834,9 +937,14 @@
       "id": "primary:plas-39-accelerator-rifle",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:righteous-revenants",
         "label": "Righteous Revenants",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Current Killzone Legendary Warbond association; the Righteous Revenants in-game label is wiki-corroborated. Earlier shop/gift ownership is retained independently."
       }
     },
     {
@@ -879,9 +987,13 @@
       "id": "sidearm:p-11-stim-pistol",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:chemical-agents",
         "label": "Chemical Agents",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -918,15 +1030,20 @@
       "name": "P-2 Peacemaker",
       "type": "sidearm",
       "subgroup": "pistol",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Base game",
+      "source": "Base game",
       "assetPath": "assets/weapons/sidearms/p-2-peacemaker-wiki.png",
       "id": "sidearm:p-2-peacemaker",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "base-game",
+        "id": "base-game:base-game",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/P-2_Peacemaker",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Starter procurement is community-corroborated; item-specific primary procurement evidence remains pending."
       }
     },
     {
@@ -969,99 +1086,141 @@
       "id": "sidearm:p-72-crisper",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:freedoms-flame",
         "label": "Freedom's Flame",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "P-92 Warrant",
       "type": "sidearm",
       "subgroup": "pistol",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/sidearms/p-92-warrant-wiki.png",
       "id": "sidearm:p-92-warrant",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore:superstore",
+        "label": "Superstore · Force of Law-themed stock",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/P-92_Warrant",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."
       }
     },
     {
-      "name": "CQC-1 Saber",
+      "name": "CQC-2 Saber",
       "type": "sidearm",
       "subgroup": "special-sidearm",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
       "assetPath": "assets/weapons/sidearms/cqc-1-saber-wiki.png",
       "id": "sidearm:cqc-1-saber",
-      "aliases": [],
+      "aliases": [
+        "CQC-2 Sabre",
+        "CQC-1 Saber"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
+        "label": "Masters of Ceremony",
+        "sourceUrl": "https://blog.playstation.com/?p=404582",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement uses Sabre; later official patch 6.0.1 uses CQC-2 Saber. Previous app name CQC-1 Saber remains an alias."
       }
     },
     {
-      "name": "CQC-19 Machete",
+      "name": "CQC-42 Machete",
       "type": "sidearm",
       "subgroup": "special-sidearm",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/sidearms/cqc-19-machete-wiki.png",
       "id": "sidearm:cqc-19-machete",
-      "aliases": [],
+      "aliases": [
+        "CQC-19 Machete"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore:superstore",
+        "label": "Superstore · Dust Devils-themed stock",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-42_Machete",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."
       }
     },
     {
-      "name": "CQC-2 Stun Lance",
+      "name": "CQC-19 Stun Lance",
       "type": "sidearm",
       "subgroup": "special-sidearm",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Urban Legends",
+      "source": "Urban Legends",
       "assetPath": "assets/weapons/sidearms/cqc-2-stun-lance-wiki.png",
       "id": "sidearm:cqc-2-stun-lance",
-      "aliases": [],
+      "aliases": [
+        "SQC-19 Stun Lance",
+        "CQC-2 Stun Lance"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:urban-legends",
+        "label": "Urban Legends",
+        "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Launch announcement has SQC-19 typo; official patch 6.0.1 confirms CQC-19 Stun Lance. Keep the old app spelling as an alias."
       }
     },
     {
       "name": "CQC-30 Stun Baton",
       "type": "sidearm",
       "subgroup": "special-sidearm",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/sidearms/cqc-30-stun-baton-wiki.png",
       "id": "sidearm:cqc-30-stun-baton",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore:superstore",
+        "label": "Superstore · Urban Legends-themed stock",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-30_Stun_Baton",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."
       }
     },
     {
       "name": "CQC-5 Combat Hatchet",
       "type": "sidearm",
       "subgroup": "special-sidearm",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/sidearms/cqc-5-combat-hatchet-wiki.png",
       "id": "sidearm:cqc-5-combat-hatchet",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore:superstore",
+        "label": "Superstore · Servants of Freedom-themed stock",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-5_Combat_Hatchet",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."
       }
     },
     {
@@ -1173,15 +1332,20 @@
       "name": "G-12 High Explosive",
       "type": "throwable",
       "subgroup": "grenade",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Base game",
+      "source": "Base game",
       "assetPath": "assets/weapons/throwables/g-12-high-explosive-wiki.png",
       "id": "throwable:g-12-high-explosive",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "base-game",
+        "id": "base-game:base-game",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/G-12_High_Explosive",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Starter procurement is community-corroborated; item-specific primary procurement evidence remains pending."
       }
     },
     {
@@ -1299,9 +1463,13 @@
       "id": "throwable:g-4-gas",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:chemical-agents",
         "label": "Chemical Agents",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1353,15 +1521,20 @@
       "name": "G-89 Smokescreen",
       "type": "throwable",
       "subgroup": "grenade",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/throwables/g-89-smokescreen-wiki.png",
       "id": "throwable:g-89-smokescreen",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore:superstore",
+        "label": "Superstore · Redacted Regiment-themed stock",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/G-89_Smokescreen",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."
       }
     },
     {
@@ -1473,15 +1646,20 @@
       "name": "Orbital EMS Strike",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-ems-strike.svg",
       "id": "stratagem:orbital-ems-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement: orbital strike. EMS Strike is an existing duplicate entry awaiting ID-safe consolidation; EMS Mortar Sentry is distinct."
       }
     },
     {
@@ -1728,15 +1906,21 @@
       "name": "Anti-Tank Emplacement",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Urban Legends",
+      "source": "Urban Legends",
       "assetPath": "assets/stratagems/defensive/anti-tank-emplacement.svg",
       "id": "stratagem:anti-tank-emplacement",
-      "aliases": [],
+      "aliases": [
+        "E/AT-12 Anti-Tank Emplacement"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:urban-legends",
+        "label": "Urban Legends",
+        "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1788,15 +1972,21 @@
       "name": "Flame Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Urban Legends",
+      "source": "Urban Legends",
       "assetPath": "assets/stratagems/defensive/flame-sentry.svg",
       "id": "stratagem:flame-sentry",
-      "aliases": [],
+      "aliases": [
+        "A/FLAM-40 Flame Sentry"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:urban-legends",
+        "label": "Urban Legends",
+        "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -2121,16 +2311,22 @@
     {
       "name": "Directional Shield",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Urban Legends",
+      "source": "Urban Legends",
       "assetPath": "assets/stratagems/support/directional-shield.svg",
       "id": "stratagem:directional-shield",
-      "aliases": [],
+      "aliases": [
+        "SH-51 Directional Shield"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:urban-legends",
+        "label": "Urban Legends",
+        "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -2151,16 +2347,21 @@
     {
       "name": "EMS Strike",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "orbital",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/ems-strike.svg",
       "id": "stratagem:ems-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement: orbital strike. EMS Strike is an existing duplicate entry awaiting ID-safe consolidation; EMS Mortar Sentry is distinct."
       }
     },
     {
@@ -2337,18 +2538,23 @@
     {
       "name": "AX/TX-13 Dog Breath",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Chemical Agents",
+      "source": "Chemical Agents",
       "assetPath": "assets/stratagems/support/guard-dog-breath.svg",
       "id": "stratagem:ax-tx-13-dog-breath",
       "aliases": [
-        "guard dog breath"
+        "guard dog breath",
+        "AX/TX-13 \"Guard Dog\" Dog Breath"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:chemical-agents",
+        "label": "Chemical Agents",
+        "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -2655,30 +2861,41 @@
       "name": "StA-X3 W.A.S.P. Launcher",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/sta-x3-w-a-s-p-launcher.svg",
       "id": "stratagem:sta-x3-w-a-s-p-launcher",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://www.playstation.com/en-us/games/helldivers-2/helldivers-2-update-summary/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Current requisition support weapon, not Righteous Revenants. Wasp and StA-X3 W.A.S.P. Launcher duplicate consolidation remains pending ID-safe migration."
       }
     },
     {
       "name": "Sterilizer",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Chemical Agents",
+      "source": "Chemical Agents",
       "assetPath": "assets/stratagems/support/sterilizer.svg",
       "id": "stratagem:sterilizer",
-      "aliases": [],
+      "aliases": [
+        "TX-41 Sterilizer"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:chemical-agents",
+        "label": "Chemical Agents",
+        "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -2715,15 +2932,20 @@
       "name": "Wasp",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/wasp.svg",
       "id": "stratagem:wasp",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://www.playstation.com/en-us/games/helldivers-2/helldivers-2-update-summary/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Current requisition support weapon, not Righteous Revenants. Wasp and StA-X3 W.A.S.P. Launcher duplicate consolidation remains pending ID-safe migration."
       }
     },
     {
@@ -2901,9 +3123,13 @@
       "id": "booster:firebomb-hellpods",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:freedoms-flame",
         "label": "Freedom's Flame",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -2931,9 +3157,13 @@
       "id": "booster:armed-resupply-pods",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:urban-legends",
         "label": "Urban Legends",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {

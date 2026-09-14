@@ -14,7 +14,7 @@ See [the v1.1.0 patch notes](RELEASE_NOTES_v1.1.0.md) for the rename, save migra
 
 ## Desktop development
 
-Current local development preview: **v1.1.2**, unpublished. It includes the v1.1.1 fullscreen/window changes and the first gear/ownership increment. The public download above remains v1.1.0. See [project status](docs/PROJECT_STATUS.md) and [local preview notes](RELEASE_NOTES_v1.1.2.md); publication requires owner approval.
+Current local development preview: **v1.1.3**, unpublished. It includes fullscreen/window changes, opt-in gear ownership, and the first 35-entry legacy acquisition audit. The public download above remains v1.1.0. See [project status](docs/PROJECT_STATUS.md) and [local preview notes](RELEASE_NOTES_v1.1.3.md); publication requires owner approval.
 
 This repository now includes an Electron shell for the existing `index.html` application. The desktop app keeps the current Spin, Results, Compare, Armory, and Rank interfaces intact while adding a secure desktop window, an isolated preload bridge, external browser handling for the YouTube channel link, and Windows packaging metadata.
 

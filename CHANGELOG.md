@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-14 — v1.1.3 local source-audit preview (unpublished)
+
+- Reviewed 35 legacy acquisition assignments: 23 against primary sources and 12 against community sources. With the prior five additions, 40 of 207 catalog records have reviewed acquisition metadata; 167 remain pending.
+- Distinguished Warbond unlocks from Superstore purchases, starter equipment, edition bonuses, gifts, campaign rewards and requisition unlocks. Source corrections do not grant ownership or enable rolls.
+- Corrected three display names to CQC-2 Saber, CQC-42 Machete and CQC-19 Stun Lance while retaining stable IDs, old aliases, artwork and historical Result labels.
+- Kept pre/post-rename usage together in derived Armory analytics without rewriting historical cards or scoring.
+- Added offline official promotional scenes for Freedom's Flame, Chemical Agents and Urban Legends, with attribution, byte hashes and clear wording that they are not exact in-game cover images.
+- Added acquisition-review badges and a compact audit-status panel. Custom source groupings are preserved but cannot claim verified catalog provenance.
+- Confirmed duplicate WASP and Orbital EMS records; their ID-safe consolidation remains a separate task. No duplicate was silently deleted or merged in this increment.
+- M2 remains in progress. See `docs/M2B_TEST_REPORT.md`; live-war, visual Armory, missions and map remain queued.
+
 ## 2026-09-13 — v1.1.2 local gear/ownership preview (unpublished)
 
 - Added the four Castellan's Creed equipment items and separate Eagle Gas Airstrike campaign reward, all excluded until the player chooses ownership and inclusion.

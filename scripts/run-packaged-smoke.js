@@ -5,10 +5,12 @@ const path = require('node:path');
 const { spawn } = require('node:child_process');
 const { rendererWritePhase, rendererVerifyPhase, rendererNetworkPhase } = require('./electron-smoke-phase');
 const { rendererGearPhase, rendererGearVerify } = require('./gear-smoke-phase');
+const { rendererSourceAuditPhase, rendererSourceAuditVerify } = require('./source-audit-smoke-phase');
 const root = path.resolve(__dirname, '..');
 const gearOnly = process.argv.includes('--gear');
+const sourceOnly = process.argv.includes('--sources');
 const executable = path.resolve(process.argv.slice(2).find(value => !value.startsWith('--')) || path.join(root, 'dist', 'win-unpacked', 'Helldivers 2 Chaos Slot Machine.exe'));
-const runRoot = path.join(root, '.test-data', `${gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
+const runRoot = path.join(root, '.test-data', `${sourceOnly ? 'packaged-sources' : gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
 const userData = path.join(runRoot, 'user-data');
 fs.mkdirSync(runRoot, { recursive: true });
 if (!fs.existsSync(executable)) throw new Error(`Packaged executable not found: ${executable}`);
@@ -35,7 +37,7 @@ async function connect(url) {
     if (message.method === 'Runtime.exceptionThrown') errors.push(message.params.exceptionDetails.exception?.description || message.params.exceptionDetails.text);
     if (message.method === 'Runtime.consoleAPICalled') {
       const text = message.params.args.map(arg => arg.value || arg.description || '').join(' ');
-      if (/^(SMOKE|GEAR SMOKE|GEAR RESTART) PASS:/.test(text)) console.log(text);
+      if (/^(SMOKE|GEAR SMOKE|GEAR RESTART) PASS:/.test(text) || (process.argv.includes('--verbose') && /^SOURCE AUDIT (SMOKE|RESTART) PASS:/.test(text))) console.log(text);
     }
   });
   socket.addEventListener('close', () => {
@@ -89,7 +91,11 @@ async function phase(name, expected) {
     await client.send('Runtime.enable');
     await client.send('Page.enable');
     await client.evaluate(`(async () => { while (typeof bootStateReady === 'undefined') await new Promise(r => setTimeout(r, 50)); await bootStateReady; })()`);
-    const result = name === 'gear-write'
+    const result = name === 'source-write'
+      ? await client.evaluate(`(${rendererSourceAuditPhase.toString()})(${JSON.stringify(require('../assets/catalog-reviews/2026-09-14.json'))})`)
+      : name === 'source-verify'
+        ? await client.evaluate(`(${rendererSourceAuditVerify.toString()})(${JSON.stringify(expected)})`)
+      : name === 'gear-write'
       ? await client.evaluate(`(${rendererGearPhase.toString()})()`)
       : name === 'gear-verify'
         ? await client.evaluate(`(${rendererGearVerify.toString()})(${JSON.stringify(expected)})`)
@@ -157,6 +163,28 @@ async function phase(name, expected) {
       const lower = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
       fs.writeFileSync(path.join(runRoot, 'new-gear-controls.png'), Buffer.from(lower.data, 'base64'));
     }
+    if (name === 'source-write') {
+      await client.evaluate(`switchTab('items'); document.querySelector('#catalogAuditPanel').open = true; document.querySelector('#catalogAuditPanel').scrollIntoView({block:'center'});`);
+      await delay(150);
+      const screenshot = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
+      fs.writeFileSync(path.join(runRoot, 'source-audit.png'), Buffer.from(screenshot.data, 'base64'));
+      await client.evaluate(`if(document.querySelector('#manualPoolBlock').hidden) document.querySelector('[data-target="manualPoolBlock"]').click();`);
+      for (const source of ["Freedom's Flame", 'Chemical Agents', 'Urban Legends']) {
+        await client.evaluate(`(async () => {
+          localStorage.setItem(ITEMS_VIEW_MODE_KEY,'warbond'); localStorage.setItem(ITEMS_TYPE_FILTER_KEY,'all');
+          document.querySelector('#itemSearch').value=${JSON.stringify(source)}; renderItems();
+          const group = [...document.querySelectorAll('#listItemsByWarbond .warbondGroup')].find(group => group.querySelector('.warbondHeader')?.textContent.trim() === ${JSON.stringify(source)});
+          if (!group || !group.getBoundingClientRect().height) throw new Error('Source group is not visible: ' + ${JSON.stringify(source)});
+          group.scrollIntoView({block:'start'}); document.querySelector('#appViewport').scrollBy(0,-150);
+          const cover = [...group.querySelectorAll('img')].find(img => img.src.includes('/warbonds/official/'));
+          if(!cover) throw new Error('Missing source group cover');
+          cover.loading='eager'; await cover.decode();
+        })()`);
+        await delay(200);
+        const cover = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
+        fs.writeFileSync(path.join(runRoot, source.replace(/[^a-z0-9]+/gi,'-') + '.png'), Buffer.from(cover.data,'base64'));
+      }
+    }
     if (client.errors.length) throw new Error(client.errors.join('\n'));
     fs.writeFileSync(path.join(runRoot, `${name}.json`), JSON.stringify({ passed: true, executable, processId: child.pid, userData, result }, null, 2));
     console.log(`PASS packaged ${name}: ${result.checks.length} checks`);
@@ -174,14 +202,14 @@ async function phase(name, expected) {
 }
 
 (async () => {
-  if (gearOnly) {
-    const written = await phase('gear-write');
-    const verified = await phase('gear-verify', written);
+  if (gearOnly || sourceOnly) {
+    const written = await phase(sourceOnly ? 'source-write' : 'gear-write');
+    const verified = await phase(sourceOnly ? 'source-verify' : 'gear-verify', written);
     // Additional file-level backend coverage, without a native dialog or any
     // personal profile. Use the exact payload emitted by the packaged renderer.
     const assert = require('node:assert/strict');
     const storage = require('../electron/storage');
-    const exportPath = path.join(runRoot, 'gear-export.json');
+    const exportPath = path.join(runRoot, sourceOnly ? 'source-export.json' : 'gear-export.json');
     storage.exportStateFile(exportPath, written.exportData);
     const envelope = JSON.parse(fs.readFileSync(exportPath, 'utf8'));
     assert.equal(envelope.applicationVersion, require('../package.json').version);
@@ -191,7 +219,7 @@ async function phase(name, expected) {
     assert.deepEqual(storage.loadStateFile(importedProfile).data, written.exportData);
     const fileRoundtrip = {passed:true, checks:3, exportPath, importedProfile, coverage:'Real storage backend export/import/load with packaged-renderer payload; native file picker not exercised.'};
     fs.writeFileSync(path.join(runRoot, 'report.json'), JSON.stringify({passed:true,executable,userData,written,verified,fileRoundtrip},null,2));
-    console.log(`PASS packaged gear upgrade and restart. Evidence: ${runRoot}`);
+    console.log(`PASS packaged ${sourceOnly ? 'source-audit' : 'gear'} upgrade and restart. Evidence: ${runRoot}`);
     return;
   }
   const written = await phase('write');

@@ -6,6 +6,9 @@
 #newGearPanel { scroll-margin-top: 140px; }
 #newGearPanel .tiny { font-size: 14px; line-height: 1.45; }
 #newGearPanel button { font-size: 14px; padding: 8px 10px; }
+#tab-items .catalogSourceMeta { font-size: 12px; line-height: 1.5; color: #b8c4c9; margin: 3px 0; }
+#catalogAuditPanel { padding: 10px; border: 1px solid #55502c; border-radius: 8px; margin-bottom: 12px; }
+#catalogAuditStatus { color: #ffe400; cursor: pointer; font-size: 13px; }
 .newGearPanel summary { cursor: pointer; color: #ffe400; font-weight: 800; }
 .newGearGroups { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin: 12px 0; }
 .newGearGroup { min-width: 0; border: 1px solid #454641; border-radius: 10px; padding: 12px; }

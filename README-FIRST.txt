@@ -1,6 +1,6 @@
 Helldivers 2 Chaos Slot Machine - Windows x64
 
-v1.1.2 LOCAL GEAR/OWNERSHIP PREVIEW - not approved for public release.
+v1.1.3 LOCAL SOURCE-AUDIT PREVIEW - not approved for public release.
 The app starts fullscreen. Press F11 or use the top-right button to toggle.
 Escape closes a dialog first, or exits fullscreen when no dialog is open.
 In a smaller window, scroll horizontally/vertically or hold Space and drag
@@ -11,7 +11,12 @@ until you choose Owned and Include in rolls. Bulk-enable Castellan's Creed
 only if you have unlocked its four equipment items. Eagle Gas Airstrike is a
 separate campaign reward and is not assumed owned. Orbital Gas Strike remains.
 Empty item categories no longer roll disabled or unowned gear as a fallback.
-The full legacy catalog/Warbond audit, map and live-war changes are still queued.
+This source-audit batch corrects 35 existing entries without granting equipment.
+Three CQC display names are corrected; old imports/images stay compatible.
+Source labels separate shop purchases from Warbond unlocks, with explicit
+official/community evidence levels. Three official Warbond promo images are local.
+The full legacy catalog audit, duplicate consolidation, map and live-war changes
+remain queued. WASP and EMS duplicate entries have not yet been consolidated.
 Artwork provenance/credits are available in the new gear panel and bundled
 assets/new-gear/provenance.json. The Eagle icon is a credited community tracing.
 

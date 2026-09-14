@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-09-14",
+  "method": "Download the unmodified og:image / featured-asset JPEG identified in each official PlayStation Blog announcement. Visually inspect the downloaded file. These promotional scenes are used as card covers, not represented as exact in-game Acquisitions covers.",
+  "rightsNotice": "Helldivers 2 imagery and marks remain copyright/trademark of Arrowhead Game Studios, Sony Interactive Entertainment and their licensors. These assets are not relicensed under the application's Apache-2.0 code license. Source attribution does not grant unrestricted redistribution rights.",
+  "assets": [
+    {
+      "name": "Freedom's Flame",
+      "assetPath": "assets/warbonds/official/freedoms-flame.jpg",
+      "sourceKind": "official-promotional-scene",
+      "sourcePage": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2024/07/a33c729a1b25b81c517a3aee1bc2c07f3dac9d50.jpeg",
+      "contributor": "Arrowhead Game Studios / PlayStation Blog; article by Mitchell Ayre",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "e03175f52298e7897b098c3b0f75f815abdf277503adf08b065e887382d4e543",
+      "visualCheck": "Two Helldivers firing flame weapons in rocky terrain."
+    },
+    {
+      "name": "Chemical Agents",
+      "assetPath": "assets/warbonds/official/chemical-agents.jpg",
+      "sourceKind": "official-promotional-scene",
+      "sourcePage": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2024/09/63ae9c5a503fdbe35157eb86820d491b527dd777.jpeg",
+      "contributor": "Arrowhead Game Studios / PlayStation Blog; article by Katherine Baskin",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "625c1f55451c9dbef4e9c1ba2f597b521287edd1372e41cdec2063e66b7a1634",
+      "visualCheck": "Two gas-equipped Helldivers in green gas; original Captured on PS5 mark retained."
+    },
+    {
+      "name": "Urban Legends",
+      "assetPath": "assets/warbonds/official/urban-legends.jpg",
+      "sourceKind": "official-promotional-scene",
+      "sourcePage": "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2024/12/97ff99e5d9a7013504a88209b165204a8fe5b4e0-scaled.jpeg",
+      "contributor": "Arrowhead Game Studios / PlayStation Blog; article by Katherine Baskin",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "73c49fa3458c65d34373b9779ac8fd3bf4fa2b30dbc0db232ddfe9b91db506b0",
+      "visualCheck": "Crested-helmet Helldiver holding a yellow shield; original Captured on PS5 mark retained."
+    }
+  ]
+}

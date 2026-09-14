@@ -30,9 +30,9 @@
     "c4 pack": "C4 Pack",
     "cb 9 exploding crossbow": "CB-9 Exploding Crossbow",
     "concealed insertion": "Concealed Insertion",
-    "cqc 1 saber": "CQC-1 Saber",
-    "cqc 19 machete": "CQC-19 Machete",
-    "cqc 2 stun lance": "CQC-2 Stun Lance",
+    "cqc 1 saber": "CQC-2 Saber",
+    "cqc 19 machete": "CQC-42 Machete",
+    "cqc 2 stun lance": "CQC-19 Stun Lance",
     "cqc 30 stun baton": "CQC-30 Stun Baton",
     "cqc 5 combat hatchet": "CQC-5 Combat Hatchet",
     "cremator": "Cremator",
@@ -225,7 +225,17 @@
     "meltamine": "G/40-K Melta Mine",
     "p 40 k bolt pistol": "P/40-K Bolt Pistol",
     "r 40 k hot shot": "R/40-K Hot-Shot Marksman Rifle",
-    "r 40 k hot shot marksman rifle": "R/40-K Hot-Shot Marksman Rifle"
+    "r 40 k hot shot marksman rifle": "R/40-K Hot-Shot Marksman Rifle",
+    "a flam 40 flame sentry": "Flame Sentry",
+    "ax tx 13 guard dog dog breath": "AX/TX-13 Dog Breath",
+    "cqc 19 stun lance": "CQC-19 Stun Lance",
+    "cqc 2 saber": "CQC-2 Saber",
+    "cqc 2 sabre": "CQC-2 Saber",
+    "cqc 42 machete": "CQC-42 Machete",
+    "e at 12 anti tank emplacement": "Anti-Tank Emplacement",
+    "sh 51 directional shield": "Directional Shield",
+    "sqc 19 stun lance": "CQC-19 Stun Lance",
+    "tx 41 sterilizer": "Sterilizer"
   },
   "primary": [
     {
@@ -235,7 +245,8 @@
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-40-K_Hot-Shot_Primary_Render.png/1200px-R-40-K_Hot-Shot_Primary_Render.png?b312a5",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/File:R-40-K_Hot-Shot_Primary_Render.png",
       "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
-      "artworkSha256": "f44d36462c61d14d4a7b6b31bc4e87c3f508c9f435541da80b86620ea5a4c526"
+      "artworkSha256": "f44d36462c61d14d4a7b6b31bc4e87c3f508c9f435541da80b86620ea5a4c526",
+      "id": "primary:r-40-k-hot-shot"
     },
     {
       "name": "AR-2 Coyote",
@@ -244,10 +255,9 @@
       "wikiTitle": "AR-2 Coyote",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-2_Coyote",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-2_Coyote_Primary_Render.png/1200px-AR-2_Coyote_Primary_Render.png?5fee45",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "cc2165836a33d8535a887dbbe60788b1ec54a07c7625da81ea9cd5cde7667220",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-2-coyote"
     },
     {
       "name": "AR-23 Liberator",
@@ -256,10 +266,9 @@
       "wikiTitle": "AR-23 Liberator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23_Liberator",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-23_Liberator_Primary_Render.png/1200px-AR-23_Liberator_Primary_Render.png?97e7bb",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "dc43cb89873411a897c1755a3159b6a420f5ec2fec18da65fbfd3753fc8dcfad",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-23-liberator"
     },
     {
       "name": "AR-23A Liberator Carbine",
@@ -268,10 +277,9 @@
       "wikiTitle": "AR-23A Liberator Carbine",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23A_Liberator_Carbine",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-23A_Liberator_Carbine_Primary_Render.png/1200px-AR-23A_Liberator_Carbine_Primary_Render.png?4b36e2",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "b59761051c7ff2fee6f80e23bf1087ec946fdbd2f4bb03a4d92acf4686d5f1c2",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-23a-liberator-carbine"
     },
     {
       "name": "AR-23C Liberator Concussive",
@@ -280,10 +288,9 @@
       "wikiTitle": "AR-23C Liberator Concussive",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23C_Liberator_Concussive",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-23C_Liberator_Concussive_Primary_Render.png/1200px-AR-23C_Liberator_Concussive_Primary_Render.png?71f573",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "a05d5f20bcd49d7faddcfb05be3ced346fb8ef68ebf7c9e89a5452076a95cd43",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-23c-liberator-concussive"
     },
     {
       "name": "AR-23P Liberator Penetrator",
@@ -292,10 +299,9 @@
       "wikiTitle": "AR-23P Liberator Penetrator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23P_Liberator_Penetrator",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-23P_Liberator_Penetrator_Primary_Render.png/1200px-AR-23P_Liberator_Penetrator_Primary_Render.png?82edd5",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "52a7dd53db76c5355a5a0c6e2d598f53e4ddafd6a647fccd1b1862434d9a2561",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-23p-liberator-penetrator"
     },
     {
       "name": "AR-32 Pacifier",
@@ -304,10 +310,9 @@
       "wikiTitle": "AR-32 Pacifier",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-32_Pacifier",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-32_Pacifier_Primary_Render.png/1200px-AR-32_Pacifier_Primary_Render.png?94e4a0",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6c9e03ef9305d97392103c6d0e6a444615dc971816098983346bba7b998a960c",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-32-pacifier"
     },
     {
       "name": "AR-59 Suppressor",
@@ -316,10 +321,9 @@
       "wikiTitle": "AR-59 Suppressor",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-59_Suppressor",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-59_Suppressor_Primary_Render.png/1200px-AR-59_Suppressor_Primary_Render.png?1fe2a4",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "fc6c336ce6fb89c9d050e9822808f51037437c55f68d9553365654b316c31971",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-59-suppressor"
     },
     {
       "name": "AR-61 Tenderizer",
@@ -328,10 +332,9 @@
       "wikiTitle": "AR-61 Tenderizer",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-61_Tenderizer",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-61_Tenderizer_Primary_Render.png/1200px-AR-61_Tenderizer_Primary_Render.png?7278b4",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "fa241f08e0632ff2e9dc9d7cb207767100b42cfaab3a62c91b855cdc3f9dc6f9",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-61-tenderizer"
     },
     {
       "name": "AR/GL-21 One-Two",
@@ -340,10 +343,9 @@
       "wikiTitle": "AR/GL-21 One-Two",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AR/GL-21_One-Two",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/AR-GL-21_One_Two_Primary_Render.png/1200px-AR-GL-21_One_Two_Primary_Render.png?4bfb7d",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "a1448ce0ef4db3ff96d259905e45c4dcbff437fe4fa60e9b9c32122dfbfada50",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ar-gl-21-one-two"
     },
     {
       "name": "ARC-12 Blitzer",
@@ -352,10 +354,9 @@
       "wikiTitle": "ARC-12 Blitzer",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/ARC-12_Blitzer",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/ARC-12_Blitzer_Primary_Render.png/1200px-ARC-12_Blitzer_Primary_Render.png?acfea4",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "b729ad8d461e3f7789e211fc7f9252d3f4490026e5efdb875b6e11c4c55d26df",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:arc-12-blitzer"
     },
     {
       "name": "BR-14 Adjudicator",
@@ -364,10 +365,9 @@
       "wikiTitle": "BR-14 Adjudicator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/BR-14_Adjudicator",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/BR-14_Adjudicator_Primary_Render.png/1200px-BR-14_Adjudicator_Primary_Render.png?e74a3d",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "41e1129ff2cb8c7c13b35fcef8b0cb2989269907aa83de897551c36a54f6a444",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:br-14-adjudicator"
     },
     {
       "name": "FLAM-66 Torcher",
@@ -376,10 +376,9 @@
       "wikiTitle": "FLAM-66 Torcher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/FLAM-66_Torcher",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/FLAM-66_Torcher_Primary_Render.png/1200px-FLAM-66_Torcher_Primary_Render.png?e719cd",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "de6861e91765c3738bab39bf962a753f12a63221abcf18361663024061e04917",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:flam-66-torcher"
     },
     {
       "name": "JAR-5 Dominator",
@@ -388,10 +387,9 @@
       "wikiTitle": "JAR-5 Dominator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/JAR-5_Dominator",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/JAR-5_Dominator_Primary_Render.png/1200px-JAR-5_Dominator_Primary_Render.png?81a672",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "9bb0432bfef2d176da26d7c5fc5281bb7ecea68a0b1b68db16dccdb51bd34421",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:jar-5-dominator"
     },
     {
       "name": "MA5C Assault Rifle",
@@ -400,10 +398,9 @@
       "wikiTitle": "MA5C Assault Rifle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/MA5C_Assault_Rifle",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/MA5C_Assault_Rifle_Primary_Render.png/1200px-MA5C_Assault_Rifle_Primary_Render.png?ed9b79",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "fe770e22f4e3919123ef1f3a695fc4f6e722aad480b245a68fe85dca9a6843fb",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:ma5c-assault-rifle"
     },
     {
       "name": "StA-11 SMG",
@@ -412,10 +409,9 @@
       "wikiTitle": "StA-11 SMG",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/StA-11_SMG",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/StA-11_SMG_Primary_Render.png/1200px-StA-11_SMG_Primary_Render.png?bd19ee",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6e68911197a05b6c277a3b890b66d3cb7ab13ebca5dc887ff9075bc14b4c5c82",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sta-11-smg"
     },
     {
       "name": "StA-52 Assault Rifle",
@@ -424,10 +420,9 @@
       "wikiTitle": "StA-52 Assault Rifle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/StA-52_Assault_Rifle",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/StA-52_Assault_Rifle_Primary_Render.png/1200px-StA-52_Assault_Rifle_Primary_Render.png?94bd97",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "61beb50bc52a961ed25eeab657e824978c502b701f43d417b409e550e06fc78f",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sta-52-assault-rifle"
     },
     {
       "name": "VG-70 Variable",
@@ -436,10 +431,9 @@
       "wikiTitle": "VG-70 Variable",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/VG-70_Variable",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/VG-70_Variable_Primary_Render.png/1200px-VG-70_Variable_Primary_Render.png?8e909c",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "92a74196666efb12a97eadb388f9ea0d15a31bda41c713a8a6ba56eb7a6f0aac",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:vg-70-variable"
     },
     {
       "name": "R-2 Amendment",
@@ -448,10 +442,9 @@
       "wikiTitle": "R-2 Amendment",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-2_Amendment",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-2_Amendment_Primary_Render.png/1200px-R-2_Amendment_Primary_Render.png?804c0c",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "e046b32ef63971d64278d3a5313f2754899df42994b0428185ab2b50da5ebed0",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-2-amendment"
     },
     {
       "name": "R-2124 Constitution",
@@ -460,10 +453,9 @@
       "wikiTitle": "R-2124 Constitution",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-2124_Constitution",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-2124_Constitution_Primary_Render.png/1200px-R-2124_Constitution_Primary_Render.png?5afe2d",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "a8fde9bf2683de051c0ea91e69f47fd4c9f36495863b8877f038e60b2a36e190",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-2124-constitution"
     },
     {
       "name": "R-36 Eruptor",
@@ -472,10 +464,9 @@
       "wikiTitle": "R-36 Eruptor",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-36_Eruptor",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-36_Eruptor_Primary_Render.png/1200px-R-36_Eruptor_Primary_Render.png?2c6f66",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "33a30a27c3536f842a99b943a80eea3f92a1965c02d3825e4c17918cd568c754",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-36-eruptor"
     },
     {
       "name": "R-6 Deadeye",
@@ -484,10 +475,9 @@
       "wikiTitle": "R-6 Deadeye",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-6_Deadeye",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-6_Deadeye_Primary_Render.png/1200px-R-6_Deadeye_Primary_Render.png?85d99d",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "91659ce7674f5757a4ba3662b9a7c366cd9edeff167806dd40093297285d3bae",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-6-deadeye"
     },
     {
       "name": "R-63 Diligence",
@@ -496,10 +486,9 @@
       "wikiTitle": "R-63 Diligence",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-63_Diligence",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-63_Diligence_Primary_Render.png/1200px-R-63_Diligence_Primary_Render.png?69ed5c",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "932d70f8bce6124510c72de14a06b78acc484444a6b041fe7069ddbd755c8732",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-63-diligence"
     },
     {
       "name": "R-63CS Diligence Counter Sniper",
@@ -508,10 +497,9 @@
       "wikiTitle": "R-63CS Diligence Counter Sniper",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-63CS_Diligence_Counter_Sniper",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-63CS_Diligence_Counter_Sniper_Primary_Render.png/1200px-R-63CS_Diligence_Counter_Sniper_Primary_Render.png?3ff844",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "92d489578d8af2f7139e11fd79998c2ab812e0c646d883071a058add8d1232d7",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-63cs-diligence-counter-sniper"
     },
     {
       "name": "R-72 Censor",
@@ -520,10 +508,9 @@
       "wikiTitle": "R-72 Censor",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/R-72_Censor",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/R-72_Censor_Primary_Render.png/1200px-R-72_Censor_Primary_Render.png?27d671",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "9f9786b192e6e7ed7dea6ff7130f72df517e6891947adba36134d458530fe8b0",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:r-72-censor"
     },
     {
       "name": "M7S SMG",
@@ -532,10 +519,9 @@
       "wikiTitle": "M7S SMG",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/M7S_SMG",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/M7S_SMG_Primary_Render.png/1200px-M7S_SMG_Primary_Render.png?80963e",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "78abeb2a4860c21237a99fbdc5716d78aa52e8de4b28fd18c633c9f11665466e",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:m7s-smg"
     },
     {
       "name": "MP-98 Knight",
@@ -544,10 +530,9 @@
       "wikiTitle": "MP-98 Knight",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/MP-98_Knight",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/MP-98_Knight_Primary_Render.png/1200px-MP-98_Knight_Primary_Render.png?4573f0",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "84f1f9f9053e680cd16910caa4ae42889990da750338bfcfdde2480966f776f4",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:mp-98-knight"
     },
     {
       "name": "SMG-32 Reprimand",
@@ -556,10 +541,9 @@
       "wikiTitle": "SMG-32 Reprimand",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SMG-32_Reprimand",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SMG-32_Reprimand_Primary_Render.png/1200px-SMG-32_Reprimand_Primary_Render.png?19d16d",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "5bb22d565138a3f74270978b3c875573f05e7f2593be6b8de8419c76ec0d3760",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:smg-32-reprimand"
     },
     {
       "name": "SMG-37 Defender",
@@ -568,10 +552,9 @@
       "wikiTitle": "SMG-37 Defender",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SMG-37_Defender",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SMG-37_Defender_Primary_Render.png/1200px-SMG-37_Defender_Primary_Render.png?b3da92",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "b23e1b834211df91e05f543a4c2e8d08d81432f2e0f6b9dd564b8a26c23810ae",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:smg-37-defender"
     },
     {
       "name": "SMG-72 Pummeler",
@@ -580,10 +563,9 @@
       "wikiTitle": "SMG-72 Pummeler",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SMG-72_Pummeler",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SMG-72_Pummeler_Primary_Render.png/1200px-SMG-72_Pummeler_Primary_Render.png?2acd0e",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "5790de0a4c2b88c427d8a4320aadd082dc90403f9e3021d4c30a97ac8159a716",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:smg-72-pummeler"
     },
     {
       "name": "DBS-2 Double Freedom",
@@ -592,10 +574,9 @@
       "wikiTitle": "DBS-2 Double Freedom",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/DBS-2_Double_Freedom",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/DBS-2_Shotgun_Primary_Render.png/1200px-DBS-2_Shotgun_Primary_Render.png?fd2b05",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "4515f4c14a731a02ea3091bc7f5aaf1d875ee7130d162bf890909fc24c1aa01b",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:dbs-2-double-freedom"
     },
     {
       "name": "M90A Shotgun",
@@ -604,10 +585,9 @@
       "wikiTitle": "M90A Shotgun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/M90A_Shotgun",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/M90A_Shotgun_Primary_Render.png/1200px-M90A_Shotgun_Primary_Render.png?d8aadb",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "0d190935077fe4a2d7725ca98ffbc6251d834d93a4e912fd2869fa0c4741cdad",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:m90a-shotgun"
     },
     {
       "name": "SG-20 Halt",
@@ -616,10 +596,9 @@
       "wikiTitle": "SG-20 Halt",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-20_Halt",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-20_Halt_Primary_Render.png/1200px-SG-20_Halt_Primary_Render.png?baf775",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "5a48f74f015e844c780c381eac07fe0758a41f8925f9bc500a78fc2fb4203e11",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-20-halt"
     },
     {
       "name": "SG-225 Breaker",
@@ -628,10 +607,9 @@
       "wikiTitle": "SG-225 Breaker",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-225_Breaker",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-225_Breaker_Primary_Render.png/1200px-SG-225_Breaker_Primary_Render.png?2c7fc4",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6bb6ecc65d2f9599694ca0cf586d715b5b8a8b3ab1078f7a559c2a223811aaf6",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-225-breaker"
     },
     {
       "name": "SG-225IE Breaker Incendiary",
@@ -640,10 +618,9 @@
       "wikiTitle": "SG-225IE Breaker Incendiary",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-225IE_Breaker_Incendiary",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-225IE_Breaker_Incendiary_Primary_Render.png/1200px-SG-225IE_Breaker_Incendiary_Primary_Render.png?29206c",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "8626f8fac64d5e008827a22bef65e22072b409dcb69d12dbd874bf4a87ba8b02",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-225ie-breaker-incendiary"
     },
     {
       "name": "SG-225SP Breaker Spray&Pray",
@@ -652,10 +629,9 @@
       "wikiTitle": "SG-225SP Breaker Spray & Pray",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-225SP_Breaker_Spray_%26_Pray",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-225SP_Breaker_Spray%26Pray_Primary_Render.png/1200px-SG-225SP_Breaker_Spray%26Pray_Primary_Render.png?e050a4",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6ee41f2ca15c5abde20a0cc330cea4aff999c354388e83dffd333838089b4f4d",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-225sp-breaker-spray-and-pray"
     },
     {
       "name": "SG-451 Cookout",
@@ -664,10 +640,9 @@
       "wikiTitle": "SG-451 Cookout",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-451_Cookout",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-451_Cookout_Primary_Render.png/1200px-SG-451_Cookout_Primary_Render.png?a1febd",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "7020fb55dcd1271976408a3e9edba87690306c308bc46ea11e6244ce5f44a6c0",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-451-cookout"
     },
     {
       "name": "SG-8 Punisher",
@@ -676,10 +651,9 @@
       "wikiTitle": "SG-8 Punisher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-8_Punisher",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-8_Punisher_Primary_Render.png/1200px-SG-8_Punisher_Primary_Render.png?c43067",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "ae8a3728edbcae24df4ab3b0f9ce9b7564d37c6fc407694f294d0711999b8d64",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-8-punisher"
     },
     {
       "name": "SG-8P Punisher Plasma",
@@ -688,10 +662,9 @@
       "wikiTitle": "SG-8P Punisher Plasma",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-8P_Punisher_Plasma",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-8P_Punisher_Plasma_Primary_Render.png/1200px-SG-8P_Punisher_Plasma_Primary_Render.png?1c38be",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6b33748d2df1aa5e49e24076c3c8e21fad06edaf9a6ffb83228fcac55c66bd41",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-8p-punisher-plasma"
     },
     {
       "name": "SG-8S Slugger",
@@ -700,10 +673,9 @@
       "wikiTitle": "SG-8S Slugger",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-8S_Slugger",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-8S_Slugger_Primary_Render.png/1200px-SG-8S_Slugger_Primary_Render.png?6296ba",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "2dd1fa2feba6686a610fa8c1bb30b3371bbc70d6ca5de1c246fa6a14ab915f65",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sg-8s-slugger"
     },
     {
       "name": "CB-9 Exploding Crossbow",
@@ -712,10 +684,9 @@
       "wikiTitle": "CB-9 Exploding Crossbow",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/CB-9_Exploding_Crossbow",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/CB-9_Exploding_Crossbow_Primary_Render.png/1200px-CB-9_Exploding_Crossbow_Primary_Render.png?1aa01f",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "faddbd2c8390261c3e3a514467347568eec1dc604a7fc8bf6ffa8e508e8e0fc2",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:cb-9-exploding-crossbow"
     },
     {
       "name": "LAS-13 Trident",
@@ -724,10 +695,9 @@
       "wikiTitle": "LAS-13 Trident",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-13_Trident",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/LAS-13_Trident_Primary_Render.png/1200px-LAS-13_Trident_Primary_Render.png?615ace",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "4e047b9ce135ec8a959cb5d03867dcb4eedf2b99a01e4ef9938c588a0046ed21",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:las-13-trident"
     },
     {
       "name": "LAS-16 Sickle",
@@ -736,10 +706,9 @@
       "wikiTitle": "LAS-16 Sickle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-16_Sickle",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/LAS-16_Sickle_Primary_Render.png/1200px-LAS-16_Sickle_Primary_Render.png?43d245",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "d1e43cb33dcc4946eedc2dd1ab0ea3f05fc18e06ab77016223e04846c8daa589",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:las-16-sickle"
     },
     {
       "name": "LAS-17 Double-Edge Sickle",
@@ -748,10 +717,9 @@
       "wikiTitle": "LAS-17 Double-Edge Sickle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-17_Double-Edge_Sickle",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/LAS-17_Double-Edge_Sickle_Primary_Render.png/1200px-LAS-17_Double-Edge_Sickle_Primary_Render.png?c64fae",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "1fc3e754fe1983332a7622d9db403ceab3b0a2e0407e6f5f9ea56d533e9fbe24",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:las-17-double-edge-sickle"
     },
     {
       "name": "LAS-5 Scythe",
@@ -760,10 +728,9 @@
       "wikiTitle": "LAS-5 Scythe",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-5_Scythe",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/LAS-5_Scythe_Primary_Render.png/1200px-LAS-5_Scythe_Primary_Render.png?fd3c7d",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "751b8d63ad301ca7c4c5784d50681ae6391fb7efc91c7885ee2b8d5c90822923",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:las-5-scythe"
     },
     {
       "name": "PLAS-1 Scorcher",
@@ -772,10 +739,9 @@
       "wikiTitle": "PLAS-1 Scorcher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/PLAS-1_Scorcher",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/PLAS-1_Scorcher_Primary_Render.png/1200px-PLAS-1_Scorcher_Primary_Render.png?732708",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "f0a332b39eb8446a7b6ddef22bfc75d8904f0ad0dd170a2c2b7d5d60e9789482",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:plas-1-scorcher"
     },
     {
       "name": "PLAS-101 Purifier",
@@ -784,10 +750,9 @@
       "wikiTitle": "PLAS-101 Purifier",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/PLAS-101_Purifier",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/PLAS-101_Purifier_Primary_Render.png/1200px-PLAS-101_Purifier_Primary_Render.png?c08896",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "b53c3e60e3c39592556755626df0d8fcfe0804d366cd659c01e8e32a95073daa",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:plas-101-purifier"
     },
     {
       "name": "PLAS-39 Accelerator Rifle",
@@ -796,10 +761,9 @@
       "wikiTitle": "PLAS-39 Accelerator Rifle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/PLAS-39_Accelerator_Rifle",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/PLAS-39_Accelerator_Rifle_Primary_Render.png/1200px-PLAS-39_Accelerator_Rifle_Primary_Render.png?a8ff98",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "f9cefb3bf0e1dfb5385bc751cf8a5d06e6f23740ec2fa834e8dad2fa8ac90a66",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:plas-39-accelerator-rifle"
     },
     {
       "name": "Stoker",
@@ -809,7 +773,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Stoker",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SMGFLAM-34_Stoker_Primary_Icon.png/1200px-SMGFLAM-34_Stoker_Primary_Icon.png?fb6998",
       "artworkSha256": "4a3c1dab55e8fd7ce2d7cc90ff34392501610746ee3550ec1d1947bd13c5eaa4",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:stoker"
     },
     {
       "name": "Sweeper",
@@ -819,7 +784,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Sweeper",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-97_Shotgun_Primary_Render.png/1200px-SG-97_Shotgun_Primary_Render.png?255318",
       "artworkSha256": "d746dc148770cbc0b9b2a21cf0a217bf90380d55db2c8ee069583eef93405dd4",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:sweeper"
     },
     {
       "name": "SMG-203 Gallant",
@@ -828,10 +794,9 @@
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SMG-203_Gallant_Primary_Render.png/1200px-SMG-203_Gallant_Primary_Render.png?2fac86",
       "wikiTitle": "SMG-203 Gallant",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SMG-203_Gallant",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "63503a74fbb520c428792ea5e908186c4cc6bfe2503e623d9c8ac556be6db36f",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "primary:smg-203-gallant"
     }
   ],
   "sidearm": [
@@ -842,7 +807,8 @@
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-40-K_Bolt_Pistol_Secondary_Render.png/1200px-P-40-K_Bolt_Pistol_Secondary_Render.png?b09f63",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/File:P-40-K_Bolt_Pistol_Secondary_Render.png",
       "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
-      "artworkSha256": "3bd71f01b253253f28fee3531dac68f81b2e91a06ab46c5c0c0576a9e0779fec"
+      "artworkSha256": "3bd71f01b253253f28fee3531dac68f81b2e91a06ab46c5c0c0576a9e0779fec",
+      "id": "sidearm:p-40-k-bolt-pistol"
     },
     {
       "name": "GP-31 Grenade Pistol",
@@ -851,10 +817,9 @@
       "wikiTitle": "GP-31 Grenade Pistol",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/GP-31_Grenade_Pistol",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/GP-31_Grenade_Pistol_Secondary_Render.png/1200px-GP-31_Grenade_Pistol_Secondary_Render.png?4f6aba",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "bac0956acfd050ffb0fe42ca9fe02905ec54f6388a637e7f3abf7f7283df8207",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:gp-31-grenade-pistol"
     },
     {
       "name": "M6C/SOCOM Pistol",
@@ -863,10 +828,9 @@
       "wikiTitle": "M6C/SOCOM Pistol",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/M6C/SOCOM_Pistol",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/M6C-SOCOM_Pistol_Secondary_Render.png/1200px-M6C-SOCOM_Pistol_Secondary_Render.png?82f58b",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "96203fa463b7866f659b75c4331d2af17bc183056ed2428d319d455058c55834",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:m6c-socom-pistol"
     },
     {
       "name": "P-11 Stim Pistol",
@@ -875,10 +839,9 @@
       "wikiTitle": "P-11 Stim Pistol",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-11_Stim_Pistol",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-11_Stim_Pistol_Secondary_Render.png/1200px-P-11_Stim_Pistol_Secondary_Render.png?9d252e",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "c87ac49253feba7763e27cc906492e06ed814abd5e76a8e4ff1d53ac2ec282cb",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-11-stim-pistol"
     },
     {
       "name": "P-113 Verdict",
@@ -887,10 +850,9 @@
       "wikiTitle": "P-113 Verdict",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-113_Verdict",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-113_Verdict_Secondary_Render.png/1200px-P-113_Verdict_Secondary_Render.png?2bc2c6",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "f1ff2184806150d0f682c41844e4cb285d8fe7f991c80e6c6389aae7c7e47e4d",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-113-verdict"
     },
     {
       "name": "P-19 Redeemer",
@@ -899,10 +861,9 @@
       "wikiTitle": "P-19 Redeemer",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-19_Redeemer",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-19_Redeemer_Secondary_Render.png/1200px-P-19_Redeemer_Secondary_Render.png?cf1205",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "843e558264267b62baa11111ef27d1742afcef20a1bf6ed673beffd068cd9775",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-19-redeemer"
     },
     {
       "name": "P-2 Peacemaker",
@@ -911,10 +872,9 @@
       "wikiTitle": "P-2 Peacemaker",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-2_Peacemaker",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-2_Peacemaker_Secondary_Render.png/1200px-P-2_Peacemaker_Secondary_Render.png?cec6b0",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "5625aebaee776d57ab1140c0969c5f99e44b39f95cd22f2b4e8564b9952844b1",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-2-peacemaker"
     },
     {
       "name": "P-35 Re-Educator",
@@ -923,10 +883,9 @@
       "wikiTitle": "P-35 Re-Educator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-35_Re-Educator",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-35_Re-Educator_Secondary_Render.png/1200px-P-35_Re-Educator_Secondary_Render.png?9ac5c7",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "06a6dcc939f867456c7d9bde225cdca68148fea20ae8544873ee04fb4a9568f1",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-35-re-educator"
     },
     {
       "name": "P-4 Senator",
@@ -935,10 +894,9 @@
       "wikiTitle": "P-4 Senator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-4_Senator",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-4_Senator_Secondary_Render.png/1200px-P-4_Senator_Secondary_Render.png?34d42a",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "37eb0bb2c47d0a822f706e630f1ccaaf743867f48046b757bcd115f3a79e2f1a",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-4-senator"
     },
     {
       "name": "P-72 Crisper",
@@ -947,10 +905,9 @@
       "wikiTitle": "P-72 Crisper",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-72_Crisper",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-72_Crisper_Secondary_Render.png/1200px-P-72_Crisper_Secondary_Render.png?849008",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "72e5bb1ccb8e13acca63fb587d59376aa6fdcfafa6ebe6239914322c6c392c94",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-72-crisper"
     },
     {
       "name": "P-92 Warrant",
@@ -959,46 +916,42 @@
       "wikiTitle": "P-92 Warrant",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-92_Warrant",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-92_Warrant_Secondary_Render.png/1200px-P-92_Warrant_Secondary_Render.png?ac350b",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "0ae3f750d2a30127f47e8cc9311ad1919c61d5aa45cfe22543647f62a9681e95",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-92-warrant"
     },
     {
-      "name": "CQC-1 Saber",
+      "name": "CQC-2 Saber",
       "assetPath": "assets/weapons/sidearms/cqc-1-saber-wiki.png",
       "kind": "image",
       "wikiTitle": "CQC-2 Saber",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-2_Saber",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/CQC-2_Saber_Secondary_Render.png/1200px-CQC-2_Saber_Secondary_Render.png?459c5b",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "d82a3624368f21de03432840f1575e1b30d0998b06d87c5369948257360dee42",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:cqc-1-saber"
     },
     {
-      "name": "CQC-19 Machete",
+      "name": "CQC-42 Machete",
       "assetPath": "assets/weapons/sidearms/cqc-19-machete-wiki.png",
       "kind": "image",
       "wikiTitle": "CQC-42 Machete",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-42_Machete",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/CQC-42_Machete_Secondary_Render.png/1200px-CQC-42_Machete_Secondary_Render.png?25973a",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "02cb83b602790221dfc63a530c6ee806c89589435eb2c094c8f31f39411abdaf",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:cqc-19-machete"
     },
     {
-      "name": "CQC-2 Stun Lance",
+      "name": "CQC-19 Stun Lance",
       "assetPath": "assets/weapons/sidearms/cqc-2-stun-lance-wiki.png",
       "kind": "image",
       "wikiTitle": "CQC-19 Stun Lance",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-19_Stun_Lance",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/CQC-19_Stun_Lance_Secondary_Render.png/1200px-CQC-19_Stun_Lance_Secondary_Render.png?9a9709",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "2a571f68459f567499d1779da508a35b9bf9d9df19ec116d0a048c9aae119b0f",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:cqc-2-stun-lance"
     },
     {
       "name": "CQC-30 Stun Baton",
@@ -1007,10 +960,9 @@
       "wikiTitle": "CQC-30 Stun Baton",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-30_Stun_Baton",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/CQC-30_Stun_Baton_Secondary_Render.png/1200px-CQC-30_Stun_Baton_Secondary_Render.png?5b701f",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "4c8674ee17d23c9a7d8ee70c0db4341ad9f0010b1023a2983c00d56054efacbb",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:cqc-30-stun-baton"
     },
     {
       "name": "CQC-5 Combat Hatchet",
@@ -1019,10 +971,9 @@
       "wikiTitle": "CQC-5 Combat Hatchet",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-5_Combat_Hatchet",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/CQC-5_Combat_Hatchet_Secondary_Render.png/1200px-CQC-5_Combat_Hatchet_Secondary_Render.png?eb83de",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "ed915579c2fd837efdc42f623fcadd65f6056cb72274f3ec79444ee399d512a4",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:cqc-5-combat-hatchet"
     },
     {
       "name": "GP-20 Ultimatum",
@@ -1031,10 +982,9 @@
       "wikiTitle": "GP-20 Ultimatum",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/GP-20_Ultimatum",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/GP-20_Ultimatum_Secondary_Render.png/1200px-GP-20_Ultimatum_Secondary_Render.png?3d51dc",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "652644ed9faf2392e5baff0014c5ecbdac97dee9f216ea1fe4d0a7912cb6c9ed",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:gp-20-ultimatum"
     },
     {
       "name": "LAS-58 Talon",
@@ -1043,10 +993,9 @@
       "wikiTitle": "LAS-58 Talon",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-58_Talon",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/LAS-58_Talon_Secondary_Render.png/1200px-LAS-58_Talon_Secondary_Render.png?8621df",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "1f0c04fb6f205c1e3483c37292d5c843a0a01ac9aeac3d9ef6d2cca4192c5a4f",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:las-58-talon"
     },
     {
       "name": "LAS-7 Dagger",
@@ -1055,10 +1004,9 @@
       "wikiTitle": "LAS-7 Dagger",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-7_Dagger",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/LAS-7_Dagger_Secondary_Render.png/1200px-LAS-7_Dagger_Secondary_Render.png?bcfb59",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "300b432474254a954f2e34b49b1c66cbced2d7bbf3ad2814e16312899d9bcf82",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:las-7-dagger"
     },
     {
       "name": "PLAS-15 Loyalist",
@@ -1067,10 +1015,9 @@
       "wikiTitle": "PLAS-15 Loyalist",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/PLAS-15_Loyalist",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/PLAS-15_Loyalist_Secondary_Render.png/1200px-PLAS-15_Loyalist_Secondary_Render.png?fd5d4b",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "3d6424611afd9bf2333bbd696b7c428a100142937fbb45f618e73c49a64fe067",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:plas-15-loyalist"
     },
     {
       "name": "SG-22 Bushwhacker",
@@ -1079,10 +1026,9 @@
       "wikiTitle": "SG-22 Bushwhacker",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/SG-22_Bushwhacker",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/SG-22_Bushwhacker_Secondary_Render.png/1200px-SG-22_Bushwhacker_Secondary_Render.png?96bab5",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "26f89c5b1ae99bba789bfb10a7644c193abd094f8f6d8cbbdeb1de4f8c390cc0",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:sg-22-bushwhacker"
     },
     {
       "name": "Entrenchment Tool",
@@ -1092,7 +1038,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Entrenchment_Tool",
       "imageUrl": "https://helldivers.wiki.gg/images/CQC-72_Entrenchment_Tool_Support_Render.png?2adde9",
       "artworkSha256": "e1e1c225d1dac062f8147324e042c169f1ae0ae8a27b26479c06742d0f395862",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:entrenchment-tool"
     },
     {
       "name": "Veto",
@@ -1102,7 +1049,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Veto",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-69_Veto_Secondary_Icon.png/1200px-P-69_Veto_Secondary_Icon.png?e02465",
       "artworkSha256": "2f4fc1ea7b1dc518d91d8123b3e9034271646886305520987301009688d4fea1",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:veto"
     },
     {
       "name": "P-33 Missile Pistol",
@@ -1111,10 +1059,9 @@
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/P-33_Missile_Pistol_Secondary_Render.png/1200px-P-33_Missile_Pistol_Secondary_Render.png?a1e58d",
       "wikiTitle": "P-33 Missile Pistol",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/P-33_Missile_Pistol",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "37232fe1f4a850a92a4301f71e35752969a05352cc285bb87e54afc1c388688a",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "sidearm:p-33-missile-pistol"
     }
   ],
   "throwable": [
@@ -1125,7 +1072,8 @@
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-40-K_Melta_Mine_Throwable_Render.png/1200px-G-40-K_Melta_Mine_Throwable_Render.png?6bdf5e",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/File:G-40-K_Melta_Mine_Throwable_Render.png",
       "artworkSource": "official-steam-art-cutout-via-wiki; Undeadender, Helldivers Wiki.gg",
-      "artworkSha256": "e3926e992e1e88b71bde0a9f1f9909244a04ca2cd54eb6297230912ca05b0ab7"
+      "artworkSha256": "e3926e992e1e88b71bde0a9f1f9909244a04ca2cd54eb6297230912ca05b0ab7",
+      "id": "throwable:g-40-k-melta-mine"
     },
     {
       "name": "G-10 Incendiary",
@@ -1134,10 +1082,9 @@
       "wikiTitle": "G-10 Incendiary",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-10_Incendiary",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-10_Incendiary_Throwable_Render.png/1200px-G-10_Incendiary_Throwable_Render.png?fa03cb",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "9a785788eb7371d17294b47637d7ec5cd9a039b53fc399537d518bdfa7f63be1",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-10-incendiary"
     },
     {
       "name": "G-109 Urchin",
@@ -1146,10 +1093,9 @@
       "wikiTitle": "G-109 Urchin",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-109_Urchin",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-109_Urchin_Throwable_Render.png/1200px-G-109_Urchin_Throwable_Render.png?6556ae",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "9646ae4c853abdd7972f2d101ba121ad30663131ca764aaea44a8368e9d1e0c8",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-109-urchin"
     },
     {
       "name": "G-12 High Explosive",
@@ -1158,10 +1104,9 @@
       "wikiTitle": "G-12 High Explosive",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-12_High_Explosive",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-12_High_Explosive_Throwable_Render.png/1200px-G-12_High_Explosive_Throwable_Render.png?5b3049",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6d39fa6b45b72a91bd1c2196ef0b83b97f507c8e3e89ec6165e9faa572c26693",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-12-high-explosive"
     },
     {
       "name": "G-123 Thermite",
@@ -1170,10 +1115,9 @@
       "wikiTitle": "G-123 Thermite",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-123_Thermite",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-123_Thermite_Throwable_Render.png/1200px-G-123_Thermite_Throwable_Render.png?1dc4e1",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "40c5a443e78aedd0ade1845e4f1988d3aab9edb0ba8cb3d75590ca85c456dfc3",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-123-thermite"
     },
     {
       "name": "G-13 Incendiary Impact",
@@ -1182,10 +1126,9 @@
       "wikiTitle": "G-13 Incendiary Impact",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-13_Incendiary_Impact",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-13_Incendiary_Impact_Throwable_Render.png/1200px-G-13_Incendiary_Impact_Throwable_Render.png?103c4a",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "f886aa8ded12fa91bd2865287c0023730ec45b02c8f3e90aec1f2a83ad4f0190",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-13-incendiary-impact"
     },
     {
       "name": "G-142 Pyrotech",
@@ -1194,10 +1137,9 @@
       "wikiTitle": "G-142 Pyrotech",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-142_Pyrotech",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-142_Pyrotech_Throwable_Render.png/1200px-G-142_Pyrotech_Throwable_Render.png?d77fbb",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "273eed61b2e9db6e5c160a316be9a2f07fdcc3cbd69eb18b5cca99065874f8c6",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-142-pyrotech"
     },
     {
       "name": "G-16 Impact",
@@ -1206,10 +1148,9 @@
       "wikiTitle": "G-16 Impact",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-16_Impact",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-16_Impact_Throwable_Render.png/1200px-G-16_Impact_Throwable_Render.png?6e6bc3",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "1b61c3762932e9c222a15573e1e6798e3cd8db1f99223bf50534764d6caa5f22",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-16-impact"
     },
     {
       "name": "G-23 Stun",
@@ -1218,10 +1159,9 @@
       "wikiTitle": "G-23 Stun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-23_Stun",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-23_Stun_Throwable_Render.png/1200px-G-23_Stun_Throwable_Render.png?674d41",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "78756c6defb08c3e5133bc2f1c173be26a2436028b35e362140eb7d7680fee00",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-23-stun"
     },
     {
       "name": "G-3 Smoke",
@@ -1230,10 +1170,9 @@
       "wikiTitle": "G-3 Smoke",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-3_Smoke",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-3_Smoke_Throwable_Render.png/1200px-G-3_Smoke_Throwable_Render.png?4ff7f7",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "c63770ef3850c17fd144a63546cab1390d975dd8b57a8ec0f2f0b9fa7c46764e",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-3-smoke"
     },
     {
       "name": "G-31 Arc",
@@ -1242,10 +1181,9 @@
       "wikiTitle": "G-31 Arc",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-31_Arc",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-31_ARC_Throwable_Render.png/1200px-G-31_ARC_Throwable_Render.png?3ad7a2",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "a526008593068953b467216fe36a001de2b36a176092bcc03607c4124bc2d1f9",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-31-arc"
     },
     {
       "name": "G-4 Gas",
@@ -1254,10 +1192,9 @@
       "wikiTitle": "G-4 Gas",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-4_Gas",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-4_Gas_Throwable_Render.png/1200px-G-4_Gas_Throwable_Render.png?5edf98",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "1575f06ca68e271cf85edeed59c9862afa98380c455ad3ea188a0adabce520a4",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-4-gas"
     },
     {
       "name": "G-50 Seeker",
@@ -1266,10 +1203,9 @@
       "wikiTitle": "G-50 Seeker",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-50_Seeker",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-50_Seeker_Throwable_Render.png/1200px-G-50_Seeker_Throwable_Render.png?1eba17",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "17f4618f4977af013b649b115072e90426c913f2776bcb281550e44f55d2c3ba",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-50-seeker"
     },
     {
       "name": "G-6 Frag",
@@ -1278,10 +1214,9 @@
       "wikiTitle": "G-6 Frag",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-6_Frag",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-6_Frag_Throwable_Render.png/1200px-G-6_Frag_Throwable_Render.png?3a5ba5",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "f049b39cd404e1cfb879da50d0d5a34daa952edf6d15ad5565cbdcd26ae68d68",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-6-frag"
     },
     {
       "name": "G-7 Pineapple",
@@ -1290,10 +1225,9 @@
       "wikiTitle": "G-7 Pineapple",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-7_Pineapple",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-7_Pineapple_Throwable_Render.png/1200px-G-7_Pineapple_Throwable_Render.png?c70d05",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "2d8c7001830b620694f3277a4da6587fcd3db8fd3f1ecae538d205430eba4c50",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-7-pineapple"
     },
     {
       "name": "G-89 Smokescreen",
@@ -1302,10 +1236,9 @@
       "wikiTitle": "G-89 Smokescreen",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G-89_Smokescreen",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-89_Smokescreen_Throwable_Render.png/1200px-G-89_Smokescreen_Throwable_Render.png?bf4187",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "329fb0fdb96c6a8f41d1ba7f1f3028aee52feaccb0d5bd8a2c068ae286e06b85",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-89-smokescreen"
     },
     {
       "name": "K-2 Throwing Knife",
@@ -1314,10 +1247,9 @@
       "wikiTitle": "K-2 Throwing Knife",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/K-2_Throwing_Knife",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/K-2_Throwing_Knife_Throwable_Render.png/1200px-K-2_Throwing_Knife_Throwable_Render.png?4b7c6a",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "371f11d1d64e3a92f39e4a66c5e4cf0f2db3e69c1664c95e7f9ff6fc305773f3",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:k-2-throwing-knife"
     },
     {
       "name": "TED-63 Dynamite",
@@ -1326,10 +1258,9 @@
       "wikiTitle": "TED-63 Dynamite",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/TED-63_Dynamite",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/TED-63_Dynamite_Throwable_Render.png/1200px-TED-63_Dynamite_Throwable_Render.png?e607be",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "3c243c2c730d0cf16e09f7f65bd0dcb822653127ef2254f1226b1214dc23bfd4",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:ted-63-dynamite"
     },
     {
       "name": "G/SH-39 Shield",
@@ -1338,10 +1269,9 @@
       "wikiTitle": "G/SH-39 Shield",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/G/SH-39_Shield",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-SH-39_Shield_Throwable_Render.png/1200px-G-SH-39_Shield_Throwable_Render.png?153510",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "6ad525527533bb2dd35dd3cc6c2fd44563095671d72a99584b8c5ef1b25e2d29",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:g-sh-39-shield"
     },
     {
       "name": "TM-1 Lure Mine",
@@ -1350,10 +1280,9 @@
       "wikiTitle": "TM-1 Lure Mine",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/TM-1_Lure_Mine",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/TM-1_Lure_Mine_Throwable_Render.png/1200px-TM-1_Lure_Mine_Throwable_Render.png?42e657",
-      "placeholder": true,
-      "placeholderReason": "No distributable local item art has been verified; use this bundled placeholder offline.",
       "artworkSha256": "39579cd2add68d14a2012f5904c3ad27bbd0b047e17dbb13c8a2e3e89d98fdeb",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:tm-1-lure-mine"
     },
     {
       "name": "Giga Grenade",
@@ -1363,7 +1292,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Giga_Grenade",
       "imageUrl": "https://helldivers.wiki.gg/images/thumb/G-48_Giga_Grenade_Throwable_Render.png/1200px-G-48_Giga_Grenade_Throwable_Render.png?f00d38",
       "artworkSha256": "16093f93f100059f10a1780971f84bb4cf18bcd8bbb651a7709b16bcd40d58cd",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "throwable:giga-grenade"
     }
   ],
   "stratagem": [
@@ -1375,7 +1305,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/File:40-K_Meltagun_Support_Render.png",
       "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
       "artworkSha256": "9c099d307615e41adf38f29677114ec21889e3c0087878c2315773c567b26178",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:40-k-meltagun"
     },
     {
       "name": "Eagle Gas Airstrike",
@@ -1385,7 +1316,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/File:Eagle_Gas_Airstrike_Stratagem_Icon.svg",
       "artworkSource": "community-hand-trace-of-game-icon; Dogo314, Helldivers Wiki.gg",
       "artworkSha256": "1fc8df52b5ff156b8c51626a9d717004190b4f714e169af44cf26ba1621ea084",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-gas-airstrike"
     },
     {
       "name": "Orbital 120MM HE Barrage",
@@ -1394,7 +1326,8 @@
       "wikiTitle": "Orbital 120mm HE Barrage",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_120mm_HE_Barrage",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_120mm_HE_Barrage_Stratagem_Icon.svg?d918e1",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-120mm-he-barrage"
     },
     {
       "name": "Orbital 380MM HE Barrage",
@@ -1403,7 +1336,8 @@
       "wikiTitle": "Orbital 380mm HE Barrage",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_380mm_HE_Barrage",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_380mm_HE_Barrage_Stratagem_Icon.svg?220047",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-380mm-he-barrage"
     },
     {
       "name": "Orbital Airburst Strike",
@@ -1412,7 +1346,8 @@
       "wikiTitle": "Orbital Airburst Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Airburst_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Airburst_Strike_Stratagem_Icon.svg?c22da6",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-airburst-strike"
     },
     {
       "name": "Orbital EMS Strike",
@@ -1421,7 +1356,8 @@
       "wikiTitle": "Orbital EMS Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_EMS_Strike_Stratagem_Icon.svg?964fec",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-ems-strike"
     },
     {
       "name": "Orbital Gas Strike",
@@ -1430,7 +1366,8 @@
       "wikiTitle": "Orbital Gas Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Gas_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Gas_Strike_Stratagem_Icon.svg?f43562",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-gas-strike"
     },
     {
       "name": "Orbital Gatling Barrage",
@@ -1439,7 +1376,8 @@
       "wikiTitle": "Orbital Gatling Barrage",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Gatling_Barrage",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Gatling_Barrage_Stratagem_Icon.svg?a743a8",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-gatling-barrage"
     },
     {
       "name": "Orbital Laser",
@@ -1448,7 +1386,8 @@
       "wikiTitle": "Orbital Laser",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Laser",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Laser_Stratagem_Icon.svg?18e79e",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-laser"
     },
     {
       "name": "Orbital Napalm Barrage",
@@ -1457,7 +1396,8 @@
       "wikiTitle": "Orbital Napalm Barrage",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Napalm_Barrage",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Napalm_Barrage_Stratagem_Icon.svg?3d49f8",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-napalm-barrage"
     },
     {
       "name": "Orbital Precision Strike",
@@ -1466,7 +1406,8 @@
       "wikiTitle": "Orbital Precision Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Precision_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Precision_Strike_Stratagem_Icon.svg?f7747f",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-precision-strike"
     },
     {
       "name": "Orbital Railcannon Strike",
@@ -1475,7 +1416,8 @@
       "wikiTitle": "Orbital Railcannon Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Railcannon_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Railcannon_Strike_Stratagem_Icon.svg?64a5ff",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-railcannon-strike"
     },
     {
       "name": "Orbital Smoke Strike",
@@ -1484,7 +1426,8 @@
       "wikiTitle": "Orbital Smoke Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Smoke_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Smoke_Strike_Stratagem_Icon.svg?683b12",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-smoke-strike"
     },
     {
       "name": "Orbital Walking Barrage",
@@ -1493,7 +1436,8 @@
       "wikiTitle": "Orbital Walking Barrage",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Walking_Barrage",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_Walking_Barrage_Stratagem_Icon.svg?7f8e1d",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:orbital-walking-barrage"
     },
     {
       "name": "Eagle 110MM Rocket Pods",
@@ -1502,7 +1446,8 @@
       "wikiTitle": "Eagle 110mm Rocket Pods",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_110mm_Rocket_Pods",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_110mm_Rocket_Pods_Stratagem_Icon.svg?54c976",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-110mm-rocket-pods"
     },
     {
       "name": "Eagle 500KG Bomb",
@@ -1511,7 +1456,8 @@
       "wikiTitle": "Eagle 500KG Bomb",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_500KG_Bomb",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_500kg_Bomb_Stratagem_Icon.svg?61faff",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-500kg-bomb"
     },
     {
       "name": "Eagle Airstrike",
@@ -1520,7 +1466,8 @@
       "wikiTitle": "Eagle Airstrike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Airstrike",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_Airstrike_Stratagem_Icon.svg?c5e1e8",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-airstrike"
     },
     {
       "name": "Eagle Cluster Bomb",
@@ -1529,7 +1476,8 @@
       "wikiTitle": "Eagle Cluster Bomb",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Cluster_Bomb",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_Cluster_Bomb_Stratagem_Icon.svg?6d03ee",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-cluster-bomb"
     },
     {
       "name": "Eagle Napalm Airstrike",
@@ -1538,7 +1486,8 @@
       "wikiTitle": "Eagle Napalm Airstrike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Napalm_Airstrike",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_Napalm_Airstrike_Stratagem_Icon.svg?e059df",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-napalm-airstrike"
     },
     {
       "name": "Eagle Smoke Strike",
@@ -1547,7 +1496,8 @@
       "wikiTitle": "Eagle Smoke Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Smoke_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_Smoke_Strike_Stratagem_Icon.svg?751626",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-smoke-strike"
     },
     {
       "name": "Eagle Strafing Run",
@@ -1556,7 +1506,8 @@
       "wikiTitle": "Eagle Strafing Run",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Strafing_Run",
       "imageUrl": "https://helldivers.wiki.gg/images/Eagle_Strafing_Run_Stratagem_Icon.svg?bbc684",
-      "rimCategory": "eagle"
+      "rimCategory": "eagle",
+      "id": "stratagem:eagle-strafing-run"
     },
     {
       "name": "Anti-Personnel Minefield",
@@ -1565,7 +1516,8 @@
       "wikiTitle": "Anti-Personnel Minefield",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Anti-Personnel_Minefield",
       "imageUrl": "https://helldivers.wiki.gg/images/Anti-Personnel_Minefield_Stratagem_Icon.svg?ccc429",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:anti-personnel-minefield"
     },
     {
       "name": "Anti-Tank Emplacement",
@@ -1574,7 +1526,8 @@
       "wikiTitle": "Anti-Tank Emplacement",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Anti-Tank_Emplacement",
       "imageUrl": "https://helldivers.wiki.gg/images/Anti-Tank_Emplacement_Stratagem_Icon.svg?6c5737",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:anti-tank-emplacement"
     },
     {
       "name": "Anti-Tank Mines",
@@ -1583,7 +1536,8 @@
       "wikiTitle": "Anti-Tank Mines",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Anti-Tank_Mines",
       "imageUrl": "https://helldivers.wiki.gg/images/Anti-Tank_Mines_Stratagem_Icon.svg?b36aca",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:anti-tank-mines"
     },
     {
       "name": "Autocannon Sentry",
@@ -1592,7 +1546,8 @@
       "wikiTitle": "Autocannon Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Autocannon_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Autocannon_Sentry_Stratagem_Icon.svg?cb2722",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:autocannon-sentry"
     },
     {
       "name": "EMS Mortar Sentry",
@@ -1601,7 +1556,8 @@
       "wikiTitle": "EMS Mortar Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/EMS_Mortar_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/EMS_Mortar_Sentry_Stratagem_Icon.svg?3e0d88",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:ems-mortar-sentry"
     },
     {
       "name": "Flame Sentry",
@@ -1610,7 +1566,8 @@
       "wikiTitle": "Flame Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Flame_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Flame_Sentry_Stratagem_Icon.svg?97ca77",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:flame-sentry"
     },
     {
       "name": "Gas Mines",
@@ -1619,7 +1576,8 @@
       "wikiTitle": "Gas Mines",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Gas_Mines",
       "imageUrl": "https://helldivers.wiki.gg/images/Gas_Mines_Stratagem_Icon.svg?3181af",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:gas-mines"
     },
     {
       "name": "Gatling Sentry",
@@ -1628,7 +1586,8 @@
       "wikiTitle": "Gatling Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Gatling_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Gatling_Sentry_Stratagem_Icon.svg?e3c78d",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:gatling-sentry"
     },
     {
       "name": "Grenadier Battlement",
@@ -1637,7 +1596,8 @@
       "wikiTitle": "Grenadier battlement",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Grenadier_battlement",
       "imageUrl": "https://helldivers.wiki.gg/images/Grenadier_Battlement_Stratagem_Icon.svg?64eda4",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:grenadier-battlement"
     },
     {
       "name": "HMG Emplacement",
@@ -1646,7 +1606,8 @@
       "wikiTitle": "HMG Emplacement",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/HMG_Emplacement",
       "imageUrl": "https://helldivers.wiki.gg/images/HMG_Emplacement_Stratagem_Icon.svg?b5de1a",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:hmg-emplacement"
     },
     {
       "name": "Incendiary Mines",
@@ -1655,7 +1616,8 @@
       "wikiTitle": "Incendiary Mines",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Incendiary_Mines",
       "imageUrl": "https://helldivers.wiki.gg/images/Incendiary_Mines_Stratagem_Icon.svg?241736",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:incendiary-mines"
     },
     {
       "name": "Laser Sentry",
@@ -1664,7 +1626,8 @@
       "wikiTitle": "Laser Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Laser_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Laser_Sentry_Stratagem_Icon.svg?72c5b8",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:laser-sentry"
     },
     {
       "name": "Machine Gun Sentry",
@@ -1673,7 +1636,8 @@
       "wikiTitle": "Machine Gun Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Machine_Gun_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Machine_Gun_Sentry_Stratagem_Icon.svg?a8045d",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:machine-gun-sentry"
     },
     {
       "name": "Mortar Sentry",
@@ -1682,7 +1646,8 @@
       "wikiTitle": "Mortar Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Mortar_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Mortar_Sentry_Stratagem_Icon.svg?5bf6cc",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:mortar-sentry"
     },
     {
       "name": "Rocket Sentry",
@@ -1691,7 +1656,8 @@
       "wikiTitle": "Rocket Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Rocket_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Rocket_Sentry_Stratagem_Icon.svg?9e05dc",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:rocket-sentry"
     },
     {
       "name": "Shield Generator Relay",
@@ -1700,7 +1666,8 @@
       "wikiTitle": "Shield Generator Relay",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Shield_Generator_Relay",
       "imageUrl": "https://helldivers.wiki.gg/images/Shield_Generator_Relay_Stratagem_Icon.svg?6f5e09",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:shield-generator-relay"
     },
     {
       "name": "Tesla Tower",
@@ -1709,7 +1676,8 @@
       "wikiTitle": "Tesla Tower",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Tesla_Tower",
       "imageUrl": "https://helldivers.wiki.gg/images/Tesla_Tower_Stratagem_Icon.svg?a30c81",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:tesla-tower"
     },
     {
       "name": "AC-8 Autocannon",
@@ -1718,7 +1686,8 @@
       "wikiTitle": "AC-8 Autocannon",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AC-8_Autocannon",
       "imageUrl": "https://helldivers.wiki.gg/images/Autocannon_Stratagem_Icon.svg?67957f",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:ac-8-autocannon"
     },
     {
       "name": "APW-1 Anti-Materiel Rifle",
@@ -1727,7 +1696,8 @@
       "wikiTitle": "APW-1 Anti-Materiel Rifle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle",
       "imageUrl": "https://helldivers.wiki.gg/images/Anti-Materiel_Rifle_Stratagem_Icon.svg?3012d6",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:apw-1-anti-materiel-rifle"
     },
     {
       "name": "ARC-3 Arc Thrower",
@@ -1736,7 +1706,8 @@
       "wikiTitle": "ARC-3 Arc Thrower",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/ARC-3_Arc_Thrower",
       "imageUrl": "https://helldivers.wiki.gg/images/Arc_Thrower_Stratagem_Icon.svg?989f0a",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:arc-3-arc-thrower"
     },
     {
       "name": "Ballistic Shield Backpack",
@@ -1745,7 +1716,8 @@
       "wikiTitle": "Ballistic Shield Backpack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Ballistic_Shield_Backpack",
       "imageUrl": "https://helldivers.wiki.gg/images/Ballistic_Shield_Backpack_Stratagem_Icon.svg?9ea21d",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:ballistic-shield-backpack"
     },
     {
       "name": "Bastion",
@@ -1754,7 +1726,8 @@
       "wikiTitle": "Bastion",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Bastion",
       "imageUrl": "https://helldivers.wiki.gg/images/Bastion_MK_XVI_Stratagem_Icon.svg?3895cb",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:bastion"
     },
     {
       "name": "Belt-fed GL",
@@ -1763,7 +1736,8 @@
       "wikiTitle": "Belt-Fed Grenade Launcher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Belt-Fed_Grenade_Launcher",
       "imageUrl": "https://helldivers.wiki.gg/images/Belt-Fed_Grenade_Launcher_Stratagem_Icon.svg?315364",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:belt-fed-gl"
     },
     {
       "name": "Breaching Hammer",
@@ -1772,7 +1746,8 @@
       "wikiTitle": "Breaching Hammer",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Breaching_Hammer",
       "imageUrl": "https://helldivers.wiki.gg/images/Breaching_Hammer_Stratagem_Icon.svg?afd444",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:breaching-hammer"
     },
     {
       "name": "C4 Pack",
@@ -1781,7 +1756,8 @@
       "wikiTitle": "C4 Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/C4_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/C4_Pack_Stratagem_Icon.svg?cfb679",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:c4-pack"
     },
     {
       "name": "De-Escalator",
@@ -1790,7 +1766,8 @@
       "wikiTitle": "De-Escalator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/De-Escalator",
       "imageUrl": "https://helldivers.wiki.gg/images/De-Escalator_Stratagem_Icon.svg?9f2324",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:de-escalator"
     },
     {
       "name": "Defoliation Tool",
@@ -1799,7 +1776,8 @@
       "wikiTitle": "Defoliation Tool",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Defoliation_Tool",
       "imageUrl": "https://helldivers.wiki.gg/images/Defoliation_Tool_Stratagem_Icon.svg?10a3bf",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:defoliation-tool"
     },
     {
       "name": "Directional Shield",
@@ -1808,7 +1786,8 @@
       "wikiTitle": "Directional Shield",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Directional_Shield",
       "imageUrl": "https://helldivers.wiki.gg/images/Directional_Shield_Stratagem_Icon.svg?ee4281",
-      "rimCategory": "support"
+      "rimCategory": "backpack",
+      "id": "stratagem:directional-shield"
     },
     {
       "name": "EAT-17 Expendable Anti-Tank",
@@ -1817,7 +1796,8 @@
       "wikiTitle": "EAT-17 Expendable Anti-Tank",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/EAT-17_Expendable_Anti-Tank",
       "imageUrl": "https://helldivers.wiki.gg/images/Expendable_Anti-Tank_Stratagem_Icon.svg?504a15",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:eat-17-expendable-anti-tank"
     },
     {
       "name": "EMS Strike",
@@ -1826,7 +1806,8 @@
       "wikiTitle": "Orbital EMS Strike",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_EMS_Strike",
       "imageUrl": "https://helldivers.wiki.gg/images/Orbital_EMS_Strike_Stratagem_Icon.svg?964fec",
-      "rimCategory": "orbital"
+      "rimCategory": "orbital",
+      "id": "stratagem:ems-strike"
     },
     {
       "name": "Emancipator Exosuit",
@@ -1835,7 +1816,8 @@
       "wikiTitle": "Emancipator Exosuit",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Emancipator_Exosuit",
       "imageUrl": "https://helldivers.wiki.gg/images/Emancipator_Exosuit_Stratagem_Icon.svg?2917bc",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:emancipator-exosuit"
     },
     {
       "name": "Epoch",
@@ -1844,7 +1826,8 @@
       "wikiTitle": "Epoch",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Epoch",
       "imageUrl": "https://helldivers.wiki.gg/images/Epoch_Stratagem_Icon.svg?7f20cc",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:epoch"
     },
     {
       "name": "Expendable Napalm",
@@ -1853,7 +1836,8 @@
       "wikiTitle": "EAT-700 Expendable Napalm",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/EAT-700_Expendable_Napalm",
       "imageUrl": "https://helldivers.wiki.gg/images/Expendable_Napalm_Stratagem_Icon.svg?4b2d70",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:expendable-napalm"
     },
     {
       "name": "FAF-14 Spear",
@@ -1862,7 +1846,8 @@
       "wikiTitle": "FAF-14 Spear",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/FAF-14_Spear",
       "imageUrl": "https://helldivers.wiki.gg/images/Spear_Stratagem_Icon.svg?c3f9af",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:faf-14-spear"
     },
     {
       "name": "FLAM-40 Flamethrower",
@@ -1871,7 +1856,8 @@
       "wikiTitle": "FLAM-40 Flamethrower",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/FLAM-40_Flamethrower",
       "imageUrl": "https://helldivers.wiki.gg/images/Flamethrower_Stratagem_Icon.svg?95194d",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:flam-40-flamethrower"
     },
     {
       "name": "M-102 Fast Recon Vehicle",
@@ -1880,7 +1866,8 @@
       "wikiTitle": "M-102 Fast Recon Vehicle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/M-102_Fast_Recon_Vehicle",
       "imageUrl": "https://helldivers.wiki.gg/images/Fast_Recon_Vehicle_Stratagem_Icon.svg?3c3758",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:m-102-fast-recon-vehicle"
     },
     {
       "name": "M-103 Supply FRV",
@@ -1889,7 +1876,8 @@
       "wikiTitle": "M-103 Supply FRV",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/M-103_Supply_FRV",
       "imageUrl": "https://helldivers.wiki.gg/images/Supply_FRV_Stratagem_Icon.svg",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:m-103-supply-frv"
     },
     {
       "name": "GL-21 Grenade Launcher",
@@ -1898,7 +1886,8 @@
       "wikiTitle": "GL-21 Grenade Launcher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher",
       "imageUrl": "https://helldivers.wiki.gg/images/Grenade_Launcher_Stratagem_Icon.svg?c5905c",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:gl-21-grenade-launcher"
     },
     {
       "name": "GR-8 Recoilless Rifle",
@@ -1907,7 +1896,8 @@
       "wikiTitle": "GR-8 Recoilless Rifle",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle",
       "imageUrl": "https://helldivers.wiki.gg/images/Recoilless_Rifle_Stratagem_Icon.svg?270863",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:gr-8-recoilless-rifle"
     },
     {
       "name": "Guard Dog",
@@ -1916,7 +1906,8 @@
       "wikiTitle": "Guard Dog",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Guard_Dog",
       "imageUrl": "https://helldivers.wiki.gg/images/Guard_Dog_Stratagem_Icon.svg?bf3310",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:guard-dog"
     },
     {
       "name": "AX/ARC-3 K-9",
@@ -1925,7 +1916,8 @@
       "wikiTitle": "AX/ARC-3 K-9",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/ARC-3_K-9",
       "imageUrl": "https://helldivers.wiki.gg/images/K-9_Stratagem_Icon.svg?adfb74",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:ax-arc-3-k-9"
     },
     {
       "name": "AX/TX-13 Dog Breath",
@@ -1934,7 +1926,8 @@
       "wikiTitle": "AX/TX-13 Dog Breath",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/TX-13_Dog_Breath",
       "imageUrl": "https://helldivers.wiki.gg/images/Dog_Breath_Stratagem_Icon.svg?833287",
-      "rimCategory": "support"
+      "rimCategory": "backpack",
+      "id": "stratagem:ax-tx-13-dog-breath"
     },
     {
       "name": "Guard Dog Rover",
@@ -1943,7 +1936,8 @@
       "wikiTitle": "AX/LAS-5 \"Guard Dog\" Rover",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/LAS-5_%22Guard_Dog%22_Rover",
       "imageUrl": "https://helldivers.wiki.gg/images/Rover_Stratagem_Icon.svg?80445d",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:guard-dog-rover"
     },
     {
       "name": "Hot Dog",
@@ -1952,7 +1946,8 @@
       "wikiTitle": "Hot Dog",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Hot_Dog",
       "imageUrl": "https://helldivers.wiki.gg/images/Hot_Dog_Stratagem_Icon.svg?21ad0f",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:hot-dog"
     },
     {
       "name": "Hover Pack",
@@ -1961,7 +1956,8 @@
       "wikiTitle": "Hover Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Hover_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Hover_Pack_Stratagem_Icon.svg?c5f32f",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:hover-pack"
     },
     {
       "name": "Jump Pack",
@@ -1970,7 +1966,8 @@
       "wikiTitle": "Jump Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Jump_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Jump_Pack_Stratagem_Icon.svg?68659f",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:jump-pack"
     },
     {
       "name": "LAS-98 Laser Cannon",
@@ -1979,7 +1976,8 @@
       "wikiTitle": "LAS-98 Laser Cannon",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-98_Laser_Cannon",
       "imageUrl": "https://helldivers.wiki.gg/images/Laser_Cannon_Stratagem_Icon.svg?a6c147",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:las-98-laser-cannon"
     },
     {
       "name": "LAS-99 Quasar Cannon",
@@ -1988,7 +1986,8 @@
       "wikiTitle": "LAS-99 Quasar Cannon",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-99_Quasar_Cannon",
       "imageUrl": "https://helldivers.wiki.gg/images/Quasar_Cannon_Stratagem_Icon.svg?8aa6f0",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:las-99-quasar-cannon"
     },
     {
       "name": "Leveller",
@@ -1997,7 +1996,8 @@
       "wikiTitle": "Leveller",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Leveller",
       "imageUrl": "https://helldivers.wiki.gg/images/Leveller_Stratagem_Icon.svg?c94491",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:leveller"
     },
     {
       "name": "M-105 Stalwart",
@@ -2006,7 +2006,8 @@
       "wikiTitle": "M-105 Stalwart",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/M-105_Stalwart",
       "imageUrl": "https://helldivers.wiki.gg/images/Stalwart_Stratagem_Icon.svg?f9f3f5",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:m-105-stalwart"
     },
     {
       "name": "MG-206 Heavy Machine Gun",
@@ -2015,7 +2016,8 @@
       "wikiTitle": "MG-206 Heavy Machine Gun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/MG-206_Heavy_Machine_Gun",
       "imageUrl": "https://helldivers.wiki.gg/images/Heavy_Machine_Gun_Stratagem_Icon.svg?59c94f",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:mg-206-heavy-machine-gun"
     },
     {
       "name": "MG-43 Machine Gun",
@@ -2024,7 +2026,8 @@
       "wikiTitle": "MG-43 Machine Gun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/MG-43_Machine_Gun",
       "imageUrl": "https://helldivers.wiki.gg/images/Machine_Gun_Stratagem_Icon.svg?54c36c",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:mg-43-machine-gun"
     },
     {
       "name": "MLS-4X Commando",
@@ -2033,7 +2036,8 @@
       "wikiTitle": "MLS-4X Commando",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/MLS-4X_Commando",
       "imageUrl": "https://helldivers.wiki.gg/images/Commando_Stratagem_Icon.svg?524e93",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:mls-4x-commando"
     },
     {
       "name": "Maxigun",
@@ -2042,7 +2046,8 @@
       "wikiTitle": "Maxigun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Maxigun",
       "imageUrl": "https://helldivers.wiki.gg/images/Maxigun_Stratagem_Icon.svg?54e54b",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:maxigun"
     },
     {
       "name": "One True Flag",
@@ -2051,7 +2056,8 @@
       "wikiTitle": "One True Flag",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/One_True_Flag",
       "imageUrl": "https://helldivers.wiki.gg/images/One_True_Flag_Stratagem_Icon.svg?268e93",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:one-true-flag"
     },
     {
       "name": "Patriot Exosuit",
@@ -2060,7 +2066,8 @@
       "wikiTitle": "Patriot Exosuit",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Patriot_Exosuit",
       "imageUrl": "https://helldivers.wiki.gg/images/Patriot_Exosuit_Stratagem_Icon.svg?18fd58",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:patriot-exosuit"
     },
     {
       "name": "Portable Hellbomb",
@@ -2069,7 +2076,8 @@
       "wikiTitle": "Portable Hellbomb",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Portable_Hellbomb",
       "imageUrl": "https://helldivers.wiki.gg/images/Portable_Hellbomb_Stratagem_Icon.svg?84704d",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:portable-hellbomb"
     },
     {
       "name": "RL-77 Airburst Rocket Launcher",
@@ -2078,7 +2086,8 @@
       "wikiTitle": "RL-77 Airburst Rocket Launcher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/RL-77_Airburst_Rocket_Launcher",
       "imageUrl": "https://helldivers.wiki.gg/images/Airburst_Rocket_Launcher_Stratagem_Icon.svg?79be66",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:rl-77-airburst-rocket-launcher"
     },
     {
       "name": "RS-422 Railgun",
@@ -2087,7 +2096,8 @@
       "wikiTitle": "RS-422 Railgun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/RS-422_Railgun",
       "imageUrl": "https://helldivers.wiki.gg/images/Railgun_Stratagem_Icon.svg?66cdeb",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:rs-422-railgun"
     },
     {
       "name": "Shield Generator Pack",
@@ -2096,7 +2106,8 @@
       "wikiTitle": "Shield Generator Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Shield_Generator_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Shield_Generator_Pack_Stratagem_Icon.svg?babfa4",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:shield-generator-pack"
     },
     {
       "name": "Solo Silo",
@@ -2105,7 +2116,8 @@
       "wikiTitle": "Solo Silo",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Solo_Silo",
       "imageUrl": "https://helldivers.wiki.gg/images/Solo_Silo_Stratagem_Icon.svg?8b6ddb",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:solo-silo"
     },
     {
       "name": "Speargun",
@@ -2114,7 +2126,8 @@
       "wikiTitle": "Speargun",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Speargun",
       "imageUrl": "https://helldivers.wiki.gg/images/Speargun_Stratagem_Icon.svg?f80347",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:speargun"
     },
     {
       "name": "StA-X3 W.A.S.P. Launcher",
@@ -2123,7 +2136,8 @@
       "wikiTitle": "StA-X3 W.A.S.P. Launcher",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/StA-X3_W.A.S.P._Launcher",
       "imageUrl": "https://helldivers.wiki.gg/images/W.A.S.P._Launcher_Stratagem_Icon.svg?db7fac",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:sta-x3-w-a-s-p-launcher"
     },
     {
       "name": "Sterilizer",
@@ -2132,7 +2146,8 @@
       "wikiTitle": "Sterilizer",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Sterilizer",
       "imageUrl": "https://helldivers.wiki.gg/images/Sterilizer_Stratagem_Icon.svg?946d84",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:sterilizer"
     },
     {
       "name": "Supply Pack",
@@ -2141,7 +2156,8 @@
       "wikiTitle": "Supply Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Supply_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Supply_Pack_Stratagem_Icon.svg?2e569f",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:supply-pack"
     },
     {
       "name": "Warp Pack",
@@ -2150,7 +2166,8 @@
       "wikiTitle": "Warp Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Warp_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Warp_Pack_Stratagem_Icon.svg?c33eea",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:warp-pack"
     },
     {
       "name": "Wasp",
@@ -2159,7 +2176,8 @@
       "wikiTitle": "WASP",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/WASP",
       "imageUrl": "https://helldivers.wiki.gg/images/W.A.S.P._Launcher_Stratagem_Icon.svg?db7fac",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:wasp"
     },
     {
       "name": "Gas Mortar",
@@ -2168,7 +2186,8 @@
       "wikiTitle": "Gas Mortar Sentry",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Gas_Mortar_Sentry",
       "imageUrl": "https://helldivers.wiki.gg/images/Gas_Mortar_Sentry_Stratagem_Icon.svg?faaf07",
-      "rimCategory": "defensive"
+      "rimCategory": "defensive",
+      "id": "stratagem:gas-mortar"
     },
     {
       "name": "Cremator",
@@ -2177,7 +2196,8 @@
       "wikiTitle": "Cremator",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Cremator",
       "imageUrl": "https://helldivers.wiki.gg/images/Cremator_Stratagem_Icon.svg?a0a2d3",
-      "rimCategory": "support"
+      "rimCategory": "support",
+      "id": "stratagem:cremator"
     },
     {
       "name": "MGX-42 Bullet Storm",
@@ -2186,7 +2206,8 @@
       "rimCategory": "support",
       "wikiTitle": "MGX-42 Bullet Storm",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/MGX-42_Bullet_Storm",
-      "imageUrl": "https://helldivers.wiki.gg/images/Bullet_Storm_Stratagem_Icon.svg?45bc97"
+      "imageUrl": "https://helldivers.wiki.gg/images/Bullet_Storm_Stratagem_Icon.svg?45bc97",
+      "id": "stratagem:mgx-42-bullet-storm"
     },
     {
       "name": "EXO-51 Lumberer Exosuit",
@@ -2195,7 +2216,8 @@
       "rimCategory": "support",
       "wikiTitle": "EXO-51 Lumberer Exosuit",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/EXO-51_Lumberer_Exosuit",
-      "imageUrl": "https://helldivers.wiki.gg/images/Lumberer_Exosuit_Stratagem_Icon.svg?4e2ca8"
+      "imageUrl": "https://helldivers.wiki.gg/images/Lumberer_Exosuit_Stratagem_Icon.svg?4e2ca8",
+      "id": "stratagem:exo-51-lumberer-exosuit"
     },
     {
       "name": "EXO-55 Breakthrough Exosuit",
@@ -2204,7 +2226,8 @@
       "rimCategory": "support",
       "wikiTitle": "EXO-55 Breakthrough Exosuit",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/EXO-55_Breakthrough_Exosuit",
-      "imageUrl": "https://helldivers.wiki.gg/images/Breakthrough_Exosuit_Stratagem_Icon.svg?951248"
+      "imageUrl": "https://helldivers.wiki.gg/images/Breakthrough_Exosuit_Stratagem_Icon.svg?951248",
+      "id": "stratagem:exo-55-breakthrough-exosuit"
     }
   ],
   "booster": [
@@ -2216,7 +2239,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Hellpod_Space_Optimization",
       "imageUrl": "https://helldivers.wiki.gg/images/Hellpod_Space_Optimization_Booster_Icon.svg?aa4762",
       "artworkSha256": "4a1c54b8f8570e6d657d7cb5e13db1433bf915ddbe206da0f0ba08429757b774",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:hellpod-space-optimization"
     },
     {
       "name": "Vitality Enhancement",
@@ -2226,7 +2250,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Vitality_Enhancement",
       "imageUrl": "https://helldivers.wiki.gg/images/Vitality_Enhancement_Booster_Icon.svg?873a4b",
       "artworkSha256": "bcb181dee02d0742d38eef79d8c64b0890d4298b53b91e481cf28f9190627f0f",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:vitality-enhancement"
     },
     {
       "name": "UAV Recon Booster",
@@ -2236,7 +2261,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/UAV_Recon_Booster",
       "imageUrl": "https://helldivers.wiki.gg/images/UAV_Recon_Booster_Booster_Icon.svg?3e5a87",
       "artworkSha256": "7d0e9382d32d42d0d42a8670b8dba2c3ae45c7102c29a349c76328584345aa4d",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:uav-recon-booster"
     },
     {
       "name": "Stamina Enhancement",
@@ -2246,7 +2272,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Stamina_Enhancement",
       "imageUrl": "https://helldivers.wiki.gg/images/Stamina_Enhancement_Booster_Icon.svg?d76555",
       "artworkSha256": "466ae42b36c2abb36d68bcd4cf57fdbc4edf759f269dd8ee952d4665dac49d23",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:stamina-enhancement"
     },
     {
       "name": "Muscle Enhancement",
@@ -2256,7 +2283,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Muscle_Enhancement",
       "imageUrl": "https://helldivers.wiki.gg/images/Muscle_Enhancement_Booster_Icon.svg?f1d14b",
       "artworkSha256": "bb46198147097bc2fadcbf02af6fd843f522c4efc9c112be8f5eb490ed273e5b",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:muscle-enhancement"
     },
     {
       "name": "Increased Reinforcement Budget",
@@ -2266,7 +2294,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Increased_Reinforcement_Budget",
       "imageUrl": "https://helldivers.wiki.gg/images/Increased_Reinforcement_Budget_Booster_Icon.svg?7f04a9",
       "artworkSha256": "d25372c941c5ed3171d81001c16b71c98e154adb105847dcb26769e1d1afdd5c",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:increased-reinforcement-budget"
     },
     {
       "name": "Flexible Reinforcement Budget",
@@ -2276,7 +2305,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Flexible_Reinforcement_Budget",
       "imageUrl": "https://helldivers.wiki.gg/images/Flexible_Reinforcement_Budget_Booster_Icon.svg?1d940b",
       "artworkSha256": "ddf1c5be0a3b452d2130d3c336e39252043a2b2044fe5fae1df2eb47fcab04de",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:flexible-reinforcement-budget"
     },
     {
       "name": "Localization Confusion",
@@ -2286,7 +2316,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Localization_Confusion",
       "imageUrl": "https://helldivers.wiki.gg/images/Localization_Confusion_Booster_Icon.svg?95b1f1",
       "artworkSha256": "e664b16c67acb1c99a8c5001df662f3c572241cdbe89f0a9f97870b4c6b8653e",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:localization-confusion"
     },
     {
       "name": "Expert Extraction Pilot",
@@ -2296,7 +2327,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Expert_Extraction_Pilot",
       "imageUrl": "https://helldivers.wiki.gg/images/Expert_Extraction_Pilot_Booster_Icon.svg?e0a588",
       "artworkSha256": "064f92250e7f2e5d0bafffd30a6eb207afaf534291fd9645d47cbbea360dd45e",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:expert-extraction-pilot"
     },
     {
       "name": "Motivational Shocks",
@@ -2306,7 +2338,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Motivational_Shocks",
       "imageUrl": "https://helldivers.wiki.gg/images/Motivational_Shocks_Booster_Icon.svg?b83499",
       "artworkSha256": "d051f6024e6d41cb0c87d16d7a68d4e94fb9c29a32bb3f340a91a8246eb3d547",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:motivational-shocks"
     },
     {
       "name": "Experimental Infusion",
@@ -2316,7 +2349,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Experimental_Infusion",
       "imageUrl": "https://helldivers.wiki.gg/images/Experimental_Infusion_Booster_Icon.svg?3bb23a",
       "artworkSha256": "3e08630ede72ef47f273547e2ec168024f446830344bec11c4d81d56f8dd3632",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:experimental-infusion"
     },
     {
       "name": "Firebomb Hellpods",
@@ -2326,7 +2360,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Firebomb_Hellpods",
       "imageUrl": "https://helldivers.wiki.gg/images/Firebomb_Hellpods_Booster_Icon.svg?b0cb2a",
       "artworkSha256": "cfbbd7ab594ecef0001a8e2399ffdbea0b0ebffe592703d76bbdde390fa49dea",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:firebomb-hellpods"
     },
     {
       "name": "Dead Sprint",
@@ -2336,7 +2371,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Dead_Sprint",
       "imageUrl": "https://helldivers.wiki.gg/images/Dead_Sprint_Booster_Icon.svg?ad8a2b",
       "artworkSha256": "f8ea42f8aae410a8c811ed07a30b510b727591256cbbc05815d37ae3b3289caa",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:dead-sprint"
     },
     {
       "name": "Armed Resupply Pods",
@@ -2346,7 +2382,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Armed_Resupply_Pods",
       "imageUrl": "https://helldivers.wiki.gg/images/Armed_Resupply_Pods_Booster_Icon.svg?60e831",
       "artworkSha256": "0763c03c5a5b8f70b15d9d320123292ab247559901fc935d4af0d7da56d6f0d3",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:armed-resupply-pods"
     },
     {
       "name": "Sample Extractor",
@@ -2356,7 +2393,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Sample_Extricator",
       "imageUrl": "https://helldivers.wiki.gg/images/Sample_Extricator_Booster_Icon.svg?13722c",
       "artworkSha256": "1eff474d3ae26451b3a75f5a4a6e7c0046d6d0d73faca81f5468ae824aa5214b",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:sample-extractor"
     },
     {
       "name": "Sample Scanner",
@@ -2366,7 +2404,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Sample_Scanner",
       "imageUrl": "https://helldivers.wiki.gg/images/Sample_Scanner_Booster_Icon.svg?894450",
       "artworkSha256": "7a5221b04e7b68faf8584edabc91020f2105b551e723346ae2a690064eb0adf7",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:sample-scanner"
     },
     {
       "name": "Stun Pods",
@@ -2376,7 +2415,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Stun_Pods",
       "imageUrl": "https://helldivers.wiki.gg/images/Stun_Pods_Booster_Icon.svg?63b648",
       "artworkSha256": "aa2b8d9ed069f0131c4715db4d52e72b1dc4972f8644fe701376cfb07fc9ed68",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:stun-pods"
     },
     {
       "name": "Concealed Insertion",
@@ -2386,7 +2426,8 @@
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Concealed_Insertion",
       "imageUrl": "https://helldivers.wiki.gg/images/Concealed_Insertion_Booster_Icon.svg?232d24",
       "artworkSha256": "0114f23b5098a46e337f41e7b6868b37dc13a87725f59123a23223fc8affe889",
-      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon"
+      "artworkSource": "Helldivers Wiki game artwork / community-traced game icon",
+      "id": "booster:concealed-insertion"
     }
   ]
 }
