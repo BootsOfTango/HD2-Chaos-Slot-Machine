@@ -384,7 +384,7 @@ async function rendererDedupSeed(expected) {
   }
 }
 
-async function rendererDedupUpgradeVerify(seed) {
+async function rendererDedupUpgradeVerify(seed, expectedVersion) {
   const checks = [];
   const assert = (condition, label) => {
     if (!condition) throw new Error(`DEDUP OLD UPGRADE: ${label}`);
@@ -403,7 +403,7 @@ async function rendererDedupUpgradeVerify(seed) {
   assert(seed?.applicationVersion === '1.1.3' && Array.isArray(seed.retiredRows) && seed.retiredRows.length === 2, 'runner supplied evidence from the actual archived-app seed');
   assert(desktopStorage && typeof desktopStorage.getAppInfo === 'function', 'upgraded process uses the real desktop storage bridge');
   const appInfo = await desktopStorage.getAppInfo();
-  assert(appInfo?.version === '1.1.4', 'upgrade verification runs inside the actual current 1.1.4 application');
+  assert(typeof expectedVersion === 'string' && appInfo?.version === expectedVersion, 'upgrade verification runs inside the expected current packaged application');
   assert(rows().length === 205 && new Set(rows().map(item => item.id)).size === 205, 'first boot automatically consolidates the real old 207-row save to 205 unique gear records');
   assert(JSON.stringify(rows().map(item => item.id).sort()) === JSON.stringify(seed.expectedIds), 'first boot preserves the complete expected surviving stable-ID set');
   assert(JSON.stringify(flags()) === JSON.stringify(seed.expectedFlags), 'first boot preserves all 205 canonical ownership/include choices from the old disk save');

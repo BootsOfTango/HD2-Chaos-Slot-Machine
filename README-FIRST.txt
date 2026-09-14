@@ -1,6 +1,6 @@
 Helldivers 2 Chaos Slot Machine - Windows x64
 
-v1.1.4 LOCAL DUPLICATE-CLEANUP PREVIEW - not approved for public release.
+v1.1.5 LOCAL WARBOND REVIEW PREVIEW - not approved for public release.
 The app starts fullscreen. Press F11 or use the top-right button to toggle.
 Escape closes a dialog first, or exits fullscreen when no dialog is open.
 In a smaller window, scroll horizontally/vertically or hold Space and drag
@@ -11,17 +11,23 @@ until you choose Owned and Include in rolls. Bulk-enable Castellan's Creed
 only if you have unlocked its four equipment items. Eagle Gas Airstrike is a
 separate campaign reward and is not assumed owned. Orbital Gas Strike remains.
 Empty item categories no longer roll disabled or unowned gear as a fallback.
-This source-audit batch corrects 35 existing entries without granting equipment.
+The first source-audit batch reviewed 35 entries without granting equipment.
 Three CQC display names are corrected; old imports/images stay compatible.
 Source labels separate shop purchases from Warbond unlocks, with explicit
-official/community evidence levels. Three official Warbond promo images are local.
+official/community evidence levels. Six official Warbond promo images are local.
+This update reviews 17 more entries in Cutting Edge, Democratic Detonation and
+Polar Patriots, and corrects Punisher Plasma/Eruptor/Grenade Pistol categories.
+In Armory -> Manual pool management -> Source / Warbond-first, reviewed sets
+offer All unlocked - include all, Exclude all, and Mark all not owned controls.
+These act on the full verified set even when search hides some items; separate
+purchases and custom entries are excluded. Enable all only when all are unlocked.
 Wasp/W.A.S.P. and EMS Strike/Orbital EMS Strike now have one roll entry each.
 EMS Mortar Sentry remains separate. Old names and IDs import correctly. Where
 duplicate choices conflict, the existing canonical ID wins; replaced records
 remain recoverable in saves/exports under legacyAliasRecords. Ownership is
 never combined to enable gear. Armory -> Duplicate cleanup explains the result.
 Historical Results keep their labels/scores; analytics count equipment once per
-run. There are 205 unique entries: 38 source-reviewed and 167 still pending.
+run. There are 205 unique entries: 55 source-reviewed and 150 still pending.
 The remaining source audit, visual Armory, map and live-war changes are queued.
 Artwork provenance/credits are available in the new gear panel and bundled
 assets/new-gear/provenance.json. The Eagle icon is a credited community tracing.

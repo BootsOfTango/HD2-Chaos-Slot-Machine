@@ -13,6 +13,10 @@
 .catalogMergeNotice summary { color: #ffe400; cursor: pointer; font-size: 14px; }
 #catalogMergeRecords > div { border-top: 1px solid #45412b; padding: 8px 0; }
 #catalogMergeRecords p { margin: 3px 0; }
+#tab-items .warbondOwnershipControls { margin: 8px 0 10px; padding: 10px; border: 1px solid #565029; border-radius: 8px; background: #15180f; }
+#tab-items .warbondOwnershipButtons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+#tab-items .warbondOwnershipButtons button { font-size: 12px; padding: 8px 10px; white-space: normal; }
+#tab-items .warbondOwnershipButtons button:focus-visible { outline: 2px solid #ffe400; outline-offset: 3px; }
 .newGearPanel summary { cursor: pointer; color: #ffe400; font-weight: 800; }
 .newGearGroups { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin: 12px 0; }
 .newGearGroup { min-width: 0; border: 1px solid #454641; border-radius: 10px; padding: 12px; }

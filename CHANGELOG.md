@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-14 — v1.1.5 local Warbond review preview (unpublished)
+
+- Reviewed 17 more existing acquisitions across Cutting Edge, Democratic Detonation and Polar Patriots: 16 primary-source and one community-source. Catalog remains 205 unique entries, now 43 primary-source reviewed / 12 community-source reviewed / 150 pending.
+- Recorded three exact six-item Warbond equipment sets. The already-reviewed Blitzer is unchanged; no equipment or player entitlement is added by this update.
+- Corrected Punisher Plasma to Energy, Eruptor to Explosive and Grenade Pistol to Special sidearm, keeping IDs, names, image paths, player choices and historical scores. Exact taxonomy evidence is distinguished from acquisition evidence.
+- Bundled three more unmodified official promotional images with original JPEG/PNG formats, provenance, attribution and rights caveats.
+- Added whole-set ownership/include/exclude controls to seven reviewed Warbond groups in the existing Manual pool view. Search-hidden members remain in scope, unrelated/custom/shop entries do not; changes synchronize existing ownership views and persist.
+- This is not the full visual Armory or live-war/map/mission update. See `docs/M2B_WARBOND_TEST_REPORT.md` for executed tests and remaining gates. Local, unsigned, not published.
+
 ## 2026-09-14 — v1.1.4 local duplicate-cleanup preview (unpublished)
 
 - Consolidated Wasp into StA-X3 W.A.S.P. Launcher and EMS Strike into Orbital EMS Strike. EMS Mortar Sentry is unchanged. Rolls now contain 205 canonical equipment entries, not 207 rows containing two duplicates.

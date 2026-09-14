@@ -235,7 +235,10 @@
     "e at 12 anti tank emplacement": "Anti-Tank Emplacement",
     "sh 51 directional shield": "Directional Shield",
     "sqc 19 stun lance": "CQC-19 Stun Lance",
-    "tx 41 sterilizer": "Sterilizer"
+    "tx 41 sterilizer": "Sterilizer",
+    "br 14 adjudicator rifle": "BR-14 Adjudicator",
+    "g 123 thermite grenade": "G-123 Thermite",
+    "r 36 eruptor rifle": "R-36 Eruptor"
   },
   "primary": [
     {

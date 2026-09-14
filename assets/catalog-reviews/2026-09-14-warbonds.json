@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "scope": "Second bounded M2B Warbond acquisition batch: 17 previously pending records and three explicit six-item equipment sets. Stable identities, player eligibility defaults and existing gear artwork are unchanged. Acquisition and menu-taxonomy evidence are distinguished.",
+  "references": [
+    "docs/M2B_CUTTING_EDGE_RESEARCH.md",
+    "docs/M2B_WARBOND_BATCH2_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "primary:sg-8p-punisher-plasma",
+      "previousName": "SG-8P Punisher Plasma",
+      "warbond": "Cutting Edge",
+      "source": "Cutting Edge",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:cutting-edge",
+        "label": "Cutting Edge",
+        "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Energy menu category confirmed in official patch 01.000.300: https://arrowhead.zendesk.com/hc/en-us/articles/13807959633564-PATCH-01-000-300"
+      },
+      "subgroup": "energy"
+    },
+    {
+      "id": "primary:las-16-sickle",
+      "previousName": "LAS-16 Sickle",
+      "warbond": "Cutting Edge",
+      "source": "Cutting Edge",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:cutting-edge",
+        "label": "Cutting Edge",
+        "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:las-7-dagger",
+      "previousName": "LAS-7 Dagger",
+      "warbond": "Cutting Edge",
+      "source": "Cutting Edge",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:cutting-edge",
+        "label": "Cutting Edge",
+        "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-23-stun",
+      "previousName": "G-23 Stun",
+      "warbond": "Cutting Edge",
+      "source": "Cutting Edge",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:cutting-edge",
+        "label": "Cutting Edge",
+        "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "booster:localization-confusion",
+      "previousName": "Localization Confusion",
+      "warbond": "Cutting Edge",
+      "source": "Cutting Edge",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:cutting-edge",
+        "label": "Cutting Edge",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Localization_Confusion",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Not named in the official launch article text. Acquisition corroborated by the community procurement/Warbond listing; direct wiki fetch returned 403, indexed text was available."
+      }
+    },
+    {
+      "id": "primary:br-14-adjudicator",
+      "previousName": "BR-14 Adjudicator",
+      "warbond": "Democratic Detonation",
+      "source": "Democratic Detonation",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:democratic-detonation",
+        "label": "Democratic Detonation",
+        "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "BR-14 Adjudicator Rifle"
+      ]
+    },
+    {
+      "id": "primary:r-36-eruptor",
+      "previousName": "R-36 Eruptor",
+      "warbond": "Democratic Detonation",
+      "source": "Democratic Detonation",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:democratic-detonation",
+        "label": "Democratic Detonation",
+        "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Acquisition is officially confirmed; current Explosives menu subgroup is community-corroborated: https://helldivers.wiki.gg/wiki/R-36_Eruptor"
+      },
+      "subgroup": "explosive",
+      "aliases": [
+        "R-36 Eruptor Rifle"
+      ]
+    },
+    {
+      "id": "primary:cb-9-exploding-crossbow",
+      "previousName": "CB-9 Exploding Crossbow",
+      "warbond": "Democratic Detonation",
+      "source": "Democratic Detonation",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:democratic-detonation",
+        "label": "Democratic Detonation",
+        "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:gp-31-grenade-pistol",
+      "previousName": "GP-31 Grenade Pistol",
+      "warbond": "Democratic Detonation",
+      "source": "Democratic Detonation",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:democratic-detonation",
+        "label": "Democratic Detonation",
+        "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Acquisition is officially confirmed; current Secondary Special menu subgroup is community-corroborated: https://helldivers.wiki.gg/wiki/GP-31_Grenade_Pistol"
+      },
+      "subgroup": "special-sidearm"
+    },
+    {
+      "id": "throwable:g-123-thermite",
+      "previousName": "G-123 Thermite",
+      "warbond": "Democratic Detonation",
+      "source": "Democratic Detonation",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:democratic-detonation",
+        "label": "Democratic Detonation",
+        "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "G-123 Thermite Grenade"
+      ]
+    },
+    {
+      "id": "booster:expert-extraction-pilot",
+      "previousName": "Expert Extraction Pilot",
+      "warbond": "Democratic Detonation",
+      "source": "Democratic Detonation",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:democratic-detonation",
+        "label": "Democratic Detonation",
+        "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:ar-61-tenderizer",
+      "previousName": "AR-61 Tenderizer",
+      "warbond": "Polar Patriots",
+      "source": "Polar Patriots",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:polar-patriots",
+        "label": "Polar Patriots",
+        "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:smg-72-pummeler",
+      "previousName": "SMG-72 Pummeler",
+      "warbond": "Polar Patriots",
+      "source": "Polar Patriots",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:polar-patriots",
+        "label": "Polar Patriots",
+        "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:plas-101-purifier",
+      "previousName": "PLAS-101 Purifier",
+      "warbond": "Polar Patriots",
+      "source": "Polar Patriots",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:polar-patriots",
+        "label": "Polar Patriots",
+        "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:p-113-verdict",
+      "previousName": "P-113 Verdict",
+      "warbond": "Polar Patriots",
+      "source": "Polar Patriots",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:polar-patriots",
+        "label": "Polar Patriots",
+        "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-13-incendiary-impact",
+      "previousName": "G-13 Incendiary Impact",
+      "warbond": "Polar Patriots",
+      "source": "Polar Patriots",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:polar-patriots",
+        "label": "Polar Patriots",
+        "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "booster:motivational-shocks",
+      "previousName": "Motivational Shocks",
+      "warbond": "Polar Patriots",
+      "source": "Polar Patriots",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:polar-patriots",
+        "label": "Polar Patriots",
+        "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:cutting-edge",
+      "name": "Cutting Edge",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-03-14",
+      "coverAssetPath": "assets/warbonds/official/cutting-edge.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:arc-12-blitzer",
+        "primary:sg-8p-punisher-plasma",
+        "primary:las-16-sickle",
+        "sidearm:las-7-dagger",
+        "throwable:g-23-stun",
+        "booster:localization-confusion"
+      ],
+      "notes": "Five weapons have primary acquisition evidence; Localization Confusion booster has community acquisition evidence. No rollable stratagem in the reviewed set. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:democratic-detonation",
+      "name": "Democratic Detonation",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-04-11",
+      "coverAssetPath": "assets/warbonds/official/democratic-detonation.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:br-14-adjudicator",
+        "primary:r-36-eruptor",
+        "primary:cb-9-exploding-crossbow",
+        "sidearm:gp-31-grenade-pistol",
+        "throwable:g-123-thermite",
+        "booster:expert-extraction-pilot"
+      ],
+      "notes": "Complete six-item rollable equipment set from official announcement; no rollable stratagem. Exact menu-taxonomy qualifications are separate from acquisition. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:polar-patriots",
+      "name": "Polar Patriots",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-05-09",
+      "coverAssetPath": "assets/warbonds/official/polar-patriots.png",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-61-tenderizer",
+        "primary:smg-72-pummeler",
+        "primary:plas-101-purifier",
+        "sidearm:p-113-verdict",
+        "throwable:g-13-incendiary-impact",
+        "booster:motivational-shocks"
+      ],
+      "notes": "Complete six-item rollable equipment set from official announcement; no rollable stratagem. Exact menu-taxonomy qualifications are separate from acquisition. Promotional artwork, not an exact in-game cover."
+    }
+  ]
+}

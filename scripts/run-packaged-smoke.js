@@ -7,13 +7,16 @@ const { rendererWritePhase, rendererVerifyPhase, rendererNetworkPhase } = requir
 const { rendererGearPhase, rendererGearVerify } = require('./gear-smoke-phase');
 const { rendererSourceAuditPhase, rendererSourceAuditVerify } = require('./source-audit-smoke-phase');
 const { rendererDedupPhase, rendererDedupVerify, rendererDedupSeed, rendererDedupUpgradeVerify } = require('./dedup-smoke-phase');
+const { rendererWarbondPhase, rendererWarbondVerify } = require('./warbond-smoke-phase');
 const identityReview = require('../assets/catalog-reviews/2026-09-14-identity-merges.json');
 const root = path.resolve(__dirname, '..');
 const gearOnly = process.argv.includes('--gear');
 const sourceOnly = process.argv.includes('--sources');
 const dedupOnly = process.argv.includes('--dedup');
+const warbondOnly = process.argv.includes('--warbonds');
+if ([gearOnly, sourceOnly, dedupOnly, warbondOnly].filter(Boolean).length > 1) throw new Error('Choose only one focused smoke mode.');
 const executable = path.resolve(process.argv.slice(2).find(value => !value.startsWith('--')) || path.join(root, 'dist', 'win-unpacked', 'Helldivers 2 Chaos Slot Machine.exe'));
-const runRoot = path.join(root, '.test-data', `${dedupOnly ? 'packaged-dedup' : sourceOnly ? 'packaged-sources' : gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
+const runRoot = path.join(root, '.test-data', `${warbondOnly ? 'packaged-warbonds' : dedupOnly ? 'packaged-dedup' : sourceOnly ? 'packaged-sources' : gearOnly ? 'packaged-gear' : 'packaged-smoke'}-${Date.now()}`);
 const userData = path.join(runRoot, 'user-data');
 fs.mkdirSync(runRoot, { recursive: true });
 if (!fs.existsSync(executable)) throw new Error(`Packaged executable not found: ${executable}`);
@@ -96,10 +99,14 @@ async function phase(name, expected, launch = {}) {
     await client.send('Runtime.enable');
     await client.send('Page.enable');
     await client.evaluate(`(async () => { while (typeof bootStateReady === 'undefined') await new Promise(r => setTimeout(r, 50)); await bootStateReady; })()`);
-    const result = name === 'dedup-seed'
+    const result = name === 'warbond-write'
+      ? await client.evaluate(`(${rendererWarbondPhase.toString()})(${JSON.stringify(require('../assets/catalog-reviews/2026-09-14-warbonds.json'))})`)
+      : name === 'warbond-verify'
+        ? await client.evaluate(`(${rendererWarbondVerify.toString()})(${JSON.stringify(expected)})`)
+      : name === 'dedup-seed'
       ? await client.evaluate(`(${rendererDedupSeed.toString()})(${JSON.stringify(expected)})`)
       : name === 'dedup-upgrade'
-        ? await client.evaluate(`(${rendererDedupUpgradeVerify.toString()})(${JSON.stringify(expected)})`)
+        ? await client.evaluate(`(${rendererDedupUpgradeVerify.toString()})(${JSON.stringify(expected)}, ${JSON.stringify(require('../package.json').version)})`)
       : name === 'dedup-write'
       ? await client.evaluate(`(${rendererDedupPhase.toString()})()`)
       : name === 'dedup-verify'
@@ -182,13 +189,14 @@ async function phase(name, expected, launch = {}) {
       const screenshot = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
       fs.writeFileSync(path.join(runRoot, 'duplicate-recovery.png'), Buffer.from(screenshot.data, 'base64'));
     }
-    if (name === 'source-write') {
+    if (name === 'source-write' || name === 'warbond-write') {
       await client.evaluate(`switchTab('items'); document.querySelector('#catalogAuditPanel').open = true; document.querySelector('#catalogAuditPanel').scrollIntoView({block:'center'});`);
       await delay(150);
       const screenshot = await client.send('Page.captureScreenshot', {format:'png', captureBeyondViewport:false});
       fs.writeFileSync(path.join(runRoot, 'source-audit.png'), Buffer.from(screenshot.data, 'base64'));
       await client.evaluate(`if(document.querySelector('#manualPoolBlock').hidden) document.querySelector('[data-target="manualPoolBlock"]').click();`);
-      for (const source of ["Freedom's Flame", 'Chemical Agents', 'Urban Legends']) {
+      const captureSources = name === 'warbond-write' ? require('../assets/catalog-reviews/2026-09-14-warbonds.json').warbonds.map(bond => bond.name) : ["Freedom's Flame", 'Chemical Agents', 'Urban Legends'];
+      for (const source of captureSources) {
         await client.evaluate(`(async () => {
           localStorage.setItem(ITEMS_VIEW_MODE_KEY,'warbond'); localStorage.setItem(ITEMS_TYPE_FILTER_KEY,'all');
           document.querySelector('#itemSearch').value=${JSON.stringify(source)}; renderItems();
@@ -221,8 +229,8 @@ async function phase(name, expected, launch = {}) {
 }
 
 (async () => {
-  if (gearOnly || sourceOnly || dedupOnly) {
-    const prefix = dedupOnly ? 'dedup' : sourceOnly ? 'source' : 'gear';
+  if (gearOnly || sourceOnly || dedupOnly || warbondOnly) {
+    const prefix = warbondOnly ? 'warbond' : dedupOnly ? 'dedup' : sourceOnly ? 'source' : 'gear';
     const written = await phase(`${prefix}-write`);
     const verified = await phase(`${prefix}-verify`, written);
     // Additional file-level backend coverage, without a native dialog or any
@@ -248,7 +256,7 @@ async function phase(name, expected, launch = {}) {
       assert.equal(JSON.parse(originalBytes).applicationVersion, '1.1.3');
       fs.writeFileSync(path.join(runRoot, 'original-v1.1.3-state.json'), originalBytes);
       const upgraded = await phase('dedup-upgrade', seeded, {userData:upgradeProfile});
-      assert.equal(JSON.parse(fs.readFileSync(upgraded.savePath)).applicationVersion, '1.1.4');
+      assert.equal(JSON.parse(fs.readFileSync(upgraded.savePath)).applicationVersion, require('../package.json').version);
       const backupDir = path.join(upgradeProfile, 'backups');
       assert(fs.readdirSync(backupDir).some(name => fs.readFileSync(path.join(backupDir,name)).equals(originalBytes)), 'Original v1.1.3 save must remain byte-for-byte in an automatic backup');
       upgrade = {seeded, upgraded, checks:3, oldExecutable, upgradeProfile, originalBackupPreserved:true, coverage:'Actual old packaged EXE save -> new EXE first boot. No installer or personal profile involved.'};

@@ -131,7 +131,8 @@ async function rendererSourceAuditPhase(review, identityReview) {
   renderCatalogAuditStatus();
   const auditStatus = document.querySelector('#catalogAuditStatus');
   assert(auditStatus && !auditStatus.hidden && /audit|review|verified/i.test(auditStatus.textContent) && auditStatus.textContent.trim().length > 20, 'Armory displays a substantive catalog audit status');
-  assert(auditStatus.textContent.includes('27 official-source') && auditStatus.textContent.includes('11 community-source') && auditStatus.textContent.includes('167 pending / 205'), 'catalog audit status reports 38 unique reviewed identities plus 167 pending, including the five prior additions');
+  const sourceSummary = window.HD2CSMCatalogSources.createIndex(keys.flatMap(key => DEFAULTS.items[key])).summary();
+  assert(auditStatus.textContent.includes(`${sourceSummary.primary} official-source`) && auditStatus.textContent.includes(`${sourceSummary.community} community-source`) && auditStatus.textContent.includes(`${sourceSummary.pending} pending / ${sourceSummary.total}`), 'catalog audit status reports the current bundled review totals, including later review batches');
 
   for (const spec of renameSpecs) {
     const canonicalVisual = getItemVisual(spec.canonical, 'sidearm');

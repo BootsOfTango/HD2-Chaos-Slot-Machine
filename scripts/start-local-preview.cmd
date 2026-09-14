@@ -1,7 +1,7 @@
 @echo off
 setlocal
 rem Review only: the normal application path, with a separate save directory.
-set "HD2CSM_USER_DATA_DIR=%~dp0..\dist\review-profile-v1.1.4"
+set "HD2CSM_USER_DATA_DIR=%~dp0..\dist\review-profile-v1.1.5"
 set "HD2CSM_AUTOMATION="
 set "HD2_ELECTRON_TEST_HARNESS="
 set "ELECTRON_RUN_AS_NODE="

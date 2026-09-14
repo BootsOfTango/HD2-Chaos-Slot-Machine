@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "retrievedAt": "2026-09-14",
-  "method": "Download the unmodified og:image / featured-asset JPEG identified in each official PlayStation Blog announcement. Visually inspect the downloaded file. These promotional scenes are used as card covers, not represented as exact in-game Acquisitions covers.",
+  "method": "Download unmodified og:image / featured originals identified in official PlayStation Blog announcements, preserving JPEG/PNG formats. Visually inspect locally. These promotional assets are used as card covers, not represented as exact in-game Acquisitions covers.",
   "rightsNotice": "Helldivers 2 imagery and marks remain copyright/trademark of Arrowhead Game Studios, Sony Interactive Entertainment and their licensors. These assets are not relicensed under the application's Apache-2.0 code license. Source attribution does not grant unrestricted redistribution rights.",
   "assets": [
     {
@@ -39,6 +39,42 @@
       "height": 1440,
       "sha256": "73c49fa3458c65d34373b9779ac8fd3bf4fa2b30dbc0db232ddfe9b91db506b0",
       "visualCheck": "Crested-helmet Helldiver holding a yellow shield; original Captured on PS5 mark retained."
+    },
+    {
+      "name": "Cutting Edge",
+      "assetPath": "assets/warbonds/official/cutting-edge.jpg",
+      "sourceKind": "official-promotional-scene",
+      "sourcePage": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2054/03/3eea3509d29fe9982d36bac4ed9fdd8fbcc95199-scaled.jpeg",
+      "contributor": "Arrowhead Game Studios / PlayStation Blog; article by Katherine Baskin",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "5ff32be2916683cb52e616ebff85748183d033eeca6bcde838a3cd9a84bd3852",
+      "visualCheck": "Three armored Helldivers running through pale rocky terrain; original Captured on PS5 mark retained."
+    },
+    {
+      "name": "Democratic Detonation",
+      "assetPath": "assets/warbonds/official/democratic-detonation.jpg",
+      "sourceKind": "official-promotional-scene",
+      "sourcePage": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2024/04/1a42a221dba5b31d68e95588ca9c330910f8e113-scaled.jpg",
+      "contributor": "Arrowhead Game Studios / PlayStation Blog; article by Katherine Baskin",
+      "width": 2560,
+      "height": 1440,
+      "sha256": "322617931a26859e8ba5960552a3de379956ca991acf6ccd06521e5fa758800b",
+      "visualCheck": "Armored Helldiver holding a crossbow in an orange rocky landscape; original Captured on PS5 mark retained."
+    },
+    {
+      "name": "Polar Patriots",
+      "assetPath": "assets/warbonds/official/polar-patriots.png",
+      "sourceKind": "official-promotional-artwork",
+      "sourcePage": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2084/05/8fda168f4b1d7a97f0f11c0fdd6a5889cab07080.png",
+      "contributor": "Sony Interactive Entertainment / PlayStation Blog; article by Dominic Wiggan",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "cee60de4eff01ad105fccaf4a8b7f6dba9c7f17e82c2155a75d7ef93953778ca",
+      "visualCheck": "Three armed Helldivers on a blue geometric promotional background with frosted edges."
     }
   ]
 }

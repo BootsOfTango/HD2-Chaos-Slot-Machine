@@ -4227,7 +4227,7 @@ END MASTER DIRECTIVE
     <div id="appViewport"><div id="appCanvas">
     <header>
         <div class="title">
-            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.4 preview</div>
+            <div class="versionTag">HD2CSM • Boots Of Tango • v1.1.5 preview</div>
             <div style="display:flex; align-items:center; gap:14px; position:relative;">
 
                 <h1 class="appBrand" aria-label="Helldivers 2 Chaos Slot Machine">
@@ -4654,7 +4654,7 @@ END MASTER DIRECTIVE
             <details id="catalogAuditPanel" class="newGearCredits">
                 <summary id="catalogAuditStatus">Source audit</summary>
                 <p class="catalogSourceMeta">Labels distinguish Warbond unlocks, Superstore purchases, edition bonuses and rewards. Reviewed source information is bundled with this app; ownership is always your choice, not synced from the game. Unreviewed entries retain their previous labels without claiming they are correct.</p>
-                <p class="catalogSourceMeta">Official promotional images for Freedom's Flame, Chemical Agents and Urban Legends are bundled locally. They are promotional artwork, not exact in-game acquisition-screen covers. Credits: assets/warbonds/official/ATTRIBUTION.md. Full source audit and artwork-rights review remain in progress.</p>
+                <p class="catalogSourceMeta">Official promotional images for six reviewed Warbonds are bundled locally, including Cutting Edge, Democratic Detonation and Polar Patriots. They are promotional artwork, not exact in-game acquisition-screen covers. Credits: assets/warbonds/official/ATTRIBUTION.md. Full source audit and artwork-rights review remain in progress.</p>
             </details>
             <div class="row armoryAnalyticsControls">
                 <div class="col right">
@@ -5728,10 +5728,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "AR-23P Liberator Penetrator", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "assault-rifle", source: "Helldiver Basics (Mobilize)", id: "primary:ar-23p-liberator-penetrator", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "AR-32 Pacifier", enabled: true, owned: true, warbond: "Force of Law", subgroup: "assault-rifle", source: "Force of Law", id: "primary:ar-32-pacifier", aliases: [], acquisition: {"kind": "unverified", "label": "Force of Law", "verification": "legacy-assignment-pending-audit"} },
                     { name: "AR-59 Suppressor", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "assault-rifle", source: "Redacted Regiment", id: "primary:ar-59-suppressor", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "AR-61 Tenderizer", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "assault-rifle", source: "Polar Patriots", id: "primary:ar-61-tenderizer", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "AR-61 Tenderizer", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "assault-rifle", source: "Polar Patriots", id: "primary:ar-61-tenderizer", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:polar-patriots", "label": "Polar Patriots", "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "AR/GL-21 One-Two", enabled: true, owned: true, warbond: "Python Commandos", subgroup: "assault-rifle", source: "Python Commandos", id: "primary:ar-gl-21-one-two", aliases: [], acquisition: {"kind": "unverified", "label": "Python Commandos", "verification": "legacy-assignment-pending-audit"} },
                     { name: "ARC-12 Blitzer", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "energy", source: "Cutting Edge", id: "primary:arc-12-blitzer", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:cutting-edge", "label": "Cutting Edge", "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Energy category confirmed by official patch 01.000.300."} },
-                    { name: "BR-14 Adjudicator", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "assault-rifle", source: "Democratic Detonation", id: "primary:br-14-adjudicator", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "BR-14 Adjudicator", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "assault-rifle", source: "Democratic Detonation", id: "primary:br-14-adjudicator", aliases: ["BR-14 Adjudicator Rifle"], acquisition: {"kind": "warbond", "id": "warbond:democratic-detonation", "label": "Democratic Detonation", "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "FLAM-66 Torcher", enabled: true, owned: true, warbond: "Freedom's Flame", subgroup: "special-primary", source: "Freedom's Flame", id: "primary:flam-66-torcher", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:freedoms-flame", "label": "Freedom's Flame", "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Primary flamethrower confirmed officially. The exact current Special menu subgroup is community-corroborated."} },
                     { name: "JAR-5 Dominator", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "special-primary", source: "Steeled Veterans", id: "primary:jar-5-dominator", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:steeled-veterans", "label": "Steeled Veterans", "sourceUrl": "https://www.playstation.com/en-us/editorial/a-beginner-s-guide-to-helldivers-2/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Special primary category confirmed by official patch 01.001.104; historical Explosive category is obsolete."} },
                     { name: "MA5C Assault Rifle", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "assault-rifle", source: "Obedient Democracy Support Troopers", id: "primary:ma5c-assault-rifle", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
@@ -5740,7 +5740,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "VG-70 Variable", enabled: true, owned: true, warbond: "Control Group", subgroup: "special-primary", source: "Control Group", id: "primary:vg-70-variable", aliases: ["r 0 variable"], acquisition: {"kind": "warbond", "id": "warbond:control-group", "label": "Control Group", "sourceUrl": "https://blog.playstation.com/?p=407597", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Primary/Warbond confirmed officially. The exact current Special menu subgroup is community-corroborated."} },
                     { name: "R-2 Amendment", enabled: true, owned: true, warbond: "Masters of Ceremony", subgroup: "marksman-rifle", source: "Masters of Ceremony", id: "primary:r-2-amendment", aliases: [], acquisition: {"kind": "unverified", "label": "Masters of Ceremony", "verification": "legacy-assignment-pending-audit"} },
                     { name: "R-2124 Constitution", enabled: true, owned: true, warbond: "Commemorative gifts", subgroup: "marksman-rifle", source: "Commemorative gifts", id: "primary:r-2124-constitution", aliases: [], acquisition: {"kind": "commemorative-gift", "id": "commemorative-gift:commemorative-gifts", "label": "Liberty Day gift", "sourceUrl": "https://helldivers.wiki.gg/wiki/R-2124_Constitution", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Community procurement describes distribution to present and future players. No limited login window is inferred."} },
-                    { name: "R-36 Eruptor", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "marksman-rifle", source: "Democratic Detonation", id: "primary:r-36-eruptor", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "R-36 Eruptor", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "explosive", source: "Democratic Detonation", id: "primary:r-36-eruptor", aliases: ["R-36 Eruptor Rifle"], acquisition: {"kind": "warbond", "id": "warbond:democratic-detonation", "label": "Democratic Detonation", "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Acquisition is officially confirmed; current Explosives menu subgroup is community-corroborated: https://helldivers.wiki.gg/wiki/R-36_Eruptor"} },
                     { name: "R-6 Deadeye", enabled: true, owned: true, warbond: "Borderline Justice", subgroup: "marksman-rifle", source: "Borderline Justice", id: "primary:r-6-deadeye", aliases: [], acquisition: {"kind": "unverified", "label": "Borderline Justice", "verification": "legacy-assignment-pending-audit"} },
                     { name: "R-63 Diligence", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "marksman-rifle", source: "Helldiver Basics (Mobilize)", id: "primary:r-63-diligence", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "R-63CS Diligence Counter Sniper", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "marksman-rifle", source: "Helldiver Basics (Mobilize)", id: "primary:r-63cs-diligence-counter-sniper", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
@@ -5749,7 +5749,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "MP-98 Knight", enabled: true, owned: true, warbond: "Super Citizen Edition", subgroup: "smg", source: "Super Citizen Edition", id: "primary:mp-98-knight", aliases: [], acquisition: {"kind": "edition-bonus", "id": "edition-bonus:super-citizen-edition", "label": "Super Citizen Edition", "sourceUrl": "https://blog.playstation.com/2023/09/14/helldivers-2-launches-february-8-2024/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Edition entitlement, not a Steeled Veterans Warbond item."} },
                     { name: "SMG-32 Reprimand", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "smg", source: "Truth Enforcers", id: "primary:smg-32-reprimand", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
                     { name: "SMG-37 Defender", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "smg", source: "Helldiver Basics (Mobilize)", id: "primary:smg-37-defender", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "SMG-72 Pummeler", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "smg", source: "Polar Patriots", id: "primary:smg-72-pummeler", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SMG-72 Pummeler", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "smg", source: "Polar Patriots", id: "primary:smg-72-pummeler", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:polar-patriots", "label": "Polar Patriots", "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "DBS-2 Double Freedom", enabled: true, owned: true, warbond: "Superstore", subgroup: "shotgun", source: "Superstore", id: "primary:dbs-2-double-freedom", aliases: [], acquisition: {"kind": "superstore", "id": "superstore:superstore", "label": "Superstore · Python Commandos-themed stock", "sourceUrl": "https://helldivers.wiki.gg/wiki/DBS-2_Double_Freedom", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."} },
                     { name: "M90A Shotgun", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "shotgun", source: "Obedient Democracy Support Troopers", id: "primary:m90a-shotgun", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
                     { name: "SG-20 Halt", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "shotgun", source: "Truth Enforcers", id: "primary:sg-20-halt", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
@@ -5758,15 +5758,15 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "SG-225SP Breaker Spray&Pray", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-225sp-breaker-spray-and-pray", aliases: ["sg 225sp breaker sprayandpray", "sg 225sp breaker spraypray"], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "SG-451 Cookout", enabled: true, owned: true, warbond: "Freedom's Flame", subgroup: "shotgun", source: "Freedom's Flame", id: "primary:sg-451-cookout", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:freedoms-flame", "label": "Freedom's Flame", "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "SG-8 Punisher", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-8-punisher", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "SG-8P Punisher Plasma", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "shotgun", source: "Cutting Edge", id: "primary:sg-8p-punisher-plasma", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "SG-8P Punisher Plasma", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "energy", source: "Cutting Edge", id: "primary:sg-8p-punisher-plasma", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:cutting-edge", "label": "Cutting Edge", "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Energy menu category confirmed in official patch 01.000.300: https://arrowhead.zendesk.com/hc/en-us/articles/13807959633564-PATCH-01-000-300"} },
                     { name: "SG-8S Slugger", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "shotgun", source: "Helldiver Basics (Mobilize)", id: "primary:sg-8s-slugger", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "CB-9 Exploding Crossbow", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "explosive", source: "Democratic Detonation", id: "primary:cb-9-exploding-crossbow", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "CB-9 Exploding Crossbow", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "explosive", source: "Democratic Detonation", id: "primary:cb-9-exploding-crossbow", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:democratic-detonation", "label": "Democratic Detonation", "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "LAS-13 Trident", enabled: true, owned: true, warbond: "Siege Breakers", subgroup: "energy", source: "Siege Breakers", id: "primary:las-13-trident", aliases: [], acquisition: {"kind": "unverified", "label": "Siege Breakers", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "LAS-16 Sickle", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "energy", source: "Cutting Edge", id: "primary:las-16-sickle", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-16 Sickle", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "energy", source: "Cutting Edge", id: "primary:las-16-sickle", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:cutting-edge", "label": "Cutting Edge", "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "LAS-17 Double-Edge Sickle", enabled: true, owned: true, warbond: "Servants of Freedom", subgroup: "energy", source: "Servants of Freedom", id: "primary:las-17-double-edge-sickle", aliases: [], acquisition: {"kind": "unverified", "label": "Servants of Freedom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "LAS-5 Scythe", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "energy", source: "Helldiver Basics (Mobilize)", id: "primary:las-5-scythe", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "PLAS-1 Scorcher", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "energy", source: "Helldiver Basics (Mobilize)", id: "primary:plas-1-scorcher", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "PLAS-101 Purifier", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "energy", source: "Polar Patriots", id: "primary:plas-101-purifier", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "PLAS-101 Purifier", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "energy", source: "Polar Patriots", id: "primary:plas-101-purifier", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:polar-patriots", "label": "Polar Patriots", "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "PLAS-39 Accelerator Rifle", enabled: true, owned: true, warbond: "Righteous Revenants", subgroup: "energy", source: "Righteous Revenants", id: "primary:plas-39-accelerator-rifle", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:righteous-revenants", "label": "Righteous Revenants", "sourceUrl": "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Current Killzone Legendary Warbond association; the Righteous Revenants in-game label is wiki-corroborated. Earlier shop/gift ownership is retained independently."} },
                     { name: "Stoker", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "shotgun", source: "Entrenched Division", id: "primary:stoker", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Sweeper", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "marksman-rifle", source: "Entrenched Division", id: "primary:sweeper", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
@@ -5775,10 +5775,10 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
 
                 sidearms: [
                     { name: "P/40-K Bolt Pistol", enabled: false, owned: false, warbond: "Castellan's Creed", subgroup: "pistol", source: "Castellan's Creed", id: "sidearm:p-40-k-bolt-pistol", aliases: ["P-40-K Bolt Pistol", "Bolt Pistol"], acquisition: {"kind": "warbond", "id": "warbond:castellans-creed", "label": "Castellan's Creed Legendary Warbond", "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/", "verifiedAt": "2026-09-13"}, introducedIn: "1.1.2" },
-                    { name: "GP-31 Grenade Pistol", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "pistol", source: "Democratic Detonation", id: "sidearm:gp-31-grenade-pistol", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "GP-31 Grenade Pistol", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "special-sidearm", source: "Democratic Detonation", id: "sidearm:gp-31-grenade-pistol", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:democratic-detonation", "label": "Democratic Detonation", "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition", "notes": "Acquisition is officially confirmed; current Secondary Special menu subgroup is community-corroborated: https://helldivers.wiki.gg/wiki/GP-31_Grenade_Pistol"} },
                     { name: "M6C/SOCOM Pistol", enabled: true, owned: true, warbond: "Obedient Democracy Support Troopers", subgroup: "pistol", source: "Obedient Democracy Support Troopers", id: "sidearm:m6c-socom-pistol", aliases: [], acquisition: {"kind": "unverified", "label": "Obedient Democracy Support Troopers", "verification": "legacy-assignment-pending-audit"} },
                     { name: "P-11 Stim Pistol", enabled: true, owned: true, warbond: "Chemical Agents", subgroup: "pistol", source: "Chemical Agents", id: "sidearm:p-11-stim-pistol", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:chemical-agents", "label": "Chemical Agents", "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
-                    { name: "P-113 Verdict", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "pistol", source: "Polar Patriots", id: "sidearm:p-113-verdict", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "P-113 Verdict", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "pistol", source: "Polar Patriots", id: "sidearm:p-113-verdict", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:polar-patriots", "label": "Polar Patriots", "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "P-19 Redeemer", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "pistol", source: "Helldiver Basics (Mobilize)", id: "sidearm:p-19-redeemer", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "P-2 Peacemaker", enabled: true, owned: true, warbond: "Base game", subgroup: "pistol", source: "Base game", id: "sidearm:p-2-peacemaker", aliases: [], acquisition: {"kind": "base-game", "id": "base-game:base-game", "label": "Starter equipment", "sourceUrl": "https://helldivers.wiki.gg/wiki/P-2_Peacemaker", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Starter procurement is community-corroborated; item-specific primary procurement evidence remains pending."} },
                     { name: "P-35 Re-Educator", enabled: true, owned: true, warbond: "Redacted Regiment", subgroup: "pistol", source: "Redacted Regiment", id: "sidearm:p-35-re-educator", aliases: [], acquisition: {"kind": "unverified", "label": "Redacted Regiment", "verification": "legacy-assignment-pending-audit"} },
@@ -5792,7 +5792,7 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "CQC-5 Combat Hatchet", enabled: true, owned: true, warbond: "Superstore", subgroup: "special-sidearm", source: "Superstore", id: "sidearm:cqc-5-combat-hatchet", aliases: [], acquisition: {"kind": "superstore", "id": "superstore:superstore", "label": "Superstore · Servants of Freedom-themed stock", "sourceUrl": "https://helldivers.wiki.gg/wiki/CQC-5_Combat_Hatchet", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Separate shop purchase, not granted by the themed Warbond. Procurement is community-corroborated; no price or rotation guarantee."} },
                     { name: "GP-20 Ultimatum", enabled: true, owned: true, warbond: "Servants of Freedom", subgroup: "special-sidearm", source: "Servants of Freedom", id: "sidearm:gp-20-ultimatum", aliases: [], acquisition: {"kind": "unverified", "label": "Servants of Freedom", "verification": "legacy-assignment-pending-audit"} },
                     { name: "LAS-58 Talon", enabled: true, owned: true, warbond: "Borderline Justice", subgroup: "special-sidearm", source: "Borderline Justice", id: "sidearm:las-58-talon", aliases: [], acquisition: {"kind": "unverified", "label": "Borderline Justice", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "LAS-7 Dagger", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "special-sidearm", source: "Cutting Edge", id: "sidearm:las-7-dagger", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "LAS-7 Dagger", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "special-sidearm", source: "Cutting Edge", id: "sidearm:las-7-dagger", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:cutting-edge", "label": "Cutting Edge", "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "PLAS-15 Loyalist", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "special-sidearm", source: "Truth Enforcers", id: "sidearm:plas-15-loyalist", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
                     { name: "SG-22 Bushwhacker", enabled: true, owned: true, warbond: "Viper Commandos", subgroup: "special-sidearm", source: "Viper Commandos", id: "sidearm:sg-22-bushwhacker", aliases: [], acquisition: {"kind": "unverified", "label": "Viper Commandos", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Entrenchment Tool", enabled: true, owned: true, warbond: "Entrenched Division", subgroup: "special-sidearm", source: "Entrenched Division", id: "sidearm:entrenchment-tool", aliases: [], acquisition: {"kind": "unverified", "label": "Entrenched Division", "verification": "legacy-assignment-pending-audit"} },
@@ -5805,11 +5805,11 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "G-10 Incendiary", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "grenade", source: "Steeled Veterans", id: "throwable:g-10-incendiary", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
                     { name: "G-109 Urchin", enabled: true, owned: true, warbond: "Force of Law", subgroup: "grenade", source: "Force of Law", id: "throwable:g-109-urchin", aliases: [], acquisition: {"kind": "unverified", "label": "Force of Law", "verification": "legacy-assignment-pending-audit"} },
                     { name: "G-12 High Explosive", enabled: true, owned: true, warbond: "Base game", subgroup: "grenade", source: "Base game", id: "throwable:g-12-high-explosive", aliases: [], acquisition: {"kind": "base-game", "id": "base-game:base-game", "label": "Starter equipment", "sourceUrl": "https://helldivers.wiki.gg/wiki/G-12_High_Explosive", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Starter procurement is community-corroborated; item-specific primary procurement evidence remains pending."} },
-                    { name: "G-123 Thermite", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "grenade", source: "Democratic Detonation", id: "throwable:g-123-thermite", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "G-13 Incendiary Impact", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "grenade", source: "Polar Patriots", id: "throwable:g-13-incendiary-impact", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-123 Thermite", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "grenade", source: "Democratic Detonation", id: "throwable:g-123-thermite", aliases: ["G-123 Thermite Grenade"], acquisition: {"kind": "warbond", "id": "warbond:democratic-detonation", "label": "Democratic Detonation", "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
+                    { name: "G-13 Incendiary Impact", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "grenade", source: "Polar Patriots", id: "throwable:g-13-incendiary-impact", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:polar-patriots", "label": "Polar Patriots", "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "G-142 Pyrotech", enabled: true, owned: true, warbond: "Masters of Ceremony", subgroup: "grenade", source: "Masters of Ceremony", id: "throwable:g-142-pyrotech", aliases: [], acquisition: {"kind": "unverified", "label": "Masters of Ceremony", "verification": "legacy-assignment-pending-audit"} },
                     { name: "G-16 Impact", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)", id: "throwable:g-16-impact", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "G-23 Stun", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "grenade", source: "Cutting Edge", id: "throwable:g-23-stun", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "G-23 Stun", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "grenade", source: "Cutting Edge", id: "throwable:g-23-stun", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:cutting-edge", "label": "Cutting Edge", "sourceUrl": "https://blog.playstation.com/2024/03/07/helldivers-2-new-warbond-launches-march-14-first-look-at-new-weapons-armor-and-more/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "G-3 Smoke", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "grenade", source: "Helldiver Basics (Mobilize)", id: "throwable:g-3-smoke", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "G-31 Arc", enabled: true, owned: true, warbond: "Control Group", subgroup: "grenade", source: "Control Group", id: "throwable:g-31-arc", aliases: [], acquisition: {"kind": "unverified", "label": "Control Group", "verification": "legacy-assignment-pending-audit"} },
                     { name: "G-4 Gas", enabled: true, owned: true, warbond: "Chemical Agents", subgroup: "grenade", source: "Chemical Agents", id: "throwable:g-4-gas", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:chemical-agents", "label": "Chemical Agents", "sourceUrl": "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
@@ -5926,9 +5926,9 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                     { name: "Muscle Enhancement", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:muscle-enhancement", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Increased Reinforcement Budget", enabled: true, owned: true, warbond: "Helldiver Basics (Mobilize)", subgroup: "booster", source: "Helldiver Basics (Mobilize)", id: "booster:increased-reinforcement-budget", aliases: [], acquisition: {"kind": "unverified", "label": "Helldiver Basics (Mobilize)", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Flexible Reinforcement Budget", enabled: true, owned: true, warbond: "Steeled Veterans", subgroup: "booster", source: "Steeled Veterans", id: "booster:flexible-reinforcement-budget", aliases: [], acquisition: {"kind": "unverified", "label": "Steeled Veterans", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "Localization Confusion", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "booster", source: "Cutting Edge", id: "booster:localization-confusion", aliases: [], acquisition: {"kind": "unverified", "label": "Cutting Edge", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "Expert Extraction Pilot", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "booster", source: "Democratic Detonation", id: "booster:expert-extraction-pilot", aliases: [], acquisition: {"kind": "unverified", "label": "Democratic Detonation", "verification": "legacy-assignment-pending-audit"} },
-                    { name: "Motivational Shocks", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "booster", source: "Polar Patriots", id: "booster:motivational-shocks", aliases: [], acquisition: {"kind": "unverified", "label": "Polar Patriots", "verification": "legacy-assignment-pending-audit"} },
+                    { name: "Localization Confusion", enabled: true, owned: true, warbond: "Cutting Edge", subgroup: "booster", source: "Cutting Edge", id: "booster:localization-confusion", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:cutting-edge", "label": "Cutting Edge", "sourceUrl": "https://helldivers.wiki.gg/wiki/Localization_Confusion", "verifiedAt": "2026-09-14", "verification": "community-source", "reviewScope": "acquisition", "notes": "Not named in the official launch article text. Acquisition corroborated by the community procurement/Warbond listing; direct wiki fetch returned 403, indexed text was available."} },
+                    { name: "Expert Extraction Pilot", enabled: true, owned: true, warbond: "Democratic Detonation", subgroup: "booster", source: "Democratic Detonation", id: "booster:expert-extraction-pilot", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:democratic-detonation", "label": "Democratic Detonation", "sourceUrl": "https://blog.playstation.com/2024/04/04/helldivers-2-gets-an-explosive-new-warbond-on-april-11/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
+                    { name: "Motivational Shocks", enabled: true, owned: true, warbond: "Polar Patriots", subgroup: "booster", source: "Polar Patriots", id: "booster:motivational-shocks", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:polar-patriots", "label": "Polar Patriots", "sourceUrl": "https://blog.playstation.com/2024/05/02/new-helldivers-2-warbond-brings-trap-laying-weaponry-arctic-themed-armor-and-more-may-9/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "Experimental Infusion", enabled: true, owned: true, warbond: "Viper Commandos", subgroup: "booster", source: "Viper Commandos", id: "booster:experimental-infusion", aliases: [], acquisition: {"kind": "unverified", "label": "Viper Commandos", "verification": "legacy-assignment-pending-audit"} },
                     { name: "Firebomb Hellpods", enabled: true, owned: true, warbond: "Freedom's Flame", subgroup: "booster", source: "Freedom's Flame", id: "booster:firebomb-hellpods", aliases: [], acquisition: {"kind": "warbond", "id": "warbond:freedoms-flame", "label": "Freedom's Flame", "sourceUrl": "https://blog.playstation.com/2024/07/30/new-helldivers-2-freedoms-flame-warbond-burns-bright-on-august-8/", "verifiedAt": "2026-09-14", "verification": "primary-source", "reviewScope": "acquisition"} },
                     { name: "Dead Sprint", enabled: true, owned: true, warbond: "Truth Enforcers", subgroup: "booster", source: "Truth Enforcers", id: "booster:dead-sprint", aliases: [], acquisition: {"kind": "unverified", "label": "Truth Enforcers", "verification": "legacy-assignment-pending-audit"} },
@@ -11156,6 +11156,9 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             "Freedom's Flame": "assets/warbonds/official/freedoms-flame.jpg",
             "Chemical Agents": "assets/warbonds/official/chemical-agents.jpg",
             "Urban Legends": "assets/warbonds/official/urban-legends.jpg",
+            "Cutting Edge": "assets/warbonds/official/cutting-edge.jpg",
+            "Democratic Detonation": "assets/warbonds/official/democratic-detonation.jpg",
+            "Polar Patriots": "assets/warbonds/official/polar-patriots.png",
             "Castellan's Creed": "assets/new-gear/castellans-creed-cover.png",
             "Exo Experts": "assets/warbonds/exo-experts-cover.svg",
             "__placeholder": "assets/placeholders/warbond/warbond-placeholder.svg"
@@ -11895,9 +11898,129 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
             `;
         }
 
+        const reviewedWarbondData = { definitions: [], loading: null };
+
+        function createReviewedWarbondDefinitions(catalog) {
+            if (!Array.isArray(catalog?.items) || !Array.isArray(catalog?.warbonds)) return [];
+            const facts = new Map();
+            catalog.items.forEach(item => {
+                if (typeof item?.id !== "string") return;
+                // Refuse ambiguous bundled identities rather than targeting an arbitrary row.
+                facts.set(item.id, facts.has(item.id) ? null : item);
+            });
+            const sourceIndex = window.HD2CSMCatalogSources.createIndex(catalog.items);
+            const definitions = [];
+            for (const warbond of catalog.warbonds) {
+                if (typeof warbond?.id !== "string" || !warbond.id.startsWith("warbond:")
+                    || typeof warbond.name !== "string" || !warbond.name.trim()
+                    || catalog.warbonds.filter(other => other?.id === warbond.id || other?.name === warbond.name).length !== 1
+                    || !Array.isArray(warbond.equipmentIds) || !warbond.equipmentIds.length
+                    || new Set(warbond.equipmentIds).size !== warbond.equipmentIds.length) continue;
+                const equipment = warbond.equipmentIds.map(id => facts.get(id));
+                if (equipment.some(item => !item || !ITEM_LIST_METADATA.some(meta => meta.visualCategory === item.type)
+                    || item.acquisition?.kind !== "warbond" || item.acquisition?.id !== warbond.id
+                    || !sourceIndex.describe(item).reviewed)) continue;
+                definitions.push(Object.freeze({
+                    id: warbond.id, name: warbond.name,
+                    equipment: Object.freeze(equipment.map(item => Object.freeze({ id: item.id, type: item.type })))
+                }));
+            }
+            return definitions;
+        }
+
+        function loadReviewedWarbondCatalog() {
+            if (!reviewedWarbondData.loading) {
+                reviewedWarbondData.loading = Promise.resolve()
+                    .then(() => readPackagedJsonResource("assets/item-catalog.json", { cache: "no-store" }))
+                    .then(catalog => {
+                        reviewedWarbondData.definitions = createReviewedWarbondDefinitions(catalog);
+                        return reviewedWarbondData.definitions;
+                    })
+                    .catch(error => {
+                        console.warn("[warbond-ownership] Bundled reviewed sets unavailable; per-item controls remain usable", error);
+                        return [];
+                    });
+            }
+            return reviewedWarbondData.loading;
+        }
+
+        function getReviewedWarbondMembers(definition) {
+            if (!definition) return null;
+            const members = definition.equipment.map(equipment => {
+                const meta = ITEM_LIST_METADATA.find(entry => entry.visualCategory === equipment.type);
+                const list = state.items[meta.key];
+                const matches = (Array.isArray(list) ? list : []).filter(item => item?.id === equipment.id);
+                return matches.length === 1 ? matches[0] : null;
+            });
+            return members.every(Boolean) ? members : null;
+        }
+
+        function applyReviewedWarbondAction(warbondId, action) {
+            if (!["enable", "exclude", "unowned"].includes(action)) return false;
+            const definition = reviewedWarbondData.definitions.find(entry => entry.id === warbondId);
+            const members = getReviewedWarbondMembers(definition);
+            if (!members) return false;
+            const ownership = window.HD2CSMCatalogState;
+            members.forEach(item => {
+                if (action === "enable") { ownership.setOwned(item, true); ownership.setEnabled(item, true); }
+                else if (action === "exclude") ownership.setEnabled(item, false);
+                else ownership.setOwned(item, false);
+            });
+            saveState(); renderItems(); renderSpin();
+            return true;
+        }
+
+        function renderReviewedWarbondControls(groupBox, definition) {
+            groupBox.dataset.warbondId = definition.id;
+            const members = getReviewedWarbondMembers(definition);
+            const controls = document.createElement("div");
+            controls.className = "warbondOwnershipControls";
+            const status = document.createElement("p");
+            status.className = "catalogSourceMeta";
+            status.dataset.warbondCount = String(definition.equipment.length);
+            status.textContent = members
+                ? `${definition.equipment.length} reviewed equipment items · ${members.filter(item => item.owned !== false).length} owned · ${members.filter(window.HD2CSMCatalogState.isEligible).length} included`
+                : `${definition.equipment.length} reviewed equipment items · full set unavailable in this profile`;
+            controls.appendChild(status);
+            const note = document.createElement("p");
+            note.className = "catalogSourceMeta";
+            note.textContent = `Applies to all ${definition.equipment.length} reviewed items, including search-hidden items. Separate purchases and custom entries are excluded. Only enable all if you have unlocked every item.`;
+            controls.appendChild(note);
+            const buttons = document.createElement("div");
+            buttons.className = "warbondOwnershipButtons";
+            for (const [action, label, accessible] of [
+                ["enable", "All unlocked — include all", "Mark all reviewed equipment owned and include in rolls"],
+                ["exclude", "Exclude all from rolls", "Exclude all reviewed equipment from rolls; keep ownership"],
+                ["unowned", "Mark all not owned", "Mark all reviewed equipment not owned and exclude from rolls"]
+            ]) {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.className = action === "enable" ? "btnPrimary" : "btnGhost";
+                button.dataset.warbondAction = action;
+                button.setAttribute("aria-label", `${definition.name}: ${accessible}`);
+                button.textContent = label;
+                button.disabled = !members;
+                button.addEventListener("click", () => {
+                    if (!applyReviewedWarbondAction(definition.id, action)) return;
+                    // Re-rendering updates every ownership view; retain keyboard focus here.
+                    const currentGroup = [...document.querySelectorAll(".warbondGroup[data-warbond-id]")]
+                        .find(group => group.dataset.warbondId === definition.id);
+                    currentGroup?.querySelector(`[data-warbond-action="${action}"]`)?.focus({ preventScroll: true });
+                });
+                buttons.appendChild(button);
+            }
+            controls.appendChild(buttons);
+            groupBox.appendChild(controls);
+        }
+
         function renderItemsByWarbond() {
             const box = document.getElementById("listItemsByWarbond");
             if (!box) return;
+            if (!reviewedWarbondData.loading) {
+                loadReviewedWarbondCatalog().then(() => {
+                    if (getItemsViewMode() === "warbond") renderItemsByWarbond();
+                });
+            }
             box.innerHTML = "";
 
             const query = normalizeText($("#itemSearch")?.value || "");
@@ -11951,6 +12074,8 @@ function normalizeText(s) { return String(s || "").toLowerCase().trim(); }
                 title.textContent = warbond;
                 groupHeader.appendChild(title);
                 groupBox.appendChild(groupHeader);
+                const reviewed = reviewedWarbondData.definitions.find(definition => definition.name === warbond);
+                if (reviewed) renderReviewedWarbondControls(groupBox, reviewed);
 
                 entries.forEach(({ item, index, meta }) => {
                     const row = buildItemEditorRow({

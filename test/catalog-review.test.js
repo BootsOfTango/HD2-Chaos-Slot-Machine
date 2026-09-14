@@ -45,7 +45,7 @@ test('35 historical review facts resolve through 33 current identities without l
     } else assert.deepEqual(item.acquisition, correction.acquisition, correction.id + ':acquisition');
   }
   assert.equal(new Set(review.items.map(item => resolveId(item.id).id)).size, 33);
-  assert.deepEqual(createIndex(catalog.items).summary(), { total: 205, primary: 27, community: 11, pending: 167 });
+  assert.deepEqual(createIndex(catalog.items).summary(), { total: 205, primary: 43, community: 12, pending: 150 });
 });
 
 test('historical facts then explicit identity merges reproduce the catalog; stale review cannot resurrect retired rows', () => {
@@ -138,8 +138,9 @@ test('reviewed Warbond equipment sets exclude separate purchases and gas/EMS mix
 });
 
 test('three locally bundled promotional images match their attributed original bytes', () => {
-  assert.equal(provenance.assets.length, 3);
-  for (const source of provenance.assets) {
+  const originalSources = provenance.assets.filter(source => review.warbonds.some(bond => bond.name === source.name));
+  assert.equal(originalSources.length, 3);
+  for (const source of originalSources) {
     const bond = review.warbonds.find(row => row.name === source.name);
     assert.equal(bond.coverAssetPath, source.assetPath);
     assert.equal(bond.coverKind, 'official-promotional-scene');

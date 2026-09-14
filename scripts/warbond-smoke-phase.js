@@ -1,0 +1,333 @@
+/* Source-review and Warbond ownership checks. Each export is self-contained for
+ * CDP serialization. The runner supplies the reviewed manifest, isolates saves,
+ * blocks network access, verifies exported files and launches each process. */
+async function rendererWarbondPhase(review) {
+  const checks = [];
+  const assert = (condition, label) => {
+    if (!condition) throw new Error(`WARBOND SMOKE: ${label}`);
+    checks.push(label); console.log(`WARBOND SMOKE PASS: ${label}`);
+  };
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const keys = ['primaries', 'sidearms', 'throwables', 'stratagems', 'boosters'];
+  const categories = { primaries: 'primary', sidearms: 'sidearm', throwables: 'throwable', stratagems: 'stratagem', boosters: 'booster' };
+  const containers = { primaries: 'listPrimaries', sidearms: 'listSidearms', throwables: 'listThrowables', stratagems: 'listStrats', boosters: 'listBoosters' };
+  const recordsFrom = items => keys.flatMap(key => (items[key] || []).map(item => ({ key, item })));
+  const records = () => recordsFrom(state.items);
+  const findRecord = id => records().find(({ item }) => item.id === id);
+  const find = id => findRecord(id)?.item;
+  const ids = items => recordsFrom(items).map(({ item }) => item.id).sort();
+  const flags = (items, except = []) => recordsFrom(items).filter(({ item }) => !except.includes(item.id)).map(({ item }) => [item.id, item.owned, item.enabled]).sort((a, b) => a[0].localeCompare(b[0]));
+  const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const decodeImage = async source => {
+    assert(!!source && !/^https?:/i.test(source), `artwork resolves locally: ${String(source).split('/').pop()}`);
+    await new Promise((resolve, reject) => {
+      const image = new Image();
+      const timeout = setTimeout(() => reject(new Error(`WARBOND image timeout: ${source}`)), 10000);
+      image.onload = () => { clearTimeout(timeout); image.naturalWidth > 0 && image.naturalHeight > 0 ? resolve() : reject(new Error(`Empty artwork: ${source}`)); };
+      image.onerror = () => { clearTimeout(timeout); reject(new Error(`WARBOND image failed: ${source}`)); };
+      image.src = source;
+    });
+  };
+  const setView = (mode, search = '') => {
+    if (document.querySelector('#manualPoolBlock')?.hidden) document.querySelector('[data-target="manualPoolBlock"]')?.click();
+    localStorage.setItem(ITEMS_VIEW_MODE_KEY, mode);
+    localStorage.setItem(ITEMS_TYPE_FILTER_KEY, 'all');
+    document.querySelector('#itemSearch').value = search;
+    renderItems(); switchTab('items');
+  };
+  const groupFor = bond => [...document.querySelectorAll('.warbondGroup[data-warbond-id]')].find(element => element.dataset.warbondId === bond.id);
+  const bulk = (bond, action) => {
+    const button = groupFor(bond)?.querySelector(`[data-warbond-action="${action}"]`);
+    assert(button && !button.disabled, `${bond.name} exposes an actionable ${action} bulk control`);
+    assert(normalize(`${button.textContent} ${button.getAttribute('aria-label') || ''}`).includes(normalize(bond.name)), `${bond.name} ${action} control identifies its Warbond accessibly`);
+    button.click();
+  };
+  const newGearControls = id => [...document.querySelectorAll('#newGearContent [data-gear-control]')].filter(element => element.dataset.gearControl.startsWith(`${id}:`));
+  const assertNewGearSync = (bond, label) => {
+    bond.equipmentIds.forEach(id => {
+      const item = find(id);
+      const controls = newGearControls(id);
+      controls.forEach(control => {
+        const property = control.dataset.gearControl.slice(id.length + 1);
+        assert(control.checked === item[property] && (property !== 'enabled' || control.disabled === !item.owned), `${label}: ${item.name} ${property} stays synchronized with the new-gear panel`);
+      });
+    });
+  };
+
+  await bootStateReady;
+  await Promise.all([preloadItemVisuals(), loadItemImageDb(), loadReviewedWarbondCatalog()]);
+  assert(review?.schemaVersion === 1 && Array.isArray(review.items) && review.items.length > 0 && Array.isArray(review.warbonds) && review.warbonds.length > 0, 'runner supplies a nonempty versioned Warbond source-review batch');
+  assert(new Set(review.items.map(item => item.id)).size === review.items.length && new Set(review.warbonds.map(bond => bond.id)).size === review.warbonds.length, 'source-review batch item and Warbond IDs are unique');
+  assert(state.cards.length === 0, 'fresh isolated profile starts without historical Results');
+  const catalog = await readPackagedJsonResource('assets/item-catalog.json');
+  assert(Array.isArray(catalog.items) && Array.isArray(catalog.warbonds), 'actual packaged catalog exposes gear and Warbond metadata offline');
+  const freshItems = clone(state.items);
+  const freshIds = ids(freshItems);
+  const freshCount = recordsFrom(DEFAULTS.items).length;
+  assert(records().length === freshCount && new Set(freshIds).size === freshCount, 'fresh catalog has the bundled count of unique stable gear identities');
+  assert(JSON.stringify(freshIds) === JSON.stringify(catalog.items.map(item => item.id).sort()), 'renderer gear IDs exactly match the packaged catalog');
+  const baselineFlags = flags(freshItems);
+  const sourceSpecs = review.items.map(correction => {
+    const record = findRecord(correction.id);
+    assert(!!record, `${correction.id} exists as one canonical renderer item`);
+    return {
+      id: correction.id, canonical: correction.name || correction.previousName,
+      aliases: [...new Set([...(correction.aliases || []), ...(correction.name && correction.name !== correction.previousName ? [correction.previousName] : [])])],
+      category: categories[record.key], key: record.key, group: correction.warbond,
+      acquisition: clone(correction.acquisition), assetPath: getItemVisual(record.item.name, categories[record.key])?.src
+    };
+  });
+  const assertSource = (spec, label) => {
+    const record = findRecord(spec.id), item = record?.item;
+    assert(item?.name === spec.canonical && item.warbond === spec.group, `${label}: ${spec.id} has its reviewed name and source group`);
+    assert(spec.aliases.every(alias => item.aliases?.includes(alias)), `${label}: ${spec.canonical} retains every reviewed alias`);
+    const info = getCatalogSourceInfo(item);
+    assert(info.reviewed === true && info.kind === spec.acquisition.kind && info.group === spec.group && info.verification === spec.acquisition.verification, `${label}: ${spec.canonical} exposes the correct reviewed source kind and tier`);
+    assert(info.sourceUrl === new URL(spec.acquisition.sourceUrl).href && info.verifiedAt === spec.acquisition.verifiedAt, `${label}: ${spec.canonical} exposes its exact reviewed HTTPS source and date`);
+    assert(Object.entries(spec.acquisition).every(([key, value]) => JSON.stringify(item.acquisition?.[key]) === JSON.stringify(value)), `${label}: ${spec.canonical} retains all acquisition facts and notes from the review`);
+    const row = buildItemEditorRow({ item, containerId: containers[record.key], typeLabel: spec.category, onToggle: () => {} });
+    const sourceLabel = row.querySelector('.catalogSourceMeta');
+    assert(sourceLabel?.dataset.sourceReviewed === 'true' && sourceLabel.dataset.sourceKind === info.kind && normalize(sourceLabel.textContent).includes(normalize(spec.group)), `${label}: ${spec.canonical} renders reviewed provenance in Armory`);
+    return clone(info);
+  };
+  sourceSpecs.forEach(spec => { spec.expectedInfo = assertSource(spec, 'fresh source review'); });
+  for (const spec of sourceSpecs) {
+    for (const name of [...new Set([spec.canonical, ...spec.aliases])]) {
+      const visual = getItemVisual(name, spec.category);
+      assert(visual?.src === spec.assetPath && !/placeholder/i.test(visual.src), `${name} resolves its non-placeholder canonical image`);
+      await decodeImage(visual.src);
+    }
+  }
+
+  const bonds = catalog.warbonds.filter(bond => Array.isArray(bond.equipmentIds) && bond.equipmentIds.length > 0 && bond.equipmentIds.every(id => getCatalogSourceInfo(find(id)).reviewed));
+  assert(bonds.length >= review.warbonds.length && review.warbonds.every(bond => bonds.some(actual => actual.id === bond.id)), 'every newly reviewed Warbond joins the existing reviewed ownership groups');
+  for (const reviewed of review.warbonds) {
+    const actual = bonds.find(bond => bond.id === reviewed.id);
+    assert(Object.entries(reviewed).every(([key, value]) => JSON.stringify(actual[key]) === JSON.stringify(value)), `${reviewed.name} packaged Warbond metadata exactly matches the supplied source review`);
+  }
+  setView('warbond');
+  for (const bond of bonds) {
+    assert(new Set(bond.equipmentIds).size === bond.equipmentIds.length, `${bond.name} declares a unique equipment set`);
+    const actualIds = catalog.items.filter(item => item.warbond === bond.name && item.acquisition?.kind === 'warbond').map(item => item.id).sort();
+    assert(JSON.stringify(actualIds) === JSON.stringify([...bond.equipmentIds].sort()), `${bond.name} has exactly its declared equipment, without unrelated acquisitions`);
+    assert(bond.equipmentIds.every(id => find(id)?.acquisition?.id === bond.id), `${bond.name} member acquisition IDs match their declared Warbond`);
+    assert(WARBOND_ART[bond.name] === bond.coverAssetPath && !/placeholder/i.test(bond.coverAssetPath), `${bond.name} maps to its declared locally bundled cover`);
+    await decodeImage(bond.coverAssetPath);
+    const group = groupFor(bond);
+    const image = group?.querySelector('.warbondHeader img');
+    assert(group && image?.getAttribute('src') === bond.coverAssetPath && image.alt.includes(bond.name), `${bond.name} Armory group uses the correct named cover image`);
+  }
+  renderCatalogAuditStatus();
+  const auditStatus = document.querySelector('#catalogAuditStatus');
+  const summary = getCatalogSourceIndex().summary();
+  assert(summary.total === freshCount && summary.primary + summary.community + summary.pending === freshCount, 'source audit counts partition the actual canonical catalog without hardcoded totals');
+  assert(auditStatus?.textContent.includes(`${summary.primary} official-source`) && auditStatus.textContent.includes(`${summary.community} community-source`) && auditStatus.textContent.includes(`${summary.pending} pending / ${summary.total}`), 'visible source-audit counts reflect current bundled facts');
+  assert(JSON.stringify(flags(state.items)) === JSON.stringify(baselineFlags), 'source review, equipment-set validation and all cover decoding leave ownership unchanged');
+
+  const originalAlert = window.alert;
+  window.alert = () => {};
+  try {
+    const baseLoadout = rollLoadout('WARBOND-SOURCE-HISTORY');
+    assert(!!baseLoadout, 'fresh equipment pools still produce a real loadout');
+    const historicalCards = review.warbonds.map((bond, index) => {
+      const loadout = clone(baseLoadout);
+      const first = bond.equipmentIds.map(id => findRecord(id)).find(Boolean);
+      const label = first.item.aliases?.[0] || first.item.name;
+      if (first.key === 'stratagems') loadout.stratagems[0] = label;
+      else loadout[categories[first.key]] = label;
+      loadout.fingerprint = fingerprintLoadout(loadout);
+      return normalizeCardRecord({
+        ...loadout, id: `warbond-source-history-${index}`, createdAt: new Date(Date.UTC(2026, 8, 14, 16, index)).toISOString(),
+        playerName: 'Warbond History Fixture', difficulty: 7, statsLocked: true, statsLockedAt: '2026-09-14T17:00:00.000Z',
+        majorOrderDone: index % 2 === 0, planet: null, planetBiome: null,
+        stats: { kills: 220 + index, accuracy: 75, deaths: index, stims: 4, bulletCount: 1200, stratUses: 18, distanceKm: 4, blueSideObjCount: index, extractedSafely: true },
+        originalNote: `Keep the recorded ${bond.name} label: ${label}`, notes: `Keep the recorded ${bond.name} label: ${label}`, commentNotes: []
+      });
+    });
+    state.cards = historicalCards; refreshLockedStatsBaseline(); recalcGrades();
+    const historyBaseline = JSON.stringify(historicalCards);
+    state.cards = []; refreshLockedStatsBaseline();
+    const oldItems = clone(freshItems);
+    recordsFrom(oldItems).forEach(({ item }, index) => {
+      item.owned = index % 3 !== 0; item.enabled = index % 3 === 2;
+      item.warbondSmokeNote = { retain: item.id, choice: index % 3 };
+      const correction = review.items.find(row => row.id === item.id);
+      if (correction) {
+        item.name = correction.previousName; item.warbond = 'Old source label'; item.source = 'Old source label';
+        item.acquisition = { kind: 'unverified', label: 'Old source label', verification: 'legacy-assignment-pending-audit' };
+      }
+    });
+    const customIds = bonds.map((bond, index) => {
+      const id = `custom:primary:warbond-smoke-${index}`;
+      oldItems.primaries.push({ id, name: `Unverified custom equipment ${index}`, warbond: bond.name, owned: true, enabled: false,
+        acquisition: clone(find(bond.equipmentIds[0]).acquisition), warbondSmokeNote: { pretendSource: bond.id, keep: true } });
+      return id;
+    });
+    const fixture = { items: oldItems, cards: clone(historicalCards), settings: { ...clone(buildPersistedStatePayload().settings), rememberedPlayerName: 'Warbond Restart Diver' } };
+    const expectedImportFlags = flags(oldItems);
+    applyImportedData(clone(fixture));
+    assert(JSON.stringify(flags(state.items)) === JSON.stringify(expectedImportFlags), 'whole-catalog legacy import preserves every ownership/include flag, including custom rows');
+    assert(JSON.stringify(ids(state.items)) === JSON.stringify([...freshIds, ...customIds].sort()), 'whole-catalog source refresh keeps every stable ID and each custom record');
+    assert(JSON.stringify(state.cards) === historyBaseline, 'source-correcting import preserves historical labels, fingerprints, locked stats and scores exactly');
+    sourceSpecs.forEach(spec => assertSource(spec, 'legacy import'));
+    assert(records().every(({ item }) => JSON.stringify(item.warbondSmokeNote) === JSON.stringify(recordsFrom(oldItems).find(row => row.item.id === item.id).item.warbondSmokeNote)), 'source-correcting import retains all arbitrary per-item user metadata');
+    assert(customIds.every(id => getCatalogSourceInfo(find(id)).kind === 'custom' && !getCatalogSourceInfo(find(id)).reviewed), 'custom rows with copied Warbond provenance are never treated as verified equipment');
+
+    for (const bond of bonds) {
+      setView('warbond', bond.name);
+      const unrelatedFlags = JSON.stringify(flags(state.items, bond.equipmentIds));
+      bulk(bond, 'enable');
+      assert(bond.equipmentIds.every(id => find(id).owned && find(id).enabled), `${bond.name} bulk enable selects every declared item`);
+      assert(JSON.stringify(flags(state.items, bond.equipmentIds)) === unrelatedFlags, `${bond.name} bulk enable excludes every unrelated and custom same-label row`);
+      assertNewGearSync(bond, 'bulk enable');
+      const member = findRecord(bond.equipmentIds[0]);
+      setView('warbond', member.item.name);
+      assert(bond.equipmentIds.some(id => !matchesItemSearch(find(id), categories[findRecord(id).key], normalizeText(member.item.name))), `${bond.name} filtered bulk fixture hides another member from the search results`);
+      bulk(bond, 'exclude');
+      assert(bond.equipmentIds.every(id => find(id).owned && !find(id).enabled), `${bond.name} filtered bulk exclude reaches all declared members and preserves ownership`);
+      assert(JSON.stringify(flags(state.items, bond.equipmentIds)) === unrelatedFlags, `${bond.name} filtered bulk exclude preserves all unrelated choices`);
+      assertNewGearSync(bond, 'bulk exclude');
+      bulk(bond, 'enable');
+      assert(bond.equipmentIds.every(id => find(id).owned && find(id).enabled), `${bond.name} filtered enable restores all members, including hidden search results`);
+      bulk(bond, 'unowned');
+      assert(bond.equipmentIds.every(id => !find(id).owned && !find(id).enabled), `${bond.name} bulk unowned removes ownership and inclusion together`);
+      assert(JSON.stringify(flags(state.items, bond.equipmentIds)) === unrelatedFlags, `${bond.name} all bulk transitions leave unrelated/custom choices untouched`);
+      assertNewGearSync(bond, 'bulk unowned');
+
+      setView('category', member.item.name);
+      const categoryBox = document.querySelector(`#${containers[member.key]}`);
+      const ownedControl = [...categoryBox.querySelectorAll('input')].find(element => element.getAttribute('aria-label') === `Owned: ${member.item.name}`);
+      assert(ownedControl && !ownedControl.checked, `${member.item.name} category view reflects the Warbond unowned action`);
+      ownedControl.click();
+      assert(find(member.item.id).owned && !find(member.item.id).enabled, `${member.item.name} individual ownership does not silently enable rolls`);
+      const includeControl = [...document.querySelector(`#${containers[member.key]}`).querySelectorAll('button')].find(element => element.getAttribute('aria-label') === `Include in rolls: ${member.item.name}`);
+      assert(includeControl && !includeControl.disabled, `${member.item.name} category include control becomes usable after ownership`);
+      includeControl.click();
+      setView('warbond', bond.name);
+      const warbondOwned = [...groupFor(bond).querySelectorAll('input')].find(element => element.getAttribute('aria-label') === `Owned: ${member.item.name}`);
+      const warbondEnabled = [...groupFor(bond).querySelectorAll('button')].find(element => element.getAttribute('aria-label') === `Include in rolls: ${member.item.name}`);
+      assert(warbondOwned?.checked && warbondEnabled?.getAttribute('aria-pressed') === 'true', `${member.item.name} category change is reflected in its Warbond view`);
+      assert(bond.equipmentIds.filter(id => id !== member.item.id).every(id => !find(id).owned && !find(id).enabled), `${member.item.name} individual edit does not enable other Warbond members`);
+      assertNewGearSync(bond, 'individual category edit');
+      const newOwned = newGearControls(member.item.id).find(element => element.dataset.gearControl === `${member.item.id}:owned`);
+      if (newOwned) {
+        newOwned.click();
+        assert(!find(member.item.id).owned && !find(member.item.id).enabled, `${member.item.name} new-gear panel edit updates the shared ownership state`);
+        const sharedOwned = [...groupFor(bond).querySelectorAll('input')].find(element => element.getAttribute('aria-label') === `Owned: ${member.item.name}`);
+        assert(sharedOwned && !sharedOwned.checked, `${member.item.name} Warbond view reflects a new-gear panel edit`);
+      }
+      assert(JSON.stringify(state.cards) === historyBaseline, `${bond.name} ownership controls never change historical Results or scores`);
+    }
+
+    sourceSpecs.forEach(spec => assertSource(spec, 'after ownership controls'));
+    const finalData = clone(buildPersistedStatePayload());
+    for (const [kind, raw] of [
+      ['plain export', JSON.stringify(finalData)],
+      ['desktop envelope', JSON.stringify({ saveFormatVersion: 1, applicationVersion: (await desktopStorage?.getAppInfo())?.version || 'browser-fixture', savedAt: new Date().toISOString(), data: finalData })]
+    ]) {
+      const parsed = parseLegacyBrowserPayload(raw);
+      assert(JSON.stringify(parsed.items) === JSON.stringify(finalData.items) && JSON.stringify(parsed.cards) === historyBaseline, `${kind} includes complete catalog choices, custom data and historical Results`);
+      applyImportedData(parsed);
+      assert(JSON.stringify(state.items) === JSON.stringify(finalData.items) && JSON.stringify(state.cards) === historyBaseline, `${kind} re-import is idempotent and preserves history`);
+    }
+    saveState();
+    if (desktopStorage) {
+      const saved = await desktopStorage.saveState(buildPersistedStatePayload());
+      assert(saved?.ok, 'Warbond fixture is flushed through the real desktop storage bridge');
+      const loaded = await desktopStorage.loadState();
+      assert(JSON.stringify(loaded.data) === JSON.stringify(buildPersistedStatePayload()), 'real desktop disk reload matches the complete Warbond fixture');
+    } else {
+      assert(localStorage.getItem(STORAGE_KEY) === JSON.stringify(buildPersistedStatePayload()), 'browser fallback contains the exact Warbond fixture');
+    }
+    setView('warbond', review.warbonds[0].name);
+    groupFor(review.warbonds[0])?.scrollIntoView({ block: 'start' });
+    return {
+      checks, sourceSpecs, bonds, reviewedWarbonds: clone(review.warbonds), customIds, freshCount,
+      expectedIds: ids(state.items), expectedFlags: flags(state.items), expectedItems: clone(state.items), expectedCards: clone(state.cards),
+      expectedSettings: clone(buildPersistedStatePayload().settings), expectedAuditSummary: clone(summary), exportData: clone(buildPersistedStatePayload()),
+      exportCoverage: 'Plain/enveloped JSON parsing and real desktop save/load; native file pickers and external file-backend checks are runner-owned.',
+      artworkCoverage: 'Reviewed item names/aliases and all reviewed Warbond covers decode locally. Network blocking is runner-owned.'
+    };
+  } finally {
+    window.alert = originalAlert;
+  }
+}
+
+async function rendererWarbondVerify(expected) {
+  const checks = [];
+  const assert = (condition, label) => {
+    if (!condition) throw new Error(`WARBOND RESTART: ${label}`);
+    checks.push(label); console.log(`WARBOND RESTART PASS: ${label}`);
+  };
+  const keys = ['primaries', 'sidearms', 'throwables', 'stratagems', 'boosters'];
+  const rows = () => keys.flatMap(key => state.items[key] || []);
+  const find = id => rows().find(item => item.id === id);
+  const decodeImage = async source => {
+    assert(!!source && !/^https?:/i.test(source), `restart image remains local: ${String(source).split('/').pop()}`);
+    await new Promise((resolve, reject) => {
+      const image = new Image();
+      const timeout = setTimeout(() => reject(new Error(`WARBOND RESTART image timeout: ${source}`)), 10000);
+      image.onload = () => { clearTimeout(timeout); image.naturalWidth > 0 && image.naturalHeight > 0 ? resolve() : reject(new Error(`Empty artwork: ${source}`)); };
+      image.onerror = () => { clearTimeout(timeout); reject(new Error(`WARBOND RESTART image failed: ${source}`)); };
+      image.src = source;
+    });
+  };
+  await bootStateReady;
+  await Promise.all([preloadItemVisuals(), loadItemImageDb(), loadReviewedWarbondCatalog()]);
+  assert(rows().length === expected.freshCount + expected.customIds.length, 'separate process restores the canonical catalog plus only the expected custom rows');
+  assert(JSON.stringify(rows().map(item => item.id).sort()) === JSON.stringify(expected.expectedIds), 'separate process restores the complete stable-ID set');
+  assert(JSON.stringify(rows().map(item => [item.id, item.owned, item.enabled]).sort((a, b) => a[0].localeCompare(b[0]))) === JSON.stringify(expected.expectedFlags), 'separate process restores all ownership/include choices');
+  assert(keys.every(key => JSON.stringify(state.items[key]) === JSON.stringify(expected.expectedItems[key])), 'separate process restores all catalog facts, aliases, custom metadata and ownership exactly');
+  assert(JSON.stringify(state.cards) === JSON.stringify(expected.expectedCards), 'separate process preserves historical labels, fingerprints, locked stats, notes and scores exactly');
+  assert(JSON.stringify(buildPersistedStatePayload().settings) === JSON.stringify(expected.expectedSettings), 'separate process preserves saved player and supported preferences exactly');
+  assert(expected.customIds.every(id => getCatalogSourceInfo(find(id)).kind === 'custom' && !getCatalogSourceInfo(find(id)).reviewed), 'custom same-label rows remain explicitly unverified after restart');
+  for (const spec of expected.sourceSpecs) {
+    const item = find(spec.id);
+    assert(item?.name === spec.canonical && spec.aliases.every(alias => item.aliases?.includes(alias)), `${spec.canonical} source identity and aliases survive restart`);
+    assert(JSON.stringify(getCatalogSourceInfo(item)) === JSON.stringify(spec.expectedInfo), `${spec.canonical} exact reviewed source metadata survives restart`);
+    for (const name of [...new Set([spec.canonical, ...spec.aliases])]) {
+      const visual = getItemVisual(name, spec.category);
+      assert(visual?.src === spec.assetPath && !/placeholder/i.test(visual.src), `${name} resolves unchanged non-placeholder artwork after restart`);
+      await decodeImage(visual.src);
+    }
+  }
+  localStorage.setItem(ITEMS_VIEW_MODE_KEY, 'warbond');
+  localStorage.setItem(ITEMS_TYPE_FILTER_KEY, 'all');
+  if (document.querySelector('#manualPoolBlock')?.hidden) document.querySelector('[data-target="manualPoolBlock"]')?.click();
+  document.querySelector('#itemSearch').value = '';
+  renderItems(); switchTab('items');
+  for (const bond of expected.bonds) {
+    const actualIds = rows().filter(item => getCatalogSourceInfo(item).kind === 'warbond' && getCatalogSourceInfo(item).group === bond.name).map(item => item.id).sort();
+    assert(JSON.stringify(actualIds) === JSON.stringify([...bond.equipmentIds].sort()), `${bond.name} exact verified equipment set survives restart without custom-row contamination`);
+    assert(WARBOND_ART[bond.name] === bond.coverAssetPath, `${bond.name} retains its bundled cover mapping`);
+    await decodeImage(bond.coverAssetPath);
+    const group = [...document.querySelectorAll('.warbondGroup[data-warbond-id]')].find(element => element.dataset.warbondId === bond.id);
+    assert(group && ['enable', 'exclude', 'unowned'].every(action => group.querySelector(`[data-warbond-action="${action}"]`)), `${bond.name} bulk ownership controls remain available after restart`);
+    bond.equipmentIds.forEach(id => {
+      const item = find(id);
+      const owned = [...group.querySelectorAll('input')].find(element => element.getAttribute('aria-label') === `Owned: ${item.name}`);
+      const enabled = [...group.querySelectorAll('button')].find(element => element.getAttribute('aria-label') === `Include in rolls: ${item.name}`);
+      assert(owned?.checked === item.owned && enabled?.getAttribute('aria-pressed') === String(item.owned && item.enabled) && enabled?.disabled === !item.owned, `${item.name} Warbond controls display restored ownership and roll eligibility`);
+      const newControls = [...document.querySelectorAll('#newGearContent [data-gear-control]')].filter(element => element.dataset.gearControl.startsWith(`${id}:`));
+      newControls.forEach(control => {
+        const property = control.dataset.gearControl.slice(id.length + 1);
+        assert(control.checked === item[property] && (property !== 'enabled' || control.disabled === !item.owned), `${item.name} new-gear ${property} control agrees after restart`);
+      });
+    });
+  }
+  const summary = getCatalogSourceIndex().summary();
+  assert(JSON.stringify(summary) === JSON.stringify(expected.expectedAuditSummary), 'source-audit totals remain stable after restart and ignore custom rows');
+  renderCatalogAuditStatus();
+  const status = document.querySelector('#catalogAuditStatus');
+  assert(status?.textContent.includes(`${summary.primary} official-source`) && status.textContent.includes(`${summary.community} community-source`) && status.textContent.includes(`${summary.pending} pending / ${summary.total}`), 'restart displays accurate dynamic audit totals');
+  if (desktopStorage) {
+    const loaded = await desktopStorage.loadState();
+    assert(JSON.stringify(loaded.data) === JSON.stringify(buildPersistedStatePayload()), 'separate-process renderer agrees with the exact disk-backed Warbond save');
+  }
+  document.querySelector('#itemSearch').value = expected.reviewedWarbonds[0].name;
+  renderItems();
+  [...document.querySelectorAll('.warbondGroup[data-warbond-id]')].find(element => element.dataset.warbondId === expected.reviewedWarbonds[0].id)?.scrollIntoView({ block: 'start' });
+  return { checks };
+}
+
+module.exports = { rendererWarbondPhase, rendererWarbondVerify };
