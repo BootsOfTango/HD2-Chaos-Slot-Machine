@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "scope": "Orbital and Eagle acquisition-only audit; 17 requisition purchases and one starter stratagem.",
+  "references": [
+    "docs/M2B_ORBITAL_EAGLE_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "stratagem:orbital-120mm-he-barrage",
+      "previousName": "Orbital 120MM HE Barrage",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_120mm_HE_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-380mm-he-barrage",
+      "previousName": "Orbital 380MM HE Barrage",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_380mm_HE_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-airburst-strike",
+      "previousName": "Orbital Airburst Strike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Airburst_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-gas-strike",
+      "previousName": "Orbital Gas Strike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Gas_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-gatling-barrage",
+      "previousName": "Orbital Gatling Barrage",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Gatling_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-laser",
+      "previousName": "Orbital Laser",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Laser",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-napalm-barrage",
+      "previousName": "Orbital Napalm Barrage",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Napalm_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-precision-strike",
+      "previousName": "Orbital Precision Strike",
+      "warbond": "Base game",
+      "source": "Base game",
+      "acquisition": {
+        "kind": "base-game",
+        "id": "base-game:starter-equipment",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Precision_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Unlocked after training in game. Existing player ownership and roll exclusions are preserved."
+      }
+    },
+    {
+      "id": "stratagem:orbital-railcannon-strike",
+      "previousName": "Orbital Railcannon Strike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Railcannon_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-smoke-strike",
+      "previousName": "Orbital Smoke Strike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Smoke_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:orbital-walking-barrage",
+      "previousName": "Orbital Walking Barrage",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Walking_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-110mm-rocket-pods",
+      "previousName": "Eagle 110MM Rocket Pods",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_110mm_Rocket_Pods",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-500kg-bomb",
+      "previousName": "Eagle 500KG Bomb",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_500kg_Bomb",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-airstrike",
+      "previousName": "Eagle Airstrike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Airstrike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-cluster-bomb",
+      "previousName": "Eagle Cluster Bomb",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Cluster_Bomb",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-napalm-airstrike",
+      "previousName": "Eagle Napalm Airstrike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Napalm_Airstrike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-smoke-strike",
+      "previousName": "Eagle Smoke Strike",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Smoke_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    },
+    {
+      "id": "stratagem:eagle-strafing-run",
+      "previousName": "Eagle Strafing Run",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Strafing_Run",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
+      }
+    }
+  ],
+  "warbonds": []
+}
+

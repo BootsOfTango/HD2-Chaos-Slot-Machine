@@ -2,6 +2,39 @@
   "version": 2,
   "warbonds": [
     {
+      "id": "warbond:ironclad-democracy",
+      "name": "Ironclad Democracy",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-09-22",
+      "coverAssetPath": "assets/catalog-additions/ironclad/cover.jpg",
+      "coverKind": "publisher-promotional-image",
+      "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+      "equipmentIds": [
+        "primary:ar-11-arbitrator",
+        "primary:gl-15-evictor",
+        "sidearm:p-34-breacher",
+        "throwable:g-60-anti-tank-seeker",
+        "throwable:g-8-immolation",
+        "booster:integrated-extinguishers",
+        "booster:surplus-eat-allocation"
+      ],
+      "notes": "Seven rollable items: two primaries, one sidearm, two throwables and two boosters. No new selectable stratagem in these contents. Surplus EAT Allocation is a booster, not another EAT stratagem. LAS-12 Sai is a separate Superstore purchase. Armor/cosmetics omitted from equipment rolls. Cover is the official promotional image; equipment uses reviewed transparent source artwork."
+    },
+    {
+      "id": "warbond:righteous-revenants",
+      "name": "Righteous Revenants",
+      "edition": "Legendary Warbond",
+      "releasedAt": "2025-12-18",
+      "coverAssetPath": "assets/catalog-additions/righteous-revenants-cover.png",
+      "sourceUrl": "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/",
+      "equipmentIds": [
+        "primary:sta-52-assault-rifle",
+        "primary:plas-39-accelerator-rifle",
+        "primary:sta-11-smg"
+      ],
+      "notes": "Three primary weapons; no rollable booster or stratagem in the announced contents. Prior purchases/gifts retain their in-game entitlements. Warbond access does not grant every item; players must confirm their own redeemed equipment. W.A.S.P. is a separate requisition unlock."
+    },
+    {
       "id": "warbond:castellans-creed",
       "name": "Castellan's Creed",
       "edition": "Legendary Warbond",
@@ -121,9 +154,526 @@
         "booster:motivational-shocks"
       ],
       "notes": "Complete six-item rollable equipment set from official announcement; no rollable stratagem. Exact menu-taxonomy qualifications are separate from acquisition. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:control-group",
+      "name": "Control Group",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-07-17",
+      "coverAssetPath": "assets/warbonds/official/control-group.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:vg-70-variable",
+        "throwable:g-31-arc",
+        "stratagem:epoch",
+        "stratagem:laser-sentry",
+        "stratagem:warp-pack"
+      ],
+      "notes": "Complete 5-item rollable equipment set confirmed by official announcement. Separate themed Superstore items are excluded; ownership is player-controlled. Promotional artwork, not an exact in-game cover. VG-70 Variable's previously reviewed facts remain unchanged."
+    },
+    {
+      "id": "warbond:servants-of-freedom",
+      "name": "Servants of Freedom",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-02-06",
+      "coverAssetPath": "assets/warbonds/official/servants-of-freedom.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:las-17-double-edge-sickle",
+        "sidearm:gp-20-ultimatum",
+        "throwable:g-50-seeker",
+        "stratagem:portable-hellbomb"
+      ],
+      "notes": "Complete 4-item rollable equipment set confirmed by official announcement. Separate themed Superstore items are excluded; ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:borderline-justice",
+      "name": "Borderline Justice",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-03-20",
+      "coverAssetPath": "assets/warbonds/official/borderline-justice.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:r-6-deadeye",
+        "sidearm:las-58-talon",
+        "throwable:ted-63-dynamite",
+        "stratagem:hover-pack",
+        "booster:sample-extractor"
+      ],
+      "notes": "Complete 5-item rollable equipment set confirmed by official announcement. Separate themed Superstore items are excluded; ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:masters-of-ceremony",
+      "name": "Masters of Ceremony",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-05-15",
+      "coverAssetPath": "assets/warbonds/official/masters-of-ceremony.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:r-2-amendment",
+        "sidearm:cqc-1-saber",
+        "throwable:g-142-pyrotech",
+        "stratagem:one-true-flag",
+        "booster:sample-scanner"
+      ],
+      "notes": "Five-item rollable set: four items supported by official announcement; Sample Scanner acquisition is community-corroborated, not stated in the official text. Existing CQC-2 Saber review remains unchanged. Separate Superstore purchases are excluded. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:force-of-law",
+      "name": "Force of Law",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-06-12",
+      "coverAssetPath": "assets/warbonds/official/force-of-law.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-32-pacifier",
+        "throwable:g-109-urchin",
+        "stratagem:ax-arc-3-k-9",
+        "stratagem:de-escalator",
+        "booster:stun-pods"
+      ],
+      "notes": "Complete five-item rollable set supported by official announcement; separate themed Superstore items and custom entries are excluded. Ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:dust-devils",
+      "name": "Dust Devils",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-09-04",
+      "coverAssetPath": "assets/warbonds/official/dust-devils.jpg",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-2-coyote",
+        "throwable:g-7-pineapple",
+        "stratagem:speargun",
+        "stratagem:expendable-napalm",
+        "stratagem:solo-silo"
+      ],
+      "notes": "Complete five-item rollable set supported by official announcement; separate themed Superstore items and custom entries are excluded. Ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:viper-commandos",
+      "name": "Viper Commandos",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-06-13",
+      "coverAssetPath": "assets/warbonds/official/viper-commandos.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-23a-liberator-carbine",
+        "sidearm:sg-22-bushwhacker",
+        "throwable:k-2-throwing-knife",
+        "booster:experimental-infusion"
+      ],
+      "notes": "Complete 4-item rollable set. Armor, cosmetics, themed shop items and separate edition bonuses are excluded. Ownership is player controlled. Original official promotional scene, not an exact in-game cover. Vehicle skins and story references do not grant stratagems."
+    },
+    {
+      "id": "warbond:truth-enforcers",
+      "name": "Truth Enforcers",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-10-31",
+      "coverAssetPath": "assets/warbonds/official/truth-enforcers.jpg",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:smg-32-reprimand",
+        "primary:sg-20-halt",
+        "sidearm:plas-15-loyalist",
+        "booster:dead-sprint"
+      ],
+      "notes": "Complete 4-item rollable set. Armor, cosmetics, themed shop items and separate edition bonuses are excluded. Ownership is player controlled. Original official promotional artwork, not an exact in-game cover. Vehicle skins and story references do not grant stratagems."
+    },
+    {
+      "id": "warbond:steeled-veterans",
+      "name": "Steeled Veterans",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-02-08",
+      "coverAssetPath": "assets/warbonds/official/steeled-veterans.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://store.steampowered.com/news/app/553850/view/3964924274929744964?l=english",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-23c-liberator-concussive",
+        "primary:sg-225ie-breaker-incendiary",
+        "primary:jar-5-dominator",
+        "sidearm:p-4-senator",
+        "throwable:g-10-incendiary",
+        "booster:flexible-reinforcement-budget"
+      ],
+      "notes": "Complete 6-item rollable set. Armor, cosmetics, themed shop items and separate edition bonuses are excluded. Ownership is player controlled. Original official promotional scene, not an exact in-game cover. Four acquisitions are community-corroborated; the previously reviewed Dominator remains unchanged. Flexible Reinforcement Budget is not Increased Reinforcement Budget."
+    },
+    {
+      "id": "warbond:python-commandos",
+      "name": "Python Commandos",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-12-02",
+      "coverAssetPath": "assets/warbonds/official/python-commandos.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-gl-21-one-two",
+        "stratagem:maxigun",
+        "stratagem:hot-dog",
+        "stratagem:defoliation-tool"
+      ],
+      "notes": "Complete 4-item rollable set. Original official promotional scene, not an exact in-game cover. Separate shop/reward/custom entries, armor, emotes and vehicle skins are excluded. Ownership remains player controlled. No booster or sidearm granted by this Warbond."
+    },
+    {
+      "id": "warbond:redacted-regiment",
+      "name": "Redacted Regiment",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-01-22",
+      "coverAssetPath": "assets/warbonds/official/redacted-regiment.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-59-suppressor",
+        "primary:r-72-censor",
+        "sidearm:p-35-re-educator",
+        "stratagem:c4-pack",
+        "throwable:tm-1-lure-mine",
+        "booster:concealed-insertion"
+      ],
+      "notes": "Complete 6-item rollable set. Original official promotional scene, not an exact in-game cover. Separate shop/reward/custom entries, armor, emotes and vehicle skins are excluded. Ownership remains player controlled. Original announcement scheduled January 20; release-day patch confirms January 22 (https://store.steampowered.com/news/app/553850/view/509603414731129453?l=english)."
+    },
+    {
+      "id": "warbond:siege-breakers",
+      "name": "Siege Breakers",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-02-03",
+      "coverAssetPath": "assets/warbonds/official/siege-breakers.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:las-13-trident",
+        "stratagem:breaching-hammer",
+        "stratagem:belt-fed-gl",
+        "stratagem:leveller",
+        "throwable:g-sh-39-shield"
+      ],
+      "notes": "Complete 5-item rollable set. Original official promotional scene, not an exact in-game cover. Separate shop/reward/custom entries, armor, emotes and vehicle skins are excluded. Ownership remains player controlled. No booster or tank granted by this Warbond."
+    },
+    {
+      "id": "warbond:entrenched-division",
+      "name": "Entrenched Division",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-03-17",
+      "coverAssetPath": "assets/warbonds/official/entrenched-division.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:stoker",
+        "sidearm:entrenchment-tool",
+        "sidearm:veto",
+        "throwable:giga-grenade",
+        "stratagem:gas-mortar",
+        "stratagem:cremator"
+      ],
+      "notes": "Complete rollable equipment set supported by the official announcement. Excludes cosmetics, armor, separate Superstore equipment and unrelated comparison weapons; no booster grant. Ownership stays player-controlled. Official promotional image, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:exo-experts",
+      "name": "Exo Experts",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-04-28",
+      "coverAssetPath": "assets/warbonds/official/exo-experts.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:smg-203-gallant",
+        "sidearm:p-33-missile-pistol",
+        "stratagem:mgx-42-bullet-storm",
+        "stratagem:exo-51-lumberer-exosuit",
+        "stratagem:exo-55-breakthrough-exosuit"
+      ],
+      "notes": "Complete rollable equipment set supported by the official announcement. Excludes cosmetics, armor, separate Superstore equipment and unrelated comparison weapons; no booster grant. Ownership stays player-controlled. Official promotional image, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:obedient-democracy-support-troopers",
+      "name": "Obedient Democracy Support Troopers",
+      "edition": "Legendary Warbond",
+      "releasedAt": "2025-08-26",
+      "coverAssetPath": "assets/warbonds/official/obedient-democracy-support-troopers.jpg",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ma5c-assault-rifle",
+        "primary:m7s-smg",
+        "primary:m90a-shotgun",
+        "sidearm:m6c-socom-pistol"
+      ],
+      "notes": "Complete rollable equipment set supported by the official announcement. Excludes cosmetics, armor, separate Superstore equipment and unrelated comparison weapons; no booster grant. Ownership stays player-controlled. Official promotional image, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:helldivers-mobilize",
+      "name": "Helldivers Mobilize!",
+      "edition": "Standard Warbond",
+      "releasedAt": "2024-02-08",
+      "coverAssetPath": "assets/warbonds/helldivers-mobilize.png",
+      "coverKind": "game-cover-art-via-community",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+      "verifiedAt": "2026-09-15",
+      "equipmentIds": [
+        "primary:ar-23p-liberator-penetrator",
+        "primary:r-63-diligence",
+        "primary:r-63cs-diligence-counter-sniper",
+        "primary:smg-37-defender",
+        "primary:sg-225-breaker",
+        "primary:sg-225sp-breaker-spray-and-pray",
+        "primary:sg-8-punisher",
+        "primary:sg-8s-slugger",
+        "primary:las-5-scythe",
+        "primary:plas-1-scorcher",
+        "sidearm:p-19-redeemer",
+        "throwable:g-16-impact",
+        "throwable:g-3-smoke",
+        "throwable:g-6-frag",
+        "booster:hellpod-space-optimization",
+        "booster:vitality-enhancement",
+        "booster:uav-recon-booster",
+        "booster:stamina-enhancement",
+        "booster:muscle-enhancement",
+        "booster:increased-reinforcement-budget"
+      ],
+      "notes": "Free Warbond access; equipment requires Medals in game. Only mark items you have unlocked as owned. Complete reviewed rollable set: 10 primaries, 1 sidearm, 3 throwables, 6 boosters; no stratagems. Excludes starter equipment, separately purchased Superstore items and cosmetics. In-game background art retrieved via Dogo314 / Helldivers Wiki.gg; not a screenshot of the acquisition menu."
     }
   ],
   "items": [
+    {
+      "name": "AR-11 Arbitrator",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/ar-11-arbitrator.png",
+      "id": "primary:ar-11-arbitrator",
+      "aliases": [
+        "Arbitrator"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "GL-15 Evictor",
+      "type": "primary",
+      "subgroup": "explosive",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/gl-15-evictor.png",
+      "id": "primary:gl-15-evictor",
+      "aliases": [
+        "Evictor"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "P-34 Breacher",
+      "type": "sidearm",
+      "subgroup": "special-sidearm",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/p-34-breacher.png",
+      "id": "sidearm:p-34-breacher",
+      "aliases": [
+        "Breacher"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "G-60 Anti-Tank Seeker",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/g-60-anti-tank-seeker.png",
+      "id": "throwable:g-60-anti-tank-seeker",
+      "aliases": [
+        "Anti-Tank Seeker",
+        "G-60 AT Seeker"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "G-8 Immolation",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/g-8-immolation.png",
+      "id": "throwable:g-8-immolation",
+      "aliases": [
+        "Immolation"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "Integrated Extinguishers",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/integrated-extinguishers.png",
+      "id": "booster:integrated-extinguishers",
+      "aliases": [],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "Surplus EAT Allocation",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/surplus-eat-allocation.png",
+      "id": "booster:surplus-eat-allocation",
+      "aliases": [],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "LAS-12 Sai",
+      "type": "primary",
+      "subgroup": "energy",
+      "warbond": "Superstore",
+      "source": "Superstore",
+      "assetPath": "assets/catalog-additions/ironclad/las-12-sai.png",
+      "id": "primary:las-12-sai",
+      "aliases": [
+        "Sai",
+        "LAS-12 SAI"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "superstore",
+        "id": "superstore:ironclad-democracy",
+        "label": "Superstore — Ironclad Democracy",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-12_Sai",
+        "verifiedAt": "2026-09-24",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separately purchased Superstore primary. Not included by owning the Warbond. Slot and acquisition community-corroborated; variable weapon stats and price intentionally not modeled."
+      }
+    },
+    {
+      "id": "primary:r-4-hyena",
+      "name": "R-4 Hyena",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Campaign rewards",
+      "source": "Campaign rewards",
+      "aliases": [
+        "Hyena"
+      ],
+      "assetPath": "assets/catalog-additions/r-4-hyena.png",
+      "introducedIn": "hyena-revenants",
+      "defaultEnabled": false,
+      "acquisition": {
+        "kind": "campaign-reward",
+        "id": "campaign:celestial-fence",
+        "label": "Celestial Fence campaign reward",
+        "sourceUrl": "https://arrowhead.zendesk.com/hc/en-us/articles/29563053705500-I-didn-t-get-a-campaign-reward",
+        "verifiedAt": "2026-09-15",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "startsAt": "2026-06-30T00:00:00Z",
+        "endsAt": "2026-07-13T14:00:00Z",
+        "notes": "Campaign participation reward, not universally owned. Enable only if received in game. Weapon slot/class checked against the community R-4 Hyena page."
+      }
+    },
     {
       "id": "primary:r-40-k-hot-shot",
       "name": "R/40-K Hot-Shot Marksman Rifle",
@@ -209,7 +759,7 @@
         "sourceUrl": "https://news.xbox.com/en-us/2026/08/07/helldivers-2-x-warhammer-40000-warbond-xbox/",
         "verifiedAt": "2026-09-13"
       },
-      "assetPath": "assets/new-gear/40-k-meltagun.png",
+      "assetPath": "assets/new-gear/40-k-meltagun-stratagem.svg",
       "introducedIn": "1.1.2",
       "defaultEnabled": false
     },
@@ -245,9 +795,13 @@
       "id": "primary:ar-2-coyote",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
         "label": "Dust Devils",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -280,9 +834,13 @@
       "id": "primary:ar-23a-liberator-carbine",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
         "label": "Viper Commandos",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -293,26 +851,38 @@
       "source": "Steeled Veterans",
       "assetPath": "assets/weapons/primaries/ar-23c-liberator-concussive-wiki.png",
       "id": "primary:ar-23c-liberator-concussive",
-      "aliases": [],
+      "aliases": [
+        "AR-23E Liberator Explosive"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
         "label": "Steeled Veterans",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23C_Liberator_Concussive",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. The wiki also records the former AR-23E Liberator Explosive name; retain it only as an import/search alias."
       }
     },
     {
       "name": "AR-23P Liberator Penetrator",
       "type": "primary",
       "subgroup": "assault-rifle",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/ar-23p-liberator-penetrator-wiki.png",
       "id": "primary:ar-23p-liberator-penetrator",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -325,9 +895,13 @@
       "id": "primary:ar-32-pacifier",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
         "label": "Force of Law",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -340,9 +914,13 @@
       "id": "primary:ar-59-suppressor",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
         "label": "Redacted Regiment",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -374,9 +952,13 @@
       "id": "primary:ar-gl-21-one-two",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
         "label": "Python Commandos",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -470,9 +1052,13 @@
       "id": "primary:ma5c-assault-rifle",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
         "label": "Obedient Democracy Support Troopers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -547,9 +1133,13 @@
       "id": "primary:r-2-amendment",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
         "label": "Masters of Ceremony",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -604,39 +1194,53 @@
       "id": "primary:r-6-deadeye",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
         "label": "Borderline Justice",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "R-63 Diligence",
       "type": "primary",
       "subgroup": "marksman-rifle",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/r-63-diligence-wiki.png",
       "id": "primary:r-63-diligence",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "R-63CS Diligence Counter Sniper",
       "type": "primary",
       "subgroup": "marksman-rifle",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/r-63cs-diligence-counter-sniper-wiki.png",
       "id": "primary:r-63cs-diligence-counter-sniper",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -649,9 +1253,13 @@
       "id": "primary:r-72-censor",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
         "label": "Redacted Regiment",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -664,9 +1272,13 @@
       "id": "primary:m7s-smg",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
         "label": "Obedient Democracy Support Troopers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -699,24 +1311,33 @@
       "id": "primary:smg-32-reprimand",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
         "label": "Truth Enforcers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "SMG-37 Defender",
       "type": "primary",
       "subgroup": "smg",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/smg-37-defender-wiki.png",
       "id": "primary:smg-37-defender",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -768,9 +1389,13 @@
       "id": "primary:m90a-shotgun",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
         "label": "Obedient Democracy Support Troopers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -783,24 +1408,33 @@
       "id": "primary:sg-20-halt",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
         "label": "Truth Enforcers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "SG-225 Breaker",
       "type": "primary",
       "subgroup": "shotgun",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/sg-225-breaker-wiki.png",
       "id": "primary:sg-225-breaker",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -813,17 +1447,21 @@
       "id": "primary:sg-225ie-breaker-incendiary",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
         "label": "Steeled Veterans",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://store.steampowered.com/news/app/553850/view/3964924274929744964?l=english",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "SG-225SP Breaker Spray&Pray",
       "type": "primary",
       "subgroup": "shotgun",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/sg-225sp-breaker-spray-and-pray-wiki.png",
       "id": "primary:sg-225sp-breaker-spray-and-pray",
       "aliases": [
@@ -831,9 +1469,14 @@
         "sg 225sp breaker spraypray"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -859,15 +1502,20 @@
       "name": "SG-8 Punisher",
       "type": "primary",
       "subgroup": "shotgun",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/sg-8-punisher-wiki.png",
       "id": "primary:sg-8-punisher",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -894,15 +1542,20 @@
       "name": "SG-8S Slugger",
       "type": "primary",
       "subgroup": "shotgun",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/sg-8s-slugger-wiki.png",
       "id": "primary:sg-8s-slugger",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -934,9 +1587,14 @@
       "id": "primary:las-13-trident",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
         "label": "Siege Breakers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Acquisition confirmed by the announcement, which calls it LAS-16 Trident. Retain the existing LAS-13 identity: Arrowhead's current Known Issues page uses LAS-13 Trident (https://arrowhead.zendesk.com/hc/en-us/articles/15916898652700--HELLDIVERS-2-Known-Issues). Do not turn a conflicting announcement number into a new item."
       }
     },
     {
@@ -968,39 +1626,53 @@
       "id": "primary:las-17-double-edge-sickle",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
         "label": "Servants of Freedom",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "LAS-5 Scythe",
       "type": "primary",
       "subgroup": "energy",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/las-5-scythe-wiki.png",
       "id": "primary:las-5-scythe",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "PLAS-1 Scorcher",
       "type": "primary",
       "subgroup": "energy",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/primaries/plas-1-scorcher-wiki.png",
       "id": "primary:plas-1-scorcher",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -1072,9 +1744,13 @@
       "id": "sidearm:m6c-socom-pistol",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
         "label": "Obedient Democracy Support Troopers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1119,15 +1795,20 @@
       "name": "P-19 Redeemer",
       "type": "sidearm",
       "subgroup": "pistol",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/sidearms/p-19-redeemer-wiki.png",
       "id": "sidearm:p-19-redeemer",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -1160,9 +1841,13 @@
       "id": "sidearm:p-35-re-educator",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
         "label": "Redacted Regiment",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1175,9 +1860,14 @@
       "id": "sidearm:p-4-senator",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
         "label": "Steeled Veterans",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/P-4_Senator",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. Do not infer ownership from edition or purchase history."
       }
     },
     {
@@ -1337,9 +2027,13 @@
       "id": "sidearm:gp-20-ultimatum",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
         "label": "Servants of Freedom",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1352,9 +2046,13 @@
       "id": "sidearm:las-58-talon",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
         "label": "Borderline Justice",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1386,9 +2084,13 @@
       "id": "sidearm:plas-15-loyalist",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
         "label": "Truth Enforcers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1401,9 +2103,13 @@
       "id": "sidearm:sg-22-bushwhacker",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
         "label": "Viper Commandos",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1416,9 +2122,14 @@
       "id": "throwable:g-10-incendiary",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
         "label": "Steeled Veterans",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/G-10_Incendiary",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. Do not infer ownership from edition or purchase history."
       }
     },
     {
@@ -1431,9 +2142,13 @@
       "id": "throwable:g-109-urchin",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
         "label": "Force of Law",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1504,26 +2219,37 @@
       "source": "Masters of Ceremony",
       "assetPath": "assets/weapons/throwables/g-142-pyrotech-wiki.png",
       "id": "throwable:g-142-pyrotech",
-      "aliases": [],
+      "aliases": [
+        "G-142 Pyrotech Grenade"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
         "label": "Masters of Ceremony",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "G-16 Impact",
       "type": "throwable",
       "subgroup": "grenade",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/throwables/g-16-impact-wiki.png",
       "id": "throwable:g-16-impact",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -1549,15 +2275,20 @@
       "name": "G-3 Smoke",
       "type": "throwable",
       "subgroup": "grenade",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/throwables/g-3-smoke-wiki.png",
       "id": "throwable:g-3-smoke",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -1570,9 +2301,13 @@
       "id": "throwable:g-31-arc",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:control-group",
         "label": "Control Group",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1604,24 +2339,33 @@
       "id": "throwable:g-50-seeker",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
         "label": "Servants of Freedom",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "G-6 Frag",
       "type": "throwable",
       "subgroup": "grenade",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/weapons/throwables/g-6-frag-wiki.png",
       "id": "throwable:g-6-frag",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -1634,9 +2378,13 @@
       "id": "throwable:g-7-pineapple",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
         "label": "Dust Devils",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1669,24 +2417,34 @@
       "id": "throwable:k-2-throwing-knife",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
         "label": "Viper Commandos",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "The official announcement confirms the throwing knife; existing K-2 designation is retained rather than presented as a quotation."
       }
     },
     {
       "name": "TED-63 Dynamite",
       "type": "throwable",
-      "subgroup": "throwing-weapon",
+      "subgroup": "grenade",
       "warbond": "Borderline Justice",
       "source": "Borderline Justice",
       "assetPath": "assets/weapons/throwables/ted-63-dynamite-wiki.png",
       "id": "throwable:ted-63-dynamite",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
         "label": "Borderline Justice",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official acquisition; Standard Throwable taxonomy separately community-corroborated, mapped to the app's grenade group: https://helldivers.wiki.gg/wiki/TED-63_Dynamite"
       }
     },
     {
@@ -1699,9 +2457,13 @@
       "id": "throwable:g-sh-39-shield",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
         "label": "Siege Breakers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -1712,56 +2474,78 @@
       "source": "Redacted Regiment",
       "assetPath": "assets/weapons/throwables/tm-1-lure-mine-wiki.png",
       "id": "throwable:tm-1-lure-mine",
-      "aliases": [],
+      "aliases": [
+        "TM-01 Lure Mine"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
         "label": "Redacted Regiment",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Announcement spells TM-01; retain current TM-1 canonical label and recognize TM-01 as a search/import alias. Current spelling is also community-corroborated by https://helldivers.wiki.gg/wiki/TM-1_Lure_Mine."
       }
     },
     {
       "name": "Orbital 120MM HE Barrage",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-120mm-he-barrage.svg",
       "id": "stratagem:orbital-120mm-he-barrage",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_120mm_HE_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital 380MM HE Barrage",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-380mm-he-barrage.svg",
       "id": "stratagem:orbital-380mm-he-barrage",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_380mm_HE_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Airburst Strike",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-airburst-strike.svg",
       "id": "stratagem:orbital-airburst-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Airburst_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
@@ -1793,240 +2577,320 @@
       "name": "Orbital Gas Strike",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-gas-strike.svg",
       "id": "stratagem:orbital-gas-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Gas_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Gatling Barrage",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-gatling-barrage.svg",
       "id": "stratagem:orbital-gatling-barrage",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Gatling_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Laser",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-laser.svg",
       "id": "stratagem:orbital-laser",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Laser",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Napalm Barrage",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-napalm-barrage.svg",
       "id": "stratagem:orbital-napalm-barrage",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Napalm_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Precision Strike",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Base game",
+      "source": "Base game",
       "assetPath": "assets/stratagems/orbital/orbital-precision-strike.svg",
       "id": "stratagem:orbital-precision-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "base-game",
+        "id": "base-game:starter-equipment",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Precision_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Unlocked after training in game. Existing player ownership and roll exclusions are preserved."
       }
     },
     {
       "name": "Orbital Railcannon Strike",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-railcannon-strike.svg",
       "id": "stratagem:orbital-railcannon-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Railcannon_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Smoke Strike",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-smoke-strike.svg",
       "id": "stratagem:orbital-smoke-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Smoke_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Orbital Walking Barrage",
       "type": "stratagem",
       "subgroup": "orbital",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/orbital/orbital-walking-barrage.svg",
       "id": "stratagem:orbital-walking-barrage",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Orbital_Walking_Barrage",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle 110MM Rocket Pods",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-110mm-rocket-pods.svg",
       "id": "stratagem:eagle-110mm-rocket-pods",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_110mm_Rocket_Pods",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle 500KG Bomb",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-500kg-bomb.svg",
       "id": "stratagem:eagle-500kg-bomb",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_500kg_Bomb",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle Airstrike",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-airstrike.svg",
       "id": "stratagem:eagle-airstrike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Airstrike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle Cluster Bomb",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-cluster-bomb.svg",
       "id": "stratagem:eagle-cluster-bomb",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Cluster_Bomb",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle Napalm Airstrike",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-napalm-airstrike.svg",
       "id": "stratagem:eagle-napalm-airstrike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Napalm_Airstrike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle Smoke Strike",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-smoke-strike.svg",
       "id": "stratagem:eagle-smoke-strike",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Smoke_Strike",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Eagle Strafing Run",
       "type": "stratagem",
       "subgroup": "eagle",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/eagle/eagle-strafing-run.svg",
       "id": "stratagem:eagle-strafing-run",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Eagle_Strafing_Run",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Not a Warbond or an automatic ownership grant."
       }
     },
     {
       "name": "Anti-Personnel Minefield",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/anti-personnel-minefield.svg",
       "id": "stratagem:anti-personnel-minefield",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-6_Anti-Personnel_Minefield",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
@@ -2054,45 +2918,60 @@
       "name": "Anti-Tank Mines",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/anti-tank-mines.svg",
       "id": "stratagem:anti-tank-mines",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-17_Anti-Tank_Mines",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Autocannon Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/autocannon-sentry.svg",
       "id": "stratagem:autocannon-sentry",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/AC-8_Autocannon_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "EMS Mortar Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/ems-mortar-sentry.svg",
       "id": "stratagem:ems-mortar-sentry",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/M-23_EMS_Mortar_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
@@ -2120,319 +2999,430 @@
       "name": "Gas Mines",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/gas-mines.svg",
       "id": "stratagem:gas-mines",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-8_Gas_Mines",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Gatling Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/gatling-sentry.svg",
       "id": "stratagem:gatling-sentry",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/G-16_Gatling_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Grenadier Battlement",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/grenadier-battalion.svg",
       "id": "stratagem:grenadier-battlement",
       "aliases": [
         "grenadier battalion"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/E/GL-21_Grenadier_Battlement",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "HMG Emplacement",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/hmg-emplacement.svg",
       "id": "stratagem:hmg-emplacement",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/E/MG-101_HMG_Emplacement",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Incendiary Mines",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/incendiary-mines.svg",
       "id": "stratagem:incendiary-mines",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-I4_Incendiary_Mines",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Laser Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Control Group",
+      "source": "Control Group",
       "assetPath": "assets/stratagems/defensive/laser-sentry.svg",
       "id": "stratagem:laser-sentry",
-      "aliases": [],
+      "aliases": [
+        "A/LAS-98 Laser Sentry"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Machine Gun Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/machine-gun-sentry.svg",
       "id": "stratagem:machine-gun-sentry",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/MG-43_Machine_Gun_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Mortar Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/mortar-sentry.svg",
       "id": "stratagem:mortar-sentry",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/M-12_Mortar_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Rocket Sentry",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/rocket-sentry.svg",
       "id": "stratagem:rocket-sentry",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/MLS-4X_Rocket_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Shield Generator Relay",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/shield-generator-relay.svg",
       "id": "stratagem:shield-generator-relay",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/FX-12_Shield_Generator_Relay",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "Tesla Tower",
       "type": "stratagem",
       "subgroup": "defensive",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/defensive/tesla-tower.svg",
       "id": "stratagem:tesla-tower",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/ARC-3_Tesla_Tower",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
       }
     },
     {
       "name": "AC-8 Autocannon",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/ac-8-autocannon.svg",
       "id": "stratagem:ac-8-autocannon",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AC-8_Autocannon",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "APW-1 Anti-Materiel Rifle",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/apw-1-anti-materiel-rifle.svg",
       "id": "stratagem:apw-1-anti-materiel-rifle",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "ARC-3 Arc Thrower",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/arc-3-arc-thrower.svg",
       "id": "stratagem:arc-3-arc-thrower",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/ARC-3_Arc_Thrower",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "Ballistic Shield Backpack",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/ballistic-shield-backpack.svg",
       "id": "stratagem:ballistic-shield-backpack",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/SH-20_Ballistic_Shield_Backpack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Bastion",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/bastion.svg",
       "id": "stratagem:bastion",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/TD-220_Bastion_MK_XVI",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Belt-fed GL",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
       "assetPath": "assets/stratagems/support/belt-fed-gl.svg",
       "id": "stratagem:belt-fed-gl",
-      "aliases": [],
+      "aliases": [
+        "GL-28 Belt-Fed Grenade Launcher"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Breaching Hammer",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
       "assetPath": "assets/stratagems/support/breaching-hammer.svg",
       "id": "stratagem:breaching-hammer",
-      "aliases": [],
+      "aliases": [
+        "CQC-20 Breaching Hammer"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "C4 Pack",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
       "assetPath": "assets/stratagems/support/c4-pack.svg",
       "id": "stratagem:c4-pack",
-      "aliases": [],
+      "aliases": [
+        "B/MD C4 Pack"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement explicitly identifies a backpack with six charges; classify as backpack, preserving the existing short name."
       }
     },
     {
       "name": "De-Escalator",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
       "assetPath": "assets/stratagems/support/de-escalator.svg",
       "id": "stratagem:de-escalator",
-      "aliases": [],
+      "aliases": [
+        "GL-52 De-Escalator"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Defoliation Tool",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
       "assetPath": "assets/stratagems/support/detonation-tool.svg",
       "id": "stratagem:defoliation-tool",
       "aliases": [
-        "detonation tool"
+        "detonation tool",
+        "CQC-9 Defoliation Tool"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -2460,186 +3450,254 @@
       "name": "EAT-17 Expendable Anti-Tank",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/eat-17-expendable-anti-tank.svg",
       "id": "stratagem:eat-17-expendable-anti-tank",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/EAT-17_Expendable_Anti-Tank",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "Emancipator Exosuit",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/emancipator-exosuit.svg",
       "id": "stratagem:emancipator-exosuit",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/EXO-49_Emancipator_Exosuit",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Epoch",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Control Group",
+      "source": "Control Group",
       "assetPath": "assets/stratagems/support/epoch.svg",
       "id": "stratagem:epoch",
-      "aliases": [],
+      "aliases": [
+        "PLAS-45 Epoch"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Expendable Napalm",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
       "assetPath": "assets/stratagems/support/expendable-napalm.svg",
       "id": "stratagem:expendable-napalm",
-      "aliases": [],
+      "aliases": [
+        "EAT-700 Expendable Napalm"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "FAF-14 Spear",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/faf-14-spear.svg",
       "id": "stratagem:faf-14-spear",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/FAF-14_Spear",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "FLAM-40 Flamethrower",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/flam-40-flamethrower.svg",
       "id": "stratagem:flam-40-flamethrower",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/FLAM-40_Flamethrower",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "M-102 Fast Recon Vehicle",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/fast-recon-vehicle.svg",
       "id": "stratagem:m-102-fast-recon-vehicle",
       "aliases": [
-        "fast recon vehicle"
+        "fast recon vehicle",
+        "M-102 Gunner FRV"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/M-102_Gunner_FRV",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "M-103 Supply FRV",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Campaign rewards",
+      "source": "Campaign rewards",
       "assetPath": "assets/stratagems/support/supply-frv.svg",
       "id": "stratagem:m-103-supply-frv",
       "aliases": [
         "supply frv"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
-      }
+        "kind": "campaign-reward",
+        "id": "campaign:census-thunder",
+        "label": "Census Thunder campaign reward",
+        "sourceUrl": "https://arrowhead.zendesk.com/hc/en-us/articles/29563053705500-I-didn-t-get-a-campaign-reward",
+        "verifiedAt": "2026-09-15",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "startsAt": "2026-06-16T00:00:00Z",
+        "endsAt": "2026-06-29T15:00:00Z",
+        "notes": "Campaign participation reward as of September 15, 2026. Arrowhead says missed rewards return at some time in October 2026, not available universally today. Choose owned only if you received it; existing saved choices are preserved. This is not an automatic date-based unlock."
+      },
+      "defaultEnabled": false
     },
     {
       "name": "GL-21 Grenade Launcher",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/gl-21-grenade-launcher.svg",
       "id": "stratagem:gl-21-grenade-launcher",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "GR-8 Recoilless Rifle",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/gr-8-recoilless-rifle.svg",
       "id": "stratagem:gr-8-recoilless-rifle",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "Guard Dog",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/guard-dog.svg",
       "id": "stratagem:guard-dog",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/AR-23_Guard_Dog",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "AX/ARC-3 K-9",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
       "assetPath": "assets/stratagems/support/guard-dog-arc.svg",
       "id": "stratagem:ax-arc-3-k-9",
       "aliases": [
-        "guard dog arc"
+        "guard dog arc",
+        "AX/ARC-3 \"Guard Dog\" K-9",
+        "AX/ARC-3 “Guard Dog” K-9"
       ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement verifies Force of Law acquisition. Backpack subgroup is community-corroborated separately by https://helldivers.wiki.gg/wiki/Equipment_Traits and https://helldivers.wiki.gg/wiki/Category:Backpack_Stratagems; it is not claimed as verbatim official menu taxonomy."
       }
     },
     {
@@ -2668,300 +3726,411 @@
       "name": "Guard Dog Rover",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/guard-dog-rover.svg",
       "id": "stratagem:guard-dog-rover",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/LAS-5_Rover",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Hot Dog",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
       "assetPath": "assets/stratagems/support/hot-dog.svg",
       "id": "stratagem:hot-dog",
-      "aliases": [],
+      "aliases": [
+        "AX/FLAM-75 \"Guard Dog\" Hot Dog"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement describes the drone returning to its backpack to refuel; classify as backpack. Keep the existing short name and full designation alias."
       }
     },
     {
       "name": "Hover Pack",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
       "assetPath": "assets/stratagems/support/hover-pack.svg",
       "id": "stratagem:hover-pack",
-      "aliases": [],
+      "aliases": [
+        "LIFT-860 Hover Pack"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
+        "label": "Borderline Justice",
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official acquisition; Backpack trait separately corroborated by community item entry: https://helldivers.wiki.gg/wiki/LIFT-860_Hover_Pack"
       }
     },
     {
       "name": "Jump Pack",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/jump-pack.svg",
       "id": "stratagem:jump-pack",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LIFT-850_Jump_Pack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "LAS-98 Laser Cannon",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/las-98-laser-cannon.svg",
       "id": "stratagem:las-98-laser-cannon",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-98_Laser_Cannon",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "LAS-99 Quasar Cannon",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/las-99-quasar-cannon.svg",
       "id": "stratagem:las-99-quasar-cannon",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-99_Quasar_Cannon",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "Leveller",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
       "assetPath": "assets/stratagems/support/leveller.svg",
       "id": "stratagem:leveller",
-      "aliases": [],
+      "aliases": [
+        "EAT-411 Leveller"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "M-105 Stalwart",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/m-105-stalwart.svg",
       "id": "stratagem:m-105-stalwart",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/M-105_Stalwart",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "MG-206 Heavy Machine Gun",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/mg-206-heavy-machine-gun.svg",
       "id": "stratagem:mg-206-heavy-machine-gun",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MG-206_Heavy_Machine_Gun",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "MG-43 Machine Gun",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Base game",
+      "source": "Base game",
       "assetPath": "assets/stratagems/support/mg-43-machine-gun.svg",
       "id": "stratagem:mg-43-machine-gun",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "base-game",
+        "id": "base-game:starter-equipment",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MG-43_Machine_Gun",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Unlocked by default in game. Existing player ownership and roll exclusions are preserved."
       }
     },
     {
       "name": "MLS-4X Commando",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/mls-4x-commando.svg",
       "id": "stratagem:mls-4x-commando",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MLS-4X_Commando",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "Maxigun",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
       "assetPath": "assets/stratagems/support/maxigun.svg",
       "id": "stratagem:maxigun",
-      "aliases": [],
+      "aliases": [
+        "M-1000 Maxigun"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "One True Flag",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
       "assetPath": "assets/stratagems/support/one-true-flag.svg",
       "id": "stratagem:one-true-flag",
-      "aliases": [],
+      "aliases": [
+        "CQC-1 One True Flag"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
+        "label": "Masters of Ceremony",
+        "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Patriot Exosuit",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/patriot-exosuit.svg",
       "id": "stratagem:patriot-exosuit",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/EXO-45_Patriot_Exosuit",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Portable Hellbomb",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
       "assetPath": "assets/stratagems/support/portable-hellbomb.svg",
       "id": "stratagem:portable-hellbomb",
-      "aliases": [],
+      "aliases": [
+        "B-100 Portable Hellbomb"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
+        "label": "Servants of Freedom",
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement explicitly describes this stratagem as a backpack."
       }
     },
     {
       "name": "RL-77 Airburst Rocket Launcher",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/rl-77-airburst-rocket-launcher.svg",
       "id": "stratagem:rl-77-airburst-rocket-launcher",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/RL-77_Airburst_Rocket_Launcher",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "RS-422 Railgun",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/rs-422-railgun.svg",
       "id": "stratagem:rs-422-railgun",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/RS-422_Railgun",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
       }
     },
     {
       "name": "Shield Generator Pack",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/shield-generator-pack.svg",
       "id": "stratagem:shield-generator-pack",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/SH-32_Shield_Generator_Pack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Solo Silo",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
       "assetPath": "assets/stratagems/support/solo-silo.svg",
       "id": "stratagem:solo-silo",
-      "aliases": [],
+      "aliases": [
+        "MS-11 Solo Silo"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Speargun",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
       "assetPath": "assets/stratagems/support/speargun.svg",
       "id": "stratagem:speargun",
-      "aliases": [],
+      "aliases": [
+        "S-11 Speargun"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3014,120 +4183,162 @@
       "name": "Supply Pack",
       "type": "stratagem",
       "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
       "assetPath": "assets/stratagems/support/supply-pack.svg",
       "id": "stratagem:supply-pack",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/B-1_Supply_Pack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
       }
     },
     {
       "name": "Warp Pack",
       "type": "stratagem",
-      "subgroup": "support",
-      "warbond": "Unassigned / Custom",
-      "source": "Unassigned / Custom",
+      "subgroup": "backpack",
+      "warbond": "Control Group",
+      "source": "Control Group",
       "assetPath": "assets/stratagems/support/warp-pack.svg",
       "id": "stratagem:warp-pack",
-      "aliases": [],
+      "aliases": [
+        "LIFT-182 Warp Pack"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Unassigned / Custom",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official acquisition; Backpack trait separately corroborated by community item entry: https://helldivers.wiki.gg/wiki/LIFT-182_Warp_Pack"
       }
     },
     {
       "name": "Hellpod Space Optimization",
       "type": "booster",
       "subgroup": "booster",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/boosters/hellpod-space-optimization-wiki.svg",
       "id": "booster:hellpod-space-optimization",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "Vitality Enhancement",
       "type": "booster",
       "subgroup": "booster",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/boosters/vitality-enhancement-wiki.svg",
       "id": "booster:vitality-enhancement",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "UAV Recon Booster",
       "type": "booster",
       "subgroup": "booster",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/boosters/uav-recon-booster-wiki.svg",
       "id": "booster:uav-recon-booster",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "Stamina Enhancement",
       "type": "booster",
       "subgroup": "booster",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/boosters/stamina-enhancement-wiki.svg",
       "id": "booster:stamina-enhancement",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "Muscle Enhancement",
       "type": "booster",
       "subgroup": "booster",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/boosters/muscle-enhancement-wiki.svg",
       "id": "booster:muscle-enhancement",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
       "name": "Increased Reinforcement Budget",
       "type": "booster",
       "subgroup": "booster",
-      "warbond": "Helldiver Basics (Mobilize)",
-      "source": "Helldiver Basics (Mobilize)",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
       "assetPath": "assets/boosters/increased-reinforcement-budget-wiki.svg",
       "id": "booster:increased-reinforcement-budget",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Helldiver Basics (Mobilize)",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
       }
     },
     {
@@ -3140,9 +4351,14 @@
       "id": "booster:flexible-reinforcement-budget",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
         "label": "Steeled Veterans",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Flexible_Reinforcement_Budget",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. Do not infer ownership from edition or purchase history."
       }
     },
     {
@@ -3213,9 +4429,13 @@
       "id": "booster:experimental-infusion",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
         "label": "Viper Commandos",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3247,9 +4467,13 @@
       "id": "booster:dead-sprint",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
         "label": "Truth Enforcers",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3272,18 +4496,25 @@
       }
     },
     {
-      "name": "Sample Extractor",
+      "name": "Sample Extricator",
       "type": "booster",
       "subgroup": "booster",
       "warbond": "Borderline Justice",
       "source": "Borderline Justice",
       "assetPath": "assets/boosters/sample-extractor-wiki.svg",
       "id": "booster:sample-extractor",
-      "aliases": [],
+      "aliases": [
+        "Sample Extractor"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
         "label": "Borderline Justice",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement names Sample Extricator. Preserve the old Sample Extractor name as an alias and retain its stable ID/art path; historical Results remain unchanged."
       }
     },
     {
@@ -3296,9 +4527,14 @@
       "id": "booster:sample-scanner",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
         "label": "Masters of Ceremony",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Sample_Scanner",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Sample Scanner procurement is corroborated by the community item and Masters of Ceremony contents pages; the official announcement text does not mention this booster. Acquisition only, not a balance/stat review."
       }
     },
     {
@@ -3311,9 +4547,13 @@
       "id": "booster:stun-pods",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
         "label": "Force of Law",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3326,39 +4566,56 @@
       "id": "booster:concealed-insertion",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
         "label": "Redacted Regiment",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Stoker",
       "type": "primary",
-      "subgroup": "shotgun",
+      "subgroup": "smg",
       "warbond": "Entrenched Division",
       "source": "Entrenched Division",
       "assetPath": "assets/weapons/primaries/stoker-wiki.png",
       "id": "primary:stoker",
-      "aliases": [],
+      "aliases": [
+        "SMG/FLAM-34 Stoker"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
         "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
       "name": "Sweeper",
       "type": "primary",
-      "subgroup": "marksman-rifle",
-      "warbond": "Entrenched Division",
-      "source": "Entrenched Division",
+      "subgroup": "shotgun",
+      "warbond": "Superstore",
+      "source": "Superstore",
       "assetPath": "assets/weapons/primaries/sweeper-wiki.png",
       "id": "primary:sweeper",
-      "aliases": [],
+      "aliases": [
+        "SG-97 Sweeper"
+      ],
       "acquisition": {
-        "kind": "unverified",
-        "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "kind": "superstore",
+        "id": "superstore",
+        "label": "Superstore — Entrenched Division themed page",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Sweeper",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate Superstore shotgun, not an Entrenched Division Warbond unlock. Community indexed procurement reference corroborated by https://helldivers.fandom.com/wiki/SG-97_Sweeper; direct wiki fetch was unavailable. No price or current rotation promise."
       }
     },
     {
@@ -3371,9 +4628,13 @@
       "id": "primary:smg-203-gallant",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
         "label": "Exo Experts",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3384,11 +4645,17 @@
       "source": "Entrenched Division",
       "assetPath": "assets/weapons/sidearms/entrenchment-tool-wiki.png",
       "id": "sidearm:entrenchment-tool",
-      "aliases": [],
+      "aliases": [
+        "CQC-73 Entrenchment Tool"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
         "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3399,11 +4666,17 @@
       "source": "Entrenched Division",
       "assetPath": "assets/weapons/sidearms/veto-wiki.png",
       "id": "sidearm:veto",
-      "aliases": [],
+      "aliases": [
+        "P-69 Veto"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
         "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3416,9 +4689,13 @@
       "id": "sidearm:p-33-missile-pistol",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
         "label": "Exo Experts",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3429,11 +4706,17 @@
       "source": "Entrenched Division",
       "assetPath": "assets/weapons/throwables/giga-grenade-wiki.png",
       "id": "throwable:giga-grenade",
-      "aliases": [],
+      "aliases": [
+        "G-48 Giga Grenade"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
         "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3444,11 +4727,17 @@
       "source": "Entrenched Division",
       "assetPath": "assets/stratagems/defensive/gas-mortar.svg",
       "id": "stratagem:gas-mortar",
-      "aliases": [],
+      "aliases": [
+        "A/GM-17 Gas Mortar Sentry"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
         "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3459,11 +4748,17 @@
       "source": "Entrenched Division",
       "assetPath": "assets/stratagems/support/cremator.svg",
       "id": "stratagem:cremator",
-      "aliases": [],
+      "aliases": [
+        "B/FLAM-80 Cremator"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
         "label": "Entrenched Division",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3476,9 +4771,13 @@
       "id": "stratagem:mgx-42-bullet-storm",
       "aliases": [],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
         "label": "Exo Experts",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3489,11 +4788,17 @@
       "source": "Exo Experts",
       "assetPath": "assets/stratagems/exosuits/exo-51-lumberer-exosuit.svg",
       "id": "stratagem:exo-51-lumberer-exosuit",
-      "aliases": [],
+      "aliases": [
+        "EXO-51 Lumberer"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
         "label": "Exo Experts",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     },
     {
@@ -3504,11 +4809,17 @@
       "source": "Exo Experts",
       "assetPath": "assets/stratagems/exosuits/exo-55-breakthrough-exosuit.svg",
       "id": "stratagem:exo-55-breakthrough-exosuit",
-      "aliases": [],
+      "aliases": [
+        "EXO-55 Breakthrough"
+      ],
       "acquisition": {
-        "kind": "unverified",
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
         "label": "Exo Experts",
-        "verification": "legacy-assignment-pending-audit"
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
       }
     }
   ]

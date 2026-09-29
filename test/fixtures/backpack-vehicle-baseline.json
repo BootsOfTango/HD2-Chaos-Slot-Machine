@@ -1,0 +1,184 @@
+{
+  "version": "1.1.14",
+  "buildLabel": "defensive",
+  "capturedAt": "2026-09-16T00:14:37.528Z",
+  "source": "Verified defensive candidate app.asar before backpack/vehicle audit",
+  "asarSha256": "0306f0b021ad46e88f0b741b35cc35dca54ca794a7c3449d6abac79f71528784",
+  "hashes": {
+    "catalog": "3da8b2f11ddf136fe05ffb95afc348e004e27f8acc285f52173e70dfc4bbc2ea",
+    "untouched": "56ce7d0d6104070d817a8537fe7ec39ba52361a6dc356acfd8edd1a2e5b82098",
+    "priorWarbonds": "2d0e1380ac16a2f90767b3f8cdd4bd440bd70f45b315d463a2f948e8a9e71098",
+    "protected": "e90843ef4d37df25b5ce04e9673b7b16ef7e62d96350751c111d7aced74d1272"
+  },
+  "reviewedRows": [
+    {
+      "name": "Ballistic Shield Backpack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/ballistic-shield-backpack.svg",
+      "id": "stratagem:ballistic-shield-backpack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Bastion",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/bastion.svg",
+      "id": "stratagem:bastion",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Emancipator Exosuit",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/emancipator-exosuit.svg",
+      "id": "stratagem:emancipator-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "M-102 Fast Recon Vehicle",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/fast-recon-vehicle.svg",
+      "id": "stratagem:m-102-fast-recon-vehicle",
+      "aliases": [
+        "fast recon vehicle"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "M-103 Supply FRV",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/supply-frv.svg",
+      "id": "stratagem:m-103-supply-frv",
+      "aliases": [
+        "supply frv"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Guard Dog",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/guard-dog.svg",
+      "id": "stratagem:guard-dog",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Guard Dog Rover",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/guard-dog-rover.svg",
+      "id": "stratagem:guard-dog-rover",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Jump Pack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/jump-pack.svg",
+      "id": "stratagem:jump-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Patriot Exosuit",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/patriot-exosuit.svg",
+      "id": "stratagem:patriot-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Shield Generator Pack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/shield-generator-pack.svg",
+      "id": "stratagem:shield-generator-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Supply Pack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/supply-pack.svg",
+      "id": "stratagem:supply-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ]
+}

@@ -49,7 +49,7 @@ async function rendererDedupPhase() {
   const freshIds = idList(freshItems);
   const freshCount = rowsFrom(DEFAULTS.items).length;
   const freshStratagemCount = DEFAULTS.items.stratagems.length;
-  assert(freshCount === 205, 'bundled catalog contains 205 canonical gear records after two duplicate retirements');
+  assert(freshCount === 206, 'bundled catalog contains 206 canonical gear records, including opt-in Hyena');
   assert(state.items.stratagems.length === freshStratagemCount, 'fresh stratagem count matches the bundled catalog');
   assertCatalogShape('fresh launch');
   const freshFlags = flags(freshItems);
@@ -138,7 +138,7 @@ async function rendererDedupPhase() {
     legacyItems.stratagems.push(retired);
     return clone(retired);
   });
-  assert(rowsFrom(legacyItems).length === 207, 'upgrade fixture recreates the old 207-record catalog with both duplicate rows');
+  assert(rowsFrom(legacyItems).length === 208, 'synthetic compatibility fixture includes current Hyena plus both retired duplicate rows');
   const makeFixture = items => ({ items: clone(items), cards: clone(historicalCards), settings: { rememberedPlayerName: 'M2B Dedup Restart Diver', catalogReviewVersion: '1.1.2' } });
   applyImportedData(makeFixture(legacyItems));
   assertCatalogShape('207-record import');
@@ -404,9 +404,10 @@ async function rendererDedupUpgradeVerify(seed, expectedVersion) {
   assert(desktopStorage && typeof desktopStorage.getAppInfo === 'function', 'upgraded process uses the real desktop storage bridge');
   const appInfo = await desktopStorage.getAppInfo();
   assert(typeof expectedVersion === 'string' && appInfo?.version === expectedVersion, 'upgrade verification runs inside the expected current packaged application');
-  assert(rows().length === 205 && new Set(rows().map(item => item.id)).size === 205, 'first boot automatically consolidates the real old 207-row save to 205 unique gear records');
-  assert(JSON.stringify(rows().map(item => item.id).sort()) === JSON.stringify(seed.expectedIds), 'first boot preserves the complete expected surviving stable-ID set');
-  assert(JSON.stringify(flags()) === JSON.stringify(seed.expectedFlags), 'first boot preserves all 205 canonical ownership/include choices from the old disk save');
+  assert(rows().length === 206 && new Set(rows().map(item => item.id)).size === 206, 'first boot consolidates the old duplicates and adds exactly one opt-in Hyena');
+  assert(JSON.stringify(rows().filter(item => item.id !== 'primary:r-4-hyena').map(item => item.id).sort()) === JSON.stringify(seed.expectedIds), 'first boot preserves the complete old surviving stable-ID set');
+  assert(JSON.stringify(flags().filter(([id]) => id !== 'primary:r-4-hyena')) === JSON.stringify(seed.expectedFlags), 'first boot preserves all 205 canonical ownership/include choices from the old disk save');
+  assert(find('primary:r-4-hyena')?.owned === false && find('primary:r-4-hyena')?.enabled === false, 'new Hyena is excluded when upgrading an actual old EXE save');
   assert(JSON.stringify(state.cards) === JSON.stringify(seed.seededCards), 'first boot preserves old saved historical labels, fingerprints, locked stats, notes and scores exactly');
   assert(JSON.stringify(buildPersistedStatePayload().settings) === JSON.stringify(seed.seededSettings), 'first boot preserves old saved player and catalog-review settings exactly');
   for (const [index, spec] of seed.specs.entries()) {

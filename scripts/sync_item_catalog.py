@@ -4,6 +4,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from renderer_csp import with_policy
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / 'index.html'
@@ -81,11 +82,17 @@ def render_warbond_map(catalog_items):
 
 
 def sync_index(catalog_items):
-    text = INDEX.read_text(encoding='utf-8')
+    # Preserve unrelated editor line endings; changing them needlessly changes
+    # package hashes even though HTML's normalized script text stays identical.
+    with INDEX.open(encoding='utf-8', newline='') as stream:
+        text = stream.read()
+    def styled(match, replacement):
+        newline = '\r\n' if '\r\n' in match.group(0) else '\n'
+        return replacement.replace('\n', newline)
     defaults_block = render_defaults_block(catalog_items)
     text, n1 = re.subn(
         r"^[ \t]*items: \{.*?\n[ \t]+planets:",
-        defaults_block + '\n\n            planets:',
+        lambda match: styled(match, defaults_block + '\n\n            planets:'),
         text,
         count=1,
         flags=re.S | re.M,
@@ -96,7 +103,7 @@ def sync_index(catalog_items):
     warbond_map = render_warbond_map(catalog_items)
     text, n2 = re.subn(
         r"^[ \t]*const ITEM_WARBOND_BY_NAME = \{.*?\n[ \t]{8}\};",
-        warbond_map,
+        lambda match: styled(match, warbond_map),
         text,
         count=1,
         flags=re.S | re.M,
@@ -104,14 +111,17 @@ def sync_index(catalog_items):
     if n2 != 1:
         raise RuntimeError('Unable to replace ITEM_WARBOND_BY_NAME block')
 
-    INDEX.write_text(text, encoding='utf-8')
+    with INDEX.open('w', encoding='utf-8', newline='') as stream:
+        stream.write(with_policy(text))
 
 
 def sync_item_images(catalog_items):
     existing = json.loads(ITEM_IMAGES.read_text(encoding='utf-8'))
     provenance_path = ROOT / 'assets' / 'new-gear' / 'provenance.json'
     provenance = json.loads(provenance_path.read_text(encoding='utf-8')) if provenance_path.exists() else {}
-    verified_art = {entry['name']: entry for entry in provenance.get('assets', [])}
+    additions = json.loads((ROOT / 'assets' / 'catalog-additions' / 'provenance.json').read_text(encoding='utf-8'))
+    ironclad = json.loads((ROOT / 'assets' / 'catalog-additions' / 'ironclad' / 'provenance.json').read_text(encoding='utf-8'))
+    verified_art = {entry['name']: entry for source in [provenance, additions, ironclad] for entry in source.get('assets', [])}
     existing_by_type = {
         t: {entry['name']: entry for entry in existing.get(t, [])}
         for t in TYPE_TO_DEFAULTS_KEY

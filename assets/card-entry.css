@@ -1,0 +1,76 @@
+#resultCardModalBody > [hidden],#resultCardModalBody [hidden] { display:none!important; }
+#resultCardModal .cardModalDialog { width:min(740px,calc(100vw - 24px)); }
+#resultCardModal.entryActive .cardModalDialog { width:min(660px,calc(100vw - 24px)); }
+#resultCardModal.entryActive #btnCloseResultModal { position:sticky; top:0; z-index:2; }
+#cardEntryWizard { font:18px/1.45 system-ui,sans-serif; padding:4px 8px 8px; }
+#cardEntryWizard h2 { font:700 clamp(25px,4vw,34px)/1.3 system-ui,sans-serif; margin:20px 0; }
+.entryProgress,.entryHint,.entryUnit { color:#bec7d3; margin:8px 0; }
+#entryValue { font:600 30px/1.3 system-ui,sans-serif; width:100%; padding:14px; box-sizing:border-box; }
+textarea#entryValue { font-size:20px; min-height:150px; resize:vertical; }
+.entryActions,.entryChoices { display:flex; gap:10px; flex-wrap:wrap; }
+.entryActions { margin-top:20px; position:sticky; bottom:-1px; background:#101318; padding:12px 0; }
+.entryActions button,.entryChoices button { font-size:18px; min-height:48px; flex:1; }
+.entryChoices [aria-pressed="true"] { border:2px solid #ffdb4d; background:#39321c; color:#ffdb4d; }
+.entryError { color:#ffaaaa; min-height:1.4em; }
+.entryReviewRow { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; padding:12px 0; border-bottom:1px solid #444; }
+.entryReviewRow>span { font-size:14px; grid-column:1; }
+.entryReviewRow>strong { grid-column:1; white-space:pre-wrap; overflow-wrap:anywhere; }
+.entryReviewRow button { grid-column:2; grid-row:1/3; align-self:center; font-size:16px; }
+.entryWarning { border:1px solid #ffdb4d; padding:12px; border-radius:8px; color:#ffe589; }
+.entryAcknowledge { display:flex; align-items:center; gap:12px; font-size:18px; }
+#entryAcknowledge { width:24px; height:24px; flex:none; }
+.compactCardDetail .cardDetailFold { border:1px solid #414851; border-radius:10px; padding:12px; margin:12px 0; }
+.cardDetailFold>summary { font-size:18px; cursor:pointer; color:#ffdb4d; }
+.compactCardDetail .label,.compactCardDetail .resultDetailMetaLabel { font-size:14px; }
+.compactCardDetail .resultDetailMetaValue,.compactCardDetail input,.compactCardDetail textarea,.compactCardDetail .modalCommentBody,.savedRunNote { font-size:18px; }
+.savedRunNote { white-space:pre-wrap; overflow-wrap:anywhere; }
+.compactCardDetail .modalCommentComposer { grid-template-columns:minmax(0,1fr); }
+.compactCardDetail .modalCommentComposer button { font-size:18px; }
+@media(max-width:480px) { #cardEntryWizard { padding:0; } .entryActions { gap:6px; } .entryActions button { padding:8px; } }
+
+/* Saved cards: one status, readable visuals and optional detail. Entry stays unchanged. */
+#resultCardModal:not(.entryActive) .cardModalDialog { width:min(880px,calc(100vw - 24px)); }
+.compactCardDetail .resultSummaryHeading { gap:14px; margin-bottom:16px; }
+.compactCardDetail .resultDetailMetaItem { padding:0; border:0; background:none; }
+.compactCardDetail .resultDetailMetaValue { font-size:22px; line-height:1.25; }
+.compactCardDetail .resultDetailMetaLabel { text-transform:none; color:#aeb8c6; }
+.compactCardDetail .cardMeta { font-size:16px; line-height:1.5; }
+.compactCardDetail .soloSummary { padding:18px; margin:0 0 14px; }
+.savedScoreHeading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.savedScoreHeading h3 { font-size:32px; margin:0; }
+.savedScoreHeading>span { font-size:15px; color:#b5bfca; }
+.savedOutcome { display:flex; flex-wrap:wrap; gap:10px; margin:10px 0; }
+.savedOutcome span { font-size:17px; padding:5px 10px; background:#191f25; border-radius:6px; }
+.savedPerformance { display:grid; grid-template-columns:minmax(0,1fr) 180px; align-items:center; gap:14px; }
+.compactCardDetail .soloRadar { width:440px; }
+.compactCardDetail .soloMetrics { grid-template-columns:1fr; gap:24px; }
+.compactCardDetail .soloMetrics strong { font-size:26px; }
+.compactCardDetail .soloMetrics span { font-size:18px; }
+.compactCardDetail .soloRules { margin:8px 0 0; font-size:17px; }
+.compactCardDetail .cardDetailFold { margin:10px 0; padding:14px; }
+.compactCardDetail .cardDetailFold>summary { font-size:21px; }
+.compactCardDetail .modalLoadoutGrid { gap:16px; }
+.compactCardDetail .modalLoadoutItem { display:grid; grid-template-columns:100px minmax(0,1fr); padding:12px; gap:12px; }
+.compactCardDetail .modalLoadoutIcon { width:100px; height:80px; object-fit:contain; }
+.compactCardDetail .modalLoadoutText .v { font-size:19px; line-height:1.3; }
+.compactCardDetail .modalLoadoutText .k { font-size:14px; text-transform:none; }
+.compactCardDetail .planetMiniLabel { font-size:14px; }
+.compactCardDetail .planetMiniValue { font-size:18px; }
+.savedNumbers { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:18px; padding-top:20px; }
+.savedNumbers>div { display:grid; gap:4px; }
+.savedNumbers span { font-size:16px; color:#bec7d3; }
+.savedNumbers strong { font-size:26px; }
+.compactCardDetail .soloRadar text { font-size:15px; }
+.compactCardDetail .modalPlanetWrap { grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
+.compactCardDetail .modalNotes>.label { font-size:20px; text-transform:none; margin:8px 0; }
+.compactCardDetail .savedRunNote { margin:4px 0 14px; }
+.compactCardDetail .modalCommentComposer { display:flex; align-items:stretch; gap:10px; }
+.compactCardDetail .modalCommentComposer textarea { min-width:0; flex:1; min-height:70px; font:18px/1.4 system-ui,sans-serif; }
+.compactCardDetail .modalCommentComposer button { flex:none; min-width:76px; }
+.compactCardDetail .modalActionRow { position:static; padding:12px 0 0; margin-top:12px; background:none; border-top:1px solid #303842; }
+.compactCardDetail .modalActionRow .tiny { font-size:15px; color:#aab4c1; }
+@media(max-width:720px) {
+  .savedPerformance { grid-template-columns:1fr; }
+  .compactCardDetail .soloMetrics { grid-template-columns:1fr 1fr; gap:14px; }
+  .compactCardDetail .modalLoadoutGrid { grid-template-columns:1fr; }
+}

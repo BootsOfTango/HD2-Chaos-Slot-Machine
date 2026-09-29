@@ -2,8 +2,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { MAX_IMPORT_BYTES, STATE_FILE, BACKUP_DIR, RECOVERY_DIR, parseSave, validateImportData } = require('./storage');
 
-const PRODUCT_NAME = 'Helldivers 2 Chaos Slot Machine';
-const APP_ID = 'com.bootsoftango.helldivers2chaosslotmachine';
+const releaseIdentity = require('../release-identity.json');
+const PRODUCT_NAME = releaseIdentity.productName;
+const APP_ID = releaseIdentity.appId;
+// Display branding must never implicitly relocate an existing profile.
+const PROFILE_DIRECTORY = releaseIdentity.profileDirectory;
 // These names are retained exclusively to recover profiles from previous releases.
 const LEGACY_PROFILE_NAMES = ['Helldivers 2 Chaos Roulette', 'helldivers-2-chaos-roulette'];
 const MIGRATION_MARKER = 'legacy-migration.json';
@@ -15,7 +18,7 @@ function resolveProfile(appDataPath, env = process.env) {
     throw new Error('HD2CSM_USER_DATA_DIR must be an absolute directory path.');
   }
   return {
-    directory: override ? path.resolve(override) : path.join(appDataPath, PRODUCT_NAME),
+    directory: override ? path.resolve(override) : path.join(appDataPath, PROFILE_DIRECTORY),
     isolated: !!override
   };
 }
@@ -118,4 +121,4 @@ function migrateLegacyProfile({ destination, appDataPath }) {
   });
 }
 
-module.exports = { PRODUCT_NAME, APP_ID, LEGACY_PROFILE_NAMES, MIGRATION_MARKER, MIGRATION_ARCHIVE, resolveProfile, migrateLegacyProfile };
+module.exports = { PRODUCT_NAME, APP_ID, PROFILE_DIRECTORY, LEGACY_PROFILE_NAMES, MIGRATION_MARKER, MIGRATION_ARCHIVE, resolveProfile, migrateLegacyProfile };

@@ -1,0 +1,239 @@
+{
+  "version": "1.1.8",
+  "source": "Matched accepted v1.1.8 ASAR before batch 6 edits.",
+  "reviewedRows": [
+    {
+      "name": "AR-59 Suppressor",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "assetPath": "assets/weapons/primaries/ar-59-suppressor-wiki.png",
+      "id": "primary:ar-59-suppressor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "AR/GL-21 One-Two",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
+      "assetPath": "assets/weapons/primaries/ar-gl-21-one-two-wiki.png",
+      "id": "primary:ar-gl-21-one-two",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Python Commandos",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "R-72 Censor",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "assetPath": "assets/weapons/primaries/r-72-censor-wiki.png",
+      "id": "primary:r-72-censor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "LAS-13 Trident",
+      "type": "primary",
+      "subgroup": "energy",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "assetPath": "assets/weapons/primaries/las-13-trident-wiki.png",
+      "id": "primary:las-13-trident",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Siege Breakers",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "P-35 Re-Educator",
+      "type": "sidearm",
+      "subgroup": "pistol",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "assetPath": "assets/weapons/sidearms/p-35-re-educator-wiki.png",
+      "id": "sidearm:p-35-re-educator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G/SH-39 Shield",
+      "type": "throwable",
+      "subgroup": "utility-throwable",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "assetPath": "assets/weapons/throwables/g-sh-39-shield-wiki.png",
+      "id": "throwable:g-sh-39-shield",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Siege Breakers",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "TM-1 Lure Mine",
+      "type": "throwable",
+      "subgroup": "utility-throwable",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "assetPath": "assets/weapons/throwables/tm-1-lure-mine-wiki.png",
+      "id": "throwable:tm-1-lure-mine",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Belt-fed GL",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/belt-fed-gl.svg",
+      "id": "stratagem:belt-fed-gl",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Breaching Hammer",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/breaching-hammer.svg",
+      "id": "stratagem:breaching-hammer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "C4 Pack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/c4-pack.svg",
+      "id": "stratagem:c4-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Defoliation Tool",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/detonation-tool.svg",
+      "id": "stratagem:defoliation-tool",
+      "aliases": [
+        "detonation tool"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Hot Dog",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/hot-dog.svg",
+      "id": "stratagem:hot-dog",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Leveller",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/leveller.svg",
+      "id": "stratagem:leveller",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Maxigun",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/maxigun.svg",
+      "id": "stratagem:maxigun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Concealed Insertion",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "assetPath": "assets/boosters/concealed-insertion-wiki.svg",
+      "id": "booster:concealed-insertion",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Redacted Regiment",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ],
+  "hashes": {
+    "catalog": "2d3a8ce5f1126830472ecad5688ed1b93c9325bca1b0490c6f85775465084f8d",
+    "untouched": "832a0def2f308cc04a23cd32cca887611f3294e1aad6a20da55c47edcf618828",
+    "priorWarbonds": "c5e52ec342ae39c78e5d9065e111c07f7d1e9ced0620877e9275de3b28d6c680",
+    "protected": "da999d0b3d7c4311dbddc584386d23363f4deb2b8da363c720fb871b8c480d17"
+  }
+}

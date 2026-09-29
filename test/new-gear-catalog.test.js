@@ -27,7 +27,7 @@ test('reviewed release adds exactly four Castellans Creed items and a separate E
 
 test('all catalog identities are stable and type scoped; facts do not contain player ownership', () => {
   const ids = catalog.items.map(item => item.id);
-  assert.equal(ids.length, 205);
+  assert.equal(ids.length, 214);
   assert.equal(new Set(ids).size, ids.length);
   const claimedLegacy = new Set();
   const names = new Map();
@@ -51,7 +51,7 @@ test('all catalog identities are stable and type scoped; facts do not contain pl
     }
   }
   assert.deepEqual([...claimedLegacy].sort(), ['stratagem:ems-strike', 'stratagem:wasp']);
-  assert.equal(ids.length + claimedLegacy.size, 207, 'Every prior stable ID remains canonical or explicitly recoverable');
+  assert.equal(ids.length + claimedLegacy.size, 216, 'Every prior stable ID remains canonical or explicitly recoverable, plus Hyena and eight Ironclad-era additions');
 });
 
 test('catalog validator rejects retired-ID/category/alias collisions and noncanonical image records', () => {
@@ -78,8 +78,8 @@ test('catalog validator rejects retired-ID/category/alias collisions and noncano
   for (let index = 1; index < errors.length; index++) assert.ok(errors[index].length > 0, `Invalid identity/image fixture ${index} must fail validation`);
 });
 
-test('all six new bundled assets match recorded hashes and the traced Eagle limitation is explicit', () => {
-  assert.equal(provenance.assets.length, 6);
+test('six original gear assets plus the replacement Meltagun icon match recorded hashes', () => {
+  assert.equal(provenance.assets.length, 7);
   for (const asset of provenance.assets) {
     assert.ok(asset.assetPath.startsWith('assets/new-gear/'));
     const bytes = fs.readFileSync(path.join(root, asset.assetPath));

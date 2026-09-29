@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "scope": "Third bounded M2B Warbond batch: 13 pending acquisitions, five stratagem associations, four subgroup corrections and one compatible booster display-name correction. Stable IDs, eligibility defaults and existing gear artwork are unchanged.",
+  "references": [
+    "docs/M2B_WARBOND_BATCH3_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "throwable:g-31-arc",
+      "previousName": "G-31 Arc",
+      "warbond": "Control Group",
+      "source": "Control Group",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:epoch",
+      "previousName": "Epoch",
+      "warbond": "Control Group",
+      "source": "Control Group",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "PLAS-45 Epoch"
+      ]
+    },
+    {
+      "id": "stratagem:laser-sentry",
+      "previousName": "Laser Sentry",
+      "warbond": "Control Group",
+      "source": "Control Group",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "A/LAS-98 Laser Sentry"
+      ]
+    },
+    {
+      "id": "stratagem:warp-pack",
+      "previousName": "Warp Pack",
+      "warbond": "Control Group",
+      "source": "Control Group",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:control-group",
+        "label": "Control Group",
+        "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official acquisition; Backpack trait separately corroborated by community item entry: https://helldivers.wiki.gg/wiki/LIFT-182_Warp_Pack"
+      },
+      "subgroup": "backpack",
+      "aliases": [
+        "LIFT-182 Warp Pack"
+      ]
+    },
+    {
+      "id": "primary:las-17-double-edge-sickle",
+      "previousName": "LAS-17 Double-Edge Sickle",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
+        "label": "Servants of Freedom",
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:gp-20-ultimatum",
+      "previousName": "GP-20 Ultimatum",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
+        "label": "Servants of Freedom",
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-50-seeker",
+      "previousName": "G-50 Seeker",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
+        "label": "Servants of Freedom",
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:portable-hellbomb",
+      "previousName": "Portable Hellbomb",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:servants-of-freedom",
+        "label": "Servants of Freedom",
+        "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement explicitly describes this stratagem as a backpack."
+      },
+      "subgroup": "backpack",
+      "aliases": [
+        "B-100 Portable Hellbomb"
+      ]
+    },
+    {
+      "id": "primary:r-6-deadeye",
+      "previousName": "R-6 Deadeye",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
+        "label": "Borderline Justice",
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:las-58-talon",
+      "previousName": "LAS-58 Talon",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
+        "label": "Borderline Justice",
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:ted-63-dynamite",
+      "previousName": "TED-63 Dynamite",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
+        "label": "Borderline Justice",
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official acquisition; Standard Throwable taxonomy separately community-corroborated, mapped to the app's grenade group: https://helldivers.wiki.gg/wiki/TED-63_Dynamite"
+      },
+      "subgroup": "grenade"
+    },
+    {
+      "id": "stratagem:hover-pack",
+      "previousName": "Hover Pack",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
+        "label": "Borderline Justice",
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official acquisition; Backpack trait separately corroborated by community item entry: https://helldivers.wiki.gg/wiki/LIFT-860_Hover_Pack"
+      },
+      "subgroup": "backpack",
+      "aliases": [
+        "LIFT-860 Hover Pack"
+      ]
+    },
+    {
+      "id": "booster:sample-extractor",
+      "previousName": "Sample Extractor",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:borderline-justice",
+        "label": "Borderline Justice",
+        "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement names Sample Extricator. Preserve the old Sample Extractor name as an alias and retain its stable ID/art path; historical Results remain unchanged."
+      },
+      "name": "Sample Extricator",
+      "aliases": [
+        "Sample Extractor"
+      ]
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:control-group",
+      "name": "Control Group",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-07-17",
+      "coverAssetPath": "assets/warbonds/official/control-group.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/07/10/helldivers-2-control-group-warbond-launches-july-17/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:vg-70-variable",
+        "throwable:g-31-arc",
+        "stratagem:epoch",
+        "stratagem:laser-sentry",
+        "stratagem:warp-pack"
+      ],
+      "notes": "Complete 5-item rollable equipment set confirmed by official announcement. Separate themed Superstore items are excluded; ownership is player-controlled. Promotional artwork, not an exact in-game cover. VG-70 Variable's previously reviewed facts remain unchanged."
+    },
+    {
+      "id": "warbond:servants-of-freedom",
+      "name": "Servants of Freedom",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-02-06",
+      "coverAssetPath": "assets/warbonds/official/servants-of-freedom.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:las-17-double-edge-sickle",
+        "sidearm:gp-20-ultimatum",
+        "throwable:g-50-seeker",
+        "stratagem:portable-hellbomb"
+      ],
+      "notes": "Complete 4-item rollable equipment set confirmed by official announcement. Separate themed Superstore items are excluded; ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:borderline-justice",
+      "name": "Borderline Justice",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-03-20",
+      "coverAssetPath": "assets/warbonds/official/borderline-justice.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:r-6-deadeye",
+        "sidearm:las-58-talon",
+        "throwable:ted-63-dynamite",
+        "stratagem:hover-pack",
+        "booster:sample-extractor"
+      ],
+      "notes": "Complete 5-item rollable equipment set confirmed by official announcement. Separate themed Superstore items are excluded; ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    }
+  ]
+}

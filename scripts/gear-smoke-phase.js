@@ -49,13 +49,97 @@ async function rendererGearPhase(identityReview) {
   assert(state.cards.length === 0, 'fresh isolated profile starts without historical Results');
   assert(additions().length === 5, 'catalog exposes exactly five 1.1.2 gear additions');
   assert(additions().every(({ item }) => item.owned === false && item.enabled === false), 'all five additions start unowned and excluded');
-  assert(rows().filter(({ item }) => item.introducedIn !== '1.1.2').length === 200 && rows().length === 205, 'fresh catalog has 200 unique legacy items plus five opt-in additions');
+  assert(rows().filter(({ item }) => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn)).length === 200 && rows().length === 214, 'fresh catalog has 200 unique legacy items plus fourteen opt-in additions');
   assert(identityReview.merges.every(merge => find(merge.canonicalId)?.legacyIds?.includes(merge.retiredItem.id) && !find(merge.retiredItem.id)), 'both retired duplicate IDs remain compatibility identities, never extra rollable rows');
   assert(!document.querySelector('#newGearNotice').hidden, 'fresh launch displays the catalog review notice');
+  assert(document.querySelector('#newGearPanel > summary').textContent.trim()==='NEW GEAR & OWNERSHIP','new-gear heading is not tied to an older Warbond');
   document.querySelector('#btnReviewNewGear').click();
   assert(document.querySelector('#newGearPanel').open && document.querySelector('#tab-items').style.display !== 'none', 'Review new gear opens the Armory panel');
 
   const freshItems = clone(state.items);
+  const meltagun=find('stratagem:40-k-meltagun');
+  const meltaVisual=getItemVisual('40-K Meltagun','stratagem');
+  assert(meltagun?.subgroup==='support'&&meltaVisual.src==='assets/new-gear/40-k-meltagun-stratagem.svg','Meltagun resolves to a support-stratagem icon rather than its weapon render');
+  await decodeImage(meltaVisual.src);
+  const ironclad=rows().filter(({item})=>item.introducedIn==='ironclad-democracy');
+  assert(ironclad.length===8 && ironclad.every(({item})=>!item.owned&&!item.enabled),'eight Ironclad-era additions start excluded');
+  state.settings.catalogReviewVersion='hyena-revenants';renderNewGearNotice();
+  assert(!document.querySelector('#newGearNotice').hidden,'previous review dismissal cannot conceal Ironclad additions');
+  const otherGear=JSON.stringify(rows().filter(({item})=>item.introducedIn!=='ironclad-democracy').map(({item})=>item));
+  click('enable-ironclad-democracy');
+  assert(rows().filter(({item})=>item.acquisition.id==='warbond:ironclad-democracy').every(({item})=>item.owned&&item.enabled),'Ironclad bulk action enables all seven declared unlocks');
+  assert(!find('primary:las-12-sai').owned&&!find('primary:las-12-sai').enabled,'Ironclad bulk action does not grant separate Superstore Sai');
+  assert(JSON.stringify(rows().filter(({item})=>item.introducedIn!=='ironclad-democracy').map(({item})=>item))===otherGear,'Ironclad bulk action leaves every other item unchanged');
+  for(const {item,key} of ironclad){
+    const target=find(item.id),before=clone(state.items[key]);
+    state.items[key].forEach(i=>HD2CSMCatalogState.setEnabled(i,false));
+    HD2CSMCatalogState.setOwned(target,true);HD2CSMCatalogState.setEnabled(target,true);
+    assert(rollLoadout('IRONCLAD-OPT-IN')[categories[key]]===item.name,'actual roll uses opted-in '+item.name+' in its correct slot');
+    assert(getItemVisual(item.name,categories[key]).src==='assets/catalog-additions/ironclad/'+item.id.split(':')[1]+'.png','Ironclad visual resolves to its own local icon: '+item.name);
+    await decodeImage(getItemVisual(item.name,categories[key]).src);
+    if(['primary:ar-11-arbitrator','primary:gl-15-evictor','primary:las-12-sai'].includes(item.id)){
+      const image=new Image();image.src=getItemVisual(item.name,categories[key]).src;await image.decode();
+      const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;
+      const ctx=canvas.getContext('2d');ctx.drawImage(image,0,0);
+      assert(image.naturalWidth>=1000&&ctx.getImageData(0,0,1,1).data[3]===0,'high-resolution transparent weapon tile: '+item.name);
+    }
+    state.items[key]=before;
+  }
+  await decodeImage(WARBOND_ART['Ironclad Democracy']);
+  state.items=clone(freshItems);renderItems();
+  const hyenaId = 'primary:r-4-hyena';
+  assert(find(hyenaId)?.owned === false && find(hyenaId)?.enabled === false, 'Hyena starts unowned and excluded in a fresh install');
+  state.settings.catalogReviewVersion = '1.1.2'; renderNewGearNotice();
+  assert(!document.querySelector('#newGearNotice').hidden, 'old dismissed review does not hide the newly added campaign reward');
+  click(`${hyenaId}:owned`); click(`${hyenaId}:enabled`);
+  const beforeHyenaRoll = clone(state.items);
+  state.items.primaries.forEach(item => window.HD2CSMCatalogState.setEnabled(item,item.id === hyenaId));
+  assert(rollLoadout('HYENA-ONLY').primary === 'R-4 Hyena', 'actual roulette can select the opted-in Hyena');
+  state.items = beforeHyenaRoll; renderItems();
+  click(`${hyenaId}:owned`);
+  assert(!find(hyenaId).owned && !find(hyenaId).enabled, 'unowning Hyena removes it from rolls');
+  await loadReviewedWarbondCatalog();
+  const ironcladDefinition=reviewedWarbondData.definitions.find(d=>d.id==='warbond:ironclad-democracy');
+  assert(ironcladDefinition?.equipment.length===7,'full Armory loads the reviewed seven-item Ironclad group');
+  const revenants = reviewedWarbondData.definitions.find(definition => definition.id === 'warbond:righteous-revenants');
+  assert(revenants?.equipment.length === 3, 'Righteous Revenants exposes a reviewed three-weapon group');
+  await decodeImage(WARBOND_ART['Righteous Revenants']);
+  const beforeRevenants = clone(state.items);
+  const membership = new Set(revenants.equipment.map(item => item.id));
+  if (document.querySelector('#manualPoolBlock')?.hidden) document.querySelector('[data-target="manualPoolBlock"]')?.click();
+  localStorage.setItem(ITEMS_VIEW_MODE_KEY, 'warbond');
+  localStorage.setItem(ITEMS_TYPE_FILTER_KEY, 'all');
+  if (typeof setArmoryPreferences === 'function') setArmoryPreferences({ viewMode: 'warbond', typeFilter: 'all', ownershipFilter: 'all' });
+  document.querySelector('#itemSearch').value = 'StA-11'; renderItems();
+  for (const operation of ['unowned', 'enable', 'exclude']) {
+    const group = document.querySelector('[data-warbond-id="warbond:righteous-revenants"]');
+    const button = group?.querySelector(`[data-warbond-action="${operation}"]`);
+    assert(button && !button.disabled, `Righteous ${operation} control is available with a filtered list`);
+    button.click();
+    assert(getReviewedWarbondMembers(revenants).every(item => item.owned === (operation !== 'unowned') && item.enabled === (operation === 'enable')), `Righteous ${operation} updates exactly its three weapon choices`);
+  }
+  assert(document.querySelector('[data-warbond-id="warbond:righteous-revenants"] .warbondHeader img')?.getAttribute('src') === WARBOND_ART['Righteous Revenants'], 'Righteous group displays its bundled cover instead of a placeholder');
+  assert(rows().filter(({item})=>!membership.has(item.id)).every(({key,item}) => JSON.stringify(item) === JSON.stringify(beforeRevenants[key].find(old=>old.id===item.id))), 'Righteous controls preserve every unrelated item including Hyena and WASP');
+  const beforeIroncladGroup=clone(state.items);
+  document.querySelector('#itemSearch').value='Arbitrator';renderItems();
+  const ironcladGroup=document.querySelector('[data-warbond-id="warbond:ironclad-democracy"]');
+  assert(ironcladGroup?.querySelector('.warbondHeader img')?.getAttribute('src')===WARBOND_ART['Ironclad Democracy'],'Ironclad search reveals its sourced bundled cover');
+  const ironcladThumb=ironcladGroup.querySelector('.itemVisualCell img');
+  assert(ironcladThumb&&getComputedStyle(ironcladThumb).objectFit==='contain','full Armory thumbnail shows the complete wide Ironclad item without cropping');
+  const listBackdrop=getComputedStyle(ironcladThumb.closest('.itemVisualCell')).backgroundColor;
+  assert(listBackdrop==='rgb(32, 37, 32)'&&getComputedStyle(document.querySelector('#newGearContent .newGearRow img')).backgroundColor===listBackdrop,'new gear and Armory lists share a plain dark equipment backdrop');
+  for(const operation of ['enable','exclude','unowned']){
+    const group=document.querySelector('[data-warbond-id="warbond:ironclad-democracy"]');
+    const button=group?.querySelector(`[data-warbond-action="${operation}"]`);
+    assert(button&&!button.disabled,'filtered Ironclad '+operation+' control is usable');button.click();
+    assert(getReviewedWarbondMembers(ironcladDefinition).every(i=>i.owned===(operation!=='unowned')&&i.enabled===(operation==='enable')),'filtered Ironclad '+operation+' applies to all seven members');
+  }
+  const ironcladIds=new Set(ironcladDefinition.equipment.map(i=>i.id));
+  assert(rows().filter(({item})=>!ironcladIds.has(item.id)).every(({key,item})=>JSON.stringify(item)===JSON.stringify(beforeIroncladGroup[key].find(old=>old.id===item.id))),'full Armory Ironclad bulk controls preserve Sai and all unrelated equipment');
+  document.querySelector('#itemSearch').value = '';
+  localStorage.setItem(ITEMS_VIEW_MODE_KEY, 'category');
+  if (typeof setArmoryPreferences === 'function') setArmoryPreferences({ viewMode: 'category' });
+  state.items = beforeRevenants; renderItems();
   const newIds = additions().map(({ item }) => item.id);
   const primary = additions().find(({ key }) => key === 'primaries').item;
   const primaryId = primary.id;
@@ -68,7 +152,7 @@ async function rendererGearPhase(identityReview) {
   assert(additions().every(({ item }) => typeof item.id === 'string' && Array.isArray(item.aliases) && item.acquisition?.sourceUrl && item.acquisition?.verifiedAt), 'new items carry stable IDs, aliases and reviewed acquisition provenance');
 
   const imageElements = [...document.querySelectorAll('#newGearContent .newGearRow img, #newGearContent .newGearCover')];
-  assert(imageElements.length === 6, 'new gear panel renders all five item images and the Warbond cover');
+  assert(imageElements.length === 16, 'new gear panel renders fourteen item images and both Warbond covers');
   for (const image of imageElements) await decodeImage(image.currentSrc || image.src);
   assert(imageElements.every(image => !/placeholder/i.test(image.currentSrc || image.src)), 'new gear images and cover do not use placeholder paths');
   for (const { key, item } of additions()) {
@@ -94,11 +178,12 @@ async function rendererGearPhase(identityReview) {
   click(`${primaryId}:owned`);
   assert(find(primaryId).owned === false && find(primaryId).enabled === false && control(`${primaryId}:enabled`).disabled, 'clearing ownership also clears inclusion and disables its control');
 
-  const oldFlags = JSON.stringify(rows().filter(({ item }) => item.introducedIn !== '1.1.2').map(({ item }) => [item.id, item.owned, item.enabled]));
+  const oldFlags = JSON.stringify(rows().filter(({ item }) => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn)).map(({ item }) => [item.id, item.owned, item.enabled]));
   click('enable-castellans-creed');
   assert(warbondIds.every(id => find(id).owned && find(id).enabled), 'Warbond bulk enable selects all four declared-unlocked items');
   assert(find(rewardId).owned === false && find(rewardId).enabled === false, 'Warbond bulk enable never grants the campaign reward');
-  assert(JSON.stringify(rows().filter(({ item }) => item.introducedIn !== '1.1.2').map(({ item }) => [item.id, item.owned, item.enabled])) === oldFlags, 'Warbond bulk action leaves every legacy gear flag unchanged');
+  assert(rows().filter(({item})=>item.introducedIn==='ironclad-democracy').every(({item})=>!item.owned&&!item.enabled),'Castellan bulk action never grants Ironclad or Sai');
+  assert(JSON.stringify(rows().filter(({ item }) => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn)).map(({ item }) => [item.id, item.owned, item.enabled])) === oldFlags, 'Warbond bulk action leaves every legacy gear flag unchanged');
 
   const beforeEmpty = clone(state.items);
   keys.forEach(key => state.items[key].forEach(item => ownership.setOwned(item, false)));
@@ -113,7 +198,7 @@ async function rendererGearPhase(identityReview) {
   // Name-only, pre-ownership records deliberately conflict across each pair.
   const legacyItems = clone(freshItems);
   keys.forEach(key => {
-    legacyItems[key] = legacyItems[key].filter(item => item.introducedIn !== '1.1.2').map((item, index) => {
+    legacyItems[key] = legacyItems[key].filter(item => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn)).map((item, index) => {
       const legacy = { ...item, enabled: index % 3 !== 0 };
       for (const field of ['id', 'owned', 'aliases', 'legacyIds', 'acquisition', 'introducedIn']) delete legacy[field];
       return legacy;
@@ -132,7 +217,7 @@ async function rendererGearPhase(identityReview) {
   });
   assert(keys.reduce((count, key) => count + legacyItems[key].length, 0) === 202, 'legacy import fixture genuinely contains all 202 old rows, including two retired duplicates');
   assert(retiredFixtures.every(spec => legacyItems[spec.key].some(item => item.name === spec.original.name)), 'both retired short names exist as independent historical fixture records');
-  const aliasSource = keys.flatMap(key => DEFAULTS.items[key].map(item => ({ key, item }))).find(({ item }) => item.introducedIn !== '1.1.2' && !item.legacyIds?.length && item.aliases?.some(alias => ownership.normalizeName(alias) !== ownership.normalizeName(item.name)));
+  const aliasSource = keys.flatMap(key => DEFAULTS.items[key].map(item => ({ key, item }))).find(({ item }) => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn) && !item.legacyIds?.length && item.aliases?.some(alias => ownership.normalizeName(alias) !== ownership.normalizeName(item.name)));
   assert(!!aliasSource, 'legacy catalog provides a real noncanonical alias fixture');
   const legacyAlias = aliasSource.item.aliases.find(alias => ownership.normalizeName(alias) !== ownership.normalizeName(aliasSource.item.name));
   const historical = normalizeCardRecord({
@@ -148,8 +233,8 @@ async function rendererGearPhase(identityReview) {
   const legacyFixture = { items: legacyItems, cards: [historical], settings: { rememberedPlayerName: 'M2 Legacy Diver' } };
   applyImportedData(clone(legacyFixture));
   const historicalBaseline = JSON.stringify(state.cards);
-  assert(rows().length === 205 && rows().filter(({ item }) => item.introducedIn !== '1.1.2').length === 200, '202 historical rows migrate to 200 unique legacy identities plus five excluded additions');
-  assert(rows().filter(({ item }) => item.introducedIn !== '1.1.2').every(({ key, item }) => {
+  assert(rows().length === 214 && rows().filter(({ item }) => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn)).length === 200, '202 historical rows migrate to 200 unique legacy identities plus fourteen excluded additions');
+  assert(rows().filter(({ item }) => !['1.1.2', 'hyena-revenants', 'ironclad-democracy'].includes(item.introducedIn)).every(({ key, item }) => {
     const original = legacyItems[key].find(legacy => legacy.name === item.name);
     return original && item.enabled === original.enabled && item.owned === original.enabled;
   }), 'legacy import preserves every canonical enabled/disabled choice and derives ownership without OR-enabling duplicates');
@@ -159,6 +244,7 @@ async function rendererGearPhase(identityReview) {
     assert(!rows().some(({ item }) => item.name === spec.original.name), `${spec.original.name} no longer independently weights the roll pool`);
   }
   assert(additions().every(({ item }) => !item.owned && !item.enabled), 'upgrading the 202-item legacy fixture does not opt into new gear');
+  assert(!find(hyenaId).owned && !find(hyenaId).enabled, 'legacy upgrade leaves Hyena unowned and excluded');
   assert(state.settings.rememberedPlayerName === 'M2 Legacy Diver' && state.settings.catalogReviewVersion === '', 'legacy remembered player imports while new review status remains unset');
 
   const aliasFixture = clone(legacyFixture);
@@ -226,13 +312,16 @@ async function rendererGearPhase(identityReview) {
   click(`${rewardId}:owned`); // Deliberately keep this reward owned but excluded across restart.
   document.querySelector('#btnDismissNewGear').click();
   state.settings.rememberedPlayerName = 'M2 Restart Diver';
+  click(`${hyenaId}:owned`); click(`${hyenaId}:enabled`);
+  click('primary:las-12-sai:owned'); click('primary:las-12-sai:enabled');
+  click('booster:integrated-extinguishers:owned');
   const finalData = clone(buildPersistedStatePayload());
-  assert(finalData.settings.catalogReviewVersion === '1.1.2' && document.querySelector('#newGearNotice').hidden, 'review dismissal is represented in saved settings and hides the notice');
+  assert(finalData.settings.catalogReviewVersion === 'ironclad-democracy' && document.querySelector('#newGearNotice').hidden, 'review dismissal is represented in saved settings and hides the notice');
   const browserExport = JSON.stringify({ ...finalData, cards: normalizeAndMigrateIncomingCards(clone(finalData.cards)).cards });
   const desktopEnvelope = JSON.stringify({ saveFormatVersion: 1, applicationVersion: '1.1.2', savedAt: '2026-09-13T12:00:00.000Z', exportedAt: '2026-09-13T12:00:00.000Z', data: JSON.parse(browserExport) });
   for (const [kind, raw] of [['browser payload', browserExport], ['desktop envelope fixture', desktopEnvelope]]) {
     const parsed = parseLegacyBrowserPayload(raw);
-    assert(keys.every(key => parsed.items[key].every(item => item.id && typeof item.enabled === 'boolean' && typeof item.owned === 'boolean')) && parsed.settings.catalogReviewVersion === '1.1.2', `${kind} preserves IDs, ownership, inclusion and catalog review version`);
+    assert(keys.every(key => parsed.items[key].every(item => item.id && typeof item.enabled === 'boolean' && typeof item.owned === 'boolean')) && parsed.settings.catalogReviewVersion === 'ironclad-democracy', `${kind} preserves IDs, ownership, inclusion and catalog review version`);
     applyImportedData(parsed);
     assert(JSON.stringify(state.items) === JSON.stringify(finalData.items) && JSON.stringify(state.cards) === historicalBaseline, `${kind} roundtrip preserves catalog choices and historical cards`);
   }
@@ -249,11 +338,11 @@ async function rendererGearPhase(identityReview) {
   document.querySelector('#newGearPanel').scrollIntoView({ block: 'start' });
   window.alert = originalAlert;
   return {
-    checks, alerts, newIds, primaryId, rewardId, customId: custom.id, addedCustomIds,
+    checks, alerts, newIds, primaryId, rewardId, hyenaId, customId: custom.id, addedCustomIds,
     expectedItems: clone(state.items), expectedCards: clone(state.cards), expectedSettings: clone(buildPersistedStatePayload().settings),
     exportData: JSON.parse(browserExport),
     exportCoverage: 'Renderer payload serialization and parsing plus real desktop save/load. Native export dialog and browser download are runner-owned, not exercised here.',
-    artworkCoverage: 'Six bundled images decoded; offline behavior requires runner-blocked HTTP/HTTPS.'
+    artworkCoverage: 'Sixteen new-gear panel images decoded, including all eight Ironclad-era icons; offline behavior requires runner-blocked HTTP/HTTPS.'
   };
 }
 
@@ -268,6 +357,9 @@ async function rendererGearVerify(expected) {
   assert(JSON.stringify(state.cards) === JSON.stringify(expected.expectedCards), 'separate process preserves normalized historical Results exactly');
   assert(JSON.stringify(buildPersistedStatePayload().settings) === JSON.stringify(expected.expectedSettings), 'separate process restores remembered player and catalog review status');
   assert(find(expected.primaryId)?.owned === true && find(expected.primaryId)?.enabled === true, 'opted-in new primary remains owned and included after restart');
+  assert(find(expected.hyenaId)?.owned === true && find(expected.hyenaId)?.enabled === true, 'Hyena ownership and inclusion survive export/import and a separate-process restart');
+  assert(find('primary:las-12-sai')?.owned && find('primary:las-12-sai')?.enabled,'separate Superstore Sai remains opted in across imports and restart');
+  assert(find('booster:integrated-extinguishers')?.owned && !find('booster:integrated-extinguishers')?.enabled,'owned but excluded Ironclad booster remains excluded across imports and restart');
   assert(find(expected.rewardId)?.owned === true && find(expected.rewardId)?.enabled === false, 'owned but excluded campaign reward remains excluded after restart');
   assert(find(expected.customId)?.owned === true && find(expected.customId)?.enabled === false, 'custom item ID and independent ownership survive restart');
   assert(expected.addedCustomIds.length === 5 && expected.addedCustomIds.every(id => find(id)?.owned === true && find(id)?.enabled === true), 'all five custom items created through Add retain their immediate IDs and ownership after restart');

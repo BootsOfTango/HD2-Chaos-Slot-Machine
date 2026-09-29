@@ -1,0 +1,207 @@
+{
+  "commit": "1ae4a31abe898273ad4bff408f88892bf0bc0ab3",
+  "description": "Read-only v1.1.5 snapshots captured before batch 3; runtime tests require no Git executable or history.",
+  "reviewedRows": [
+    {
+      "name": "G-31 Arc",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Control Group",
+      "source": "Control Group",
+      "assetPath": "assets/weapons/throwables/g-31-arc-wiki.png",
+      "id": "throwable:g-31-arc",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Control Group",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Epoch",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/epoch.svg",
+      "id": "stratagem:epoch",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Laser Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/laser-sentry.svg",
+      "id": "stratagem:laser-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Warp Pack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/warp-pack.svg",
+      "id": "stratagem:warp-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "LAS-17 Double-Edge Sickle",
+      "type": "primary",
+      "subgroup": "energy",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "assetPath": "assets/weapons/primaries/las-17-double-edge-sickle-wiki.png",
+      "id": "primary:las-17-double-edge-sickle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Servants of Freedom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "GP-20 Ultimatum",
+      "type": "sidearm",
+      "subgroup": "special-sidearm",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "assetPath": "assets/weapons/sidearms/gp-20-ultimatum-wiki.png",
+      "id": "sidearm:gp-20-ultimatum",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Servants of Freedom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-50 Seeker",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Servants of Freedom",
+      "source": "Servants of Freedom",
+      "assetPath": "assets/weapons/throwables/g-50-seeker-wiki.png",
+      "id": "throwable:g-50-seeker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Servants of Freedom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Portable Hellbomb",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/portable-hellbomb.svg",
+      "id": "stratagem:portable-hellbomb",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "R-6 Deadeye",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "assetPath": "assets/weapons/primaries/r-6-deadeye-wiki.png",
+      "id": "primary:r-6-deadeye",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "LAS-58 Talon",
+      "type": "sidearm",
+      "subgroup": "special-sidearm",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "assetPath": "assets/weapons/sidearms/las-58-talon-wiki.png",
+      "id": "sidearm:las-58-talon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "TED-63 Dynamite",
+      "type": "throwable",
+      "subgroup": "throwing-weapon",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "assetPath": "assets/weapons/throwables/ted-63-dynamite-wiki.png",
+      "id": "throwable:ted-63-dynamite",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Hover Pack",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/hover-pack.svg",
+      "id": "stratagem:hover-pack",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Sample Extractor",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Borderline Justice",
+      "source": "Borderline Justice",
+      "assetPath": "assets/boosters/sample-extractor-wiki.svg",
+      "id": "booster:sample-extractor",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Borderline Justice",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ],
+  "hashes": {
+    "catalog": "c0f9063eba24ba60b659787d4e85e6efd9f8967ca9b2b2e51286c96d44f30fb0",
+    "protected": "13e848210429f9208b24333155c396601e1cec81d3a9a21dcdd0e9aafca917f8",
+    "untouched": "3bd55626095e072d6b5b603a222b734ba540006e232f5ae7fbe51e9c2af6e285",
+    "priorWarbonds": "f2d428807ca0154841be33220c2b98ac39e67d5bcfc064bd496f6379fda4ab22"
+  }
+}

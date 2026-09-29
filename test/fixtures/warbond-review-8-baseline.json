@@ -1,0 +1,317 @@
+{
+  "version": "1.1.12",
+  "capturedAt": "2026-09-15T05:34:35.462Z",
+  "source": "v1.1.12 import-safety candidate app.asar; independent pre-batch-8 baseline",
+  "asarSha256": "9793592d0ff8848c711eca1c4889c508164f40f6f1d321743c34c8fa8bca669b",
+  "hashes": {
+    "catalog": "999ae1c730d9439ce46fcb8005af64d61c0276a4d87e2d279be8288ba9daebef",
+    "untouched": "94c3532b46dcbfccc03fc23c216ae76e9e659bc2dadb905faf270c5e8bd1f149",
+    "priorWarbonds": "866ad480a41206e76dda76501518d82deffc9455229e3a39979754f914d4ecfa",
+    "protected": "da999d0b3d7c4311dbddc584386d23363f4deb2b8da363c720fb871b8c480d17"
+  },
+  "reviewedRows": [
+    {
+      "name": "AR-23P Liberator Penetrator",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/ar-23p-liberator-penetrator-wiki.png",
+      "id": "primary:ar-23p-liberator-penetrator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "R-63 Diligence",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/r-63-diligence-wiki.png",
+      "id": "primary:r-63-diligence",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "R-63CS Diligence Counter Sniper",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/r-63cs-diligence-counter-sniper-wiki.png",
+      "id": "primary:r-63cs-diligence-counter-sniper",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "SMG-37 Defender",
+      "type": "primary",
+      "subgroup": "smg",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/smg-37-defender-wiki.png",
+      "id": "primary:smg-37-defender",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "SG-225 Breaker",
+      "type": "primary",
+      "subgroup": "shotgun",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/sg-225-breaker-wiki.png",
+      "id": "primary:sg-225-breaker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "SG-225SP Breaker Spray&Pray",
+      "type": "primary",
+      "subgroup": "shotgun",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/sg-225sp-breaker-spray-and-pray-wiki.png",
+      "id": "primary:sg-225sp-breaker-spray-and-pray",
+      "aliases": [
+        "sg 225sp breaker sprayandpray",
+        "sg 225sp breaker spraypray"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "SG-8 Punisher",
+      "type": "primary",
+      "subgroup": "shotgun",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/sg-8-punisher-wiki.png",
+      "id": "primary:sg-8-punisher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "SG-8S Slugger",
+      "type": "primary",
+      "subgroup": "shotgun",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/sg-8s-slugger-wiki.png",
+      "id": "primary:sg-8s-slugger",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "LAS-5 Scythe",
+      "type": "primary",
+      "subgroup": "energy",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/las-5-scythe-wiki.png",
+      "id": "primary:las-5-scythe",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "PLAS-1 Scorcher",
+      "type": "primary",
+      "subgroup": "energy",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/primaries/plas-1-scorcher-wiki.png",
+      "id": "primary:plas-1-scorcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "P-19 Redeemer",
+      "type": "sidearm",
+      "subgroup": "pistol",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/sidearms/p-19-redeemer-wiki.png",
+      "id": "sidearm:p-19-redeemer",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-16 Impact",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/throwables/g-16-impact-wiki.png",
+      "id": "throwable:g-16-impact",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-3 Smoke",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/throwables/g-3-smoke-wiki.png",
+      "id": "throwable:g-3-smoke",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-6 Frag",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/weapons/throwables/g-6-frag-wiki.png",
+      "id": "throwable:g-6-frag",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Hellpod Space Optimization",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/boosters/hellpod-space-optimization-wiki.svg",
+      "id": "booster:hellpod-space-optimization",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Vitality Enhancement",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/boosters/vitality-enhancement-wiki.svg",
+      "id": "booster:vitality-enhancement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "UAV Recon Booster",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/boosters/uav-recon-booster-wiki.svg",
+      "id": "booster:uav-recon-booster",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Stamina Enhancement",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/boosters/stamina-enhancement-wiki.svg",
+      "id": "booster:stamina-enhancement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Muscle Enhancement",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/boosters/muscle-enhancement-wiki.svg",
+      "id": "booster:muscle-enhancement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Increased Reinforcement Budget",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Helldiver Basics (Mobilize)",
+      "source": "Helldiver Basics (Mobilize)",
+      "assetPath": "assets/boosters/increased-reinforcement-budget-wiki.svg",
+      "id": "booster:increased-reinforcement-budget",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Helldiver Basics (Mobilize)",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ]
+}

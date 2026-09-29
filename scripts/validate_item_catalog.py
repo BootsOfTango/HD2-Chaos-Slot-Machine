@@ -134,7 +134,7 @@ def main() -> int:
     for item in catalog_items:
         if not isinstance(item.get('aliases'), list) or not isinstance(item.get('acquisition'), dict):
             errors.append(f"Missing aliases/acquisition metadata: {item['name']}")
-        if item.get('introducedIn') == '1.1.2' and item.get('defaultEnabled') is not False:
+        if item.get('introducedIn') in ['1.1.2', 'hyena-revenants'] and item.get('defaultEnabled') is not False:
             errors.append(f"New paid/reward gear must default to disabled: {item['name']}")
     for warbond in catalog.get('warbonds', []):
         if not set(warbond.get('equipmentIds', [])).issubset(set(ids)):

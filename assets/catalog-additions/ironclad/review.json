@@ -1,0 +1,234 @@
+{
+  "reviewedAt": "2026-09-24",
+  "release": "ironclad-democracy",
+  "scope": "Eight reviewed equipment additions, not an exhaustive current-game inventory.",
+  "sources": [
+    {
+      "url": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+      "kind": "primary-source",
+      "supports": "Seven Warbond names, equipment slots, membership and announced September22 release."
+    },
+    {
+      "url": "https://helldivers.wiki.gg/wiki/Arbitrator",
+      "kind": "community-source",
+      "supports": "Post-release procurement corroboration; no mutable combat statistics copied."
+    },
+    {
+      "url": "https://helldivers.wiki.gg/wiki/LAS-12_Sai",
+      "kind": "community-source",
+      "supports": "Sai is an energy primary, separate Superstore procurement; page is WIP."
+    }
+  ],
+  "artwork": "Reviewed transparent game-derived artwork; bundled offline. Public reuse rights not established.",
+  "items": [
+    {
+      "name": "AR-11 Arbitrator",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/ar-11-arbitrator.png",
+      "id": "primary:ar-11-arbitrator",
+      "aliases": [
+        "Arbitrator"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "GL-15 Evictor",
+      "type": "primary",
+      "subgroup": "explosive",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/gl-15-evictor.png",
+      "id": "primary:gl-15-evictor",
+      "aliases": [
+        "Evictor"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "P-34 Breacher",
+      "type": "sidearm",
+      "subgroup": "special-sidearm",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/p-34-breacher.png",
+      "id": "sidearm:p-34-breacher",
+      "aliases": [
+        "Breacher"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "G-60 Anti-Tank Seeker",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/g-60-anti-tank-seeker.png",
+      "id": "throwable:g-60-anti-tank-seeker",
+      "aliases": [
+        "Anti-Tank Seeker",
+        "G-60 AT Seeker"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "G-8 Immolation",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/g-8-immolation.png",
+      "id": "throwable:g-8-immolation",
+      "aliases": [
+        "Immolation"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "Integrated Extinguishers",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/integrated-extinguishers.png",
+      "id": "booster:integrated-extinguishers",
+      "aliases": [],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "Surplus EAT Allocation",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Ironclad Democracy",
+      "source": "Ironclad Democracy",
+      "assetPath": "assets/catalog-additions/ironclad/surplus-eat-allocation.png",
+      "id": "booster:surplus-eat-allocation",
+      "aliases": [],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:ironclad-democracy",
+        "label": "Ironclad Democracy",
+        "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+        "verifiedAt": "2026-09-24",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Released equipment, independently enabled only after player confirms redemption. Official announcement confirms slot and membership; no armor/cosmetics added to loadout rolls."
+      }
+    },
+    {
+      "name": "LAS-12 Sai",
+      "type": "primary",
+      "subgroup": "energy",
+      "warbond": "Superstore",
+      "source": "Superstore",
+      "assetPath": "assets/catalog-additions/ironclad/las-12-sai.png",
+      "id": "primary:las-12-sai",
+      "aliases": [
+        "Sai",
+        "LAS-12 SAI"
+      ],
+      "defaultEnabled": false,
+      "introducedIn": "ironclad-democracy",
+      "acquisition": {
+        "kind": "superstore",
+        "id": "superstore:ironclad-democracy",
+        "label": "Superstore — Ironclad Democracy",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-12_Sai",
+        "verifiedAt": "2026-09-24",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separately purchased Superstore primary. Not included by owning the Warbond. Slot and acquisition community-corroborated; variable weapon stats and price intentionally not modeled."
+      }
+    }
+  ],
+  "warbond": {
+    "id": "warbond:ironclad-democracy",
+    "name": "Ironclad Democracy",
+    "edition": "Premium Warbond",
+    "releasedAt": "2026-09-22",
+    "coverAssetPath": "assets/catalog-additions/ironclad/cover.jpg",
+    "coverKind": "publisher-promotional-image",
+    "sourceUrl": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+    "equipmentIds": [
+      "primary:ar-11-arbitrator",
+      "primary:gl-15-evictor",
+      "sidearm:p-34-breacher",
+      "throwable:g-60-anti-tank-seeker",
+      "throwable:g-8-immolation",
+      "booster:integrated-extinguishers",
+      "booster:surplus-eat-allocation"
+    ],
+    "notes": "Seven rollable items: two primaries, one sidearm, two throwables and two boosters. No new selectable stratagem in these contents. Surplus EAT Allocation is a booster, not another EAT stratagem. LAS-12 Sai is a separate Superstore purchase. Armor/cosmetics omitted from equipment rolls. Cover is the official promotional image; equipment uses reviewed transparent source artwork."
+  }
+}

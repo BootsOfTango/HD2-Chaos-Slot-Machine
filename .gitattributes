@@ -1,3 +1,7 @@
 # Preserve source artwork bytes so recorded SHA-256 values survive checkout.
+assets/**/*.svg -text
 assets/boosters/*-wiki.svg -text
 assets/new-gear/*.svg -text
+# Unmodified upstream license/source hashes must survive Windows/Linux checkout.
+licenses/installer/** -text
+licenses/builder/LICENSE.txt -text

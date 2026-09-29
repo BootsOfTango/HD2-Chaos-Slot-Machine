@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "scope": "Seventh bounded M2B batch: 15 primary-source Warbond acquisitions and one community-source Superstore correction; two weapon subgroups, nine designation aliases and three original promotional images. Preserve canonical names, stable IDs, ownership, defaults and item artwork.",
+  "references": [
+    "docs/M2B_WARBOND_BATCH7_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "primary:ma5c-assault-rifle",
+      "previousName": "MA5C Assault Rifle",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
+        "label": "Obedient Democracy Support Troopers",
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:m7s-smg",
+      "previousName": "M7S SMG",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
+        "label": "Obedient Democracy Support Troopers",
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:m90a-shotgun",
+      "previousName": "M90A Shotgun",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
+        "label": "Obedient Democracy Support Troopers",
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:m6c-socom-pistol",
+      "previousName": "M6C/SOCOM Pistol",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:obedient-democracy-support-troopers",
+        "label": "Obedient Democracy Support Troopers",
+        "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:stoker",
+      "previousName": "Stoker",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "subgroup": "smg",
+      "aliases": [
+        "SMG/FLAM-34 Stoker"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
+        "label": "Entrenched Division",
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:sweeper",
+      "previousName": "Sweeper",
+      "warbond": "Superstore",
+      "source": "Superstore",
+      "subgroup": "shotgun",
+      "aliases": [
+        "SG-97 Sweeper"
+      ],
+      "acquisition": {
+        "kind": "superstore",
+        "id": "superstore",
+        "label": "Superstore — Entrenched Division themed page",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Sweeper",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Separate Superstore shotgun, not an Entrenched Division Warbond unlock. Community indexed procurement reference corroborated by https://helldivers.fandom.com/wiki/SG-97_Sweeper; direct wiki fetch was unavailable. No price or current rotation promise."
+      }
+    },
+    {
+      "id": "primary:smg-203-gallant",
+      "previousName": "SMG-203 Gallant",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
+        "label": "Exo Experts",
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:entrenchment-tool",
+      "previousName": "Entrenchment Tool",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "aliases": [
+        "CQC-73 Entrenchment Tool"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
+        "label": "Entrenched Division",
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:veto",
+      "previousName": "Veto",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "aliases": [
+        "P-69 Veto"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
+        "label": "Entrenched Division",
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:p-33-missile-pistol",
+      "previousName": "P-33 Missile Pistol",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
+        "label": "Exo Experts",
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:giga-grenade",
+      "previousName": "Giga Grenade",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "aliases": [
+        "G-48 Giga Grenade"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
+        "label": "Entrenched Division",
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:gas-mortar",
+      "previousName": "Gas Mortar",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "aliases": [
+        "A/GM-17 Gas Mortar Sentry"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
+        "label": "Entrenched Division",
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:cremator",
+      "previousName": "Cremator",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "aliases": [
+        "B/FLAM-80 Cremator"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:entrenched-division",
+        "label": "Entrenched Division",
+        "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:mgx-42-bullet-storm",
+      "previousName": "MGX-42 Bullet Storm",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
+        "label": "Exo Experts",
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:exo-51-lumberer-exosuit",
+      "previousName": "EXO-51 Lumberer Exosuit",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "aliases": [
+        "EXO-51 Lumberer"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
+        "label": "Exo Experts",
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:exo-55-breakthrough-exosuit",
+      "previousName": "EXO-55 Breakthrough Exosuit",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "aliases": [
+        "EXO-55 Breakthrough"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:exo-experts",
+        "label": "Exo Experts",
+        "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:entrenched-division",
+      "name": "Entrenched Division",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-03-17",
+      "coverAssetPath": "assets/warbonds/official/entrenched-division.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:stoker",
+        "sidearm:entrenchment-tool",
+        "sidearm:veto",
+        "throwable:giga-grenade",
+        "stratagem:gas-mortar",
+        "stratagem:cremator"
+      ],
+      "notes": "Complete rollable equipment set supported by the official announcement. Excludes cosmetics, armor, separate Superstore equipment and unrelated comparison weapons; no booster grant. Ownership stays player-controlled. Official promotional image, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:exo-experts",
+      "name": "Exo Experts",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-04-28",
+      "coverAssetPath": "assets/warbonds/official/exo-experts.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:smg-203-gallant",
+        "sidearm:p-33-missile-pistol",
+        "stratagem:mgx-42-bullet-storm",
+        "stratagem:exo-51-lumberer-exosuit",
+        "stratagem:exo-55-breakthrough-exosuit"
+      ],
+      "notes": "Complete rollable equipment set supported by the official announcement. Excludes cosmetics, armor, separate Superstore equipment and unrelated comparison weapons; no booster grant. Ownership stays player-controlled. Official promotional image, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:obedient-democracy-support-troopers",
+      "name": "Obedient Democracy Support Troopers",
+      "edition": "Legendary Warbond",
+      "releasedAt": "2025-08-26",
+      "coverAssetPath": "assets/warbonds/official/obedient-democracy-support-troopers.jpg",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://news.xbox.com/en-us/2025/08/19/helldivers-2-halo-odst-crossover-warbond-xbox-launch/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ma5c-assault-rifle",
+        "primary:m7s-smg",
+        "primary:m90a-shotgun",
+        "sidearm:m6c-socom-pistol"
+      ],
+      "notes": "Complete rollable equipment set supported by the official announcement. Excludes cosmetics, armor, separate Superstore equipment and unrelated comparison weapons; no booster grant. Ownership stays player-controlled. Official promotional image, not an exact in-game cover."
+    }
+  ]
+}

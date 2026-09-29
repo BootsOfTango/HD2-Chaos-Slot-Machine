@@ -1,87 +1,119 @@
-# Helldivers 2 Chaos Slot Machine
+# HD2 Chaos Slot Machine
 
-A Helldivers 2 loadout slot machine and performance tracking app for Windows and the browser. Its visual title and icon use **HD2CSM** in yellow with a black outline.
+A solo-dive companion: roll equipment, choose a planet and mission, then record your results. It does not launch missions, unlock gear, read game memory or access your Steam account.
 
-## Download for Windows
+**1.0 Local preview — not a newly published release.** This guide describes the current development preview. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. The planned **1.0 Official Project Release** still needs final reviews and owner approval; “official” means this project's release, not publisher endorsement.
 
-[Download HD2CSM v1.1.0](https://github.com/BootsOfTango/Helldivers-2-Roulette/releases/tag/hd2csm-v1.1.0)
+## Install once, then use your shortcut
 
-- **Recommended:** `Helldivers-2-Chaos-Slot-Machine-Setup-v1.1.0-win-x64.exe` — installs the app and shortcuts; no development tools or internet connection needed for installation.
-- **Portable:** `Helldivers-2-Chaos-Slot-Machine-v1.1.0-win-x64.zip` — extract the entire ZIP and run `Helldivers 2 Chaos Slot Machine.exe`.
-- This first HD2CSM Windows release is **unsigned**. Windows may show an unknown-publisher/SmartScreen warning. Verify the download against its accompanying SHA-256 file. Future signed releases require publisher credentials.
+1. Open this project's [GitHub Releases](https://github.com/BootsOfTango/Helldivers-2-Roulette/releases), read the chosen release's notes and expand **Assets**.
+2. Download its **Windows x64 Setup .exe**, not **Source code** or **Code → Download ZIP**.
+3. Close any running copy. Run Setup and keep the normal Windows apps location—not the Desktop, download folder or source checkout.
+4. Open **HD2 Chaos Slot Machine** from Start or Setup's desktop shortcut. You do not need Setup again until an update.
 
-See [the v1.1.0 patch notes](RELEASE_NOTES_v1.1.0.md) for the rename, save migration, offline improvements, and corrected weapon/booster artwork. The repository URL stays unchanged so existing links keep working.
+Setup includes the images and runtime. No Git, Node.js, npm or Python is needed. Leave the installed supporting files together.
 
-## Desktop development
+**Prefer no installation?** Download the release's app ZIP, extract the **entire ZIP**, and run **HD2 Chaos Slot Machine.exe** inside it. Do not run inside the archive or move only the EXE. Portable and installed copies normally share the same Windows save folder; use one copy at a time. A developer's local shortcut will not work on another PC.
 
-Current local development preview: **v1.1.5**, unpublished. It includes fullscreen/window changes, opt-in ownership, recoverable duplicate consolidation, two source-review batches and bulk controls for reviewed Warbond equipment sets. The public download above remains v1.1.0. See [project status](docs/PROJECT_STATUS.md) and [local preview notes](RELEASE_NOTES_v1.1.5.md); publication requires owner approval.
+Current local builds are **unsigned**. Windows may warn about an unknown publisher. Check the release source and signature/checksum information; a checksum is not proof of safety. **Do not disable Windows protection.**
 
-This repository now includes an Electron shell for the existing `index.html` application. The desktop app keeps the current Spin, Results, Compare, Armory, and Rank interfaces intact while adding a secure desktop window, an isolated preload bridge, external browser handling for the YouTube channel link, and Windows packaging metadata.
+## Your first solo dive
 
-### Commands
+1. Dismiss **Just for fun** with **Let's dive**.
+2. In **Armory**, review **Owned** and **Include in rolls / Enabled**. Mark only your actual unlocks; buying a Warbond does not unlock every item.
+3. **Spin → SPIN LOADOUT**: choose difficulty and wait for the reels.
+4. Use **SPECIAL EVENT: REROLL** if offered, then **LOCK LOADOUT**.
+5. Keep the planet, **REROLL PLANET**, or **MANUALLY SEARCH FOR PLANET?** using the map/list. Then **CONFIRM PLANET**.
+6. Choose a mission icon or **Roll mission**, then **Play this**. Check that the mission exists in your actual game operation.
+7. Enter your player name → **CONFIRM PLAYER AND CREATE CARD**.
+8. Play in Helldivers 2, then open the pending card in **Results** to record the dive.
 
-- `npm ci` installs the exact Electron and Windows packaging toolchain versions recorded in `package-lock.json`.
-- `npm run dev` launches the Electron desktop application for local development.
-- `npm start` launches the Electron desktop application normally.
-- `npm run prepare:icons` regenerates the local desktop icon files from the HD2CSM slot-machine artwork.
-- `npm test` runs the automated logic, storage, catalog, and asset checks. `npm run test:electron` runs the Electron workflow and restart checks with isolated test data.
-- `npm run build:win` regenerates those icon files, then creates two self-contained Windows x64 artifacts with the product name `Helldivers 2 Chaos Slot Machine` and stable app ID `com.bootsoftango.helldivers2chaosslotmachine`: the recommended offline installer `Helldivers-2-Chaos-Slot-Machine-Setup-v<VERSION>-win-x64.exe` and the portable `Helldivers-2-Chaos-Slot-Machine-v<VERSION>-win-x64.zip`, using `package.json`'s version. The installer embeds the full application and Electron runtime; it does not download components during installation and users do not need Node.js, npm, or Python. The ZIP includes `README-FIRST.txt` and must be extracted as a complete folder before its app executable is run.
-- `npm run release:win` builds both Windows artifacts, inspects the packaged runtime/assets and embedded installer payload, and creates one `.sha256` checksum file beside each artifact.
+Starting another Spin replaces the unfinished spin. Created Result cards and supported settings persist; unfinished equipment spins do not survive restart.
 
+The **Seed** name is a themed codename, not a reproducible random seed or damage prediction. Equipment intensity and recorded planet/faction/mission context influence it. The generator avoids names already in your saved collection, not all names worldwide; deleting history removes that reservation.
 
-## Windows releases
+## Results, radar and ranking
 
-The `hd2csm-v1.1.0` release contains the locally tested, unsigned Windows artifacts. Its distinct tag does not trigger the signed `v*.*.*` workflow described below. This one-time unsigned release does not disable signing requirements for future workflow releases.
+The guided card editor asks one question at a time. Use **Next / Back**, review all answers and **Edit** anything incorrect. Enter real score-screen numbers; **0 means none**, not unknown. Mission time is decimal minutes: **12.5 = 12m30s**. Record side objectives completed and total available; sample counts are not required.
 
-Maintainers publish the offline installer and portable ZIP with the **Windows Release** GitHub Actions workflow. Push a version tag that matches `package.json`, such as `v1.1.0`, to run validation, tests, packaging, artifact inspection, checksum generation, signature verification, and GitHub Release upload on GitHub's Windows runner. Tagged releases require configured Azure signing credentials and verify both the installed application executable inside the ZIP and the NSIS installer before upload. Use **Actions → Windows Release → Run workflow** for an unsigned manual test build on a branch before tagging. See `docs/RELEASE.md` for the release checklist and owner steps.
+**Cancel** or Escape discards the unsaved entry session, not the card. Tick the review checkbox and choose **Save & lock** only when ready: **numbers, outcomes and the original note become permanent**. You can still add comments later.
 
-## Desktop save files and recovery
+Saved cards show the radar, planet visual and a sector locator when available. Expand **Loadout**, **Stats** or **Scoring** for details. The locator is reference geography, not a live or historical territory replay.
 
-The desktop app stores its data under `%APPDATA%\Helldivers 2 Chaos Slot Machine`. The Windows application ID is `com.bootsoftango.helldivers2chaosslotmachine`; save files remain separate from the installation folder so application updates do not replace them.
+Solo ratings use six provisional app benchmarks:
 
-On first launch after the rename, the app can copy a valid save from `%APPDATA%\Helldivers 2 Chaos Roulette` when the new save location has no existing save. The previous save and backups remain untouched. An existing new save takes priority. Browser storage also copies supported legacy keys to the new names while preserving the originals. JSON exports from the previous application remain supported.
+- **Firepower:** kills per minute, with the gentler Solo v2 curve.
+- **Precision:** entered accuracy.
+- **Survivability:** deaths relative to time—not a measurement of armor or damage absorbed.
+- **Speed:** completion time relative to the mission limit; failed missions receive zero.
+- **Utility:** completed/available side objectives. Zero available means N/A, not zero.
+- **Mission:** main-mission completion; extraction is recorded separately.
 
-Your working desktop save is a clearly named `state.json` file in that save folder. The file includes the save-format version, the application version that wrote it, the save date, and your saved cards/item edits. Browser `localStorage` is now only used as a development fallback when the app is not running through Electron.
+**Rank** groups comparable Solo runs by difficulty, faction, mission/time limit and available objectives, ordering successful missions first, then rating. Unknown required scoring inputs leave a card unranked. **Compare and derived equipment analytics remain Legacy-only**; Solo profiles can be compared side by side in Rank. These are your recorded outcomes, not a controlled test isolating loadout strength or official game balance ratings.
 
-To open the folder, go to **Results** and select **Open Save Folder**. Windows Explorer will open the directory that contains:
+Use **Results → Review card rules** to preview a scoring update. Nothing is recalibrated or removed automatically. **Later** keeps your old ratings in separate comparison groups. **Back up & apply** updates complete older Solo cards from their recorded inputs and removes only supported, genuinely incomplete finalized cards listed in the review. Pending cards are kept. Invalid/unknown records block the update instead of being deleted. No filling in missing old stats is required.
 
-- `state.json` — the working save.
-- `backups/` — dated automatic backup files. Each backup is stored as a separate JSON file, and the app keeps the latest 20 backups.
-- `recovery/` — damaged working saves or damaged backups preserved for manual inspection.
+Original records, ratings, notes and later comments are retained for kept cards; rating revisions appear under Scoring and in exports. Desktop updates create a verified, byte-exact `card-upgrades/<unique-id>/before.json` recovery copy with a checksum manifest in **Open save folder**. These copies are outside the 20-file rolling backup limit. Data remains separate from the installation directory, even with a custom install location. Restore a recovery file through Import JSON only after reviewing newer dives/comments: import replaces the whole active collection, not a merge. Export current data first. Oversized native backups need assisted recovery; JSON import/export remains limited to 32 MiB/10,000 cards and never truncates history. Browser recovery copies remain in browser storage, so export them before clearing browser data. New history-bearing saves use format 2; older apps must not edit them. Unsupported future formats are preserved, not downgraded. Compatibility is tested for documented formats, not guaranteed for arbitrary damaged/unknown saves.
 
-On startup, the app tries `state.json` first. If it is damaged, the app copies it into `recovery/` instead of silently discarding it, then tries backups from newest to oldest. If a backup is recovered, the app shows a friendly message so you know what happened. A blank save is used only when no valid working save or backup exists.
+## Armory
 
-## Exporting, importing, and clearing data
+Search names, aliases, roles and Warbonds. Browse collapsible equipment categories or Warbond/source cards. **CLEAR FILTERS** restores hidden results; filtering does not change roll eligibility. Warbond bulk controls affect the entire group, not just visible search matches. Search text resets on launch; supported browsing preferences are saved/exported.
 
-Use the existing **Results → Export JSON** button to make a portable copy of your supported slot-machine state. In the desktop app this opens the normal Windows **Save As** dialog with a dated filename such as `helldivers-2-chaos-slot-machine-export-2026-08-04.json`. The exported JSON includes:
+The reviewed catalog contains **214 items and 25 Warbond groups**. It is bundled, not automatically updated when the game adds equipment. New paid/reward additions start excluded; existing ownership choices are preserved.
 
-- Saved loadout cards and mission stats.
-- Item ownership/enabled changes.
-- Supported settings, including the remembered player name.
-- Save-format version.
-- Application version.
-- Export date.
+- **Castellan's Creed:** four rollable items, including **40-K Meltagun as a support stratagem**.
+- **Ironclad Democracy:** seven additions. **LAS-12 Sai** is a separate Superstore primary.
+- **Eagle Gas Airstrike:** a campaign reward, distinct from **Orbital Gas Strike**.
+- An empty roll category does not silently re-enable unowned/excluded gear. Review your choices in Armory.
 
-Use **Results → Import JSON** to open the normal Windows file-selection dialog. The app validates the selected JSON before touching the current working save. Unsupported JSON, incorrectly shaped JSON, files over 5 MB, and exports from future save formats are rejected with a friendly explanation. When an import is accepted, the app creates an automatic backup of the current data before saving the imported data, refreshes the affected pages, and writes the imported data to `state.json` so it remains available after restarting the desktop app.
+## Planet map and live-data limits
 
-### Moving data from the browser version on first launch
+Drag from blank space **or a planet** to pan; wheel/pinch zooms. A normal click inspects a planet. Search to focus or choose **Use list instead**. **Eligible only** starts checked each time the chooser opens. Context/inactive planets are not automatically selectable. Sector shading and faction colors are approximate; supply links use available source data, not copied game-map artwork.
 
-1. Open the browser version.
-2. Select **Export JSON** and save the exported file somewhere easy to find.
-3. Open the desktop version.
-4. Go to **Results → Import JSON** and choose the exported JSON file.
-5. Restart the desktop app if you want to confirm the imported cards and item changes were persisted.
+Hover, focus or inspect a planet to see environment/weather and **Reported activity**. Reviewed community reports can show Hive Lords, Jet Brigade, enemy surges, Terminid strains and SEAF presence. Unknown or missing reports **do not mean no special enemies**. Badges are not guaranteed encounters, and environment labels are not weather measured at this instant.
 
-### Clear All Data recovery behavior
+- Refresh at startup and every **five minutes while open and visible**.
+- While the map is open and visible, refresh checks run **once per minute**.
+- Stale reconnect/resume and **REFRESH WAR DATA** can request updates. Manual refresh has a **30-second cooldown**; failures/rate limits extend retries.
+- No per-hover requests or updates while closed. Planet refresh does not install new gear catalogs or app updates.
+- Community feeds can lag the game. Retrieval times do not prove when game conditions changed. Check timestamps and the in-game map before diving.
+- Offline cached/bundled data is **not confirmed currently playable**.
+- Random/manual selection share enabled active planets across factions. The chosen planet sets the enemy; rerolls avoid the current planet when another is eligible.
+- Refresh does not silently alter locked runs or historical Results. Unfinished incompatible mission choices can require reconfirmation.
 
-**Results → Clear All Data** explains that it will erase saved cards, mission stats, item ownership changes, remembered player name, current spin details, rank comparisons, and slot-machine settings from the working desktop save. It requires typing `CLEAR ALL DATA` exactly. The desktop app creates one final recovery backup before clearing; if that backup cannot be created, the clear operation stops and the working save is left alone.
+### Missions are suggestions, not an exact operation list
 
-## Offline behavior and optional live data
+The bundled catalog has **60 mission identities**, with sourced game-image icons displayed yellow/gold. Coverage is partial, not a complete list of all current game content. Suggestions use known faction, difficulty and campaign context; some event/region restrictions require player confirmation. Custom/unknown missions use fallback symbols.
 
-The core slot-machine app is designed to work without internet access. Application startup, Spin, difficulty selection, built-in planet selection, card creation, Results, Compare, Armory, Rank, Save, Import, and Export all use bundled data and local storage.
+Optional tools live under **Armory → Advanced → Mission tools → My operation**. Choose/confirm a planet in Spin first, then check the missions you actually see. **Add missing mission** requires an explicit scoring category; duration alone does not determine scoring. Manual choices and roulette use the same confirmed shortlist. An empty shortlist remains empty until changed or **Reset to suggestions** is chosen. Planet, difficulty, event or catalog changes can require reconfirmation. **Back to mission** returns to Spin.
 
-The desktop package includes the item catalog and image manifest at `assets/item-catalog.json` and `assets/item-images.json`. In Electron, those files are read through a limited preload bridge that only allows those packaged JSON resources, so ordinary relative-file quirks in packaged builds do not prevent the Armory and item insights from loading. Browser security protections remain enabled.
+## Window controls
 
-The **Current active planets (live API)** panel is optional bonus information and requires internet. It checks the public Helldivers 2 campaigns API with a short timeout, does not block startup, and can be refreshed manually from **Armory → Current active planets (live API) → Refresh Live Planets**. If the request fails, the app keeps the built-in planet list available, shows a friendly offline message, and displays the last successful live result when one has been cached. Cached live data is labeled with its last-updated date.
+Normal launch starts fullscreen. **F11** or **Fullscreen** toggles windowed mode. **Escape** closes the open dialog first; otherwise it exits fullscreen. Smaller windows retain the desktop layout: use scrollbars, wheel/trackpad, or **Space + drag on empty background**. Map dragging is separate and needs no Space key.
 
-The YouTube channel link is also optional external navigation. In the desktop app it opens only through the secure Electron external-link handler and is not required for any slot-machine feature.
+## Saves, backups and updates
+
+- **Results → EXPORT JSON:** make a separate backup before updating, importing or changing PCs. Keep it outside the app folder until restoration is verified.
+- **Results → IMPORT JSON:** can replace cards/settings; export your current data first. Supported older desktop/browser exports are accepted.
+- Transfers allow up to **32 MiB and 10,000 cards**, with nesting/complexity limits. Oversized transfers are refused, not truncated. Desktop autosaves do not have this transfer limit; browser storage can fill earlier.
+- **Results → OPEN SAVE FOLDER** opens the active profile. Normal installed/portable saves are at **%APPDATA%\Helldivers 2 Chaos Slot Machine\state.json**, with backups/recovery nearby.
+- The developer's review shortcut uses a separate profile; use **OPEN SAVE FOLDER** to find the correct one.
+- Close the app before running new Setup. Do not delete the save folder or recovery files. Do not open newer-format saves in older builds.
+- **CLEAR ALL DATA** is a reset, not routine troubleshooting. Automatic recovery backups do not replace your own exports.
+- Exports can contain player names/history; review before sharing.
+
+### If saving fails
+
+Keep the app open and use **Retry saving** or **Export session JSON**. **Close without saving** requires confirmation and discards unsaved session changes. If startup cannot safely read an existing save, the session protects it from overwrite. Close and resolve the read problem or use a compatible newer app; do not delete the original to bypass protection. Cache-preservation warnings may mean new data is memory-only; preserve backups and report the warning.
+
+## Troubleshooting and credits
+
+**Missing gear?** Clear filters and check Owned/Included. The app cannot verify your purchases. **No sound?** Check Windows volume and the selected output device. **Slow or unstable?** Software rendering may use more CPU. If you encounter freezing, display trouble or a blue screen, stop and report the time/build/steps rather than repeatedly reproducing it.
+
+[Report an issue](https://github.com/BootsOfTango/Helldivers-2-Roulette/issues) with the build label/version, Setup/portable/review-copy choice and a screenshot. Do not post passwords, tokens or private saves.
+
+This independent fan project is not endorsed by Arrowhead or Sony. The existing Apache 2.0 code license permits compliant reuse; it does not grant rights to third-party images or trademarks. Game/crossover artwork and community contributions retain their owners' rights. Credits do not establish redistribution permission. See [NOTICE](NOTICE.txt), [third-party notices](THIRD_PARTY_NOTICES.md) and [security guidance](SECURITY.md). No copyright-clearance, malware-free or crash-free guarantee is made.
+
+## Development and release status
+
+Players need no source checkout. Maintainers: [development](docs/DEVELOPMENT.md), [current status and remaining work](docs/PROJECT_STATUS.md), [release checklist](docs/RELEASE.md), [draft 1.0 notes](docs/RELEASE_NOTES_1.0_DRAFT.md). The [standalone player guide](README-FIRST.txt) is bundled by the build process; editing its source does not update an existing installer or ZIP.

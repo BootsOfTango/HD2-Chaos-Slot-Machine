@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "scope": "Fifth bounded M2B Warbond batch: 13 pending acquisitions (nine primary-source, four explicitly community-source). Preserve existing Dominator facts, all canonical names, IDs, subgroups, eligibility defaults and item artwork; add one verified historical import alias.",
+  "references": [
+    "docs/M2B_WARBOND_BATCH5_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "primary:ar-23a-liberator-carbine",
+      "previousName": "AR-23A Liberator Carbine",
+      "warbond": "Viper Commandos",
+      "source": "Viper Commandos",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
+        "label": "Viper Commandos",
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:ar-23c-liberator-concussive",
+      "previousName": "AR-23C Liberator Concussive",
+      "warbond": "Steeled Veterans",
+      "source": "Steeled Veterans",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
+        "label": "Steeled Veterans",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AR-23C_Liberator_Concussive",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. The wiki also records the former AR-23E Liberator Explosive name; retain it only as an import/search alias."
+      },
+      "aliases": [
+        "AR-23E Liberator Explosive"
+      ]
+    },
+    {
+      "id": "primary:smg-32-reprimand",
+      "previousName": "SMG-32 Reprimand",
+      "warbond": "Truth Enforcers",
+      "source": "Truth Enforcers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
+        "label": "Truth Enforcers",
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:sg-20-halt",
+      "previousName": "SG-20 Halt",
+      "warbond": "Truth Enforcers",
+      "source": "Truth Enforcers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
+        "label": "Truth Enforcers",
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:sg-225ie-breaker-incendiary",
+      "previousName": "SG-225IE Breaker Incendiary",
+      "warbond": "Steeled Veterans",
+      "source": "Steeled Veterans",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
+        "label": "Steeled Veterans",
+        "sourceUrl": "https://store.steampowered.com/news/app/553850/view/3964924274929744964?l=english",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:p-4-senator",
+      "previousName": "P-4 Senator",
+      "warbond": "Steeled Veterans",
+      "source": "Steeled Veterans",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
+        "label": "Steeled Veterans",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/P-4_Senator",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. Do not infer ownership from edition or purchase history."
+      }
+    },
+    {
+      "id": "sidearm:plas-15-loyalist",
+      "previousName": "PLAS-15 Loyalist",
+      "warbond": "Truth Enforcers",
+      "source": "Truth Enforcers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
+        "label": "Truth Enforcers",
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "sidearm:sg-22-bushwhacker",
+      "previousName": "SG-22 Bushwhacker",
+      "warbond": "Viper Commandos",
+      "source": "Viper Commandos",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
+        "label": "Viper Commandos",
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-10-incendiary",
+      "previousName": "G-10 Incendiary",
+      "warbond": "Steeled Veterans",
+      "source": "Steeled Veterans",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
+        "label": "Steeled Veterans",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/G-10_Incendiary",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. Do not infer ownership from edition or purchase history."
+      }
+    },
+    {
+      "id": "throwable:k-2-throwing-knife",
+      "previousName": "K-2 Throwing Knife",
+      "warbond": "Viper Commandos",
+      "source": "Viper Commandos",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
+        "label": "Viper Commandos",
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "The official announcement confirms the throwing knife; existing K-2 designation is retained rather than presented as a quotation."
+      }
+    },
+    {
+      "id": "booster:flexible-reinforcement-budget",
+      "previousName": "Flexible Reinforcement Budget",
+      "warbond": "Steeled Veterans",
+      "source": "Steeled Veterans",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:steeled-veterans",
+        "label": "Steeled Veterans",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Flexible_Reinforcement_Budget",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community-corroborated acquisition: the official launch article explicitly identifies Dominator and Breaker Incendiary, but does not name this item in its text. Do not infer ownership from edition or purchase history."
+      }
+    },
+    {
+      "id": "booster:experimental-infusion",
+      "previousName": "Experimental Infusion",
+      "warbond": "Viper Commandos",
+      "source": "Viper Commandos",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:viper-commandos",
+        "label": "Viper Commandos",
+        "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "booster:dead-sprint",
+      "previousName": "Dead Sprint",
+      "warbond": "Truth Enforcers",
+      "source": "Truth Enforcers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:truth-enforcers",
+        "label": "Truth Enforcers",
+        "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:viper-commandos",
+      "name": "Viper Commandos",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-06-13",
+      "coverAssetPath": "assets/warbonds/official/viper-commandos.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2024/06/06/helldivers-ii-enlists-the-viper-commandos-warbond-on-june-13/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-23a-liberator-carbine",
+        "sidearm:sg-22-bushwhacker",
+        "throwable:k-2-throwing-knife",
+        "booster:experimental-infusion"
+      ],
+      "notes": "Complete 4-item rollable set. Armor, cosmetics, themed shop items and separate edition bonuses are excluded. Ownership is player controlled. Original official promotional scene, not an exact in-game cover. Vehicle skins and story references do not grant stratagems."
+    },
+    {
+      "id": "warbond:truth-enforcers",
+      "name": "Truth Enforcers",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-10-31",
+      "coverAssetPath": "assets/warbonds/official/truth-enforcers.jpg",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:smg-32-reprimand",
+        "primary:sg-20-halt",
+        "sidearm:plas-15-loyalist",
+        "booster:dead-sprint"
+      ],
+      "notes": "Complete 4-item rollable set. Armor, cosmetics, themed shop items and separate edition bonuses are excluded. Ownership is player controlled. Original official promotional artwork, not an exact in-game cover. Vehicle skins and story references do not grant stratagems."
+    },
+    {
+      "id": "warbond:steeled-veterans",
+      "name": "Steeled Veterans",
+      "edition": "Premium Warbond",
+      "releasedAt": "2024-02-08",
+      "coverAssetPath": "assets/warbonds/official/steeled-veterans.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://store.steampowered.com/news/app/553850/view/3964924274929744964?l=english",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-23c-liberator-concussive",
+        "primary:sg-225ie-breaker-incendiary",
+        "primary:jar-5-dominator",
+        "sidearm:p-4-senator",
+        "throwable:g-10-incendiary",
+        "booster:flexible-reinforcement-budget"
+      ],
+      "notes": "Complete 6-item rollable set. Armor, cosmetics, themed shop items and separate edition bonuses are excluded. Ownership is player controlled. Original official promotional scene, not an exact in-game cover. Four acquisitions are community-corroborated; the previously reviewed Dominator remains unchanged. Flexible Reinforcement Budget is not Increased Reinforcement Budget."
+    }
+  ]
+}
+

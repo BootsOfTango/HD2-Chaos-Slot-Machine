@@ -9,4 +9,12 @@ Artwork retrieved through [Helldivers Wiki.gg](https://helldivers.wiki.gg/) on S
 - Castellan's Creed promotional cover: **Snuffle**.
 - Eagle Gas Airstrike icon: **Dogo314**, hand-traced from a game asset; **not an original extracted game icon**. The contributor limits reuse to free, publicly accessible content, excludes non-free/proprietary/access-restricted use, and requests contributor/wiki attribution. Re-evaluate permission before other distribution.
 
-All six files are downloaded source assets, with no local art edits or AI substitutions. Exact URLs, method, dimensions and SHA-256 hashes are in [provenance.json](provenance.json).
+The original six files remain preserved with no local art edits or AI substitutions. Exact URLs, method, dimensions and SHA-256 hashes are in [provenance.json](provenance.json).
+
+September 28: Meltagun now displays the cyan support-stratagem SVG by **Torakhan**,
+from [the wiki file page](https://helldivers.wiki.gg/wiki/File:Meltagun_Stratagem_Icon_Background.svg).
+The contributor describes a traced weapon outline and sampled icon colors, not an
+extracted game icon. Only the external DOCTYPE declaration was removed; paths,
+fills and geometry are unchanged. The page states CC BY-NC-SA 4.0 unless otherwise
+noted; attribution does not clear underlying game/crossover rights. The previous
+support-weapon render and its record remain recoverable but are no longer mapped.

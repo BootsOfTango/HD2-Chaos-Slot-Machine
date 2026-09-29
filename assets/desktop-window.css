@@ -10,6 +10,12 @@ body.desktop-app { overflow: hidden; }
     scrollbar-gutter: stable;
 }
 .desktop-app #appCanvas { min-width: 1280px; position: relative; min-height: 100%; }
+/* Keep the wide layout, but let the tall app header scroll away when the
+   viewport is short. Otherwise it covers focused controls at high page zoom.
+   The native-window toolbar stays available; browser styling is unchanged. */
+@media (max-height: 600px) {
+    .desktop-app #appCanvas > header { position: static; }
+}
 .desktop-app .engagementDock { position: absolute; width: 360px; }
 .desktop-app #rankDetailPanel { position: static; max-height: none; }
 .desktop-app .desktopWindowToolbar {

@@ -1,0 +1,797 @@
+{
+  "version": 1,
+  "revision": "review-2026-09-19-a",
+  "coverage": "partial",
+  "reviewedAt": "2026-09-19",
+  "sources": [
+    {
+      "id": "brood-commanders",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Brood_Commanders",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "chargers",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Chargers",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "bile-titans",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Bile_Titans",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "impaler",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Impaler",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "devastators",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Devastators",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "hulks",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Automaton_Hulks",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "factory-strider",
+      "url": "https://helldivers.wiki.gg/wiki/Eliminate_Automaton_Factory_Strider",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "harvesters",
+      "url": "https://helldivers.wiki.gg/wiki/Destroy_Harvesters",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "transmission-network",
+      "url": "https://helldivers.wiki.gg/wiki/Destroy_Transmission_Network",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "hatcheries",
+      "url": "https://helldivers.wiki.gg/wiki/Purge_Hatcheries",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "escape-pod",
+      "url": "https://helldivers.wiki.gg/wiki/Upload_Escape_Pod_Data",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "fuel-pumps",
+      "url": "https://helldivers.wiki.gg/wiki/Start_Fuel_Pumps",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "illegal-broadcast",
+      "url": "https://helldivers.wiki.gg/wiki/Terminate_Illegal_Broadcast",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "spread-democracy",
+      "url": "https://helldivers.wiki.gg/wiki/Spread_Democracy",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "oil-pumps",
+      "url": "https://helldivers.wiki.gg/wiki/Activate_Oil_Pumps",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "oil-extraction",
+      "url": "https://helldivers.wiki.gg/wiki/Enable_E-710_Extraction",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "command-bunkers",
+      "url": "https://helldivers.wiki.gg/wiki/Destroy_Command_Bunkers",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "geological-survey",
+      "url": "https://helldivers.wiki.gg/wiki/Conduct_Geological_Survey",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "difficulty-reference",
+      "url": "https://helldivers.wiki.gg/wiki/Difficulty",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "icbm",
+      "url": "https://helldivers.wiki.gg/wiki/Launch_ICBM",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "eradicate-bots",
+      "url": "https://helldivers.wiki.gg/wiki/Eradicate_Automaton_Forces",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "eradicate-bugs",
+      "url": "https://helldivers.wiki.gg/wiki/Eradicate_Terminid_Swarm",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "evac-assets",
+      "url": "https://helldivers.wiki.gg/wiki/Evacuate_High-Value_Assets",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "valuable-data",
+      "url": "https://helldivers.wiki.gg/wiki/Retrieve_Valuable_Data",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "emergency-evac",
+      "url": "https://helldivers.wiki.gg/wiki/Emergency_Evacuation",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "evac-colonists",
+      "url": "https://helldivers.wiki.gg/wiki/Evacuate_Colonists",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "blitz-bugs",
+      "url": "https://helldivers.wiki.gg/wiki/Blitz_Search_And_Destroy/Terminid",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "blitz-bots",
+      "url": "https://helldivers.wiki.gg/wiki/Blitz_Search_And_Destroy/Automaton",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "blitz-ships",
+      "url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Destroy_Illuminate_Warp_Ships",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "rapid-acquisition",
+      "url": "https://helldivers.wiki.gg/wiki/Rapid_Acquisition",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "chart-tunnels",
+      "url": "https://helldivers.wiki.gg/wiki/Chart_Terminid_Tunnels",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    },
+    {
+      "id": "blitz-gateways",
+      "url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Destroy_Illuminate_Warp_Gateways",
+      "kind": "community-reference",
+      "access": "indexed-text"
+    }
+  ],
+  "missions": [
+    {
+      "id": "mission:launch-icbm",
+      "name": "Launch ICBM",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons",
+        "Illuminate"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "icbm"
+      ],
+      "notes": "Main mission only; not the optional objective in special Gloom missions. No additional campaign restriction encoded; this does not establish availability on every planet."
+    },
+    {
+      "id": "mission:eradicate-automatons",
+      "name": "Eradicate Automaton Forces",
+      "minutes": 15,
+      "scoringFamily": "Eradication (15)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 2,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "eradicate-bots"
+      ],
+      "notes": "Community reference lists Easy through Super Helldive. Campaign restriction unspecified; compatible suggestion, not an exact operation listing."
+    },
+    {
+      "id": "mission:eradicate-terminids",
+      "name": "Eradicate Terminid Swarm",
+      "minutes": 15,
+      "scoringFamily": "Eradication (15)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 2,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "eradicate-bugs"
+      ],
+      "notes": "Community reference lists Easy through Super Helldive. Campaign restriction unspecified; compatible suggestion, not an exact operation listing."
+    },
+    {
+      "id": "mission:evacuate-high-value-assets",
+      "name": "Evacuate High-Value Assets",
+      "minutes": 20,
+      "scoringFamily": "Defense (20min)",
+      "factions": [
+        "Terminids",
+        "Automatons"
+      ],
+      "minDifficulty": 5,
+      "maxDifficulty": 10,
+      "campaigns": [
+        "defense"
+      ],
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "evac-assets"
+      ],
+      "notes": "Defense-only rule applies here to Terminids and Automatons. Illuminate variant is a separate confirmation-only row due to its regional exception."
+    },
+    {
+      "id": "mission:defend-evacuation-site",
+      "name": "Defend Evacuation Site",
+      "minutes": 20,
+      "scoringFamily": "Defense (20min)",
+      "factions": [
+        "Illuminate"
+      ],
+      "minDifficulty": 5,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": false,
+      "sourceIds": [
+        "evac-assets"
+      ],
+      "notes": "Illuminate variant has a regional exception to the defense-only rule. Exact regional eligibility remains unresolved; require player confirmation instead of guessing."
+    },
+    {
+      "id": "mission:retrieve-valuable-data",
+      "name": "Retrieve Valuable Data",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons",
+        "Illuminate"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "valuable-data"
+      ],
+      "notes": "Community reference lists Medium through Super Helldive and all three fronts, including the Illuminate addition. Campaign restriction unspecified; verify the operation in-game."
+    },
+    {
+      "id": "mission:emergency-evacuation",
+      "name": "Emergency Evacuation",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "emergency-evac",
+        "evac-colonists"
+      ],
+      "notes": "40-minute evacuation, not the removed Retrieve Essential Personnel mission or 20-minute asset defense. Illuminate uses Evacuate Colonists instead of this identity. Campaign restriction unspecified."
+    },
+    {
+      "id": "mission:evacuate-colonists",
+      "name": "Evacuate Colonists",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Illuminate"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "evac-colonists"
+      ],
+      "notes": "Illuminate evacuation; the reference also calls its city variant Evacuate Citizens. One identity avoids double-weighting a renamed variant. Campaign restriction unspecified; check the actual operation."
+    },
+    {
+      "id": "mission:blitz-terminids",
+      "name": "Blitz: Search and Destroy (Terminids)",
+      "minutes": 12,
+      "scoringFamily": "Blitz (12)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 2,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "blitz-bugs"
+      ],
+      "notes": "Faction-specific reference lists Easy through Super Helldive; older generic Challenging minimum is not used. Campaign restriction unspecified; suggestions are not an exact operation listing."
+    },
+    {
+      "id": "mission:blitz-automatons",
+      "name": "Blitz: Search and Destroy (Automatons)",
+      "minutes": 12,
+      "scoringFamily": "Blitz (12)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "blitz-bots"
+      ],
+      "notes": "Faction-specific reference lists Medium through Super Helldive. City/Megafactory presentations share one identity, not extra weighted rolls. Campaign restriction unspecified."
+    },
+    {
+      "id": "mission:blitz-illuminate-ships",
+      "name": "Blitz: Destroy Illuminate Warp Ships",
+      "minutes": 12,
+      "scoringFamily": "Blitz (12)",
+      "factions": [
+        "Illuminate"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": false,
+      "sourceIds": [
+        "blitz-ships",
+        "blitz-gateways"
+      ],
+      "notes": "Normal minimum is Medium; Trivial/Easy require Avert Void operations on Exostorm planets. Void Source Planet replaces ships with gateways. Current adapter cannot distinguish these regions, so require player confirmation instead of suggesting the wrong variant."
+    },
+    {
+      "id": "mission:rapid-acquisition",
+      "name": "Rapid Acquisition",
+      "minutes": 15,
+      "scoringFamily": "Rapid Acquisition (15)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": false,
+      "sourceIds": [
+        "rapid-acquisition"
+      ],
+      "notes": "Confirmed identity, faction, duration and difficulty. Reference is tentative about expansion beyond the original Magma/operation context. Require player confirmation until current regional availability is independently established."
+    },
+    {
+      "id": "mission:chart-terminid-tunnels",
+      "name": "Chart Terminid Tunnels",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": false,
+      "sourceIds": [
+        "chart-tunnels"
+      ],
+      "notes": "Gloom-specific mission. The current war adapter does not verify Gloom operation eligibility; confirmation-only, never unlocked by Major Order prose."
+    },
+    {
+      "id": "mission:blitz-illuminate-gateways",
+      "name": "Blitz: Destroy Illuminate Warp Gateways",
+      "minutes": 12,
+      "scoringFamily": "Blitz (12)",
+      "factions": [
+        "Illuminate"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": false,
+      "sourceIds": [
+        "blitz-gateways"
+      ],
+      "notes": "Exclusive to the Void Source Planet; replaces regular Warp Ships Blitz there. Current adapter lacks verified regional eligibility, so require player confirmation."
+    },
+    {
+      "id": "mission:upload-escape-pod-data",
+      "name": "Upload Escape Pod Data",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons",
+        "Illuminate"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 2,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "escape-pod"
+      ],
+      "notes": "Main objective only at difficulties 1-2. At difficulty 3+ the reference describes an optional objective, not a separate mission roll."
+    },
+    {
+      "id": "mission:start-fuel-pumps",
+      "name": "Start Fuel Pumps",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 2,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "fuel-pumps"
+      ],
+      "notes": "Main objective at difficulties 1-2, formerly Pump Fuel To ICBM; do not add an alias as a second roll. Restrict suggestions to the two fronts explicitly described in the body; the broad Any infobox does not establish Illuminate availability."
+    },
+    {
+      "id": "mission:terminate-illegal-broadcast",
+      "name": "Terminate Illegal Broadcast",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons",
+        "Illuminate"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 2,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "illegal-broadcast"
+      ],
+      "notes": "Main mission at difficulties 1-2. Higher-difficulty optional objectives, and the Easy city side-objective exception, do not create separate rollable missions."
+    },
+    {
+      "id": "mission:spread-democracy",
+      "name": "Spread Democracy",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "spread-democracy"
+      ],
+      "notes": "Main mission on the two fronts explicitly described in the body. Gloom/Hive World side objectives are not separate missions. Broad Any infobox is not treated as evidence for an Illuminate main mission."
+    },
+    {
+      "id": "mission:activate-oil-pumps",
+      "name": "Activate Oil Pumps",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 2,
+      "maxDifficulty": 3,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "oil-pumps"
+      ],
+      "notes": "Standalone main objective only at difficulties 2-3. Its reuse as an objective inside Enable Oil Extraction does not extend this standalone mission's range."
+    },
+    {
+      "id": "mission:enable-oil-extraction",
+      "name": "Enable Oil Extraction",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 4,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "oil-extraction"
+      ],
+      "notes": "Main mission at difficulties 4-10; formerly Enable E-710 Extraction. One stable identity, not a second weighted alias. Campaign restrictions unspecified; verify the operation in-game."
+    },
+    {
+      "id": "mission:destroy-command-bunkers",
+      "name": "Destroy Command Bunkers",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 5,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "command-bunkers"
+      ],
+      "notes": "Main mission at difficulties 5-10. Objective count/layout variants do not create additional weighted mission identities. No assumption of exact live availability."
+    },
+    {
+      "id": "mission:conduct-geological-survey",
+      "name": "Conduct Geological Survey",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids",
+        "Automatons",
+        "Illuminate"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": false,
+      "sourceIds": [
+        "geological-survey",
+        "difficulty-reference"
+      ],
+      "notes": "Confirmation-only: mission page gives difficulty 1-10, while the general Difficulty table introduces it at 3. Preserve the broad documented range as metadata without claiming reliable low-level eligibility. Gloom optional objectives are not separate missions."
+    },
+    {
+      "id": "mission:eliminate-brood-commanders",
+      "name": "Eliminate Brood Commanders",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 2,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "brood-commanders"
+      ],
+      "notes": "Main mission targets, not the generic spawn range of Brood Commanders. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:eliminate-chargers",
+      "name": "Eliminate Chargers",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 3,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "chargers"
+      ],
+      "notes": "Medium-only main mission. Regular Charger encounters at higher levels do not extend its mission range. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:eliminate-bile-titans",
+      "name": "Eliminate Bile Titans",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 4,
+      "maxDifficulty": 5,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "bile-titans"
+      ],
+      "notes": "Challenging to Hard main mission; later ambient Bile Titans are not separate missions. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:eliminate-impaler",
+      "name": "Eliminate Impaler",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 5,
+      "maxDifficulty": 5,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "impaler"
+      ],
+      "notes": "Hard-only main mission, not a rule about every Impaler encounter. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:eliminate-devastators",
+      "name": "Eliminate Devastators",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 1,
+      "maxDifficulty": 2,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "devastators"
+      ],
+      "notes": "Trivial to Easy main mission; do not use the regular enemy spawn range as mission eligibility. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:eliminate-automaton-hulks",
+      "name": "Eliminate Automaton Hulks",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 3,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "hulks"
+      ],
+      "notes": "Medium-only main mission. Optional targets in special operations are not extra standalone missions. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:eliminate-factory-strider",
+      "name": "Eliminate Automaton Factory Strider",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 4,
+      "maxDifficulty": 6,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "factory-strider"
+      ],
+      "notes": "Challenging to Extreme main mission. Commando optional objectives do not add another weighted mission. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:destroy-harvesters",
+      "name": "Destroy Harvesters",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Illuminate"
+      ],
+      "minDifficulty": 3,
+      "maxDifficulty": 3,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "harvesters"
+      ],
+      "notes": "Medium-only main mission. City presentation is not a second identity; no additional regional rule established. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:destroy-transmission-network",
+      "name": "Destroy Transmission Network",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Automatons"
+      ],
+      "minDifficulty": 2,
+      "maxDifficulty": 3,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "transmission-network"
+      ],
+      "notes": "Easy to Medium main mission. Higher-level optional objectives on special operations are excluded from standalone rolls. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    },
+    {
+      "id": "mission:purge-hatcheries",
+      "name": "Purge Hatcheries",
+      "minutes": 40,
+      "scoringFamily": "Normal (40)",
+      "factions": [
+        "Terminids"
+      ],
+      "minDifficulty": 2,
+      "maxDifficulty": 10,
+      "campaigns": null,
+      "requiredEventRules": [],
+      "suggestionEnabled": true,
+      "sourceIds": [
+        "hatcheries"
+      ],
+      "notes": "Easy to Super Helldive main mission. Gloom optional hatcheries do not add an extra mission identity. Community-reviewed compatible suggestion, not exact operation availability; campaign restriction unspecified."
+    }
+  ]
+}

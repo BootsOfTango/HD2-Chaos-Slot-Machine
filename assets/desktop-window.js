@@ -31,6 +31,8 @@
     bridge.getWindowState().then(state => { if (!receivedStateEvent) renderState(state); }).catch(reportError);
     window.addEventListener('pagehide', unsubscribe, { once: true });
 
+    let space = false;
+    let drag = null;
     // Outside the canvas so a narrow/panned window never clips a dialog.
     const modals = [...document.querySelectorAll('.cardModal')];
     const previousFocus = new Map();
@@ -74,6 +76,7 @@
             modal.style.zIndex = String(12000 + index);
         });
         visible = next;
+        if (next.length) clearPan();
         if (newTop && !newTop.contains(document.activeElement)) {
             const restore = oldTop && previousFocus.get(oldTop);
             (restore && newTop.contains(restore) && restore.isConnected ? restore : focusable(newTop)[0] || panel(newTop)).focus();
@@ -100,8 +103,6 @@
 
     // Native scrolling is unchanged. Only empty backgrounds allow drag panning.
     const interactive = 'button, a, input, select, textarea, label, summary, [contenteditable], [tabindex], [role="button"], [draggable="true"], .tabBtn, .card, svg, canvas, img, [data-no-pan]';
-    let space = false;
-    let drag = null;
     function isBackground(target) {
         if (!(target instanceof Element) || !viewport.contains(target) || target.closest(interactive) || visible.length) return false;
         if ([...target.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim())) return false;
@@ -114,9 +115,10 @@
         return true;
     }
     function stopDrag() {
-        if (drag && viewport.hasPointerCapture(drag.pointer)) viewport.releasePointerCapture(drag.pointer);
+        const pointer = drag?.pointer;
         drag = null;
         viewport.classList.remove('panning');
+        if (pointer !== undefined && viewport.hasPointerCapture(pointer)) viewport.releasePointerCapture(pointer);
     }
     function clearPan() {
         space = false;
@@ -134,6 +136,11 @@
     });
     document.addEventListener('keyup', event => { if (event.code === 'Space') clearPan(); });
     window.addEventListener('blur', clearPan);
+    window.addEventListener('resize', clearPan);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) clearPan(); });
+    document.addEventListener('focusin', event => {
+        if (event.target instanceof Element && event.target.closest(interactive)) clearPan();
+    });
     viewport.addEventListener('pointerdown', event => {
         if (!space || event.button !== 0 || !isBackground(event.target)) return;
         drag = { pointer: event.pointerId, x: event.clientX, y: event.clientY, left: viewport.scrollLeft, top: viewport.scrollTop };
@@ -149,4 +156,5 @@
     });
     viewport.addEventListener('pointerup', stopDrag);
     viewport.addEventListener('pointercancel', clearPan);
+    viewport.addEventListener('lostpointercapture', clearPan);
 })();

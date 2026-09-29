@@ -1,0 +1,12 @@
+.cardPlanetVisual{display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,1fr);gap:18px;align-items:center;margin:14px 0;padding:12px;border:1px solid #384650;border-radius:14px;background:#0c141b;color:#e3eaf0}
+.cardPlanetMap{position:relative;overflow:hidden;min-height:155px;border-radius:10px;background:radial-gradient(ellipse at 52% 48%,#152a38,#091119);border:1px solid #263b48}
+.cardPlanetMap svg{display:block;width:100%;height:230px;font-family:inherit}
+.cardPlanetCaption{display:block;padding:5px 8px;color:#a8b8c3;font-size:11px;text-align:center}
+.cardPlanetInfo{display:flex;align-items:center;gap:14px;min-width:0}
+.cardPlanetInfo .planetGlobe{flex:none;width:88px;height:88px}
+.cardPlanetLabels{display:flex;flex-direction:column;gap:6px;min-width:0;overflow-wrap:anywhere}
+.cardPlanetLabels strong{font-size:21px;line-height:1.2}
+.cardPlanetLabels span{font-size:14px;color:#b5c3cf}
+.cardPlanetLabels .cardPlanetFaction{font-weight:700}
+.cardPlanetMissing{display:flex;min-height:130px;align-items:center;justify-content:center;color:#a8b8c3;font-size:14px}
+@media(max-width:700px){.cardPlanetVisual{grid-template-columns:1fr}.cardPlanetInfo{grid-row:1}.cardPlanetMap svg{height:215px}.cardPlanetInfo .planetGlobe{width:72px;height:72px}}

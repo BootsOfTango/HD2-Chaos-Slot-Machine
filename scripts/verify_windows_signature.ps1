@@ -3,8 +3,9 @@ $ErrorActionPreference = 'Stop'
 $projectPath = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $distPath = Join-Path $projectPath 'dist'
 $package = Get-Content -LiteralPath (Join-Path $projectPath 'package.json') -Raw | ConvertFrom-Json
-$zipPath = Join-Path $distPath "Helldivers-2-Chaos-Slot-Machine-v$($package.version)-win-x64.zip"
-$installerPath = Join-Path $distPath "Helldivers-2-Chaos-Slot-Machine-Setup-v$($package.version)-win-x64.exe"
+$releaseIdentity = Get-Content -LiteralPath (Join-Path $projectPath 'release-identity.json') -Raw | ConvertFrom-Json
+$zipPath = Join-Path $distPath "HD2-Chaos-Slot-Machine-v$($releaseIdentity.publicVersion)-win-x64.zip"
+$installerPath = Join-Path $distPath "HD2-Chaos-Slot-Machine-Setup-v$($releaseIdentity.publicVersion)-win-x64.exe"
 $extractPath = [System.IO.Path]::GetFullPath((Join-Path $distPath 'verify-win-signature'))
 
 if (!(Test-Path $zipPath)) {
@@ -29,9 +30,9 @@ if (Test-Path -LiteralPath $extractPath) {
 New-Item -ItemType Directory -Force -Path $extractPath | Out-Null
 Expand-Archive -LiteralPath $zipPath -DestinationPath $extractPath -Force
 
-$exe = Get-ChildItem -Path $extractPath -Recurse -Filter 'Helldivers 2 Chaos Slot Machine.exe' | Select-Object -First 1
+$exe = Get-ChildItem -Path $extractPath -Recurse -Filter 'HD2 Chaos Slot Machine.exe' | Select-Object -First 1
 if ($null -eq $exe) {
-  Write-Error 'Could not find Helldivers 2 Chaos Slot Machine.exe in the release ZIP.'
+  Write-Error 'Could not find HD2 Chaos Slot Machine.exe in the release ZIP.'
   exit 1
 }
 

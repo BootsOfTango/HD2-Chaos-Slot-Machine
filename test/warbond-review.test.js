@@ -3,9 +3,12 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
-const catalog = require('../assets/item-catalog.json');
+const { projectBeforeBatch4 } = require('../scripts/catalog-history-fixture');
+const catalog = projectBeforeBatch4(require('../assets/item-catalog.json'));
 const review = require('../assets/catalog-reviews/2026-09-14-warbonds.json');
 const earlierReview = require('../assets/catalog-reviews/2026-09-14.json');
+const newerReview = require('../assets/catalog-reviews/2026-09-14-warbonds-3.json');
+const newerBaseline = require('./fixtures/warbond-review-3-baseline.json');
 const provenance = require('../assets/warbonds/official/provenance.json');
 const { applyReview } = require('../scripts/apply_catalog_review');
 const { createIndex } = require('../assets/catalog-sources');
@@ -48,8 +51,21 @@ const baselineHashes = {
   untouched: '9743233000c3eaa9e1ea11bb60e132fe28d116d8f1535c4302dcfcaa07498c7c',
   priorWarbonds: 'efd7cda45c3ea7d0effb3bee2a7adeb522000f5ab5c0b49918134a9514f976d8'
 };
+// Undo only batch 3's reviewable fields using independently captured v1.1.5
+// records. This keeps the original v1.1.4 digest checks meaningful as audits grow.
+function projectBeforeLatestReview() {
+  const projected = structuredClone(catalog);
+  projected.warbonds = projected.warbonds.filter(bond => !newerReview.warbonds.some(latest => latest.id === bond.id));
+  for (const previous of newerBaseline.reviewedRows) {
+    const item = projected.items.find(row => row.id === previous.id);
+    assert.ok(item, `Retain prior stable ID ${previous.id}`);
+    for (const key of ['name', 'aliases', 'subgroup', 'warbond', 'source', 'acquisition']) item[key] = structuredClone(previous[key]);
+  }
+  return projected;
+}
+const beforeLatestReview = projectBeforeLatestReview();
 function baselineFixture() {
-  const previous = structuredClone(catalog);
+  const previous = structuredClone(beforeLatestReview);
   previous.warbonds = previous.warbonds.filter(bond => !Object.hasOwn(expectedSets, bond.name));
   for (const item of previous.items) {
     if (!reviewedIds.has(item.id)) continue;
@@ -90,7 +106,7 @@ test('Warbond batch reviews exactly 17 previously pending facts: 16 official and
     assert.equal(item.acquisition.sourceUrl, item.id === 'booster:localization-confusion'
       ? 'https://helldivers.wiki.gg/wiki/Localization_Confusion' : sourcePages[item.warbond]);
   }
-  assert.deepEqual(createIndex(catalog.items).summary(), { total: 205, primary: 43, community: 12, pending: 150 });
+  assert.deepEqual(createIndex(beforeLatestReview.items).summary(), { total: 205, primary: 43, community: 12, pending: 150 });
 });
 
 test('three Warbonds contain exactly the supported six-item sets and no stratagems or extra grants', () => {
@@ -123,9 +139,10 @@ test('only three specified subgroups and three aliases change, with taxonomy evi
 
 test('all identities, names, eligibility defaults, item artwork and prior reviewed facts match v1.1.4', () => {
   assert.equal(catalog.items.length, 205);
-  assert.equal(hash(protectedFacts(catalog.items)), baselineHashes.protected);
-  assert.equal(hash(sortById(catalog.items.filter(item => !reviewedIds.has(item.id)))), baselineHashes.untouched);
-  const previousBonds = catalog.warbonds.filter(bond => !Object.hasOwn(expectedSets, bond.name));
+  assert.equal(hash(beforeLatestReview), newerBaseline.hashes.catalog, 'Projection exactly reproduces independently captured v1.1.5 catalog');
+  assert.equal(hash(protectedFacts(beforeLatestReview.items)), baselineHashes.protected);
+  assert.equal(hash(sortById(beforeLatestReview.items.filter(item => !reviewedIds.has(item.id)))), baselineHashes.untouched);
+  const previousBonds = beforeLatestReview.warbonds.filter(bond => !Object.hasOwn(expectedSets, bond.name));
   assert.equal(previousBonds.length, 4);
   assert.equal(hash(sortById(previousBonds)), baselineHashes.priorWarbonds);
   const blitzer = byId.get('primary:arc-12-blitzer');
@@ -141,7 +158,8 @@ test('applying the fact review is idempotent and never mutates the baseline, rev
   assert.equal(hash(protectedFacts(previous.items)), baselineHashes.protected);
   assert.ok(previous.items.filter(item => reviewedIds.has(item.id)).every(item => item.acquisition.kind === 'unverified'));
   const updated = applyReview(previous, review);
-  assert.deepEqual(updated, catalog);
+  assert.deepEqual(updated, beforeLatestReview);
+  assert.deepEqual(applyReview(updated, newerReview), catalog, 'Replaying later review reaches current catalog without changing historical expectations');
   assert.deepEqual(applyReview(updated, review), updated);
   assert.deepEqual(applyReview(catalog, review), catalog);
   assert.equal(JSON.stringify({ previous, review, catalog }), before);

@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "scope": "Sixth bounded M2B batch: 15 pending primary-source acquisitions, seven stratagem Warbond associations, two backpack subgroup corrections, eight full-designation aliases and three original promotional images. Preserve all canonical names, IDs, defaults and item artwork.",
+  "references": [
+    "docs/M2B_WARBOND_BATCH6_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "primary:ar-59-suppressor",
+      "previousName": "AR-59 Suppressor",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:ar-gl-21-one-two",
+      "previousName": "AR/GL-21 One-Two",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:r-72-censor",
+      "previousName": "R-72 Censor",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:las-13-trident",
+      "previousName": "LAS-13 Trident",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Acquisition confirmed by the announcement, which calls it LAS-16 Trident. Retain the existing LAS-13 identity: Arrowhead's current Known Issues page uses LAS-13 Trident (https://arrowhead.zendesk.com/hc/en-us/articles/15916898652700--HELLDIVERS-2-Known-Issues). Do not turn a conflicting announcement number into a new item."
+      }
+    },
+    {
+      "id": "sidearm:p-35-re-educator",
+      "previousName": "P-35 Re-Educator",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-sh-39-shield",
+      "previousName": "G/SH-39 Shield",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:tm-1-lure-mine",
+      "previousName": "TM-1 Lure Mine",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "aliases": [
+        "TM-01 Lure Mine"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Announcement spells TM-01; retain current TM-1 canonical label and recognize TM-01 as a search/import alias. Current spelling is also community-corroborated by https://helldivers.wiki.gg/wiki/TM-1_Lure_Mine."
+      }
+    },
+    {
+      "id": "stratagem:belt-fed-gl",
+      "previousName": "Belt-fed GL",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "aliases": [
+        "GL-28 Belt-Fed Grenade Launcher"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:breaching-hammer",
+      "previousName": "Breaching Hammer",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "aliases": [
+        "CQC-20 Breaching Hammer"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:c4-pack",
+      "previousName": "C4 Pack",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "subgroup": "backpack",
+      "aliases": [
+        "B/MD C4 Pack"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement explicitly identifies a backpack with six charges; classify as backpack, preserving the existing short name."
+      }
+    },
+    {
+      "id": "stratagem:defoliation-tool",
+      "previousName": "Defoliation Tool",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
+      "aliases": [
+        "CQC-9 Defoliation Tool"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:hot-dog",
+      "previousName": "Hot Dog",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
+      "subgroup": "backpack",
+      "aliases": [
+        "AX/FLAM-75 \"Guard Dog\" Hot Dog"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement describes the drone returning to its backpack to refuel; classify as backpack. Keep the existing short name and full designation alias."
+      }
+    },
+    {
+      "id": "stratagem:leveller",
+      "previousName": "Leveller",
+      "warbond": "Siege Breakers",
+      "source": "Siege Breakers",
+      "aliases": [
+        "EAT-411 Leveller"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:siege-breakers",
+        "label": "Siege Breakers",
+        "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:maxigun",
+      "previousName": "Maxigun",
+      "warbond": "Python Commandos",
+      "source": "Python Commandos",
+      "aliases": [
+        "M-1000 Maxigun"
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:python-commandos",
+        "label": "Python Commandos",
+        "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "booster:concealed-insertion",
+      "previousName": "Concealed Insertion",
+      "warbond": "Redacted Regiment",
+      "source": "Redacted Regiment",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:redacted-regiment",
+        "label": "Redacted Regiment",
+        "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:python-commandos",
+      "name": "Python Commandos",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-12-02",
+      "coverAssetPath": "assets/warbonds/official/python-commandos.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-gl-21-one-two",
+        "stratagem:maxigun",
+        "stratagem:hot-dog",
+        "stratagem:defoliation-tool"
+      ],
+      "notes": "Complete 4-item rollable set. Original official promotional scene, not an exact in-game cover. Separate shop/reward/custom entries, armor, emotes and vehicle skins are excluded. Ownership remains player controlled. No booster or sidearm granted by this Warbond."
+    },
+    {
+      "id": "warbond:redacted-regiment",
+      "name": "Redacted Regiment",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-01-22",
+      "coverAssetPath": "assets/warbonds/official/redacted-regiment.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-59-suppressor",
+        "primary:r-72-censor",
+        "sidearm:p-35-re-educator",
+        "stratagem:c4-pack",
+        "throwable:tm-1-lure-mine",
+        "booster:concealed-insertion"
+      ],
+      "notes": "Complete 6-item rollable set. Original official promotional scene, not an exact in-game cover. Separate shop/reward/custom entries, armor, emotes and vehicle skins are excluded. Ownership remains player controlled. Original announcement scheduled January 20; release-day patch confirms January 22 (https://store.steampowered.com/news/app/553850/view/509603414731129453?l=english)."
+    },
+    {
+      "id": "warbond:siege-breakers",
+      "name": "Siege Breakers",
+      "edition": "Premium Warbond",
+      "releasedAt": "2026-02-03",
+      "coverAssetPath": "assets/warbonds/official/siege-breakers.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:las-13-trident",
+        "stratagem:breaching-hammer",
+        "stratagem:belt-fed-gl",
+        "stratagem:leveller",
+        "throwable:g-sh-39-shield"
+      ],
+      "notes": "Complete 5-item rollable set. Original official promotional scene, not an exact in-game cover. Separate shop/reward/custom entries, armor, emotes and vehicle skins are excluded. Ownership remains player controlled. No booster or tank granted by this Warbond."
+    }
+  ]
+}

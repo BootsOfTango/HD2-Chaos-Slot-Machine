@@ -108,8 +108,8 @@ async function rendererSourceAuditPhase(review, identityReview) {
 
   assert(state.cards.length === 0, 'fresh isolated profile starts without historical Results');
   assert(typeof getCatalogSourceInfo === 'function', 'catalog source helper is available to the renderer');
-  assert(rows().length === 205, 'fresh renderer contains exactly 205 canonical gear records');
-  assert(new Set(rows().map(({ item }) => item.id)).size === 205, 'all 205 fresh gear IDs are unique');
+  assert(rows().length === 206, 'fresh renderer contains exactly 206 canonical gear records');
+  assert(new Set(rows().map(({ item }) => item.id)).size === 206, 'all 206 fresh gear IDs are unique');
   assert([...retiredIds.keys()].every(id => !rows().some(({ item }) => item.id === id)), 'retired duplicate IDs are not independent rollable entries');
   assert(keys.every(key => state.items[key].every(item => item && typeof item.id === 'string' && typeof item.owned === 'boolean' && typeof item.enabled === 'boolean')), 'all canonical categories expose stable IDs and explicit ownership/include flags');
 
@@ -148,7 +148,7 @@ async function rendererSourceAuditPhase(review, identityReview) {
     assert(WARBOND_ART[spec.group] === spec.path, `${spec.group} uses the confirmed official-cover path`);
     await decodeImage(spec.path);
   }
-  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(freshFlags), 'source rendering, status and artwork checks do not change any of the 205 ownership/include choices');
+  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(freshFlags), 'source rendering, status and artwork checks do not change any of the 206 ownership/include choices');
 
   const baseLoadout = rollLoadout('M2B-SOURCE-HISTORY');
   assert(!!baseLoadout, 'fresh canonical pools can create the source-audit history fixture');
@@ -213,9 +213,9 @@ async function rendererSourceAuditPhase(review, identityReview) {
   applyImportedData(clone(legacyFixture));
   const historicalBaseline = JSON.stringify(state.cards);
 
-  assert(rows().length === 205 && new Set(rows().map(({ item }) => item.id)).size === 205, 'legacy CQC wrong-name import neither merges nor deletes any of the 205 canonical identities');
+  assert(rows().length === 206 && new Set(rows().map(({ item }) => item.id)).size === 206, 'legacy CQC wrong-name import neither merges nor deletes any of the 206 canonical identities');
   assert(JSON.stringify(idList(state.items)) === JSON.stringify(freshIds), 'legacy wrong-name import preserves the complete stable-ID set');
-  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(expectedFixtureFlags), 'legacy CQC wrong-name import preserves all 205 explicit ownership/include choices');
+  assert(JSON.stringify(flagPairs(state.items)) === JSON.stringify(expectedFixtureFlags), 'legacy CQC wrong-name import preserves all 206 explicit ownership/include choices');
   renameSpecs.forEach((spec, index) => {
     const item = find(spec.id);
     assert(item.name === spec.canonical && item.aliases.includes(spec.legacy), `${spec.legacy} plus stable ID migrates to canonical ${spec.canonical}`);
@@ -289,7 +289,7 @@ async function rendererSourceAuditVerify(expected) {
 
   await bootStateReady;
   await Promise.all([preloadItemVisuals(), loadItemImageDb()]);
-  assert(rows().length === 205 && new Set(rows().map(({ item }) => item.id)).size === 205, 'separate process restores exactly 205 unique gear identities');
+  assert(rows().length === 206 && new Set(rows().map(({ item }) => item.id)).size === 206, 'separate process restores exactly 206 unique gear identities');
   assert(JSON.stringify(idList()) === JSON.stringify(expected.expectedIds), 'separate process restores the exact stable-ID set');
   assert(JSON.stringify(flagPairs()) === JSON.stringify(expected.expectedFlags), 'separate process restores every ownership/include choice');
   assert(keys.every(key => JSON.stringify(state.items[key]) === JSON.stringify(expected.expectedItems[key])), 'separate process restores every canonical catalog row and preserved custom field');

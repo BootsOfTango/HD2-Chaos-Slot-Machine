@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-14",
+  "scope": "Fourth bounded M2B Warbond batch: 14 pending acquisitions (13 primary-source, one community-source), six stratagem associations and one backpack subgroup correction. Existing names, stable IDs, defaults and item artwork remain unchanged.",
+  "references": [
+    "docs/M2B_WARBOND_BATCH4_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "primary:ar-2-coyote",
+      "previousName": "AR-2 Coyote",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:ar-32-pacifier",
+      "previousName": "AR-32 Pacifier",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "primary:r-2-amendment",
+      "previousName": "R-2 Amendment",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
+        "label": "Masters of Ceremony",
+        "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-109-urchin",
+      "previousName": "G-109 Urchin",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "throwable:g-142-pyrotech",
+      "previousName": "G-142 Pyrotech",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
+        "label": "Masters of Ceremony",
+        "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "G-142 Pyrotech Grenade"
+      ]
+    },
+    {
+      "id": "throwable:g-7-pineapple",
+      "previousName": "G-7 Pineapple",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    },
+    {
+      "id": "stratagem:de-escalator",
+      "previousName": "De-Escalator",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "GL-52 De-Escalator"
+      ]
+    },
+    {
+      "id": "stratagem:expendable-napalm",
+      "previousName": "Expendable Napalm",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "EAT-700 Expendable Napalm"
+      ]
+    },
+    {
+      "id": "stratagem:ax-arc-3-k-9",
+      "previousName": "AX/ARC-3 K-9",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "notes": "Official announcement verifies Force of Law acquisition. Backpack subgroup is community-corroborated separately by https://helldivers.wiki.gg/wiki/Equipment_Traits and https://helldivers.wiki.gg/wiki/Category:Backpack_Stratagems; it is not claimed as verbatim official menu taxonomy."
+      },
+      "aliases": [
+        "AX/ARC-3 \"Guard Dog\" K-9",
+        "AX/ARC-3 “Guard Dog” K-9"
+      ],
+      "subgroup": "backpack"
+    },
+    {
+      "id": "stratagem:one-true-flag",
+      "previousName": "One True Flag",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
+        "label": "Masters of Ceremony",
+        "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "CQC-1 One True Flag"
+      ]
+    },
+    {
+      "id": "stratagem:solo-silo",
+      "previousName": "Solo Silo",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "MS-11 Solo Silo"
+      ]
+    },
+    {
+      "id": "stratagem:speargun",
+      "previousName": "Speargun",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:dust-devils",
+        "label": "Dust Devils",
+        "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      },
+      "aliases": [
+        "S-11 Speargun"
+      ]
+    },
+    {
+      "id": "booster:sample-scanner",
+      "previousName": "Sample Scanner",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:masters-of-ceremony",
+        "label": "Masters of Ceremony",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Sample_Scanner",
+        "verifiedAt": "2026-09-14",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Sample Scanner procurement is corroborated by the community item and Masters of Ceremony contents pages; the official announcement text does not mention this booster. Acquisition only, not a balance/stat review."
+      }
+    },
+    {
+      "id": "booster:stun-pods",
+      "previousName": "Stun Pods",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:force-of-law",
+        "label": "Force of Law",
+        "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+        "verifiedAt": "2026-09-14",
+        "verification": "primary-source",
+        "reviewScope": "acquisition"
+      }
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:masters-of-ceremony",
+      "name": "Masters of Ceremony",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-05-15",
+      "coverAssetPath": "assets/warbonds/official/masters-of-ceremony.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:r-2-amendment",
+        "sidearm:cqc-1-saber",
+        "throwable:g-142-pyrotech",
+        "stratagem:one-true-flag",
+        "booster:sample-scanner"
+      ],
+      "notes": "Five-item rollable set: four items supported by official announcement; Sample Scanner acquisition is community-corroborated, not stated in the official text. Existing CQC-2 Saber review remains unchanged. Separate Superstore purchases are excluded. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:force-of-law",
+      "name": "Force of Law",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-06-12",
+      "coverAssetPath": "assets/warbonds/official/force-of-law.jpg",
+      "coverKind": "official-promotional-scene",
+      "sourceUrl": "https://blog.playstation.com/2025/06/05/helldivers-2-force-of-law-warbond-launches-june-12/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-32-pacifier",
+        "throwable:g-109-urchin",
+        "stratagem:ax-arc-3-k-9",
+        "stratagem:de-escalator",
+        "booster:stun-pods"
+      ],
+      "notes": "Complete five-item rollable set supported by official announcement; separate themed Superstore items and custom entries are excluded. Ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    },
+    {
+      "id": "warbond:dust-devils",
+      "name": "Dust Devils",
+      "edition": "Premium Warbond",
+      "releasedAt": "2025-09-04",
+      "coverAssetPath": "assets/warbonds/official/dust-devils.jpg",
+      "coverKind": "official-promotional-artwork",
+      "sourceUrl": "https://blog.playstation.com/2025/08/26/helldivers-2-into-the-unjust-launches-september-2/",
+      "verifiedAt": "2026-09-14",
+      "equipmentIds": [
+        "primary:ar-2-coyote",
+        "throwable:g-7-pineapple",
+        "stratagem:speargun",
+        "stratagem:expendable-napalm",
+        "stratagem:solo-silo"
+      ],
+      "notes": "Complete five-item rollable set supported by official announcement; separate themed Superstore items and custom entries are excluded. Ownership is player-controlled. Promotional artwork, not an exact in-game cover."
+    }
+  ]
+}

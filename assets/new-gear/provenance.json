@@ -6,6 +6,22 @@
   "wiki": "https://helldivers.wiki.gg/",
   "assets": [
     {
+      "name": "40-K Meltagun",
+      "assetPath": "assets/new-gear/40-k-meltagun-stratagem.svg",
+      "type": "stratagem",
+      "sourceKind": "community-hand-trace-of-game-icon",
+      "contributor": "Torakhan, Helldivers Wiki.gg",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/40-K_Meltagun",
+      "filePage": "https://helldivers.wiki.gg/wiki/File:Meltagun_Stratagem_Icon_Background.svg",
+      "imageUrl": "https://helldivers.wiki.gg/images/Meltagun_Stratagem_Icon_Background.svg?c412fb",
+      "retrievedAt": "2026-09-28",
+      "viewBox": "0 0 2666.67 2666.67",
+      "sha256": "96cb10e19d3190a207f199c126f9f13bcfe451a98c9d3c8f8c0d77fa90f2b3b7",
+      "method": "Downloaded contributor SVG; removed external DOCTYPE declaration only. Paths, fills and geometry unchanged. Original retained in ignored evidence.",
+      "visualCheck": "Cyan support-stratagem frame, beam symbol and Meltagun silhouette; no scripts, event handlers, foreign objects or external image resources.",
+      "limitation": "Contributor describes a tracing using weapon outline and sampled icon colors, not an extracted game asset. Wiki page states CC BY-NC-SA 4.0 unless otherwise noted; underlying game and crossover rights remain separate and unestablished."
+    },
+    {
       "name": "R/40-K Hot-Shot Marksman Rifle",
       "assetPath": "assets/new-gear/r-40-k-hot-shot.png",
       "type": "primary",

@@ -3,124 +3,159 @@ name: Windows Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'hd2-chaos-slot-machine-v*.*.*'
   workflow_dispatch:
     inputs:
-      node-version:
-        description: 'Node.js version to use for the test build'
-        required: true
-        default: '22'
-        type: string
       sign-build:
         description: 'Sign this manual build with Azure Trusted Signing secrets'
         required: true
         default: false
         type: boolean
 
+# Build scripts and npm lifecycle hooks never receive a repository-write token.
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: windows-release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   windows-build:
     name: Validate, build, and package Windows artifacts
     runs-on: windows-latest
-    env:
-      NODE_VERSION: ${{ inputs.node-version || '22' }}
-      WINDOWS_SIGNING_REQUIRED: ${{ startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true }}
-      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-      AZURE_TRUSTED_SIGNING_ENDPOINT: ${{ secrets.AZURE_TRUSTED_SIGNING_ENDPOINT }}
-      AZURE_TRUSTED_SIGNING_ACCOUNT_NAME: ${{ secrets.AZURE_TRUSTED_SIGNING_ACCOUNT_NAME }}
-      AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME: ${{ secrets.AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME }}
-      WINDOWS_SIGNING_PUBLISHER_NAME: ${{ secrets.WINDOWS_SIGNING_PUBLISHER_NAME }}
-      WINDOWS_SIGNING_TIMESTAMP_RFC3161: ${{ vars.WINDOWS_SIGNING_TIMESTAMP_RFC3161 || 'http://timestamp.acs.microsoft.com' }}
-
+    timeout-minutes: 45
+    outputs:
+      version: ${{ steps.metadata.outputs.version }}
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Check out repository without persisting credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version: '22'
+          package-manager-cache: false
 
-      - name: Install exact locked dependencies
+      - name: Block publication until rights and final security evidence are reviewed
+        if: startsWith(github.ref, 'refs/tags/')
+        run: npm run verify:public-release
+
+      - name: Verify version and tag before installing dependencies
+        id: metadata
+        shell: pwsh
+        env:
+          BUILD_REF: ${{ github.ref }}
+          BUILD_REF_NAME: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $package = Get-Content -LiteralPath release-identity.json -Raw | ConvertFrom-Json
+          if ($package.publicVersion -notmatch '^\d+\.\d+\.\d+$') { throw 'Expected a stable numeric package version.' }
+          if ($env:BUILD_REF.StartsWith('refs/tags/') -and $env:BUILD_REF_NAME -cne "hd2-chaos-slot-machine-v$($package.publicVersion)") {
+            throw 'Tag must exactly match the full-name public release version.'
+          }
+          "version=$($package.publicVersion)" >> $env:GITHUB_OUTPUT
+
+      - name: Install exact locked dependencies without signing credentials
         run: npm ci
 
-      - name: Verify tag matches application version
-        if: startsWith(github.ref, 'refs/tags/')
-        shell: pwsh
-        run: |
-          $package = Get-Content package.json -Raw | ConvertFrom-Json
-          $expectedTag = "v$($package.version)"
-          $actualTag = "${{ github.ref_name }}"
-          if ($actualTag -ne $expectedTag) {
-            Write-Error "Tag '$actualTag' does not match package.json version '$($package.version)' (expected '$expectedTag')."
-            exit 1
-          }
-          Write-Host "Tag $actualTag matches package.json version $($package.version)."
+      - name: Audit locked dependencies for known vulnerabilities
+        run: npm audit --audit-level=moderate
 
-      - name: Run catalog validation
-        run: npm run validate:catalog
-
-      - name: Run asset validation
-        run: npm run validate:assets
-
-      - name: Run storage and application tests
+      - name: Run storage, application, catalog, asset and CSP tests
         run: npm test
 
       - name: Build Windows ZIP and offline installer
-        run: npm run build:win
+        run: npm run build:win -- --publish never
+        env:
+          WINDOWS_SIGNING_REQUIRED: ${{ startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true }}
+          AZURE_TENANT_ID: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TENANT_ID || '' }}
+          AZURE_CLIENT_ID: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_CLIENT_ID || '' }}
+          AZURE_CLIENT_SECRET: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_CLIENT_SECRET || '' }}
+          AZURE_TRUSTED_SIGNING_ENDPOINT: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TRUSTED_SIGNING_ENDPOINT || '' }}
+          AZURE_TRUSTED_SIGNING_ACCOUNT_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TRUSTED_SIGNING_ACCOUNT_NAME || '' }}
+          AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME || '' }}
+          WINDOWS_SIGNING_PUBLISHER_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
+          WINDOWS_SIGNING_TIMESTAMP_RFC3161: ${{ vars.WINDOWS_SIGNING_TIMESTAMP_RFC3161 || 'http://timestamp.acs.microsoft.com' }}
 
       - name: Verify Windows artifacts and generate checksums
         run: python scripts/verify_win_zip.py
 
-      - name: Verify signed ZIP application and installer before publishing
-        if: env.WINDOWS_SIGNING_REQUIRED == 'true'
+      - name: Verify signed ZIP application and installer before uploading
+        if: startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true
         shell: pwsh
         run: ./scripts/verify_windows_signature.ps1
+        env:
+          WINDOWS_SIGNING_PUBLISHER_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
 
-      - name: Verify exact artifact names
-        shell: pwsh
-        run: |
-          $package = Get-Content package.json -Raw | ConvertFrom-Json
-          $required = @(
-            "dist/Helldivers-2-Chaos-Slot-Machine-v$($package.version)-win-x64.zip",
-            "dist/Helldivers-2-Chaos-Slot-Machine-v$($package.version)-win-x64.zip.sha256",
-            "dist/Helldivers-2-Chaos-Slot-Machine-Setup-v$($package.version)-win-x64.exe",
-            "dist/Helldivers-2-Chaos-Slot-Machine-Setup-v$($package.version)-win-x64.exe.sha256"
-          )
-          foreach ($artifact in $required) {
-            if (!(Test-Path -LiteralPath $artifact)) {
-              Write-Error "Required artifact is missing: $artifact"
-              exit 1
-            }
-          }
-          Write-Host 'All expected versioned Windows artifacts are present.'
-
-      - name: Upload test build artifact
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        uses: actions/upload-artifact@v4
+      - name: Upload only the four exact validated artifacts
+        id: upload
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: windows-test-build-${{ github.run_number }}
+          name: windows-build-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            dist/Helldivers-2-Chaos-Slot-Machine-v*-win-x64.zip
-            dist/Helldivers-2-Chaos-Slot-Machine-v*-win-x64.zip.sha256
-            dist/Helldivers-2-Chaos-Slot-Machine-Setup-v*-win-x64.exe
-            dist/Helldivers-2-Chaos-Slot-Machine-Setup-v*-win-x64.exe.sha256
+            dist/HD2-Chaos-Slot-Machine-v${{ steps.metadata.outputs.version }}-win-x64.zip
+            dist/HD2-Chaos-Slot-Machine-v${{ steps.metadata.outputs.version }}-win-x64.zip.sha256
+            dist/HD2-Chaos-Slot-Machine-Setup-v${{ steps.metadata.outputs.version }}-win-x64.exe
+            dist/HD2-Chaos-Slot-Machine-Setup-v${{ steps.metadata.outputs.version }}-win-x64.exe.sha256
           if-no-files-found: error
           retention-days: 14
+          include-hidden-files: false
 
-      - name: Attach installer, ZIP, and checksums to matching GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
+  draft-release:
+    name: Stage a draft for owner review (never publish automatically)
+    needs: windows-build
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    runs-on: windows-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    # No source checkout, npm installation, downloaded scripts or binaries run here.
+    steps:
+      - name: Download only this build's artifact by immutable ID
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          tag_name: ${{ github.ref_name }}
-          files: |
-            dist/Helldivers-2-Chaos-Slot-Machine-v*-win-x64.zip
-            dist/Helldivers-2-Chaos-Slot-Machine-v*-win-x64.zip.sha256
-            dist/Helldivers-2-Chaos-Slot-Machine-Setup-v*-win-x64.exe
-            dist/Helldivers-2-Chaos-Slot-Machine-Setup-v*-win-x64.exe.sha256
-          fail_on_unmatched_files: true
+          artifact-ids: ${{ needs.windows-build.outputs.artifact-id }}
+          path: release-assets
+          merge-multiple: true
+
+      - name: Validate the transferred file set and checksums
+        shell: pwsh
+        env:
+          RELEASE_VERSION: ${{ needs.windows-build.outputs.version }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ($env:RELEASE_VERSION -notmatch '^\d+\.\d+\.\d+$' -or $env:RELEASE_TAG -cne "hd2-chaos-slot-machine-v$env:RELEASE_VERSION") { throw 'Invalid release identity.' }
+          $files = @(
+            "HD2-Chaos-Slot-Machine-v$env:RELEASE_VERSION-win-x64.zip",
+            "HD2-Chaos-Slot-Machine-Setup-v$env:RELEASE_VERSION-win-x64.exe"
+          )
+          $expected = @($files) + @($files | ForEach-Object { "$_.sha256" })
+          $actual = @(Get-ChildItem -LiteralPath release-assets -Force)
+          if ($actual.Count -ne 4) { throw 'Expected exactly four release files.' }
+          foreach ($item in $actual) {
+            if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -or $item.Name -cnotin $expected) { throw 'Unexpected artifact entry.' }
+          }
+          foreach ($file in $files) {
+            $digest = (Get-FileHash -LiteralPath "release-assets/$file" -Algorithm SHA256).Hash.ToLowerInvariant()
+            $sidecar = [IO.File]::ReadAllText((Join-Path (Get-Location) "release-assets/$file.sha256"))
+            if ($sidecar.TrimEnd("`r", "`n") -cne "$digest  $file") { throw 'Artifact checksum mismatch.' }
+          }
+
+      - name: Create a new draft without replacing an existing release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_VERSION: ${{ needs.windows-build.outputs.version }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          # gh release create refuses an existing release; no edit/upload --clobber.
+          $files = @(Get-ChildItem -LiteralPath release-assets -File | ForEach-Object { $_.FullName })
+          gh release create $env:RELEASE_TAG @files --repo $env:GH_REPO --verify-tag --draft --title "HD2 Chaos Slot Machine $env:RELEASE_VERSION" --notes 'Maintainer review required: replace these draft notes with installation, usage, limitations, patch notes and signing information. Verify downloaded assets before publication.'
+          if ($LASTEXITCODE -ne 0) { throw 'Draft creation failed; inspect state manually. Never overwrite existing assets.' }

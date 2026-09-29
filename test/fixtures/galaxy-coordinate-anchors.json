@@ -1,0 +1,13 @@
+{
+  "source": "https://api.helldivers2.dev/api/v1/planets",
+  "observedDate": "2026-09-21",
+  "note": "Small coordinate regression fixture from a read-only observation; not live ownership or a bundled galaxy atlas. Screen quadrants align with the owner's reference orientation, not an exact named-planet screenshot validation.",
+  "planets": [
+    { "index": 0, "name": "SUPER EARTH", "sector": "Sol", "position": { "x": 0, "y": 0 } },
+    { "index": 34, "name": "HELLMIRE", "sector": "Mirin", "position": { "x": 0.5111386, "y": 0.3511805 } },
+    { "index": 64, "name": "MERIDIA", "sector": "Umlaut", "position": { "x": 0.2965067, "y": 0.11628686 } },
+    { "index": 97, "name": "CALYPSO", "sector": "Saleria", "position": { "x": -0.21110377, "y": -0.42437923 } },
+    { "index": 196, "name": "MALEVELON CREEK", "sector": "Severin", "position": { "x": -0.8473348, "y": -0.096041 } },
+    { "index": 260, "name": "CYBERSTAN", "sector": "Valdis", "position": { "x": -0.438396, "y": 0.6977152 } }
+  ]
+}

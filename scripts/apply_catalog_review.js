@@ -1,4 +1,5 @@
-// Apply a reviewed, committed fact-only correction batch. Never reads user saves.
+// Apply reviewed catalog corrections. Never reads user saves. Explicit campaign
+// exclusions affect fresh catalog defaults only, never player-owned/enabled flags.
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
@@ -20,6 +21,13 @@ function applyReview(catalog, review) {
     }
     item.aliases = [...new Set([...item.aliases, ...(correction.aliases || []), ...(oldName !== item.name ? [oldName] : [])])];
   }
+  const exclusions = review.freshInstallExclusions ?? [];
+  assert(Array.isArray(exclusions) && new Set(exclusions).size === exclusions.length, 'Fresh exclusions must be a unique ID list');
+  for (const id of exclusions) {
+    const item = byId.get(id);
+    assert(seen.has(id) && item?.acquisition?.kind === 'campaign-reward', 'Fresh exclusions require an explicitly reviewed campaign reward');
+    item.defaultEnabled = false;
+  }
   for (const warbond of review.warbonds || []) {
     assert(warbond.equipmentIds.every(id => byId.has(id)), `Unknown Warbond equipment: ${warbond.id}`);
     const position = next.warbonds.findIndex(row => row.id === warbond.id);
@@ -31,8 +39,9 @@ function applyReview(catalog, review) {
 if (require.main === module) {
   const reviewPath = path.resolve(root, process.argv[2] || 'assets/catalog-reviews/2026-09-14.json');
   const catalogPath = path.join(root, 'assets/item-catalog.json');
-  const next = applyReview(JSON.parse(fs.readFileSync(catalogPath)), JSON.parse(fs.readFileSync(reviewPath)));
+  const review = JSON.parse(fs.readFileSync(reviewPath));
+  const next = applyReview(JSON.parse(fs.readFileSync(catalogPath)), review);
   fs.writeFileSync(catalogPath, JSON.stringify(next, null, 2) + '\n');
-  console.log(`Applied reviewed facts without changing ${next.items.length} identities or eligibility defaults.`);
+  console.log(`Applied review preserving ${next.items.length} identities/player flags; ${(review.freshInstallExclusions || []).length} explicit fresh-profile exclusions.`);
 }
 module.exports = { applyReview };

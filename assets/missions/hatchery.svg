@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#ffdb4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-design="tactical-line-v3">
+  <title>Purge hatchery — original mission symbol</title>
+  <path d="M32 10c-6 0-11 12-11 20a11 11 0 0 0 22 0c0-8-5-20-11-20Z M20 28c-5-4-13 9-13 16a10 10 0 0 0 20 0m17-16c5-4 13 9 13 16a10 10 0 0 1-20 0M26 25l5 5-3 5 7 4"/>
+  <path d="M4 58h56M17 7h7m16 0h7M12 40l4 3-2 5m32-10-3 5 5 4" stroke-width="1.25" opacity=".65"/>
+</svg>

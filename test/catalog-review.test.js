@@ -19,7 +19,7 @@ const groups = { primary: 'primaries', sidearm: 'sidearms', throwable: 'throwabl
 const defaults = Object.fromEntries(Object.entries(groups).map(([type, key]) => [key, catalog.items.filter(item => item.type === type).map(item => ({ ...item, enabled: item.defaultEnabled !== false, owned: item.defaultEnabled !== false }))]));
 
 test('35 historical review facts resolve through 33 current identities without losing evidence', () => {
-  assert.equal(catalog.items.length, 205);
+  assert.equal(catalog.items.length, 214);
   assert.equal(review.items.length, 35);
   assert.equal(new Set(review.items.map(item => item.id)).size, 35);
   for (const correction of review.items) {
@@ -45,7 +45,7 @@ test('35 historical review facts resolve through 33 current identities without l
     } else assert.deepEqual(item.acquisition, correction.acquisition, correction.id + ':acquisition');
   }
   assert.equal(new Set(review.items.map(item => resolveId(item.id).id)).size, 33);
-  assert.deepEqual(createIndex(catalog.items).summary(), { total: 205, primary: 43, community: 12, pending: 150 });
+  assert.deepEqual(createIndex(catalog.items).summary(), { total: 214, primary: 117, community: 97, pending: 0 });
 });
 
 test('historical facts then explicit identity merges reproduce the catalog; stale review cannot resurrect retired rows', () => {
@@ -58,7 +58,7 @@ test('historical facts then explicit identity merges reproduce the catalog; stal
     item.aliases = item.aliases.filter(alias => ![merge.retiredItem.name, ...merge.aliases].includes(alias));
     historical.items.push(structuredClone(merge.retiredItem));
   }
-  assert.equal(historical.items.length, 207);
+  assert.equal(historical.items.length, 216);
   const original = JSON.stringify(historical);
   const factsReviewed = applyReview(historical, review);
   assert.deepEqual(applyIdentityMerges(factsReviewed, identityReview), catalog);
@@ -71,7 +71,7 @@ test('historical facts then explicit identity merges reproduce the catalog; stal
 
 test('all item image records retain stable catalog identity and local asset paths', () => {
   const imageIds = Object.keys(groups).flatMap(type => images[type].map(image => image.id));
-  assert.equal(imageIds.length, 205);
+  assert.equal(imageIds.length, 214);
   assert.deepEqual(imageIds.slice().sort(), catalog.items.map(item => item.id).sort());
   for (const item of catalog.items) {
     const image = images[item.type].find(row => row.id === item.id);

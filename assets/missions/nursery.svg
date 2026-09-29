@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#ffdb4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-design="tactical-line-v3">
+  <title>Nursery demolition drill — original mission symbol</title>
+  <path d="M22 10h20v27H22Zm-5 27h30m-24 0-6 10m24-10 6 10M27 37v10l5 8 5-8V37M26 10V5h12v5M5 48h15m24 0h15"/>
+  <circle cx="32" cy="24" r="2"/><path d="m30 20-3-4m7 4 3-4m-9 9-5 1m13-1 5 1m-10 2-2 5m4-5 2 5M27 42l10 3m-9 2 7 2M7 55h9m32 0h9" stroke-width="1.25" opacity=".65"/>
+</svg>

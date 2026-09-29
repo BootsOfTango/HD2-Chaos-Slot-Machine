@@ -8,7 +8,7 @@ const images = require('../assets/item-images.json');
 const { applyIdentityMerges } = require('../scripts/apply_identity_merges');
 
 test('exactly two reviewed duplicates are retired, with canonical names/IDs and original art retained', () => {
-  assert.equal(catalog.items.length, 205); assert.equal(review.merges.length, 2);
+  assert.equal(catalog.items.length, 214); assert.equal(review.merges.length, 2);
   for (const merge of review.merges) {
     const canonical = catalog.items.find(item => item.id === merge.canonicalId);
     assert.ok(canonical.legacyIds.includes(merge.retiredItem.id));

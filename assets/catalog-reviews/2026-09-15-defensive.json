@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "scope": "Defensive acquisition-only review: fourteen existing requisition purchases, no ownership grants.",
+  "references": [
+    "docs/M2B_DEFENSIVE_RESEARCH.md"
+  ],
+  "warbonds": [],
+  "items": [
+    {
+      "id": "stratagem:anti-personnel-minefield",
+      "previousName": "Anti-Personnel Minefield",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-6_Anti-Personnel_Minefield",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:anti-tank-mines",
+      "previousName": "Anti-Tank Mines",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-17_Anti-Tank_Mines",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:autocannon-sentry",
+      "previousName": "Autocannon Sentry",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/AC-8_Autocannon_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:ems-mortar-sentry",
+      "previousName": "EMS Mortar Sentry",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/M-23_EMS_Mortar_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:gas-mines",
+      "previousName": "Gas Mines",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-8_Gas_Mines",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:gatling-sentry",
+      "previousName": "Gatling Sentry",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/G-16_Gatling_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:grenadier-battlement",
+      "previousName": "Grenadier Battlement",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/E/GL-21_Grenadier_Battlement",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:hmg-emplacement",
+      "previousName": "HMG Emplacement",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/E/MG-101_HMG_Emplacement",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:incendiary-mines",
+      "previousName": "Incendiary Mines",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MD-I4_Incendiary_Mines",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:machine-gun-sentry",
+      "previousName": "Machine Gun Sentry",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/MG-43_Machine_Gun_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:mortar-sentry",
+      "previousName": "Mortar Sentry",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/M-12_Mortar_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:rocket-sentry",
+      "previousName": "Rocket Sentry",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/MLS-4X_Rocket_Sentry",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:shield-generator-relay",
+      "previousName": "Shield Generator Relay",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/FX-12_Shield_Generator_Relay",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    },
+    {
+      "id": "stratagem:tesla-tower",
+      "previousName": "Tesla Tower",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/A/ARC-3_Tesla_Tower",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Historical Major Order availability does not imply current participant-only entitlement. Player ownership and roll exclusions are unchanged."
+      }
+    }
+  ]
+}

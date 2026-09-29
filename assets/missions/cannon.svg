@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#ffdb4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-design="tactical-line-v3">
+  <title>Orbital cannon sabotage — original mission symbol</title>
+  <path d="m28 34 17-21 8 6-17 21Zm16-21 4-5 9 7-4 5M24 33l14 10v8H15V40Zm-8 18-5 7h35l-6-7M5 58h52"/>
+  <circle cx="27" cy="43" r="4"/><path d="m34 26 7 6M18 54h17M9 26l5 3m3-15 3 6m11-13-2 6m26 16 5 1M7 40h4" stroke-width="1.25" opacity=".65"/>
+</svg>

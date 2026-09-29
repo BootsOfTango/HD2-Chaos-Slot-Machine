@@ -173,7 +173,7 @@
     "rl 77 airburst rocket launcher": "RL-77 Airburst Rocket Launcher",
     "rocket sentry": "Rocket Sentry",
     "rs 422 railgun": "RS-422 Railgun",
-    "sample extractor": "Sample Extractor",
+    "sample extractor": "Sample Extricator",
     "sample scanner": "Sample Scanner",
     "sg 20 halt": "SG-20 Halt",
     "sg 22 bushwhacker": "SG-22 Bushwhacker",
@@ -238,9 +238,98 @@
     "tx 41 sterilizer": "Sterilizer",
     "br 14 adjudicator rifle": "BR-14 Adjudicator",
     "g 123 thermite grenade": "G-123 Thermite",
-    "r 36 eruptor rifle": "R-36 Eruptor"
+    "r 36 eruptor rifle": "R-36 Eruptor",
+    "a las 98 laser sentry": "Laser Sentry",
+    "b 100 portable hellbomb": "Portable Hellbomb",
+    "lift 182 warp pack": "Warp Pack",
+    "lift 860 hover pack": "Hover Pack",
+    "plas 45 epoch": "Epoch",
+    "sample extricator": "Sample Extricator",
+    "ax arc 3 guard dog k 9": "AX/ARC-3 K-9",
+    "cqc 1 one true flag": "One True Flag",
+    "eat 700 expendable napalm": "Expendable Napalm",
+    "g 142 pyrotech grenade": "G-142 Pyrotech",
+    "gl 52 de escalator": "De-Escalator",
+    "ms 11 solo silo": "Solo Silo",
+    "s 11 speargun": "Speargun",
+    "ar 23e liberator explosive": "AR-23C Liberator Concussive",
+    "ax flam 75 guard dog hot dog": "Hot Dog",
+    "b md c4 pack": "C4 Pack",
+    "cqc 20 breaching hammer": "Breaching Hammer",
+    "cqc 9 defoliation tool": "Defoliation Tool",
+    "eat 411 leveller": "Leveller",
+    "gl 28 belt fed grenade launcher": "Belt-fed GL",
+    "m 1000 maxigun": "Maxigun",
+    "tm 01 lure mine": "TM-1 Lure Mine",
+    "a gm 17 gas mortar sentry": "Gas Mortar",
+    "b flam 80 cremator": "Cremator",
+    "cqc 73 entrenchment tool": "Entrenchment Tool",
+    "exo 51 lumberer": "EXO-51 Lumberer Exosuit",
+    "exo 55 breakthrough": "EXO-55 Breakthrough Exosuit",
+    "g 48 giga grenade": "Giga Grenade",
+    "p 69 veto": "Veto",
+    "sg 97 sweeper": "Sweeper",
+    "smg flam 34 stoker": "Stoker",
+    "m 102 gunner frv": "M-102 Fast Recon Vehicle",
+    "hyena": "R-4 Hyena",
+    "r 4 hyena": "R-4 Hyena",
+    "anti tank seeker": "G-60 Anti-Tank Seeker",
+    "ar 11 arbitrator": "AR-11 Arbitrator",
+    "arbitrator": "AR-11 Arbitrator",
+    "breacher": "P-34 Breacher",
+    "evictor": "GL-15 Evictor",
+    "g 60 anti tank seeker": "G-60 Anti-Tank Seeker",
+    "g 60 at seeker": "G-60 Anti-Tank Seeker",
+    "g 8 immolation": "G-8 Immolation",
+    "gl 15 evictor": "GL-15 Evictor",
+    "immolation": "G-8 Immolation",
+    "integrated extinguishers": "Integrated Extinguishers",
+    "las 12 sai": "LAS-12 Sai",
+    "p 34 breacher": "P-34 Breacher",
+    "sai": "LAS-12 Sai",
+    "surplus eat allocation": "Surplus EAT Allocation"
   },
   "primary": [
+    {
+      "id": "primary:ar-11-arbitrator",
+      "name": "AR-11 Arbitrator",
+      "assetPath": "assets/catalog-additions/ironclad/ar-11-arbitrator.png",
+      "kind": "image",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/ar11arbitrator.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "4c633a5b5d8547fcc359f9d588588a87ce8cbf88970a7dbad25eb65fb7950b5f"
+    },
+    {
+      "id": "primary:gl-15-evictor",
+      "name": "GL-15 Evictor",
+      "assetPath": "assets/catalog-additions/ironclad/gl-15-evictor.png",
+      "kind": "image",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/gl15evictor.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "03729ce50075f465a6607be4e01726e1c42018cd4c928a7eae27dffeda620b1e"
+    },
+    {
+      "id": "primary:las-12-sai",
+      "name": "LAS-12 Sai",
+      "assetPath": "assets/catalog-additions/ironclad/las-12-sai.png",
+      "kind": "image",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/las12sai.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "b8a068a0a0f9c21565966e29ff4aed550ba5780b90691f96b5aa60c93a958b13"
+    },
+    {
+      "id": "primary:r-4-hyena",
+      "name": "R-4 Hyena",
+      "assetPath": "assets/catalog-additions/r-4-hyena.png",
+      "kind": "image",
+      "imageUrl": "https://helldivers.wiki.gg/images/R-4_Hyena_Primary_Render.png?f84f0d",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:R-4_Hyena_Primary_Render.png",
+      "artworkSource": "game-render-via-wiki; Undeadender / Helldivers Wiki.gg",
+      "artworkSha256": "29fc4d29467ce9caeed00b1a459cfb316a9b20d02a5a2cd218c41d1a42e86725"
+    },
     {
       "name": "R/40-K Hot-Shot Marksman Rifle",
       "assetPath": "assets/new-gear/r-40-k-hot-shot.png",
@@ -804,6 +893,16 @@
   ],
   "sidearm": [
     {
+      "id": "sidearm:p-34-breacher",
+      "name": "P-34 Breacher",
+      "assetPath": "assets/catalog-additions/ironclad/p-34-breacher.png",
+      "kind": "image",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/p34breacher.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "39a7d43bf51f1df0746c76eddf6489e132f97f87a343a408d1f76b7be8d91cbf"
+    },
+    {
       "name": "P/40-K Bolt Pistol",
       "assetPath": "assets/new-gear/p-40-k-bolt-pistol.png",
       "kind": "image",
@@ -1069,6 +1168,26 @@
   ],
   "throwable": [
     {
+      "id": "throwable:g-60-anti-tank-seeker",
+      "name": "G-60 Anti-Tank Seeker",
+      "assetPath": "assets/catalog-additions/ironclad/g-60-anti-tank-seeker.png",
+      "kind": "image",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/g60antitankseeker.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "301ce9848048f304600d579e774c5dd47bb7b5683eb89ea4fb315fb726e2ff79"
+    },
+    {
+      "id": "throwable:g-8-immolation",
+      "name": "G-8 Immolation",
+      "assetPath": "assets/catalog-additions/ironclad/g-8-immolation.png",
+      "kind": "image",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/g8immolation.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "afca469513f2fc12a238a22ee0e48ee382cb9760487988e8e811af322f851423"
+    },
+    {
       "name": "G/40-K Melta Mine",
       "assetPath": "assets/new-gear/g-40-k-melta-mine.png",
       "kind": "image",
@@ -1302,12 +1421,12 @@
   "stratagem": [
     {
       "name": "40-K Meltagun",
-      "assetPath": "assets/new-gear/40-k-meltagun.png",
-      "kind": "image",
-      "imageUrl": "https://helldivers.wiki.gg/images/thumb/40-K_Meltagun_Support_Render.png/1200px-40-K_Meltagun_Support_Render.png?54b248",
-      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:40-K_Meltagun_Support_Render.png",
-      "artworkSource": "game-render-via-wiki; Squ'ith / Tech_Support_Squid, Helldivers Wiki.gg",
-      "artworkSha256": "9c099d307615e41adf38f29677114ec21889e3c0087878c2315773c567b26178",
+      "assetPath": "assets/new-gear/40-k-meltagun-stratagem.svg",
+      "kind": "icon",
+      "imageUrl": "https://helldivers.wiki.gg/images/Meltagun_Stratagem_Icon_Background.svg?c412fb",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/File:Meltagun_Stratagem_Icon_Background.svg",
+      "artworkSource": "community-hand-trace-of-game-icon; Torakhan, Helldivers Wiki.gg",
+      "artworkSha256": "96cb10e19d3190a207f199c126f9f13bcfe451a98c9d3c8f8c0d77fa90f2b3b7",
       "rimCategory": "support",
       "id": "stratagem:40-k-meltagun"
     },
@@ -1759,7 +1878,7 @@
       "wikiTitle": "C4 Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/C4_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/C4_Pack_Stratagem_Icon.svg?cfb679",
-      "rimCategory": "support",
+      "rimCategory": "backpack",
       "id": "stratagem:c4-pack"
     },
     {
@@ -1909,7 +2028,7 @@
       "wikiTitle": "AX/ARC-3 K-9",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/ARC-3_K-9",
       "imageUrl": "https://helldivers.wiki.gg/images/K-9_Stratagem_Icon.svg?adfb74",
-      "rimCategory": "support",
+      "rimCategory": "backpack",
       "id": "stratagem:ax-arc-3-k-9"
     },
     {
@@ -1939,7 +2058,7 @@
       "wikiTitle": "Hot Dog",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Hot_Dog",
       "imageUrl": "https://helldivers.wiki.gg/images/Hot_Dog_Stratagem_Icon.svg?21ad0f",
-      "rimCategory": "support",
+      "rimCategory": "backpack",
       "id": "stratagem:hot-dog"
     },
     {
@@ -1949,7 +2068,7 @@
       "wikiTitle": "Hover Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Hover_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Hover_Pack_Stratagem_Icon.svg?c5f32f",
-      "rimCategory": "support",
+      "rimCategory": "backpack",
       "id": "stratagem:hover-pack"
     },
     {
@@ -2069,7 +2188,7 @@
       "wikiTitle": "Portable Hellbomb",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Portable_Hellbomb",
       "imageUrl": "https://helldivers.wiki.gg/images/Portable_Hellbomb_Stratagem_Icon.svg?84704d",
-      "rimCategory": "support",
+      "rimCategory": "backpack",
       "id": "stratagem:portable-hellbomb"
     },
     {
@@ -2159,7 +2278,7 @@
       "wikiTitle": "Warp Pack",
       "sourceUrl": "https://helldivers.wiki.gg/wiki/Warp_Pack",
       "imageUrl": "https://helldivers.wiki.gg/images/Warp_Pack_Stratagem_Icon.svg?c33eea",
-      "rimCategory": "support",
+      "rimCategory": "backpack",
       "id": "stratagem:warp-pack"
     },
     {
@@ -2214,6 +2333,26 @@
     }
   ],
   "booster": [
+    {
+      "id": "booster:integrated-extinguishers",
+      "name": "Integrated Extinguishers",
+      "assetPath": "assets/catalog-additions/ironclad/integrated-extinguishers.png",
+      "kind": "icon",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/integratedextinguishers.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "26f8824e185be35d906738b81ee6003904ec70b74ed10dfd1d4955d4a66adb35"
+    },
+    {
+      "id": "booster:surplus-eat-allocation",
+      "name": "Surplus EAT Allocation",
+      "assetPath": "assets/catalog-additions/ironclad/surplus-eat-allocation.png",
+      "kind": "icon",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/surpluseatallocation.webp",
+      "sourceUrl": "https://www.helldivers2challenges.com/tiermaker/",
+      "artworkSource": "community-hosted-game-artwork; Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "artworkSha256": "0688a7ebeb1e870a667485e69ce66b84f81e5f6c62139c05ecd206b51c59fef4"
+    },
     {
       "name": "Hellpod Space Optimization",
       "assetPath": "assets/boosters/hellpod-space-optimization-wiki.svg",
@@ -2369,7 +2508,7 @@
       "id": "booster:armed-resupply-pods"
     },
     {
-      "name": "Sample Extractor",
+      "name": "Sample Extricator",
       "assetPath": "assets/boosters/sample-extractor-wiki.svg",
       "kind": "icon",
       "wikiTitle": "Sample Extricator",

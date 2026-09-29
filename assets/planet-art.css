@@ -1,0 +1,11 @@
+.planetGlobe { width:56px; height:56px; flex:0 0 56px; object-fit:contain; user-select:none; }
+.planetGlobe[hidden] { display:none; }
+.planetGlobeHero { width:104px; height:104px; flex-basis:104px; }
+.planetHero { display:flex; align-items:center; gap:14px; min-width:0; }
+.planetHero .big { min-width:0; overflow-wrap:anywhere; }
+.planetWithArt { display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
+.planetWithArt > div { min-width:0; overflow-wrap:anywhere; }
+.planetArtNote { color:var(--muted, #a5adb7); font-size:11px; margin-top:6px; }
+@media (max-width:600px) {
+  body:not(.desktop-app) .planetGlobeHero { width:72px; height:72px; flex-basis:72px; }
+}

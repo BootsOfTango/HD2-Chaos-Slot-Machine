@@ -1,0 +1,25 @@
+.soloRadar { display:block; width:360px; max-width:100%; height:auto; margin:auto; }
+.soloRadar text { fill:#eee; font:13px system-ui,sans-serif; }
+.soloRadarGrid { fill:none; stroke:#56606d; stroke-width:1; }
+.soloRadarFill { fill:#ffdb4d; fill-opacity:.15; stroke:none; }
+.soloRadarEdge { fill:none; stroke:#ffdb4d; stroke-width:2; }
+.soloRadarDot { fill:#ffdb4d; }
+.soloSummary,.soloEntry { margin:14px 0; padding:16px; border:1px solid #4e5157; border-radius:12px; background:#101419; font-size:16px; }
+.soloSummary h3,.soloEntry h3 { margin:0 0 12px; font-size:22px; color:#ffdb4d; }
+.soloEntryGrid,.soloMetrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+.soloEntryGrid label { display:grid; gap:7px; font-size:16px; }
+.soloEntryGrid input,.soloEntryGrid select { font-size:18px; min-width:0; width:100%; }
+.soloMetrics div { display:grid; gap:5px; }
+.soloMetrics span { color:#bac3d0; }
+.soloRules { margin:14px 0; font-size:15px; }
+.soloRules summary { cursor:pointer; color:#ffdb4d; }
+.soloRules p { line-height:1.6; }
+.soloRankHeading { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+#soloRank label { display:block; font-size:16px; margin:12px 0 6px; }
+#soloRankGroup { width:100%; font-size:16px; }
+#soloRankRows { display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:16px; margin:16px 0; }
+.soloRankRow { border:1px solid #535962; background:#101419; border-radius:12px; padding:16px; overflow-wrap:anywhere; }
+.soloRankRow h3 { color:#ffdb4d; font-size:20px; margin:0; }
+.soloRankRow p { font-size:15px; }
+#rankFocusPanel[hidden],#soloRankContent[hidden],.modalMajorOrderBlock[hidden] { display:none!important; }
+#resultCardModalMoTag[hidden] { display:none!important; }
