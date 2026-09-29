@@ -70,6 +70,14 @@ test('bundle preparation uses the public synthetic fixture, not developer/player
   assert.match(preparer,/flag:'wx'/);
 });
 
+test('normal window close re-queries cached handles and never substitutes forced shutdown', {skip:process.platform!=='win32'},()=>{
+  const body=source.match(/function Request-NormalClose\(\$Process\) \{[\s\S]*?\n\}/)?.[0];
+  assert.ok(body);assert.ok(body.indexOf('$Process.Refresh()')<body.indexOf('$Process.CloseMainWindow()'));
+  const fake=`${body}\nfunction Start-Sleep {}\n$p=[pscustomobject]@{HasExited=$false;MainWindowHandle=[IntPtr]::Zero;Refreshes=0;Closes=0}\n$p | Add-Member ScriptMethod Refresh { $this.Refreshes++; $this.MainWindowHandle=[IntPtr]123 }\n$p | Add-Member ScriptMethod CloseMainWindow { $this.Closes++; return ($this.Refreshes -ge 2) }\nif (-not (Request-NormalClose $p) -or $p.Refreshes -ne 2 -or $p.Closes -ne 2) { throw 'Stale handle retry failed' }\n$p.HasExited=$true\nif (Request-NormalClose $p) { throw 'Already exited is not a requested close' }`;
+  const r=spawnSync('pwsh',['-NoProfile','-NonInteractive','-Command',fake],{encoding:'utf8',windowsHide:true,timeout:10000});
+  assert.equal(r.status,0,r.stderr);
+});
+
 test('runtime handoff needs only the verified package, not an Electron developer installation',()=>{
   const {runtimeInventory}=require('../scripts/prepare-lifecycle-bundle');
   const crypto=require('node:crypto'),hash=b=>crypto.createHash('sha256').update(b).digest('hex');

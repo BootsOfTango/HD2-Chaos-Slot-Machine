@@ -82,6 +82,17 @@ function Confirm-Card {
   Confirm ($taskCard.stats.kills -eq 100 -and $taskCard.originalNote -ceq 'Synthetic locked note' -and $taskCard.commentNotes[0].text -ceq 'Keep this synthetic comment') 'Original stats, locked note and comment preserved'
   Confirm ($taskCard.soloScore.version -eq 1 -and $taskCard.soloScore.result.rating -eq 67.5) 'No automatic scoring recalibration'
 }
+function Request-NormalClose($Process) {
+  # Process caches MainWindowHandle. Startup migration can replace the initial
+  # window; re-query before each normal close request rather than using a stale handle.
+  for ($taskAttempt=0; $taskAttempt -lt 20; $taskAttempt++) {
+    $Process.Refresh()
+    if ($Process.HasExited) { return $false }
+    if ($Process.MainWindowHandle -ne [IntPtr]::Zero -and $Process.CloseMainWindow()) { return $true }
+    Start-Sleep -Milliseconds 500
+  }
+  return $false
+}
 function Launch-And-Close([string]$Phase) {
   Confirm-NoApp
   foreach ($taskEnvName in @('HD2CSM_USER_DATA_DIR','HD2CSM_AUTOMATION','HD2_ELECTRON_TEST_HARNESS','ELECTRON_RUN_AS_NODE','NODE_OPTIONS')) { Remove-Item -LiteralPath "Env:$taskEnvName" -ErrorAction SilentlyContinue }
@@ -92,9 +103,20 @@ function Launch-And-Close([string]$Phase) {
     $taskApp.Refresh()
     if ($taskApp.HasExited) { throw 'Installed app exited before window became available' }
     if ([DateTime]::UtcNow -gt $taskDeadline) { throw 'No native window observed; app not force-killed' }
-  } while ($taskApp.MainWindowHandle -eq [IntPtr]::Zero)
+    $taskReady=$false
+    $taskDiagPath=Join-Path $taskProfile 'desktop-diagnostics.json'
+    if (Test-Path -LiteralPath $taskDiagPath) {
+      try {
+        $taskStartup=Get-Content -LiteralPath $taskDiagPath -Raw | ConvertFrom-Json
+        $taskReady=$taskStartup.pid -eq $taskApp.Id -and 'window-created' -in $taskStartup.events.event
+      } catch { $taskReady=$false }
+    }
+  } while (-not $taskReady -or $taskApp.MainWindowHandle -eq [IntPtr]::Zero)
   Start-Sleep -Seconds 4
-  Confirm ($taskApp.CloseMainWindow()) 'Normal window close requested'
+  $taskApp.Refresh()
+  $taskReport.Phases.Add(@{Name=$Phase+'-close-preflight';MainWindowTitle=$taskApp.MainWindowTitle;MainWindowHandle=[string]$taskApp.MainWindowHandle;DiagnosticEvents=@($taskStartup.events.event)})
+  Save-Report
+  Confirm (Request-NormalClose $taskApp) 'Normal window close requested'
   Confirm ($taskApp.WaitForExit(30000)) 'App exited without force termination'
   $taskApp.Refresh()
   Confirm ($taskApp.ExitCode -eq 0) 'App exit code zero'
