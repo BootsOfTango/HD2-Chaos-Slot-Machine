@@ -106,7 +106,8 @@ test('first-run dialog driver accepts only the exact app-owned reminder and sole
   assert.equal(r.status,0,r.stderr);
   assert.ok(source.indexOf('if ($ValidateOnly)')<source.indexOf('Add-Type -TypeDefinition'));
   assert.ok(source.indexOf('Acknowledge-FirstRunReminder $taskApp')<source.indexOf("Confirm (Request-NormalClose $taskApp)"));
-  assert.doesNotMatch(native,/EnableWindow|SendInput|keybd_event|TerminateProcess|PostMessage/);
+  assert.doesNotMatch(native,/EnableWindow|SendInput|keybd_event|TerminateProcess/);
+  assert.match(native,/found && count==1 && PostMessage\(button,0x00F5/);
   assert.match(source,/Reminder revalidated before acknowledgement/);
-  assert.match(source,/TryGetCurrentPattern/);
+  assert.match(source,/ClickObservedOk\(\$taskDialog.Handle,\$taskUi.Buttons\[0\].Handle,\$Process.Id\)/);
 });

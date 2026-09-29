@@ -113,6 +113,7 @@ public static class LifecycleDialogs {
   [DllImport("user32.dll")] public static extern bool IsWindowEnabled(IntPtr window);
   [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr window);
   [DllImport("user32.dll")] static extern int GetDlgCtrlID(IntPtr window);
+  [DllImport("user32.dll", SetLastError=true)] static extern bool PostMessage(IntPtr window, uint message, IntPtr wParam, IntPtr lParam);
   public class Control {
     public IntPtr Handle; public uint Process; public string Class; public string Text;
     public int Id; public bool Enabled; public bool Visible;
@@ -153,6 +154,16 @@ public static class LifecycleDialogs {
     }
     return messages==1 && buttons==1 && oks==1;
   }
+  public static bool ClickObservedOk(IntPtr dialog, IntPtr button, uint pid) {
+    var parent=Read(dialog); var target=Read(button);
+    if(parent.Process!=pid || parent.Class!="#32770" || !parent.Visible || !parent.Enabled ||
+       target.Process!=pid || target.Class!="Button" || !target.Visible || !target.Enabled || target.Text.Replace("&","")!="OK") return false;
+    int count=0; bool found=false;
+    foreach(var c in Children(dialog)) if(c.Class=="Button" && c.Visible) { count++; if(c.Handle==button) found=true; }
+    // BM_CLICK on the observed child button, not an assumed task-dialog command
+    // ID (the real button has ID0). Normal dialog handlers still run.
+    return found && count==1 && PostMessage(button,0x00F5,IntPtr.Zero,IntPtr.Zero);
+  }
 }
 '@
 Add-Type -AssemblyName UIAutomationClient,UIAutomationTypes
@@ -161,18 +172,20 @@ function Read-ReminderAccessibility($Dialog,[int]$AppProcess) {
   if ($taskRoot.Current.ProcessId -ne $AppProcess) { throw 'Dialog ownership changed' }
   $taskElements=$taskRoot.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
   $taskRows=[Collections.Generic.List[LifecycleDialogs+Control]]::new()
-  $taskButtons=[Collections.Generic.List[object]]::new()
   foreach ($taskElement in $taskElements) {
     $taskCurrent=$taskElement.Current
-    if ($taskCurrent.ControlType -ne [System.Windows.Automation.ControlType]::Text -and $taskCurrent.ControlType -ne [System.Windows.Automation.ControlType]::Button) { continue }
+    if ($taskCurrent.ControlType -ne [System.Windows.Automation.ControlType]::Text) { continue }
     $taskRow=[LifecycleDialogs+Control]::new()
     $taskRow.Process=$taskCurrent.ProcessId
-    $taskRow.Class=if ($taskCurrent.ControlType -eq [System.Windows.Automation.ControlType]::Text) {'Text'} else {'Button'}
+    $taskRow.Class='Text'
     $taskRow.Text=$taskCurrent.Name; $taskRow.Enabled=$taskCurrent.IsEnabled; $taskRow.Visible=-not $taskCurrent.IsOffscreen
     $taskRows.Add($taskRow)
-    if ($taskRow.Class -eq 'Button' -and $taskRow.Visible) { $taskButtons.Add($taskElement) }
   }
-  return @{Controls=$taskRows.ToArray();Buttons=$taskButtons.ToArray()}
+  # The hosted TaskDialog exposes its text through UIA but omits the native OK
+  # button from that tree. Read the actual native button instead of inventing it.
+  $taskButtons=@([LifecycleDialogs]::Children($Dialog.Handle) | Where-Object { $_.Class -eq 'Button' -and $_.Visible })
+  foreach ($taskButton in $taskButtons) { $taskRows.Add($taskButton) }
+  return @{Controls=$taskRows.ToArray();Buttons=$taskButtons}
 }
 function Acknowledge-FirstRunReminder($Process,[bool]$Expected) {
   $taskReminder='Desktop save reminder: your cards, item changes, and supported settings are stored in the app save folder with automatic backups. Use Export JSON any time you want a portable copy. First launch from the browser version? Export JSON in the browser version, open this desktop version, then Import JSON here.'
@@ -193,10 +206,7 @@ function Acknowledge-FirstRunReminder($Process,[bool]$Expected) {
       Confirm ($taskCurrentDialogs.Count -eq 1 -and $taskCurrentDialogs[0].Handle -eq $taskDialog.Handle) 'Observed reminder is still the same app-owned dialog'
       $taskUi=Read-ReminderAccessibility $taskCurrentDialogs[0] $Process.Id
       Confirm ([LifecycleDialogs]::IsReminder($taskCurrentDialogs[0],$taskUi.Controls,$Process.Id,$taskReminder) -and $taskUi.Buttons.Count -eq 1) 'Reminder revalidated before acknowledgement'
-      $taskInvoke=$null
-      Confirm ($taskUi.Buttons[0].TryGetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern,[ref]$taskInvoke)) 'Reminder OK exposes a normal invoke action'
-      $taskInvoke.Invoke()
-      Confirm $true 'Known first-run reminder acknowledged normally'
+      Confirm ([LifecycleDialogs]::ClickObservedOk($taskDialog.Handle,$taskUi.Buttons[0].Handle,$Process.Id)) 'Known first-run reminder acknowledged through its observed OK button'
       $taskReport.Phases.Add(@{Name='first-run-reminder';Acknowledged=$true}); Save-Report
       $taskGoneUntil=[DateTime]::UtcNow.AddSeconds(10)
       while (@([LifecycleDialogs]::Dialogs($Process.Id)).Count) {
