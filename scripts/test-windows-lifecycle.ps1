@@ -113,7 +113,6 @@ public static class LifecycleDialogs {
   [DllImport("user32.dll")] public static extern bool IsWindowEnabled(IntPtr window);
   [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr window);
   [DllImport("user32.dll")] static extern int GetDlgCtrlID(IntPtr window);
-  [DllImport("user32.dll", SetLastError=true)] static extern bool PostMessage(IntPtr window, uint message, IntPtr wParam, IntPtr lParam);
   public class Control {
     public IntPtr Handle; public uint Process; public string Class; public string Text;
     public int Id; public bool Enabled; public bool Visible;
@@ -146,25 +145,35 @@ public static class LifecycleDialogs {
     int messages=0, buttons=0, oks=0;
     foreach(var c in children) {
       if(c.Process!=pid) return false;
-      if(c.Class=="Static" && c.Text==expected) messages++;
+      if(c.Class=="Text" && c.Text==expected) messages++;
       if(c.Class=="Button" && c.Visible) {
         buttons++;
-        if(c.Id==1 && c.Text.Replace("&","")=="OK" && c.Enabled) oks++;
+        if(c.Text.Replace("&","")=="OK" && c.Enabled) oks++;
       }
     }
     return messages==1 && buttons==1 && oks==1;
   }
-  public static bool Acknowledge(IntPtr dialog, uint pid, string expected) {
-    // Re-read the exact observed handle immediately before sending the same
-    // WM_COMMAND/IDOK notification as its OK button. Unknown dialogs are refused.
-    var current=Read(dialog); var children=Children(dialog);
-    if(!IsReminder(current,children,pid,expected)) return false;
-    foreach(var c in children) if(c.Class=="Button" && c.Id==1)
-      return PostMessage(dialog,0x0111,new IntPtr(1),c.Handle);
-    return false;
-  }
 }
 '@
+Add-Type -AssemblyName UIAutomationClient,UIAutomationTypes
+function Read-ReminderAccessibility($Dialog,[int]$AppProcess) {
+  $taskRoot=[System.Windows.Automation.AutomationElement]::FromHandle($Dialog.Handle)
+  if ($taskRoot.Current.ProcessId -ne $AppProcess) { throw 'Dialog ownership changed' }
+  $taskElements=$taskRoot.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+  $taskRows=[Collections.Generic.List[LifecycleDialogs+Control]]::new()
+  $taskButtons=[Collections.Generic.List[object]]::new()
+  foreach ($taskElement in $taskElements) {
+    $taskCurrent=$taskElement.Current
+    if ($taskCurrent.ControlType -ne [System.Windows.Automation.ControlType]::Text -and $taskCurrent.ControlType -ne [System.Windows.Automation.ControlType]::Button) { continue }
+    $taskRow=[LifecycleDialogs+Control]::new()
+    $taskRow.Process=$taskCurrent.ProcessId
+    $taskRow.Class=if ($taskCurrent.ControlType -eq [System.Windows.Automation.ControlType]::Text) {'Text'} else {'Button'}
+    $taskRow.Text=$taskCurrent.Name; $taskRow.Enabled=$taskCurrent.IsEnabled; $taskRow.Visible=-not $taskCurrent.IsOffscreen
+    $taskRows.Add($taskRow)
+    if ($taskRow.Class -eq 'Button' -and $taskRow.Visible) { $taskButtons.Add($taskElement) }
+  }
+  return @{Controls=$taskRows.ToArray();Buttons=$taskButtons.ToArray()}
+}
 function Acknowledge-FirstRunReminder($Process,[bool]$Expected) {
   $taskReminder='Desktop save reminder: your cards, item changes, and supported settings are stored in the app save folder with automatic backups. Use Export JSON any time you want a portable copy. First launch from the browser version? Export JSON in the browser version, open this desktop version, then Import JSON here.'
   $taskUntil=[DateTime]::UtcNow.AddSeconds(20)
@@ -175,10 +184,19 @@ function Acknowledge-FirstRunReminder($Process,[bool]$Expected) {
     if ($taskDialogs.Count) {
       Confirm ($Expected -and $taskDialogs.Count -eq 1) 'Only the expected first-run dialog is present'
       $taskDialog=$taskDialogs[0]
-      $taskControls=[LifecycleDialogs]::Children($taskDialog.Handle)
+      $taskUi=Read-ReminderAccessibility $taskDialog $Process.Id
+      $taskControls=$taskUi.Controls
       $taskReport.Phases.Add(@{Name='observed-first-run-dialog';Class=$taskDialog.Class;Title=$taskDialog.Text;Enabled=$taskDialog.Enabled;Controls=@($taskControls | Select-Object Class,Id,Enabled,Visible,@{n='Text';e={$_.Text.Substring(0,[Math]::Min(600,$_.Text.Length))}})}); Save-Report
       Confirm ([LifecycleDialogs]::IsReminder($taskDialog,$taskControls,$Process.Id,$taskReminder)) 'Exact informational save reminder and sole enabled OK button observed'
-      Confirm ([LifecycleDialogs]::Acknowledge($taskDialog.Handle,$Process.Id,$taskReminder)) 'Known first-run reminder acknowledged normally'
+      # Re-observe the exact dialog immediately before invoking its sole OK action.
+      $taskCurrentDialogs=@([LifecycleDialogs]::Dialogs($Process.Id))
+      Confirm ($taskCurrentDialogs.Count -eq 1 -and $taskCurrentDialogs[0].Handle -eq $taskDialog.Handle) 'Observed reminder is still the same app-owned dialog'
+      $taskUi=Read-ReminderAccessibility $taskCurrentDialogs[0] $Process.Id
+      Confirm ([LifecycleDialogs]::IsReminder($taskCurrentDialogs[0],$taskUi.Controls,$Process.Id,$taskReminder) -and $taskUi.Buttons.Count -eq 1) 'Reminder revalidated before acknowledgement'
+      $taskInvoke=$null
+      Confirm ($taskUi.Buttons[0].TryGetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern,[ref]$taskInvoke)) 'Reminder OK exposes a normal invoke action'
+      $taskInvoke.Invoke()
+      Confirm $true 'Known first-run reminder acknowledged normally'
       $taskReport.Phases.Add(@{Name='first-run-reminder';Acknowledged=$true}); Save-Report
       $taskGoneUntil=[DateTime]::UtcNow.AddSeconds(10)
       while (@([LifecycleDialogs]::Dialogs($Process.Id)).Count) {
