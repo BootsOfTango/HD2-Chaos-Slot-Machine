@@ -69,3 +69,19 @@ test('bundle preparation uses the public synthetic fixture, not developer/player
   assert.match(preparer,/Inspected installer changed/);
   assert.match(preparer,/flag:'wx'/);
 });
+
+test('runtime handoff needs only the verified package, not an Electron developer installation',()=>{
+  const {runtimeInventory}=require('../scripts/prepare-lifecycle-bundle');
+  const crypto=require('node:crypto'),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'hd2-ci-runtime-'));
+  try {
+    fs.mkdirSync(path.join(dir,'resources'));
+    const files={'HD2 Chaos Slot Machine.exe':'synthetic exe','resources/app.asar':'synthetic asar','LICENSE.electron.txt':'license','LICENSES.chromium.html':'notices','README-FIRST.txt':'guide','NOTICE.txt':'notice','SECURITY.md':'security'};
+    for(const [file,bytes] of Object.entries(files)) fs.writeFileSync(path.join(dir,file),bytes);
+    const report={exeSha256:hash('synthetic exe'),asarSha256:hash('synthetic asar')};
+    assert.equal(runtimeInventory(dir,report).length,7);
+    assert.throws(()=>runtimeInventory(dir,{...report,exeSha256:'0'.repeat(64)}),/Inspected runtime changed/);
+    fs.unlinkSync(path.join(dir,'NOTICE.txt'));
+    assert.throws(()=>runtimeInventory(dir,report),/Missing verified runtime companion/);
+  } finally {fs.rmSync(dir,{recursive:true,force:true});}
+});
