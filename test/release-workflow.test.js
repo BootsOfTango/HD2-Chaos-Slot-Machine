@@ -119,13 +119,61 @@ test('readiness and tag validation precede npm install; signing secrets are step
   assert.equal(workflow.env, undefined); assert.equal(build.env, undefined);
   for (const step of build.steps) {
     const secrets = JSON.stringify(step.env || {}).includes('secrets.');
-    if (secrets) assert.ok(step.run === 'npm run build:win -- --publish never' || step.run === './scripts/verify_windows_signature.ps1');
+    if (secrets) assert.ok(step.run === 'npm run build:win -- --publish never' || step.run === './scripts/verify_windows_signature.ps1 -Mode $env:ARTIFACT_SIGNING_MODE');
   }
   const sign = build.steps.find(step => step.run === 'npm run build:win -- --publish never');
-  assert.match(sign.env.WINDOWS_SIGNING_REQUIRED, /startsWith\(github.ref, 'refs\/tags\/'\)/);
-  assert.match(build.steps.find(step => step.run === './scripts/verify_windows_signature.ps1').if, /inputs.sign-build == true/);
+  assert.equal(sign.env.WINDOWS_SIGNING_REQUIRED, "${{ steps.metadata.outputs.sign-build == 'true' }}");
+  assert.equal(sign.env.WINDOWS_SIGNING_ENABLED, sign.env.WINDOWS_SIGNING_REQUIRED);
+  const verify=build.steps.find(step => step.run === './scripts/verify_windows_signature.ps1 -Mode $env:ARTIFACT_SIGNING_MODE');
+  assert.equal(verify.if,undefined,'Both signed and unsigned outputs are always checked');
+  assert.equal(verify.env.ARTIFACT_SIGNING_MODE,'${{ steps.metadata.outputs.signing-mode }}');
   // GitHub-controlled values must enter shell scripts as environment variables.
   for (const job of Object.values(workflow.jobs)) for (const step of job.steps) assert.doesNotMatch(step.run || '', /\$\{\{/);
+});
+
+test('owner-approved unsigned policy does not bypass readiness or signature-status checks',()=>{
+  const policy=require('../docs/release-distribution.json');
+  assert.deepEqual(policy,{mode:'unsigned',decisionEvidence:'docs/DISTRIBUTION_DECISIONS.md'});
+  const metadata=build.steps.find(s=>s.id==='metadata');
+  assert.match(metadata.run,/Missing or unreviewed signing\/distribution policy/);
+  assert.match(metadata.run,/\$policy\.mode -ceq 'signed'/);
+  assert.match(build.steps.find(s=>s.run==='npm run verify:public-release').if,/refs\/tags\//);
+  const script=fs.readFileSync(path.join(__dirname,'../scripts/verify_windows_signature.ps1'),'utf8');
+  assert.match(script,/\$Mode='signed'/);
+  assert.match(script,/\$signature.Status -ne 'NotSigned'/);
+  assert.match(script,/Assert-ValidWindowsSignature -Path \$uninstaller/);
+});
+
+test('actual release metadata selects signing deliberately and rejects unknown policy', {skip:process.platform!=='win32'},()=>{
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'hd2-signing-policy-'));
+  try {
+    fs.mkdirSync(path.join(dir,'docs'));
+    fs.writeFileSync(path.join(dir,'release-identity.json'),JSON.stringify({publicVersion:'1.0.0'}));
+    fs.writeFileSync(path.join(dir,'docs/DISTRIBUTION_DECISIONS.md'),'Synthetic decision fixture');
+    fs.writeFileSync(path.join(dir,'metadata.ps1'),build.steps.find(s=>s.id==='metadata').run);
+    const output=path.join(dir,'output.txt');
+    const run=(mode,manual='false',ref='refs/tags/hd2-chaos-slot-machine-v1.0.0')=>{
+      fs.writeFileSync(path.join(dir,'docs/release-distribution.json'),JSON.stringify({mode,decisionEvidence:'docs/DISTRIBUTION_DECISIONS.md'}));
+      fs.writeFileSync(output,'');
+      const result=spawnSync('pwsh',['-NoProfile','-NonInteractive','-File',path.join(dir,'metadata.ps1')],{cwd:dir,windowsHide:true,encoding:'utf8',env:{...process.env,BUILD_REF:ref,BUILD_REF_NAME:ref.split('/').at(-1),MANUAL_SIGN:manual,GITHUB_OUTPUT:output}});
+      return {status:result.status,output:fs.readFileSync(output,'utf8'),error:result.stderr};
+    };
+    let r=run('unsigned');assert.equal(r.status,0,r.error);assert.match(r.output,/sign-build=false/);assert.match(r.output,/signing-mode=unsigned/);
+    r=run('signed');assert.equal(r.status,0,r.error);assert.match(r.output,/signing-mode=signed/);
+    r=run('unsigned','true','refs/heads/test');assert.equal(r.status,0,r.error);assert.match(r.output,/signing-mode=signed/);
+    r=run('signed','false','refs/heads/test');assert.equal(r.status,0,r.error);assert.match(r.output,/signing-mode=unsigned/);
+    assert.notEqual(run('anything').status,0);
+    assert.notEqual(run('unsigned','false','refs/tags/hd2-chaos-slot-machine-v2.0.0').status,0);
+  } finally {fs.rmSync(dir,{recursive:true,force:true});}
+});
+
+test('signature verification accepts NotSigned only for unsigned mode and fails closed otherwise', {skip:process.platform!=='win32'},()=>{
+  const script=fs.readFileSync(path.join(__dirname,'../scripts/verify_windows_signature.ps1'),'utf8');
+  const body=script.match(/function Assert-ValidWindowsSignature \{[\s\S]*?\r?\n\}/)?.[0];assert.ok(body);
+  const run=(mode,status)=>spawnSync('pwsh',['-NoProfile','-NonInteractive','-Command',`$ErrorActionPreference='Stop'; $Mode='${mode}'; $expectedPublisher='fixture'; function Get-AuthenticodeSignature { [pscustomobject]@{Status='${status}';StatusMessage='fixture';SignerCertificate=$null;TimeStamperCertificate=$null} }; ${body}; Assert-ValidWindowsSignature -Path synthetic.exe`],{windowsHide:true,encoding:'utf8'});
+  assert.equal(run('unsigned','NotSigned').status,0);
+  for(const status of ['Valid','HashMismatch','UnknownError']) assert.notEqual(run('unsigned',status).status,0);
+  assert.notEqual(run('signed','NotSigned').status,0);
 });
 
 test('artifact handoff uses an exact four-file list and same-run immutable artifact ID', () => {

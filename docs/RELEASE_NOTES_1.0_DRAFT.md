@@ -33,7 +33,7 @@ Review your actual unlocks in **Armory**, spin and lock a loadout, confirm a pla
 - Older Solo v1 ratings stay unchanged until Review card rules is confirmed. Original ratings remain available; recalibrated ratings/ranks may increase. Review listed incomplete-card removals carefully. Open save folder contains verified card-upgrades recovery copies. Restoring a whole backup replaces newer dives/comments, so export first and review it; oversized native backups need assisted recovery. Do not edit format-2 saves in older apps. Compare/equipment analytics remain Legacy-only; Solo comparisons are in Rank.
 - Community data is not second-by-second game synchronization. Check retrieval times and the in-game map. Missing activity reports do not mean no special enemies; approximate sectors are not exact game borders. Saved-card locators are reference geography, not a historical war replay.
 - Mission choices are compatible suggestions, not the ship's exact operation list. Regional/event cases can require a player-confirmed shortlist. Gear/catalog changes require app updates; refresh only updates war data. Nothing updates while the app is closed.
-- Keep Windows protection enabled. Current local candidates are unsigned; final signing or an approved unsigned-distribution policy remains unresolved. A checksum detects changed bytes, not malware. Report unexpected warnings rather than disabling protection.
+- The planned 1.0 download is **unsigned**, by the maintainer's choice. Windows may show Unknown publisher or a SmartScreen warning. Keep Windows protection enabled; if Windows blocks it or you are unsure, stop and report the message. A checksum detects changed bytes, not malware. Download only from this project's release page; do not disable protection to run it.
 - If saving fails, keep the app open and retry or export the session. Do not delete an unreadable save or recovery files to force startup. If freezing/display trouble/blue screens occur, stop and report the build, time and steps rather than repeatedly reproducing a crash.
 
 ## Publication fields — fill only from the final approved build
@@ -41,7 +41,7 @@ Review your actual unlocks in **Armory**, spin and lock a loadout, confirm a pla
 - Release date and immutable tag: **pending**
 - Recommended Setup download and SHA-256: **pending**
 - Optional app ZIP download and SHA-256: **pending**
-- Signature status / approved distribution warning: **pending**
+- Distribution choice: **unsigned**; final artifact signature-status verification remains pending.
 - Final upgrade, clean-install/uninstall and hands-on acceptance report: **pending**
 - Final security/dependency/artifact review and artwork-rights decision: **pending**
 - Owner publication approval: **pending**

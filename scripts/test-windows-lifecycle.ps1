@@ -109,6 +109,7 @@ public static class LifecycleDialogs {
   [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr window, out uint process);
   [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr window, StringBuilder text, int length);
   [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetClassName(IntPtr window, StringBuilder text, int length);
+  [DllImport("user32.dll", CharSet=CharSet.Unicode, SetLastError=true)] static extern IntPtr SendMessageTimeout(IntPtr window, uint message, IntPtr size, StringBuilder text, uint flags, uint timeout, out IntPtr result);
   [DllImport("user32.dll")] public static extern bool IsWindowEnabled(IntPtr window);
   [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr window);
   [DllImport("user32.dll")] static extern int GetDlgCtrlID(IntPtr window);
@@ -121,6 +122,12 @@ public static class LifecycleDialogs {
     uint pid; GetWindowThreadProcessId(h, out pid);
     var text=new StringBuilder(4096); GetWindowText(h,text,text.Capacity);
     var name=new StringBuilder(256); GetClassName(h,name,name.Capacity);
+    // Cross-process GetWindowText does not reliably read child-control text.
+    // WM_GETTEXT is a read-only, bounded query; never block on an unresponsive UI.
+    if(name.ToString()=="Static" || name.ToString()=="Button") {
+      var controlText=new StringBuilder(4096); IntPtr result;
+      if(SendMessageTimeout(h,0x000D,new IntPtr(controlText.Capacity),controlText,2,500,out result)!=IntPtr.Zero) text=controlText;
+    }
     return new Control {Handle=h,Process=pid,Class=name.ToString(),Text=text.ToString(),
       Id=GetDlgCtrlID(h),Enabled=IsWindowEnabled(h),Visible=IsWindowVisible(h)};
   }
@@ -168,7 +175,9 @@ function Acknowledge-FirstRunReminder($Process,[bool]$Expected) {
     if ($taskDialogs.Count) {
       Confirm ($Expected -and $taskDialogs.Count -eq 1) 'Only the expected first-run dialog is present'
       $taskDialog=$taskDialogs[0]
-      Confirm ([LifecycleDialogs]::IsReminder($taskDialog,[LifecycleDialogs]::Children($taskDialog.Handle),$Process.Id,$taskReminder)) 'Exact informational save reminder and sole enabled OK button observed'
+      $taskControls=[LifecycleDialogs]::Children($taskDialog.Handle)
+      $taskReport.Phases.Add(@{Name='observed-first-run-dialog';Class=$taskDialog.Class;Title=$taskDialog.Text;Enabled=$taskDialog.Enabled;Controls=@($taskControls | Select-Object Class,Id,Enabled,Visible,@{n='Text';e={$_.Text.Substring(0,[Math]::Min(600,$_.Text.Length))}})}); Save-Report
+      Confirm ([LifecycleDialogs]::IsReminder($taskDialog,$taskControls,$Process.Id,$taskReminder)) 'Exact informational save reminder and sole enabled OK button observed'
       Confirm ([LifecycleDialogs]::Acknowledge($taskDialog.Handle,$Process.Id,$taskReminder)) 'Known first-run reminder acknowledged normally'
       $taskReport.Phases.Add(@{Name='first-run-reminder';Acknowledged=$true}); Save-Report
       $taskGoneUntil=[DateTime]::UtcNow.AddSeconds(10)

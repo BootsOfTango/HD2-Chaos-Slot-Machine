@@ -1,5 +1,9 @@
 # Release workflow and repository review
 
+## September29 unsigned distribution update
+
+Owner explicitly set signing aside. Reviewed mode in `docs/release-distribution.json` is unsigned; its evidence is `DISTRIBUTION_DECISIONS.md`. Metadata validates the mode/evidence before dependency installation. Tags use that policy; manual signing remains explicit. No signing credentials are passed in unsigned mode. Signature verification always runs: ZIP app, Setup and extracted uninstaller must match the selected mode; an invalid/unexpected signature is not accepted as unsigned. Existing readiness gates, exact artifact handoff, hashes, minimal permissions and draft-only creation are retained. No tags, official release, service application or purchase are authorized by this update. Historical signed-only statements below are superseded for this policy, not evidence of a new hosted release build.
+
 September 16, 2026. Local branch `codex/release-workflow-review`. This bounded stage changes development/release automation, not the installed application. **Public release remains blocked.**
 
 ## Implemented locally

@@ -50,6 +50,7 @@ jobs:
         env:
           BUILD_REF: ${{ github.ref }}
           BUILD_REF_NAME: ${{ github.ref_name }}
+          MANUAL_SIGN: ${{ inputs.sign-build == true }}
         run: |
           $ErrorActionPreference = 'Stop'
           $package = Get-Content -LiteralPath release-identity.json -Raw | ConvertFrom-Json
@@ -58,6 +59,13 @@ jobs:
             throw 'Tag must exactly match the full-name public release version.'
           }
           "version=$($package.publicVersion)" >> $env:GITHUB_OUTPUT
+          $policy = Get-Content -LiteralPath docs/release-distribution.json -Raw | ConvertFrom-Json
+          if ($policy.mode -cnotin @('signed', 'unsigned') -or $policy.decisionEvidence -cne 'docs/DISTRIBUTION_DECISIONS.md' -or !(Test-Path -LiteralPath $policy.decisionEvidence -PathType Leaf)) {
+            throw 'Missing or unreviewed signing/distribution policy.'
+          }
+          $sign = $env:MANUAL_SIGN -eq 'true' -or ($env:BUILD_REF.StartsWith('refs/tags/') -and $policy.mode -ceq 'signed')
+          "sign-build=$($sign.ToString().ToLowerInvariant())" >> $env:GITHUB_OUTPUT
+          "signing-mode=$(if ($sign) { 'signed' } else { 'unsigned' })" >> $env:GITHUB_OUTPUT
 
       - name: Install exact locked dependencies without signing credentials
         run: npm ci
@@ -71,25 +79,26 @@ jobs:
       - name: Build Windows ZIP and offline installer
         run: npm run build:win -- --publish never
         env:
-          WINDOWS_SIGNING_REQUIRED: ${{ startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true }}
-          AZURE_TENANT_ID: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TENANT_ID || '' }}
-          AZURE_CLIENT_ID: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_CLIENT_ID || '' }}
-          AZURE_CLIENT_SECRET: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_CLIENT_SECRET || '' }}
-          AZURE_TRUSTED_SIGNING_ENDPOINT: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TRUSTED_SIGNING_ENDPOINT || '' }}
-          AZURE_TRUSTED_SIGNING_ACCOUNT_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TRUSTED_SIGNING_ACCOUNT_NAME || '' }}
-          AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME || '' }}
-          WINDOWS_SIGNING_PUBLISHER_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
+          WINDOWS_SIGNING_REQUIRED: ${{ steps.metadata.outputs.sign-build == 'true' }}
+          WINDOWS_SIGNING_ENABLED: ${{ steps.metadata.outputs.sign-build == 'true' }}
+          AZURE_TENANT_ID: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.AZURE_TENANT_ID || '' }}
+          AZURE_CLIENT_ID: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.AZURE_CLIENT_ID || '' }}
+          AZURE_CLIENT_SECRET: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.AZURE_CLIENT_SECRET || '' }}
+          AZURE_TRUSTED_SIGNING_ENDPOINT: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.AZURE_TRUSTED_SIGNING_ENDPOINT || '' }}
+          AZURE_TRUSTED_SIGNING_ACCOUNT_NAME: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.AZURE_TRUSTED_SIGNING_ACCOUNT_NAME || '' }}
+          AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME || '' }}
+          WINDOWS_SIGNING_PUBLISHER_NAME: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
           WINDOWS_SIGNING_TIMESTAMP_RFC3161: ${{ vars.WINDOWS_SIGNING_TIMESTAMP_RFC3161 || 'http://timestamp.acs.microsoft.com' }}
 
       - name: Verify Windows artifacts and generate checksums
         run: python scripts/verify_win_zip.py
 
-      - name: Verify signed ZIP application and installer before uploading
-        if: startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true
+      - name: Verify actual signature status matches the selected distribution mode
         shell: pwsh
-        run: ./scripts/verify_windows_signature.ps1
+        run: ./scripts/verify_windows_signature.ps1 -Mode $env:ARTIFACT_SIGNING_MODE
         env:
-          WINDOWS_SIGNING_PUBLISHER_NAME: ${{ (startsWith(github.ref, 'refs/tags/') || inputs.sign-build == true) && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
+          ARTIFACT_SIGNING_MODE: ${{ steps.metadata.outputs.signing-mode }}
+          WINDOWS_SIGNING_PUBLISHER_NAME: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
 
       - name: Upload only the four exact validated artifacts
         id: upload

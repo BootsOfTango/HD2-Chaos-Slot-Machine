@@ -62,7 +62,9 @@ The current local workflow prepares **drafts only** and preserves existing relea
 
 Do not commit signing passwords, certificates, `.pfx` files, private keys, signing tokens, or other private signing material to this repository. Signing credentials must live only in GitHub Actions secrets or another approved secret manager; the owner-only setup steps are documented below.
 
-## Windows code signing setup (owner-only)
+## Windows code signing setup (optional future reference; not required by the owner)
+
+September29 decision: the owner chose to set signing aside and prepare a clearly labeled unsigned 1.0. Do not create signing accounts, buy services or apply for sponsorship. The instructions below are historical/future reference, not current required tasks. The updated workflow reads `docs/release-distribution.json` before dependencies; tagged builds use its reviewed mode. Both modes verify the ZIP app, Setup and extracted uninstaller: unsigned must be NotSigned; signed must have valid matching publisher/timestamp. Readiness/version checks and draft-only publication remain mandatory. Manual builds remain unsigned unless sign-build is explicitly selected. This policy change is not a release approval.
 
 This repository is prepared for **Microsoft Azure Trusted Signing / Artifact Signing**. The application does not store certificate files, private keys, certificate passwords, signing tokens, or Azure client secrets in Git. Electron-builder signs only when `WINDOWS_SIGNING_REQUIRED=true` or `WINDOWS_SIGNING_ENABLED=true` is present in the environment.
 
