@@ -93,6 +93,96 @@ function Request-NormalClose($Process) {
   }
   return $false
 }
+# Native UI fixture driver for the disposable runner only. No global keystrokes,
+# no arbitrary dialog dismissal, and no disabling/re-enabling blocked windows.
+# A first-run JavaScript alert disables its parent, so CloseMainWindow correctly
+# refuses the parent until the user acknowledges the informational reminder.
+Add-Type -TypeDefinition @'
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+public static class LifecycleDialogs {
+  public delegate bool EnumProc(IntPtr window, IntPtr data);
+  [DllImport("user32.dll")] static extern bool EnumWindows(EnumProc callback, IntPtr data);
+  [DllImport("user32.dll")] static extern bool EnumChildWindows(IntPtr parent, EnumProc callback, IntPtr data);
+  [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr window, out uint process);
+  [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr window, StringBuilder text, int length);
+  [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetClassName(IntPtr window, StringBuilder text, int length);
+  [DllImport("user32.dll")] public static extern bool IsWindowEnabled(IntPtr window);
+  [DllImport("user32.dll")] static extern bool IsWindowVisible(IntPtr window);
+  [DllImport("user32.dll")] static extern int GetDlgCtrlID(IntPtr window);
+  [DllImport("user32.dll", SetLastError=true)] static extern bool PostMessage(IntPtr window, uint message, IntPtr wParam, IntPtr lParam);
+  public class Control {
+    public IntPtr Handle; public uint Process; public string Class; public string Text;
+    public int Id; public bool Enabled; public bool Visible;
+  }
+  static Control Read(IntPtr h) {
+    uint pid; GetWindowThreadProcessId(h, out pid);
+    var text=new StringBuilder(4096); GetWindowText(h,text,text.Capacity);
+    var name=new StringBuilder(256); GetClassName(h,name,name.Capacity);
+    return new Control {Handle=h,Process=pid,Class=name.ToString(),Text=text.ToString(),
+      Id=GetDlgCtrlID(h),Enabled=IsWindowEnabled(h),Visible=IsWindowVisible(h)};
+  }
+  public static Control[] Dialogs(uint pid) {
+    var items=new List<Control>();
+    EnumWindows((h,d)=>{var c=Read(h); if(c.Process==pid && c.Class=="#32770" && c.Visible) items.Add(c); return true;},IntPtr.Zero);
+    return items.ToArray();
+  }
+  public static Control[] Children(IntPtr parent) {
+    var items=new List<Control>();
+    EnumChildWindows(parent,(h,d)=>{items.Add(Read(h));return true;},IntPtr.Zero);
+    return items.ToArray();
+  }
+  public static bool IsReminder(Control dialog, Control[] children, uint pid, string expected) {
+    if(dialog.Process!=pid || dialog.Class!="#32770" || !dialog.Visible || !dialog.Enabled) return false;
+    int messages=0, buttons=0, oks=0;
+    foreach(var c in children) {
+      if(c.Process!=pid) return false;
+      if(c.Class=="Static" && c.Text==expected) messages++;
+      if(c.Class=="Button" && c.Visible) {
+        buttons++;
+        if(c.Id==1 && c.Text.Replace("&","")=="OK" && c.Enabled) oks++;
+      }
+    }
+    return messages==1 && buttons==1 && oks==1;
+  }
+  public static bool Acknowledge(IntPtr dialog, uint pid, string expected) {
+    // Re-read the exact observed handle immediately before sending the same
+    // WM_COMMAND/IDOK notification as its OK button. Unknown dialogs are refused.
+    var current=Read(dialog); var children=Children(dialog);
+    if(!IsReminder(current,children,pid,expected)) return false;
+    foreach(var c in children) if(c.Class=="Button" && c.Id==1)
+      return PostMessage(dialog,0x0111,new IntPtr(1),c.Handle);
+    return false;
+  }
+}
+'@
+function Acknowledge-FirstRunReminder($Process,[bool]$Expected) {
+  $taskReminder='Desktop save reminder: your cards, item changes, and supported settings are stored in the app save folder with automatic backups. Use Export JSON any time you want a portable copy. First launch from the browser version? Export JSON in the browser version, open this desktop version, then Import JSON here.'
+  $taskUntil=[DateTime]::UtcNow.AddSeconds(20)
+  do {
+    $Process.Refresh()
+    if ($Process.HasExited) { throw 'App exited while checking first-run reminder' }
+    $taskDialogs=@([LifecycleDialogs]::Dialogs($Process.Id))
+    if ($taskDialogs.Count) {
+      Confirm ($Expected -and $taskDialogs.Count -eq 1) 'Only the expected first-run dialog is present'
+      $taskDialog=$taskDialogs[0]
+      Confirm ([LifecycleDialogs]::IsReminder($taskDialog,[LifecycleDialogs]::Children($taskDialog.Handle),$Process.Id,$taskReminder)) 'Exact informational save reminder and sole enabled OK button observed'
+      Confirm ([LifecycleDialogs]::Acknowledge($taskDialog.Handle,$Process.Id,$taskReminder)) 'Known first-run reminder acknowledged normally'
+      $taskReport.Phases.Add(@{Name='first-run-reminder';Acknowledged=$true}); Save-Report
+      $taskGoneUntil=[DateTime]::UtcNow.AddSeconds(10)
+      while (@([LifecycleDialogs]::Dialogs($Process.Id)).Count) {
+        if ([DateTime]::UtcNow -gt $taskGoneUntil) { throw 'Reminder did not dismiss; no further input' }
+        Start-Sleep -Milliseconds 250
+      }
+      return
+    }
+    if (-not $Expected) { return }
+    Start-Sleep -Milliseconds 250
+  } while ([DateTime]::UtcNow -lt $taskUntil)
+  throw 'Expected first-run reminder was not observed; no blind acknowledgement'
+}
 function Launch-And-Close([string]$Phase) {
   Confirm-NoApp
   foreach ($taskEnvName in @('HD2CSM_USER_DATA_DIR','HD2CSM_AUTOMATION','HD2_ELECTRON_TEST_HARNESS','ELECTRON_RUN_AS_NODE','NODE_OPTIONS')) { Remove-Item -LiteralPath "Env:$taskEnvName" -ErrorAction SilentlyContinue }
@@ -113,6 +203,7 @@ function Launch-And-Close([string]$Phase) {
     }
   } while (-not $taskReady -or $taskApp.MainWindowHandle -eq [IntPtr]::Zero)
   Start-Sleep -Seconds 4
+  Acknowledge-FirstRunReminder $taskApp ($Phase -eq 'fresh-installed-default-profile')
   $taskApp.Refresh()
   $taskReport.Phases.Add(@{Name=$Phase+'-close-preflight';MainWindowTitle=$taskApp.MainWindowTitle;MainWindowHandle=[string]$taskApp.MainWindowHandle;DiagnosticEvents=@($taskStartup.events.event)})
   Save-Report

@@ -93,3 +93,18 @@ test('runtime handoff needs only the verified package, not an Electron developer
     assert.throws(()=>runtimeInventory(dir,report),/Missing verified runtime companion/);
   } finally {fs.rmSync(dir,{recursive:true,force:true});}
 });
+
+test('first-run dialog driver accepts only the exact app-owned reminder and sole OK button', {skip:process.platform!=='win32'},()=>{
+  const native=source.match(/Add-Type -TypeDefinition @'\r?\n([\s\S]*?)\r?\n'@/)?.[1];
+  assert.ok(native);
+  const reminder=source.match(/\$taskReminder='([^']+)'/)?.[1];
+  assert.ok(reminder);assert.ok(fs.readFileSync(path.join(root,'index.html'),'utf8').includes(`alert("${reminder}")`));
+  // Compile the hosted helper and exercise only its pure selector. Never call
+  // enumeration, acknowledgement or installer code on the developer's PC.
+  const fake=`Add-Type -TypeDefinition @'\n${native}\n'@\n$d=[LifecycleDialogs+Control]::new(); $d.Process=123; $d.Class='#32770'; $d.Visible=$true; $d.Enabled=$true\n$t=[LifecycleDialogs+Control]::new(); $t.Process=123; $t.Class='Static'; $t.Text='expected'\n$b=[LifecycleDialogs+Control]::new(); $b.Process=123; $b.Class='Button'; $b.Text='OK'; $b.Id=1; $b.Enabled=$true; $b.Visible=$true\nif (-not [LifecycleDialogs]::IsReminder($d,@($t,$b),123,'expected')) {throw 'Valid reminder rejected'}\nif ([LifecycleDialogs]::IsReminder($d,@($t,$b),124,'expected')) {throw 'Wrong process accepted'}\nif ([LifecycleDialogs]::IsReminder($d,@($t,$b),123,'other')) {throw 'Unknown text accepted'}\nif ([LifecycleDialogs]::IsReminder($d,@($t,$b,$b),123,'expected')) {throw 'Multiple buttons accepted'}\n$b.Enabled=$false\nif ([LifecycleDialogs]::IsReminder($d,@($t,$b),123,'expected')) {throw 'Disabled button accepted'}\n$b.Enabled=$true; $b.Id=2\nif ([LifecycleDialogs]::IsReminder($d,@($t,$b),123,'expected')) {throw 'Wrong action accepted'}\n$b.Id=1; $d.Class='Other'\nif ([LifecycleDialogs]::IsReminder($d,@($t,$b),123,'expected')) {throw 'Wrong window accepted'}`;
+  const r=spawnSync('pwsh',['-NoProfile','-NonInteractive','-Command',fake],{encoding:'utf8',windowsHide:true,timeout:15000});
+  assert.equal(r.status,0,r.stderr);
+  assert.ok(source.indexOf('if ($ValidateOnly)')<source.indexOf('Add-Type -TypeDefinition'));
+  assert.ok(source.indexOf('Acknowledge-FirstRunReminder $taskApp')<source.indexOf("Confirm (Request-NormalClose $taskApp)"));
+  assert.doesNotMatch(native,/EnableWindow|SendInput|keybd_event|TerminateProcess/);
+});

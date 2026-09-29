@@ -1,5 +1,20 @@
 # HD2CSM project status
 
+## Current work — first-run reminder lifecycle correction, September 29
+
+- Owner chose to set signing aside and continue toward a clearly labeled unsigned release; no paid/free signing setup is requested. Final publication and all other checks remain separate. See `DISTRIBUTION_DECISIONS.md`.
+- Source inspection found normal first-run `showFirstTimeBackupWarning()` invokes a native blocking alert. Existing hosted test did not acknowledge it; a disabled parent is a documented reason for `CloseMainWindow()` returning false. This is a likely explanation, awaiting hosted confirmation.
+- Hosted fixture now observes app-PID-owned native dialogs and acknowledges only the exact informational save reminder with a sole enabled OK button, revalidating immediately before action. Unknown/multiple dialogs stop the test. No blind keyboard input, disabling windows, forced exits or test-harness bypass. No product behavior or owner installation changes. Pure-selector tests cover wrong PID/text/window, multiple buttons, disabled/wrong action; native input is never executed on the developer PC.
+-919 local tests+CSP/catalog/assets pass. Next: push this scoped test correction to PR407 and observe the complete hosted lifecycle. Prior failed attempts below remain preserved, not relabeled as passes.
+
+## Current handoff — hosted fresh install passed; lifecycle stopped, September 29
+
+- Development PR407 head **c2f6d5bf5f244e72f2069a4a71e3b9f8b772ef88** is pushed under the owner's explicit hosted-test authorization. Source CI36630110569 passes:918 tests,917 passed,1 expected private-source skip,0 failed; audit0, CSP/catalog/assets pass. Local918/918+CSP/catalog/assets pass. No main merge/tag/official release.
+- Hosted lifecycle **36630110703**: build/inspection succeeded; fresh Windows Server2022 per-user installation passed128 checks including99 runtime files, uninstaller, shortcuts and registration. Normal app-close request failed despite refreshed handles/retry. **Actual uninstall, reinstall and synthetic-card preservation remain NOT RUN**. Do not call this a lifecycle pass or assume an app/hosted-environment root cause. Read `HOSTED_INSTALLER_LIFECYCLE.md` for failures/hashes/evidence.
+- Attempt1 clean-builder inventory dependency fixed; attempt2 window-close failure reproduced in attempt3 despite readiness/handle changes. Preserve reports at `.test-data/hosted-lifecycle-2026-09-29/`; no forced closure in test script. GitHub cleaned orphan processes after the failed job; that is not graceful-shutdown evidence.
+- Owner's PC/installed candidate/cards untouched. Temporary test artifacts expire after3 days; report after14. Next bounded task: diagnose hosted native-window readiness/close behavior with targeted evidence before another run; do not bypass the failed check or run uninstall locally. Broader manual consumer-Windows acceptance remains open.
+- Owner did not understand the signing question; explained publisher identification versus virus scanning. **No unsigned official-release decision made.** Artwork request remains an unsent draft. Updated distribution/evidence documents remain local deliberately, avoiding another full CI run for status-only edits.
+
 ## Current handoff — approved hosted lifecycle preparation, September 29
 
 - Owner explicitly approved disposable GitHub-hosted Windows testing, development PR update and temporary public unsigned test-build artifact. Read **`HOSTED_INSTALLER_LIFECYCLE.md`**. No host uninstall, publication, main merge or signing purchase authorized.
