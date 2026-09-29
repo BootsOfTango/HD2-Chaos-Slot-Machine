@@ -6,6 +6,25 @@ const path = require('node:path');
 const { noticeIndex, assetGroup, installerMembers, buildInventory, resolveCandidate } = require('../scripts/audit-distribution');
 const snapshot = require('../docs/distribution-inventory.json');
 
+test('card-rules history resolves only its archive, not the release candidate or installed app', () => {
+  const root=path.resolve(__dirname,'..'),current=path.join(root,'dist/card-rules');
+  const archived=path.join(root,'.test-data/accepted-builds/card-rules');
+  assert.equal(resolveCandidate(root,'dist/card-rules',p=>p===archived),archived);
+  assert.equal(resolveCandidate(root,'dist/card-rules',()=>true),current);
+  assert.equal(resolveCandidate(root,'dist/card-rules',()=>false),current);
+  assert.equal(resolveCandidate(root,'dist/release-candidate',p=>p===archived),path.join(root,'dist/release-candidate'));
+});
+
+test('owner Desktop review launcher uses installed runtime without changing its save profile', () => {
+  const launcher=require('node:fs').readFileSync(path.join(__dirname,'../scripts/start-card-rules-review.cmd'),'utf8');
+  assert.ok(launcher.includes('set "HD2CSM_USER_DATA_DIR=%~dp0..\\.test-data\\mission-owner-review"'));
+  assert.ok(launcher.includes('set "HD2CSM_REVIEW_EXE=%LOCALAPPDATA%\\Programs\\HD2 Chaos Slot Machine\\HD2 Chaos Slot Machine.exe"'));
+  for (const name of ['HD2CSM_AUTOMATION','HD2_ELECTRON_TEST_HARNESS','ELECTRON_RUN_AS_NODE']) assert.ok(launcher.includes(`set "${name}="`));
+  assert.ok(launcher.includes('if not exist "%HD2CSM_REVIEW_EXE%"'));
+  assert.ok(launcher.includes('start "" "%HD2CSM_REVIEW_EXE%"'));
+  assert.ok(!launcher.includes('dist\\') && !launcher.includes('accepted-builds\\'));
+});
+
 test('runtime patch history resolves its exact archive, never the card-sector candidate', () => {
   const root=path.resolve(__dirname,'..'),archived=path.join(root,'.test-data/accepted-builds/runtime-patch');
   assert.equal(resolveCandidate(root,'dist/runtime-patch',p=>p===archived),archived);

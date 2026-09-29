@@ -123,6 +123,10 @@ function resolveCandidate(root, candidate, exists = fs.existsSync) {
   const logicalRoot = path.resolve(root,candidate);
   const relative = path.relative(path.join(root,'dist'),logicalRoot);
   if (!relative || relative.startsWith('..') || path.isAbsolute(relative)) throw Error('Inventory candidate must be a child of project dist');
+  if (logicalRoot === path.join(root,'dist/card-rules') && !exists(logicalRoot)) {
+    const archived = path.join(root,'.test-data/accepted-builds/card-rules');
+    if (exists(archived)) return archived;
+  }
   if (logicalRoot === path.join(root,'dist/yellow-missions') && !exists(logicalRoot)) {
     const archived = path.join(root,'.test-data/accepted-builds/yellow-missions');
     if (exists(archived)) return archived;

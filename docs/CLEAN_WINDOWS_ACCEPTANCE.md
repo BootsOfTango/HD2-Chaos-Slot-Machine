@@ -2,6 +2,8 @@
 
 ## Current gate: not run
 
+September29 update: local read-only checks still report Windows10 Home/x64, HypervisorPresent=False and no WindowsSandbox/VBoxManage/vmrun/Get-VM command. Owner now explicitly approved **disposable GitHub-hosted Windows testing**, development-PR updates and a temporary public unsigned test artifact. See `HOSTED_INSTALLER_LIFECYCLE.md`. That workflow is a fresh product-state automated lifecycle subset on Windows Server with preinstalled development tools, not completion of every manual/tools-free acceptance step below. Hosted results must be recorded before claiming a pass. No host OS/security changes or local uninstall are authorized.
+
 September 16 read-only preflight: this host reports **Windows 10 Home, x64, HyperVisorPresent=False**. No WindowsSandbox, VBoxManage, vmrun or Get-VM command was available; queried installed-program registration showed no VirtualBox, VMware or QEMU entries. This is bounded discovery, not proof that no portable hypervisor exists anywhere on disk. No OS feature, VM software, account, BIOS setting, driver or security protection was changed.
 
 Microsoft states that [Windows Sandbox is not supported on Home editions](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview). Its [supported setup instructions](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-install) require virtualization and a supported Windows configuration. Do not use Home-edition bypass scripts. Given the prior BSOD investigation, installing a hypervisor/driver is a separate owner-approved setup decision, not an ordinary app-test step.
