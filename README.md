@@ -2,6 +2,20 @@
 
 A solo-dive companion: roll equipment, choose a planet and mission, then record your results. It does not launch missions, unlock gear, read game memory or access your Steam account.
 
+## Why I made this
+
+I started this project nearly a year ago by asking GPT questions and writing code in Notepad. Discovering Codex later helped me move much faster, but building the app still meant countless hours of testing, adjusting details, and deciding what would make it genuinely enjoyable to use. AI helped me build it; the ideas, care, and persistence behind it came from wanting to create something fellow Helldivers could have fun with.
+
+The idea is simple: make familiar dives feel fresh again. It is easy to settle into the same reliable equipment and overlook everything else. HD2 Chaos Slot Machine encourages you to try weapons and stratagems you might normally ignore, discover unexpected combinations, and occasionally make the most of a completely ridiculous loadout. It is not designed to hand you a perfectly balanced setup every time. The uncertainty—and sometimes the chaos—is part of the fun.
+
+I also wanted those experiments to leave a record. By entering your solo-dive results and collecting loadout cards, you can use the stats and graphs to look back on what worked, what did not, and which combinations you enjoyed. Over many comparable dives, you may start noticing patterns in your own playstyle: equipment you handle well, combinations worth revisiting, or approaches that could use practice.
+
+One great run—or one disastrous one—does not tell the whole story. Difficulty, mission, enemies, conditions, and the rest of your loadout all affect the outcome. These records are a tool for personal reflection, not definitive weapon rankings or proof that one item caused a result. A growing collection of honestly recorded dives is much more useful than a handful of exceptional games.
+
+Above all, I made this to add variety, curiosity, and a little unpredictability to a game I enjoy. If it helps you rediscover an overlooked weapon, find a surprising synergy, or simply laugh through an unlikely loadout, it has done what I hoped it would.
+
+— Boots Of Tango
+
 **HD2 Chaos Slot Machine 1.0 — prepared for publication, not yet published.** The app, Setup and portable ZIP use this same release identity. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. “Official Project Release” means this project's release, not publisher endorsement. [1.0 changes and upgrade information](docs/RELEASE_NOTES_1.0_DRAFT.md).
 
 ## Install once, then use your shortcut
