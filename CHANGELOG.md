@@ -1,5 +1,11 @@
 # Changelog
 
+## HD2 Chaos Slot Machine v1.1.1 — publication preparation
+
+The owner selected **v1.1.1**, following published v1.1.0, instead of restarting the public numbering at1.0. Full-name branding, installers, portable ZIP, application display and release tag use v1.1.1. Internal Windows/package compatibility version remains1.1.14 to protect upgrades. Historical releases stay unchanged.
+
+This release includes the map/Armory/mission/scoring/card-save improvements described in the prior preparation entry below, plus the creator's introduction. See [v1.1.1 release notes](docs/RELEASE_NOTES_1.1.1.md). A hosted source-test failure was traced to the15-second deadline for compiling a test-only PowerShell helper; the compilation deadline is now60 seconds with explicit spawn-error reporting. Native dialog safety assertions remain unchanged.
+
 ## HD2 Chaos Slot Machine 1.0 — prepared September 29, 2026; publication pending
 
 This is the new full-name release line, not a replacement for historical Roulette/Chaos Tango tags. The public version is 1.0; internal Windows compatibility version stays 1.1.14 so existing installations can upgrade without a version downgrade. Existing saves and migration aliases remain compatible. Full [release notes and limitations](docs/RELEASE_NOTES_1.0_DRAFT.md).

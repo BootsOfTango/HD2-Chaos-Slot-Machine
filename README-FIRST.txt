@@ -1,9 +1,9 @@
 HD2 CHAOS SLOT MACHINE
-Windows x64 | 1.0 | Unofficial fan-made solo companion
+Windows x64 | 1.1.1 | Unofficial fan-made solo companion
 
 ABOUT THIS GUIDE
 ---------------
-This guide describes HD2 Chaos Slot Machine 1.0. The same package is used
+This guide describes HD2 Chaos Slot Machine 1.1.1. The same package is used
 for local acceptance and the approved GitHub download; no stream-only build.
 Source preparation alone does not mean a download has been published.
 Windows may show internal compatibility version 1.1.14; that is expected.

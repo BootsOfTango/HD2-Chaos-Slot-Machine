@@ -3,7 +3,7 @@ const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const guide=read('README-FIRST.txt'),readme=read('README.md'),notes=read('docs/RELEASE_NOTES_1.0_DRAFT.md');
+const guide=read('README-FIRST.txt'),readme=read('README.md'),notes=read('docs/RELEASE_NOTES_1.1.1.md');
 
 test('player guides match bundled counts and keep current source distinct from public releases',()=>{
   const catalog=require('../assets/item-catalog.json'),missions=require('../assets/mission-catalog.json');
@@ -51,7 +51,7 @@ test('guide names match actual controls and ship through the existing extraFiles
 });
 
 test('player-facing Markdown links resolve locally or use well-formed HTTPS destinations',()=>{
-  for(const file of ['README.md','docs/RELEASE_NOTES_1.0_DRAFT.md']){
+  for(const file of ['README.md','docs/RELEASE_NOTES_1.1.1.md']){
     for(const match of read(file).matchAll(/\[[^\]]+\]\(([^)]+)\)/g)){
       const target=match[1];
       if(/^https?:/.test(target)){assert.equal(new URL(target).protocol,'https:');continue;}

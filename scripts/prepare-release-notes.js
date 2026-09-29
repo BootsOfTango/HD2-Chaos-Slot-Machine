@@ -39,7 +39,7 @@ function prepare(directory){
     if(fs.readFileSync(file+'.sha256','utf8').trimEnd()!==`${hash}  ${name}`)throw Error('Artifact checksum does not match sidecar');
     digests[key]=hash;
   }
-  const text=renderNotes(identity,policy.mode,digests,fs.readFileSync(path.join(root,'docs/RELEASE_NOTES_1.0_DRAFT.md'),'utf8'));
+  const text=renderNotes(identity,policy.mode,digests,fs.readFileSync(path.join(root,'docs/RELEASE_NOTES_1.1.1.md'),'utf8'));
   const output=path.join(dist,'RELEASE-NOTES.md');
   fs.writeFileSync(output,text,{encoding:'utf8',flag:'wx'});
   console.log('Prepared checksum-bound release notes: '+output);

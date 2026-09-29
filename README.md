@@ -16,7 +16,7 @@ Above all, I made this to add variety, curiosity, and a little unpredictability 
 
 — Boots Of Tango
 
-**HD2 Chaos Slot Machine 1.0 — prepared for publication, not yet published.** The app, Setup and portable ZIP use this same release identity. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. “Official Project Release” means this project's release, not publisher endorsement. [1.0 changes and upgrade information](docs/RELEASE_NOTES_1.0_DRAFT.md).
+**HD2 Chaos Slot Machine 1.1.1 — prepared for publication, not yet published.** The app, Setup and portable ZIP use this same release identity. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. “Official Project Release” means this project's release, not publisher endorsement. [1.1.1 changes and upgrade information](docs/RELEASE_NOTES_1.1.1.md).
 
 ## Install once, then use your shortcut
 
@@ -134,4 +134,4 @@ This independent fan project is not endorsed by Arrowhead or Sony. The existing 
 
 ## Development and release status
 
-Players need no source checkout. Maintainers: [development](docs/DEVELOPMENT.md), [current status and remaining work](docs/PROJECT_STATUS.md), [release checklist](docs/RELEASE.md), [draft 1.0 notes](docs/RELEASE_NOTES_1.0_DRAFT.md). The [standalone player guide](README-FIRST.txt) is bundled by the build process; editing its source does not update an existing installer or ZIP.
+Players need no source checkout. Maintainers: [development](docs/DEVELOPMENT.md), [current status and remaining work](docs/PROJECT_STATUS.md), [release checklist](docs/RELEASE.md), [v1.1.1 notes](docs/RELEASE_NOTES_1.1.1.md). The [standalone player guide](README-FIRST.txt) is bundled by the build process; editing its source does not update an existing installer or ZIP.

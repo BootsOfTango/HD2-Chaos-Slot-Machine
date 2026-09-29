@@ -13,7 +13,7 @@ test('descriptive local artifact names omit release numbering without changing p
   delete env.HD2CSM_LOCAL_BUILD_LABEL;
   const config = label => spawnSync(process.execPath, ['-e', "const c=require('./electron-builder.config');console.log(JSON.stringify([c.artifactName,c.nsis.artifactName]));"], { cwd: root, env: label === undefined ? env : { ...env, HD2CSM_LOCAL_BUILD_LABEL: label }, encoding: 'utf8', windowsHide: true });
   const release = config(); assert.equal(release.status, 0);
-  assert.deepEqual(JSON.parse(release.stdout), ['HD2-Chaos-Slot-Machine-v1.0.0-win-${arch}.${ext}', 'HD2-Chaos-Slot-Machine-Setup-v1.0.0-win-${arch}.${ext}']);
+  assert.deepEqual(JSON.parse(release.stdout), ['HD2-Chaos-Slot-Machine-v1.1.1-win-${arch}.${ext}', 'HD2-Chaos-Slot-Machine-Setup-v1.1.1-win-${arch}.${ext}']);
   const local = config('defensive'); assert.equal(local.status, 0);
   assert.deepEqual(JSON.parse(local.stdout), Object.values(localArtifactNames('defensive')));
 });

@@ -11,7 +11,7 @@ const root=path.resolve(__dirname,'..');
 
 test('public version/name are separate from unchanged upgrade and storage identities',()=>{
   assert.equal(identity.productName,'HD2 Chaos Slot Machine');
-  assert.equal(identity.publicVersion,'1.0.0');
+  assert.equal(identity.publicVersion,'1.1.1');
   assert.equal(require('../package.json').version,'1.1.14');
   assert.equal(profile.resolveProfile('C:\\fixture',{}).directory,path.join('C:\\fixture','Helldivers 2 Chaos Slot Machine'));
   assert.equal(profile.APP_ID,'com.bootsoftango.helldivers2chaosslotmachine');
@@ -42,8 +42,8 @@ test('header and code-native mark use full words without the retired acronym',()
   assert.equal(inline.length,1);
   assert.doesNotThrow(()=>new (require('node:vm').Script)(inline[0][2]), 'branding edits must not corrupt application JavaScript');
   assert.match(html,/class="appBrandText"[^>]*>HD2 Chaos Slot Machine</);
-  assert.match(html,/1\.0 · Unofficial fan app/);
-  assert.doesNotMatch(html,/1\.0 · Local preview/);
+  assert.ok(html.includes(identity.displayVersion+' · Unofficial fan app'));
+  assert.doesNotMatch(html,/Local preview · Unofficial fan app/);
   assert.doesNotMatch(html,/src="assets\/branding\/hd2csm-emblem.png"/);
   assert.equal(fs.readFileSync(path.join(root,'assets/branding/hd2-chaos-slot-machine.svg'),'utf8'),art.svg());
   assert.doesNotMatch(art.svg(),/<image|<script|href=|HD2CSM/);
