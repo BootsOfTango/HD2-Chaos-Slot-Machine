@@ -1,6 +1,6 @@
-# HD2 Chaos Slot Machine 1.1.1 — draft release notes
+# HD2 Chaos Slot Machine v1.1.1 — release notes
 
-**Unpublished preparation document — not a release announcement.** Prepared September 29, 2026 for the single local/GitHub 1.1.1 release candidate. Hosted install/uninstall/reinstall and synthetic-save preservation passed; manual consumer-Windows limitations remain documented. Final download links and checksums are generated from the exact built files by `scripts/prepare-release-notes.js`, not copied from an earlier candidate. Artwork-use and final publication decisions remain explicit. Source preparation is not publication approval.
+**Release-note source; publication is confirmed on GitHub, not by this document's existence.** The owner approved v1.1.1 with the current images, explicitly acknowledging unconfirmed redistribution permission. Credits/notices remain; no copyright-clearance claim is made. Download links and checksums are generated from the exact built files by `scripts/prepare-release-notes.js`, not copied from an earlier candidate. Manual consumer-Windows coverage limitations remain documented.
 
 ## What's prepared
 
@@ -35,17 +35,17 @@ Review your actual unlocks in **Armory**, spin and lock a loadout, confirm a pla
 - Community data is not second-by-second game synchronization. Check retrieval times and the in-game map. Missing activity reports do not mean no special enemies; approximate sectors are not exact game borders. Saved-card locators are reference geography, not a historical war replay.
 - Mission choices are compatible suggestions, not the ship's exact operation list. Regional/event cases can require a player-confirmed shortlist. Gear/catalog changes require app updates; refresh only updates war data. Nothing updates while the app is closed.
 - App updates are manual: export cards, download the newer Setup, close the app and install it. No automatic app updater is shipped. Internal updater metadata/blockmap files are not player downloads.
-- The planned 1.1.1 download is **unsigned**, by the maintainer's choice. Windows may show Unknown publisher or a SmartScreen warning. Keep Windows protection enabled; if Windows blocks it or you are unsure, stop and report the message. A checksum detects changed bytes, not malware. Download only from this project's release page; do not disable protection to run it.
+- The 1.1.1 download is **unsigned**, by the maintainer's choice. Windows may show Unknown publisher or a SmartScreen warning. Keep Windows protection enabled; if Windows blocks it or you are unsure, stop and report the message. A checksum detects changed bytes, not malware. Download only from this project's release page; do not disable protection to run it.
 - If saving fails, keep the app open and retry or export the session. Do not delete an unreadable save or recovery files to force startup. If freezing/display trouble/blue screens occur, stop and report the build, time and steps rather than repeatedly reproducing a crash.
 
-## Publication fields — fill only from the final approved build
+## Publication fields — final approved local build
 
-- Release date and immutable tag: **pending**
-- Recommended Setup download and SHA-256: **pending**
-- Optional app ZIP download and SHA-256: **pending**
-- Distribution choice: **unsigned**; final artifact signature-status verification remains pending.
-- Existing candidate upgrade and hosted install/uninstall/reinstall: **passed**, indexed in [acceptance report](FINAL_TEST_REPORT_1_0.md); final branded bytes still require revalidation. Broader manual scenarios are not implied.
-- Final security/dependency/artifact review and artwork-rights decision: **pending**
-- Owner publication approval: **pending**
+- Tag: `hd2-chaos-slot-machine-v1.1.1`. The [release page](https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/releases/tag/hd2-chaos-slot-machine-v1.1.1) is the authority for publication time and current availability.
+- Recommended Setup: `HD2-Chaos-Slot-Machine-Setup-v1.1.1-win-x64.exe`; SHA-256 `e171f7000f7de7d0b367a7f93d56b0ccd78395d62d972618dd5cd60eab4131c5`.
+- Optional app ZIP: `HD2-Chaos-Slot-Machine-v1.1.1-win-x64.zip`; SHA-256 `5a82f53b679713bd592b6ab73c53eb7137345b226e563178443cb72cd1310db1`.
+- Distribution: **unsigned**; app, Setup and embedded uninstaller signature status verified. Windows warnings remain possible.
+- Tests and limitations: [v1.1.1 verification report](RELEASE_V1_1_1_REPORT.md). Hosted lifecycle builds are separate from these locally built, hash-identified downloads; broader manual scenarios are not implied.
+- Artwork rights remain unconfirmed. Owner explicitly approved publishing v1.1.1 with the current images, accepting that risk; this is not rights-holder permission. See [distribution decisions](DISTRIBUTION_DECISIONS.md).
+- Historical releases are retained. This version supersedes the abandoned public-1.0 reset plan, not historical evidence or previous downloads.
 
 The original code retains its existing license. Game/crossover artwork, trademarks and community contributions retain their own rights. Credits are not permission. “Official Project Release” refers only to the maintainer's release, not endorsement by Arrowhead, Sony or any crossover owner.

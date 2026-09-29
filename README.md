@@ -2,6 +2,8 @@
 
 A solo-dive companion: roll equipment, choose a planet and mission, then record your results. It does not launch missions, unlock gear, read game memory or access your Steam account.
 
+**[Download v1.1.1 for Windows](https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/releases/tag/hd2-chaos-slot-machine-v1.1.1)** — choose the **Setup .exe** under Assets. [What's new and update instructions](docs/RELEASE_NOTES_1.1.1.md).
+
 ## Why I made this
 
 I started this project nearly a year ago by asking GPT questions and writing code in Notepad. Discovering Codex later helped me move much faster, but building the app still meant countless hours of testing, adjusting details, and deciding what would make it genuinely enjoyable to use. AI helped me build it; the ideas, care, and persistence behind it came from wanting to create something fellow Helldivers could have fun with.
@@ -16,7 +18,7 @@ Above all, I made this to add variety, curiosity, and a little unpredictability 
 
 — Boots Of Tango
 
-**HD2 Chaos Slot Machine 1.1.1 — prepared for publication, not yet published.** The app, Setup and portable ZIP use this same release identity. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. “Official Project Release” means this project's release, not publisher endorsement. [1.1.1 changes and upgrade information](docs/RELEASE_NOTES_1.1.1.md).
+**HD2 Chaos Slot Machine v1.1.1.** The app, Setup and portable ZIP use this same release identity. Historical downloads remain available but may have older names and fewer features. Windows/package version remains **1.1.14** for upgrade compatibility. “Official Project Release” means this project's release, not publisher endorsement.
 
 ## Install once, then use your shortcut
 

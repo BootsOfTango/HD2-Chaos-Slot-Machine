@@ -14,8 +14,8 @@ test('player guides match bundled counts and keep current source distinct from p
     assert.ok(text.includes(require('../package.json').version));
   }
   assert.match(guide,/no stream-only build/);
-  assert.match(readme,/prepared for publication, not yet published/);
-  assert.match(notes,/Unpublished preparation document/);
+  assert.ok(readme.includes('releases/tag/'+require('../release-identity.json').tagPrefix+require('../release-identity.json').publicVersion));
+  assert.match(notes,/publication is confirmed on GitHub/);
   assert.ok(notes.includes('Electron '+require('../package.json').devDependencies.electron));
   assert.equal(require('../release-identity.json').channel,'release');
 });

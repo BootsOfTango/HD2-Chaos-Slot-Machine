@@ -4,6 +4,19 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { REQUIRED, checkReadiness } = require('../scripts/check-public-release');
 const complete = () => ({ checks: Object.fromEntries(REQUIRED.map(key => [key, { status: 'passed', evidence: 'docs/review.md' }])) });
+
+test('informed artwork-risk decision is version-specific, explicit, and never a technical waiver',()=>{
+  const manifest=complete();
+  manifest.checks.artworkRights={status:'owner-accepted-risk',permissionEstablished:false,ownerApprovedVersion:'1.1.1',evidence:'docs/DISTRIBUTION_DECISIONS.md'};
+  assert.deepEqual(checkReadiness(manifest,()=>true,'1.1.1'),[]);
+  for(const version of [undefined,'1.1.2',''])assert.equal(checkReadiness(manifest,()=>true,version).length,1);
+  assert.equal(checkReadiness(manifest,()=>false,'1.1.1').length,REQUIRED.length);
+  manifest.checks.artworkRights.permissionEstablished=true;
+  assert.equal(checkReadiness(manifest,()=>true,'1.1.1').length,1);
+  manifest.checks.artworkRights.permissionEstablished=false;
+  manifest.checks.securityReview={...manifest.checks.artworkRights};
+  assert.equal(checkReadiness(manifest,()=>true,'1.1.1').length,1);
+});
 test('public release fails closed for absent, blocked or incomplete evidence', () => {
   assert.equal(checkReadiness(null).length, REQUIRED.length);
   for (const key of REQUIRED) {

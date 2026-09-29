@@ -1,36 +1,38 @@
 {
   "product": "HD2 Chaos Slot Machine",
-  "target": "1.0 Official Project Release",
+  "target": "1.1.1 Official Project Release",
   "checks": {
     "artworkRights": {
-      "status": "blocked",
-      "evidence": "docs/RELEASE_CANDIDATE_1_0.md",
-      "reason": "September29 candidate indexed:450 shipped media files,109 documented original-origin files,14 catalog-associated crossover assets; no permission established by inventory.89 legacy stratagem source/version findings remain. Rights-holder request remains draft only; artwork-use basis or cleared replacements remain unresolved. Credits/hashes/noncommercial purpose are not recorded as clearance."
+      "status": "owner-accepted-risk",
+      "permissionEstablished": false,
+      "ownerApprovedVersion": "1.1.1",
+      "evidence": "docs/DISTRIBUTION_DECISIONS.md",
+      "reason": "Owner explicitly approved publishing v1.1.1 with current images knowing redistribution permission remains unconfirmed. Credits preserved; no rights-holder approval or clearance claimed."
     },
     "licenseInventory": {
       "status": "passed",
-      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
-      "reason": "September29 unified final candidate:552 bundled source files, actual ZIP/Setup payloads and component notices verified. Artwork-use decision remains separately unresolved; this technical notice check is not permission."
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Final v1.1.1:552 bundled source files, ZIP/Setup payloads, installer plugin inventories and notices verified. Notice completeness does not establish artwork permission."
     },
     "securityReview": {
-      "status": "pending",
-      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
-      "reason": "Unified source924/924 local tests, audit0, packaged renderer security44 passed; minimal-rights workflow and exact notes/artifact handoff tested. Await current renamed-repository hosted CI; previous green run is not evidence for this new head."
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "925 source tests, CSP/catalog/assets, dependency audit0 and final packaged renderer security44 pass. Version-corrected hosted source/lifecycle/Linux green; current-head green checks additionally enforced before PR merge."
     },
     "versionAndBranding": {
       "status": "passed",
-      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
-      "reason": "Repository renamed in place to HD2-Chaos-Slot-Machine; full-name1.0 source channel, UI, Setup/ZIP, README/changelog and generated checksum-bound release notes aligned. Internal1.1.14/save identity preserved.99 installed runtime files and uninstaller match; Desktop kit matches final artifacts;295 profile files unchanged. Publication has not occurred."
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Final rebuilt v1.1.1 matches UI/identity/guides/README and filenames. Internal1.1.14/save identity retained. This does not alone prove upload/publication or Desktop replacement."
     },
     "finalArtifactTests": {
-      "status": "pending",
-      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
-      "reason": "Unified packaged workflow396/card rules31/transfer41/security44 and installed final EXE396 pass. Backed-up upgrade verifies99 files/uninstaller,295 profile files unchanged. Earlier hosted273 lifecycle passes its recorded previous commit; fresh renamed-repo CI pending. Manual consumer-Windows/audio/DPI/all-users/offline limits remain explicit."
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Exact final v1.1.1 packaged workflow396, card rules31, transfer38 and security44 pass with graceful exits and synthetic profiles. Version-corrected hosted lifecycle green; current-head checks required before merge. Manual coverage limits recorded; owner app remains uninstalled."
     },
     "finalArtifactScanAndSigning": {
       "status": "passed",
-      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
-      "reason": "Exact unified Setup bf1d0557b87fee242730ad7931423d567c548e9532e54701c73b2f6f44368cc5 and ZIP1aeae708cfb00638ce7e7cefa8c0648dd41a96c2b395ed2b67962ae70028eb98 verified. App/Setup/embedded uninstaller NotSigned as approved; final-directory Defender scan exit0/no threats. Any rebuild requires new checks. No safety guarantee."
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Exact final v1.1.1 hashes recorded; Defender no threats/exit0, actual app/Setup/embedded uninstaller NotSigned verified. Approved unsigned release with warnings retained; no safety guarantee. Downloaded-byte verification required before publication."
     }
   }
 }

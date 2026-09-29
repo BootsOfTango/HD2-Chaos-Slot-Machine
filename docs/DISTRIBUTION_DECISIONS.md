@@ -1,6 +1,10 @@
 # Remaining distribution decisions — September 29, 2026
 
-No official release is authorized by this document. The owner has approved temporary unsigned GitHub Actions test artifacts, not publication to Releases. Existing release signing/readiness gates have not been bypassed.
+## Current owner approval — v1.1.1
+
+The owner explicitly requested publishing the new **v1.1.1** as latest while keeping historical releases. When asked, "Before I publish v1.1.1: do you approve releasing it with the current game images, knowing that their redistribution permission is still unconfirmed? I'll retain the credits and notices, but won't claim they provide copyright clearance," the owner answered **"Yes, publish with the current images."**
+
+Record the artwork review as **owner-accepted-risk**, not rights-holder permission or a passed copyright-clearance check. This approval is specific to v1.1.1 and the existing images; it does not grant third-party rights, authorize removal of credits, or waive technical/security checks. No rights-holder approval has been received and the permission request remains unsent. Distribution remains explicitly unsigned, with normal Windows protections retained. The earlier paragraphs below preserve the research/limitations, not a veto of this later informed owner decision.
 
 ## Signing
 
@@ -18,7 +22,7 @@ The owner prefers the accurate game artwork. It remains unchanged. The candidate
 
 The existing permission-request draft remains unsent. Arrowhead's current contact page lists a general enquiry address; it does not promise licensing approval or cover Sony/crossover/community rights automatically. Sending a request still requires approval of the actual recipient and message. Do not invent an approval, remove notices, or silently replace the requested artwork. [Arrowhead contact](https://www.arrowheadgamestudios.com/contact/)
 
-A disclaimer explains ownership/non-affiliation but does not itself establish a redistribution license. The artwork gate remains explicitly unresolved. This is a record of verified sources and outstanding decisions, not a legal opinion guaranteeing infringement or safety.
+A disclaimer explains ownership/non-affiliation but does not itself establish a redistribution license. The rights themselves remain unconfirmed; the later owner-approved publication decision above explicitly accepts that unresolved risk for v1.1.1. This is a record of sources and the owner's decision, not a legal opinion guaranteeing infringement or safety.
 
 ## Windows acceptance
 

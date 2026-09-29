@@ -528,7 +528,7 @@ async function rendererWritePhase(options = {}) {
   assert(persisted.ok, 'final state is flushed through the desktop storage bridge');
   const info = await window.chaosSlotMachine.getAppInfo();
   assert(info.name === 'HD2 Chaos Slot Machine', 'desktop metadata exposes the renamed application');
-  assert(info.publicVersion === '1.0.0' && info.compatibilityVersion === '1.1.14', 'public 1.0 and unchanged internal compatibility version are distinct');
+  assert(info.publicVersion === '1.1.1' && info.compatibilityVersion === '1.1.14', 'public 1.1.1 and unchanged internal compatibility version are distinct');
   assert(document.title === 'HD2 Chaos Slot Machine', 'browser and native titles use full-word identity');
   const mark = document.querySelector('.appBrandEmblem');
   await mark.decode();
