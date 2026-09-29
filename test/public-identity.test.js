@@ -42,7 +42,8 @@ test('header and code-native mark use full words without the retired acronym',()
   assert.equal(inline.length,1);
   assert.doesNotThrow(()=>new (require('node:vm').Script)(inline[0][2]), 'branding edits must not corrupt application JavaScript');
   assert.match(html,/class="appBrandText"[^>]*>HD2 Chaos Slot Machine</);
-  assert.match(html,/1\.0 · Local preview · Unofficial fan app/);
+  assert.match(html,/1\.0 · Unofficial fan app/);
+  assert.doesNotMatch(html,/1\.0 · Local preview/);
   assert.doesNotMatch(html,/src="assets\/branding\/hd2csm-emblem.png"/);
   assert.equal(fs.readFileSync(path.join(root,'assets/branding/hd2-chaos-slot-machine.svg'),'utf8'),art.svg());
   assert.doesNotMatch(art.svg(),/<image|<script|href=|HD2CSM/);

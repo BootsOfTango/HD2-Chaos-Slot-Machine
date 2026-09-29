@@ -8,7 +8,7 @@ async function get(endpoint) {
   const response = await fetch('https://api.helldivers2.dev/api/v1/' + endpoint, {
     signal: AbortSignal.timeout(15000), redirect: 'error',
     headers: { 'X-Super-Client': 'HD2-Chaos-Slot-Machine-local-map-review',
-      'X-Super-Contact': 'https://github.com/BootsOfTango/Helldivers-2-Roulette', 'Accept-Language': 'en-US' }
+      'X-Super-Contact': 'https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine', 'Accept-Language': 'en-US' }
   });
   if (!response.ok) throw Error(endpoint + ' HTTP ' + response.status);
   let size = 0; const chunks = [];

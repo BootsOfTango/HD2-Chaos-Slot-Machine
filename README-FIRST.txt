@@ -1,10 +1,11 @@
 HD2 CHAOS SLOT MACHINE
-Windows x64 | 1.0 Local preview | Unofficial fan-made solo companion
+Windows x64 | 1.0 | Unofficial fan-made solo companion
 
 ABOUT THIS GUIDE
 ---------------
-This guide describes the current development preview, not an announced 1.0
-download. Public release requires a separately approved, verified build.
+This guide describes HD2 Chaos Slot Machine 1.0. The same package is used
+for local acceptance and the approved GitHub download; no stream-only build.
+Source preparation alone does not mean a download has been published.
 Windows may show internal compatibility version 1.1.14; that is expected.
 No Steam login, game-memory access or game-control automation is required.
 The app does not launch missions, grant equipment or read your game account.
@@ -12,7 +13,7 @@ The app does not launch missions, grant equipment or read your game account.
 INSTALL ONCE, THEN USE YOUR SHORTCUT
 ----------------------------------
 1. Use this project's GitHub Releases page:
-   https://github.com/BootsOfTango/Helldivers-2-Roulette/releases
+   https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/releases
 2. Read that release's notes, then choose its Windows x64 Setup .exe under
    Assets. An older release may have an older name and fewer features.
    Do not choose Source code or Code -> Download ZIP to play.
@@ -180,7 +181,7 @@ after confirmation. If startup cannot safely load an existing save, the app
 protects it from overwrite. Close and resolve the problem/use a compatible
 newer app; do not delete the original or recovery files to bypass protection.
 
-Current local builds are unsigned. Windows may show an unknown-publisher
+This release is unsigned. Windows may show an unknown-publisher
 or SmartScreen warning. Check the release source, signature status and
 matching .sha256 checksum. A checksum detects changed bytes, not malware.
 Do not disable antivirus or Windows protection; report unexpected warnings.
@@ -196,8 +197,8 @@ Independent, noncommercial fan project; not endorsed by Arrowhead or Sony.
 Game/crossover images, trademarks and community contributions retain their
 respective owners' rights. Credits do not establish redistribution permission.
 See NOTICE.txt, THIRD_PARTY_NOTICES.md and SECURITY.md. Artwork-rights and
-final release checks remain open; "official" means this project's release only.
+release review is recorded separately; "official" means this project's release only.
 
-Help: https://github.com/BootsOfTango/Helldivers-2-Roulette/issues
+Help: https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/issues
 Include build label/version, Setup/portable/review-copy choice, steps and
 a screenshot. Never post passwords, tokens or private save files.

@@ -4,7 +4,7 @@ No version is guaranteed malware-free or immune to attack. Passing a dependency 
 
 ## Download and use safely
 
-- Obtain installer/portable files from the canonical [project Releases page](https://github.com/BootsOfTango/Helldivers-2-Roulette/releases). GitHub source archives are not installers.
+- Obtain installer/portable files from the canonical [project Releases page](https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/releases). GitHub source archives are not installers.
 - Compare downloads with the release checksums. Checksums detect byte differences; they do not authenticate the publisher if both the file and checksum are compromised.
 - Current local review builds are unsigned. Do not disable antivirus, SmartScreen, Controlled Folder Access or other protections to install. An unexpected warning needs investigation, not a security exclusion.
 - No Steam/game credentials or administrator account is required for ordinary app use. Do not share credentials, tokens or private saves with someone claiming to support the app.

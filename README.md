@@ -2,11 +2,11 @@
 
 A solo-dive companion: roll equipment, choose a planet and mission, then record your results. It does not launch missions, unlock gear, read game memory or access your Steam account.
 
-**1.0 Local preview — not a newly published release.** This guide describes the current development preview. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. The planned **1.0 Official Project Release** still needs final reviews and owner approval; “official” means this project's release, not publisher endorsement.
+**HD2 Chaos Slot Machine 1.0 — prepared for publication, not yet published.** The app, Setup and portable ZIP use this same release identity. Existing public downloads may have older names and fewer features; read the notes for the release you download. Windows/package version remains **1.1.14** for upgrade compatibility. “Official Project Release” means this project's release, not publisher endorsement. [1.0 changes and upgrade information](docs/RELEASE_NOTES_1.0_DRAFT.md).
 
 ## Install once, then use your shortcut
 
-1. Open this project's [GitHub Releases](https://github.com/BootsOfTango/Helldivers-2-Roulette/releases), read the chosen release's notes and expand **Assets**.
+1. Open this project's [GitHub Releases](https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/releases), read the chosen release's notes and expand **Assets**.
 2. Download its **Windows x64 Setup .exe**, not **Source code** or **Code → Download ZIP**.
 3. Close any running copy. Run Setup and keep the normal Windows apps location—not the Desktop, download folder or source checkout.
 4. Open **HD2 Chaos Slot Machine** from Start or Setup's desktop shortcut. You do not need Setup again until an update.
@@ -15,7 +15,11 @@ Setup includes the images and runtime. No Git, Node.js, npm or Python is needed.
 
 **Prefer no installation?** Download the release's app ZIP, extract the **entire ZIP**, and run **HD2 Chaos Slot Machine.exe** inside it. Do not run inside the archive or move only the EXE. Portable and installed copies normally share the same Windows save folder; use one copy at a time. A developer's local shortcut will not work on another PC.
 
-Current local builds are **unsigned**. Windows may warn about an unknown publisher. Check the release source and signature/checksum information; a checksum is not proof of safety. **Do not disable Windows protection.**
+This release is **unsigned**. Windows may warn about an unknown publisher. Check the release source and signature/checksum information; a checksum is not proof of safety. **Do not disable Windows protection.**
+
+### Updates
+
+Application updates are manual: export your cards, download the newer Setup from the release page, close the app and install it. Cards stay in the separate save folder. **Refresh war data** updates planets/activity, not the application or gear catalog. There is no automatic application-update downloader. Review card-rule changes before applying them; no automatic recalibration or card deletion occurs.
 
 ## Your first solo dive
 
@@ -110,7 +114,7 @@ Keep the app open and use **Retry saving** or **Export session JSON**. **Close w
 
 **Missing gear?** Clear filters and check Owned/Included. The app cannot verify your purchases. **No sound?** Check Windows volume and the selected output device. **Slow or unstable?** Software rendering may use more CPU. If you encounter freezing, display trouble or a blue screen, stop and report the time/build/steps rather than repeatedly reproducing it.
 
-[Report an issue](https://github.com/BootsOfTango/Helldivers-2-Roulette/issues) with the build label/version, Setup/portable/review-copy choice and a screenshot. Do not post passwords, tokens or private saves.
+[Report an issue](https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine/issues) with the build label/version, Setup/portable/review-copy choice and a screenshot. Do not post passwords, tokens or private saves.
 
 This independent fan project is not endorsed by Arrowhead or Sony. The existing Apache 2.0 code license permits compliant reuse; it does not grant rights to third-party images or trademarks. Game/crossover artwork and community contributions retain their owners' rights. Credits do not establish redistribution permission. See [NOTICE](NOTICE.txt), [third-party notices](THIRD_PARTY_NOTICES.md) and [security guidance](SECURITY.md). No copyright-clearance, malware-free or crash-free guarantee is made.
 

@@ -7,7 +7,7 @@ const root=path.resolve(__dirname,'..');
 async function get(url){
   const startedAt=new Date().toISOString();
   const response=await fetch(url,{redirect:'error',signal:AbortSignal.timeout(15000),headers:{Accept:'application/json','Accept-Language':'en-US',
-    'X-Super-Client':'HD2-Chaos-Slot-Machine-activity-audit','X-Super-Contact':'https://github.com/BootsOfTango/Helldivers-2-Roulette'}});
+    'X-Super-Client':'HD2-Chaos-Slot-Machine-activity-audit','X-Super-Contact':'https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine'}});
   if(!response.ok)throw Error(`HTTP ${response.status} from ${url}; Retry-After ${response.headers.get('retry-after')||'unspecified'}. No automatic retry.`);
   let size=0;const chunks=[];
   for await(const chunk of response.body){size+=chunk.byteLength;if(size>8*1024*1024)throw Error('Audit response exceeds 8MB');chunks.push(chunk);}

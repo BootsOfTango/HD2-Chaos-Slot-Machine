@@ -6,7 +6,7 @@ Set-StrictMode -Version Latest
 if (-not $AllowDisposableGitHubRunner -or $env:GITHUB_ACTIONS -cne 'true' -or
     $env:RUNNER_ENVIRONMENT -cne 'github-hosted' -or $env:RUNNER_OS -cne 'Windows' -or
     $env:ImageOS -notmatch '^win\d+$' -or $env:GITHUB_RUN_ID -notmatch '^\d+$' -or
-    $env:GITHUB_REPOSITORY -cne 'BootsOfTango/Helldivers-2-Roulette') {
+    $env:GITHUB_REPOSITORY -cne 'BootsOfTango/HD2-Chaos-Slot-Machine') {
   throw 'REFUSED: requires explicitly approved disposable GitHub-hosted Windows runner'
 }
 if (-not $env:RUNNER_TEMP -or -not [IO.Path]::IsPathFullyQualified($env:RUNNER_TEMP)) { throw 'Runner temporary root missing' }

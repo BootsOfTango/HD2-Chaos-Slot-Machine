@@ -23,7 +23,7 @@ Attribution is not permission or a legal clearance statement. Artwork
 redistribution review is incomplete. This notice must not be used to represent
 the current local build as cleared for public distribution.
 
-Canonical project: https://github.com/BootsOfTango/Helldivers-2-Roulette
+Canonical project: https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine
 Use that project's Releases page to identify maintainer-published downloads.
 No warranty of uninterrupted operation, security, legal clearance or fitness
 is created by this notice. See LICENSE.txt for the applicable license terms.

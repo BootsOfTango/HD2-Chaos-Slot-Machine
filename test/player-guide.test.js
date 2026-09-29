@@ -13,11 +13,11 @@ test('player guides match bundled counts and keep current source distinct from p
     assert.ok(plain(text).includes(`${missions.missions.length} mission identities`));
     assert.ok(text.includes(require('../package.json').version));
   }
-  assert.match(guide,/not an announced 1\.0/);
-  assert.match(readme,/not a newly published release/);
+  assert.match(guide,/no stream-only build/);
+  assert.match(readme,/prepared for publication, not yet published/);
   assert.match(notes,/Unpublished preparation document/);
   assert.ok(notes.includes('Electron '+require('../package.json').devDependencies.electron));
-  assert.equal(require('../release-identity.json').channel,'local-preview');
+  assert.equal(require('../release-identity.json').channel,'release');
 });
 
 test('current player instructions no longer describe implemented map and activity as unavailable',()=>{

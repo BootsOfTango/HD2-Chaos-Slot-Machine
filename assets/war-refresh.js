@@ -116,7 +116,7 @@
               credentials: 'omit', redirect: 'error', cache: 'no-store', headers: {
                 Accept: 'application/json', 'Accept-Language': 'en-US',
                 'X-Super-Client': 'HD2-Chaos-Slot-Machine',
-                'X-Super-Contact': 'https://github.com/BootsOfTango/Helldivers-2-Roulette',
+                'X-Super-Contact': 'https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine',
               } });
             if (!response.ok) {
               const error = new Error('http-' + response.status);

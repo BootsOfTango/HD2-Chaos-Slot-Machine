@@ -1,5 +1,24 @@
 # Changelog
 
+## HD2 Chaos Slot Machine 1.0 — prepared September 29, 2026; publication pending
+
+This is the new full-name release line, not a replacement for historical Roulette/Chaos Tango tags. The public version is 1.0; internal Windows compatibility version stays 1.1.14 so existing installations can upgrade without a version downgrade. Existing saves and migration aliases remain compatible. Full [release notes and limitations](docs/RELEASE_NOTES_1.0_DRAFT.md).
+
+- Fullscreen startup, F11/Escape controls and scrollable smaller windows with background panning.
+- Searchable, collapsible Armory: 214 items, 25 Warbond groups, source images, separate Owned/Included controls and opt-in new acquisitions. Includes Castellan's Creed, Ironclad Democracy, separate LAS-12 Sai and campaign-reward Eagle Gas Airstrike.
+- Cross-faction planet rolls and a shared manual/random selection system. Original interactive galaxy map with sectors, faction shading, supply links, search, hover conditions, reported activity and an accessible list.
+- Cached/offline war data with visible freshness; five-minute refresh checks normally, once per minute while the visible map is open. Community data can lag the game.
+- 60 specific mission identities with yellow/gold icons; compatible suggestions and optional in-game-operation confirmation. No claim to read exact live mission availability.
+- Context-sensitive loadout codenames, compact saved-card planet/sector visuals, guided score entry, final review, locked numbers/notes and later comments.
+- Six-axis solo scoring/ranking, gentler Firepower curve and opt-in card-rule updates. Verified recovery copies before updates/removal of reviewed incomplete cards; keep pending cards and preserve original records for retained cards.
+- Hardened save/import/recovery handling, protected unreadable/future-format saves, separate installation/save folders, restricted renderer/IPC and Electron 44.4.5.
+- Full-name Setup/portable ZIP, bundled player guide, credits/component notices, checksums and accurate unsigned-build warnings. Manual app updates; war refresh does not install catalog/software updates.
+- Verified hosted install/uninstall/reinstall and synthetic-card preservation; broader physical audio/DPI and consumer-Windows scenarios remain separately documented. Tests/scans are not a safety guarantee.
+
+### Historical development log
+
+Earlier entries below describe their dated development state, not missing features in the new 1.0 release line. Historical tags and downloads are retained unchanged.
+
 ## Local Development — Support Weapon Audit, September 15, 2026
 
 - Review the remaining sixteen acquisition records: MG-43 starter equipment and fifteen requisition purchases, all explicitly community-source reviewed.

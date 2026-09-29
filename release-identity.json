@@ -2,9 +2,10 @@
   "productName": "HD2 Chaos Slot Machine",
   "publicVersion": "1.0.0",
   "displayVersion": "1.0",
-  "channel": "local-preview",
+  "channel": "release",
   "artifactStem": "HD2-Chaos-Slot-Machine",
   "tagPrefix": "hd2-chaos-slot-machine-v",
+  "repository": "BootsOfTango/HD2-Chaos-Slot-Machine",
   "profileDirectory": "Helldivers 2 Chaos Slot Machine",
   "appId": "com.bootsoftango.helldivers2chaosslotmachine"
 }

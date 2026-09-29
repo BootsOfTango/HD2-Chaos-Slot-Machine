@@ -1,8 +1,8 @@
 # Clean Windows installation/uninstallation acceptance
 
-## Current gate: incomplete — hosted fresh install passed, uninstall/reinstall not run
+## Current gate: automated hosted lifecycle passed; broader manual coverage incomplete
 
-Latest September29 result: hosted run36630110703 passed build/inspection and128 fresh-install checks on Windows Server2022 Datacenter, but the normal app-close request failed. The test stopped before uninstall/reinstall. Read `HOSTED_INSTALLER_LIFECYCLE.md` for exact source/artifact hashes and preserved failed attempts. Do not extrapolate source-CI success or installed-file verification into a lifecycle pass. Owner PC/cards untouched; broader manual procedure below remains incomplete.
+Latest September29 result supersedes the stopped attempts: run36637328640/head dce5c9dca22d50de79e319f9d14ec0eac27f9184 **passed273 checks** on disposable Windows Server2022. Install, normal default-profile app close, actual uninstall, reinstall, graceful launch/close and byte-exact synthetic save preservation verified. Root cause was the test not acknowledging the first-run backup reminder; exact-text/PID/button validation fixed the driver. See `HOSTED_INSTALLER_LIFECYCLE.md`. No owner-PC changes. Manual/tools-free consumer Windows, physical audio/DPI, all-users, portable first-run and disconnected-install steps below remain distinct and unverified here.
 
 September29 update: local read-only checks still report Windows10 Home/x64, HypervisorPresent=False and no WindowsSandbox/VBoxManage/vmrun/Get-VM command. Owner now explicitly approved **disposable GitHub-hosted Windows testing**, development-PR updates and a temporary public unsigned test artifact. See `HOSTED_INSTALLER_LIFECYCLE.md`. That workflow is a fresh product-state automated lifecycle subset on Windows Server with preinstalled development tools, not completion of every manual/tools-free acceptance step below. Hosted results must be recorded before claiming a pass. No host OS/security changes or local uninstall are authorized.
 

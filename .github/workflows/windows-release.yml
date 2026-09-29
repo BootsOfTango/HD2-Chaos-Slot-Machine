@@ -100,7 +100,10 @@ jobs:
           ARTIFACT_SIGNING_MODE: ${{ steps.metadata.outputs.signing-mode }}
           WINDOWS_SIGNING_PUBLISHER_NAME: ${{ steps.metadata.outputs.sign-build == 'true' && secrets.WINDOWS_SIGNING_PUBLISHER_NAME || '' }}
 
-      - name: Upload only the four exact validated artifacts
+      - name: Prepare release notes from the exact verified artifact hashes
+        run: node scripts/prepare-release-notes.js
+
+      - name: Upload four exact validated artifacts and their release notes
         id: upload
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -110,6 +113,7 @@ jobs:
             dist/HD2-Chaos-Slot-Machine-v${{ steps.metadata.outputs.version }}-win-x64.zip.sha256
             dist/HD2-Chaos-Slot-Machine-Setup-v${{ steps.metadata.outputs.version }}-win-x64.exe
             dist/HD2-Chaos-Slot-Machine-Setup-v${{ steps.metadata.outputs.version }}-win-x64.exe.sha256
+            dist/RELEASE-NOTES.md
           if-no-files-found: error
           retention-days: 14
           include-hidden-files: false
@@ -143,9 +147,9 @@ jobs:
             "HD2-Chaos-Slot-Machine-v$env:RELEASE_VERSION-win-x64.zip",
             "HD2-Chaos-Slot-Machine-Setup-v$env:RELEASE_VERSION-win-x64.exe"
           )
-          $expected = @($files) + @($files | ForEach-Object { "$_.sha256" })
+          $expected = @($files) + @($files | ForEach-Object { "$_.sha256" }) + @('RELEASE-NOTES.md')
           $actual = @(Get-ChildItem -LiteralPath release-assets -Force)
-          if ($actual.Count -ne 4) { throw 'Expected exactly four release files.' }
+          if ($actual.Count -ne 5) { throw 'Expected four release files and one notes file.' }
           foreach ($item in $actual) {
             if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -or $item.Name -cnotin $expected) { throw 'Unexpected artifact entry.' }
           }
@@ -153,6 +157,14 @@ jobs:
             $digest = (Get-FileHash -LiteralPath "release-assets/$file" -Algorithm SHA256).Hash.ToLowerInvariant()
             $sidecar = [IO.File]::ReadAllText((Join-Path (Get-Location) "release-assets/$file.sha256"))
             if ($sidecar.TrimEnd("`r", "`n") -cne "$digest  $file") { throw 'Artifact checksum mismatch.' }
+          }
+          $notesFile = Get-Item -LiteralPath 'release-assets/RELEASE-NOTES.md'
+          if ($notesFile.Length -lt 100 -or $notesFile.Length -gt 131072) { throw 'Unexpected release-notes size.' }
+          $notes = [IO.File]::ReadAllText($notesFile.FullName)
+          if (!$notes.StartsWith("# HD2 Chaos Slot Machine $env:RELEASE_VERSION`n") -or $notes.Contains('**pending**')) { throw 'Unexpected release notes.' }
+          foreach ($file in $files) {
+            $digest = (Get-FileHash -LiteralPath "release-assets/$file" -Algorithm SHA256).Hash.ToLowerInvariant()
+            if (!$notes.Contains("$digest  $file")) { throw 'Release notes do not match artifact checksums.' }
           }
 
       - name: Create a new draft without replacing an existing release
@@ -165,6 +177,6 @@ jobs:
         run: |
           $ErrorActionPreference = 'Stop'
           # gh release create refuses an existing release; no edit/upload --clobber.
-          $files = @(Get-ChildItem -LiteralPath release-assets -File | ForEach-Object { $_.FullName })
-          gh release create $env:RELEASE_TAG @files --repo $env:GH_REPO --verify-tag --draft --title "HD2 Chaos Slot Machine $env:RELEASE_VERSION" --notes 'Maintainer review required: replace these draft notes with installation, usage, limitations, patch notes and signing information. Verify downloaded assets before publication.'
+          $files = @(Get-ChildItem -LiteralPath release-assets -File | Where-Object { $_.Name -cne 'RELEASE-NOTES.md' } | ForEach-Object { $_.FullName })
+          gh release create $env:RELEASE_TAG @files --repo $env:GH_REPO --verify-tag --draft --title "HD2 Chaos Slot Machine $env:RELEASE_VERSION" --notes-file 'release-assets/RELEASE-NOTES.md'
           if ($LASTEXITCODE -ne 0) { throw 'Draft creation failed; inspect state manually. Never overwrite existing assets.' }

@@ -22,4 +22,4 @@ A disclaimer explains ownership/non-affiliation but does not itself establish a 
 
 ## Windows acceptance
 
-The personal-PC backed-up upgrade is complete. The separately authorized hosted fresh installation passed its checks, but normal window-close failed; uninstall/reinstall remain unexecuted. See `HOSTED_INSTALLER_LIFECYCLE.md`. No repeat on the personal PC occurred. The Windows Server image has preinstalled tools, so manual consumer-Windows/audio/DPI/wizard/offline/all-users checks remain distinct.
+The personal-PC backed-up upgrade is complete. The separately authorized hosted lifecycle now passed273 checks in run36637328640: fresh install, normal launches/graceful closes, actual uninstall, reinstall and exact synthetic-save preservation. The earlier close failure was the test missing first-run reminder acknowledgement; exact observed-dialog handling corrected it. See `HOSTED_INSTALLER_LIFECYCLE.md`. No repeat on the personal PC occurred. The Windows Server image has preinstalled tools, so manual consumer-Windows/audio/DPI/wizard/offline/all-users checks remain distinct.

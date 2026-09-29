@@ -96,7 +96,7 @@
           const raw = await Promise.race([interruption, (async () => {
             const response = await fetchImpl(URL, { method: 'GET', credentials: 'omit', redirect: 'error', cache: 'no-store',
               signal: current.controller.signal, headers: { Accept: 'application/json', 'Accept-Language': 'en-US',
-                'X-Super-Client': 'HD2-Chaos-Slot-Machine', 'X-Super-Contact': 'https://github.com/BootsOfTango/Helldivers-2-Roulette' } });
+                'X-Super-Client': 'HD2-Chaos-Slot-Machine', 'X-Super-Contact': 'https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine' } });
             if (!response.ok) { const error = Error('http-' + response.status); error.retryMs = refreshPolicy.retryAfter(response.headers?.get('Retry-After'), now()); throw error; }
             return readBody(response);
           })()]);

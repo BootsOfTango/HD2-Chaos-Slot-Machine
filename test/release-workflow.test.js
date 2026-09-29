@@ -176,9 +176,11 @@ test('signature verification accepts NotSigned only for unsigned mode and fails 
   assert.notEqual(run('signed','NotSigned').status,0);
 });
 
-test('artifact handoff uses an exact four-file list and same-run immutable artifact ID', () => {
+test('artifact handoff uses four exact downloads plus notes and same-run immutable artifact ID', () => {
   const upload = build.steps.find(step => step.id === 'upload');
-  assert.equal(upload.with.path.trim().split('\n').length, 4);
+  assert.equal(upload.with.path.trim().split('\n').length, 5);
+  assert.ok(upload.with.path.includes('dist/RELEASE-NOTES.md'));
+  assert.ok(build.steps.some(step=>step.run==='node scripts/prepare-release-notes.js'));
   assert.ok(!upload.with.path.includes('*'));
   assert.equal(upload.with['include-hidden-files'], false);
   const download = draft.steps.find(step => step.uses?.startsWith('actions/download-artifact@'));
@@ -191,6 +193,7 @@ test('release creation is draft-only and never overwrites published assets', () 
   const step = draft.steps.find(step => step.run?.includes('gh release create'));
   const commands = step.run.split('\n').filter(line => !line.trim().startsWith('#')).join('\n');
   assert.match(commands, /--verify-tag --draft/);
+  assert.match(commands, /--notes-file 'release-assets\/RELEASE-NOTES.md'/);
   assert.doesNotMatch(commands, /--clobber|gh release (edit|upload|delete)|--draft=false/);
   assert.match(commands, /\$LASTEXITCODE -ne 0/);
   assert.equal(step.env.GH_TOKEN, '${{ github.token }}');
@@ -209,6 +212,7 @@ test('actual PowerShell transfer validator rejects corrupt, missing, extra and w
       fs.writeFileSync(path.join(assets, file), bytes);
       fs.writeFileSync(path.join(assets, file + '.sha256'), `${crypto.createHash('sha256').update(bytes).digest('hex')}  ${file}\n`);
     }
+    fs.writeFileSync(path.join(assets,'RELEASE-NOTES.md'),'# HD2 Chaos Slot Machine 1.2.3\n\nFixture release notes, no executable content.\n'+files.map(file=>fs.readFileSync(path.join(assets,file+'.sha256'),'utf8')).join('\n'));
   };
   // Windows PowerShell must initialize its own module paths, not inherit pwsh's.
   const shellEnv = { ...process.env }; delete shellEnv.PSModulePath;
@@ -223,5 +227,7 @@ test('actual PowerShell transfer validator rejects corrupt, missing, extra and w
     reset(); assert.notEqual(run('v9.9.9').status, 0);
     reset(); fs.writeFileSync(path.join(assets, files[0] + '.sha256'), 'wrong-name-and-hash'); assert.notEqual(run().status, 0);
     reset(); fs.unlinkSync(path.join(assets, files[0])); fs.mkdirSync(path.join(assets, files[0])); assert.notEqual(run().status, 0);
+    reset(); fs.writeFileSync(path.join(assets,'RELEASE-NOTES.md'),'# HD2 Chaos Slot Machine 1.2.3\n**pending**'); assert.notEqual(run().status,0);
+    reset(); fs.appendFileSync(path.join(assets,'RELEASE-NOTES.md'),'x'.repeat(131072)); assert.notEqual(run().status,0);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });

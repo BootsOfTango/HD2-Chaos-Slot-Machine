@@ -1,10 +1,11 @@
 # HD2 Chaos Slot Machine 1.0 — draft release notes
 
-**Unpublished preparation document — not a release announcement.** Describes the current development preview as reviewed September 28, 2026. Final download links, signatures, checksums and acceptance evidence must come from the approved release build. Artwork-rights, clean-Windows lifecycle and other release gates remain open. No permission, test pass or owner publication approval is implied by these notes.
+**Unpublished preparation document — not a release announcement.** Prepared September 29, 2026 for the single local/GitHub 1.0 release candidate. Hosted install/uninstall/reinstall and synthetic-save preservation passed; manual consumer-Windows limitations remain documented. Final download links and checksums are generated from the exact built files by `scripts/prepare-release-notes.js`, not copied from an earlier candidate. Artwork-use and final publication decisions remain explicit. Source preparation is not publication approval.
 
 ## What's prepared
 
 - **Full-name branding:** HD2 Chaos Slot Machine, with an original yellow/black app mark. Public 1.0 is separate from Windows/package compatibility version 1.1.14; saves retain their existing profile identity.
+- **Repository rename:** the project is now [BootsOfTango/HD2-Chaos-Slot-Machine](https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine). Historical tags/downloads remain unchanged. The installed application and GitHub packages use the same release candidate, not a separate stream build.
 - **Desktop controls:** fullscreen startup, F11/toggle button and Escape handling. Smaller windows keep a scrollable desktop layout, including background Space-drag and reachable dialogs.
 - **Armory:** collapsible equipment/Warbond groups, search, filters, locally bundled images, separate Owned/Included controls and Warbond bulk controls. The reviewed catalog contains 214 items and 25 Warbond groups.
 - **New equipment:** Castellan's Creed, Ironclad Democracy and separately acquired rewards/Superstore gear. New additions are opt-in; LAS-12 Sai is not granted by Ironclad's bulk action. Eagle Gas Airstrike remains separate from Orbital Gas Strike. Meltagun uses a cyan support-stratagem icon.
@@ -33,6 +34,7 @@ Review your actual unlocks in **Armory**, spin and lock a loadout, confirm a pla
 - Older Solo v1 ratings stay unchanged until Review card rules is confirmed. Original ratings remain available; recalibrated ratings/ranks may increase. Review listed incomplete-card removals carefully. Open save folder contains verified card-upgrades recovery copies. Restoring a whole backup replaces newer dives/comments, so export first and review it; oversized native backups need assisted recovery. Do not edit format-2 saves in older apps. Compare/equipment analytics remain Legacy-only; Solo comparisons are in Rank.
 - Community data is not second-by-second game synchronization. Check retrieval times and the in-game map. Missing activity reports do not mean no special enemies; approximate sectors are not exact game borders. Saved-card locators are reference geography, not a historical war replay.
 - Mission choices are compatible suggestions, not the ship's exact operation list. Regional/event cases can require a player-confirmed shortlist. Gear/catalog changes require app updates; refresh only updates war data. Nothing updates while the app is closed.
+- App updates are manual: export cards, download the newer Setup, close the app and install it. No automatic app updater is shipped. Internal updater metadata/blockmap files are not player downloads.
 - The planned 1.0 download is **unsigned**, by the maintainer's choice. Windows may show Unknown publisher or a SmartScreen warning. Keep Windows protection enabled; if Windows blocks it or you are unsure, stop and report the message. A checksum detects changed bytes, not malware. Download only from this project's release page; do not disable protection to run it.
 - If saving fails, keep the app open and retry or export the session. Do not delete an unreadable save or recovery files to force startup. If freezing/display trouble/blue screens occur, stop and report the build, time and steps rather than repeatedly reproducing a crash.
 
@@ -42,7 +44,7 @@ Review your actual unlocks in **Armory**, spin and lock a loadout, confirm a pla
 - Recommended Setup download and SHA-256: **pending**
 - Optional app ZIP download and SHA-256: **pending**
 - Distribution choice: **unsigned**; final artifact signature-status verification remains pending.
-- Final upgrade, clean-install/uninstall and hands-on acceptance report: **pending**
+- Existing candidate upgrade and hosted install/uninstall/reinstall: **passed**, indexed in [acceptance report](FINAL_TEST_REPORT_1_0.md); final branded bytes still require revalidation. Broader manual scenarios are not implied.
 - Final security/dependency/artifact review and artwork-rights decision: **pending**
 - Owner publication approval: **pending**
 

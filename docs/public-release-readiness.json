@@ -2,11 +2,35 @@
   "product": "HD2 Chaos Slot Machine",
   "target": "1.0 Official Project Release",
   "checks": {
-    "artworkRights": { "status": "blocked", "evidence": "docs/RELEASE_CANDIDATE_1_0.md", "reason": "September29 candidate indexed:450 shipped media files,109 documented original-origin files,14 catalog-associated crossover assets; no permission established by inventory.89 legacy stratagem source/version findings remain. Rights-holder request remains draft only; artwork-use basis or cleared replacements remain unresolved. Credits/hashes/noncommercial purpose are not recorded as clearance." },
-    "licenseInventory": { "status": "pending", "evidence": "docs/RELEASE_CANDIDATE_1_0.md", "reason": "September29 test candidate:552 ASAR source files and shipped notices verified; installer/uninstaller components and original source materials match reviewed policy, builder notice included, no WinShell. No new missing notice detected in this bounded technical review. Final approved release-channel build still requires matching evidence; artwork is separately blocked." },
-    "securityReview": { "status": "pending", "evidence": "docs/RELEASE_CANDIDATE_1_0.md", "reason": "September29 fresh audit0 known vulnerabilities,909 local tests and CSP/catalog/assets pass; current candidate packaged security44 checks pass. PR407 head cae7b2275e515a418db276fc57e9657fb8474930 has passing hosted Windows/Linux source CI; private vulnerability reporting enabled. Required-check enforcement not configured or authorized. Final approved source/runtime/artifact review remains; no comprehensive security guarantee." },
-    "versionAndBranding": { "status": "pending", "evidence": "docs/INSTALLER_1_0_UPGRADE.md", "reason": "September29 candidate native per-user upgrade passed with verified backup:99 installed files match, full-name native shortcuts and uninstall registration verified,295 profile files unchanged. Desktop uses installed EXE with unchanged owner-review saves; Start menu retains separate normal profile. v1.0.0 filenames and compatibility1.1.14 retained. Final release channel remains local-preview; physical pin/DPI and fresh-machine acceptance remain." },
-    "finalArtifactTests": { "status": "pending", "evidence": "docs/INSTALLER_1_0_UPGRADE.md", "reason": "September29 candidate ZIP/embedded installer/source parity/fuses and packaged workflow/transfer/card-rules/security/gear pass. Exact Setup then exited0 upgrading actual installation;99 files match. Installed EXE workflow333+restart16+startup9+network33+cache5 and card-rules25+6/recovery pass using synthetic profiles. Final911 local tests+CSP/catalog/assets pass. Owner basic acceptance already recorded. Separate clean-Windows install/uninstall and final release-channel build evidence remain; do not repeat completed upgrade as pending." },
-    "finalArtifactScanAndSigning": { "status": "pending", "evidence": "docs/RELEASE_CANDIDATE_1_0.md", "reason": "September29 candidate-folder Defender scan exit0 reports no threats; Setup/ZIP hashes rechecked afterward. App, Setup and extracted uninstaller are NotSigned. Final signing or explicit unsigned distribution decision and reviewed workflow policy remain. Scan/audit are bounded checks, not safety guarantees; any final-byte changes require revalidation." }
+    "artworkRights": {
+      "status": "blocked",
+      "evidence": "docs/RELEASE_CANDIDATE_1_0.md",
+      "reason": "September29 candidate indexed:450 shipped media files,109 documented original-origin files,14 catalog-associated crossover assets; no permission established by inventory.89 legacy stratagem source/version findings remain. Rights-holder request remains draft only; artwork-use basis or cleared replacements remain unresolved. Credits/hashes/noncommercial purpose are not recorded as clearance."
+    },
+    "licenseInventory": {
+      "status": "passed",
+      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
+      "reason": "September29 unified final candidate:552 bundled source files, actual ZIP/Setup payloads and component notices verified. Artwork-use decision remains separately unresolved; this technical notice check is not permission."
+    },
+    "securityReview": {
+      "status": "pending",
+      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
+      "reason": "Unified source924/924 local tests, audit0, packaged renderer security44 passed; minimal-rights workflow and exact notes/artifact handoff tested. Await current renamed-repository hosted CI; previous green run is not evidence for this new head."
+    },
+    "versionAndBranding": {
+      "status": "passed",
+      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
+      "reason": "Repository renamed in place to HD2-Chaos-Slot-Machine; full-name1.0 source channel, UI, Setup/ZIP, README/changelog and generated checksum-bound release notes aligned. Internal1.1.14/save identity preserved.99 installed runtime files and uninstaller match; Desktop kit matches final artifacts;295 profile files unchanged. Publication has not occurred."
+    },
+    "finalArtifactTests": {
+      "status": "pending",
+      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
+      "reason": "Unified packaged workflow396/card rules31/transfer41/security44 and installed final EXE396 pass. Backed-up upgrade verifies99 files/uninstaller,295 profile files unchanged. Earlier hosted273 lifecycle passes its recorded previous commit; fresh renamed-repo CI pending. Manual consumer-Windows/audio/DPI/all-users/offline limits remain explicit."
+    },
+    "finalArtifactScanAndSigning": {
+      "status": "passed",
+      "evidence": "docs/UNIFIED_RELEASE_1_0.md",
+      "reason": "Exact unified Setup bf1d0557b87fee242730ad7931423d567c548e9532e54701c73b2f6f44368cc5 and ZIP1aeae708cfb00638ce7e7cefa8c0648dd41a96c2b395ed2b67962ae70028eb98 verified. App/Setup/embedded uninstaller NotSigned as approved; final-directory Defender scan exit0/no threats. Any rebuild requires new checks. No safety guarantee."
+    }
   }
 }

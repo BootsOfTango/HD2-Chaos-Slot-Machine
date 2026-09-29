@@ -62,7 +62,7 @@ test('startup requests once with fixed URL, English, no credentials or redirects
   assert.equal(f.calls.length, 1);
   const [url, options] = f.calls[0];
   assert.equal(url, refresh.URL); assert.equal(options.credentials, 'omit'); assert.equal(options.redirect, 'error');
-  assert.equal(options.headers['Accept-Language'], 'en-US'); assert(options.headers['X-Super-Contact'].endsWith('/Helldivers-2-Roulette'));
+  assert.equal(options.headers['Accept-Language'], 'en-US'); assert(options.headers['X-Super-Contact'].endsWith('/HD2-Chaos-Slot-Machine'));
   assert.equal(f.service.getState().status.state, 'fresh'); assert.equal(f.disk.writes[0], refresh.CACHE_KEY);
   assert.equal(war.readCache(JSON.parse(f.disk.getItem(refresh.CACHE_KEY)), { now: START }).status, 'valid');
   assert.equal((await f.service.start()).reason, 'already-started'); f.service.stop();

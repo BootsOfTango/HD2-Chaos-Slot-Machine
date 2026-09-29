@@ -48,7 +48,7 @@ test('native lifecycle checks ordinary uninstall effects and save bytes without 
 test('PowerShell refusal paths and validate-only cannot touch this PC installation', {skip:process.platform!=='win32'},()=>{
   const temp=fs.mkdtempSync(path.join(os.tmpdir(),'hd2-ci-guard-'));
   const sentinel=path.join(temp,'sentinel.txt');fs.writeFileSync(sentinel,'must stay');
-  const env={...process.env,GITHUB_ACTIONS:'false',RUNNER_ENVIRONMENT:'local',RUNNER_OS:'Windows',ImageOS:'win22',GITHUB_RUN_ID:'123',GITHUB_REPOSITORY:'BootsOfTango/Helldivers-2-Roulette',RUNNER_TEMP:temp};
+  const env={...process.env,GITHUB_ACTIONS:'false',RUNNER_ENVIRONMENT:'local',RUNNER_OS:'Windows',ImageOS:'win22',GITHUB_RUN_ID:'123',GITHUB_REPOSITORY:'BootsOfTango/HD2-Chaos-Slot-Machine',RUNNER_TEMP:temp};
   const run=(overrides={},switches=['-AllowDisposableGitHubRunner','-ValidateOnly'],bundle=path.join(temp,'hd2-lifecycle-bundle'))=>spawnSync('pwsh',['-NoProfile','-NonInteractive','-File',script,'-Bundle',bundle,...switches],{env:{...env,...overrides},encoding:'utf8',windowsHide:true,timeout:15000});
   try {
     let r=run();assert.notEqual(r.status,0);assert.match(r.stderr,/REFUSED/);
