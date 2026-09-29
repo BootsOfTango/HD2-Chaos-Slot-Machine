@@ -1,0 +1,55 @@
+{
+  "fixtureVersion": 1,
+  "origin": "Synthetic audit fixtures, not player saves or evidence of every historical released format.",
+  "legacy": {
+    "id": "audit-legacy",
+    "createdAt": "2026-01-01T12:00:00.000Z",
+    "seed": "Synthetic Legacy Dive",
+    "difficulty": 7,
+    "faction": "Automatons",
+    "mode": "Normal (40)",
+    "planet": "Synthetic old planet text",
+    "statsLocked": true,
+    "stats": { "kills": 100, "accuracy": 80, "deaths": 2, "blueSideObjCount": 3, "extractedSafely": true },
+    "lockedStatsSnapshot": { "kills": 100, "accuracy": 80, "deaths": 2, "blueSideObjCount": 3, "extractedSafely": true },
+    "scoreRaw": 521.123,
+    "grade": 87,
+    "originalNote": "Synthetic original note",
+    "commentNotes": [{ "id": "audit-comment", "text": "Synthetic later comment", "createdAt": "2026-01-02T12:00:00.000Z" }],
+    "historicalExtension": { "keep": "unknown ordinary metadata" }
+  },
+  "soloV1": {
+    "id": "audit-solo-v1",
+    "createdAt": "2026-01-01T12:00:00.000Z",
+    "seed": "Synthetic Solo Dive",
+    "difficulty": 7,
+    "faction": "Automatons",
+    "mode": "Normal (40)",
+    "statsLocked": true,
+    "stats": { "kills": 100, "accuracy": 80, "deaths": 2, "blueSideObjCount": 3, "extractedSafely": true },
+    "lockedStatsSnapshot": { "kills": 100, "accuracy": 80, "deaths": 2, "blueSideObjCount": 3, "extractedSafely": true },
+    "originalNote": "Synthetic locked note",
+    "commentNotes": [{ "id": "audit-comment", "text": "Keep this synthetic comment" }],
+    "soloScore": {
+      "version": 1,
+      "inputs": { "minutes": 20, "sideAvailable": 4, "missionSuccess": true },
+      "result": {
+        "version": 1,
+        "eligible": true,
+        "errors": [],
+        "missing": [],
+        "axes": [25, 80, 75, 50, 75, 100],
+        "rating": 67.5,
+        "killsPerMinute": 5,
+        "deathsPer10": 1,
+        "minutes": 20,
+        "timeLimit": 40,
+        "sideDone": 3,
+        "sideAvailable": 4,
+        "missionSuccess": true,
+        "context": { "difficulty": 7, "faction": "Automatons", "mission": "Normal (40)", "missionName": "Normal (40)", "sideAvailable": 4, "timeLimit": 40 }
+      }
+    }
+  },
+  "expectedV2": { "axes": [50, 80, 75, 50, 75, 100], "rating": 71.67 }
+}

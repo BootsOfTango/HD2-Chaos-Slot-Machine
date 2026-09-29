@@ -1,0 +1,224 @@
+{
+  "version": "1.1.6",
+  "source": "Byte-equivalent to catalog in verified dist/safety-preview-v1.1.6/win-unpacked/resources/app.asar; captured before batch 4 changes.",
+  "reviewedRows": [
+    {
+      "name": "AR-2 Coyote",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "assetPath": "assets/weapons/primaries/ar-2-coyote-wiki.png",
+      "id": "primary:ar-2-coyote",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Dust Devils",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "AR-32 Pacifier",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "assetPath": "assets/weapons/primaries/ar-32-pacifier-wiki.png",
+      "id": "primary:ar-32-pacifier",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Force of Law",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "R-2 Amendment",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "assetPath": "assets/weapons/primaries/r-2-amendment-wiki.png",
+      "id": "primary:r-2-amendment",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Masters of Ceremony",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-109 Urchin",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "assetPath": "assets/weapons/throwables/g-109-urchin-wiki.png",
+      "id": "throwable:g-109-urchin",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Force of Law",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-142 Pyrotech",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "assetPath": "assets/weapons/throwables/g-142-pyrotech-wiki.png",
+      "id": "throwable:g-142-pyrotech",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Masters of Ceremony",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "G-7 Pineapple",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Dust Devils",
+      "source": "Dust Devils",
+      "assetPath": "assets/weapons/throwables/g-7-pineapple-wiki.png",
+      "id": "throwable:g-7-pineapple",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Dust Devils",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "De-Escalator",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/de-escalator.svg",
+      "id": "stratagem:de-escalator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Expendable Napalm",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/expendable-napalm.svg",
+      "id": "stratagem:expendable-napalm",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "AX/ARC-3 K-9",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/guard-dog-arc.svg",
+      "id": "stratagem:ax-arc-3-k-9",
+      "aliases": [
+        "guard dog arc"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "One True Flag",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/one-true-flag.svg",
+      "id": "stratagem:one-true-flag",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Solo Silo",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/solo-silo.svg",
+      "id": "stratagem:solo-silo",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Speargun",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/speargun.svg",
+      "id": "stratagem:speargun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Sample Scanner",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Masters of Ceremony",
+      "source": "Masters of Ceremony",
+      "assetPath": "assets/boosters/sample-scanner-wiki.svg",
+      "id": "booster:sample-scanner",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Masters of Ceremony",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Stun Pods",
+      "type": "booster",
+      "subgroup": "booster",
+      "warbond": "Force of Law",
+      "source": "Force of Law",
+      "assetPath": "assets/boosters/stun-pods-wiki.svg",
+      "id": "booster:stun-pods",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Force of Law",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ],
+  "hashes": {
+    "catalog": "7f80535b2fc6e08c2b390e0bd446a8fa3f6413df83252e27fe757c22fe01d005",
+    "untouched": "caee9e0d1751930c8ba5fec409c463ee12da7deda25a1240937d1c052f694456",
+    "priorWarbonds": "32db33b7fee23b748d782945f98afafb6cc8b2cc93a4e6a75e88ecd7badde0d0",
+    "protected": "da999d0b3d7c4311dbddc584386d23363f4deb2b8da363c720fb871b8c480d17"
+  }
+}

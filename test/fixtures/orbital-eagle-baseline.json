@@ -1,0 +1,285 @@
+{
+  "version": "1.1.13",
+  "capturedAt": "2026-09-15T21:19:00.274Z",
+  "source": "Verified v1.1.13 app.asar; independent pre-orbital/Eagle audit catalog",
+  "asarSha256": "d1ce0c8e2237e7c5e3ed4c726737c631f8f5aa547e6f478d3f909dc205af3f23",
+  "hashes": {
+    "catalog": "40318f99cb5fe8c91b3e4e0c674ffd1f62900c4708c26b5b9a9fa93332b098f3",
+    "untouched": "ed50ad95e14e800db6eff3a070e87af08d55d51cec7036176fdd521e94dcbd31",
+    "priorWarbonds": "2d0e1380ac16a2f90767b3f8cdd4bd440bd70f45b315d463a2f948e8a9e71098",
+    "protected": "e90843ef4d37df25b5ce04e9673b7b16ef7e62d96350751c111d7aced74d1272"
+  },
+  "reviewedRows": [
+    {
+      "name": "Orbital 120MM HE Barrage",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-120mm-he-barrage.svg",
+      "id": "stratagem:orbital-120mm-he-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital 380MM HE Barrage",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-380mm-he-barrage.svg",
+      "id": "stratagem:orbital-380mm-he-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Airburst Strike",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-airburst-strike.svg",
+      "id": "stratagem:orbital-airburst-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Gas Strike",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-gas-strike.svg",
+      "id": "stratagem:orbital-gas-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Gatling Barrage",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-gatling-barrage.svg",
+      "id": "stratagem:orbital-gatling-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Laser",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-laser.svg",
+      "id": "stratagem:orbital-laser",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Napalm Barrage",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-napalm-barrage.svg",
+      "id": "stratagem:orbital-napalm-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Precision Strike",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-precision-strike.svg",
+      "id": "stratagem:orbital-precision-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Railcannon Strike",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-railcannon-strike.svg",
+      "id": "stratagem:orbital-railcannon-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Smoke Strike",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-smoke-strike.svg",
+      "id": "stratagem:orbital-smoke-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Orbital Walking Barrage",
+      "type": "stratagem",
+      "subgroup": "orbital",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/orbital/orbital-walking-barrage.svg",
+      "id": "stratagem:orbital-walking-barrage",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle 110MM Rocket Pods",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-110mm-rocket-pods.svg",
+      "id": "stratagem:eagle-110mm-rocket-pods",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle 500KG Bomb",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-500kg-bomb.svg",
+      "id": "stratagem:eagle-500kg-bomb",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle Airstrike",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-airstrike.svg",
+      "id": "stratagem:eagle-airstrike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle Cluster Bomb",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-cluster-bomb.svg",
+      "id": "stratagem:eagle-cluster-bomb",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle Napalm Airstrike",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-napalm-airstrike.svg",
+      "id": "stratagem:eagle-napalm-airstrike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle Smoke Strike",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-smoke-strike.svg",
+      "id": "stratagem:eagle-smoke-strike",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Eagle Strafing Run",
+      "type": "stratagem",
+      "subgroup": "eagle",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/eagle/eagle-strafing-run.svg",
+      "id": "stratagem:eagle-strafing-run",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ]
+}
+

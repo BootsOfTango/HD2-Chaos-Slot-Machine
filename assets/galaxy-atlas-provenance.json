@@ -1,0 +1,10 @@
+{
+  "source": "https://api.helldivers2.dev/api/v1/planets",
+  "schema": "https://helldivers-2.github.io/api/openapi/Helldivers-2-API.json",
+  "observedAt": "2026-09-21T05:33:43.060Z",
+  "planetCount": 273,
+  "normalizedSha256": "00f56b0bcf464bbd28091aae1ee9235a9b21582fa4c597f80f34d01fdb07e4d6",
+  "description": "Dated display metadata normalized by galaxy-map-model.js. Community API; not an official game asset. Names, coordinates, observed owners, sector membership and API waypoint links; no account data, textures, sector polygons, exact mission availability or playability grant.",
+  "updatePolicy": "Reviewed release-based bundled snapshot. Never silently replace source bundle during app startup. Ownership can be stale; current campaign eligibility is separate.",
+  "rightsNote": "Attribution and provenance are not a grant of rights or public-release legal clearance. Existing public distribution review remains required."
+}

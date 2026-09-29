@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "assets": [{
+    "name": "Helldivers Mobilize!",
+    "assetPath": "assets/warbonds/helldivers-mobilize.png",
+    "sourceKind": "game-cover-art-via-community",
+    "sourcePage": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+    "filePage": "https://helldivers.wiki.gg/wiki/File:Helldivers_Mobilize_Warbond_Cover_Art.png",
+    "imageUrl": "https://helldivers.wiki.gg/images/Helldivers_Mobilize_Warbond_Cover_Art.png?dfebff",
+    "contributor": "Dogo314 / Helldivers Wiki.gg; game artwork belongs to its rights holders",
+    "retrievedAt": "2026-09-15",
+    "width": 2048,
+    "height": 1024,
+    "sha256": "c54d724e5bafff34ed307e5f7a67f93c983b5411993329802ddf2ee2728d13f7",
+    "visualCheck": "Blue/yellow illustration with Helldivers, flag and Terminids. Background without title lettering; no generated or recolored artwork."
+  }]
+}

@@ -1,0 +1,254 @@
+{
+  "version": "1.1.14",
+  "buildLabel": "backpack-vehicle",
+  "source": "Verified backpack/vehicle ASAR before support-weapon audit",
+  "asarSha256": "6a432f306c663da45511c964e8df03004b2aa6c42325487adb2788ae9af54587",
+  "hashes": {
+    "catalog": "afb6541c9a9cb20cdfea6e8a5b55941db99521dc3d3d9e395303d66c1c16095b",
+    "untouched": "b29488afd710f4e30fc77492b35eec40ee2fe2313612d43c3f0660e245663e12",
+    "priorWarbonds": "2d0e1380ac16a2f90767b3f8cdd4bd440bd70f45b315d463a2f948e8a9e71098",
+    "protected": "2c81f82ff733ab4226672e53fe408705dde11008bddda3e9f2a36b562865fcbf"
+  },
+  "reviewedRows": [
+    {
+      "name": "AC-8 Autocannon",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/ac-8-autocannon.svg",
+      "id": "stratagem:ac-8-autocannon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "APW-1 Anti-Materiel Rifle",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/apw-1-anti-materiel-rifle.svg",
+      "id": "stratagem:apw-1-anti-materiel-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "ARC-3 Arc Thrower",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/arc-3-arc-thrower.svg",
+      "id": "stratagem:arc-3-arc-thrower",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "EAT-17 Expendable Anti-Tank",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/eat-17-expendable-anti-tank.svg",
+      "id": "stratagem:eat-17-expendable-anti-tank",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "FAF-14 Spear",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/faf-14-spear.svg",
+      "id": "stratagem:faf-14-spear",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "FLAM-40 Flamethrower",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/flam-40-flamethrower.svg",
+      "id": "stratagem:flam-40-flamethrower",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "GL-21 Grenade Launcher",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/gl-21-grenade-launcher.svg",
+      "id": "stratagem:gl-21-grenade-launcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "GR-8 Recoilless Rifle",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/gr-8-recoilless-rifle.svg",
+      "id": "stratagem:gr-8-recoilless-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "LAS-98 Laser Cannon",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/las-98-laser-cannon.svg",
+      "id": "stratagem:las-98-laser-cannon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "LAS-99 Quasar Cannon",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/las-99-quasar-cannon.svg",
+      "id": "stratagem:las-99-quasar-cannon",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "M-105 Stalwart",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/m-105-stalwart.svg",
+      "id": "stratagem:m-105-stalwart",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "MG-206 Heavy Machine Gun",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/mg-206-heavy-machine-gun.svg",
+      "id": "stratagem:mg-206-heavy-machine-gun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "MG-43 Machine Gun",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/mg-43-machine-gun.svg",
+      "id": "stratagem:mg-43-machine-gun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "MLS-4X Commando",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/mls-4x-commando.svg",
+      "id": "stratagem:mls-4x-commando",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "RL-77 Airburst Rocket Launcher",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/rl-77-airburst-rocket-launcher.svg",
+      "id": "stratagem:rl-77-airburst-rocket-launcher",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "RS-422 Railgun",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/support/rs-422-railgun.svg",
+      "id": "stratagem:rs-422-railgun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ]
+}

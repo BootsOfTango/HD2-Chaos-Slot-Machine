@@ -1,0 +1,32 @@
+.fanNotice {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    border: 1px solid #756520;
+    border-radius: 14px;
+    background: #151813;
+    color: #e1e4df;
+}
+.fanNotice[hidden] { display: none; }
+.fanNotice > div { flex: 1 1 420px; }
+.fanNotice h2 { margin: 0 0 6px; font-size: 20px; color: #ffda32; }
+.fanNotice p { margin: 0; font-size: 16px; line-height: 1.45; }
+.fanNotice button {
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffda32;
+    border: 1px solid #b79d27;
+    border-radius: 10px;
+    background: #252516;
+    cursor: pointer;
+}
+.fanNotice button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+/* The app keeps its desktop canvas; this short notice fits the actual window. */
+.desktop-app .fanNotice { max-width: calc(100vw - 100px); }

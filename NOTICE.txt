@@ -1,0 +1,29 @@
+HD2 Chaos Slot Machine
+Maintained by Boots Of Tango (Chris Kim)
+Copyright 2026 Chris Kim, to the extent of copyrightable original contributions.
+
+This informational notice accompanies the existing Apache License, Version 2.0
+in LICENSE.txt. It does not modify that license or withdraw permissions already
+granted under it. Other contributors retain their applicable rights. No claim is
+made here to exclusive ownership of gameplay ideas, game facts, third-party
+material, or material that is not eligible for copyright protection.
+
+This is an independent fan-made companion application. It is not affiliated
+with, sponsored by, or endorsed by Arrowhead Game Studios, Sony Interactive
+Entertainment, or the owners of featured crossover properties. "Official
+Project Release" identifies a release by this project's maintainer only.
+
+Game artwork, names, logos and marks belong to their respective rights holders.
+Community renders/traces and bundled software components may have additional
+creator rights and license requirements. The project software license does not
+license those third-party rights. See THIRD_PARTY_NOTICES.md and the referenced
+asset attribution records; retain applicable component notices with distribution.
+
+Attribution is not permission or a legal clearance statement. Artwork
+redistribution review is incomplete. This notice must not be used to represent
+the current local build as cleared for public distribution.
+
+Canonical project: https://github.com/BootsOfTango/HD2-Chaos-Slot-Machine
+Use that project's Releases page to identify maintainer-published downloads.
+No warranty of uninterrupted operation, security, legal clearance or fitness
+is created by this notice. See LICENSE.txt for the applicable license terms.

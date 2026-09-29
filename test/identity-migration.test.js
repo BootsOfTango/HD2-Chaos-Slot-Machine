@@ -6,7 +6,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const { wrapData, parseSave, parseImport } = require('../electron/storage');
 const {
-  PRODUCT_NAME, APP_ID, LEGACY_PROFILE_NAMES, MIGRATION_MARKER,
+  PRODUCT_NAME, PROFILE_DIRECTORY, APP_ID, LEGACY_PROFILE_NAMES, MIGRATION_MARKER,
   MIGRATION_ARCHIVE, resolveProfile, migrateLegacyProfile
 } = require('../electron/identity');
 
@@ -14,7 +14,7 @@ function fixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'hd2csm-migration-'));
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
   const appDataPath = path.join(root, 'app-data');
-  const destination = path.join(appDataPath, PRODUCT_NAME);
+  const destination = path.join(appDataPath, PROFILE_DIRECTORY);
   return { root, appDataPath, destination };
 }
 
@@ -38,7 +38,8 @@ function legacyFile(f, name = LEGACY_PROFILE_NAMES[0], relative = 'state.json') 
 
 test('identity uses the requested product and an explicit isolated absolute profile', t => {
   const f = fixture(t);
-  assert.equal(PRODUCT_NAME, 'Helldivers 2 Chaos Slot Machine');
+  assert.equal(PRODUCT_NAME, 'HD2 Chaos Slot Machine');
+  assert.equal(PROFILE_DIRECTORY, 'Helldivers 2 Chaos Slot Machine');
   assert.equal(APP_ID, 'com.bootsoftango.helldivers2chaosslotmachine');
   assert.deepEqual(resolveProfile(f.appDataPath, {}), { directory: f.destination, isolated: false });
   const isolated = path.join(f.root, 'test-only');

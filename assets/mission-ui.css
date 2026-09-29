@@ -1,0 +1,45 @@
+:is(#missionPlannerPanel, #missionTools) { font-size: 14px; line-height: 1.45; }
+:is(#missionPlannerPanel, #missionTools) p { margin: 8px 0; }
+.missionHero { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.missionHero[hidden], #missionChoices[hidden] { display: none; }
+.missionHero .missionIcon { width: 56px; height: 56px; }
+.missionHero #spinMode { font-size: 22px; line-height: 1.2; overflow-wrap: anywhere; min-width: 0; }
+.missionDuration { white-space: nowrap; color: #ffdb4d; font-size: 13px; margin-left: auto; }
+.missionIcon { flex: 0 0 auto; object-fit: contain; }
+/* Display-only yellow tint; retain the original, source-verified PNG pixels. */
+.missionIcon[src^="assets/missions/game-icons/"] { filter: brightness(.85) sepia(1) saturate(5); }
+#missionAvailability { color: #ffdb4d; font-weight: 600; }
+#missionFreshness { color: #d5c3a0; font-size: 12px; }
+#missionAdvice { color: #ffdb4d; font-size: 14px; line-height: 1.4; }
+#missionChoices { display: grid; grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); gap: 8px; max-height: 310px; overflow: auto; padding: 3px; }
+:is(#missionPlannerPanel, #missionTools) .missionChoice { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; margin: 0; padding: 12px 8px; min-height: 130px; border: 1px solid #535866; border-radius: 10px; background: #141923; color: #eaeef4; text-align: center; white-space: normal; }
+:is(#missionPlannerPanel, #missionTools) .missionChoice:hover:not(:disabled) { background: #252b30; border-color: #ffdb4d; }
+:is(#missionPlannerPanel, #missionTools) .missionChoice[aria-pressed=true] { border: 2px solid #ffdb4d; padding: 11px 7px; background: #302d1b; }
+.missionChoiceName { line-height: 1.3; }
+.missionChoice small { color: #c5cad1; }
+.missionChoiceTick { position: absolute; top: 4px; right: 8px; color: #ffdb4d; visibility: hidden; }
+[aria-pressed=true] .missionChoiceTick { visibility: visible; }
+:is(#missionPlannerPanel, #missionTools) :is(button,input,select,summary):focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+:is(#missionPlannerPanel, #missionTools) details { margin-top: 8px; }
+:is(#missionPlannerPanel, #missionTools) #manualModeWrap { gap: 8px; }
+:is(#missionPlannerPanel, #missionTools) #manualModeWrap button { flex: 1; min-height: 42px; margin-right: 0; }
+#missionTextList select { width: 100%; margin-top: 8px; }
+:is(#missionPlannerPanel, #missionTools) details { border: 1px solid #665b24; border-radius: 8px; padding: 10px; }
+:is(#missionPlannerPanel, #missionTools) summary { color: #ffd84a; cursor: pointer; font-weight: bold; }
+:is(#missionPlannerPanel, #missionTools) fieldset { min-width: 0; margin: 12px 0; padding: 10px; border: 1px solid #555; }
+:is(#missionPlannerPanel, #missionTools) fieldset label { display: block; margin: 6px 0; }
+:is(#missionPlannerPanel, #missionTools) input:not([type=checkbox]), :is(#missionPlannerPanel, #missionTools) select { max-width: 100%; box-sizing: border-box; font-size: 14px; }
+:is(#missionPlannerPanel, #missionTools) input[type=text] { width: 100%; }
+:is(#missionPlannerPanel, #missionTools) button { font-size: 13px; margin: 5px 8px 5px 0; }
+:is(#missionPlannerPanel, #missionTools) .missionChecklistRow { display: flex; gap: 8px; align-items: center; margin: 8px 0; padding: 8px; border: 1px solid #48494b; border-radius: 8px; cursor: pointer; }
+:is(#missionPlannerPanel, #missionTools) .missionChecklistRow:has(input:checked) { border-color: #ffdb4d; background: #302d1b; }
+:is(#missionPlannerPanel, #missionTools) .missionChecklistRow .missionIcon { width: 32px; height: 32px; }
+:is(#missionPlannerPanel, #missionTools) .missionChecklistRow small { display: block; color: #d5c3a0; }
+:is(#missionPlannerPanel, #missionTools) input[type=checkbox] { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 2px; }
+#operationMissionRows { max-height: 310px; overflow: auto; }
+#operationFeedback { color: #ffd84a; }
+:is(#missionPlannerPanel, #missionTools) span { overflow-wrap: anywhere; }
+.missionName { overflow-wrap: anywhere; min-width: 0; }
+#missionTools { margin: 8px 0 20px; padding-bottom: 16px; border-bottom: 1px solid #48494b; }
+#missionTools h3 { color: #ffdb4d; font-size: 18px; margin: 0; }
+#openMissionTools[hidden] { display: none; }

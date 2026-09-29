@@ -1,6 +1,8 @@
-# Asset Source Checklist (Official Channels/Pages Only)
+# Logo and rank artwork source checklist
 
-All gameplay-facing visuals below must originate from official Helldivers channels/pages. At implementation time, local placeholder assets are provided for tier visuals where official source files are not yet imported.
+This legacy checklist covers only the logo and rank-tier visuals below. Its target is official-source replacements; it is not a certification that all bundled catalog artwork is official or extracted from the game. Rank placeholders remain where source art has not been imported.
+
+Catalog art has separate provenance in `item-images.json`, `new-gear/`, `catalog-additions/` and `warbonds/`. Community SVG tracings must be identified as such. Source attribution, visual similarity and local hashes are distinct from original-byte verification or redistribution rights. The 89 older stratagem records still need source/version reconciliation; no new hash alone closes that review.
 
 | Asset | Official source URL | Usage note | Local implementation path |
 |---|---|---|---|

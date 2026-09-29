@@ -1,0 +1,82 @@
+name: Windows installer lifecycle (test only)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: installer-lifecycle-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'codex/release-readiness')
+    runs-on: windows-2022
+    timeout-minutes: 35
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci
+      - run: npm audit --audit-level=moderate
+      - run: npm test
+      - name: Build unsigned test-only installer and ZIP
+        run: npm run build:win -- --publish never --config.directories.output=dist/ci-lifecycle
+        env:
+          HD2CSM_LOCAL_BUILD_LABEL: ci-lifecycle
+          WINDOWS_SIGNING_ENABLED: 'false'
+          WINDOWS_SIGNING_REQUIRED: 'false'
+      - run: python scripts/verify_win_zip.py --dist dist/ci-lifecycle --local-label ci-lifecycle
+      - run: node scripts/verify-combined-build.js ci-lifecycle
+      - name: Prepare exact synthetic test bundle (no player profiles)
+        run: node scripts/prepare-lifecycle-bundle.js
+      - id: upload
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: unsigned-installer-test-only-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            out/lifecycle-upload/HD2-Chaos-Slot-Machine-Setup-local-ci-lifecycle-win-x64.exe
+            out/lifecycle-upload/manifest.json
+            out/lifecycle-upload/synthetic-state.json
+            out/lifecycle-upload/test-windows-lifecycle.ps1
+            out/lifecycle-upload/TEST-ONLY.txt
+          include-hidden-files: false
+          if-no-files-found: error
+          retention-days: 3
+
+  lifecycle:
+    needs: build
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      # Fresh VM: no source checkout, npm, Node or Python command in this job.
+      # GitHub's image has preinstalled tools; this is not a tools-free Windows proof.
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          path: ${{ runner.temp }}/hd2-lifecycle-bundle
+          merge-multiple: true
+      - name: Fresh product install, actual uninstall, reinstall and synthetic-card preservation
+        shell: pwsh
+        run: |
+          & "$env:RUNNER_TEMP/hd2-lifecycle-bundle/test-windows-lifecycle.ps1" -Bundle "$env:RUNNER_TEMP/hd2-lifecycle-bundle" -AllowDisposableGitHubRunner
+      - name: Upload only the bounded lifecycle report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: installer-lifecycle-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/hd2-lifecycle-evidence/report.json
+          if-no-files-found: warn
+          include-hidden-files: false
+          retention-days: 14

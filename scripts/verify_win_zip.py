@@ -2,7 +2,9 @@
 """Verify both Windows release artifacts and write SHA-256 sidecars."""
 
 import hashlib
+import argparse
 import json
+import re
 import shutil
 import struct
 import subprocess
@@ -10,13 +12,27 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DIST = ROOT / 'dist'
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--dist', type=Path, default=ROOT / 'dist', help='Build output directory inside the source checkout dist folder')
+parser.add_argument('--installer', type=Path, help='Explicit installer path inside this checkout, for a top-level local handoff')
+parser.add_argument('--local-label', help='Verify descriptive local artifacts, without changing the internal package version')
+args = parser.parse_args()
+DIST = args.dist.resolve()
+if not DIST.is_relative_to((ROOT / 'dist').resolve()):
+    raise SystemExit('Refusing a verification directory outside this checkout dist folder.')
 
 with (ROOT / 'package.json').open(encoding='utf-8') as package_file:
     version = json.load(package_file)['version']
+with (ROOT / 'release-identity.json').open(encoding='utf-8') as release_file:
+    version = json.load(release_file)['publicVersion']
 
-zip_path = DIST / f'Helldivers-2-Chaos-Slot-Machine-v{version}-win-x64.zip'
-installer_path = DIST / f'Helldivers-2-Chaos-Slot-Machine-Setup-v{version}-win-x64.exe'
+if args.local_label is not None and (len(args.local_label) > 48 or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', args.local_label)):
+    raise SystemExit('Invalid local build label: use 1-48 lowercase letters/digits with single hyphens between words.')
+zip_path = DIST / (f'HD2-Chaos-Slot-Machine-local-{args.local_label}-win-x64.zip' if args.local_label else f'HD2-Chaos-Slot-Machine-v{version}-win-x64.zip')
+installer_name = f'HD2-Chaos-Slot-Machine-Setup-local-{args.local_label}-win-x64.exe' if args.local_label else f'HD2-Chaos-Slot-Machine-Setup-v{version}-win-x64.exe'
+installer_path = args.installer.resolve() if args.installer else DIST / installer_name
+if not installer_path.is_relative_to(ROOT) or installer_path.name != installer_name:
+    raise SystemExit('Explicit installer must be inside this checkout and match the current versioned Setup filename or explicitly selected local label.')
 
 for artifact in (zip_path, installer_path):
     if not artifact.is_file():
@@ -24,10 +40,34 @@ for artifact in (zip_path, installer_path):
 
 extract_dir = DIST / 'verify-win-zip'
 if extract_dir.exists():
+    if extract_dir.is_symlink() or extract_dir.resolve().parent != DIST.resolve():
+        raise SystemExit(f'Refusing to replace an unexpected verification directory: {extract_dir.resolve()}')
     shutil.rmtree(extract_dir)
 
 with zipfile.ZipFile(zip_path) as zf:
+    damaged_member = zf.testzip()
+    if damaged_member:
+        raise SystemExit(f'ZIP CRC check failed: {damaged_member}')
     names = zf.namelist()
+    # Legal/source materials must actually ship, not just exist in the checkout.
+    legal_root = ROOT / 'licenses' / 'installer'
+    legal_manifest = json.loads((legal_root / 'manifest.json').read_text(encoding='utf-8'))
+    for legal_file in ['README.md', 'manifest.json'] + [row['file'] for row in legal_manifest['files']]:
+        expected_path = 'licenses/installer/' + legal_file
+        candidates = [name for name in names if name == expected_path or name.endswith('/' + expected_path)]
+        if len(candidates) != 1 or zf.read(candidates[0]) != (legal_root / legal_file).read_bytes():
+            raise SystemExit(f'Missing, ambiguous or changed installer license/source material in ZIP: {expected_path}')
+    for builder_file in ['LICENSE.txt', 'README.md']:
+        member = 'licenses/builder/' + builder_file
+        if names.count(member) != 1 or zf.read(member) != (ROOT / 'licenses' / 'builder' / builder_file).read_bytes():
+            raise SystemExit(f'Missing or changed builder template attribution: {member}')
+    application_exe = next((name for name in names if name.endswith('HD2 Chaos Slot Machine.exe')), None)
+    for helper_file in ['integration.nsh', 'shell-properties.nsh']:
+        member = 'licenses/hd2-shell/' + helper_file
+        if member not in names or zf.read(member) != (ROOT / 'installer' / helper_file).read_bytes():
+            raise SystemExit(f'Missing or changed original shell helper source: {member}')
+    if not application_exe or zf.open(application_exe).read(2) != b'MZ':
+        raise SystemExit('ZIP application executable is absent or has an invalid MZ header.')
     asar_member = next((name for name in names if name.endswith('resources/app.asar')), None)
     if asar_member:
         zf.extract(asar_member, extract_dir)
@@ -50,13 +90,61 @@ if asar_member:
 all_names = names + asar_listing
 
 checks = {
-    'exe': 'Helldivers 2 Chaos Slot Machine.exe',
+    'trusted IPC guard': 'electron/ipc-security.js',
+    'CSP-safe image fallbacks': 'assets/image-fallbacks.js',
+    'project license': 'LICENSE.txt',
+    'ownership notice': 'NOTICE.txt',
+    'third-party notices': 'THIRD_PARTY_NOTICES.md',
+    'security guidance': 'SECURITY.md',
+    'save acknowledgement tracking': 'assets/save-health.js',
+    'shared import export validation': 'assets/transfer-validation.js',
+    'single profile instance protection': 'electron/profile-instance.js',
+    'Entrenched Division artwork': 'assets/warbonds/official/entrenched-division.jpg',
+    'Exo Experts original artwork': 'assets/warbonds/official/exo-experts.jpg',
+    'ODST original artwork': 'assets/warbonds/official/obedient-democracy-support-troopers.jpg',
+    'reviewed Warbond batch 7': 'assets/catalog-reviews/2026-09-14-warbonds-7.json',
+    'Python Commandos artwork': 'assets/warbonds/official/python-commandos.jpg',
+    'Redacted Regiment artwork': 'assets/warbonds/official/redacted-regiment.jpg',
+    'Siege Breakers artwork': 'assets/warbonds/official/siege-breakers.jpg',
+    'reviewed Warbond batch 6': 'assets/catalog-reviews/2026-09-14-warbonds-6.json',
+    'Viper Commandos artwork': 'assets/warbonds/official/viper-commandos.jpg',
+    'Truth Enforcers artwork': 'assets/warbonds/official/truth-enforcers.jpg',
+    'Steeled Veterans artwork': 'assets/warbonds/official/steeled-veterans.jpg',
+    'reviewed Warbond batch 5': 'assets/catalog-reviews/2026-09-14-warbonds-5.json',
+    'exe': 'HD2 Chaos Slot Machine.exe',
     'electron': 'resources/app.asar',
     'runtime': 'resources/',
     'catalog': 'assets/item-catalog.json',
     'image mappings': 'assets/item-images.json',
-    'HD2CSM artwork': 'assets/branding/hd2csm-emblem.png',
+    'HD2CSM artwork': 'assets/branding/hd2-chaos-slot-machine.svg',
     'browser save migration': 'assets/browser-storage-migration.js',
+    'desktop window layout': 'assets/desktop-window.css',
+    'desktop window behavior': 'assets/desktop-window.js',
+    'fullscreen window IPC': 'electron/window-controls.js',
+    'software rendering and graceful close': 'electron/desktop-safety.js',
+    'durable diagnostic reporting': 'electron/durable-file.js',
+    'catalog migration and ownership': 'assets/catalog-state.js',
+    'catalog source facts': 'assets/catalog-sources.js',
+    'reviewed source batch': 'assets/catalog-reviews/2026-09-14.json',
+    'retired identity review and archived records': 'assets/catalog-reviews/2026-09-14-identity-merges.json',
+    'second Warbond review': 'assets/catalog-reviews/2026-09-14-warbonds.json',
+    'third Warbond review': 'assets/catalog-reviews/2026-09-14-warbonds-3.json',
+    'official cover provenance': 'assets/warbonds/official/provenance.json',
+    'official cover attribution': 'assets/warbonds/official/ATTRIBUTION.md',
+    'Freedom flame promotional cover': 'assets/warbonds/official/freedoms-flame.jpg',
+    'Chemical agents promotional cover': 'assets/warbonds/official/chemical-agents.jpg',
+    'Urban legends promotional cover': 'assets/warbonds/official/urban-legends.jpg',
+    'Cutting Edge promotional cover': 'assets/warbonds/official/cutting-edge.jpg',
+    'Democratic Detonation promotional cover': 'assets/warbonds/official/democratic-detonation.jpg',
+    'Polar Patriots promotional cover': 'assets/warbonds/official/polar-patriots.png',
+    'Control Group promotional cover': 'assets/warbonds/official/control-group.jpg',
+    'Servants of Freedom promotional cover': 'assets/warbonds/official/servants-of-freedom.jpg',
+    'Borderline Justice promotional cover': 'assets/warbonds/official/borderline-justice.jpg',
+    'new gear ownership UI': 'assets/catalog-ui.js',
+    'new gear layout': 'assets/catalog-ui.css',
+    'new gear provenance': 'assets/new-gear/provenance.json',
+    'new gear attribution': 'assets/new-gear/ATTRIBUTION.md',
+    'Castellans Creed cover': 'assets/new-gear/castellans-creed-cover.png',
     'icon': 'build/icon.ico',
     'window icon': 'build/icon.png',
     'readme first': 'README-FIRST.txt',
@@ -64,7 +152,7 @@ checks = {
 
 missing = []
 image_mapping = json.loads((ROOT / 'assets' / 'item-images.json').read_text(encoding='utf-8'))
-for category in ('primary', 'sidearm', 'throwable', 'booster'):
+for category in ('primary', 'sidearm', 'throwable', 'booster', 'stratagem'):
     for entry in image_mapping.get(category, []):
         asset_path = entry.get('assetPath', '')
         if not asset_path or asset_path not in asar_listing:
@@ -73,7 +161,7 @@ for label, needle in checks.items():
     if not any(name.endswith(needle) or needle in name for name in all_names):
         missing.append(f'{label}: {needle}')
 
-runtime_needles = ['resources/app.asar', 'chrome_100_percent.pak', 'icudtl.dat', 'snapshot_blob.bin', 'v8_context_snapshot.bin']
+runtime_needles = ['resources/app.asar', 'chrome_100_percent.pak', 'icudtl.dat', 'snapshot_blob.bin', 'v8_context_snapshot.bin', 'LICENSE.electron.txt', 'LICENSES.chromium.html']
 for needle in runtime_needles:
     if not any(name.endswith(needle) for name in all_names):
         missing.append(f'Electron runtime: {needle}')

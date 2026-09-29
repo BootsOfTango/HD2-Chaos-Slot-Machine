@@ -1,0 +1,69 @@
+.newGearNotice { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 10px; margin-bottom: 12px; border: 1px solid #a38b00; border-radius: 10px; background: #28230c; font-size: 13px; }
+.newGearNotice[hidden] { display: none; }
+.newGearNotice span { flex: 1; min-width: 200px; }
+.newGearNotice button { padding: 6px 10px; }
+.newGearPanel { border: 1px solid #a38b00; border-radius: 12px; padding: 14px; margin-bottom: 18px; background: #11130f; }
+#newGearPanel { scroll-margin-top: 140px; }
+#newGearPanel .tiny { font-size: 14px; line-height: 1.45; }
+#newGearPanel button { font-size: 14px; padding: 8px 10px; }
+#tab-items .catalogSourceMeta { font-size: 12px; line-height: 1.5; color: #b8c4c9; margin: 3px 0; }
+#catalogAuditPanel { padding: 10px; border: 1px solid #55502c; border-radius: 8px; margin-bottom: 12px; }
+#catalogAuditStatus { color: #ffe400; cursor: pointer; font-size: 13px; }
+.catalogMergeNotice { padding: 10px; border: 1px solid #726420; border-radius: 8px; margin-bottom: 12px; }
+.catalogMergeNotice summary { color: #ffe400; cursor: pointer; font-size: 14px; }
+#catalogMergeRecords > div { border-top: 1px solid #45412b; padding: 8px 0; }
+#catalogMergeRecords p { margin: 3px 0; }
+#tab-items .warbondOwnershipControls { margin: 8px 0 10px; padding: 10px; border: 1px solid #565029; border-radius: 8px; background: #15180f; }
+#tab-items .warbondOwnershipButtons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+#tab-items .warbondOwnershipButtons button { font-size: 12px; padding: 8px 10px; white-space: normal; }
+#tab-items .warbondOwnershipButtons button:focus-visible { outline: 2px solid #ffe400; outline-offset: 3px; }
+.newGearPanel summary { cursor: pointer; color: #ffe400; font-weight: 800; }
+.newGearGroups { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin: 12px 0; }
+.newGearGroup { min-width: 0; border: 1px solid #454641; border-radius: 10px; padding: 12px; }
+.newGearGroup h3 { margin: 0 0 8px; font-size: 17px; color: #ffe400; }
+.newGearCover { display: block; width: 100%; max-height: 180px; object-fit: contain; margin-bottom: 10px; }
+.newGearRow { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; padding: 10px 0; border-top: 1px solid #30362f; }
+.newGearRow img { width: 76px; height: 66px; object-fit: contain; border-radius: 8px; background: #202520; }
+/* One quiet equipment backdrop in category, Warbond and new-gear lists. */
+#tab-items .itemVisualCell { background: #202520; }
+#tab-items .itemVisualCell img { object-fit: contain; }
+.newGearRow strong { display: block; font-size: 14px; }
+.newGearChoices { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 5px; }
+.gearOwnershipControl { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+.gearOwnershipControl input { width: 18px; height: 18px; margin: 0; accent-color: #ffe400; }
+.newGearCredits { margin-top: 12px; }
+/* Keep complete wide equipment visible inside square thumbnails and reels. */
+img[data-item-visual][src^="assets/catalog-additions/ironclad/"] { object-fit: contain; }
+#gearPoolWarning { color: #ffe400; border: 1px solid #a38b00; padding: 10px; }
+@container app-layout (max-width: 760px) { .newGearGroups { grid-template-columns: 1fr; } }
+#armoryBrowser { margin-bottom: 20px; }
+#armoryBrowser h2 { margin: 0 0 6px; color: #ffe400; }
+#armoryBrowser .itemsViewModeRow { flex-direction: column; align-items: stretch; }
+#armoryBrowser .itemsViewModeRow .miniRow { justify-content: flex-start !important; flex-wrap: wrap; }
+#armoryBrowser select { min-width: 180px; }
+#armoryBrowseStatus { min-height: 2em; color: #c3cbd0; }
+#tab-items .armoryBrowseSection { padding: 12px; border: 1px solid #484b43; border-radius: 12px; margin: 10px 0; background: #141711; }
+#tab-items .armoryBrowseSection > summary { color: #ffe400; font-weight: 800; cursor: pointer; font-size: 17px; }
+#tab-items .armoryBrowseSection > .col { margin-top: 14px; }
+#tab-items .armoryItemDetails summary { cursor: pointer; color: #c0c5b6; font-size: 12px; }
+#tab-items summary:focus-visible { outline: 2px solid #ffe400; outline-offset: 4px; }
+#tab-items .warbondHeader { cursor: pointer; list-style: none; }
+#tab-items .warbondHeader::before { content: '▶'; color: #ffe400; }
+#tab-items .warbondGroup[open] > .warbondHeader::before { content: '▼'; }
+#tab-items .warbondHeader img { width: 110px; height: 66px; object-fit: contain; }
+#tab-items .warbondGroup:not([open]) { padding-bottom: 0; }
+#tab-items .warbondGroup > .rankOuter { margin-top: 8px; }
+#tab-items #armoryBrowser .rankRow { gap: 12px; flex-wrap: wrap; }
+#tab-items #armoryBrowser .rankRow > div { min-width: 0; }
+#tab-items #manualPoolBlock > .miniRow { margin-top: 12px; }
+#tab-items #armoryBrowser .tiny { font-size: 14px; line-height: 1.5; }
+#tab-items #armoryBrowser .label { font-size: 13px; }
+#tab-items #armoryBrowser input,
+#tab-items #armoryBrowser select,
+#tab-items #armoryBrowser button { font-size: 15px; }
+#tab-items #armoryBrowser .itemsViewModeRow select { width: auto; flex: 1 1 180px; }
+#tab-items #armoryBrowser .itemsViewModeRow button { width: auto; flex: 0 0 auto; }
+#tab-items #armoryBrowser .warbondHeader img { object-fit: contain; }
+#tab-items .armoryRoleGroup { border: 1px solid #393e33; border-radius: 8px; padding: 10px; }
+#tab-items .armoryRoleGroup > summary { cursor: pointer; color: #ffe400; font-size: 15px; }
+#tab-items .armoryRoleGroup > .rankOuter { margin-top: 8px; }

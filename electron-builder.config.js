@@ -1,4 +1,6 @@
 const requireSigning = process.env.WINDOWS_SIGNING_REQUIRED === 'true';
+const releaseIdentity = require('./release-identity.json');
+const localArtifacts = require('./scripts/local-build-label').localArtifactNames(process.env.HD2CSM_LOCAL_BUILD_LABEL);
 const enableSigning = process.env.WINDOWS_SIGNING_ENABLED === 'true' || requireSigning;
 
 const requiredSigningEnv = [
@@ -51,10 +53,25 @@ if (enableSigning) {
 }
 
 module.exports = {
-  productName: 'Helldivers 2 Chaos Slot Machine',
-  executableName: 'Helldivers 2 Chaos Slot Machine',
+  // Fail closed even when the builder is called directly instead of via npm.
+  beforePack: async () => {
+    require('./scripts/prepare-installer-shell').assertPrepared(__dirname);
+    require('./scripts/installer-component-policy').verifySourceMaterials(__dirname);
+  },
+  productName: releaseIdentity.productName,
+  executableName: releaseIdentity.productName,
   appId: 'com.bootsoftango.helldivers2chaosslotmachine',
   forceCodeSigning: requireSigning,
+  electronFuses: {
+    runAsNode: false,
+    enableNodeOptionsEnvironmentVariable: false,
+    enableNodeCliInspectArguments: false,
+    enableEmbeddedAsarIntegrityValidation: true,
+    onlyLoadAppFromAsar: true,
+    // Electron 44 denies file-origin localStorage when false. Retain only for
+    // the script-free legacy reader; the application itself uses hd2-slot://.
+    grantFileProtocolExtraPrivileges: true,
+  },
   files: [
     'index.html',
     'electron/**/*',
@@ -63,8 +80,10 @@ module.exports = {
     'build/icon.png',
     '*.png',
     'LICENSE.txt',
+    'NOTICE.txt',
     'README.md',
     'package.json',
+    'release-identity.json',
     '!**/.git/**',
     '!**/node_modules/**',
     '!test/**',
@@ -72,6 +91,8 @@ module.exports = {
     '!*.md',
     'README.md',
     '!RELEASE_NOTES*.md',
+    'THIRD_PARTY_NOTICES.md',
+    'SECURITY.md',
     '!sample-card-tidied.html',
     '!**/*.map',
     '!**/*.tmp',
@@ -85,22 +106,30 @@ module.exports = {
   },
   win,
   // Keep this in sync with scripts/verify_win_zip.py and the release workflow.
-  artifactName: 'Helldivers-2-Chaos-Slot-Machine-v${version}-win-${arch}.${ext}',
+  artifactName: localArtifacts?.archive || `${releaseIdentity.artifactStem}-v${releaseIdentity.publicVersion}-win-\${arch}.\${ext}`,
   nsis: {
+    include: 'installer/integration.nsh',
     // Keep the installer distinguishable from the portable ZIP while retaining
     // the same version/architecture fields used by release automation.
-    artifactName: 'Helldivers-2-Chaos-Slot-Machine-Setup-v${version}-win-${arch}.${ext}',
+    artifactName: localArtifacts?.installer || `${releaseIdentity.artifactStem}-Setup-v${releaseIdentity.publicVersion}-win-\${arch}.\${ext}`,
     oneClick: false,
     perMachine: false,
     allowElevation: true,
     allowToChangeInstallationDirectory: true,
     createDesktopShortcut: true,
     createStartMenuShortcut: true,
-    shortcutName: 'Helldivers 2 Chaos Slot Machine',
-    uninstallDisplayName: 'Helldivers 2 Chaos Slot Machine',
+    shortcutName: releaseIdentity.productName,
+    uninstallDisplayName: `${releaseIdentity.productName} ${releaseIdentity.displayVersion}`,
     deleteAppDataOnUninstall: false,
   },
   extraFiles: [
+    { from: 'licenses/builder', to: 'licenses/builder' },
+    { from: 'installer', to: 'licenses/hd2-shell' },
+    { from: 'licenses/installer', to: 'licenses/installer' },
+    { from: 'LICENSE.txt', to: 'LICENSE.txt' },
+    { from: 'NOTICE.txt', to: 'NOTICE.txt' },
+    { from: 'THIRD_PARTY_NOTICES.md', to: 'THIRD_PARTY_NOTICES.md' },
+    { from: 'SECURITY.md', to: 'SECURITY.md' },
     {
       from: 'README-FIRST.txt',
       to: 'README-FIRST.txt',

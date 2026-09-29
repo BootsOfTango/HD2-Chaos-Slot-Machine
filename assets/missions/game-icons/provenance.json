@@ -1,0 +1,1201 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-09-27",
+  "kind": "in-game screenshot crop",
+  "rightsStatus": "unestablished; local review only; attribution is not permission",
+  "entries": [
+    {
+      "id": "mission:launch-icbm",
+      "file": "launch-icbm.png",
+      "sourceFile": "Launch_ICBM_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Launch_ICBM_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Launch_ICBM_Description_Helldive.png?5f2f79&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        26,
+        29,
+        54,
+        60
+      ],
+      "sourceSha256": "6481dc08d43c2be6475da7b5b6f40df4fffcc0c88e5944070bf59b501e10495e",
+      "outputSha256": "e970994d8d59485d71df862135244fb83c3d79e1e3ee877ca68fcf92fd3f64bd",
+      "sourceWidth": 554,
+      "sourceHeight": 645
+    },
+    {
+      "id": "mission:retrieve-valuable-data",
+      "file": "retrieve-valuable-data.png",
+      "sourceFile": "Retrieve_Valuable_Data_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Retrieve_Valuable_Data_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Retrieve_Valuable_Data_Description_Helldive.png?b452c7&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        26,
+        29,
+        54,
+        60
+      ],
+      "sourceSha256": "35051a1fc3977c1cf425b93c8ad134975ff9b6303852676a3da25ec38b8675e2",
+      "outputSha256": "663d8232e6215d0d21bdc75262ee8b2feff630e2939c857e2df142856e96bbc3",
+      "sourceWidth": 556,
+      "sourceHeight": 644
+    },
+    {
+      "id": "mission:emergency-evacuation",
+      "file": "emergency-evacuation.png",
+      "sourceFile": "Emergency_Evacuation_Automaton_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Emergency_Evacuation_Automaton_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Emergency_Evacuation_Automaton_Description_Helldive.png?f4e273&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        26,
+        29,
+        56,
+        60
+      ],
+      "sourceSha256": "faec1caddb7cb123c165fc5f31c0fed603737e20d08c73847fd1576fe5a4f05c",
+      "outputSha256": "bbdab982e390f4e51ed3a27a8ec7d9f72f35245b1c2671823c345cb9144eb19b",
+      "sourceWidth": 557,
+      "sourceHeight": 671
+    },
+    {
+      "id": "mission:blitz-automatons",
+      "file": "blitz-automatons.png",
+      "sourceFile": "Blitz_Search_And_Destroy_Automaton_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Blitz_Search_And_Destroy_Automaton_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Blitz_Search_And_Destroy_Automaton_Description_Helldive.png?b79b7d&format=original",
+      "uploader": "Qt23",
+      "crop": [
+        20,
+        54,
+        45,
+        54
+      ],
+      "sourceSha256": "9b4a75bac228971150b49f09be7107be271787c3fab8d51c1068515e8aa77615",
+      "outputSha256": "9cacff2722f3dd4b857a02336cd332eb49b268997518538f89d46c254b487618",
+      "sourceWidth": 443,
+      "sourceHeight": 527
+    },
+    {
+      "id": "mission:blitz-terminids",
+      "file": "blitz-terminids.png",
+      "sourceFile": "Blitz_Search_And_Destroy_Terminid_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Blitz_Search_And_Destroy_Terminid_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Blitz_Search_And_Destroy_Terminid_Description_Helldive.png?69ee1a&format=original",
+      "uploader": "Qt23",
+      "crop": [
+        20,
+        54,
+        48,
+        56
+      ],
+      "sourceSha256": "138d53bd2bc421782cf927b218b438a82ec1c72d5f8c5845cdced56e2fe04f26",
+      "outputSha256": "de6d8896dc476024e0fe3bd625e2a1cc8c6b51a8d6bf47715a217d8381e7b63c",
+      "sourceWidth": 444,
+      "sourceHeight": 507
+    },
+    {
+      "id": "mission:conduct-geological-survey",
+      "file": "conduct-geological-survey.png",
+      "sourceFile": "Conduct_Geological_Survey_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Conduct_Geological_Survey_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Conduct_Geological_Survey_Description_Helldive.png?a5d66b&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        25,
+        29,
+        56,
+        60
+      ],
+      "sourceSha256": "23c324cd09ed8bbedb5b763e82dd808fe06510fab587677f56da2660ee6da6c0",
+      "outputSha256": "c2e4d188c7bbf2a2645b032c8d6ee71967374457eeb51b5ddac4bda5def1484d",
+      "sourceWidth": 554,
+      "sourceHeight": 670
+    },
+    {
+      "id": "mission:destroy-command-bunkers",
+      "file": "destroy-command-bunkers.png",
+      "sourceFile": "Destroy_Command_Bunkers_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Destroy_Command_Bunkers_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Destroy_Command_Bunkers_Description_Helldive.png?c67e25&format=original",
+      "uploader": "Warmowed",
+      "crop": [
+        24,
+        27,
+        55,
+        60
+      ],
+      "sourceSha256": "d784b18775f662cbe99ed76c4bf82b5ec55f12a04c5adecc6e66dfac80868739",
+      "outputSha256": "5ac2158389a8e4963ffcce03667799c5560bdfcc0b20dca3040a9fc79c9aecae",
+      "sourceWidth": 551,
+      "sourceHeight": 688
+    },
+    {
+      "id": "mission:destroy-transmission-network",
+      "file": "destroy-transmission-network.png",
+      "sourceFile": "Destroy_Transmission_Network_Description_Medium.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Destroy_Transmission_Network_Description_Medium.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Destroy_Transmission_Network_Description_Medium.png?89a5a0&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        25,
+        28,
+        56,
+        60
+      ],
+      "sourceSha256": "942b383e200499a478f467fd066937b58c5391f328b76dab8b2db90048317306",
+      "outputSha256": "df1c492110528e6430a6cb8338c39c7bc3fe9e9616a1afdcf42aaa0eee2dabf1",
+      "sourceWidth": 554,
+      "sourceHeight": 692
+    },
+    {
+      "id": "mission:eliminate-automaton-hulks",
+      "file": "eliminate-automaton-hulks.png",
+      "sourceFile": "Eliminate_Automaton_Hulks_Description_Medium.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Automaton_Hulks_Description_Medium.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Automaton_Hulks_Description_Medium.png?b08565&format=original",
+      "uploader": "SoundwaveAeron",
+      "crop": [
+        24,
+        24,
+        88,
+        100
+      ],
+      "sourceSha256": "09fd63269786e2198fdd260bfa95bd1d27039352b703030fa48596b0e78f34f3",
+      "outputSha256": "34881b8fa06a9254cf11806d21865b17eb7ceb0f7933239e4044e45144279ca5",
+      "sourceWidth": 847,
+      "sourceHeight": 816
+    },
+    {
+      "id": "mission:eliminate-bile-titans",
+      "file": "eliminate-bile-titans.png",
+      "sourceFile": "Eliminate_Bile_Titans_Description_Challenging.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Bile_Titans_Description_Challenging.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Bile_Titans_Description_Challenging.png?b87b1c&format=original",
+      "uploader": "SoundwaveAeron",
+      "crop": [
+        24,
+        24,
+        88,
+        102
+      ],
+      "sourceSha256": "9fdef641ffb0e3c272ada4bde921d13924fdf96c19bdce25cf1e06cad1108140",
+      "outputSha256": "01edb05166e615ef64829666370986a37792ce431e713a8fb6361da12b64c8d5",
+      "sourceWidth": 855,
+      "sourceHeight": 820
+    },
+    {
+      "id": "mission:eliminate-brood-commanders",
+      "file": "eliminate-brood-commanders.png",
+      "sourceFile": "Eliminate_Brood_Commanders_Description_Easy.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Brood_Commanders_Description_Easy.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Brood_Commanders_Description_Easy.png?abc36a&format=original",
+      "uploader": "Qt23",
+      "crop": [
+        17,
+        54,
+        50,
+        56
+      ],
+      "sourceSha256": "1944dc618f9484d2b2078009555ababe3a742c7f867b9ca791539fb05ed61eec",
+      "outputSha256": "015e2ac35328a40d3e0fedd1cf1cc67460e06d505373b3bbcb476accd8cb4809",
+      "sourceWidth": 444,
+      "sourceHeight": 527
+    },
+    {
+      "id": "mission:eliminate-chargers",
+      "file": "eliminate-chargers.png",
+      "sourceFile": "Eliminate_Chargers_Description_Medium.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Chargers_Description_Medium.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Chargers_Description_Medium.png?d85dfa&format=original",
+      "uploader": "Qt23",
+      "crop": [
+        18,
+        54,
+        50,
+        56
+      ],
+      "sourceSha256": "d2603d808705c8ecced812020eea24828e661a6669e1803e47f07cc8d03b04c8",
+      "outputSha256": "ccd7ef6d7e20fdf0fefa59910d57e30e26d204ac86807427ccb3395dace755d3",
+      "sourceWidth": 444,
+      "sourceHeight": 527
+    },
+    {
+      "id": "mission:eliminate-devastators",
+      "file": "eliminate-devastators.png",
+      "sourceFile": "Eliminate_Devastators_Description_Easy.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Devastators_Description_Easy.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Devastators_Description_Easy.png?23030b&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        25,
+        28,
+        56,
+        60
+      ],
+      "sourceSha256": "a157e7265b6f1c045b5a570358072ef5e3c13069bc81390b0d5b06abf7e49b24",
+      "outputSha256": "baf04b6770efa0b688117bb000c32242e83b41917845fecab3ae9bd1e85d512b",
+      "sourceWidth": 552,
+      "sourceHeight": 667
+    },
+    {
+      "id": "mission:activate-oil-pumps",
+      "file": "activate-oil-pumps.png",
+      "sourceFile": "Activate_E-710_Pumps_Description_Medium.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Activate_E-710_Pumps_Description_Medium.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Activate_E-710_Pumps_Description_Medium.png?f58bb2&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        25,
+        29,
+        56,
+        60
+      ],
+      "sourceSha256": "7c6ab9720c20d2366f6aaa137bb5064eefb5ddb67a61cd98acb3c2930e17778e",
+      "outputSha256": "db0eddd33569b2bd1dadf5cd689cc1c5b5368167717dfb19d7007b7c448b3972",
+      "sourceWidth": 551,
+      "sourceHeight": 740
+    },
+    {
+      "id": "mission:enable-oil-extraction",
+      "file": "enable-oil-extraction.png",
+      "sourceFile": "Enable_E-710_Extraction_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Enable_E-710_Extraction_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Enable_E-710_Extraction_Description_Helldive.png?41b98c&format=original",
+      "uploader": "Qt23",
+      "crop": [
+        16,
+        54,
+        52,
+        56
+      ],
+      "sourceSha256": "774c16da76653ee5abf1f07a3eeeb7247b15cacb47dbe9d8c575c917e6e8fdca",
+      "outputSha256": "315ea52dc02a01caa846a059eb1f6fe1a74d64b16af9a0717585cd20e2bfbebf",
+      "sourceWidth": 444,
+      "sourceHeight": 527
+    },
+    {
+      "id": "mission:start-fuel-pumps",
+      "file": "start-fuel-pumps.png",
+      "sourceFile": "Pump_Fuel_To_ICBM_Description_Trivial.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Pump_Fuel_To_ICBM_Description_Trivial.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Pump_Fuel_To_ICBM_Description_Trivial.png?43c29d&format=original",
+      "uploader": "SoundwaveAeron",
+      "crop": [
+        26,
+        25,
+        92,
+        103
+      ],
+      "sourceSha256": "0d680dc5aa9d02fd071e7bc32bb04f864225b2e9d10c878f7c6aa45b485e88af",
+      "outputSha256": "9643e4ddaea308b974365fbc1fd035cad0b3606dd04f94b18f884062f2cd7aac",
+      "sourceWidth": 855,
+      "sourceHeight": 859
+    },
+    {
+      "id": "mission:purge-hatcheries",
+      "file": "purge-hatcheries.png",
+      "sourceFile": "Purge_Hatcheries_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Purge_Hatcheries_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Purge_Hatcheries_Description_Helldive.png?e117c6&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        25,
+        29,
+        56,
+        60
+      ],
+      "sourceSha256": "00e00ce55b9628e1ecdd8202cfd1066a44b0f27b71710253f374348dc5514a5c",
+      "outputSha256": "cc840f973a9f276fddf3addc3e9d17e0b31434a8106b5105f2d423ae2d7fd299",
+      "sourceWidth": 554,
+      "sourceHeight": 643
+    },
+    {
+      "id": "mission:neutralize-orbital-defenses",
+      "file": "neutralize-orbital-defenses.png",
+      "sourceFile": "Neutralize_Orbital_Defenses_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Neutralize_Orbital_Defenses_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Neutralize_Orbital_Defenses_Description_Helldive.png?51aa7f&format=original",
+      "uploader": "Warmowed",
+      "crop": [
+        27,
+        28,
+        56,
+        60
+      ],
+      "sourceSha256": "0ccded2442940cc50470bb9bea674ff04b865b91b17c15247bc5f402afcc4589",
+      "outputSha256": "a4db5610c4cd67402178d678064313bab0b92283fb3228cf184cfcfead60f737",
+      "sourceWidth": 551,
+      "sourceHeight": 664
+    },
+    {
+      "id": "mission:sabotage-air-base",
+      "file": "sabotage-air-base.png",
+      "sourceFile": "Sabotage_Air_Base_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Sabotage_Air_Base_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Sabotage_Air_Base_Description_Helldive.png?f33276&format=original",
+      "uploader": "Joe Rippa",
+      "crop": [
+        18,
+        64,
+        62,
+        63
+      ],
+      "sourceSha256": "2be9d07472b5f8a359d56edc78fe90857e6dd135ea137487e074724d489769d6",
+      "outputSha256": "bdf597db2d121bc27deb0de67a97195f23e0b1f1adf1c4a2f6dbdced20b52bc0",
+      "sourceWidth": 574,
+      "sourceHeight": 680
+    },
+    {
+      "id": "mission:sabotage-supply-bases",
+      "file": "sabotage-supply-bases.png",
+      "sourceFile": "Sabotage_Supply_Bases_Description_Medium.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Sabotage_Supply_Bases_Description_Medium.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Sabotage_Supply_Bases_Description_Medium.png?ef1862&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        24,
+        29,
+        56,
+        60
+      ],
+      "sourceSha256": "7f616eb060a5d1f462f26d5f917f5484b81fc1d95cd45ceb2e8da6d7875ded1e",
+      "outputSha256": "c318cf429514289798c1659e82592fd1ff2a4cfab7a7057cd085ce849678b88d",
+      "sourceWidth": 550,
+      "sourceHeight": 665
+    },
+    {
+      "id": "mission:spread-democracy",
+      "file": "spread-democracy.png",
+      "sourceFile": "Spread_Democracy_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Spread_Democracy_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Spread_Democracy_Description_Helldive.png?e13d27&format=original",
+      "uploader": "Warmowed",
+      "crop": [
+        24,
+        27,
+        56,
+        60
+      ],
+      "sourceSha256": "932b862390fad49f489acbe66c3752f71457fa780bdd276c483f8edf0eb12239",
+      "outputSha256": "ae2d97bcc69613d59479bc2aca183854517dfe52f0f4063d871bd7bf196f8114",
+      "sourceWidth": 550,
+      "sourceHeight": 663
+    },
+    {
+      "id": "mission:terminate-illegal-broadcast",
+      "file": "terminate-illegal-broadcast.png",
+      "sourceFile": "Terminate_Illegal_Broadcast_Description_Easy.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Terminate_Illegal_Broadcast_Description_Easy.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Terminate_Illegal_Broadcast_Description_Easy.png?b1c5c8&format=original",
+      "uploader": "SoundwaveAeron",
+      "crop": [
+        24,
+        25,
+        87,
+        102
+      ],
+      "sourceSha256": "46f91f96360b516176df92380152928429165c9003daf792592b680942fc53a4",
+      "outputSha256": "4f6d4e3b9011959cadd0ac08669b61161a74e4fc7178740b0503271a3f579aab",
+      "sourceWidth": 846,
+      "sourceHeight": 857
+    },
+    {
+      "id": "mission:upload-escape-pod-data",
+      "file": "upload-escape-pod-data.png",
+      "sourceFile": "Upload_Escape_Pod_Data_Description_Medium.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Upload_Escape_Pod_Data_Description_Medium.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Upload_Escape_Pod_Data_Description_Medium.png?e9f2bc&format=original",
+      "uploader": "Betta7776",
+      "crop": [
+        26,
+        29,
+        56,
+        60
+      ],
+      "sourceSha256": "f51c4ca5d85c73b3651a60cfb81d7bd71b2f89bb291fee1e287d707ed0e51fb4",
+      "outputSha256": "a71d511bd2c38c737dd952cf2be84c98e86eec3d8a35445670c05a8fe2546fe4",
+      "sourceWidth": 552,
+      "sourceHeight": 669
+    },
+    {
+      "id": "mission:retrieve-recon-craft-intel",
+      "file": "retrieve-recon-craft-intel.png",
+      "sourceFile": "Retrieve_Recon_Craft_Intel_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Retrieve_Recon_Craft_Intel_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Retrieve_Recon_Craft_Intel_Description_Helldive.png?b85576&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        25,
+        25,
+        90,
+        99
+      ],
+      "sourceSha256": "2496baaef19eb190f1f5342f718061434cb33098ee252c74671abe1481d3bae9",
+      "outputSha256": "646a83b07b910c7c3ffa1b52be741b0a15d2aefced88f0fc74b7e59553f01c1c",
+      "sourceWidth": 851,
+      "sourceHeight": 857
+    },
+    {
+      "id": "mission:mobile-e711-extraction",
+      "file": "mobile-e711-extraction.png",
+      "sourceFile": "Conduct_Mobile_E-711_Extraction_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Conduct_Mobile_E-711_Extraction_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Conduct_Mobile_E-711_Extraction_Description_Helldive.png?29c770&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        90,
+        101
+      ],
+      "sourceSha256": "2cb9a9a815627a0ba4fd8ecc302319355a83a7e6a1191c6a7aaf1d44e94acd6a",
+      "outputSha256": "717da23823affa79fbbcbe695da91a8d9cdfc826ffcf056ebc6d0ca0e640be5e",
+      "sourceWidth": 847,
+      "sourceHeight": 858
+    },
+    {
+      "id": "mission:extract-e711",
+      "file": "extract-e711.png",
+      "sourceFile": "Extract_E-711_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Extract_E-711_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Extract_E-711_Description_Helldive.png?150a22&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        90,
+        103
+      ],
+      "sourceSha256": "799132503ecabafb8ef09dd951efbd24d0105c813249517fe67d95867125d0ac",
+      "outputSha256": "793ead0eaa7c222c35e68929f16797c71ffbc6ab552508726bab1c379446a344",
+      "sourceWidth": 847,
+      "sourceHeight": 859
+    },
+    {
+      "id": "mission:restart-pumps",
+      "file": "restart-pumps.png",
+      "sourceFile": "Restart_Pumps_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Restart_Pumps_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Restart_Pumps_Description_Helldive.png?3ed133&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        23,
+        90,
+        101
+      ],
+      "sourceSha256": "73b04fb34d2be02f081ddfb3b05554ee08f902e74d69956308a9a87dafb415b6",
+      "outputSha256": "ceaf279a6fd0a712d24fd1cc5d8d3e41ed8ec2724ae9886e73805b6e74ac8e98",
+      "sourceWidth": 848,
+      "sourceHeight": 855
+    },
+    {
+      "id": "mission:restore-air-quality",
+      "file": "restore-air-quality.png",
+      "sourceFile": "Restore_Air_Quality_Description_City_Trivial.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Restore_Air_Quality_Description_City_Trivial.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Restore_Air_Quality_Description_City_Trivial.png?660521&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        25,
+        90,
+        101
+      ],
+      "sourceSha256": "af398a150735e4cab1b2bda91fd7f518cbabf81301bd3e8a24ac1eaeea71c60a",
+      "outputSha256": "56b9fa75f769f972ad75273eff1d0ab48d926d32400eb461a30b7a8d54f69cbb",
+      "sourceWidth": 846,
+      "sourceHeight": 859
+    },
+    {
+      "id": "mission:cleanse-infested-district",
+      "file": "cleanse-infested-district.png",
+      "sourceFile": "Cleanse_Infested_District_Description_City_Challenging.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Cleanse_Infested_District_Description_City_Challenging.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Cleanse_Infested_District_Description_City_Challenging.png?c1fce4&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        90,
+        103
+      ],
+      "sourceSha256": "9b769fbb1794508dc0a4f151d07809c1df4ae9931b6e6890eaf463b032c89fac",
+      "outputSha256": "85cb74d2668e825b3004d930fa77a8b3a6562dd4fedf406fdc5569fbe442313b",
+      "sourceWidth": 848,
+      "sourceHeight": 895
+    },
+    {
+      "id": "mission:eliminate-impaler",
+      "file": "eliminate-impaler.png",
+      "sourceFile": "Eliminate_Impaler_Description_Hard.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Impaler_Description_Hard.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Impaler_Description_Hard.png?525591&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        88,
+        102
+      ],
+      "sourceSha256": "a7b2eb6ea0a3de9a8f3c5fd57599d387ac7fe73b983bdce17ed2a17cab51f9e5",
+      "outputSha256": "2c23996ee65c3709760a3a0b56f422c0ba61fabf100fcf3553a70bd4bda31317",
+      "sourceWidth": 847,
+      "sourceHeight": 856
+    },
+    {
+      "id": "mission:commando-acquire-evidence",
+      "file": "commando-acquire-evidence.png",
+      "sourceFile": "Commando_Acquire_Evidence_Mission_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Commando_Acquire_Evidence_Mission_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Commando_Acquire_Evidence_Mission_Description_Helldive.png?c0c969&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        87,
+        100
+      ],
+      "sourceSha256": "01d625fc7ef2914b51b62c025c0cdd8f13b26a4fa6603bdfa40611e6f3e4be5c",
+      "outputSha256": "a0b764b41ea256282cab3de83ce9a6b04335cb0ab43609402f5e1bfa9c6cce73",
+      "sourceWidth": 848,
+      "sourceHeight": 896
+    },
+    {
+      "id": "mission:confiscate-assets",
+      "file": "confiscate-assets.png",
+      "sourceFile": "Confiscate_Assets_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Confiscate_Assets_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Confiscate_Assets_Description_Helldive.png?c9303b&format=original",
+      "uploader": "AkuBC",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        28,
+        73,
+        64,
+        73
+      ],
+      "sourceSha256": "391004a824ed5fd493ca8c1837e2f7e9fe1cb076e91420b5d4f353473a4c0ae4",
+      "outputSha256": "4abe6f8eff92e5b9788d37df68b152bddffc2de5e4b2a5903a8b50092b4c13ab",
+      "sourceWidth": 595,
+      "sourceHeight": 704
+    },
+    {
+      "id": "mission:commando-extract-intel",
+      "file": "commando-extract-intel.png",
+      "sourceFile": "Commando_Extract_Intel_Mission_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Commando_Extract_Intel_Mission_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Commando_Extract_Intel_Mission_Description_Helldive.png?c2d64b&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        87,
+        100
+      ],
+      "sourceSha256": "e18e35d7b671447a6add67039d6f0b0bb162630e43be7dd3258c7aac76824afa",
+      "outputSha256": "e4069787d6b7ad56fc4d76ee4bc749f3905d7f5bd070d461aa2966732565b4de",
+      "sourceWidth": 845,
+      "sourceHeight": 897
+    },
+    {
+      "id": "mission:commando-secure-black-box",
+      "file": "commando-secure-black-box.png",
+      "sourceFile": "Commando_Secure_Black_Box_Mission_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Commando_Secure_Black_Box_Mission_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Commando_Secure_Black_Box_Mission_Description_Helldive.png?6f9675&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        23,
+        23,
+        87,
+        100
+      ],
+      "sourceSha256": "7ac6c12980d7a7dffe38d8b45b0b620399541690c9e4496b2e192511c821dce7",
+      "outputSha256": "a529e77c871cd9c5b78697508eba50cd6e089f513265aa9a8d8a38dd6add1c66",
+      "sourceWidth": 840,
+      "sourceHeight": 862
+    },
+    {
+      "id": "mission:sabotage-orgo-plasma",
+      "file": "sabotage-orgo-plasma.png",
+      "sourceFile": "Sabotage_Orgo-Plasma_Synthesis_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Sabotage_Orgo-Plasma_Synthesis_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Sabotage_Orgo-Plasma_Synthesis_Description_Helldive.png?992c77&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        48,
+        120,
+        87,
+        101
+      ],
+      "sourceSha256": "1c990a4b524130f605ae0f2960d9d3269e4ca7139ae4eb7ed2af7027c0133dab",
+      "outputSha256": "fd3071065c6f9f720019cc0c680b46923f8813fad2c7988a643170301791ca1b",
+      "sourceWidth": 900,
+      "sourceHeight": 1115
+    },
+    {
+      "id": "mission:seize-industrial-complex",
+      "file": "seize-industrial-complex.png",
+      "sourceFile": "Seize_Industrial_Complex_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Seize_Industrial_Complex_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Seize_Industrial_Complex_Description_Helldive.png?fe7c32&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        48,
+        119,
+        87,
+        101
+      ],
+      "sourceSha256": "e4b16d4b28a290b31dc39ba690bf8e8c5aaed2d3075debf2fefc5893bdc58df6",
+      "outputSha256": "f596a171f5fb5ced358a2e3253afa0dc6d294855ff09d1b4977b94675b86eaf4",
+      "sourceWidth": 900,
+      "sourceHeight": 1066
+    },
+    {
+      "id": "mission:annex-mineral-sites",
+      "file": "annex-mineral-sites.png",
+      "sourceFile": "Annex_Untapped_Mineral_Sites_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Annex_Untapped_Mineral_Sites_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Annex_Untapped_Mineral_Sites_Description_Helldive.png?862d68&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        48,
+        120,
+        87,
+        101
+      ],
+      "sourceSha256": "6a409c0a6396dff49457efc8f5c12b60f81c100e1b5ab7f2631f34ccadcf32a0",
+      "outputSha256": "81b053f49a7c869766cc516cbd893f36cc7c1d28106ca337a0364e8da96b96dd",
+      "sourceWidth": 900,
+      "sourceHeight": 1110
+    },
+    {
+      "id": "mission:halt-cyborg-production",
+      "file": "halt-cyborg-production.png",
+      "sourceFile": "Halt_Cyborg_Production_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Halt_Cyborg_Production_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Halt_Cyborg_Production_Description_Helldive.png?c80c08&format=original",
+      "uploader": "AkuBC",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        26,
+        76,
+        66,
+        69
+      ],
+      "sourceSha256": "69eb512dda20a370ffd418f4f6eb2dec6d24bf10c8a28f6038157f6493f0b00c",
+      "outputSha256": "52c191aadf10c513299b1e1c16943812b360ead872bc2f59733d2a78a423e68c",
+      "sourceWidth": 596,
+      "sourceHeight": 708
+    },
+    {
+      "id": "mission:eliminate-factory-strider",
+      "file": "eliminate-factory-strider.png",
+      "sourceFile": "Eliminate_Factory_Strider_Description_Challenging.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Eliminate_Factory_Strider_Description_Challenging.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Eliminate_Factory_Strider_Description_Challenging.png?80da4e&format=original",
+      "uploader": "Takapy",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        25,
+        26,
+        54,
+        59
+      ],
+      "sourceSha256": "6434a203db8a595b2775b50bfa3fefabf8eb257481c5292c75c080a879dccb47",
+      "outputSha256": "8e8dbe66923057400b23321d434e0d10ca6f2e5510ae6368aede769b4b053088",
+      "sourceWidth": 549,
+      "sourceHeight": 661
+    },
+    {
+      "id": "mission:blitz-bio-processors",
+      "file": "blitz-bio-processors.png",
+      "sourceFile": "Blitz_Destroy_Bio-Processors_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Blitz_Destroy_Bio-Processors_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Blitz_Destroy_Bio-Processors_Description_Helldive.png?31d530&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        48,
+        121,
+        87,
+        100
+      ],
+      "sourceSha256": "787a1e08ccece132d20d106a1f59e5683075d6936e32bc868374d889301bdad7",
+      "outputSha256": "18a2ce4a13205eece52e652f50f0fc2b298cce86ce59c7d49b5992907f1ae614",
+      "sourceWidth": 901,
+      "sourceHeight": 1071
+    },
+    {
+      "id": "mission:blitz-illuminate-ships",
+      "file": "blitz-illuminate-ships.png",
+      "sourceFile": "Blitz_Search_And_Destroy_Illuminate_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Blitz_Search_And_Destroy_Illuminate_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Blitz_Search_And_Destroy_Illuminate_Description_Helldive.png?83999f&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        23,
+        23,
+        89,
+        102
+      ],
+      "sourceSha256": "fc55d0eb294a661c28015daa61e4cd2f9c47bb39a68114be1feaeaab78304c1d",
+      "outputSha256": "39da83c8bae60ceae3fb2d21bb74853ece27534542693fa90ca556fb9eb10408",
+      "sourceWidth": 847,
+      "sourceHeight": 854
+    },
+    {
+      "id": "mission:evacuate-colonists",
+      "file": "evacuate-colonists.png",
+      "sourceFile": "Evacuate_Colonists_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Evacuate_Colonists_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Evacuate_Colonists_Description_Helldive.png?550968&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        23,
+        23,
+        88,
+        102
+      ],
+      "sourceSha256": "4120de8326a579929114690aa1f7a7cc9db6b7f4d406c0b1f554afd5cd4e95f4",
+      "outputSha256": "ab08484001b20cc6cd7c6fa7bf72d443f7ac5ad1146ada25e331d3e68952a792",
+      "sourceWidth": 844,
+      "sourceHeight": 861
+    },
+    {
+      "id": "mission:take-down-overship",
+      "file": "take-down-overship.png",
+      "sourceFile": "Take_Down_Overship_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Take_Down_Overship_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Take_Down_Overship_Description_Helldive.png?ca5762&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        23,
+        89,
+        103
+      ],
+      "sourceSha256": "74014a1f25dea680a0faba545a8faaff1e83d6229f1adce6f0fdd4508ea5774a",
+      "outputSha256": "720f15b709e53493b5f16ac5fc12ad7f48c54bf610183c824015944d820e583c",
+      "sourceWidth": 846,
+      "sourceHeight": 896
+    },
+    {
+      "id": "mission:free-colony",
+      "file": "free-colony.png",
+      "sourceFile": "Free_Colony_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Free_Colony_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Free_Colony_Description_Helldive.png?b4e95e&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        88,
+        102
+      ],
+      "sourceSha256": "b5577064718659fed29652efdc5194646c252ff7755c7de7d3598da48ca22a0e",
+      "outputSha256": "f653bd025fef5d7c998a313d30fb6663706183f60cc6fe73c914c2579df0c3a7",
+      "sourceWidth": 846,
+      "sourceHeight": 860
+    },
+    {
+      "id": "mission:extract-anomalous-material",
+      "file": "extract-anomalous-material.png",
+      "sourceFile": "Extract_Anomalous_Material_Description_Super_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Extract_Anomalous_Material_Description_Super_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Extract_Anomalous_Material_Description_Super_Helldive.png?b1d631&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        88,
+        102
+      ],
+      "sourceSha256": "122140ae294641d3bc7d2fca4a77f79819384e318b756be2438b35986e858945",
+      "outputSha256": "2fb1aa47b5b53f111e9e462372e4b5ebe5c18027924659e8e4315584d1273d7d",
+      "sourceWidth": 845,
+      "sourceHeight": 856
+    },
+    {
+      "id": "mission:destroy-exospire",
+      "file": "destroy-exospire.png",
+      "sourceFile": "Destroy_Exospire_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Destroy_Exospire_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Destroy_Exospire_Description_Helldive.png?555e34&format=original",
+      "uploader": "TauCetiV",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        9,
+        62,
+        65,
+        68
+      ],
+      "sourceSha256": "bf7c4a8ec1c3c66be216e54c3a7aacebd5dd9135e12145b1b40cdc36e427e765",
+      "outputSha256": "662bb8f5e35fed47e8d578409fcaa40552a77bcd8268d3cea8c26c8ec8fdc218",
+      "sourceWidth": 566,
+      "sourceHeight": 669
+    },
+    {
+      "id": "mission:destroy-gazer-spire",
+      "file": "destroy-gazer-spire.png",
+      "sourceFile": "Destroy_Gazer_Spire_Description_Helldive.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Destroy_Gazer_Spire_Description_Helldive.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Destroy_Gazer_Spire_Description_Helldive.png?3a67ab&format=original",
+      "uploader": "TBot",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        12,
+        15,
+        49,
+        50
+      ],
+      "sourceSha256": "790f38c4e02d7949e91279b7a262bf3054345bbc6fae8f22649f7d3d3c236b2e",
+      "outputSha256": "e06878fc429b7c3cf36788f030f7368d8d68a3ed9c7a3e858bba82fd95d91560",
+      "sourceWidth": 428,
+      "sourceHeight": 411
+    },
+    {
+      "id": "mission:eradicate-automatons",
+      "file": "eradicate-automatons.png",
+      "sourceFile": "eradicate-automatons-decoded.png",
+      "downloadFile": "eradicate-automatons-source.jpg",
+      "sourcePage": "https://www.inkl.com/news/how-to-find-and-kill-devastators-in-helldivers-2",
+      "sourceUrl": "https://cdn.mos.cms.futurecdn.net/fFU82MHbt2knFmoJWrbBEi.jpg",
+      "uploader": "PC Gamer, Sean Martin / Future; syndicated by inkl; screenshot credited to Arrowhead Game Studios",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        1615,
+        380,
+        72,
+        79
+      ],
+      "downloadSha256": "a1ac3b69d5587ffbe87600a36e4dc93bfd1bbea7704b484aaa09cb8e25fd6c3d",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "9cbaca4b41074193e3c53c16ec051833978f4e464724b43bc8a42642564500e3",
+      "outputSha256": "8a767b26be704ddbabf2ee4cadb13ea232b3dbd63662da116d10bb65c9943a4f",
+      "sourceWidth": 2560,
+      "sourceHeight": 1440
+    },
+    {
+      "id": "mission:eradicate-terminids",
+      "file": "eradicate-terminids.png",
+      "sourceFile": "eradicate-terminids-source.png",
+      "sourcePage": "https://steamcommunity.com/sharedfiles/filedetails/?id=3168338353",
+      "sourceUrl": "https://images.steamusercontent.com/ugc/5993798699017378085/6FEE753E064CA4B4FEA892B72FD20D989A2F0FF9/",
+      "uploader": "Steam guide author ♿, Easy XP farm! [UPDATED]",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        152,
+        108,
+        53,
+        58
+      ],
+      "sourceSha256": "d2e08d437fb9e9bc996c9f1512223ad97ac3898cc88a9b702d45341eff43897e",
+      "outputSha256": "4f9b5a27897752581572755fd3dbb92988c7242c4e3f525239507555445ab5f9",
+      "sourceWidth": 800,
+      "sourceHeight": 800
+    },
+    {
+      "id": "mission:evacuate-high-value-assets",
+      "file": "evacuate-high-value-assets.png",
+      "sourceFile": "evacuate-assets-decoded.png",
+      "downloadFile": "evacuate-assets-source.webp",
+      "sourcePage": "https://www.gameleap.com/articles/helldivers-2-how-to-complete-the-new-automaton-defense-mission",
+      "sourceUrl": "https://cdn.gameleap.com/images/articles/art_WZL1rMFjeU/art-img_LqhD3BQVE/1x.webp",
+      "uploader": "GameLeap, Ivan Valev; screenshot credited to Arrowhead Game Studios",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        1208,
+        223,
+        54,
+        60
+      ],
+      "downloadSha256": "d82cfae68f345f7443919df65a715ec8c6f68e7848efe3c80ab07cf008729ff8",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "ff2736575bf6f2d43701cd0548e56747632ce91538033d2414ac11d8aca0da9c",
+      "outputSha256": "c218f1b3e297a52263d5892f844138f0281558bc4133cc016f3270ad06e007c1",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:destroy-harvesters",
+      "file": "destroy-harvesters.png",
+      "sourceFile": "Destroy_Harvestors_Map.png",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/File:Destroy_Harvestors_Map.png",
+      "sourceUrl": "https://helldivers.wiki.gg/images/Destroy_Harvestors_Map.png?d159c3&format=original",
+      "uploader": "SoundwaveAeron",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        24,
+        24,
+        90,
+        101
+      ],
+      "sourceSha256": "290dbd862ee3029f945b2db0864d674ce93f33b1412891397f7295b9440c5628",
+      "outputSha256": "6ec4e37080bfa1981b44ca50c8e8226f693adf20963f7ef06a5169fac16a6061",
+      "sourceWidth": 845,
+      "sourceHeight": 936
+    },
+    {
+      "id": "mission:nuke-nursery",
+      "file": "nuke-nursery.png",
+      "sourceFile": "nuke-nursery-n4g-decoded.png",
+      "downloadFile": "nuke-nursery-n4g.jpg",
+      "sourcePage": "https://n4g.com/articles/helldivers-2-how-to-do-the-nuke-nursery-mission",
+      "sourceUrl": "https://n4g.com/wp-content/uploads/2026/04/20240616005733_11-1024x576-1.jpg",
+      "uploader": "N4G Unlocked; article by Vukan Truc",
+      "retrievedAt": "2026-09-28",
+      "resolutionNote": "Small source badge; soft when enlarged. Exact pixels retained.",
+      "crop": [
+        28,
+        100,
+        32,
+        34
+      ],
+      "downloadSha256": "6415859cbc9c2f933a5a89043d3a974318588b9a748406dbb6068df6be0be012",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "075deaeb7b82b69e9a106f4fed78a34957205b74c9a3e09244b2c5fad5c1e48b",
+      "outputSha256": "575b45053ec5217c2210c801f3170b409cf1a7e3f96baad968e530673f549e91",
+      "sourceWidth": 1024,
+      "sourceHeight": 576
+    },
+    {
+      "id": "mission:chart-terminid-tunnels",
+      "file": "chart-terminid-tunnels.png",
+      "sourceFile": "gloom-missions-n4g-decoded.png",
+      "downloadFile": "gloom-missions-n4g.jpg",
+      "sourcePage": "https://n4g.com/articles/helldivers-2-freshly-added-gloom-mission-types-spark-excitement-in-the-community",
+      "sourceUrl": "https://n4g.com/wp-content/uploads/2026/04/helldivers-2-gloom-mission-types-2-1024x576-1.jpg",
+      "uploader": "N4G Unlocked; article by Ksenija Grgurovic",
+      "retrievedAt": "2026-09-28",
+      "crop": [
+        519,
+        10,
+        53,
+        56
+      ],
+      "downloadSha256": "e40085a403d763100afa102c4771a9bafe340566985c53979200ea8d610f7af0",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "865408d5f14cbde9aa7523548db2c55df2a05eede4440e4e158c72fbb864b46f",
+      "outputSha256": "55d9e0f1cf9c87e563b7e5d8a4613c5068e4d412752a13c995f5837692452da9",
+      "sourceWidth": 1024,
+      "sourceHeight": 576
+    },
+    {
+      "id": "mission:infiltrate-illuminate-lair",
+      "file": "infiltrate-illuminate-lair.png",
+      "sourceFile": "lair-sarge-00m05s-decoded.png",
+      "downloadFile": "lair-sarge-00m05s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=OAK6tKsISp8",
+      "sourceUrl": "https://www.youtube.com/watch?v=OAK6tKsISp8&t=5s",
+      "uploader": "Sarge",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 5,
+        "evidence": "Named mission selection card."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        1261,
+        396,
+        46,
+        51
+      ],
+      "downloadSha256": "cc86b378414092a4078bc0d0dcd5d8bd0d4f4d17600130d72dedcad4306ff6a0",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "007fca28df77338f980db497b42fe7b564a178a5a92f9a8f0038c48b9dcae50f",
+      "outputSha256": "e21e6c980511492a5e6d9a910612497b7c3b58695b696c6ac0f66567c55fb073",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:blitz-toxic-pollination",
+      "file": "blitz-toxic-pollination.png",
+      "sourceFile": "toxic-demostorm-00m15s-decoded.png",
+      "downloadFile": "toxic-demostorm-00m15s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=XQyKTUzfL9g",
+      "sourceUrl": "https://www.youtube.com/watch?v=XQyKTUzfL9g&t=15s",
+      "uploader": "DemoStorm",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 15,
+        "evidence": "Named Suppress Toxic Pollination selection card; right edge of label clipped in vertical video."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        800,
+        299,
+        49,
+        51
+      ],
+      "downloadSha256": "4441963b9c7087ba14f259aab66af725ba9bd9d4138e90b879178be94772d5f0",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "26c137b993c87d25ebc0ee4832ad632fe333a7a010e0673b4100ca3ba9611782",
+      "outputSha256": "90e4bc5b09182762338619a70b1b63032d29f0e41ac535672bb6309feb73a608",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:repel-invasion-fleet",
+      "file": "repel-invasion-fleet.png",
+      "sourceFile": "repel-maplewood-00m40s-decoded.png",
+      "downloadFile": "repel-maplewood-00m40s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=EFb1Db_ETVk",
+      "sourceUrl": "https://www.youtube.com/watch?v=EFb1Db_ETVk&t=40s",
+      "uploader": "Maplewood",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 40,
+        "evidence": "Named city mission briefing."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        74,
+        187,
+        46,
+        51
+      ],
+      "downloadSha256": "8c2aba623489f3c3e5b9c6baeed53c93f042a817c5b10fdc77239e9c1ebc2dcd",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "88f214a388e8a80b9867dd4c20bffe1a725d7628fbd583068b6a5b8d7ee25e0b",
+      "outputSha256": "772a0c682515451fc89032b854dec515f938aa6c7a567005a63b2783e5a15986",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:democratize-the-void",
+      "file": "democratize-the-void.png",
+      "sourceFile": "democratize-sjor-02m05s-decoded.png",
+      "downloadFile": "democratize-sjor-02m05s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=jgCGjjOg3rg",
+      "sourceUrl": "https://www.youtube.com/watch?v=jgCGjjOg3rg&t=125s",
+      "uploader": "Sjór Deansson",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 125,
+        "evidence": "Named mission selection card."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        1221,
+        276,
+        47,
+        53
+      ],
+      "downloadSha256": "8f65452d5c428b92d7e53ac2f68e7cc4e194eff7332bfe61e7ae556e024376ef",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "5c58b1c898225a02da4c4abd04090f3c2b71093180dd947807f44975dacffb3f",
+      "outputSha256": "b971e3d6f4fac457ec543f840b935b9106f80d291e694f9abe3b5b99067a46e8",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:blitz-illuminate-gateways",
+      "file": "blitz-illuminate-gateways.png",
+      "sourceFile": "gateways-skybass-00m04s-decoded.png",
+      "downloadFile": "gateways-skybass-00m04s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=FOa3j_4DpTA",
+      "sourceUrl": "https://www.youtube.com/watch?v=FOa3j_4DpTA&t=4s",
+      "uploader": "Skybass - Patrick",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 4,
+        "evidence": "Named Destroy Warp Gateways objective HUD in the 12-minute mission; orange outline retained."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        1378,
+        146,
+        53,
+        56
+      ],
+      "downloadSha256": "b8da70bca22a6d60be1fc0c296e195c933ca2544584f5aad1f2e497dc64f8e12",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "0920508b53b76719f11a8f57c14c44c5f97254b0dbe64ed74d7644f48d9d0eb0",
+      "outputSha256": "6a22d1b1d5b0d0a3e161b70a3d55c367e52705c8a7096a39a49f723b23114a28",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:rapid-acquisition",
+      "file": "rapid-acquisition.png",
+      "sourceFile": "rapid-zaper-14m21s-decoded.png",
+      "downloadFile": "rapid-zaper-14m21s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=31cjRoogk2M",
+      "sourceUrl": "https://www.youtube.com/watch?v=31cjRoogk2M&t=861s",
+      "uploader": "Zaper",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 861,
+        "evidence": "Main-objective results badge from the video Rapid Acquisition w/ GeneralJaydonius; same cargo/platinum badge observed beside Seize High-Grade Platinum at 00:46. Orange fill retained."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        921,
+        387,
+        79,
+        84
+      ],
+      "downloadSha256": "3a64363f415bdda0ce8164810feaadd3ce13ab7a6c2f1a9debfdf5f1dc5eb2bc",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "a55de4bdb4162183df3f9ede6a5205a34bea0d65d7888ea6ca7ce140814aecbc",
+      "outputSha256": "9bcc8072fb66eb6c6f2fcc893870cdc0d17d88de10543647e8bb48a79d8cab53",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    },
+    {
+      "id": "mission:defend-evacuation-site",
+      "file": "defend-evacuation-site.png",
+      "sourceFile": "defend-millsonius-00m03s-decoded.png",
+      "downloadFile": "defend-millsonius-00m03s.jpg",
+      "sourcePage": "https://www.youtube.com/watch?v=TlrxPc5ydyA",
+      "sourceUrl": "https://www.youtube.com/watch?v=TlrxPc5ydyA&t=3s",
+      "uploader": "Millsonius",
+      "retrievedAt": "2026-09-28",
+      "capture": {
+        "method": "Paused browser screenshot (JPEG); rendered video, not original encoded game pixels",
+        "timestampSeconds": 3,
+        "evidence": "Named Defend Evacuation Site briefing explicitly describes Illuminate; not borrowed from another faction."
+      },
+      "resolutionNote": "Video/browser compression and scaling are present in the retained source. Crop is unaltered after RGBA decode.",
+      "crop": [
+        54,
+        189,
+        54,
+        59
+      ],
+      "downloadSha256": "aa126a81548d86dd78aec0eec16d5e8e1000455830438e1e1f9dad97aa2baa9b",
+      "decode": "Pillow 12.3.0; RGBA decode only; no resize, recolor or retouch",
+      "sourceSha256": "8732e5087e47e3876ddde1559129de05d5a2963e938c9f10db5b0c6e22456764",
+      "outputSha256": "8e69f16de4ac823894db6b64f632409833fcd4247b6d492c83ea36e925c95f63",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080
+    }
+  ]
+}

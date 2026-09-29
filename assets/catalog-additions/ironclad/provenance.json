@@ -1,0 +1,388 @@
+{
+  "reviewedAt": "2026-09-25",
+  "assets": [
+    {
+      "name": "AR-11 Arbitrator",
+      "type": "primary",
+      "assetPath": "assets/catalog-additions/ironclad/ar-11-arbitrator.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "c729ce69b7e615daf3ca642e810df58bc6461334ead15cd6ad1796e03eaa1fd9",
+      "bytes": 989,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "GL-15 Evictor",
+      "type": "primary",
+      "assetPath": "assets/catalog-additions/ironclad/gl-15-evictor.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "95e5a8b11dfaf70612ca55829a5b7c8bbf59e0ba5ca95786003545ef18c51fe5",
+      "bytes": 993,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "P-34 Breacher",
+      "type": "sidearm",
+      "assetPath": "assets/catalog-additions/ironclad/p-34-breacher.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "d0c501ef7e4a33ec7774252a3bc14088a016d7fade53f3ac2c4d6c9a1403e2c6",
+      "bytes": 967,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "G-60 Anti-Tank Seeker",
+      "type": "throwable",
+      "assetPath": "assets/catalog-additions/ironclad/g-60-anti-tank-seeker.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "ec819eba781874f4953be40455b7ff98dce89b3b0329591db0fc8cd3c6b5c272",
+      "bytes": 1020,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "G-8 Immolation",
+      "type": "throwable",
+      "assetPath": "assets/catalog-additions/ironclad/g-8-immolation.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "c8a3057b193b25516fb531a756d4fad63c26be18add2a0c8c66d135f20eb0fc3",
+      "bytes": 1022,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "Integrated Extinguishers",
+      "type": "booster",
+      "assetPath": "assets/catalog-additions/ironclad/integrated-extinguishers.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "0e4678e3055f385d80b51eb3fc034467a8d8910017d1e8dfa89e29610a2c988d",
+      "bytes": 1052,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "Surplus EAT Allocation",
+      "type": "booster",
+      "assetPath": "assets/catalog-additions/ironclad/surplus-eat-allocation.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "e254c7c73643401e48ff7299055562160aab67203b0b5809eced6359b86ddd9d",
+      "bytes": 1133,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "LAS-12 Sai",
+      "type": "primary",
+      "assetPath": "assets/catalog-additions/ironclad/las-12-sai.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "d1b017679fd277fcc374275de6dcfe5e7971cae2580b28118c12b43bcec1856e",
+      "bytes": 989,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "Ironclad Democracy",
+      "type": "warbond",
+      "assetPath": "assets/catalog-additions/ironclad/cover.svg",
+      "sourceKind": "original-symbolic-vector",
+      "contributor": "HD2 Chaos Slot Machine project",
+      "sourcePage": "docs/IRONCLAD_GEAR.md",
+      "filePage": "assets/catalog-additions/ironclad/ATTRIBUTION.md",
+      "imageUrl": "",
+      "sha256": "9f5b13f821993c8f19a30e2afd38d1a13436bff00758b7384199377b23ccd7ed",
+      "bytes": 1619,
+      "limitation": "Original symbolic illustration, not an official in-game render."
+    },
+    {
+      "name": "AR-11 Arbitrator",
+      "type": "primary",
+      "assetPath": "assets/catalog-additions/ironclad/ar-11-arbitrator.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/ar11arbitrator.webp",
+      "sha256": "4c633a5b5d8547fcc359f9d588588a87ce8cbf88970a7dbad25eb65fb7950b5f",
+      "bytes": 309785,
+      "sourceFile": "ar11arbitrator.webp",
+      "sourceSha256": "374bc5bf7ef11ca2702938390db871cf9dc0918d387e5fbed02dc9e6ccbfb147",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "crop": [
+        380,
+        334,
+        1584,
+        798
+      ],
+      "dimensions": [
+        1204,
+        464
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "GL-15 Evictor",
+      "type": "primary",
+      "assetPath": "assets/catalog-additions/ironclad/gl-15-evictor.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/gl15evictor.webp",
+      "sha256": "03729ce50075f465a6607be4e01726e1c42018cd4c928a7eae27dffeda620b1e",
+      "bytes": 282746,
+      "sourceFile": "gl15evictor.webp",
+      "sourceSha256": "b2c3f3e3a6f5016e3664011a6ed41eea56a8618b135c15411d497cb09c88fc68",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "crop": [
+        280,
+        313,
+        1634,
+        835
+      ],
+      "dimensions": [
+        1354,
+        522
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "LAS-12 Sai",
+      "type": "primary",
+      "assetPath": "assets/catalog-additions/ironclad/las-12-sai.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/las12sai.webp",
+      "sha256": "b8a068a0a0f9c21565966e29ff4aed550ba5780b90691f96b5aa60c93a958b13",
+      "bytes": 392232,
+      "sourceFile": "las12sai.webp",
+      "sourceSha256": "308a82d6970d0c15178e891112b3b5449dd0948adb1dd7770856db723f9b3413",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "crop": [
+        412,
+        304,
+        1603,
+        858
+      ],
+      "dimensions": [
+        1191,
+        554
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "P-34 Breacher",
+      "type": "sidearm",
+      "assetPath": "assets/catalog-additions/ironclad/p-34-breacher.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/p34breacher.webp",
+      "sha256": "39a7d43bf51f1df0746c76eddf6489e132f97f87a343a408d1f76b7be8d91cbf",
+      "bytes": 41301,
+      "sourceFile": "p34breacher.webp",
+      "sourceSha256": "2318ba9f432d42b50b79a5b0e7745a755fa00203b5362edfdbb8120bab334d54",
+      "sourceDimensions": [
+        325,
+        290
+      ],
+      "crop": [
+        16,
+        65,
+        312,
+        225
+      ],
+      "dimensions": [
+        296,
+        160
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "G-8 Immolation",
+      "type": "throwable",
+      "assetPath": "assets/catalog-additions/ironclad/g-8-immolation.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/g8immolation.webp",
+      "sha256": "afca469513f2fc12a238a22ee0e48ee382cb9760487988e8e811af322f851423",
+      "bytes": 54608,
+      "sourceFile": "g8immolation.webp",
+      "sourceSha256": "0b4bc40b52ac1da8c3da19c4d6a8dec46a7583ba4d6e9174eff0364c8715be6f",
+      "sourceDimensions": [
+        194,
+        240
+      ],
+      "crop": null,
+      "dimensions": [
+        194,
+        240
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "G-60 Anti-Tank Seeker",
+      "type": "throwable",
+      "assetPath": "assets/catalog-additions/ironclad/g-60-anti-tank-seeker.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/g60antitankseeker.webp",
+      "sha256": "301ce9848048f304600d579e774c5dd47bb7b5683eb89ea4fb315fb726e2ff79",
+      "bytes": 48665,
+      "sourceFile": "g60antitankseeker.webp",
+      "sourceSha256": "9629fd755d81ce924d87dbc6a923459fbc3811c32bdecc88a646f1de42e7521f",
+      "sourceDimensions": [
+        184,
+        224
+      ],
+      "crop": null,
+      "dimensions": [
+        184,
+        224
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "Integrated Extinguishers",
+      "type": "booster",
+      "assetPath": "assets/catalog-additions/ironclad/integrated-extinguishers.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/integratedextinguishers.webp",
+      "sha256": "26f8824e185be35d906738b81ee6003904ec70b74ed10dfd1d4955d4a66adb35",
+      "bytes": 22139,
+      "sourceFile": "integratedextinguishers.webp",
+      "sourceSha256": "c41c5ef953b8199dd51646f1c1c0eff9b17a85df4c880aaca8069df955b6f86a",
+      "sourceDimensions": [
+        256,
+        256
+      ],
+      "crop": null,
+      "dimensions": [
+        256,
+        256
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "Surplus EAT Allocation",
+      "type": "booster",
+      "assetPath": "assets/catalog-additions/ironclad/surplus-eat-allocation.png",
+      "sourceKind": "community-hosted-game-artwork",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: Helldivers 2 Challenges (upstream editing authorship unverified)",
+      "sourcePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "filePage": "https://www.helldivers2challenges.com/tiermaker/",
+      "imageUrl": "https://www.helldivers2challenges.com/images/equipment/surpluseatallocation.webp",
+      "sha256": "0688a7ebeb1e870a667485e69ce66b84f81e5f6c62139c05ecd206b51c59fef4",
+      "bytes": 10269,
+      "sourceFile": "surpluseatallocation.webp",
+      "sourceSha256": "997b9b9b93555e1e615b590f6c8b17af0e89d916fa5905f7f0eae4e1be1b8069",
+      "sourceDimensions": [
+        77,
+        67
+      ],
+      "crop": null,
+      "dimensions": [
+        77,
+        67
+      ],
+      "transformation": "lossless original-pixel crop / PNG encoding; no resampling or redrawing",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    },
+    {
+      "name": "Ironclad Democracy",
+      "type": "warbond",
+      "assetPath": "assets/catalog-additions/ironclad/cover.jpg",
+      "sourceKind": "publisher-promotional-image",
+      "contributor": "Game artwork: Sony Interactive Entertainment / Arrowhead Game Studios; source publisher: PlayStation Blog",
+      "sourcePage": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+      "filePage": "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+      "imageUrl": "https://blog.playstation.com/tachyon/2026/09/2ae780305b6c042b462bf069db5c42a36c819248.jpg",
+      "sha256": "8034f5509c78ddf387d0090db67f70aa77b11079539b6a0fef00ee7f2af6f296",
+      "bytes": 296871,
+      "sourceFile": "cover.jpg",
+      "sourceSha256": "8034f5509c78ddf387d0090db67f70aa77b11079539b6a0fef00ee7f2af6f296",
+      "sourceDimensions": [
+        2047,
+        1123
+      ],
+      "crop": null,
+      "dimensions": [
+        2047,
+        1123
+      ],
+      "transformation": "unchanged download",
+      "permissionStatus": "not-established",
+      "limitation": "Local review. Source attribution and pixel matching do not establish redistribution permission. Community images are not asserted to be publisher-supplied originals."
+    }
+  ],
+  "activeAssetPaths": [
+    "assets/catalog-additions/ironclad/ar-11-arbitrator.png",
+    "assets/catalog-additions/ironclad/gl-15-evictor.png",
+    "assets/catalog-additions/ironclad/las-12-sai.png",
+    "assets/catalog-additions/ironclad/p-34-breacher.png",
+    "assets/catalog-additions/ironclad/g-8-immolation.png",
+    "assets/catalog-additions/ironclad/g-60-anti-tank-seeker.png",
+    "assets/catalog-additions/ironclad/integrated-extinguishers.png",
+    "assets/catalog-additions/ironclad/surplus-eat-allocation.png",
+    "assets/catalog-additions/ironclad/cover.jpg"
+  ],
+  "historicalNote": "Nine original SVGs retained recoverably; not used by current catalog. Later records supersede earlier records with the same name."
+}

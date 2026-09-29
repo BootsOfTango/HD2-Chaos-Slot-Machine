@@ -1,0 +1,38 @@
+{
+  "product": "HD2 Chaos Slot Machine",
+  "target": "1.1.1 Official Project Release",
+  "checks": {
+    "artworkRights": {
+      "status": "owner-accepted-risk",
+      "permissionEstablished": false,
+      "ownerApprovedVersion": "1.1.1",
+      "evidence": "docs/DISTRIBUTION_DECISIONS.md",
+      "reason": "Owner explicitly approved publishing v1.1.1 with current images knowing redistribution permission remains unconfirmed. Credits preserved; no rights-holder approval or clearance claimed."
+    },
+    "licenseInventory": {
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Final v1.1.1:552 bundled source files, ZIP/Setup payloads, installer plugin inventories and notices verified. Notice completeness does not establish artwork permission."
+    },
+    "securityReview": {
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "925 source tests, CSP/catalog/assets, dependency audit0 and final packaged renderer security44 pass. Version-corrected hosted source/lifecycle/Linux green; current-head green checks additionally enforced before PR merge."
+    },
+    "versionAndBranding": {
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Final rebuilt v1.1.1 matches UI/identity/guides/README and filenames. Internal1.1.14/save identity retained. This does not alone prove upload/publication or Desktop replacement."
+    },
+    "finalArtifactTests": {
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Exact final v1.1.1 packaged workflow396, card rules31, transfer38 and security44 pass with graceful exits and synthetic profiles. Version-corrected hosted lifecycle green; current-head checks required before merge. Manual coverage limits recorded; owner app remains uninstalled."
+    },
+    "finalArtifactScanAndSigning": {
+      "status": "passed",
+      "evidence": "docs/RELEASE_V1_1_1_REPORT.md",
+      "reason": "Exact final v1.1.1 hashes recorded; Defender no threats/exit0, actual app/Setup/embedded uninstaller NotSigned verified. Approved unsigned release with warnings retained; no safety guarantee. Downloaded-byte verification required before publication."
+    }
+  }
+}

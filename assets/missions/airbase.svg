@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#ffdb4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-design="tactical-line-v3">
+  <title>Air base sabotage — original mission symbol</title>
+  <path d="M9 55h46M12 48V24h16v24M8 24v-9h24v9ZM20 15V7m-4 0h8M40 20l5-9 5 9v11l9 7v5l-9-3v9l4 4H36l4-4v-9l-9 3v-5l9-7Z"/>
+  <path d="M13 19h14M17 30h6m-6 7h6m-6 7h6M45 24v18m-8 16h16M5 9h5m44 0h5" stroke-width="1.25" opacity=".65"/>
+</svg>

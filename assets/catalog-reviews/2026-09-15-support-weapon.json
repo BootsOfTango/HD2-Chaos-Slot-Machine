@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "scope": "Sixteen existing support-weapon acquisition facts; no identities, defaults, artwork or saved choices changed.",
+  "references": [
+    "docs/M2B_SUPPORT_WEAPON_RESEARCH.md"
+  ],
+  "warbonds": [],
+  "items": [
+    {
+      "id": "stratagem:ac-8-autocannon",
+      "previousName": "AC-8 Autocannon",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AC-8_Autocannon",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:apw-1-anti-materiel-rifle",
+      "previousName": "APW-1 Anti-Materiel Rifle",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/APW-1_Anti-Materiel_Rifle",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:arc-3-arc-thrower",
+      "previousName": "ARC-3 Arc Thrower",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/ARC-3_Arc_Thrower",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:eat-17-expendable-anti-tank",
+      "previousName": "EAT-17 Expendable Anti-Tank",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/EAT-17_Expendable_Anti-Tank",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:faf-14-spear",
+      "previousName": "FAF-14 Spear",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/FAF-14_Spear",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:flam-40-flamethrower",
+      "previousName": "FLAM-40 Flamethrower",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/FLAM-40_Flamethrower",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:gl-21-grenade-launcher",
+      "previousName": "GL-21 Grenade Launcher",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/GL-21_Grenade_Launcher",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:gr-8-recoilless-rifle",
+      "previousName": "GR-8 Recoilless Rifle",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/GR-8_Recoilless_Rifle",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:las-98-laser-cannon",
+      "previousName": "LAS-98 Laser Cannon",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-98_Laser_Cannon",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:las-99-quasar-cannon",
+      "previousName": "LAS-99 Quasar Cannon",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LAS-99_Quasar_Cannon",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:m-105-stalwart",
+      "previousName": "M-105 Stalwart",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/M-105_Stalwart",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:mg-206-heavy-machine-gun",
+      "previousName": "MG-206 Heavy Machine Gun",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MG-206_Heavy_Machine_Gun",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:mg-43-machine-gun",
+      "previousName": "MG-43 Machine Gun",
+      "warbond": "Base game",
+      "source": "Base game",
+      "acquisition": {
+        "kind": "base-game",
+        "id": "base-game:starter-equipment",
+        "label": "Starter equipment",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MG-43_Machine_Gun",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Unlocked by default in game. Existing player ownership and roll exclusions are preserved."
+      }
+    },
+    {
+      "id": "stratagem:mls-4x-commando",
+      "previousName": "MLS-4X Commando",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/MLS-4X_Commando",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:rl-77-airburst-rocket-launcher",
+      "previousName": "RL-77 Airburst Rocket Launcher",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/RL-77_Airburst_Rocket_Launcher",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:rs-422-railgun",
+      "previousName": "RS-422 Railgun",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/RS-422_Railgun",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Order introductions do not grant ownership automatically."
+      }
+    }
+  ]
+}

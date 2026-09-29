@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "scope": "Helldivers Mobilize! standard Warbond and starter-equipment exclusion; acquisition-only review.",
+  "references": [
+    "docs/M2B_WARBOND_BATCH8_RESEARCH.md"
+  ],
+  "items": [
+    {
+      "id": "primary:ar-23p-liberator-penetrator",
+      "previousName": "AR-23P Liberator Penetrator",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:r-63-diligence",
+      "previousName": "R-63 Diligence",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:r-63cs-diligence-counter-sniper",
+      "previousName": "R-63CS Diligence Counter Sniper",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:smg-37-defender",
+      "previousName": "SMG-37 Defender",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:sg-225-breaker",
+      "previousName": "SG-225 Breaker",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:sg-225sp-breaker-spray-and-pray",
+      "previousName": "SG-225SP Breaker Spray&Pray",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:sg-8-punisher",
+      "previousName": "SG-8 Punisher",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:sg-8s-slugger",
+      "previousName": "SG-8S Slugger",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:las-5-scythe",
+      "previousName": "LAS-5 Scythe",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "primary:plas-1-scorcher",
+      "previousName": "PLAS-1 Scorcher",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "sidearm:p-19-redeemer",
+      "previousName": "P-19 Redeemer",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "throwable:g-16-impact",
+      "previousName": "G-16 Impact",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "throwable:g-3-smoke",
+      "previousName": "G-3 Smoke",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "throwable:g-6-frag",
+      "previousName": "G-6 Frag",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "booster:hellpod-space-optimization",
+      "previousName": "Hellpod Space Optimization",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "booster:vitality-enhancement",
+      "previousName": "Vitality Enhancement",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "booster:uav-recon-booster",
+      "previousName": "UAV Recon Booster",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "booster:stamina-enhancement",
+      "previousName": "Stamina Enhancement",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "booster:muscle-enhancement",
+      "previousName": "Muscle Enhancement",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    },
+    {
+      "id": "booster:increased-reinforcement-budget",
+      "previousName": "Increased Reinforcement Budget",
+      "warbond": "Helldivers Mobilize!",
+      "source": "Helldivers Mobilize!",
+      "acquisition": {
+        "kind": "warbond",
+        "id": "warbond:helldivers-mobilize",
+        "label": "Helldivers Mobilize!",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Item membership is community-corroborated. Arrowhead confirms free Warbond access, not automatic equipment unlocks; spend Medals in game and choose owned items here."
+      }
+    }
+  ],
+  "warbonds": [
+    {
+      "id": "warbond:helldivers-mobilize",
+      "name": "Helldivers Mobilize!",
+      "edition": "Standard Warbond",
+      "releasedAt": "2024-02-08",
+      "coverAssetPath": "assets/warbonds/helldivers-mobilize.png",
+      "coverKind": "game-cover-art-via-community",
+      "sourceUrl": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond",
+      "verifiedAt": "2026-09-15",
+      "equipmentIds": [
+        "primary:ar-23p-liberator-penetrator",
+        "primary:r-63-diligence",
+        "primary:r-63cs-diligence-counter-sniper",
+        "primary:smg-37-defender",
+        "primary:sg-225-breaker",
+        "primary:sg-225sp-breaker-spray-and-pray",
+        "primary:sg-8-punisher",
+        "primary:sg-8s-slugger",
+        "primary:las-5-scythe",
+        "primary:plas-1-scorcher",
+        "sidearm:p-19-redeemer",
+        "throwable:g-16-impact",
+        "throwable:g-3-smoke",
+        "throwable:g-6-frag",
+        "booster:hellpod-space-optimization",
+        "booster:vitality-enhancement",
+        "booster:uav-recon-booster",
+        "booster:stamina-enhancement",
+        "booster:muscle-enhancement",
+        "booster:increased-reinforcement-budget"
+      ],
+      "notes": "Free Warbond access; equipment requires Medals in game. Only mark items you have unlocked as owned. Complete reviewed rollable set: 10 primaries, 1 sidearm, 3 throwables, 6 boosters; no stratagems. Excludes starter equipment, separately purchased Superstore items and cosmetics. In-game background art retrieved via Dogo314 / Helldivers Wiki.gg; not a screenshot of the acquisition menu."
+    }
+  ]
+}

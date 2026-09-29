@@ -1,0 +1,227 @@
+{
+  "version": "1.1.14",
+  "buildLabel": "orbital-eagle",
+  "capturedAt": "2026-09-15T22:04:29.619Z",
+  "source": "Verified orbital/Eagle candidate app.asar, before defensive acquisition review",
+  "asarSha256": "415805382c987c89188e6642330b8cd34ca861e798adcc58bf962766c3e253c9",
+  "hashes": {
+    "catalog": "f74e361da94ffd14d180db51f5d716218e7c27ce6fb8c9302157388f9ee8c0a5",
+    "untouched": "91b12bb2684f4f81c944b0e56c80bc3398423d3d519528f5dddc503b57a695dc",
+    "priorWarbonds": "2d0e1380ac16a2f90767b3f8cdd4bd440bd70f45b315d463a2f948e8a9e71098",
+    "protected": "e90843ef4d37df25b5ce04e9673b7b16ef7e62d96350751c111d7aced74d1272"
+  },
+  "reviewedRows": [
+    {
+      "name": "Anti-Personnel Minefield",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/anti-personnel-minefield.svg",
+      "id": "stratagem:anti-personnel-minefield",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Anti-Tank Mines",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/anti-tank-mines.svg",
+      "id": "stratagem:anti-tank-mines",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Autocannon Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/autocannon-sentry.svg",
+      "id": "stratagem:autocannon-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "EMS Mortar Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/ems-mortar-sentry.svg",
+      "id": "stratagem:ems-mortar-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Gas Mines",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/gas-mines.svg",
+      "id": "stratagem:gas-mines",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Gatling Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/gatling-sentry.svg",
+      "id": "stratagem:gatling-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Grenadier Battlement",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/grenadier-battalion.svg",
+      "id": "stratagem:grenadier-battlement",
+      "aliases": [
+        "grenadier battalion"
+      ],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "HMG Emplacement",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/hmg-emplacement.svg",
+      "id": "stratagem:hmg-emplacement",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Incendiary Mines",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/incendiary-mines.svg",
+      "id": "stratagem:incendiary-mines",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Machine Gun Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/machine-gun-sentry.svg",
+      "id": "stratagem:machine-gun-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Mortar Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/mortar-sentry.svg",
+      "id": "stratagem:mortar-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Rocket Sentry",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/rocket-sentry.svg",
+      "id": "stratagem:rocket-sentry",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Shield Generator Relay",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/shield-generator-relay.svg",
+      "id": "stratagem:shield-generator-relay",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Tesla Tower",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Unassigned / Custom",
+      "source": "Unassigned / Custom",
+      "assetPath": "assets/stratagems/defensive/tesla-tower.svg",
+      "id": "stratagem:tesla-tower",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Unassigned / Custom",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ]
+}

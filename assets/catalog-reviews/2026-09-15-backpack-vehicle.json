@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-15",
+  "scope": "Eleven backpack/vehicle acquisition facts, one current-name alias, and one explicit fresh-profile campaign exclusion; existing ownership preserved.",
+  "references": [
+    "docs/M2B_BACKPACK_VEHICLE_RESEARCH.md"
+  ],
+  "freshInstallExclusions": [
+    "stratagem:m-103-supply-frv"
+  ],
+  "warbonds": [],
+  "items": [
+    {
+      "id": "stratagem:ballistic-shield-backpack",
+      "previousName": "Ballistic Shield Backpack",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/SH-20_Ballistic_Shield_Backpack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:bastion",
+      "previousName": "Bastion",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/TD-220_Bastion_MK_XVI",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:emancipator-exosuit",
+      "previousName": "Emancipator Exosuit",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/EXO-49_Emancipator_Exosuit",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:m-102-fast-recon-vehicle",
+      "previousName": "M-102 Fast Recon Vehicle",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "aliases": [
+        "M-102 Gunner FRV"
+      ],
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/M-102_Gunner_FRV",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:m-103-supply-frv",
+      "previousName": "M-103 Supply FRV",
+      "warbond": "Campaign rewards",
+      "source": "Campaign rewards",
+      "acquisition": {
+        "kind": "campaign-reward",
+        "id": "campaign:census-thunder",
+        "label": "Census Thunder campaign reward",
+        "sourceUrl": "https://arrowhead.zendesk.com/hc/en-us/articles/29563053705500-I-didn-t-get-a-campaign-reward",
+        "verifiedAt": "2026-09-15",
+        "verification": "primary-source",
+        "reviewScope": "acquisition",
+        "startsAt": "2026-06-16T00:00:00Z",
+        "endsAt": "2026-06-29T15:00:00Z",
+        "notes": "Campaign participation reward as of September 15, 2026. Arrowhead says missed rewards return at some time in October 2026, not available universally today. Choose owned only if you received it; existing saved choices are preserved. This is not an automatic date-based unlock."
+      }
+    },
+    {
+      "id": "stratagem:guard-dog",
+      "previousName": "Guard Dog",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/AR-23_Guard_Dog",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:guard-dog-rover",
+      "previousName": "Guard Dog Rover",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/AX/LAS-5_Rover",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:jump-pack",
+      "previousName": "Jump Pack",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/LIFT-850_Jump_Pack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:patriot-exosuit",
+      "previousName": "Patriot Exosuit",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/EXO-45_Patriot_Exosuit",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:shield-generator-pack",
+      "previousName": "Shield Generator Pack",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/SH-32_Shield_Generator_Pack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    },
+    {
+      "id": "stratagem:supply-pack",
+      "previousName": "Supply Pack",
+      "warbond": "Requisition unlocks",
+      "source": "Requisition unlocks",
+      "acquisition": {
+        "kind": "requisition",
+        "id": "requisition:requisition-unlocks",
+        "label": "Requisition unlocks",
+        "sourceUrl": "https://helldivers.wiki.gg/wiki/B-1_Supply_Pack",
+        "verifiedAt": "2026-09-15",
+        "verification": "community-source",
+        "reviewScope": "acquisition",
+        "notes": "Community procurement evidence: purchase through Ship Management using Requisition Slips after meeting the in-game level requirement. Level-one availability and historical Major Orders do not grant ownership automatically."
+      }
+    }
+  ]
+}

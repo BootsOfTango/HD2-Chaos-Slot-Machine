@@ -1,18 +1,22 @@
-name: CI
+name: Validate catalog on Linux
 
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-  release:
-    types: [published, prereleased]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   item-catalog-maintenance:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Validate catalog/default/image consistency
         run: python scripts/validate_item_catalog.py

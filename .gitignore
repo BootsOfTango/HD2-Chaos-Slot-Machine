@@ -52,7 +52,17 @@ out/
 /test-artifacts/
 /.test-data/
 
+# Local credentials/signing material must not enter commits or releases.
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+
 # Generated Python cache and local installer shortcut
 __pycache__/
 *.pyc
 /Helldivers 2 Chaos Slot Machine.lnk
+/Helldivers-2-Chaos-Slot-Machine-Setup-v*-win-x64.exe.sha256

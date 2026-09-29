@@ -1,0 +1,253 @@
+{
+  "version": "1.1.9",
+  "capturedAt": "2026-09-15T03:38:24.238Z",
+  "source": "Accepted v1.1.9 packaged app.asar; independent pre-batch-7 baseline",
+  "hashes": {
+    "catalog": "fe344fd8764c7c26cc327f2a0f52899a2e1b5238ef1df304d36a073c4e0e4038",
+    "untouched": "e40574f2eef67528313596d52a9c698a8f3d2504910820ac1e0ce93c064fb320",
+    "priorWarbonds": "eccb0ff906a4635cdce8a50f014845bc5db03eb6a8488b2df21a504b2befe3e6",
+    "protected": "da999d0b3d7c4311dbddc584386d23363f4deb2b8da363c720fb871b8c480d17"
+  },
+  "reviewedRows": [
+    {
+      "name": "MA5C Assault Rifle",
+      "type": "primary",
+      "subgroup": "assault-rifle",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "assetPath": "assets/weapons/primaries/ma5c-assault-rifle-wiki.png",
+      "id": "primary:ma5c-assault-rifle",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "M7S SMG",
+      "type": "primary",
+      "subgroup": "smg",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "assetPath": "assets/weapons/primaries/m7s-smg-wiki.png",
+      "id": "primary:m7s-smg",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "M90A Shotgun",
+      "type": "primary",
+      "subgroup": "shotgun",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "assetPath": "assets/weapons/primaries/m90a-shotgun-wiki.png",
+      "id": "primary:m90a-shotgun",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "M6C/SOCOM Pistol",
+      "type": "sidearm",
+      "subgroup": "pistol",
+      "warbond": "Obedient Democracy Support Troopers",
+      "source": "Obedient Democracy Support Troopers",
+      "assetPath": "assets/weapons/sidearms/m6c-socom-pistol-wiki.png",
+      "id": "sidearm:m6c-socom-pistol",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Obedient Democracy Support Troopers",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Stoker",
+      "type": "primary",
+      "subgroup": "shotgun",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/weapons/primaries/stoker-wiki.png",
+      "id": "primary:stoker",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Sweeper",
+      "type": "primary",
+      "subgroup": "marksman-rifle",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/weapons/primaries/sweeper-wiki.png",
+      "id": "primary:sweeper",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "SMG-203 Gallant",
+      "type": "primary",
+      "subgroup": "smg",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "assetPath": "assets/weapons/primaries/smg-203-gallant-wiki.png",
+      "id": "primary:smg-203-gallant",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Entrenchment Tool",
+      "type": "sidearm",
+      "subgroup": "special-sidearm",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/weapons/sidearms/entrenchment-tool-wiki.png",
+      "id": "sidearm:entrenchment-tool",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Veto",
+      "type": "sidearm",
+      "subgroup": "pistol",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/weapons/sidearms/veto-wiki.png",
+      "id": "sidearm:veto",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "P-33 Missile Pistol",
+      "type": "sidearm",
+      "subgroup": "special-sidearm",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "assetPath": "assets/weapons/sidearms/p-33-missile-pistol-wiki.png",
+      "id": "sidearm:p-33-missile-pistol",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Giga Grenade",
+      "type": "throwable",
+      "subgroup": "grenade",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/weapons/throwables/giga-grenade-wiki.png",
+      "id": "throwable:giga-grenade",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Gas Mortar",
+      "type": "stratagem",
+      "subgroup": "defensive",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/stratagems/defensive/gas-mortar.svg",
+      "id": "stratagem:gas-mortar",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "Cremator",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Entrenched Division",
+      "source": "Entrenched Division",
+      "assetPath": "assets/stratagems/support/cremator.svg",
+      "id": "stratagem:cremator",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Entrenched Division",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "MGX-42 Bullet Storm",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "assetPath": "assets/stratagems/support/mgx-42-bullet-storm.svg",
+      "id": "stratagem:mgx-42-bullet-storm",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "EXO-51 Lumberer Exosuit",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "assetPath": "assets/stratagems/exosuits/exo-51-lumberer-exosuit.svg",
+      "id": "stratagem:exo-51-lumberer-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    },
+    {
+      "name": "EXO-55 Breakthrough Exosuit",
+      "type": "stratagem",
+      "subgroup": "support",
+      "warbond": "Exo Experts",
+      "source": "Exo Experts",
+      "assetPath": "assets/stratagems/exosuits/exo-55-breakthrough-exosuit.svg",
+      "id": "stratagem:exo-55-breakthrough-exosuit",
+      "aliases": [],
+      "acquisition": {
+        "kind": "unverified",
+        "label": "Exo Experts",
+        "verification": "legacy-assignment-pending-audit"
+      }
+    }
+  ]
+}

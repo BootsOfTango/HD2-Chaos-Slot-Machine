@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-09-15",
+  "method": "Public MediaWiki file pages and imageinfo locate the game render and cover. Downloaded the delivered PNG representations without local image edits; recorded delivered-byte hashes separately from MediaWiki original metadata. Visual review completed locally.",
+  "rightsNotice": "Game imagery and marks belong to Arrowhead, Sony Interactive Entertainment, Guerrilla and their licensors. Not covered by the application code license. Retrieval attribution is not unrestricted redistribution clearance.",
+  "assets": [
+    {
+      "name": "R-4 Hyena",
+      "assetPath": "assets/catalog-additions/r-4-hyena.png",
+      "type": "primary",
+      "sourceKind": "game-render-via-wiki",
+      "contributor": "Undeadender / Helldivers Wiki.gg",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/R-4_Hyena",
+      "filePage": "https://helldivers.wiki.gg/wiki/File:R-4_Hyena_Primary_Render.png",
+      "imageUrl": "https://helldivers.wiki.gg/images/R-4_Hyena_Primary_Render.png?f84f0d",
+      "width": 3840,
+      "height": 2160,
+      "bytes": 1278817,
+      "sha256": "29fc4d29467ce9caeed00b1a459cfb316a9b20d02a5a2cd218c41d1a42e86725",
+      "deliveredSha1": "f8f9d26ae60f1e10db24d54ec69d0c8eec408ddc",
+      "mediaWikiOriginalSha1": "f84f0d8ee72216174856e722e9b49167aeafe5fb",
+      "mediaWikiOriginalBytes": 3433452,
+      "visualCheck": "Scoped long rifle with angular stock, curved magazine and muzzle brake, transparent background; corresponds to the named file-page render.",
+      "limitation": "Delivered bytes differ from MediaWiki original SHA-1/size. Dimensions agree; do not claim byte identity to the original archive or direct game extraction by this project."
+    },
+    {
+      "name": "Righteous Revenants",
+      "assetPath": "assets/catalog-additions/righteous-revenants-cover.png",
+      "type": "warbond",
+      "sourceKind": "game-warbond-cover-via-wiki",
+      "contributor": "PLord / Helldivers Wiki.gg",
+      "sourcePage": "https://helldivers.wiki.gg/wiki/Righteous_Revenants_Legendary_Warbond",
+      "filePage": "https://helldivers.wiki.gg/wiki/File:Righteous_Revenants_Legendary_Warbond_Cover.png",
+      "imageUrl": "https://helldivers.wiki.gg/images/Righteous_Revenants_Legendary_Warbond_Cover.png?772db8",
+      "width": 2048,
+      "height": 1024,
+      "bytes": 1115685,
+      "sha256": "523471e7873522771842d855f780629e7e07ba646f188b103c6f3af645790aeb",
+      "deliveredSha1": "83d99f4ff70b5ad1582ec9dc524025fbb99bcb76",
+      "mediaWikiOriginalSha1": "772db8df939c6fb463d0b334081322d799a7b47f",
+      "mediaWikiOriginalBytes": 1857410,
+      "visualCheck": "Killzone soldiers with orange goggles, Legendary Warbond and Helldivers 2 x Killzone text; corresponds to the named Warbond cover file.",
+      "limitation": "Delivered bytes differ from MediaWiki original SHA-1/size. No local image edits. Visual/source association verified; original-archive byte identity is not claimed."
+    }
+  ]
+}
