@@ -1,4 +1,20 @@
-# HD2 Chaos Slot Machine
+# Roll of Duty
+
+**Helldivers 2 Loadout Randomizer** — random loadouts, mission records, and personal performance stats.
+
+Formerly **HD2 Chaos Slot Machine**. The rename and compatible-loadout rules are in development; the downloadable **v1.1.1** below is still the previous release. Repository URL, historical releases and existing save locations are unchanged.
+
+## In development — not in the current download
+
+- New spins and rerolls allow at most one backpack-requiring item and one non-expendable support weapon. Backpack-fed weapons consume both limits; neither slot is mandatory.
+- Solo Silo, EAT-17, EAT-700 Expendable Napalm, Leveller, Commando and MGX-42 Bullet Storm are support-cap exceptions. Portable Hellbomb is a backpack-cap exception. Every choice still occupies one of four distinct stratagem slots.
+- At most one exosuit, one tank and one FRV; one of each type can coexist. Multiple turrets, minefields, Eagles and orbitals remain allowed.
+- No unrestricted mode. Only owned/enabled, classified equipment is eligible; an impossible four-pick pool produces guidance rather than conflicting or unowned gear. Existing saved cards are not rerolled.
+- **Planned, not implemented:** confirmed local player identity, consent-based old-data transfer and the cinematic scene compositor. The private artwork archive is a review draft, not a finished feature. Online accounts and multiplayer rankings are future work.
+
+The scene system will reuse prepared images at fixed positions, including additional positions for repeatable categories—not generate new AI artwork each spin.
+
+## Current published release
 
 A solo-dive companion: roll equipment, choose a planet and mission, then record your results. It does not launch missions, unlock gear, read game memory or access your Steam account.
 
